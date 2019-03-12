@@ -61,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier of the trust relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TrustId
         {
             get { return this._trustId; }

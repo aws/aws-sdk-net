@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Git repository to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CodeRepositoryName
         {
             get { return this._codeRepositoryName; }

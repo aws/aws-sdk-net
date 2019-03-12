@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The number of findings returned for each GroupByAttributeValue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// results are returned by the GetInsightResults operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupByAttributeValue
         {
             get { return this._groupByAttributeValue; }

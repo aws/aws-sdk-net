@@ -63,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// Information about the algorithm used for training, and algorithm metadata. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmSpecification AlgorithmSpecification
         {
             get { return this._algorithmSpecification; }
@@ -81,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the training job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -148,6 +150,7 @@ namespace Amazon.SageMaker.Model
         /// If the training job failed, the reason it failed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -167,6 +170,7 @@ namespace Amazon.SageMaker.Model
         /// dates and times that the training algorithm emitted to Amazon CloudWatch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<MetricData> FinalMetricDataList
         {
             get { return this._finalMetricDataList; }
@@ -185,6 +189,7 @@ namespace Amazon.SageMaker.Model
         /// Algorithm-specific parameters. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
         {
             get { return this._hyperParameters; }
@@ -203,6 +208,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Channel</code> objects that describes each data input channel. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -222,6 +228,7 @@ namespace Amazon.SageMaker.Model
         /// created the transform or training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -259,6 +266,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ModelArtifacts ModelArtifacts
         {
             get { return this._modelArtifacts; }
@@ -297,6 +305,7 @@ namespace Amazon.SageMaker.Model
         /// for model training. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }
@@ -316,6 +325,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -403,6 +413,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SecondaryStatus SecondaryStatus
         {
             get { return this._secondaryStatus; }
@@ -440,6 +451,7 @@ namespace Amazon.SageMaker.Model
         /// The condition under which to stop the training job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }
@@ -480,6 +492,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }
@@ -498,6 +511,7 @@ namespace Amazon.SageMaker.Model
         ///  Name of the model training job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }
@@ -546,6 +560,7 @@ namespace Amazon.SageMaker.Model
         /// For more detailed information, see <code>SecondaryStatus</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobStatus TrainingJobStatus
         {
             get { return this._trainingJobStatus; }
@@ -587,6 +602,7 @@ namespace Amazon.SageMaker.Model
         /// training job was launched by a hyperparameter tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string TuningJobArn
         {
             get { return this._tuningJobArn; }

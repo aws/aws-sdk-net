@@ -181,6 +181,7 @@ namespace Amazon.SecretsManager.Model
         /// This value becomes the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -208,6 +209,7 @@ namespace Amazon.SecretsManager.Model
         /// This parameter is not accessible if the secret using the Secrets Manager console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7168)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -242,6 +244,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SecretId
         {
             get { return this._secretId; }
@@ -290,6 +293,7 @@ namespace Amazon.SecretsManager.Model
         /// JSON text.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7168)]
         public string SecretString
         {
             get { return this._secretString; }
@@ -322,6 +326,7 @@ namespace Amazon.SecretsManager.Model
         /// automatically moves the staging label <code>AWSCURRENT</code> to this new version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<string> VersionStages
         {
             get { return this._versionStages; }

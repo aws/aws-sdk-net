@@ -46,6 +46,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the EC2 image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ec2ImageId
         {
             get { return this._ec2ImageId; }
@@ -64,6 +65,7 @@ namespace Amazon.WorkSpaces.Model
         /// The description of the WorkSpace image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ImageDescription
         {
             get { return this._imageDescription; }
@@ -82,6 +84,7 @@ namespace Amazon.WorkSpaces.Model
         /// The name of the WorkSpace image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ImageName
         {
             get { return this._imageName; }
@@ -100,6 +103,7 @@ namespace Amazon.WorkSpaces.Model
         /// The ingestion process to be used when importing the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkspaceImageIngestionProcess IngestionProcess
         {
             get { return this._ingestionProcess; }

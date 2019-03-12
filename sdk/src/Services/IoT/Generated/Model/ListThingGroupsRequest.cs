@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return at one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// A filter that limits the results to those with the specified name prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NamePrefixFilter
         {
             get { return this._namePrefixFilter; }
@@ -99,6 +101,7 @@ namespace Amazon.IoT.Model
         /// A filter that limits the results to those with the specified parent group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentGroup
         {
             get { return this._parentGroup; }

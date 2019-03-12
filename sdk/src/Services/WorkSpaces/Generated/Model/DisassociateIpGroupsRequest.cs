@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifiers of one or more IP access control groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> GroupIds
         {
             get { return this._groupIds; }

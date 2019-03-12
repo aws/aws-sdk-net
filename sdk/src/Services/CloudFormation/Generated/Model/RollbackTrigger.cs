@@ -49,6 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// back. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -68,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// is the only supported resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

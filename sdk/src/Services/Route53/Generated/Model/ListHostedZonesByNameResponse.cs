@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HostedZone> HostedZones
         {
             get { return this._hostedZones; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53.Model
         /// that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DNSName
         {
             get { return this._dnsName; }
@@ -84,6 +86,7 @@ namespace Amazon.Route53.Model
         /// The ID that Amazon Route 53 assigned to the hosted zone when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -106,6 +109,7 @@ namespace Amazon.Route53.Model
         /// parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -132,6 +136,7 @@ namespace Amazon.Route53.Model
         /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NextDNSName
         {
             get { return this._nextDNSName; }
@@ -158,6 +163,7 @@ namespace Amazon.Route53.Model
         /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string NextHostedZoneId
         {
             get { return this._nextHostedZoneId; }
@@ -177,6 +183,7 @@ namespace Amazon.Route53.Model
         /// <code>ListHostedZonesByName</code> that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

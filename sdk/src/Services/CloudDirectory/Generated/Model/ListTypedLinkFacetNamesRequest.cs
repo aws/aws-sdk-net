@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -82,6 +83,7 @@ namespace Amazon.CloudDirectory.Model
         /// see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

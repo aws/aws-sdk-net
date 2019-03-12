@@ -40,6 +40,7 @@ namespace Amazon.KeyManagementService.Model
         /// The unique identifier of the master key for which deletion is canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

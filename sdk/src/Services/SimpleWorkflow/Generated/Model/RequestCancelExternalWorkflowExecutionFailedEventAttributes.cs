@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RequestCancelExternalWorkflowExecutionFailedCause Cause
         {
             get { return this._cause; }
@@ -74,6 +75,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// This data isn't sent to the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -95,6 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -116,6 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long InitiatedEventId
         {
             get { return this._initiatedEventId.GetValueOrDefault(); }
@@ -134,6 +138,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>runId</code> of the external workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -153,6 +158,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// to be delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

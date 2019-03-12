@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// The error code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -78,6 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the scheduled action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

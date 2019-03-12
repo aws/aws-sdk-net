@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AlgorithmDescription
         {
             get { return this._algorithmDescription; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }
@@ -165,6 +167,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingSpecification TrainingSpecification
         {
             get { return this._trainingSpecification; }

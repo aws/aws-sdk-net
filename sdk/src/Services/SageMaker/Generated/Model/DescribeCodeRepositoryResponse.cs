@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the Git repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string CodeRepositoryArn
         {
             get { return this._codeRepositoryArn; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Git repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CodeRepositoryName
         {
             get { return this._codeRepositoryName; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the repository was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -118,6 +121,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the repository was last changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }

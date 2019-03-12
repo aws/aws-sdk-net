@@ -51,6 +51,7 @@ namespace Amazon.Kinesis.Model
         /// to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -97,6 +98,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -117,6 +119,7 @@ namespace Amazon.Kinesis.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }

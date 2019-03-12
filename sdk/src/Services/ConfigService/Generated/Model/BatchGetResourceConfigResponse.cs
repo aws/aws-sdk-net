@@ -62,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// keys, the response contains an empty unprocessedResourceKeys list. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ResourceKey> UnprocessedResourceKeys
         {
             get { return this._unprocessedResourceKeys; }

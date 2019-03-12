@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         /// The numeric error code of the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -62,6 +63,7 @@ namespace Amazon.Comprehend.Model
         /// A text description of the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

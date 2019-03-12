@@ -86,6 +86,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScalingPlanName
         {
             get { return this._scalingPlanName; }
@@ -104,6 +105,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The version number of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScalingPlanVersion
         {
             get { return this._scalingPlanVersion.GetValueOrDefault(); }

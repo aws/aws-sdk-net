@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The status of the suggester being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SuggesterStatus Suggester
         {
             get { return this._suggester; }

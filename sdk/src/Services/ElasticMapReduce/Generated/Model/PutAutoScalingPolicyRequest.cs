@@ -46,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies the definition of the automatic scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AutoScalingPolicy AutoScalingPolicy
         {
             get { return this._autoScalingPolicy; }
@@ -65,6 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// is applied is within this cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -83,6 +85,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies the ID of the instance group to which the automatic scaling policy is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceGroupId
         {
             get { return this._instanceGroupId; }

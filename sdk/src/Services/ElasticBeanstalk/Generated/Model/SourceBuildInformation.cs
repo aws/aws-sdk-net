@@ -54,6 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string SourceLocation
         {
             get { return this._sourceLocation; }
@@ -81,6 +82,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceRepository SourceRepository
         {
             get { return this._sourceRepository; }
@@ -108,6 +110,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceType SourceType
         {
             get { return this._sourceType; }

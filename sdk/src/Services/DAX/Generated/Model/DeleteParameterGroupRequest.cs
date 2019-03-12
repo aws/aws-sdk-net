@@ -42,6 +42,7 @@ namespace Amazon.DAX.Model
         /// The name of the parameter group to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// process. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

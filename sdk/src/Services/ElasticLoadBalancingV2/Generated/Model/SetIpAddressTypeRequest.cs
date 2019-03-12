@@ -50,6 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// must use <code>ipv4</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IpAddressType IpAddressType
         {
             get { return this._ipAddressType; }
@@ -68,6 +69,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerArn
         {
             get { return this._loadBalancerArn; }

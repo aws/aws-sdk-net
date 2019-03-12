@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The checksum that can be used to validate zip-format code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=128, Max=128)]
         public string CodeMD5
         {
             get { return this._codeMD5; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The size in bytes of the application code. Can be used to validate zip-format code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=52428800)]
         public long CodeSize
         {
             get { return this._codeSize.GetValueOrDefault(); }
@@ -99,6 +101,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The text-format code
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string TextContent
         {
             get { return this._textContent; }

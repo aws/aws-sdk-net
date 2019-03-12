@@ -60,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the room from which the skill request was invoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RoomName
         {
             get { return this._roomName; }

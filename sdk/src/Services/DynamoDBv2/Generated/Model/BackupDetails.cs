@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// ARN associated with the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string BackupArn
         {
             get { return this._backupArn; }
@@ -64,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Time at which the backup was created. This is the request time of the backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime BackupCreationDateTime
         {
             get { return this._backupCreationDateTime.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the requested backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string BackupName
         {
             get { return this._backupName; }
@@ -119,6 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Size of the backup in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long BackupSizeBytes
         {
             get { return this._backupSizeBytes.GetValueOrDefault(); }
@@ -137,6 +141,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Backup can be in one of the following states: CREATING, ACTIVE, DELETED. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupStatus BackupStatus
         {
             get { return this._backupStatus; }
@@ -171,6 +176,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupType BackupType
         {
             get { return this._backupType; }

@@ -47,6 +47,7 @@ namespace Amazon.Snowball.Model
         /// device can store 10 AMIs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -67,6 +68,7 @@ namespace Amazon.Snowball.Model
         /// your list of returned images.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

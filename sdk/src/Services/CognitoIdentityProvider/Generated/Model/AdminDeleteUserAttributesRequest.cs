@@ -53,6 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> UserAttributeNames
         {
             get { return this._userAttributeNames; }
@@ -71,6 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user from which you would like to delete attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -89,6 +91,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to delete user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

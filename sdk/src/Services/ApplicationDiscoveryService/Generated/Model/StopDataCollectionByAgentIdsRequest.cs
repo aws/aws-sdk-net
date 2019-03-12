@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The IDs of the agents or connectors from which to stop collecting data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AgentIds
         {
             get { return this._agentIds; }

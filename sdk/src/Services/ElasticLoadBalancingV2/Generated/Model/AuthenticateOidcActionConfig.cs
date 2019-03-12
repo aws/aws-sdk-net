@@ -72,6 +72,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// protocol, the domain, and the path.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizationEndpoint
         {
             get { return this._authorizationEndpoint; }
@@ -90,6 +91,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The OAuth 2.0 client identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -129,6 +131,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// protocol, the domain, and the path.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Issuer
         {
             get { return this._issuer; }
@@ -240,6 +243,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the domain, and the path.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TokenEndpoint
         {
             get { return this._tokenEndpoint; }
@@ -278,6 +282,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the domain, and the path.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserInfoEndpoint
         {
             get { return this._userInfoEndpoint; }

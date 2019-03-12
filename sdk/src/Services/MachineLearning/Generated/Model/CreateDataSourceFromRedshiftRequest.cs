@@ -112,6 +112,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }
@@ -130,6 +131,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>DataSource</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -189,6 +191,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RedshiftDataSpec DataSpec
         {
             get { return this._dataSpec; }
@@ -221,6 +224,7 @@ namespace Amazon.MachineLearning.Model
         /// </li> </ul> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=110)]
         public string RoleARN
         {
             get { return this._roleARN; }

@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public MessageResponse MessageResponse
         {
             get { return this._messageResponse; }

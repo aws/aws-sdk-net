@@ -66,6 +66,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of a device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=100)]
         public string DeviceName
         {
             get { return this._deviceName; }

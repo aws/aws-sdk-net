@@ -40,6 +40,7 @@ namespace Amazon.CloudHSM.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> TagList
         {
             get { return this._tagList; }

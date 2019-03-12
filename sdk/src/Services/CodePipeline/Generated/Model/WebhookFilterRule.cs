@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// can be found here: https://github.com/json-path/JsonPath.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string JsonPath
         {
             get { return this._jsonPath; }
@@ -70,6 +71,7 @@ namespace Amazon.CodePipeline.Model
         /// Structure Reference Action Requirements</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=150)]
         public string MatchEquals
         {
             get { return this._matchEquals; }

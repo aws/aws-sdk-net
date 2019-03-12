@@ -65,6 +65,7 @@ namespace Amazon.Inspector.Model
         /// The ID of the EC2 instance where the agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -83,6 +84,7 @@ namespace Amazon.Inspector.Model
         /// The version of the Amazon Inspector Agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AgentVersion
         {
             get { return this._agentVersion; }
@@ -101,6 +103,7 @@ namespace Amazon.Inspector.Model
         /// The Auto Scaling group for the EC2 instance where the agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AutoScalingGroup
         {
             get { return this._autoScalingGroup; }
@@ -119,6 +122,7 @@ namespace Amazon.Inspector.Model
         /// The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -137,6 +141,7 @@ namespace Amazon.Inspector.Model
         /// The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=15)]
         public string Ipv4Address
         {
             get { return this._ipv4Address; }
@@ -156,6 +161,7 @@ namespace Amazon.Inspector.Model
         /// Amazon Inspector Agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string KernelVersion
         {
             get { return this._kernelVersion; }
@@ -175,6 +181,7 @@ namespace Amazon.Inspector.Model
         /// is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OperatingSystem
         {
             get { return this._operatingSystem; }

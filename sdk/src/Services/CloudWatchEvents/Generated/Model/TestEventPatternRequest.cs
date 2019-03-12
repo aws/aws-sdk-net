@@ -50,6 +50,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The event, in JSON format, to test against the event pattern.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Event
         {
             get { return this._event; }
@@ -69,6 +70,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventPattern
         {
             get { return this._eventPattern; }

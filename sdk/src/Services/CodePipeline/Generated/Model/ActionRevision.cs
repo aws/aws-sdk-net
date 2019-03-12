@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Created
         {
             get { return this._created.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// a deployment ID or timestamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RevisionChangeId
         {
             get { return this._revisionChangeId; }
@@ -80,6 +82,7 @@ namespace Amazon.CodePipeline.Model
         /// The system-generated unique ID that identifies the revision number of the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1500)]
         public string RevisionId
         {
             get { return this._revisionId; }

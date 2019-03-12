@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long InitiatedEventId
         {
             get { return this._initiatedEventId.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The external workflow execution to which the cancellation request was delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution WorkflowExecution
         {
             get { return this._workflowExecution; }

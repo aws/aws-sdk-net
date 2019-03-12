@@ -39,6 +39,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property ResourceArn.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -54,6 +55,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

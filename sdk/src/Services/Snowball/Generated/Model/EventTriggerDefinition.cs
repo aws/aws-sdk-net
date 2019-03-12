@@ -41,6 +41,7 @@ namespace Amazon.Snowball.Model
         /// function's event trigger associated with this job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string EventResourceARN
         {
             get { return this._eventResourceARN; }

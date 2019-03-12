@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model package to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=170)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

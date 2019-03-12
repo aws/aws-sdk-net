@@ -140,6 +140,7 @@ namespace Amazon.DynamoDBv2.Model
         /// exception.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -198,6 +199,7 @@ namespace Amazon.DynamoDBv2.Model
         /// on the same item. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<TransactWriteItem> TransactItems
         {
             get { return this._transactItems; }

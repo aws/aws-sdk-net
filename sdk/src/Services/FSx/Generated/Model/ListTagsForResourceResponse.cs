@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// can use the <code>NextToken</code> value in the later request to fetch the tags. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.FSx.Model
         /// A list of tags on the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

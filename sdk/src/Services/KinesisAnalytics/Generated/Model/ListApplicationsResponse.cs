@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// List of <code>ApplicationSummary</code> objects. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ApplicationSummary> ApplicationSummaries
         {
             get { return this._applicationSummaries; }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Returns true if there are more applications to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreApplications
         {
             get { return this._hasMoreApplications.GetValueOrDefault(); }

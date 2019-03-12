@@ -51,6 +51,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// is being made.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BotAlias
         {
             get { return this._botAlias; }
@@ -69,6 +70,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the Amazon Lex bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -88,6 +90,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the load balancer you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

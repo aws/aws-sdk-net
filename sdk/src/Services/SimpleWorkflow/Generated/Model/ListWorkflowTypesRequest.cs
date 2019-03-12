@@ -78,6 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain in which the workflow types have been registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -103,6 +104,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// fewer than the specified maximum.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaximumPageSize
         {
             get { return this._maximumPageSize.GetValueOrDefault(); }
@@ -121,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// If specified, lists the workflow type with this name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -146,6 +149,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -164,6 +168,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Specifies the registration status of the workflow types to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegistrationStatus RegistrationStatus
         {
             get { return this._registrationStatus; }

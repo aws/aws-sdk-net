@@ -66,6 +66,7 @@ namespace Amazon.Signer.Model
         /// The ID of the signing profile to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformId
         {
             get { return this._platformId; }
@@ -84,6 +85,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=20)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -103,6 +105,7 @@ namespace Amazon.Signer.Model
         /// signing profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SigningMaterial SigningMaterial
         {
             get { return this._signingMaterial; }

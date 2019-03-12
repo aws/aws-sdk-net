@@ -45,6 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AwsSecurityFindingFilters Filters
         {
             get { return this._filters; }
@@ -65,6 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// findings under a single operand.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupByAttribute
         {
             get { return this._groupByAttribute; }
@@ -83,6 +85,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of a Security Hub insight.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InsightArn
         {
             get { return this._insightArn; }
@@ -101,6 +104,7 @@ namespace Amazon.SecurityHub.Model
         /// The name of a Security Hub insight.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The ID of the node at which the edge starts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Source
         {
             get { return this._source; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// The ID of the node at which the edge ends.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Target
         {
             get { return this._target; }

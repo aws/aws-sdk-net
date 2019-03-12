@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ClientList.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> ClientList
         {
             get { return this._clientList; }
@@ -77,6 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=20)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }
@@ -92,6 +94,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }
@@ -107,6 +110,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareId.
         /// </summary>
+        [AWSProperty(Min=12, Max=30)]
         public string FileShareId
         {
             get { return this._fileShareId; }
@@ -122,6 +126,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareStatus.
         /// </summary>
+        [AWSProperty(Min=3, Max=50)]
         public string FileShareStatus
         {
             get { return this._fileShareStatus; }
@@ -137,6 +142,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -191,6 +197,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey.
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -206,6 +213,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN.
         /// </summary>
+        [AWSProperty(Min=16, Max=310)]
         public string LocationARN
         {
             get { return this._locationARN; }
@@ -304,6 +312,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Role.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -319,6 +328,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Squash.
         /// </summary>
+        [AWSProperty(Min=5, Max=15)]
         public string Squash
         {
             get { return this._squash; }

@@ -61,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The ARN of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=150)]
         public string ProductARN
         {
             get { return this._productARN; }

@@ -48,6 +48,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the file share you want to refresh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }
@@ -69,6 +70,7 @@ namespace Amazon.StorageGateway.Model
         /// that the file share has access to is refreshed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<string> FolderList
         {
             get { return this._folderList; }

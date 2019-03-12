@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// appear in the response if the download rate limit is not set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=102400)]
         public long AverageDownloadRateLimitInBitsPerSec
         {
             get { return this._averageDownloadRateLimitInBitsPerSec.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// in the response if the upload rate limit is not set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=51200)]
         public long AverageUploadRateLimitInBitsPerSec
         {
             get { return this._averageUploadRateLimitInBitsPerSec.GetValueOrDefault(); }
@@ -77,6 +79,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

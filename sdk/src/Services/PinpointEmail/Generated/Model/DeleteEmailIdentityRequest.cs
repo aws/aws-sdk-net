@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// Amazon Pinpoint account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

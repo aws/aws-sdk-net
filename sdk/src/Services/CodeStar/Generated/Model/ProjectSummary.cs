@@ -59,6 +59,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=15)]
         public string ProjectId
         {
             get { return this._projectId; }

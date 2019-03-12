@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -61,6 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// creating or updating a pipeline, the value must be set to 'KMS'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionKeyType Type
         {
             get { return this._type; }

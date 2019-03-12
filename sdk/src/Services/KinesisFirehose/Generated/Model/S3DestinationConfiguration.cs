@@ -48,6 +48,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string BucketARN
         {
             get { return this._bucketARN; }
@@ -188,6 +189,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }

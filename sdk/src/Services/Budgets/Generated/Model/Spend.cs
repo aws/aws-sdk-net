@@ -57,6 +57,7 @@ namespace Amazon.Budgets.Model
         /// or budget threshold.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public decimal Amount
         {
             get { return this._amount.GetValueOrDefault(); }
@@ -76,6 +77,7 @@ namespace Amazon.Budgets.Model
         /// threshold, such as dollars or GB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public string Unit
         {
             get { return this._unit; }

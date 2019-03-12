@@ -108,6 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// If specified, contains details about the progress of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Details
         {
             get { return this._details; }
@@ -133,6 +134,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

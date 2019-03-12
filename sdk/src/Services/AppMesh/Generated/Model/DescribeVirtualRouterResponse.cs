@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The full description of your virtual router.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualRouterData VirtualRouter
         {
             get { return this._virtualRouter; }

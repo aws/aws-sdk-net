@@ -44,6 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Supported condition: <code>EQUALS</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Condition
         {
             get { return this._condition; }
@@ -62,6 +63,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A single <code>ExportFilter</code> name. Supported filters: <code>agentId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -82,6 +84,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// action. Typically an ADS <code>agentId</code> is in the form <code>o-0123456789abcdef0</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

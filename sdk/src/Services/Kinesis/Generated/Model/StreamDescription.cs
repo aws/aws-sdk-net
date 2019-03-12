@@ -78,6 +78,7 @@ namespace Amazon.Kinesis.Model
         /// Represents the current enhanced monitoring settings of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EnhancedMetrics> EnhancedMonitoring
         {
             get { return this._enhancedMonitoring; }
@@ -96,6 +97,7 @@ namespace Amazon.Kinesis.Model
         /// If set to <code>true</code>, more shards in the stream are available to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreShards
         {
             get { return this._hasMoreShards.GetValueOrDefault(); }
@@ -141,6 +143,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -159,6 +162,7 @@ namespace Amazon.Kinesis.Model
         /// The current retention period, in hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=168)]
         public int RetentionPeriodHours
         {
             get { return this._retentionPeriodHours.GetValueOrDefault(); }
@@ -177,6 +181,7 @@ namespace Amazon.Kinesis.Model
         /// The shards that comprise the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Shard> Shards
         {
             get { return this._shards; }
@@ -195,6 +200,7 @@ namespace Amazon.Kinesis.Model
         /// The Amazon Resource Name (ARN) for the stream being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -213,6 +219,7 @@ namespace Amazon.Kinesis.Model
         /// The approximate time that the stream was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StreamCreationTimestamp
         {
             get { return this._streamCreationTimestamp.GetValueOrDefault(); }
@@ -231,6 +238,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -273,6 +281,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamStatus StreamStatus
         {
             get { return this._streamStatus; }

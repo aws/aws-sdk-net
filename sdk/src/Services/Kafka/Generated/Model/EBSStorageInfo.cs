@@ -40,6 +40,7 @@ namespace Amazon.Kafka.Model
         /// The size in GiB of the EBS volume for the data drive on each broker node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public int VolumeSize
         {
             get { return this._volumeSize.GetValueOrDefault(); }

@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

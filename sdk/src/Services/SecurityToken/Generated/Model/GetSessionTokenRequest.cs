@@ -111,6 +111,7 @@ namespace Amazon.SecurityToken.Model
         /// one hour, the session for AWS account owners defaults to one hour.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=900, Max=129600)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -141,6 +142,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -168,6 +170,7 @@ namespace Amazon.SecurityToken.Model
         /// six numeric digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=6)]
         public string TokenCode
         {
             get { return this._tokenCode; }

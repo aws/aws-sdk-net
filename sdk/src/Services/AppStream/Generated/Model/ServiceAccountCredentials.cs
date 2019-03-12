@@ -44,6 +44,7 @@ namespace Amazon.AppStream.Model
         /// computer objects for the organizational units specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string AccountName
         {
             get { return this._accountName; }
@@ -62,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// The password for the account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=127)]
         public string AccountPassword
         {
             get { return this._accountPassword; }

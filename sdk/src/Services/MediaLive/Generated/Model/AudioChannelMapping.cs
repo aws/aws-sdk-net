@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InputChannelLevels. Indices and gain values for each input
         /// channel that should be remixed into this output channel.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InputChannelLevel> InputChannelLevels
         {
             get { return this._inputChannelLevels; }
@@ -54,6 +55,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OutputChannel. The index of the output channel being produced.
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=7)]
         public int OutputChannel
         {
             get { return this._outputChannel.GetValueOrDefault(); }

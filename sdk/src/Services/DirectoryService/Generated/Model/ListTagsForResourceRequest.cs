@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory for which you want to retrieve tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

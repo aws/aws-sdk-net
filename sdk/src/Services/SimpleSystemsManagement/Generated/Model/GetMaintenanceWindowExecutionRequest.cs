@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution that includes the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }

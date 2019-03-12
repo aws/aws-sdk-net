@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The role ARN for the Amazon CloudWatch Logging role for the user import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string CloudWatchLogsRoleArn
         {
             get { return this._cloudWatchLogsRoleArn; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The job name for the user import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string JobName
         {
             get { return this._jobName; }
@@ -79,6 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool that the users are being imported into.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

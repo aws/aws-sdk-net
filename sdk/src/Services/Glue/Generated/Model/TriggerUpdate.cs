@@ -63,6 +63,7 @@ namespace Amazon.Glue.Model
         /// A description of this trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +82,7 @@ namespace Amazon.Glue.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

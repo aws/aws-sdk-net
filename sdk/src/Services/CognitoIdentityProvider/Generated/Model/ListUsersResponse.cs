@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

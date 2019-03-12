@@ -53,6 +53,7 @@ namespace Amazon.DynamoDBv2.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string ExclusiveStartStreamArn
         {
             get { return this._exclusiveStartStreamArn; }
@@ -71,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of streams to return. The upper limit is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -90,6 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         /// are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

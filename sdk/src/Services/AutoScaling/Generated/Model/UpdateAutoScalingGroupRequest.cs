@@ -92,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -110,6 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -205,6 +207,7 @@ namespace Amazon.AutoScaling.Model
         /// load balancer health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string HealthCheckType
         {
             get { return this._healthCheckType; }
@@ -224,6 +227,7 @@ namespace Amazon.AutoScaling.Model
         /// a launch template or a mixed instances policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }
@@ -351,6 +355,7 @@ namespace Amazon.AutoScaling.Model
         /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup
         {
             get { return this._placementGroup; }
@@ -371,6 +376,7 @@ namespace Amazon.AutoScaling.Model
         /// Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ServiceLinkedRoleARN
         {
             get { return this._serviceLinkedRoleARN; }
@@ -420,6 +426,7 @@ namespace Amazon.AutoScaling.Model
         /// Zones.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2047)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }

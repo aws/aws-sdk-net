@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The AFI attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FpgaImageAttributeName Attribute
         {
             get { return this._attribute; }
@@ -60,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AFI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FpgaImageId
         {
             get { return this._fpgaImageId; }

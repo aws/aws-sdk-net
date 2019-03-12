@@ -91,6 +91,7 @@ namespace Amazon.EC2.Model
         /// One or more instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Instances
         {
             get { return this._instances; }
@@ -149,6 +150,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ReasonCodes
         {
             get { return this._reasonCodes; }
@@ -185,6 +187,7 @@ namespace Amazon.EC2.Model
         /// The status of all instances listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportStatusType Status
         {
             get { return this._status; }

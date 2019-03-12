@@ -40,6 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// A commit data type object that contains information about the specified commit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Commit Commit
         {
             get { return this._commit; }

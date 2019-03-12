@@ -57,6 +57,7 @@ namespace Amazon.Comprehend.Model
         /// Comprehend generates one.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -77,6 +78,7 @@ namespace Amazon.Comprehend.Model
         /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -97,6 +99,7 @@ namespace Amazon.Comprehend.Model
         /// used for a custom entity recognition job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string EntityRecognizerArn
         {
             get { return this._entityRecognizerArn; }
@@ -115,6 +118,7 @@ namespace Amazon.Comprehend.Model
         /// Specifies the format and location of the input data for the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputDataConfig InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -133,6 +137,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }
@@ -155,6 +160,7 @@ namespace Amazon.Comprehend.Model
         /// training the model is used instead.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -173,6 +179,7 @@ namespace Amazon.Comprehend.Model
         /// Specifies where to send the output files.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputDataConfig OutputDataConfig
         {
             get { return this._outputDataConfig; }

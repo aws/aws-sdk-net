@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         /// in your account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CloudWatchLogsRoleArn
         {
             get { return this._cloudWatchLogsRoleArn; }
@@ -93,6 +94,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldLogLevel FieldLogLevel
         {
             get { return this._fieldLogLevel; }

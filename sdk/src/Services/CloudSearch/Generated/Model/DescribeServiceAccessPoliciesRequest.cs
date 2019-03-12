@@ -66,6 +66,7 @@ namespace Amazon.CloudSearch.Model
         /// The name of the domain you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

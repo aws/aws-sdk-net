@@ -43,6 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data store.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatastoreName
         {
             get { return this._datastoreName; }
@@ -79,6 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Metadata which can be used to manage the data store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

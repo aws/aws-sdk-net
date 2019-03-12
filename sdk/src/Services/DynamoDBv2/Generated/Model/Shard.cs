@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The shard ID of the current shard's parent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=28, Max=65)]
         public string ParentShardId
         {
             get { return this._parentShardId; }
@@ -78,6 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The system-generated identifier for this shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=28, Max=65)]
         public string ShardId
         {
             get { return this._shardId; }

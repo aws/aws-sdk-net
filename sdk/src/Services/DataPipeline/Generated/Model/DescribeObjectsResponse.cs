@@ -62,6 +62,7 @@ namespace Amazon.DataPipeline.Model
         /// there are no more results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }
@@ -80,6 +81,7 @@ namespace Amazon.DataPipeline.Model
         /// An array of object definitions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PipelineObject> PipelineObjects
         {
             get { return this._pipelineObjects; }

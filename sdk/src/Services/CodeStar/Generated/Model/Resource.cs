@@ -40,6 +40,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=11)]
         public string Id
         {
             get { return this._id; }

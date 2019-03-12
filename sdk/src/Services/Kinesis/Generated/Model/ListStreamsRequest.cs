@@ -64,6 +64,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream to start the list with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartStreamName
         {
             get { return this._exclusiveStartStreamName; }
@@ -82,6 +83,7 @@ namespace Amazon.Kinesis.Model
         /// The maximum number of streams to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         /// is supplied, the AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -62,6 +63,7 @@ namespace Amazon.Glue.Model
         /// The maximum number of databases to return in one response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

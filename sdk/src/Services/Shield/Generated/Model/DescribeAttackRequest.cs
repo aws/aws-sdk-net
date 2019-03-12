@@ -41,6 +41,7 @@ namespace Amazon.Shield.Model
         /// The unique identifier (ID) for the attack that to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AttackId
         {
             get { return this._attackId; }

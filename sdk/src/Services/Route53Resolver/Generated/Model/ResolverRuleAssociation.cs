@@ -48,6 +48,7 @@ namespace Amazon.Route53Resolver.Model
         /// value when you submit an <a>AssociateResolverRule</a> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53Resolver.Model
         /// The name of an association between a resolver rule and a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -85,6 +87,7 @@ namespace Amazon.Route53Resolver.Model
         /// <code>VPCId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResolverRuleId
         {
             get { return this._resolverRuleId; }
@@ -123,6 +126,7 @@ namespace Amazon.Route53Resolver.Model
         /// a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string StatusMessage
         {
             get { return this._statusMessage; }
@@ -141,6 +145,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the VPC that you associated the resolver rule with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string VPCId
         {
             get { return this._vpcId; }

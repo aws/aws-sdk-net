@@ -54,6 +54,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ARN (Amazon Resource Name) for the resolver endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -73,6 +74,7 @@ namespace Amazon.Route53Resolver.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=40)]
         public string CreationTime
         {
             get { return this._creationTime; }
@@ -93,6 +95,7 @@ namespace Amazon.Route53Resolver.Model
         /// of executing the operation twice.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -140,6 +143,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the VPC that you want to create the resolver endpoint in.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HostVPCId
         {
             get { return this._hostVPCId; }
@@ -158,6 +162,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -195,6 +200,7 @@ namespace Amazon.Route53Resolver.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=40)]
         public string ModificationTime
         {
             get { return this._modificationTime; }
@@ -214,6 +220,7 @@ namespace Amazon.Route53Resolver.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -269,6 +276,7 @@ namespace Amazon.Route53Resolver.Model
         /// A detailed description of the status of the resolver endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

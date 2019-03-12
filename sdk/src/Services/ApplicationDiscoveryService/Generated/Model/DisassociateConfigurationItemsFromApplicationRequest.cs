@@ -42,6 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of an application from which each item is disassociated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationConfigurationId
         {
             get { return this._applicationConfigurationId; }
@@ -60,6 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of each item to be disassociated from an application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConfigurationIds
         {
             get { return this._configurationIds; }

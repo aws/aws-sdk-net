@@ -59,6 +59,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of the cache parameter group to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupName
         {
             get { return this._cacheParameterGroupName; }
@@ -79,6 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// 20 parameters may be modified per request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ParameterNameValue> ParameterNameValues
         {
             get { return this._parameterNameValues; }

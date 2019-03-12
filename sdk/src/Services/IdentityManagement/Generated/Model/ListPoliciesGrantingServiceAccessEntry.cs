@@ -76,6 +76,7 @@ namespace Amazon.IdentityManagement.Model
         /// Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ServiceNamespace
         {
             get { return this._serviceNamespace; }

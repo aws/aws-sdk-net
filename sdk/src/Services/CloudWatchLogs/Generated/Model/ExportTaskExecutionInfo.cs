@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CompletionTime
         {
             get { return this._completionTime.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }

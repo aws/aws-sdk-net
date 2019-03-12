@@ -53,6 +53,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> EventArns
         {
             get { return this._eventArns; }
@@ -72,6 +73,7 @@ namespace Amazon.AWSHealth.Model
         /// only supported value at this time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string Locale
         {
             get { return this._locale; }

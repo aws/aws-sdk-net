@@ -48,6 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the operation that you want to get more information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string OperationId
         {
             get { return this._operationId; }

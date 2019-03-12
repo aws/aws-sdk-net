@@ -39,6 +39,7 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
         /// broker.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BrokerId
         {
             get { return this._brokerId; }

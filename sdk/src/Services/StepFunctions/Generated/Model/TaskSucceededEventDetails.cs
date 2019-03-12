@@ -43,6 +43,7 @@ namespace Amazon.StepFunctions.Model
         /// the output of the related task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Output
         {
             get { return this._output; }
@@ -61,6 +62,7 @@ namespace Amazon.StepFunctions.Model
         /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Resource
         {
             get { return this._resource; }
@@ -79,6 +81,7 @@ namespace Amazon.StepFunctions.Model
         /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string ResourceType
         {
             get { return this._resourceType; }

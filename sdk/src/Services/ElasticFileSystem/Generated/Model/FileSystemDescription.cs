@@ -53,6 +53,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -71,6 +72,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The opaque string specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CreationToken
         {
             get { return this._creationToken; }
@@ -107,6 +109,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -126,6 +129,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// used to protect the encrypted file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -144,6 +148,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The lifecycle phase of the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LifeCycleState LifeCycleState
         {
             get { return this._lifeCycleState; }
@@ -164,6 +169,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// EFS returns the value in this field. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -183,6 +189,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// see <a>CreateMountTarget</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int NumberOfMountTargets
         {
             get { return this._numberOfMountTargets.GetValueOrDefault(); }
@@ -202,6 +209,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// IAM user, the parent account to which the user belongs is the owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OwnerId
         {
             get { return this._ownerId; }
@@ -220,6 +228,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The performance mode of the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PerformanceMode PerformanceMode
         {
             get { return this._performanceMode; }
@@ -241,6 +250,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double ProvisionedThroughputInMibps
         {
             get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
@@ -266,6 +276,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// the value is not the exact size that the file system was at any point in time. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FileSystemSize SizeInBytes
         {
             get { return this._sizeInBytes; }
@@ -285,6 +296,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -65,6 +65,7 @@ namespace Amazon.Route53.Model
         /// in the <code>HealthCheckId</code> element.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string HealthCheckId
         {
             get { return this._healthCheckId; }
@@ -103,6 +104,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long HealthCheckVersion
         {
             get { return this._healthCheckVersion.GetValueOrDefault(); }
@@ -189,6 +191,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=45)]
         public string IPAddress
         {
             get { return this._ipAddress; }
@@ -207,6 +210,7 @@ namespace Amazon.Route53.Model
         /// The port on the endpoint on which you want Amazon Route 53 to perform health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -233,6 +237,7 @@ namespace Amazon.Route53.Model
         /// Specify this value only if you want to change it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string ResourcePath
         {
             get { return this._resourcePath; }
@@ -339,6 +344,7 @@ namespace Amazon.Route53.Model
         /// is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string FullyQualifiedDomainName
         {
             get { return this._fullyQualifiedDomainName; }
@@ -361,6 +367,7 @@ namespace Amazon.Route53.Model
         /// a health check.)
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string SearchString
         {
             get { return this._searchString; }
@@ -388,6 +395,7 @@ namespace Amazon.Route53.Model
         /// is three health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int FailureThreshold
         {
             get { return this._failureThreshold.GetValueOrDefault(); }
@@ -491,6 +499,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public int HealthThreshold
         {
             get { return this._healthThreshold.GetValueOrDefault(); }
@@ -510,6 +519,7 @@ namespace Amazon.Route53.Model
         /// check that you want to associate with a <code>CALCULATED</code> health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public List<string> ChildHealthChecks
         {
             get { return this._childHealthChecks; }
@@ -569,6 +579,7 @@ namespace Amazon.Route53.Model
         /// you want Amazon Route 53 health checkers to check the specified endpoint from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=64)]
         public List<string> Regions
         {
             get { return this._regions; }
@@ -664,6 +675,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=64)]
         public List<string> ResetElements
         {
             get { return this._resetElements; }

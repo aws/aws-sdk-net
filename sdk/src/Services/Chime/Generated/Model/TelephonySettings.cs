@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// Allows or denies inbound calling.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool InboundCalling
         {
             get { return this._inboundCalling.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.Chime.Model
         /// Allows or denies outbound calling.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool OutboundCalling
         {
             get { return this._outboundCalling.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.Chime.Model
         /// Allows or denies SMS messaging.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool SMS
         {
             get { return this._sms.GetValueOrDefault(); }

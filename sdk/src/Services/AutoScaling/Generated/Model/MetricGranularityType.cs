@@ -40,6 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// The granularity. The only valid value is <code>1Minute</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Granularity
         {
             get { return this._granularity; }

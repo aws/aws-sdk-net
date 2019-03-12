@@ -46,6 +46,7 @@ namespace Amazon.Chime.Model
         /// The maximum number of results to return in a single call. Defaults to 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Chime.Model
         /// Amazon Chime account name prefix with which to filter results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

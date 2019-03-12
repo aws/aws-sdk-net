@@ -93,6 +93,7 @@ namespace Amazon.WAFRegional.Model
         /// The policy to attach to the specified RuleGroup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Policy
         {
             get { return this._policy; }
@@ -111,6 +112,7 @@ namespace Amazon.WAFRegional.Model
         /// The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

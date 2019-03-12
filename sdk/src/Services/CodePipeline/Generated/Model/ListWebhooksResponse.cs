@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// of webhooks in the list. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ARN of the CloudWatch Events rule from which you are removing tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The list of tag keys to remove from the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

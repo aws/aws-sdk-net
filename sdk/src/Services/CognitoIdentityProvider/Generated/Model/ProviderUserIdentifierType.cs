@@ -78,6 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name of the provider, for example, Facebook, Google, or Login with Amazon.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }

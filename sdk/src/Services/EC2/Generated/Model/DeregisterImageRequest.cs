@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageId
         {
             get { return this._imageId; }

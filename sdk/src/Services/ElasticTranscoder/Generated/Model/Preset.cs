@@ -108,6 +108,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// A description of the preset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -145,6 +146,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The name of the preset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string Name
         {
             get { return this._name; }

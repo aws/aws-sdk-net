@@ -85,6 +85,7 @@ namespace Amazon.Translate.Model
         /// The description of the custom terminology properties.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -139,6 +140,7 @@ namespace Amazon.Translate.Model
         /// The name of the custom terminology.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -176,6 +178,7 @@ namespace Amazon.Translate.Model
         /// terminology is being used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=5)]
         public string SourceLanguageCode
         {
             get { return this._sourceLanguageCode; }

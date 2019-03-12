@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The ARN associated with the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string BackupArn
         {
             get { return this._backupArn; }

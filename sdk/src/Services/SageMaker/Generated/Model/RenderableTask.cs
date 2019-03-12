@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// you can supply the variable in the JSON object as <code>"text": "sample text"</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=128000)]
         public string Input
         {
             get { return this._input; }

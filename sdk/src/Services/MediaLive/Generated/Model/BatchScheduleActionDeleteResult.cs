@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ScheduleActions. List of actions that have been deleted
         /// from the schedule.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ScheduleAction> ScheduleActions
         {
             get { return this._scheduleActions; }

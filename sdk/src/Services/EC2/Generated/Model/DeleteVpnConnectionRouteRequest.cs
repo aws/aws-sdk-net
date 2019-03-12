@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The CIDR block associated with the local subnet of the customer network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPN connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpnConnectionId
         {
             get { return this._vpnConnectionId; }

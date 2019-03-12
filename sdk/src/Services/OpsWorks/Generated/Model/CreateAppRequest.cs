@@ -205,6 +205,7 @@ namespace Amazon.OpsWorks.Model
         /// The app name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -259,6 +260,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -281,6 +283,7 @@ namespace Amazon.OpsWorks.Model
         /// <code>other</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AppType Type
         {
             get { return this._type; }

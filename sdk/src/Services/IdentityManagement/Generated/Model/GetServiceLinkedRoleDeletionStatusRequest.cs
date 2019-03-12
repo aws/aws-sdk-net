@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// operation in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string DeletionTaskId
         {
             get { return this._deletionTaskId; }

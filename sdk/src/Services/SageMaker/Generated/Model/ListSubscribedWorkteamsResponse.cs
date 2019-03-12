@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// next set of work teams, use it in the subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Workteam</code> objects, each describing a work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SubscribedWorkteam> SubscribedWorkteams
         {
             get { return this._subscribedWorkteams; }

@@ -41,6 +41,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the branch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }

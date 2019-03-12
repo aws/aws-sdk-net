@@ -86,6 +86,7 @@ namespace Amazon.CloudFront.Model
         /// specified by <code>PathPattern</code> and <code>TargetOriginId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -123,6 +124,7 @@ namespace Amazon.CloudFront.Model
         /// The number of trusted signers for this cache behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

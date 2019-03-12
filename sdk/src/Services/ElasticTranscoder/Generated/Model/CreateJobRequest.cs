@@ -76,6 +76,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// transcoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<JobInput> Inputs
         {
             get { return this._inputs; }
@@ -115,6 +116,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// files that this job creates, including output files, thumbnails, and playlists.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string OutputKeyPrefix
         {
             get { return this._outputKeyPrefix; }
@@ -135,6 +137,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// syntax. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public List<CreateJobOutput> Outputs
         {
             get { return this._outputs; }
@@ -156,6 +159,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// puts the transcoded files.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -180,6 +184,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The maximum number of master playlists in a job is 30.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public List<CreateJobPlaylist> Playlists
         {
             get { return this._playlists; }

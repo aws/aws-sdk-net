@@ -47,6 +47,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }

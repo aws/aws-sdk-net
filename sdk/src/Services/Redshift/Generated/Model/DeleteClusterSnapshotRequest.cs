@@ -81,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// <code>failed</code>, or <code>cancelled</code> state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

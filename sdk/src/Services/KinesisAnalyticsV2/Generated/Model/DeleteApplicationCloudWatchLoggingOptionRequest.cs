@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The application name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -63,6 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string CloudWatchLoggingOptionId
         {
             get { return this._cloudWatchLoggingOptionId; }
@@ -82,6 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }

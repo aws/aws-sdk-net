@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// place.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WafOverrideActionType Type
         {
             get { return this._type; }

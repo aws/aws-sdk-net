@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// Reference that identifies the object whose policy object will be detached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// Reference that identifies the policy object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference PolicyReference
         {
             get { return this._policyReference; }

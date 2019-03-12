@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// A list of <code>ApplicationSummary</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ApplicationSummary> ApplicationSummaries
         {
             get { return this._applicationSummaries; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the AWS Command Line Interface's Pagination Options</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NextToken
         {
             get { return this._nextToken; }

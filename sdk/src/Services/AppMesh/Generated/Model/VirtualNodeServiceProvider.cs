@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual node that is acting as a service provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualNodeName
         {
             get { return this._virtualNodeName; }

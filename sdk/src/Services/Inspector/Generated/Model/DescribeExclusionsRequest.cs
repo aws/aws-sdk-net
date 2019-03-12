@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The list of ARNs that specify the exclusions that you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> ExclusionArns
         {
             get { return this._exclusionArns; }

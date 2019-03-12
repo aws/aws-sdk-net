@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// The cluster's Amazon Resource Number (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EcsClusterArn
         {
             get { return this._ecsClusterArn; }

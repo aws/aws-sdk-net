@@ -41,6 +41,7 @@ namespace Amazon.DeviceFarm.Model
         /// Represents the Amazon Resource Name (ARN) of the Device Farm upload you wish to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }

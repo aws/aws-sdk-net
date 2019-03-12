@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ApplicationARN
         {
             get { return this._applicationARN; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -79,6 +81,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Status of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationStatus ApplicationStatus
         {
             get { return this._applicationStatus; }

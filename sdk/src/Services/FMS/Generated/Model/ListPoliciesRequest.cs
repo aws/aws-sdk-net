@@ -46,6 +46,7 @@ namespace Amazon.FMS.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -70,6 +71,7 @@ namespace Amazon.FMS.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

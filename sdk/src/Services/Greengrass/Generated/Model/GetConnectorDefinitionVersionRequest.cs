@@ -42,6 +42,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property ConnectorDefinitionId. The ID of the connector definition.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorDefinitionId
         {
             get { return this._connectorDefinitionId; }
@@ -58,6 +59,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property ConnectorDefinitionVersionId. The ID of the connector definition
         /// version.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorDefinitionVersionId
         {
             get { return this._connectorDefinitionVersionId; }

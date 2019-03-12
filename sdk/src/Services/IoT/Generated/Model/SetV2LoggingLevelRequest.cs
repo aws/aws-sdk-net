@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The log level.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogLevel LogLevel
         {
             get { return this._logLevel; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The log target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogTarget LogTarget
         {
             get { return this._logTarget; }

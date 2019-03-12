@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ResourceId
         {
             get { return this._resourceId; }

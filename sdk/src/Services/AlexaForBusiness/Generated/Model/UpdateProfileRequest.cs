@@ -51,6 +51,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated address for the room profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string Address
         {
             get { return this._address; }
@@ -142,6 +143,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated name for the room profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -214,6 +216,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated timezone for the room profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Timezone
         {
             get { return this._timezone; }

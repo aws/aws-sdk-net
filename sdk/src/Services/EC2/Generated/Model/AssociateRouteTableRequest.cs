@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The ID of the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteTableId
         {
             get { return this._routeTableId; }
@@ -70,6 +71,7 @@ namespace Amazon.EC2.Model
         /// The ID of the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

@@ -82,6 +82,7 @@ namespace Amazon.SecretsManager.Model
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.SecretsManager.Model
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

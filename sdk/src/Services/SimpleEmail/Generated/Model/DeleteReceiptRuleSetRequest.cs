@@ -55,6 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the receipt rule set to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

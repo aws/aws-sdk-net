@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The ID of this audit.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

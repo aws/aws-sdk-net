@@ -64,6 +64,7 @@ namespace Amazon.IoT.Model
         /// A short text description of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The ID of the job to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }

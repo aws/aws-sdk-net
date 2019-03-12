@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// next page of change sets that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// change sets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

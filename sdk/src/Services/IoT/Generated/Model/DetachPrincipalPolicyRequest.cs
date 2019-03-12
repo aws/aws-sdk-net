@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         /// The name of the policy to detach.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -70,6 +71,7 @@ namespace Amazon.IoT.Model
         /// an Amazon Cognito identity, specify the identity ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Principal
         {
             get { return this._principal; }

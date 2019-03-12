@@ -100,6 +100,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where the pull request was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

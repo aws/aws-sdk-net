@@ -74,6 +74,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// be <code>events:PutEvents</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Action
         {
             get { return this._action; }
@@ -133,6 +134,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// any events sent from other accounts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=12)]
         public string Principal
         {
             get { return this._principal; }
@@ -153,6 +155,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <code>StatementId</code> when you run <a>RemovePermission</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string StatementId
         {
             get { return this._statementId; }

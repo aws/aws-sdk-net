@@ -60,6 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Name of the application to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

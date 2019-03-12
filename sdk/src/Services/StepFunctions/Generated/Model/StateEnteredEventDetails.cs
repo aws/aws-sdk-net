@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The string that contains the JSON input data for the state.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -59,6 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// The name of the state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }

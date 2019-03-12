@@ -56,6 +56,7 @@ namespace Amazon.Budgets.Model
         /// The address that AWS sends budget notifications to, either an SNS topic or an email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public string Address
         {
             get { return this._address; }
@@ -74,6 +75,7 @@ namespace Amazon.Budgets.Model
         /// The type of notification that AWS sends to a subscriber.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscriptionType SubscriptionType
         {
             get { return this._subscriptionType; }

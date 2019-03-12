@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The index name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IndexName
         {
             get { return this._indexName; }

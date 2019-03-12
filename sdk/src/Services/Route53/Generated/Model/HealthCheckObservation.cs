@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public HealthCheckRegion Region
         {
             get { return this._region; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53.Model
         /// in <code>StatusReport</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=45)]
         public string IPAddress
         {
             get { return this._ipAddress; }

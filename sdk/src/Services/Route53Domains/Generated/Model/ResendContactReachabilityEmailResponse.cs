@@ -42,6 +42,7 @@ namespace Amazon.Route53Domains.Model
         /// The domain name for which you requested a confirmation email.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// email.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=254)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

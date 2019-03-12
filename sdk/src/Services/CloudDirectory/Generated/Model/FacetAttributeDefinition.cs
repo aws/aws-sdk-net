@@ -98,6 +98,7 @@ namespace Amazon.CloudDirectory.Model
         /// The type of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FacetAttributeType Type
         {
             get { return this._type; }

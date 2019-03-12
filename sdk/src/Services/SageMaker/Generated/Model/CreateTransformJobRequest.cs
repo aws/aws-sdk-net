@@ -131,6 +131,7 @@ namespace Amazon.SageMaker.Model
         /// and values entries in the map.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -151,6 +152,7 @@ namespace Amazon.SageMaker.Model
         /// appropriate number for <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxConcurrentTransforms
         {
             get { return this._maxConcurrentTransforms.GetValueOrDefault(); }
@@ -181,6 +183,7 @@ namespace Amazon.SageMaker.Model
         /// encoding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxPayloadInMB
         {
             get { return this._maxPayloadInMB.GetValueOrDefault(); }
@@ -201,6 +204,7 @@ namespace Amazon.SageMaker.Model
         /// AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -220,6 +224,7 @@ namespace Amazon.SageMaker.Model
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -238,6 +243,7 @@ namespace Amazon.SageMaker.Model
         /// Describes the input source and the way the transform job consumes it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformInput TransformInput
         {
             get { return this._transformInput; }
@@ -257,6 +263,7 @@ namespace Amazon.SageMaker.Model
         /// AWS account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TransformJobName
         {
             get { return this._transformJobName; }
@@ -275,6 +282,7 @@ namespace Amazon.SageMaker.Model
         /// Describes the results of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformOutput TransformOutput
         {
             get { return this._transformOutput; }
@@ -294,6 +302,7 @@ namespace Amazon.SageMaker.Model
         /// for the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformResources TransformResources
         {
             get { return this._transformResources; }

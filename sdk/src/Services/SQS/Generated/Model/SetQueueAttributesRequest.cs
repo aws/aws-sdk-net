@@ -216,6 +216,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -238,6 +239,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

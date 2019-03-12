@@ -63,6 +63,7 @@ namespace Amazon.Connect.Model
         /// Connect or SAML for identity management.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -82,6 +83,7 @@ namespace Amazon.Connect.Model
         /// or SAML for identity management.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string LastName
         {
             get { return this._lastName; }

@@ -66,6 +66,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// output.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceARNUpdate
         {
             get { return this._resourceARNUpdate; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// on your behalf. You need to grant the necessary permissions to this role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleARNUpdate
         {
             get { return this._roleARNUpdate; }

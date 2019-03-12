@@ -143,6 +143,7 @@ namespace Amazon.IoT.Model
         /// A description of the OTA update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -215,6 +216,7 @@ namespace Amazon.IoT.Model
         /// A list of files associated with the OTA update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<OTAUpdateFile> OtaUpdateFiles
         {
             get { return this._otaUpdateFiles; }
@@ -233,6 +235,7 @@ namespace Amazon.IoT.Model
         /// The OTA update ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OtaUpdateId
         {
             get { return this._otaUpdateId; }
@@ -269,6 +272,7 @@ namespace Amazon.IoT.Model
         /// The targets of the OTA update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> Targets
         {
             get { return this._targets; }

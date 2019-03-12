@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of the user's signing certificate information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SigningCertificate> Certificates
         {
             get { return this._certificates; }
@@ -85,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }

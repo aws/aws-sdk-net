@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// The ID of the pipeline execution about which you want to get execution details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PipelineExecutionId
         {
             get { return this._pipelineExecutionId; }
@@ -61,6 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline about which you want to get execution details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }

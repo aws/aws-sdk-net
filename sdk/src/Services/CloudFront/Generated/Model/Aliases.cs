@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The number of CNAME aliases, if any, that you want to associate with this distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

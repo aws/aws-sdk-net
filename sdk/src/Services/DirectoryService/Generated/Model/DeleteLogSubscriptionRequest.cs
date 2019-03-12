@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory whose log subscription you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

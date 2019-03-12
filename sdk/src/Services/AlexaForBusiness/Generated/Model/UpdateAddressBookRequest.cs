@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the room to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AddressBookArn
         {
             get { return this._addressBookArn; }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated description of the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated name of the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

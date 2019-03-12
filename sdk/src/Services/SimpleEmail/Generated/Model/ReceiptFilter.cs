@@ -49,6 +49,7 @@ namespace Amazon.SimpleEmail.Model
         /// or allow incoming mail from them.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReceiptIpFilter IpFilter
         {
             get { return this._ipFilter; }
@@ -81,6 +82,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the global table to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string GlobalTableName
         {
             get { return this._globalTableName; }

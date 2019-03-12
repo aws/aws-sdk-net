@@ -65,6 +65,7 @@ namespace Amazon.IoT.Model
         /// datapoints, an alarm occurs. If not specified, the default is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int ConsecutiveDatapointsToAlarm
         {
             get { return this._consecutiveDatapointsToAlarm.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.IoT.Model
         /// If not specified, the default is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int ConsecutiveDatapointsToClear
         {
             get { return this._consecutiveDatapointsToClear.GetValueOrDefault(); }

@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationResponse ApplicationResponse
         {
             get { return this._applicationResponse; }

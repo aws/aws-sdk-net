@@ -41,6 +41,7 @@ namespace Amazon.KeyManagementService.Model
         /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

@@ -88,6 +88,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Dedicated Hosts with which the reservation will be associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> HostIdSet
         {
             get { return this._hostIdSet; }
@@ -129,6 +130,7 @@ namespace Amazon.EC2.Model
         /// The ID of the offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OfferingId
         {
             get { return this._offeringId; }

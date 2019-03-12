@@ -41,6 +41,7 @@ namespace Amazon.Signer.Model
         /// The ID of the target signing platform.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformId
         {
             get { return this._platformId; }

@@ -92,6 +92,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long AssignmentDurationInSeconds
         {
             get { return this._assignmentDurationInSeconds.GetValueOrDefault(); }
@@ -153,6 +154,7 @@ namespace Amazon.MTurk.Model
         /// before accepting it. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -177,6 +179,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITLayoutId
         {
             get { return this._hitLayoutId; }
@@ -254,6 +257,7 @@ namespace Amazon.MTurk.Model
         /// searches, even if not all of the assignments for the HIT have been accepted. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long LifetimeInSeconds
         {
             get { return this._lifetimeInSeconds.GetValueOrDefault(); }
@@ -373,6 +377,7 @@ namespace Amazon.MTurk.Model
         /// HIT. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Reward
         {
             get { return this._reward; }
@@ -393,6 +398,7 @@ namespace Amazon.MTurk.Model
         /// search results, and everywhere the HIT is mentioned. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }
@@ -423,6 +429,7 @@ namespace Amazon.MTurk.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UniqueRequestToken
         {
             get { return this._uniqueRequestToken; }

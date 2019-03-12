@@ -43,6 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// to use for the <code>Marker</code> parameter in a subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextMarker
         {
             get { return this._nextMarker; }

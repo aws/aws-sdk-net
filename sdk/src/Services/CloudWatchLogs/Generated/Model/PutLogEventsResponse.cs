@@ -41,6 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The next sequence token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextSequenceToken
         {
             get { return this._nextSequenceToken; }

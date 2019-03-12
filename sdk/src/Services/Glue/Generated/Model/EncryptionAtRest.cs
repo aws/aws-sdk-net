@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The encryption-at-rest mode for encrypting Data Catalog data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CatalogEncryptionMode CatalogEncryptionMode
         {
             get { return this._catalogEncryptionMode; }
@@ -59,6 +60,7 @@ namespace Amazon.Glue.Model
         /// The ID of the AWS KMS key to use for encryption at rest.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SseAwsKmsKeyId
         {
             get { return this._sseAwsKmsKeyId; }

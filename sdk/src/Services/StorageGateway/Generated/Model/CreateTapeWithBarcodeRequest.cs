@@ -57,6 +57,7 @@ namespace Amazon.StorageGateway.Model
         /// for your account and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -95,6 +96,7 @@ namespace Amazon.StorageGateway.Model
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -118,6 +120,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=7, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }
@@ -141,6 +144,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long TapeSizeInBytes
         {
             get { return this._tapeSizeInBytes.GetValueOrDefault(); }

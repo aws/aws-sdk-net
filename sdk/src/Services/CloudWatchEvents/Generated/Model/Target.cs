@@ -61,6 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The Amazon Resource Name (ARN) of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -119,6 +120,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ID of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -139,6 +141,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string Input
         {
             get { return this._input; }
@@ -159,6 +162,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string InputPath
         {
             get { return this._inputPath; }
@@ -219,6 +223,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// IAM role for each target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string RoleArn
         {
             get { return this._roleArn; }

@@ -104,6 +104,7 @@ namespace Amazon.KeyManagementService.Model
         /// using the wrapping algorithm that you specified in that request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=6144)]
         public MemoryStream EncryptedKeyMaterial
         {
             get { return this._encryptedKeyMaterial; }
@@ -145,6 +146,7 @@ namespace Amazon.KeyManagementService.Model
         /// used to encrypt the key material.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=6144)]
         public MemoryStream ImportToken
         {
             get { return this._importToken; }
@@ -185,6 +187,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

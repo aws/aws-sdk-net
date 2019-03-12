@@ -51,6 +51,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -69,6 +70,7 @@ namespace Amazon.DirectConnect.Model
         /// Information about the public virtual interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NewPublicVirtualInterface NewPublicVirtualInterface
         {
             get { return this._newPublicVirtualInterface; }

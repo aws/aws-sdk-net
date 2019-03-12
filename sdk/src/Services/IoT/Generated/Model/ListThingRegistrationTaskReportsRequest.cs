@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return per request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The type of task report.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportType ReportType
         {
             get { return this._reportType; }
@@ -98,6 +100,7 @@ namespace Amazon.IoT.Model
         /// The id of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

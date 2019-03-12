@@ -51,6 +51,7 @@ namespace Amazon.Comprehend.Model
         /// trained.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }

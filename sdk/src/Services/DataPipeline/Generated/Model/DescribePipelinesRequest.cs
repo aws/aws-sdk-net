@@ -53,6 +53,7 @@ namespace Amazon.DataPipeline.Model
         /// single call. To obtain pipeline IDs, call <a>ListPipelines</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PipelineIds
         {
             get { return this._pipelineIds; }

@@ -48,6 +48,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The identifier (ID) of the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupId
         {
             get { return this._backupId; }

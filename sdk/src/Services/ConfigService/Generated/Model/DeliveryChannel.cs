@@ -68,6 +68,7 @@ namespace Amazon.ConfigService.Model
         /// has the desired name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -43,6 +43,7 @@ namespace Amazon.SQS.Model
         /// An error code representing why the action failed on this entry.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Code
         {
             get { return this._code; }
@@ -61,6 +62,7 @@ namespace Amazon.SQS.Model
         /// The <code>Id</code> of an entry in a batch request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -97,6 +99,7 @@ namespace Amazon.SQS.Model
         /// Specifies whether the error happened due to the producer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool SenderFault
         {
             get { return this._senderFault.GetValueOrDefault(); }

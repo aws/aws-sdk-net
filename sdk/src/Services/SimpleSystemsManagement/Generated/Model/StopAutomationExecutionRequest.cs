@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The execution ID of the Automation to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }

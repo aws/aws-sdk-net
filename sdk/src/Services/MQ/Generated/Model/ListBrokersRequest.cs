@@ -40,6 +40,7 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property MaxResults. The maximum number of brokers that Amazon MQ
         /// can return per page (20 by default). This value must be an integer from 5 to 100.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

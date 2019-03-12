@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The version of a custom document that you want to set as the default version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DocumentVersion
         {
             get { return this._documentVersion; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of a custom document that you want to set as the default version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

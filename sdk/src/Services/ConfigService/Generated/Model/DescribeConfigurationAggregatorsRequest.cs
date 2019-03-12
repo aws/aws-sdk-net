@@ -45,6 +45,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration aggregators.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> ConfigurationAggregatorNames
         {
             get { return this._configurationAggregatorNames; }
@@ -64,6 +65,7 @@ namespace Amazon.ConfigService.Model
         /// is maximum. If you specify 0, AWS Config uses the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

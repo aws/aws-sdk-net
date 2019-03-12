@@ -49,6 +49,7 @@ namespace Amazon.MTurk.Model
         /// The unique identifier for the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ActionId
         {
             get { return this._actionId; }
@@ -160,6 +161,7 @@ namespace Amazon.MTurk.Model
         ///  The specific HITId or AssignmentID targeted by the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string TargetId
         {
             get { return this._targetId; }

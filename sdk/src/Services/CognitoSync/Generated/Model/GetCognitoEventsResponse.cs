@@ -40,6 +40,7 @@ namespace Amazon.CognitoSync.Model
         /// The Cognito Events returned from the GetCognitoEvents request
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1)]
         public Dictionary<string, string> Events
         {
             get { return this._events; }

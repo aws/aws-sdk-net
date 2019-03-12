@@ -67,6 +67,7 @@ namespace Amazon.AWSSupport.Model
         /// summary data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Metadata
         {
             get { return this._metadata; }
@@ -103,6 +104,7 @@ namespace Amazon.AWSSupport.Model
         /// The unique identifier for the identified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -121,6 +123,7 @@ namespace Amazon.AWSSupport.Model
         /// The status code for the resource identified in the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

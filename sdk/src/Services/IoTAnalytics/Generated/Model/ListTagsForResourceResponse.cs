@@ -40,6 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The tags (metadata) which you have assigned to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

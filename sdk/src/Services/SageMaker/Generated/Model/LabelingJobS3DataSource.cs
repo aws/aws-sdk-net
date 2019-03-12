@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location of the manifest file that describes the input data objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string ManifestS3Uri
         {
             get { return this._manifestS3Uri; }

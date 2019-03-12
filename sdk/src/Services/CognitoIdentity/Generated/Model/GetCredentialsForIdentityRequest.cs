@@ -54,6 +54,7 @@ namespace Amazon.CognitoIdentity.Model
         /// customization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CustomRoleArn
         {
             get { return this._customRoleArn; }
@@ -72,6 +73,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -103,6 +105,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Identity Providers</a> section of the Amazon Cognito Developer Guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, string> Logins
         {
             get { return this._logins; }

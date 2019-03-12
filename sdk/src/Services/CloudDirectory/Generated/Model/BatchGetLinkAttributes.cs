@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// A list of attribute names whose values will be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AttributeNames
         {
             get { return this._attributeNames; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// Allows a typed link specifier to be accepted as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedLinkSpecifier TypedLinkSpecifier
         {
             get { return this._typedLinkSpecifier; }

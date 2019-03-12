@@ -73,6 +73,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// A summary description of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ApplicationDescription
         {
             get { return this._applicationDescription; }
@@ -91,6 +92,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of your application (for example, <code>sample-app</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -128,6 +130,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuntimeEnvironment RuntimeEnvironment
         {
             get { return this._runtimeEnvironment; }
@@ -147,6 +150,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Firehose delivery streams, Amazon S3 objects, and other external resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ServiceExecutionRole
         {
             get { return this._serviceExecutionRole; }

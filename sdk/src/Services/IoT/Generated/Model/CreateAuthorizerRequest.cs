@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the authorizer's Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizerFunctionArn
         {
             get { return this._authorizerFunctionArn; }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// The authorizer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AuthorizerName
         {
             get { return this._authorizerName; }
@@ -99,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The name of the token key used to extract the token from the HTTP headers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TokenKeyName
         {
             get { return this._tokenKeyName; }
@@ -118,6 +121,7 @@ namespace Amazon.IoT.Model
         /// service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> TokenSigningPublicKeys
         {
             get { return this._tokenSigningPublicKeys; }

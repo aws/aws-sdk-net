@@ -54,6 +54,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -78,6 +79,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }

@@ -40,6 +40,7 @@ namespace Amazon.ConfigService.Model
         /// Returns a remediation configuration object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<RemediationConfiguration> RemediationConfigurations
         {
             get { return this._remediationConfigurations; }

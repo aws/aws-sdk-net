@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// The unique message identifier returned from the <code>SendEmail</code> action. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageId
         {
             get { return this._messageId; }

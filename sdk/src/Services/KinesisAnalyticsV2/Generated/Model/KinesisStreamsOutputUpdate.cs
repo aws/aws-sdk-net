@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the output.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARNUpdate
         {
             get { return this._resourceARNUpdate; }

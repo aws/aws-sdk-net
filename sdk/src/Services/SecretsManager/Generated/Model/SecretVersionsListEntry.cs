@@ -80,6 +80,7 @@ namespace Amazon.SecretsManager.Model
         /// The unique version identifier of this version of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string VersionId
         {
             get { return this._versionId; }
@@ -99,6 +100,7 @@ namespace Amazon.SecretsManager.Model
         /// secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<string> VersionStages
         {
             get { return this._versionStages; }

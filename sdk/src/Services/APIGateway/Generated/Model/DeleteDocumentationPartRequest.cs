@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the to-be-deleted documentation part.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DocumentationPartId
         {
             get { return this._documentationPartId; }
@@ -60,6 +61,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

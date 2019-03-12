@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the enrollment invitation to revoke. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string EnrollmentId
         {
             get { return this._enrollmentId; }

@@ -47,6 +47,7 @@ namespace Amazon.WorkMail.Model
         /// The alias for an organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=62)]
         public string Alias
         {
             get { return this._alias; }
@@ -84,6 +85,7 @@ namespace Amazon.WorkMail.Model
         /// The default mail domain associated with the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DefaultMailDomain
         {
             get { return this._defaultMailDomain; }
@@ -102,6 +104,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the directory associated with an Amazon WorkMail organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -120,6 +123,7 @@ namespace Amazon.WorkMail.Model
         /// The type of directory associated with the Amazon WorkMail organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DirectoryType
         {
             get { return this._directoryType; }
@@ -139,6 +143,7 @@ namespace Amazon.WorkMail.Model
         /// regards to the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }
@@ -175,6 +180,7 @@ namespace Amazon.WorkMail.Model
         /// The state of an organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string State
         {
             get { return this._state; }

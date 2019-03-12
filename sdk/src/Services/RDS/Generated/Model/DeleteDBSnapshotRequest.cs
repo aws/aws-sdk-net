@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         /// state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }

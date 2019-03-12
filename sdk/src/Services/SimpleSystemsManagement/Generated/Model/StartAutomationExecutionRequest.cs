@@ -52,6 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the UUID format, and can't be reused.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -70,6 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Automation document to use for this execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DocumentName
         {
             get { return this._documentName; }
@@ -107,6 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// a number, such as 10, or a percentage, such as 10%. The default value is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -139,6 +142,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 1 so the executions proceed one at a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -177,6 +181,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Automation document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -199,6 +204,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Manager User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
         {
             get { return this._targetLocations; }
@@ -218,6 +224,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// cannot be specified together.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
         {
             get { return this._targetMaps; }
@@ -237,6 +244,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Required if you specify targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=30)]
         public string TargetParameterName
         {
             get { return this._targetParameterName; }
@@ -255,6 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A key-value mapping to target resources. Required if you specify TargetParameterName.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

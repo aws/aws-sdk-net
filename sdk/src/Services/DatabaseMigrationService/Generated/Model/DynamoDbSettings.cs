@@ -40,6 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  The Amazon Resource Name (ARN) used by the service access IAM role. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceAccessRoleArn
         {
             get { return this._serviceAccessRoleArn; }

@@ -42,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }

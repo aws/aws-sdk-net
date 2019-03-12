@@ -70,6 +70,7 @@ namespace Amazon.Route53.Model
         /// The ID of the traffic policy instance that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -89,6 +90,7 @@ namespace Amazon.Route53.Model
         /// sets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public long TTL
         {
             get { return this._ttl.GetValueOrDefault(); }
@@ -108,6 +110,7 @@ namespace Amazon.Route53.Model
         /// record sets for the specified traffic policy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string TrafficPolicyId
         {
             get { return this._trafficPolicyId; }
@@ -127,6 +130,7 @@ namespace Amazon.Route53.Model
         /// record sets for the specified traffic policy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int TrafficPolicyVersion
         {
             get { return this._trafficPolicyVersion.GetValueOrDefault(); }

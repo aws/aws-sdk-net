@@ -44,6 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// The descriptive name for the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AlarmName
         {
             get { return this._alarmName; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// Data about the alarm, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4095)]
         public string HistoryData
         {
             get { return this._historyData; }
@@ -98,6 +100,7 @@ namespace Amazon.CloudWatch.Model
         /// A summary of the alarm history, in text format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string HistorySummary
         {
             get { return this._historySummary; }

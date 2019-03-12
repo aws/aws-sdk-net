@@ -45,6 +45,7 @@ namespace Amazon.WAFRegional.Model
         /// A null value and not currently used. Do not include this in your request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextMarker
         {
             get { return this._nextMarker; }
@@ -65,6 +66,7 @@ namespace Amazon.WAFRegional.Model
         /// and by <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

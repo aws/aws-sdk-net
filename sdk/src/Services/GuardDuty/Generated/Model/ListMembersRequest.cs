@@ -42,6 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
         /// account whose members you want to list.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -59,6 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// maximum number of items you want in the response. The default value is 1. The maximum
         /// value is 50.
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

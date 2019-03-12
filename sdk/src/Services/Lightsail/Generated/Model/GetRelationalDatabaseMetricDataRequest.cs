@@ -65,6 +65,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the metric data to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RelationalDatabaseMetricName MetricName
         {
             get { return this._metricName; }
@@ -101,6 +103,7 @@ namespace Amazon.Lightsail.Model
         /// The granularity, in seconds, of the returned data points.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=86400)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database from which to get metric data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }
@@ -155,6 +159,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -173,6 +178,7 @@ namespace Amazon.Lightsail.Model
         /// The array of statistics for your metric data request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Statistics
         {
             get { return this._statistics; }
@@ -191,6 +197,7 @@ namespace Amazon.Lightsail.Model
         /// The unit for the metric data request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricUnit Unit
         {
             get { return this._unit; }

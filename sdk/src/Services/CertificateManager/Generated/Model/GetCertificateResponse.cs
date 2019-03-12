@@ -41,6 +41,7 @@ namespace Amazon.CertificateManager.Model
         /// String that contains the ACM certificate represented by the ARN specified at input.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -60,6 +61,7 @@ namespace Amazon.CertificateManager.Model
         /// authority (CA).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }

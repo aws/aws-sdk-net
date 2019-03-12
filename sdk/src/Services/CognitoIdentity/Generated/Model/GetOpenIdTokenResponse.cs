@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentity.Model
         /// not match the one passed on input.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }

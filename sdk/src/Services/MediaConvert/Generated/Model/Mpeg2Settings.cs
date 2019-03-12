@@ -85,6 +85,7 @@ namespace Amazon.MediaConvert.Model
         /// and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest
         /// multiple of 1000.
         /// </summary>
+        [AWSProperty(Min=1000, Max=288000000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -179,6 +180,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FramerateDenominator. Frame rate denominator.
         /// </summary>
+        [AWSProperty(Min=1, Max=1001)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -195,6 +197,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FramerateNumerator. Frame rate numerator - frame rate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
+        [AWSProperty(Min=24, Max=60000)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -213,6 +216,7 @@ namespace Amazon.MediaConvert.Model
         /// will receive an IDR frame as quickly as possible. Setting this value to 0 will break
         /// output segmenting.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int GopClosedCadence
         {
             get { return this._gopClosedCadence.GetValueOrDefault(); }
@@ -260,6 +264,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property HrdBufferInitialFillPercentage. Percentage of the buffer
         /// that should initially be filled (HRD buffer model).
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int HrdBufferInitialFillPercentage
         {
             get { return this._hrdBufferInitialFillPercentage.GetValueOrDefault(); }
@@ -276,6 +281,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property HrdBufferSize. Size of buffer (HRD buffer model) in bits.
         /// For example, enter five megabits as 5000000.
         /// </summary>
+        [AWSProperty(Min=0, Max=47185920)]
         public int HrdBufferSize
         {
             get { return this._hrdBufferSize.GetValueOrDefault(); }
@@ -322,6 +328,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second. For example,
         /// enter five megabits per second as 5000000.
         /// </summary>
+        [AWSProperty(Min=1000, Max=300000000)]
         public int MaxBitrate
         {
             get { return this._maxBitrate.GetValueOrDefault(); }
@@ -343,6 +350,7 @@ namespace Amazon.MediaConvert.Model
         /// when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval
         /// - 1
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public int MinIInterval
         {
             get { return this._minIInterval.GetValueOrDefault(); }
@@ -359,6 +367,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Number of B-frames
         /// between reference frames.
         /// </summary>
+        [AWSProperty(Min=0, Max=7)]
         public int NumberBFramesBetweenReferenceFrames
         {
             get { return this._numberBFramesBetweenReferenceFrames.GetValueOrDefault(); }
@@ -389,6 +398,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int ParDenominator
         {
             get { return this._parDenominator.GetValueOrDefault(); }
@@ -404,6 +414,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int ParNumerator
         {
             get { return this._parNumerator.GetValueOrDefault(); }
@@ -480,6 +491,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Softness. Softness. Selects quantizer matrix, larger values
         /// reduce high-frequency content in the encoded image.
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public int Softness
         {
             get { return this._softness.GetValueOrDefault(); }

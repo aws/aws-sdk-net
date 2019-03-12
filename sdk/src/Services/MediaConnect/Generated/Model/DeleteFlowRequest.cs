@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow that you want to delete.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }

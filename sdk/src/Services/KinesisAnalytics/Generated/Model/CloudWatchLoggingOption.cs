@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the CloudWatch log to receive application messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string LogStreamARN
         {
             get { return this._logStreamARN; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// policy action enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

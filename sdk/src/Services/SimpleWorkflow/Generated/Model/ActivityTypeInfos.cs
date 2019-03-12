@@ -48,6 +48,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -66,6 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// List of activity type information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActivityTypeInfo> TypeInfos
         {
             get { return this._typeInfos; }

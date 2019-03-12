@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// omit this field (and PID field); there is no way to extract a specific language with
         /// pass-through captions.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }

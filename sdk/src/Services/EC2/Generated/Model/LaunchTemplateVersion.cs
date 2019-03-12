@@ -137,6 +137,7 @@ namespace Amazon.EC2.Model
         /// The name of the launch template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string LaunchTemplateName
         {
             get { return this._launchTemplateName; }
@@ -155,6 +156,7 @@ namespace Amazon.EC2.Model
         /// The description for the version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string VersionDescription
         {
             get { return this._versionDescription; }

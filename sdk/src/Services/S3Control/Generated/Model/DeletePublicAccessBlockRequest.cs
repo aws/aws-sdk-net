@@ -42,6 +42,7 @@ namespace Amazon.S3Control.Model
         /// you want to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }

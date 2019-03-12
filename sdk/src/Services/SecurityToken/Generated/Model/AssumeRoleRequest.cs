@@ -191,6 +191,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=900, Max=43200)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -223,6 +224,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=1224)]
         public string ExternalId
         {
             get { return this._externalId; }
@@ -268,6 +270,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Policy
         {
             get { return this._policy; }
@@ -286,6 +289,7 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) of the role to assume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -319,6 +323,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string RoleSessionName
         {
             get { return this._roleSessionName; }
@@ -347,6 +352,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -373,6 +379,7 @@ namespace Amazon.SecurityToken.Model
         /// six numeric digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=6)]
         public string TokenCode
         {
             get { return this._tokenCode; }

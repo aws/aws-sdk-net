@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         /// The name of the RDS event notification subscription you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

@@ -106,6 +106,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the default is 35 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=300)]
         public int HealthCheckIntervalSeconds
         {
             get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
@@ -125,6 +126,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// health checks. The default is /.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string HealthCheckPath
         {
             get { return this._healthCheckPath; }
@@ -188,6 +190,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=120)]
         public int HealthCheckTimeoutSeconds
         {
             get { return this._healthCheckTimeoutSeconds.GetValueOrDefault(); }
@@ -208,6 +211,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Balancers, the default is 3.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10)]
         public int HealthyThresholdCount
         {
             get { return this._healthyThresholdCount.GetValueOrDefault(); }
@@ -251,6 +255,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// a hyphen.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -271,6 +276,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// parameter does not apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -348,6 +354,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// this value must be the same as the healthy threshold count.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10)]
         public int UnhealthyThresholdCount
         {
             get { return this._unhealthyThresholdCount.GetValueOrDefault(); }

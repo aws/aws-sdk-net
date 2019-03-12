@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// Information about the exclusions included in the preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<ExclusionPreview> ExclusionPreviews
         {
             get { return this._exclusionPreviews; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// is set to null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// Specifies the status of the request to generate an exclusions preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PreviewStatus PreviewStatus
         {
             get { return this._previewStatus; }

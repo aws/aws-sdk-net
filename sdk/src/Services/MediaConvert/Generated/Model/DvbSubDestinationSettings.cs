@@ -85,6 +85,7 @@ namespace Amazon.MediaConvert.Model
         /// rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent
         /// to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int BackgroundOpacity
         {
             get { return this._backgroundOpacity.GetValueOrDefault(); }
@@ -116,6 +117,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FontOpacity. Specifies the opacity of the burned-in captions.
         /// 255 is opaque; 0 is transparent.All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int FontOpacity
         {
             get { return this._fontOpacity.GetValueOrDefault(); }
@@ -132,6 +134,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FontResolution. Font resolution in DPI (dots per inch);
         /// default is 96 dpi.All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=96, Max=600)]
         public int FontResolution
         {
             get { return this._fontResolution.GetValueOrDefault(); }
@@ -167,6 +170,7 @@ namespace Amazon.MediaConvert.Model
         /// in points. Set to 0 for automatic font size selection. All burn-in and DVB-Sub font
         /// settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=96)]
         public int FontSize
         {
             get { return this._fontSize.GetValueOrDefault(); }
@@ -200,6 +204,7 @@ namespace Amazon.MediaConvert.Model
         /// These source settings are already pre-defined by the caption stream. All burn-in and
         /// DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public int OutlineSize
         {
             get { return this._outlineSize.GetValueOrDefault(); }
@@ -232,6 +237,7 @@ namespace Amazon.MediaConvert.Model
         /// is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting
         /// it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int ShadowOpacity
         {
             get { return this._shadowOpacity.GetValueOrDefault(); }
@@ -249,6 +255,7 @@ namespace Amazon.MediaConvert.Model
         /// relative to the captions in pixels. A value of -2 would result in a shadow offset
         /// 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int ShadowXOffset
         {
             get { return this._shadowXOffset.GetValueOrDefault(); }
@@ -266,6 +273,7 @@ namespace Amazon.MediaConvert.Model
         /// relative to the captions in pixels. A value of -2 would result in a shadow offset
         /// 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int ShadowYOffset
         {
             get { return this._shadowYOffset.GetValueOrDefault(); }
@@ -302,6 +310,7 @@ namespace Amazon.MediaConvert.Model
         /// These source settings are already pre-defined by the caption stream. All burn-in and
         /// DVB-Sub font settings must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int XPosition
         {
             get { return this._xPosition.GetValueOrDefault(); }
@@ -323,6 +332,7 @@ namespace Amazon.MediaConvert.Model
         /// are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
         /// must match.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int YPosition
         {
             get { return this._yPosition.GetValueOrDefault(); }

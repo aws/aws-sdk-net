@@ -65,6 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -101,6 +103,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -152,6 +155,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The number of bytes stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long StoredBytes
         {
             get { return this._storedBytes.GetValueOrDefault(); }

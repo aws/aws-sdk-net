@@ -51,6 +51,7 @@ namespace Amazon.Polly.Model
         /// Content of the PLS lexicon as string data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Content
         {
             get { return this._content; }
@@ -71,6 +72,7 @@ namespace Amazon.Polly.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

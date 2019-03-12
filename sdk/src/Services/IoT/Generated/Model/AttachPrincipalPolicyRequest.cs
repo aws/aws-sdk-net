@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         /// The policy name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -66,6 +67,7 @@ namespace Amazon.IoT.Model
         /// operation) or an Amazon Cognito ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Principal
         {
             get { return this._principal; }

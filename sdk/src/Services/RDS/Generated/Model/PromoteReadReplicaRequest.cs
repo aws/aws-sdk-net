@@ -102,6 +102,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>mydbinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }

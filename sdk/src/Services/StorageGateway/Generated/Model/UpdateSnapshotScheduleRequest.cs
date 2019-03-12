@@ -58,6 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional description of the snapshot that overwrites the existing description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -76,6 +77,7 @@ namespace Amazon.StorageGateway.Model
         /// Frequency of snapshots. Specify the number of hours between snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=24)]
         public int RecurrenceInHours
         {
             get { return this._recurrenceInHours.GetValueOrDefault(); }
@@ -96,6 +98,7 @@ namespace Amazon.StorageGateway.Model
         /// the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=23)]
         public int StartAt
         {
             get { return this._startAt.GetValueOrDefault(); }
@@ -115,6 +118,7 @@ namespace Amazon.StorageGateway.Model
         /// to return a list of gateway volumes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

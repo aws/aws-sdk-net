@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique stack ID that you want to associate a policy with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// parameter, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string StackPolicyBody
         {
             get { return this._stackPolicyBody; }
@@ -85,6 +87,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }

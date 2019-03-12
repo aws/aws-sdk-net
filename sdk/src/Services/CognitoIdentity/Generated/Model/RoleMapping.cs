@@ -93,6 +93,7 @@ namespace Amazon.CognitoIdentity.Model
         /// attempt to match claims from the token to map to a role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RoleMappingType Type
         {
             get { return this._type; }

@@ -53,6 +53,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduleLambdaFunctionFailedCause Cause
         {
             get { return this._cause; }
@@ -73,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// to trace back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -91,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -109,6 +112,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

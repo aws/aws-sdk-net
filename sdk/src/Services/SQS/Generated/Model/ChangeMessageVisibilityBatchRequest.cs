@@ -83,6 +83,7 @@ namespace Amazon.SQS.Model
         /// changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ChangeMessageVisibilityBatchRequestEntry> Entries
         {
             get { return this._entries; }
@@ -105,6 +106,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

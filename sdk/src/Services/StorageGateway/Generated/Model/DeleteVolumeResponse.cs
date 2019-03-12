@@ -41,6 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// ARN you provided in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

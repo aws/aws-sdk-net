@@ -60,6 +60,7 @@ namespace Amazon.Glue.Model
         /// representation of an integer. Each version is incremented by 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string VersionId
         {
             get { return this._versionId; }

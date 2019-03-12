@@ -62,6 +62,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -99,6 +100,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -117,6 +119,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

@@ -66,6 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The key attribute(s) of the stream's DynamoDB table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
@@ -96,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// end of the result set is when <code>LastEvaluatedShardId</code> is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=28, Max=65)]
         public string LastEvaluatedShardId
         {
             get { return this._lastEvaluatedShardId; }
@@ -132,6 +134,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) for the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string StreamArn
         {
             get { return this._streamArn; }
@@ -261,6 +264,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The DynamoDB table with which the stream is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

@@ -126,6 +126,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SecretId
         {
             get { return this._secretId; }
@@ -154,6 +155,7 @@ namespace Amazon.SecretsManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

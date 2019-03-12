@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>Deployment</a> resource to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeploymentId
         {
             get { return this._deploymentId; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

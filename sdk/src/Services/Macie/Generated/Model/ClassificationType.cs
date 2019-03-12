@@ -43,6 +43,7 @@ namespace Amazon.Macie.Model
         /// associated with Amazon Macie. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3ContinuousClassificationType Continuous
         {
             get { return this._continuous; }
@@ -62,6 +63,7 @@ namespace Amazon.Macie.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3OneTimeClassificationType OneTime
         {
             get { return this._oneTime; }

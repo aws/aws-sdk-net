@@ -41,6 +41,7 @@ namespace Amazon.WAF.Model
         /// Specifies whether to insert or delete a country with <a>UpdateGeoMatchSet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -59,6 +60,7 @@ namespace Amazon.WAF.Model
         /// The country from which web requests originate that you want AWS WAF to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoMatchConstraint GeoMatchConstraint
         {
             get { return this._geoMatchConstraint; }

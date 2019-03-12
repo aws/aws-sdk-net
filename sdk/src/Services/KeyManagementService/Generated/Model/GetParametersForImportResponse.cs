@@ -43,6 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// The import token to send in a subsequent <a>ImportKeyMaterial</a> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream ImportToken
         {
             get { return this._importToken; }
@@ -62,6 +63,7 @@ namespace Amazon.KeyManagementService.Model
         /// This is the same CMK specified in the <code>GetParametersForImport</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -100,6 +102,7 @@ namespace Amazon.KeyManagementService.Model
         /// The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public MemoryStream PublicKey
         {
             get { return this._publicKey; }

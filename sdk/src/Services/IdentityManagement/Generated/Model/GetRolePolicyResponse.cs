@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// The policy document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=131072)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }
@@ -60,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -78,6 +80,7 @@ namespace Amazon.IdentityManagement.Model
         /// The role the policy is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

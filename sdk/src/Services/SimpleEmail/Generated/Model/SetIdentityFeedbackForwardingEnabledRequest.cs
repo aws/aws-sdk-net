@@ -65,6 +65,7 @@ namespace Amazon.SimpleEmail.Model
         /// are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ForwardingEnabled
         {
             get { return this._forwardingEnabled.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.SimpleEmail.Model
         /// <code>user@example.com</code>, <code>example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }

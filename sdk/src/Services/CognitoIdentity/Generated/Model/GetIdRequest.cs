@@ -49,6 +49,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A standard AWS account ID (9+ digits).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=15)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -67,6 +68,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -113,6 +115,7 @@ namespace Amazon.CognitoIdentity.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, string> Logins
         {
             get { return this._logins; }

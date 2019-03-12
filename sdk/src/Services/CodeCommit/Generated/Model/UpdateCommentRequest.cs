@@ -43,6 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// or <a>GetCommentsForPullRequest</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CommentId
         {
             get { return this._commentId; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// The updated content with which you want to replace the existing content of the comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Content
         {
             get { return this._content; }

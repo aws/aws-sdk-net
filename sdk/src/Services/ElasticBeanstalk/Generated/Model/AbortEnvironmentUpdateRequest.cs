@@ -62,6 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }

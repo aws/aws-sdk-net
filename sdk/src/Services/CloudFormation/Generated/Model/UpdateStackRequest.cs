@@ -223,6 +223,7 @@ namespace Amazon.CloudFormation.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -242,6 +243,7 @@ namespace Amazon.CloudFormation.Model
         /// associates with the stack. Specify an empty list to remove all notification topics.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationARNs
         {
             get { return this._notificationARNs; }
@@ -319,6 +321,7 @@ namespace Amazon.CloudFormation.Model
         /// session that is generated from your user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -356,6 +359,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique stack ID of the stack to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }
@@ -381,6 +385,7 @@ namespace Amazon.CloudFormation.Model
         /// current policy that is associated with the stack is unchanged.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string StackPolicyBody
         {
             get { return this._stackPolicyBody; }
@@ -407,6 +412,7 @@ namespace Amazon.CloudFormation.Model
         /// is associated with the stack will be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string StackPolicyDuringUpdateBody
         {
             get { return this._stackPolicyDuringUpdateBody; }
@@ -434,6 +440,7 @@ namespace Amazon.CloudFormation.Model
         /// is associated with the stack will be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string StackPolicyDuringUpdateURL
         {
             get { return this._stackPolicyDuringUpdateURL; }
@@ -461,6 +468,7 @@ namespace Amazon.CloudFormation.Model
         /// current policy that is associated with the stack is unchanged.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }
@@ -485,6 +493,7 @@ namespace Amazon.CloudFormation.Model
         /// tags. If you specify an empty value, AWS CloudFormation removes all associated tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -510,6 +519,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -535,6 +545,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

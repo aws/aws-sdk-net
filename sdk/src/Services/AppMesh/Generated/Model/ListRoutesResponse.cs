@@ -63,6 +63,7 @@ namespace Amazon.AppMesh.Model
         /// The list of existing routes for the specified service mesh and virtual router.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RouteRef> Routes
         {
             get { return this._routes; }

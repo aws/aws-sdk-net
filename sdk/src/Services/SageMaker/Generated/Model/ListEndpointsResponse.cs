@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         ///  An array or endpoint objects. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EndpointSummary> Endpoints
         {
             get { return this._endpoints; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// next set of training jobs, use it in the subsequent request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

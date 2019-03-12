@@ -78,6 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Data
         {
             get { return this._data; }

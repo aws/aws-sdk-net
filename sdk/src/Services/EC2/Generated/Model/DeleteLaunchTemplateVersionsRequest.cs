@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// launch template name in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string LaunchTemplateName
         {
             get { return this._launchTemplateName; }
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// The version numbers of one or more launch template versions to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Versions
         {
             get { return this._versions; }

@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The association ID for which you want to view all versions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

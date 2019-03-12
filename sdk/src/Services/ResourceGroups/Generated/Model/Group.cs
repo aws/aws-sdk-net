@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// The description of the resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -60,6 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of a resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupArn
         {
             get { return this._groupArn; }
@@ -78,6 +80,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of a resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

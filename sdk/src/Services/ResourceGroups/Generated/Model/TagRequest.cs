@@ -43,6 +43,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of the resource to which to add tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,6 +64,7 @@ namespace Amazon.ResourceGroups.Model
         /// can have a maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

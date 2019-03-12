@@ -46,6 +46,7 @@ namespace Amazon.ConfigService.Model
         /// Supplementary information about how the evaluation determined the compliance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Annotation
         {
             get { return this._annotation; }

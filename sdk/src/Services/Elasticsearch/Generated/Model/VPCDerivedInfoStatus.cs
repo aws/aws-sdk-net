@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the VPC options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VPCDerivedInfo Options
         {
             get { return this._options; }
@@ -59,6 +60,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the status of the VPC options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

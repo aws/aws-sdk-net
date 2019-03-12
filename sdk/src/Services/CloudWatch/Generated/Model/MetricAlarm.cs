@@ -84,6 +84,7 @@ namespace Amazon.CloudWatch.Model
         /// from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> AlarmActions
         {
             get { return this._alarmActions; }
@@ -102,6 +103,7 @@ namespace Amazon.CloudWatch.Model
         /// The Amazon Resource Name (ARN) of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string AlarmArn
         {
             get { return this._alarmArn; }
@@ -138,6 +140,7 @@ namespace Amazon.CloudWatch.Model
         /// The description of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AlarmDescription
         {
             get { return this._alarmDescription; }
@@ -156,6 +159,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AlarmName
         {
             get { return this._alarmName; }
@@ -193,6 +197,7 @@ namespace Amazon.CloudWatch.Model
         /// The number of datapoints that must be breaching to trigger the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int DatapointsToAlarm
         {
             get { return this._datapointsToAlarm.GetValueOrDefault(); }
@@ -211,6 +216,7 @@ namespace Amazon.CloudWatch.Model
         /// The dimensions for the metric associated with the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
@@ -232,6 +238,7 @@ namespace Amazon.CloudWatch.Model
         /// and possibly changes state no matter how many data points are available.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string EvaluateLowSampleCountPercentile
         {
             get { return this._evaluateLowSampleCountPercentile; }
@@ -250,6 +257,7 @@ namespace Amazon.CloudWatch.Model
         /// The number of periods over which data is compared to the specified threshold.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int EvaluationPeriods
         {
             get { return this._evaluationPeriods.GetValueOrDefault(); }
@@ -288,6 +296,7 @@ namespace Amazon.CloudWatch.Model
         /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> InsufficientDataActions
         {
             get { return this._insufficientDataActions; }
@@ -306,6 +315,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the metric associated with the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -339,6 +349,7 @@ namespace Amazon.CloudWatch.Model
         /// The namespace of the metric associated with the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -358,6 +369,7 @@ namespace Amazon.CloudWatch.Model
         /// any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> OKActions
         {
             get { return this._okActions; }
@@ -376,6 +388,7 @@ namespace Amazon.CloudWatch.Model
         /// The period, in seconds, over which the statistic is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -394,6 +407,7 @@ namespace Amazon.CloudWatch.Model
         /// An explanation for the alarm state, in text format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1023)]
         public string StateReason
         {
             get { return this._stateReason; }
@@ -412,6 +426,7 @@ namespace Amazon.CloudWatch.Model
         /// An explanation for the alarm state, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4000)]
         public string StateReasonData
         {
             get { return this._stateReasonData; }
@@ -504,6 +519,7 @@ namespace Amazon.CloudWatch.Model
         /// the default behavior of <code>missing</code> is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string TreatMissingData
         {
             get { return this._treatMissingData; }

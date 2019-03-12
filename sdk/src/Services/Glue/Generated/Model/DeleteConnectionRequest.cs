@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -61,6 +62,7 @@ namespace Amazon.Glue.Model
         /// The name of the connection to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ConnectionName
         {
             get { return this._connectionName; }

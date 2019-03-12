@@ -50,6 +50,7 @@ namespace Amazon.FSx.Model
         /// The ID of the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=128)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -68,6 +69,7 @@ namespace Amazon.FSx.Model
         /// The time when a particular backup was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -105,6 +107,7 @@ namespace Amazon.FSx.Model
         /// even if the file system is deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FileSystem FileSystem
         {
             get { return this._fileSystem; }
@@ -124,6 +127,7 @@ namespace Amazon.FSx.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -142,6 +146,7 @@ namespace Amazon.FSx.Model
         /// The lifecycle status of the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupLifecycle Lifecycle
         {
             get { return this._lifecycle; }
@@ -157,6 +162,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int ProgressPercent
         {
             get { return this._progressPercent.GetValueOrDefault(); }
@@ -175,6 +181,7 @@ namespace Amazon.FSx.Model
         /// The Amazon Resource Name (ARN) for the backup resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=512)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -193,6 +200,7 @@ namespace Amazon.FSx.Model
         /// Tags associated with a particular file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -211,6 +219,7 @@ namespace Amazon.FSx.Model
         /// The type of the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupType Type
         {
             get { return this._type; }

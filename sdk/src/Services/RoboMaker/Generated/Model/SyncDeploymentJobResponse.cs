@@ -47,6 +47,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the synchronization request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -83,6 +84,7 @@ namespace Amazon.RoboMaker.Model
         /// Information about the deployment application configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<DeploymentApplicationConfig> DeploymentApplicationConfigs
         {
             get { return this._deploymentApplicationConfigs; }
@@ -212,6 +214,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Fleet
         {
             get { return this._fleet; }

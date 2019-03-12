@@ -69,6 +69,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> ResourceARNList
         {
             get { return this._resourceARNList; }
@@ -88,6 +89,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// and a value that you define.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

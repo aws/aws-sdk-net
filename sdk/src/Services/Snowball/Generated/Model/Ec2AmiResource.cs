@@ -43,6 +43,7 @@ namespace Amazon.Snowball.Model
         /// The ID of the AMI in Amazon EC2.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=21)]
         public string AmiId
         {
             get { return this._amiId; }
@@ -61,6 +62,7 @@ namespace Amazon.Snowball.Model
         /// The ID of the AMI on the supported device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string SnowballAmiId
         {
             get { return this._snowballAmiId; }

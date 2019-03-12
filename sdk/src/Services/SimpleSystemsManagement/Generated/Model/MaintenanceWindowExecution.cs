@@ -99,6 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The details explaining the Status. Only available for certain status values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=250)]
         public string StatusDetails
         {
             get { return this._statusDetails; }
@@ -117,6 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }
@@ -135,6 +137,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

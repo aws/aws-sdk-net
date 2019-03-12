@@ -138,6 +138,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The S3 key where the report is delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }
@@ -174,6 +175,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name identifier of the schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ScheduleName
         {
             get { return this._scheduleName; }

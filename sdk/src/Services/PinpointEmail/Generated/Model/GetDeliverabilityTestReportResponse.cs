@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// An object that contains the results of the predictive inbox placement test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliverabilityTestReport DeliverabilityTestReport
         {
             get { return this._deliverabilityTestReport; }
@@ -62,6 +63,7 @@ namespace Amazon.PinpointEmail.Model
         /// including Gmail, Hotmail, Yahoo, AOL, and others.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IspPlacement> IspPlacements
         {
             get { return this._ispPlacements; }
@@ -101,6 +103,7 @@ namespace Amazon.PinpointEmail.Model
         /// recipients' spam folders, and how many weren't delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PlacementStatistics OverallPlacement
         {
             get { return this._overallPlacement; }

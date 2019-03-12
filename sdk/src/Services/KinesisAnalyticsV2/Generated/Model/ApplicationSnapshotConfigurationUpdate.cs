@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool SnapshotsEnabledUpdate
         {
             get { return this._snapshotsEnabledUpdate.GetValueOrDefault(); }

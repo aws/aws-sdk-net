@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -62,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// The password that you want to set for your SMB Server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=512)]
         public string Password
         {
             get { return this._password; }

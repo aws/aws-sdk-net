@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The category ID for which the skills are being retrieved from the skill store.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long CategoryId
         {
             get { return this._categoryId.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The maximum number of skills returned per paginated calls.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The tokens used for pagination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -40,6 +40,7 @@ namespace Amazon.AppSync.Model
         /// The ARN for the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LambdaFunctionArn
         {
             get { return this._lambdaFunctionArn; }

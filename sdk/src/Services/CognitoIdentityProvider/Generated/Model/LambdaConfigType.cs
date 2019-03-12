@@ -49,6 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Creates an authentication challenge.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CreateAuthChallenge
         {
             get { return this._createAuthChallenge; }
@@ -67,6 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A custom Message AWS Lambda trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CustomMessage
         {
             get { return this._customMessage; }
@@ -85,6 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Defines the authentication challenge.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string DefineAuthChallenge
         {
             get { return this._defineAuthChallenge; }
@@ -103,6 +106,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A post-authentication AWS Lambda trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PostAuthentication
         {
             get { return this._postAuthentication; }
@@ -121,6 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A post-confirmation AWS Lambda trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PostConfirmation
         {
             get { return this._postConfirmation; }
@@ -139,6 +144,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A pre-authentication AWS Lambda trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PreAuthentication
         {
             get { return this._preAuthentication; }
@@ -157,6 +163,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A pre-registration AWS Lambda trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PreSignUp
         {
             get { return this._preSignUp; }
@@ -175,6 +182,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A Lambda trigger that is invoked before token generation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PreTokenGeneration
         {
             get { return this._preTokenGeneration; }
@@ -193,6 +201,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user migration Lambda config type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string UserMigration
         {
             get { return this._userMigration; }
@@ -211,6 +220,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Verifies the authentication challenge response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string VerifyAuthChallengeResponse
         {
             get { return this._verifyAuthChallengeResponse; }

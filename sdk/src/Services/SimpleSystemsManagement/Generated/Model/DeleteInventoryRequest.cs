@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// User-provided idempotency token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -118,6 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// collected data, or the inventory type itself. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

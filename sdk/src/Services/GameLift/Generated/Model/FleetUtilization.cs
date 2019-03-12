@@ -123,6 +123,7 @@ namespace Amazon.GameLift.Model
         /// Number of active game sessions currently being hosted on all instances in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ActiveGameSessionCount
         {
             get { return this._activeGameSessionCount.GetValueOrDefault(); }
@@ -142,6 +143,7 @@ namespace Amazon.GameLift.Model
         /// all instances in the fleet
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ActiveServerProcessCount
         {
             get { return this._activeServerProcessCount.GetValueOrDefault(); }
@@ -160,6 +162,7 @@ namespace Amazon.GameLift.Model
         /// Number of active player sessions currently being hosted on all instances in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CurrentPlayerSessionCount
         {
             get { return this._currentPlayerSessionCount.GetValueOrDefault(); }
@@ -197,6 +200,7 @@ namespace Amazon.GameLift.Model
         /// in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaximumPlayerSessionCount
         {
             get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }

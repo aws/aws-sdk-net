@@ -62,6 +62,7 @@ namespace Amazon.KinesisFirehose.Model
         /// to determine whether there are records that you need to resend.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int FailedPutCount
         {
             get { return this._failedPutCount.GetValueOrDefault(); }
@@ -81,6 +82,7 @@ namespace Amazon.KinesisFirehose.Model
         /// as the index used in the request array.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public List<PutRecordBatchResponseEntry> RequestResponses
         {
             get { return this._requestResponses; }

@@ -41,6 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }
@@ -56,6 +57,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareId.
         /// </summary>
+        [AWSProperty(Min=12, Max=30)]
         public string FileShareId
         {
             get { return this._fileShareId; }
@@ -71,6 +73,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareStatus.
         /// </summary>
+        [AWSProperty(Min=3, Max=50)]
         public string FileShareStatus
         {
             get { return this._fileShareStatus; }
@@ -101,6 +104,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The principal, such as a certificate or other credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Principal
         {
             get { return this._principal; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

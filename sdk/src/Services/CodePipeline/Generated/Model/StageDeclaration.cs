@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// The actions included in a stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActionDeclaration> Actions
         {
             get { return this._actions; }
@@ -78,6 +79,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

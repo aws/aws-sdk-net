@@ -48,6 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// TIMED_OUT, CANCELLING, and CANCELLED.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<MaintenanceWindowFilter> Filters
         {
             get { return this._filters; }
@@ -67,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -104,6 +106,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the specific task in the Maintenance Window task that should be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string TaskId
         {
             get { return this._taskId; }
@@ -122,6 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution the task is part of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }

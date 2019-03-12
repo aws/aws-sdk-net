@@ -111,6 +111,7 @@ namespace Amazon.Backup.Model
         /// &gt;An optional display name for a backup rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleName
         {
             get { return this._ruleName; }
@@ -167,6 +168,7 @@ namespace Amazon.Backup.Model
         /// they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetBackupVaultName
         {
             get { return this._targetBackupVaultName; }

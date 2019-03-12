@@ -42,6 +42,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the QualificationType.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string QualificationTypeId
         {
             get { return this._qualificationTypeId; }

@@ -41,6 +41,7 @@ namespace Amazon.Signer.Model
         /// The encryption algorithm options that are available for an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionAlgorithmOptions EncryptionAlgorithmOptions
         {
             get { return this._encryptionAlgorithmOptions; }
@@ -59,6 +60,7 @@ namespace Amazon.Signer.Model
         /// The hash algorithm options that are available for an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HashAlgorithmOptions HashAlgorithmOptions
         {
             get { return this._hashAlgorithmOptions; }

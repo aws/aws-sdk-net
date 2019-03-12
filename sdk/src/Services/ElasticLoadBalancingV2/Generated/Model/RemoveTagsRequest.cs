@@ -47,6 +47,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ResourceArns
         {
             get { return this._resourceArns; }
@@ -65,6 +66,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The tag keys for the tags to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

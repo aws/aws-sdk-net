@@ -258,6 +258,7 @@ namespace Amazon.RDS.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBSnapshotIdentifier
         {
             get { return this._sourceDBSnapshotIdentifier; }
@@ -315,6 +316,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-db-snapshot</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBSnapshotIdentifier
         {
             get { return this._targetDBSnapshotIdentifier; }

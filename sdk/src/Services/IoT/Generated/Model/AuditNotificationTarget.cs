@@ -60,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the role that grants permission to send notifications to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

@@ -43,6 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the branch to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository that contains the branch to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

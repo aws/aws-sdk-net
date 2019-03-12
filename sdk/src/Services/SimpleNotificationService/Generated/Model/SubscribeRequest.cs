@@ -198,6 +198,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Protocol
         {
             get { return this._protocol; }
@@ -251,6 +252,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic you want to subscribe to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

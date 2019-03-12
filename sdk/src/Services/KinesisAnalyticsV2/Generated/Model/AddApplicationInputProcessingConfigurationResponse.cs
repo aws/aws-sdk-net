@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ApplicationARN
         {
             get { return this._applicationARN; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Provides the current application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999999999)]
         public long ApplicationVersionId
         {
             get { return this._applicationVersionId.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Kinesis Data Analytics assigns to each input configuration that you add to your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string InputId
         {
             get { return this._inputId; }

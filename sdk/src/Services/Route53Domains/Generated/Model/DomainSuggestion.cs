@@ -108,6 +108,7 @@ namespace Amazon.Route53Domains.Model
         /// A suggested domain name.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

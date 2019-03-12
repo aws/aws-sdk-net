@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConferenceProviderArn
         {
             get { return this._conferenceProviderArn; }

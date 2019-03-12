@@ -98,6 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The user-defined snapshot ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

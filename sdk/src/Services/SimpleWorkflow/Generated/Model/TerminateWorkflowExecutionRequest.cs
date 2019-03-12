@@ -142,6 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  Details for terminating the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -160,6 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The domain of the workflow execution to terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -178,6 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  A descriptive reason for terminating the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Reason
         {
             get { return this._reason; }
@@ -196,6 +199,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The runId of the workflow execution to terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -214,6 +218,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflowId of the workflow execution to terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

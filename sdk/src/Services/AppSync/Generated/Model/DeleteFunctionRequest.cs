@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         /// The GraphQL API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -60,6 +61,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionId
         {
             get { return this._functionId; }

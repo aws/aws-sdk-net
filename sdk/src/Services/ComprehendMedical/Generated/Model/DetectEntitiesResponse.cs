@@ -46,6 +46,7 @@ namespace Amazon.ComprehendMedical.Model
         /// also returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Entity> Entities
         {
             get { return this._entities; }
@@ -65,6 +66,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Paginationtoken to fetch the next page of entities.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

@@ -57,6 +57,7 @@ namespace Amazon.SimpleEmail.Model
         /// The message body.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Body Body
         {
             get { return this._body; }
@@ -76,6 +77,7 @@ namespace Amazon.SimpleEmail.Model
         /// recipient's inbox.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Content Subject
         {
             get { return this._subject; }

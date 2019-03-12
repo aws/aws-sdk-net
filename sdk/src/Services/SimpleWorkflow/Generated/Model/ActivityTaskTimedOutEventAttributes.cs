@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by the activity to <code>RecordActivityTaskHeartbeat</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Details
         {
             get { return this._details; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -102,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the timeout that caused this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityTaskTimeoutType TimeoutType
         {
             get { return this._timeoutType; }

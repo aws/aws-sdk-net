@@ -44,6 +44,7 @@ namespace Amazon.Budgets.Model
         /// of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -63,6 +64,7 @@ namespace Amazon.Budgets.Model
         /// The maximum is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.Budgets.Model
         /// results that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public string NextToken
         {
             get { return this._nextToken; }

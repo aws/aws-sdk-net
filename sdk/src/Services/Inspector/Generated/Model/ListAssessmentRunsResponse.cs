@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// A list of ARNs that specifies the assessment runs that are returned by the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> AssessmentRunArns
         {
             get { return this._assessmentRunArns; }
@@ -62,6 +63,7 @@ namespace Amazon.Inspector.Model
         /// this parameter is set to null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }

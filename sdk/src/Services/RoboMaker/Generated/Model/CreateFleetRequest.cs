@@ -42,6 +42,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -60,6 +61,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

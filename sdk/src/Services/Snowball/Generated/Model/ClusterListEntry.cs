@@ -43,6 +43,7 @@ namespace Amazon.Snowball.Model
         /// The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -99,6 +100,7 @@ namespace Amazon.Snowball.Model
         /// Cluster-01</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }

@@ -50,6 +50,7 @@ namespace Amazon.XRay.Model
         /// The segment document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Document
         {
             get { return this._document; }

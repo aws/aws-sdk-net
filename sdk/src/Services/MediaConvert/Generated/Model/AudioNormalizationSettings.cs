@@ -74,6 +74,7 @@ namespace Amazon.MediaConvert.Model
         /// will be corrected to the target level. Content measuring below this level will not
         /// be corrected. Gating only applies when not using real_time_correction.
         /// </summary>
+        [AWSProperty(Min=-70, Max=0)]
         public int CorrectionGateLevel
         {
             get { return this._correctionGateLevel.GetValueOrDefault(); }

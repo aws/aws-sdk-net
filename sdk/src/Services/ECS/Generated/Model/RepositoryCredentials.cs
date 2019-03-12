@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CredentialsParameter
         {
             get { return this._credentialsParameter; }

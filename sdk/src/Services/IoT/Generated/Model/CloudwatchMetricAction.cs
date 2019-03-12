@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The CloudWatch metric name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// The CloudWatch metric namespace name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricNamespace
         {
             get { return this._metricNamespace; }
@@ -101,6 +103,7 @@ namespace Amazon.IoT.Model
         /// unit</a> supported by CloudWatch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricUnit
         {
             get { return this._metricUnit; }
@@ -119,6 +122,7 @@ namespace Amazon.IoT.Model
         /// The CloudWatch metric value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricValue
         {
             get { return this._metricValue; }
@@ -137,6 +141,7 @@ namespace Amazon.IoT.Model
         /// The IAM role that allows access to the CloudWatch metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

@@ -58,6 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instance groups to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InstanceGroupConfig> InstanceGroups
         {
             get { return this._instanceGroups; }
@@ -76,6 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Job flow in which to add the instance groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobFlowId
         {
             get { return this._jobFlowId; }

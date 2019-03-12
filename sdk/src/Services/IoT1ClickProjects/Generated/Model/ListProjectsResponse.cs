@@ -42,6 +42,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// there are no further results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// An object containing the list of projects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ProjectSummary> Projects
         {
             get { return this._projects; }

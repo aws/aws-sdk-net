@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -60,6 +61,7 @@ namespace Amazon.AppSync.Model
         /// The schema format: SDL or JSON.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputType Format
         {
             get { return this._format; }

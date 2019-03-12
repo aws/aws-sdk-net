@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         /// Identifies the next page of results to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

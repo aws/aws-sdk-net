@@ -50,6 +50,7 @@ namespace Amazon.Route53Domains.Model
         /// confirmed that the email address is valid.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

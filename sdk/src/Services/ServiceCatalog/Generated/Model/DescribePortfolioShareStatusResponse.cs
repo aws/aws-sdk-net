@@ -63,6 +63,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The portfolio identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PortfolioId
         {
             get { return this._portfolioId; }

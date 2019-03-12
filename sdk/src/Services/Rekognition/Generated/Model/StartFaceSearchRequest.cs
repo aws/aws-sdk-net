@@ -63,6 +63,7 @@ namespace Amazon.Rekognition.Model
         /// started more than once. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -81,6 +82,7 @@ namespace Amazon.Rekognition.Model
         /// ID of the collection that contains the faces you want to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -100,6 +102,7 @@ namespace Amazon.Rekognition.Model
         /// matches where confidence in matches is less than 70%. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float FaceMatchThreshold
         {
             get { return this._faceMatchThreshold.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.Rekognition.Model
         /// to the Amazon Simple Notification Service topic. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobTag
         {
             get { return this._jobTag; }
@@ -156,6 +160,7 @@ namespace Amazon.Rekognition.Model
         /// The video you want to search. The video must be stored in an Amazon S3 bucket. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Video Video
         {
             get { return this._video; }

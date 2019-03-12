@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the security profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The name you have given to the security profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

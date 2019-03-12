@@ -60,6 +60,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

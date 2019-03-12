@@ -41,6 +41,7 @@ namespace Amazon.MigrationHub.Model
         /// The configurationId in ADS that uniquely identifies the grouped application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ApplicationId
         {
             get { return this._applicationId; }

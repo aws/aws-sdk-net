@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The current status of the virtual router.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualRouterStatusCode Status
         {
             get { return this._status; }

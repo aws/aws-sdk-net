@@ -65,6 +65,7 @@ namespace Amazon.CloudDirectory.Model
         /// objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -84,6 +85,7 @@ namespace Amazon.CloudDirectory.Model
         /// number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -120,6 +122,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that identifies the policy object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference PolicyReference
         {
             get { return this._policyReference; }

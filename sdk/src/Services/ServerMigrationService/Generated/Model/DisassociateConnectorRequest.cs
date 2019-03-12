@@ -47,6 +47,7 @@ namespace Amazon.ServerMigrationService.Model
         /// The identifier of the connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectorId
         {
             get { return this._connectorId; }

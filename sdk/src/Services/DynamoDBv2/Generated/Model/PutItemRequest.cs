@@ -388,6 +388,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Item
         {
             get { return this._item; }
@@ -479,6 +480,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table to contain the item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

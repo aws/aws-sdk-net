@@ -72,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  Details of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -90,6 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A descriptive reason for the failure that may help in diagnostics.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Reason
         {
             get { return this._reason; }

@@ -44,6 +44,7 @@ namespace Amazon.WorkMail.Model
         /// reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkMail.Model
         /// The new password for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the user for whom the password is reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string UserId
         {
             get { return this._userId; }

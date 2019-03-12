@@ -54,6 +54,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -90,6 +91,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationParentId
         {
             get { return this._destinationParentId; }
@@ -126,6 +128,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceParentId
         {
             get { return this._sourceParentId; }

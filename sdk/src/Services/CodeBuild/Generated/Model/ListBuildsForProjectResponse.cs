@@ -42,6 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// a single build.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> Ids
         {
             get { return this._ids; }

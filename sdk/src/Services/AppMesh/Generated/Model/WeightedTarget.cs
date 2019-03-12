@@ -44,6 +44,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual node to associate with the weighted target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualNode
         {
             get { return this._virtualNode; }
@@ -62,6 +63,7 @@ namespace Amazon.AppMesh.Model
         /// The relative weight of the weighted target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public int Weight
         {
             get { return this._weight.GetValueOrDefault(); }

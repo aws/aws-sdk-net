@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// results, make another call with the returned nextToken value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// to return the next set of webhooks in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

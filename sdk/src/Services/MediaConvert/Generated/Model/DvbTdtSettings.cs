@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TdtInterval. The number of milliseconds between instances
         /// of this table in the output transport stream.
         /// </summary>
+        [AWSProperty(Min=1000, Max=30000)]
         public int TdtInterval
         {
             get { return this._tdtInterval.GetValueOrDefault(); }

@@ -68,6 +68,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The latest known metered size (in bytes) of data stored in the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long Value
         {
             get { return this._value.GetValueOrDefault(); }
@@ -87,6 +88,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// class.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ValueInIA
         {
             get { return this._valueInIA.GetValueOrDefault(); }
@@ -105,6 +107,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The latest known metered size (in bytes) of data stored in the Standard storage class.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ValueInStandard
         {
             get { return this._valueInStandard.GetValueOrDefault(); }

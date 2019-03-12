@@ -41,6 +41,7 @@ namespace Amazon.WAF.Model
         /// The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -69,6 +70,7 @@ namespace Amazon.WAF.Model
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SqlInjectionMatchSetId
         {
             get { return this._sqlInjectionMatchSetId; }

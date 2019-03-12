@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// channels in your output. The two output channel numbers can be one of the following
         /// pairs: 1,3; 2,4; 1,4; or 2,3.
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public int Destination608ChannelNumber
         {
             get { return this._destination608ChannelNumber.GetValueOrDefault(); }

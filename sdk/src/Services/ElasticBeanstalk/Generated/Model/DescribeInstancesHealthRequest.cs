@@ -83,6 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify the AWS Elastic Beanstalk environment by name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -101,6 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify the pagination token returned by a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NextToken
         {
             get { return this._nextToken; }

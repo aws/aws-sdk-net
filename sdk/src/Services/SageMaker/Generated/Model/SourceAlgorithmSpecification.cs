@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// A list of the algorithms that were used to create a model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<SourceAlgorithm> SourceAlgorithms
         {
             get { return this._sourceAlgorithms; }

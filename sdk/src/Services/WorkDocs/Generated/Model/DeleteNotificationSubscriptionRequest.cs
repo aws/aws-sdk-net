@@ -42,6 +42,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SubscriptionId
         {
             get { return this._subscriptionId; }

@@ -102,6 +102,7 @@ namespace Amazon.IoT.Model
         /// this audit.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Message
         {
             get { return this._message; }

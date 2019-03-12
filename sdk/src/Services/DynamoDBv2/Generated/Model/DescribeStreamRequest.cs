@@ -59,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// was returned for <code>LastEvaluatedShardId</code> in the previous operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=28, Max=65)]
         public string ExclusiveStartShardId
         {
             get { return this._exclusiveStartShardId; }
@@ -77,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of shard objects to return. The upper limit is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -95,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) for the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string StreamArn
         {
             get { return this._streamArn; }

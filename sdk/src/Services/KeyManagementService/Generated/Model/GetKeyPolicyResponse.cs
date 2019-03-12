@@ -40,6 +40,7 @@ namespace Amazon.KeyManagementService.Model
         /// A key policy document in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string Policy
         {
             get { return this._policy; }

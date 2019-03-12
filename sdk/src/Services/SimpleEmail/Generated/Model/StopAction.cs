@@ -49,6 +49,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the RuleSet that is being stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StopScope Scope
         {
             get { return this._scope; }

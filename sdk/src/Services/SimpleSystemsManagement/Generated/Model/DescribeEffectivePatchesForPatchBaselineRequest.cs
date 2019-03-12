@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch baseline to retrieve the effective patches for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of patches to return (per page).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

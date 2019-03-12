@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         /// The value to set as the environment variable on the container.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -72,6 +73,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ValueFrom
         {
             get { return this._valueFrom; }

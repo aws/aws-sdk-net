@@ -45,6 +45,7 @@ namespace Amazon.CloudSearch.Model
         /// 3 and no more than 28 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

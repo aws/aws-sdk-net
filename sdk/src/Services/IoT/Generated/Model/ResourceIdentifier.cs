@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The account with which the resource is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string Account
         {
             get { return this._account; }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// The ID of the CA certificate used to authorize the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CaCertificateId
         {
             get { return this._caCertificateId; }
@@ -117,6 +119,7 @@ namespace Amazon.IoT.Model
         /// The ID of the certificate attached to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string DeviceCertificateId
         {
             get { return this._deviceCertificateId; }

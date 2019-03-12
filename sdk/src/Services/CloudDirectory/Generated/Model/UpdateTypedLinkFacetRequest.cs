@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// Attributes update structure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TypedLinkFacetAttributeUpdate> AttributeUpdates
         {
             get { return this._attributeUpdates; }
@@ -70,6 +71,7 @@ namespace Amazon.CloudDirectory.Model
         /// Links</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> IdentityAttributeOrder
         {
             get { return this._identityAttributeOrder; }
@@ -88,6 +90,7 @@ namespace Amazon.CloudDirectory.Model
         /// The unique name of the typed link facet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -107,6 +110,7 @@ namespace Amazon.CloudDirectory.Model
         /// see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

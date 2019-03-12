@@ -42,6 +42,7 @@ namespace Amazon.ECR.Model
         /// The JSON repository policy text.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=100, Max=30720)]
         public string LifecyclePolicyText
         {
             get { return this._lifecyclePolicyText; }
@@ -78,6 +79,7 @@ namespace Amazon.ECR.Model
         /// The repository name associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

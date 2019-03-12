@@ -45,6 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// The configurationId in ADS that uniquely identifies the grouped application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -82,6 +83,7 @@ namespace Amazon.MigrationHub.Model
         /// Status of the application - Not Started, In-Progress, Complete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationStatus Status
         {
             get { return this._status; }

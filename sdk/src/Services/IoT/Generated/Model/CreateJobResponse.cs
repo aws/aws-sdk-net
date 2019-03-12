@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The job description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -78,6 +79,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier you assigned to this job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }

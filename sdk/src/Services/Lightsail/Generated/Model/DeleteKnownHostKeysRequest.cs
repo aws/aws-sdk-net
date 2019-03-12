@@ -52,6 +52,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance for which you want to reset the host key or certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }

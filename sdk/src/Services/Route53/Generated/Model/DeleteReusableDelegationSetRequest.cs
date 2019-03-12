@@ -53,6 +53,7 @@ namespace Amazon.Route53.Model
         /// The ID of the reusable delegation set that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }

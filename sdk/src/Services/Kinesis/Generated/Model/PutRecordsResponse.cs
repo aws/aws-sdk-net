@@ -71,6 +71,7 @@ namespace Amazon.Kinesis.Model
         /// The number of unsuccessfully processed records in a <code>PutRecords</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
         public int FailedRecordCount
         {
             get { return this._failedRecordCount.GetValueOrDefault(); }
@@ -93,6 +94,7 @@ namespace Amazon.Kinesis.Model
         /// in the result.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public List<PutRecordsResultEntry> Records
         {
             get { return this._records; }

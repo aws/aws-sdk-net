@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token from a request to delete a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

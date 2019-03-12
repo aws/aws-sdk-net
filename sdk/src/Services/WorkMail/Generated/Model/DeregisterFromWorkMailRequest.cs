@@ -45,6 +45,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the entity to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the Amazon WorkMail entity exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

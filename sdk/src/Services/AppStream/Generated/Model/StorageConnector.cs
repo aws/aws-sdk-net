@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The type of storage connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StorageConnectorType ConnectorType
         {
             get { return this._connectorType; }
@@ -60,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// The names of the domains for the account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<string> Domains
         {
             get { return this._domains; }
@@ -78,6 +80,7 @@ namespace Amazon.AppStream.Model
         /// The ARN of the storage connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ResourceIdentifier
         {
             get { return this._resourceIdentifier; }

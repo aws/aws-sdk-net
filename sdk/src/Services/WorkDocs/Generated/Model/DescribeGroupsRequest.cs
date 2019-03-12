@@ -47,6 +47,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -65,6 +66,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.WorkDocs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -102,6 +105,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -120,6 +124,7 @@ namespace Amazon.WorkDocs.Model
         /// A query to describe groups by group name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string SearchQuery
         {
             get { return this._searchQuery; }

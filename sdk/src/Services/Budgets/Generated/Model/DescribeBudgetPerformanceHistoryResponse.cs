@@ -63,6 +63,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public string NextToken
         {
             get { return this._nextToken; }

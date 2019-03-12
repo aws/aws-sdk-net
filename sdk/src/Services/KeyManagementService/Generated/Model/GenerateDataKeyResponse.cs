@@ -43,6 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// is Base64-encdoded. Otherwise, it is not encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -61,6 +62,7 @@ namespace Amazon.KeyManagementService.Model
         /// The identifier of the CMK under which the data encryption key was generated and encrypted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -81,6 +83,7 @@ namespace Amazon.KeyManagementService.Model
         /// then remove it from memory as soon as possible.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

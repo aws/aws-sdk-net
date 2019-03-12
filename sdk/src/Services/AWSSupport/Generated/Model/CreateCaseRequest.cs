@@ -150,6 +150,7 @@ namespace Amazon.AWSSupport.Model
         /// A list of email addresses that AWS Support copies on case correspondence.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> CcEmailAddresses
         {
             get { return this._ccEmailAddresses; }
@@ -168,6 +169,7 @@ namespace Amazon.AWSSupport.Model
         /// The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8000)]
         public string CommunicationBody
         {
             get { return this._communicationBody; }
@@ -268,6 +270,7 @@ namespace Amazon.AWSSupport.Model
         /// The title of the AWS Support case.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Subject
         {
             get { return this._subject; }

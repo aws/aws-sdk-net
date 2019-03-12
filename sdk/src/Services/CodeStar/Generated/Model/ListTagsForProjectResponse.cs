@@ -41,6 +41,7 @@ namespace Amazon.CodeStar.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -46,6 +46,7 @@ namespace Amazon.MTurk.Model
         ///  The maximum number of results to return in a single call. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -88,6 +89,7 @@ namespace Amazon.MTurk.Model
         /// | False. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool MustBeRequestable
         {
             get { return this._mustBeRequestable.GetValueOrDefault(); }
@@ -103,6 +105,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

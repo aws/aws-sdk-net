@@ -109,6 +109,7 @@ namespace Amazon.EC2.Model
         /// larger value than 500, you receive an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

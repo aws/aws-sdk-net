@@ -62,6 +62,7 @@ namespace Amazon.KinesisVideo.Model
         /// to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -80,6 +81,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the stream that you want to add the tag or tags to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -99,6 +101,7 @@ namespace Amazon.KinesisVideo.Model
         /// (the value is optional).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

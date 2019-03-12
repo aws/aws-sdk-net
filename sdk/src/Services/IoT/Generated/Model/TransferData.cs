@@ -80,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The reason why the transfer was rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string RejectReason
         {
             get { return this._rejectReason; }
@@ -116,6 +117,7 @@ namespace Amazon.IoT.Model
         /// The transfer message.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TransferMessage
         {
             get { return this._transferMessage; }

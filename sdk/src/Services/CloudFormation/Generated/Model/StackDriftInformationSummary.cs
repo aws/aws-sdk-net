@@ -84,6 +84,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackDriftStatus StackDriftStatus
         {
             get { return this._stackDriftStatus; }

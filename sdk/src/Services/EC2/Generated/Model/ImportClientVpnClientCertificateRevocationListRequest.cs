@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateRevocationList
         {
             get { return this._certificateRevocationList; }
@@ -69,6 +70,7 @@ namespace Amazon.EC2.Model
         /// applies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }

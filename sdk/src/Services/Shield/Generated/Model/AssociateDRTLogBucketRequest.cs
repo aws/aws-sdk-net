@@ -50,6 +50,7 @@ namespace Amazon.Shield.Model
         /// The Amazon S3 bucket that contains your flow logs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string LogBucket
         {
             get { return this._logBucket; }

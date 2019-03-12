@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// The array of attribute keys that you want to remove from specified findings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<string> AttributeKeys
         {
             get { return this._attributeKeys; }
@@ -61,6 +62,7 @@ namespace Amazon.Inspector.Model
         /// The ARNs that specify the findings that you want to remove attributes from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> FindingArns
         {
             get { return this._findingArns; }

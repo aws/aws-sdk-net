@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// A unique identifier for a specific class of errors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Code
         {
             get { return this._code; }
@@ -59,6 +60,7 @@ namespace Amazon.SageMaker.Model
         /// A human-readable message describing the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Message
         {
             get { return this._message; }

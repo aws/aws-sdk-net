@@ -144,6 +144,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageBody
         {
             get { return this._messageBody; }
@@ -312,6 +313,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

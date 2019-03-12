@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the dedicated IP pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PoolName
         {
             get { return this._poolName; }

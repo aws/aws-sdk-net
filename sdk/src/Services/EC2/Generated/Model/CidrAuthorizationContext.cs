@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The plain-text authorization message for the prefix and account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Message
         {
             get { return this._message; }
@@ -63,6 +64,7 @@ namespace Amazon.EC2.Model
         /// The signed authorization message for the prefix and account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Signature
         {
             get { return this._signature; }

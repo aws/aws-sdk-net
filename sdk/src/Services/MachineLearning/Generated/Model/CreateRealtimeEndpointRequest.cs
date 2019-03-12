@@ -43,6 +43,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>MLModel</code> during creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }

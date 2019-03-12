@@ -65,6 +65,7 @@ namespace Amazon.FSx.Model
         /// deletion. This is automatically filled on your behalf when using the AWS CLI or SDK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -83,6 +84,7 @@ namespace Amazon.FSx.Model
         /// The ID of the file system you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

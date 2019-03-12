@@ -76,6 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -94,6 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationArns
         {
             get { return this._notificationArns; }
@@ -114,6 +116,7 @@ namespace Amazon.ServiceCatalog.Model
         /// product, use <a>ListLaunchPaths</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PathId
         {
             get { return this._pathId; }
@@ -132,6 +135,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -151,6 +155,7 @@ namespace Amazon.ServiceCatalog.Model
         /// AWS account and cannot be updated after the product is provisioned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProvisionedProductName
         {
             get { return this._provisionedProductName; }
@@ -169,6 +174,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -224,6 +230,7 @@ namespace Amazon.ServiceCatalog.Model
         /// An idempotency token that uniquely identifies the provisioning request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProvisionToken
         {
             get { return this._provisionToken; }
@@ -242,6 +249,7 @@ namespace Amazon.ServiceCatalog.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

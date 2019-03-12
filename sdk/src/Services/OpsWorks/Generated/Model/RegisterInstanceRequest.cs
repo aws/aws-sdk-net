@@ -183,6 +183,7 @@ namespace Amazon.OpsWorks.Model
         /// The ID of the stack that the instance is to be registered with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

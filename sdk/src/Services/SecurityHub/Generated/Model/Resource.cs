@@ -63,6 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// The canonical identifier for the given resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -135,6 +136,7 @@ namespace Amazon.SecurityHub.Model
         /// Specifies the type of the resource for which details are provided.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

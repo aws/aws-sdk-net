@@ -49,6 +49,7 @@ namespace Amazon.CodeStar.Model
         /// displays in GitHub after the repository is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -67,6 +68,7 @@ namespace Amazon.CodeStar.Model
         /// Whether to enable issues for the GitHub repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IssuesEnabled
         {
             get { return this._issuesEnabled.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.CodeStar.Model
         /// Name of the GitHub repository to be created in AWS CodeStar.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -104,6 +107,7 @@ namespace Amazon.CodeStar.Model
         /// If this repository should be owned by a GitHub organization, provide its name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Owner
         {
             get { return this._owner; }
@@ -122,6 +126,7 @@ namespace Amazon.CodeStar.Model
         /// Whether the GitHub repository is to be a private repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool PrivateRepository
         {
             get { return this._privateRepository.GetValueOrDefault(); }
@@ -140,6 +145,7 @@ namespace Amazon.CodeStar.Model
         /// The GitHub user's personal access token for the GitHub repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Token
         {
             get { return this._token; }
@@ -159,6 +165,7 @@ namespace Amazon.CodeStar.Model
         /// or Organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

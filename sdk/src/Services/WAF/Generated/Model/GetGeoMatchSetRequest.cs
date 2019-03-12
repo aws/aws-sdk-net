@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// is returned by <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GeoMatchSetId
         {
             get { return this._geoMatchSetId; }

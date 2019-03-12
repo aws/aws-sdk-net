@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         /// or more sets of <code>Rules</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupPlanInput BackupPlan
         {
             get { return this._backupPlan; }
@@ -63,6 +64,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies a backup plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanId
         {
             get { return this._backupPlanId; }

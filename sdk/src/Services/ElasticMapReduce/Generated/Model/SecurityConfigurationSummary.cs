@@ -59,6 +59,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the security configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string Name
         {
             get { return this._name; }

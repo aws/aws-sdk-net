@@ -66,6 +66,7 @@ namespace Amazon.Batch.Model
         /// the 4:5 range properties override the 0:10 properties. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetNodes
         {
             get { return this._targetNodes; }

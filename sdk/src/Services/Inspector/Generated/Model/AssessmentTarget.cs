@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the Amazon Inspector assessment target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The time at which the assessment target is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// The name of the Amazon Inspector assessment target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string Name
         {
             get { return this._name; }
@@ -99,6 +102,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the resource group that is associated with the assessment target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string ResourceGroupArn
         {
             get { return this._resourceGroupArn; }
@@ -117,6 +121,7 @@ namespace Amazon.Inspector.Model
         /// The time at which <a>UpdateAssessmentTarget</a> is called.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdatedAt
         {
             get { return this._updatedAt.GetValueOrDefault(); }

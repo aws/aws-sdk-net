@@ -43,6 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver rule that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverRuleId
         {
             get { return this._resolverRuleId; }

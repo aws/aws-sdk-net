@@ -65,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// link to view the service-linked role documentation for that service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AWSServiceName
         {
             get { return this._awsServiceName; }
@@ -92,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// an optional suffix and the operation fails, try the operation again without the suffix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomSuffix
         {
             get { return this._customSuffix; }
@@ -110,6 +112,7 @@ namespace Amazon.IdentityManagement.Model
         /// The description of the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }

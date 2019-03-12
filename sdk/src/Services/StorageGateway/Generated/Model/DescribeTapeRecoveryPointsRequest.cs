@@ -49,6 +49,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -68,6 +69,7 @@ namespace Amazon.StorageGateway.Model
         /// to the specified number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -87,6 +89,7 @@ namespace Amazon.StorageGateway.Model
         /// tape recovery points.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }

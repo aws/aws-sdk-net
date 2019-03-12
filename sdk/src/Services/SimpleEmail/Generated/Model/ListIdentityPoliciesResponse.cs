@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// A list of names of policies that apply to the specified identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyNames
         {
             get { return this._policyNames; }

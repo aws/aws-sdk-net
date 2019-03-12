@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         /// Consolidation</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AnnotationConsolidationLambdaArn
         {
             get { return this._annotationConsolidationLambdaArn; }
@@ -72,6 +73,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the job was created (timestamp).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -91,6 +93,7 @@ namespace Amazon.SageMaker.Model
         /// a description of the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -127,6 +130,7 @@ namespace Amazon.SageMaker.Model
         /// Counts showing the progress of the labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelCounters LabelCounters
         {
             get { return this._labelCounters; }
@@ -145,6 +149,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) assigned to the labeling job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -163,6 +168,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string LabelingJobName
         {
             get { return this._labelingJobName; }
@@ -199,6 +205,7 @@ namespace Amazon.SageMaker.Model
         /// The current status of the labeling job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelingJobStatus LabelingJobStatus
         {
             get { return this._labelingJobStatus; }
@@ -217,6 +224,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the job was last modified (timestamp).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }
@@ -236,6 +244,7 @@ namespace Amazon.SageMaker.Model
         /// data object is sent to a worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }
@@ -254,6 +263,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the work team assigned to the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

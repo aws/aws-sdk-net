@@ -45,6 +45,7 @@ namespace Amazon.Lex.Model
         /// The URL of an attachment to the response card.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string AttachmentLinkUrl
         {
             get { return this._attachmentLinkUrl; }
@@ -63,6 +64,7 @@ namespace Amazon.Lex.Model
         /// The list of options to show to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Button> Buttons
         {
             get { return this._buttons; }
@@ -81,6 +83,7 @@ namespace Amazon.Lex.Model
         /// The URL of an image that is displayed to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ImageUrl
         {
             get { return this._imageUrl; }
@@ -99,6 +102,7 @@ namespace Amazon.Lex.Model
         /// The subtitle shown below the title.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=80)]
         public string SubTitle
         {
             get { return this._subTitle; }
@@ -117,6 +121,7 @@ namespace Amazon.Lex.Model
         /// The title of the option.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=80)]
         public string Title
         {
             get { return this._title; }

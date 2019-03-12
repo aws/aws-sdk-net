@@ -87,6 +87,7 @@ namespace Amazon.IoT.Model
         /// The S3 bucket that contains the input file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=256)]
         public string InputFileBucket
         {
             get { return this._inputFileBucket; }
@@ -105,6 +106,7 @@ namespace Amazon.IoT.Model
         /// The input file key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string InputFileKey
         {
             get { return this._inputFileKey; }
@@ -141,6 +143,7 @@ namespace Amazon.IoT.Model
         /// The message.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Message
         {
             get { return this._message; }
@@ -159,6 +162,7 @@ namespace Amazon.IoT.Model
         /// The progress of the bulk provisioning task expressed as a percentage.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int PercentageProgress
         {
             get { return this._percentageProgress.GetValueOrDefault(); }
@@ -177,6 +181,7 @@ namespace Amazon.IoT.Model
         /// The role ARN that grants access to the input file bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -231,6 +236,7 @@ namespace Amazon.IoT.Model
         /// The task ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

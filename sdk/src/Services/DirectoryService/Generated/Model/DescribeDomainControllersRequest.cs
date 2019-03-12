@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier of the directory for which to retrieve the domain controller information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -80,6 +81,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

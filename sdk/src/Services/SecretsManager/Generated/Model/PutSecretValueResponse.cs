@@ -43,6 +43,7 @@ namespace Amazon.SecretsManager.Model
         /// The Amazon Resource Name (ARN) for the secret for which you just created a version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string ARN
         {
             get { return this._arn; }
@@ -61,6 +62,7 @@ namespace Amazon.SecretsManager.Model
         /// The friendly name of the secret for which you just created or updated a version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -79,6 +81,7 @@ namespace Amazon.SecretsManager.Model
         /// The unique identifier of the version of the secret you just created or updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string VersionId
         {
             get { return this._versionId; }
@@ -99,6 +102,7 @@ namespace Amazon.SecretsManager.Model
         /// process.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<string> VersionStages
         {
             get { return this._versionStages; }

@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// you must restart the verification process from the beginning.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VerificationToken
         {
             get { return this._verificationToken; }

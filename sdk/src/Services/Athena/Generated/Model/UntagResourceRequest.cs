@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         /// Removes one or more tags from the workgroup resource for the specified ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -61,6 +62,7 @@ namespace Amazon.Athena.Model
         /// Removes the tags associated with one or more tag keys from the workgroup resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Pre-filters applied to message data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public List<QueryFilter> Filters
         {
             get { return this._filters; }
@@ -59,6 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// A SQL query string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SqlQuery
         {
             get { return this._sqlQuery; }

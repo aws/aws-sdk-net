@@ -89,6 +89,7 @@ namespace Amazon.Shield.Model
         /// and Detaching IAM Policies</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

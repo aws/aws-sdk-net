@@ -68,6 +68,7 @@ namespace Amazon.DataSync.Model
         /// Amazon EC2 resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> SecurityGroupArns
         {
             get { return this._securityGroupArns; }
@@ -86,6 +87,7 @@ namespace Amazon.DataSync.Model
         /// The ARN of the subnet that the Amazon EC2 resource belongs in. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string SubnetArn
         {
             get { return this._subnetArn; }

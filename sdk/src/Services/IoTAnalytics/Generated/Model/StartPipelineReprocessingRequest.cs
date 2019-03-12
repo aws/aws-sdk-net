@@ -61,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the pipeline on which to start reprocessing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PipelineName
         {
             get { return this._pipelineName; }

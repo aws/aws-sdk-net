@@ -42,6 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// The condition of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InventoryFilterCondition Condition
         {
             get { return this._condition; }
@@ -60,6 +61,7 @@ namespace Amazon.LicenseManager.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

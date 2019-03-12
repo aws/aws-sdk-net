@@ -48,6 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the region where the service-linked role is being used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Region
         {
             get { return this._region; }

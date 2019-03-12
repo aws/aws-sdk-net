@@ -67,6 +67,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of the endpoint group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string EndpointGroupArn
         {
             get { return this._endpointGroupArn; }
@@ -85,6 +86,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The AWS Region that this endpoint group belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string EndpointGroupRegion
         {
             get { return this._endpointGroupRegion; }
@@ -104,6 +106,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// value is 30.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=30)]
         public int HealthCheckIntervalSeconds
         {
             get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
@@ -124,6 +127,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// (/).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string HealthCheckPath
         {
             get { return this._healthCheckPath; }
@@ -149,6 +153,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// port in the list of ports.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int HealthCheckPort
         {
             get { return this._healthCheckPort.GetValueOrDefault(); }
@@ -187,6 +192,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int ThresholdCount
         {
             get { return this._thresholdCount.GetValueOrDefault(); }
@@ -216,6 +222,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The default value is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float TrafficDialPercentage
         {
             get { return this._trafficDialPercentage.GetValueOrDefault(); }

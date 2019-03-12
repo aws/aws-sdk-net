@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the parameter to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }

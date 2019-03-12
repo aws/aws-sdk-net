@@ -49,6 +49,7 @@ namespace Amazon.CloudWatch.Model
         /// you must specify them in order for the call to succeed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
@@ -85,6 +86,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -103,6 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// The namespace of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -121,6 +124,7 @@ namespace Amazon.CloudWatch.Model
         /// The period, in seconds, over which the statistic is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }

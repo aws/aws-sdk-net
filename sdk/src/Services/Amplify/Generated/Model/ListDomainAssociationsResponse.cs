@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         ///  List of Domain Associations. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public List<DomainAssociation> DomainAssociations
         {
             get { return this._domainAssociations; }
@@ -60,6 +61,7 @@ namespace Amazon.Amplify.Model
         /// its value in another request to fetch more entries. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

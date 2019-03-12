@@ -47,6 +47,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A list of 1-60 identities that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public List<string> IdentityIdsToDelete
         {
             get { return this._identityIdsToDelete; }

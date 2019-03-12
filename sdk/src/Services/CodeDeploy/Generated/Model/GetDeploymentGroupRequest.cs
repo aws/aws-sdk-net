@@ -42,6 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of a deployment group for the specified application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DeploymentGroupName
         {
             get { return this._deploymentGroupName; }

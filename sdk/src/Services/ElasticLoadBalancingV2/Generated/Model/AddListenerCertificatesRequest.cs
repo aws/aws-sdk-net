@@ -55,6 +55,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// to the certificate ARN but do not set <code>IsDefault</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Certificate> Certificates
         {
             get { return this._certificates; }
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ListenerArn
         {
             get { return this._listenerArn; }

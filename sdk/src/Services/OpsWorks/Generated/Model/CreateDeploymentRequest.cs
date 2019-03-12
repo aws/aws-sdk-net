@@ -77,6 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// any associated arguments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentCommand Command
         {
             get { return this._command; }
@@ -177,6 +178,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

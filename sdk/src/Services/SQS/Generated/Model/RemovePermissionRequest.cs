@@ -73,6 +73,7 @@ namespace Amazon.SQS.Model
         /// <code> <a>AddPermission</a> </code> action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Label
         {
             get { return this._label; }
@@ -95,6 +96,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

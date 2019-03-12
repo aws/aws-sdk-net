@@ -60,6 +60,7 @@ namespace Amazon.Transfer.Model
         /// The HTTP status code that is the response from your API Gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int StatusCode
         {
             get { return this._statusCode.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.Transfer.Model
         /// The endpoint of the service used to authenticate a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Url
         {
             get { return this._url; }

@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// The default value is true.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool DkimEnabled
         {
             get { return this._dkimEnabled.GetValueOrDefault(); }
@@ -91,6 +92,7 @@ namespace Amazon.SimpleEmail.Model
         /// address identities.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VerificationStatus DkimVerificationStatus
         {
             get { return this._dkimVerificationStatus; }

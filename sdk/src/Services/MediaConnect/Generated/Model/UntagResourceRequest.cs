@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
         /// that you want to remove tags from.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -55,6 +56,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property TagKeys. The keys of the tags to be removed.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

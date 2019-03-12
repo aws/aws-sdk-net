@@ -42,6 +42,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A collection of message objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public List<Message> Messages
         {
             get { return this._messages; }
@@ -62,6 +63,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// the session attributes and slot values for placeholders in the response card. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
         public string ResponseCard
         {
             get { return this._responseCard; }

@@ -105,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain containing the task lists to poll.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -125,6 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The form of this identity is user defined.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Identity
         {
             get { return this._identity; }
@@ -150,6 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// fewer than the specified maximum.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaximumPageSize
         {
             get { return this._maximumPageSize.GetValueOrDefault(); }
@@ -183,6 +186,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -228,6 +232,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskList TaskList
         {
             get { return this._taskList; }

@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<string> DevEndpointNames
         {
             get { return this._devEndpointNames; }

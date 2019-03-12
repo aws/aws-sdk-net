@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The room that the appliances are associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoomArn
         {
             get { return this._roomArn; }

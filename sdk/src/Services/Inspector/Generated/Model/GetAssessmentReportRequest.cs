@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment run for which you want to generate a report.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// generate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportFileFormat ReportFileFormat
         {
             get { return this._reportFileFormat; }
@@ -84,6 +86,7 @@ namespace Amazon.Inspector.Model
         /// Reports</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportType ReportType
         {
             get { return this._reportType; }

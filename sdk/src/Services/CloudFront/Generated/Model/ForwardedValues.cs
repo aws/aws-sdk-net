@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CookiePreference Cookies
         {
             get { return this._cookies; }
@@ -112,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool QueryString
         {
             get { return this._queryString.GetValueOrDefault(); }

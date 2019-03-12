@@ -61,6 +61,7 @@ namespace Amazon.CodeDeploy.Model
         ///  The unique ID of a deployment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeploymentId
         {
             get { return this._deploymentId; }

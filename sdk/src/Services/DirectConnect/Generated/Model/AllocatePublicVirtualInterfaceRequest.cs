@@ -61,6 +61,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the connection on which the public virtual interface is provisioned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -79,6 +80,7 @@ namespace Amazon.DirectConnect.Model
         /// Information about the public virtual interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NewPublicVirtualInterfaceAllocation NewPublicVirtualInterfaceAllocation
         {
             get { return this._newPublicVirtualInterfaceAllocation; }
@@ -97,6 +99,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the AWS account that owns the public virtual interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OwnerAccount
         {
             get { return this._ownerAccount; }

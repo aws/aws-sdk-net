@@ -43,6 +43,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The application Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -61,6 +62,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The date and time this resource was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreationTime
         {
             get { return this._creationTime; }
@@ -83,6 +85,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         ///  <a href="https://semver.org/">https://semver.org/</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SemanticVersion
         {
             get { return this._semanticVersion; }

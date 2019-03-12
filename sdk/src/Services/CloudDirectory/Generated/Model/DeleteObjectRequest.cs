@@ -46,6 +46,7 @@ namespace Amazon.CloudDirectory.Model
         /// the object resides. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference that identifies the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

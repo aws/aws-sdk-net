@@ -42,6 +42,7 @@ namespace Amazon.PinpointEmail.Model
         /// The email identity that you want to change the DKIM settings for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

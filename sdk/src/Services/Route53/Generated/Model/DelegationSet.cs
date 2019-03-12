@@ -57,6 +57,7 @@ namespace Amazon.Route53.Model
         /// The ID that Amazon Route 53 assigns to a reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string Id
         {
             get { return this._id; }
@@ -76,6 +77,7 @@ namespace Amazon.Route53.Model
         /// reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -95,6 +97,7 @@ namespace Amazon.Route53.Model
         /// zone or for a reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> NameServers
         {
             get { return this._nameServers; }

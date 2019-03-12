@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// The keys in the key-value pair in the tag to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Keys
         {
             get { return this._keys; }
@@ -60,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the resource to remove the tag from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

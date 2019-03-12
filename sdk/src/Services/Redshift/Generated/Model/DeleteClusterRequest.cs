@@ -84,6 +84,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

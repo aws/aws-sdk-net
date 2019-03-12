@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the AWS Lambda function that operates on records in the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

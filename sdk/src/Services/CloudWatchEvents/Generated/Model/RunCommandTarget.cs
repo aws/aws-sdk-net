@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// is a list of Amazon EC2 instance IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Values
         {
             get { return this._values; }

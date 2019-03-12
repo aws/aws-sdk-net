@@ -43,6 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// for the EBS volume attached to an EC2 instance in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VolumeSpecification VolumeSpecification
         {
             get { return this._volumeSpecification; }

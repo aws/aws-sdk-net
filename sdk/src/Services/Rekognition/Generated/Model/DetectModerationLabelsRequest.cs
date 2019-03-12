@@ -71,6 +71,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image Image
         {
             get { return this._image; }
@@ -95,6 +96,7 @@ namespace Amazon.Rekognition.Model
         /// confidence values greater than or equal to 50 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float MinConfidence
         {
             get { return this._minConfidence.GetValueOrDefault(); }

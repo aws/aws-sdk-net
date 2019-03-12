@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// One or more VPC endpoint IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> VpcEndpointIds
         {
             get { return this._vpcEndpointIds; }

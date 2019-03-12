@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// call that overwrites or updates this policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PolicyHash
         {
             get { return this._policyHash; }

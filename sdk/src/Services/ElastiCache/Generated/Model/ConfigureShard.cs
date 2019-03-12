@@ -68,6 +68,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NewReplicaCount
         {
             get { return this._newReplicaCount.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.ElastiCache.Model
         /// a Shard's Id</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public string NodeGroupId
         {
             get { return this._nodeGroupId; }

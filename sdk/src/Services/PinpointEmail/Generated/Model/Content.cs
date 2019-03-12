@@ -63,6 +63,7 @@ namespace Amazon.PinpointEmail.Model
         /// The content of the message itself.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Data
         {
             get { return this._data; }

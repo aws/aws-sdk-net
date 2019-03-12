@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the algorithm to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }

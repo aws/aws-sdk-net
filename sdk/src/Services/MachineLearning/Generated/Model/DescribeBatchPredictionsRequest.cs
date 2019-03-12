@@ -53,6 +53,7 @@ namespace Amazon.MachineLearning.Model
         /// values that exactly match the value specified with <code>EQ</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string EQ
         {
             get { return this._eq; }
@@ -102,6 +103,7 @@ namespace Amazon.MachineLearning.Model
         /// specified with <code>GE</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string GE
         {
             get { return this._ge; }
@@ -121,6 +123,7 @@ namespace Amazon.MachineLearning.Model
         /// values that are greater than the value specified with <code>GT</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string GT
         {
             get { return this._gt; }
@@ -141,6 +144,7 @@ namespace Amazon.MachineLearning.Model
         /// with <code>LE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string LE
         {
             get { return this._le; }
@@ -160,6 +164,7 @@ namespace Amazon.MachineLearning.Model
         /// values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -179,6 +184,7 @@ namespace Amazon.MachineLearning.Model
         /// values that are less than the value specified with <code>LT</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string LT
         {
             get { return this._lt; }
@@ -198,6 +204,7 @@ namespace Amazon.MachineLearning.Model
         /// values not equal to the value specified with <code>NE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NE
         {
             get { return this._ne; }
@@ -255,6 +262,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         /// </li> </ul>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Prefix
         {
             get { return this._prefix; }

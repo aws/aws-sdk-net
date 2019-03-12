@@ -97,6 +97,7 @@ namespace Amazon.ElastiCache.Model
         /// Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedCacheNodesOfferingId
         {
             get { return this._reservedCacheNodesOfferingId; }

@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// An S3 link to the job document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string DocumentSource
         {
             get { return this._documentSource; }

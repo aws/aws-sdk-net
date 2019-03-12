@@ -105,6 +105,7 @@ namespace Amazon.DataSync.Model
         /// DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-1)]
         public long BytesPerSecond
         {
             get { return this._bytesPerSecond.GetValueOrDefault(); }

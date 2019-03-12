@@ -44,6 +44,7 @@ namespace Amazon.ECR.Model
         /// the only supported resource is an Amazon ECR repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -64,6 +65,7 @@ namespace Amazon.ECR.Model
         /// length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

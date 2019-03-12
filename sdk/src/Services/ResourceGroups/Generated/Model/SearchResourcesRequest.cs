@@ -45,6 +45,7 @@ namespace Amazon.ResourceGroups.Model
         /// paginated output. By default, this number is 50.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.ResourceGroups.Model
         /// The search query, using the same formats that are supported for resource group definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceQuery ResourceQuery
         {
             get { return this._resourceQuery; }

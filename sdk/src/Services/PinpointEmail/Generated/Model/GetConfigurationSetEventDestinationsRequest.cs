@@ -50,6 +50,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that contains the event destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

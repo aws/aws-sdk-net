@@ -45,6 +45,7 @@ namespace Amazon.MTurk.Model
         /// to keep track of your Workers. The Worker does not see this message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Reason
         {
             get { return this._reason; }
@@ -63,6 +64,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Worker to block.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

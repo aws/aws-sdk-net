@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// The number of instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.EC2.Model
         /// The purchase token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PurchaseToken
         {
             get { return this._purchaseToken; }

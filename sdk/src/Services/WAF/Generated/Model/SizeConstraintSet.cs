@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         /// The name, if any, of the <code>SizeConstraintSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -63,6 +64,7 @@ namespace Amazon.WAF.Model
         /// Specifies the parts of web requests that you want to inspect the size of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SizeConstraint> SizeConstraints
         {
             get { return this._sizeConstraints; }
@@ -91,6 +93,7 @@ namespace Amazon.WAF.Model
         /// by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SizeConstraintSetId
         {
             get { return this._sizeConstraintSetId; }

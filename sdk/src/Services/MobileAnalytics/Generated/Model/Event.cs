@@ -50,6 +50,7 @@ namespace Amazon.MobileAnalytics.Model
         /// This collection can be empty or the attribute object can be omitted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -69,6 +70,7 @@ namespace Amazon.MobileAnalytics.Model
         /// aggregating like events together for reporting purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string EventType
         {
             get { return this._eventType; }
@@ -92,6 +94,7 @@ namespace Amazon.MobileAnalytics.Model
         /// This collection can be empty or the attribute object can be omitted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, double> Metrics
         {
             get { return this._metrics; }
@@ -128,6 +131,7 @@ namespace Amazon.MobileAnalytics.Model
         /// The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime TimestampUtc
         {
             get { return this._timestampUtc.GetValueOrDefault(); }
@@ -146,6 +150,7 @@ namespace Amazon.MobileAnalytics.Model
         /// The version of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public string Version
         {
             get { return this._version; }

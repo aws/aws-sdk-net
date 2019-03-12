@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }
@@ -64,6 +65,7 @@ namespace Amazon.EC2.Model
         /// security groups can be applied to an associated target network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -82,6 +84,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC in which the associated target network is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

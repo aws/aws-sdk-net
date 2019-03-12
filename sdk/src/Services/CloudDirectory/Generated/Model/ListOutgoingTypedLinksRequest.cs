@@ -68,6 +68,7 @@ namespace Amazon.CloudDirectory.Model
         /// The Amazon Resource Name (ARN) of the directory where you want to list the typed links.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -125,6 +126,7 @@ namespace Amazon.CloudDirectory.Model
         /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -161,6 +163,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference that identifies the object whose attributes will be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

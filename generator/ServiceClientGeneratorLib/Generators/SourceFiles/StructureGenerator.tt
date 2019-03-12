@@ -97,6 +97,26 @@ namespace <#=this.Config.Namespace#>.Model
 		[Obsolete("<#=member.DeprecationMessage#>")]
 <#
 					}
+
+					var propertyAttributes = new List<string>();
+					if(member.IsRequired)
+					{
+						propertyAttributes.Add("Required=true");
+					}
+					if (member.Shape.Min.HasValue)
+					{
+						propertyAttributes.Add("Min=" + member.Shape.Min);
+					}
+					if (member.Shape.Max.HasValue)
+					{
+						propertyAttributes.Add("Max=" + member.Shape.Max);
+					}
+					if (propertyAttributes.Count > 0)
+					{
+#>
+		[AWSProperty(<#=string.Join(", ", propertyAttributes)#>)]
+<#
+					}
 #>
         <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
         {

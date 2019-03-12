@@ -47,6 +47,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }

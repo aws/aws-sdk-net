@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The compromised credentials risk configuration actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompromisedCredentialsActionsType Actions
         {
             get { return this._actions; }

@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         /// underscores, and periods are allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

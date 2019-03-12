@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// The ID of the conversion task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConversionTaskId
         {
             get { return this._conversionTaskId; }

@@ -49,6 +49,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -67,6 +68,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The maximum number of aliases to return in the response. The default is 50. . 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,6 +88,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NameContains
         {
             get { return this._nameContains; }

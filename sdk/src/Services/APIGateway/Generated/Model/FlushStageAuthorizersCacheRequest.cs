@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }
@@ -60,6 +61,7 @@ namespace Amazon.APIGateway.Model
         /// The name of the stage to flush.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StageName
         {
             get { return this._stageName; }

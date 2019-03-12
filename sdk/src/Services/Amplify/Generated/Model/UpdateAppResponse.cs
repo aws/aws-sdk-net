@@ -40,6 +40,7 @@ namespace Amazon.Amplify.Model
         ///  App structure for the updated App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public App App
         {
             get { return this._app; }

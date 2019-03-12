@@ -43,6 +43,7 @@ namespace Amazon.AppStream.Model
         /// The permissions for the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImagePermissions ImagePermissions
         {
             get { return this._imagePermissions; }
@@ -61,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// The name of the private image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -80,6 +82,7 @@ namespace Amazon.AppStream.Model
         /// permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SharedAccountId
         {
             get { return this._sharedAccountId; }

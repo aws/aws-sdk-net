@@ -43,6 +43,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -70,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RequestCancelActivityTaskFailedCause Cause
         {
             get { return this._cause; }
@@ -91,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }

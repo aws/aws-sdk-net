@@ -52,6 +52,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of a connection, LAG, or interconnect.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }

@@ -92,6 +92,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subnets
         {
             get { return this._subnets; }

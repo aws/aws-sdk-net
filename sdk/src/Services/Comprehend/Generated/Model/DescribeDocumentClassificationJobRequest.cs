@@ -43,6 +43,7 @@ namespace Amazon.Comprehend.Model
         /// this identifier in its response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

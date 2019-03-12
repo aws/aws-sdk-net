@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the target definition in this Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowTargetId
         {
             get { return this._windowTargetId; }

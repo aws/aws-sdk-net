@@ -85,6 +85,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// VPC. You can specify as many as 16 subnets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subnets
         {
             get { return this._subnets; }

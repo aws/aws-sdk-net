@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
         /// The full Amazon Resource Name (ARN) of the service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -59,6 +60,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }

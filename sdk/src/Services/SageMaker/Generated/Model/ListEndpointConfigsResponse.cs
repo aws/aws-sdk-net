@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// An array of endpoint configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EndpointConfigSummary> EndpointConfigs
         {
             get { return this._endpointConfigs; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// next set of endpoint configurations, use it in the subsequent request 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

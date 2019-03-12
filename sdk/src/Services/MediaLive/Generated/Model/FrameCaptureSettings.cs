@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         /// frames for inclusion in the output.  For example, "10" means capture a frame every
         /// 10 seconds.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=3600)]
         public int CaptureInterval
         {
             get { return this._captureInterval.GetValueOrDefault(); }

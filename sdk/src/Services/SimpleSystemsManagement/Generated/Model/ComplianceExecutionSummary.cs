@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// calls.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string ExecutionId
         {
             get { return this._executionId; }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// yyyy-MM-dd'T'HH:mm:ss'Z'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ExecutionTime
         {
             get { return this._executionTime.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of execution. For example, <code>Command</code> is a valid execution type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public string ExecutionType
         {
             get { return this._executionType; }

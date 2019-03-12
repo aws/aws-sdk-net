@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         /// value that you can use to get another batch of <code>SizeConstraintSet</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.WAF.Model
         /// about another batch of <code>SizeConstraintSets</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextMarker
         {
             get { return this._nextMarker; }

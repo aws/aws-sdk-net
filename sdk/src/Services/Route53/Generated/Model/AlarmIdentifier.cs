@@ -49,6 +49,7 @@ namespace Amazon.Route53.Model
         /// Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public CloudWatchRegion Region
         {
             get { return this._region; }
@@ -84,6 +85,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

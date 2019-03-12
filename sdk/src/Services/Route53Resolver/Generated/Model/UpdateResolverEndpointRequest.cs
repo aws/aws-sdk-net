@@ -42,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// The name of the resolver endpoint that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }

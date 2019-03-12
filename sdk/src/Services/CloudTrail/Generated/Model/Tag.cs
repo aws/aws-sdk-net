@@ -42,6 +42,7 @@ namespace Amazon.CloudTrail.Model
         /// The key must be unique for the resource to which it applies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }

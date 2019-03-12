@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -54,6 +55,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Outputs. A list of outputs that you want to add.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AddOutputRequest> Outputs
         {
             get { return this._outputs; }

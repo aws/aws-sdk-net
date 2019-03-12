@@ -52,6 +52,7 @@ namespace Amazon.ECR.Model
         /// The image manifest corresponding to the image to be uploaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageManifest
         {
             get { return this._imageManifest; }
@@ -108,6 +109,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository in which to put the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -69,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// removed from the specified role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

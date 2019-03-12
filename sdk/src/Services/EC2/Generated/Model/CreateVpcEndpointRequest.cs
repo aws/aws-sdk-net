@@ -184,6 +184,7 @@ namespace Amazon.EC2.Model
         /// request, or get the name from the service provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -243,6 +244,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC in which the endpoint will be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

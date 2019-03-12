@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The status of the analysis scheme being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AnalysisSchemeStatus AnalysisScheme
         {
             get { return this._analysisScheme; }

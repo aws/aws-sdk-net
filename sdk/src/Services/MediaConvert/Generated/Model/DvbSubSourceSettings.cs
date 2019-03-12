@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         /// PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is
         /// passed through, regardless of selectors.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int Pid
         {
             get { return this._pid.GetValueOrDefault(); }

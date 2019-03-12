@@ -67,6 +67,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -96,6 +97,7 @@ namespace Amazon.KeyManagementService.Model
         /// Currently only 1 policy can be attached to a key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -116,6 +118,7 @@ namespace Amazon.KeyManagementService.Model
         /// you just received.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Marker
         {
             get { return this._marker; }

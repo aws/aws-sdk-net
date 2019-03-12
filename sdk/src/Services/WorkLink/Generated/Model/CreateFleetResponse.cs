@@ -40,6 +40,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }

@@ -124,6 +124,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceSnapshotIdentifier
         {
             get { return this._sourceSnapshotIdentifier; }
@@ -167,6 +168,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetSnapshotIdentifier
         {
             get { return this._targetSnapshotIdentifier; }

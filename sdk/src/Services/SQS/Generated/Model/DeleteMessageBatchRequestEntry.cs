@@ -63,6 +63,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -81,6 +82,7 @@ namespace Amazon.SQS.Model
         /// A receipt handle.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReceiptHandle
         {
             get { return this._receiptHandle; }

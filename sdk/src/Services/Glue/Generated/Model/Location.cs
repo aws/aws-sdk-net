@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// A DynamoDB Table location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<CodeGenNodeArg> DynamoDB
         {
             get { return this._dynamoDB; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// A JDBC location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<CodeGenNodeArg> Jdbc
         {
             get { return this._jdbc; }
@@ -78,6 +80,7 @@ namespace Amazon.Glue.Model
         /// An Amazon S3 location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<CodeGenNodeArg> S3
         {
             get { return this._s3; }

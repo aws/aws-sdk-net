@@ -44,6 +44,7 @@ namespace Amazon.SQS.Model
         /// each message that can't be enqueued.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BatchResultErrorEntry> Failed
         {
             get { return this._failed; }
@@ -62,6 +63,7 @@ namespace Amazon.SQS.Model
         /// A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SendMessageBatchResultEntry> Successful
         {
             get { return this._successful; }

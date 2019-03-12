@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// The ID of the traffic policy that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53.Model
         /// The version number of the traffic policy that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

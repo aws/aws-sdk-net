@@ -40,6 +40,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Information about the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliveryStreamDescription DeliveryStreamDescription
         {
             get { return this._deliveryStreamDescription; }

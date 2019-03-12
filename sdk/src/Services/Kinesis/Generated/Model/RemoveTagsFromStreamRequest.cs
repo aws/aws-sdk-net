@@ -52,6 +52,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -70,6 +71,7 @@ namespace Amazon.Kinesis.Model
         /// A list of tag keys. Each corresponding tag is removed from the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

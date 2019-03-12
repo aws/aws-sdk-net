@@ -53,6 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -71,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// The trust policy that grants permission to assume the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string AssumeRolePolicyDocument
         {
             get { return this._assumeRolePolicyDocument; }
@@ -146,6 +148,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -189,6 +192,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string RoleId
         {
             get { return this._roleId; }
@@ -207,6 +211,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name that identifies the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -246,6 +251,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM Identities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

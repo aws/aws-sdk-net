@@ -80,6 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The global table name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string GlobalTableName
         {
             get { return this._globalTableName; }

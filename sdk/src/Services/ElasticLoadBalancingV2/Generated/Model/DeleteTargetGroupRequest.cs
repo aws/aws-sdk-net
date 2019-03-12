@@ -47,6 +47,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the target group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetGroupArn
         {
             get { return this._targetGroupArn; }

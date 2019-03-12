@@ -92,6 +92,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session to retrieve player sessions for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -112,6 +113,7 @@ namespace Amazon.GameLift.Model
         /// this parameter is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -133,6 +135,7 @@ namespace Amazon.GameLift.Model
         /// parameter is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -151,6 +154,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a player to retrieve player sessions for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }
@@ -211,6 +215,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerSessionStatusFilter
         {
             get { return this._playerSessionStatusFilter; }

@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         /// Specify whether to enable or disable auto-placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AutoPlacement AutoPlacement
         {
             get { return this._autoPlacement; }
@@ -65,6 +66,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Dedicated Hosts to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> HostIds
         {
             get { return this._hostIds; }

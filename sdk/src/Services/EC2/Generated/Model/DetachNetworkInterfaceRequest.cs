@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The ID of the attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttachmentId
         {
             get { return this._attachmentId; }

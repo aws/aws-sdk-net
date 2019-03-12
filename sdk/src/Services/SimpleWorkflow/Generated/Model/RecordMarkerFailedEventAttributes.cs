@@ -51,6 +51,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordMarkerFailedCause Cause
         {
             get { return this._cause; }
@@ -72,6 +73,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -90,6 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The marker's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MarkerName
         {
             get { return this._markerName; }

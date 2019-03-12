@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// Information about the Capacity Reservation targeting option.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CapacityReservationSpecification CapacityReservationSpecification
         {
             get { return this._capacityReservationSpecification; }
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance to be modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

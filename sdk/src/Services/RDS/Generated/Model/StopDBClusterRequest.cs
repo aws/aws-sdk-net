@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         /// is stored as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }

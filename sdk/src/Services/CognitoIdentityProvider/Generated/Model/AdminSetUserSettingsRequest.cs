@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies the options for MFA (e.g., email or phone number).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MFAOptionType> MFAOptions
         {
             get { return this._mfaOptions; }
@@ -66,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user for whom you wish to set user settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -85,6 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// as MFA options.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

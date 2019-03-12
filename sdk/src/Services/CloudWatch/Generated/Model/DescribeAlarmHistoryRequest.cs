@@ -53,6 +53,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AlarmName
         {
             get { return this._alarmName; }
@@ -107,6 +108,7 @@ namespace Amazon.CloudWatch.Model
         /// The maximum number of alarm history records to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxRecords
         {
             get { return this._maxRecords.GetValueOrDefault(); }
@@ -125,6 +127,7 @@ namespace Amazon.CloudWatch.Model
         /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

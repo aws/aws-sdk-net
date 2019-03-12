@@ -42,6 +42,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkLink.Model
         /// A unique identifier for the certificate authority.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WebsiteCaId
         {
             get { return this._websiteCaId; }

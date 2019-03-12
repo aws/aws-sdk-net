@@ -57,6 +57,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the delivery channel through which the snapshot is delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string DeliveryChannelName
         {
             get { return this._deliveryChannelName; }

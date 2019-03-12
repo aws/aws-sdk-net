@@ -50,6 +50,7 @@ namespace Amazon.Transfer.Model
         /// role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -69,6 +70,7 @@ namespace Amazon.Transfer.Model
         /// for resources by type. This metadata can be attached to resources for any purpose.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

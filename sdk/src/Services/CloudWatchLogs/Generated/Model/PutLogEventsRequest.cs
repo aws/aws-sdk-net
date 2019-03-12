@@ -111,6 +111,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The log events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10000)]
         public List<InputLogEvent> LogEvents
         {
             get { return this._logEvents; }
@@ -129,6 +130,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -147,6 +149,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogStreamName
         {
             get { return this._logStreamName; }
@@ -169,6 +172,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// both calls may be successful, or one may be rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string SequenceToken
         {
             get { return this._sequenceToken; }

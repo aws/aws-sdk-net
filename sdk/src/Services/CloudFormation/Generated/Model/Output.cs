@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// User defined description associated with the output.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

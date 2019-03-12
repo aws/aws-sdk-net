@@ -51,6 +51,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }

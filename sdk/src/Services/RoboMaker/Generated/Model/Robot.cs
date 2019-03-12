@@ -66,6 +66,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -102,6 +103,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -120,6 +122,7 @@ namespace Amazon.RoboMaker.Model
         /// The Greengrass group associated with the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string GreenGrassGroupId
         {
             get { return this._greenGrassGroupId; }
@@ -138,6 +141,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the last deployment job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string LastDeploymentJob
         {
             get { return this._lastDeploymentJob; }
@@ -174,6 +178,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -68,6 +68,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ActionName
         {
             get { return this._actionName; }
@@ -158,6 +159,7 @@ namespace Amazon.CodePipeline.Model
         /// The version of the pipeline where the action was run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int PipelineVersion
         {
             get { return this._pipelineVersion.GetValueOrDefault(); }
@@ -176,6 +178,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the stage that contains the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string StageName
         {
             get { return this._stageName; }

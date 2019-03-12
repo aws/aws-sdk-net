@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The region of the replica to be added.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RegionName
         {
             get { return this._regionName; }
@@ -62,6 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<ReplicaGlobalSecondaryIndexSettingsUpdate> ReplicaGlobalSecondaryIndexSettingsUpdate
         {
             get { return this._replicaGlobalSecondaryIndexSettingsUpdate; }
@@ -101,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long ReplicaProvisionedReadCapacityUnits
         {
             get { return this._replicaProvisionedReadCapacityUnits.GetValueOrDefault(); }

@@ -85,6 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

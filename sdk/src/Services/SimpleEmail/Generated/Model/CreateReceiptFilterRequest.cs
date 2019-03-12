@@ -52,6 +52,7 @@ namespace Amazon.SimpleEmail.Model
         /// a name, an IP address range, and whether to allow or block mail from it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReceiptFilter Filter
         {
             get { return this._filter; }

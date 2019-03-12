@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// in <code>EvalResourceName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyEvaluationDecisionType EvalResourceDecision
         {
             get { return this._evalResourceDecision; }
@@ -90,6 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the simulated resource, in Amazon Resource Name (ARN) format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string EvalResourceName
         {
             get { return this._evalResourceName; }

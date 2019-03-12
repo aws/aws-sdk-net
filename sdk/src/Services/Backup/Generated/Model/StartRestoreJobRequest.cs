@@ -53,6 +53,7 @@ namespace Amazon.Backup.Model
         /// target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -95,6 +96,7 @@ namespace Amazon.Backup.Model
         /// created with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }
@@ -113,6 +115,7 @@ namespace Amazon.Backup.Model
         /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RecoveryPointArn
         {
             get { return this._recoveryPointArn; }

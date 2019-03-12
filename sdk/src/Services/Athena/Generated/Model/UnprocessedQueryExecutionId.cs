@@ -42,6 +42,7 @@ namespace Amazon.Athena.Model
         /// The error code returned when the query execution failed to process, if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ErrorCode
         {
             get { return this._errorCode; }

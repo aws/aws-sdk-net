@@ -64,6 +64,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> Instances
         {
             get { return this._instances; }
@@ -84,6 +85,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -109,6 +111,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -127,6 +130,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the service that the instance is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceId
         {
             get { return this._serviceId; }

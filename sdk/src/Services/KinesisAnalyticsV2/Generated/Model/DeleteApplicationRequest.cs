@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the application to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Use the <code>DescribeApplication</code> operation to get this value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateTimestamp
         {
             get { return this._createTimestamp.GetValueOrDefault(); }

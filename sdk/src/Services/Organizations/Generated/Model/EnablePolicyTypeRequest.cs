@@ -59,6 +59,7 @@ namespace Amazon.Organizations.Model
         /// The policy type that you want to enable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType PolicyType
         {
             get { return this._policyType; }
@@ -83,6 +84,7 @@ namespace Amazon.Organizations.Model
         /// requires "r-" followed by from 4 to 32 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RootId
         {
             get { return this._rootId; }

@@ -43,6 +43,7 @@ namespace Amazon.CodeStar.Model
         /// The description of the project, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }
@@ -79,6 +81,7 @@ namespace Amazon.CodeStar.Model
         /// The name of the project you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

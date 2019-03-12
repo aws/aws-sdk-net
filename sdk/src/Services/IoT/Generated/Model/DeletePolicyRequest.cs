@@ -57,6 +57,7 @@ namespace Amazon.IoT.Model
         /// The name of the policy to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

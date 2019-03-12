@@ -94,6 +94,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -113,6 +114,7 @@ namespace Amazon.IdentityManagement.Model
         /// and an associated value. You can specify this with a JSON string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

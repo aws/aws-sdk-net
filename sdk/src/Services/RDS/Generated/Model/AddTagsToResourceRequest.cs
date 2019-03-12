@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -70,6 +71,7 @@ namespace Amazon.RDS.Model
         /// The tags to be assigned to the Amazon RDS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

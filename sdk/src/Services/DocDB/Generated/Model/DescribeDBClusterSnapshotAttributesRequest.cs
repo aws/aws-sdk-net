@@ -51,6 +51,7 @@ namespace Amazon.DocDB.Model
         /// The identifier for the DB cluster snapshot to describe the attributes for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterSnapshotIdentifier
         {
             get { return this._dbClusterSnapshotIdentifier; }

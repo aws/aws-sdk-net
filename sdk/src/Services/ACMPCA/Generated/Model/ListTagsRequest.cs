@@ -53,6 +53,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -74,6 +75,7 @@ namespace Amazon.ACMPCA.Model
         /// in a subsequent request to retrieve additional items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -94,6 +96,7 @@ namespace Amazon.ACMPCA.Model
         /// response you just received.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -85,6 +85,7 @@ namespace Amazon.SQS.Model
         /// The URL of the queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }
@@ -103,6 +104,7 @@ namespace Amazon.SQS.Model
         /// The list of tags to be removed from the specified queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

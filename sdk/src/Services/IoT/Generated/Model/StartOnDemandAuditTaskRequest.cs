@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// to select which checks are enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TargetCheckNames
         {
             get { return this._targetCheckNames; }

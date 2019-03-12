@@ -81,6 +81,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int BatchSize
         {
             get { return this._batchSize.GetValueOrDefault(); }
@@ -130,6 +131,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventSourceArn
         {
             get { return this._eventSourceArn; }
@@ -171,6 +173,7 @@ namespace Amazon.Lambda.Model
         /// name, it's limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }

@@ -70,6 +70,7 @@ namespace Amazon.Route53.Model
         /// there are no more hosted zones to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Marker
         {
             get { return this._marker; }
@@ -112,6 +113,7 @@ namespace Amazon.Route53.Model
         /// delegation set. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string DelegationSetId
         {
             get { return this._delegationSetId; }

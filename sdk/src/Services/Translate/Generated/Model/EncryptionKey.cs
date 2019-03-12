@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         /// terminology.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=400)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.Translate.Model
         /// The type of encryption key used by Amazon Translate to encrypt custom terminologies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionKeyType Type
         {
             get { return this._type; }

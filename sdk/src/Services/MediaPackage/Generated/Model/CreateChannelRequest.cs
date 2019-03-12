@@ -56,6 +56,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property Id. The ID of the Channel. The ID must be unique within
         /// the region and itcannot be changed after a Channel is created.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

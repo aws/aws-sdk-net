@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         /// your overlay frame rate. For example, if your frame rate is 24 fps, set this value
         /// to 1.
         /// </summary>
+        [AWSProperty(Min=1, Max=17895697)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.MediaConvert.Model
         /// your overlay frame rate. For example, if your frame rate is 24 fps, set this value
         /// to 24.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483640)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }

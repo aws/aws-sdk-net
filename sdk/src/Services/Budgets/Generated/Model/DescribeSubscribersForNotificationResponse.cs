@@ -42,6 +42,7 @@ namespace Amazon.Budgets.Model
         /// that you can retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.Budgets.Model
         /// A list of subscribers that are associated with a notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=11)]
         public List<Subscriber> Subscribers
         {
             get { return this._subscribers; }

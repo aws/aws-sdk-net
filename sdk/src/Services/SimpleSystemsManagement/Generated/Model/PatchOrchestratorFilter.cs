@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The key for the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }

@@ -46,6 +46,7 @@ namespace Amazon.CodeCommit.Model
         /// The new name for the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string NewName
         {
             get { return this._newName; }
@@ -64,6 +65,7 @@ namespace Amazon.CodeCommit.Model
         /// The existing name of the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string OldName
         {
             get { return this._oldName; }

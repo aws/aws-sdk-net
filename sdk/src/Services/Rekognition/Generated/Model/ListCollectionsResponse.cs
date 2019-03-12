@@ -81,6 +81,7 @@ namespace Amazon.Rekognition.Model
         /// can use in the subsequent request to fetch the next set of collection IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

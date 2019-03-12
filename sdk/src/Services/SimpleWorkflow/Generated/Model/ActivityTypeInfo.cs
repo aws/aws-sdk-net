@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <a>ActivityType</a> type structure representing the activity type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The date and time this activity type was created through <a>RegisterActivityType</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }
@@ -98,6 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The description of the activity type provided in <a>RegisterActivityType</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -116,6 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The current status of the activity type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegistrationStatus Status
         {
             get { return this._status; }

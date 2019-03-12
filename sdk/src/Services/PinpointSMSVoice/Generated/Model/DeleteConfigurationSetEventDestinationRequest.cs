@@ -39,6 +39,7 @@ namespace Amazon.PinpointSMSVoice.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. ConfigurationSetName
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -54,6 +55,7 @@ namespace Amazon.PinpointSMSVoice.Model
         /// <summary>
         /// Gets and sets the property EventDestinationName. EventDestinationName
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventDestinationName
         {
             get { return this._eventDestinationName; }

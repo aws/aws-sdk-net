@@ -49,6 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// The ID of an AWS account that's associated with this stack instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackInstanceAccount
         {
             get { return this._stackInstanceAccount; }
@@ -67,6 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of a region that's associated with this stack instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackInstanceRegion
         {
             get { return this._stackInstanceRegion; }
@@ -86,6 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// information for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment run that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }

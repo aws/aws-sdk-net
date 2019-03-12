@@ -41,6 +41,7 @@ namespace Amazon.PinpointEmail.Model
         /// addresses appears on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, List<BlacklistEntry>> BlacklistReport
         {
             get { return this._blacklistReport; }

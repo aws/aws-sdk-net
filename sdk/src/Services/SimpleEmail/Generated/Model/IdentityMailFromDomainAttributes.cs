@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// <code>Failed</code>, and <code>TemporaryFailure</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BehaviorOnMXFailure BehaviorOnMXFailure
         {
             get { return this._behaviorOnMXFailure; }
@@ -71,6 +72,7 @@ namespace Amazon.SimpleEmail.Model
         /// The custom MAIL FROM domain that the identity is configured to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MailFromDomain
         {
             get { return this._mailFromDomain; }
@@ -92,6 +94,7 @@ namespace Amazon.SimpleEmail.Model
         /// All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CustomMailFromStatus MailFromDomainStatus
         {
             get { return this._mailFromDomainStatus; }

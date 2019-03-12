@@ -47,6 +47,7 @@ namespace Amazon.CodeCommit.Model
         /// returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CommitId
         {
             get { return this._commitId; }
@@ -83,6 +84,7 @@ namespace Amazon.CodeCommit.Model
         /// The fully-qualified path of the folder whose contents are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FolderPath
         {
             get { return this._folderPath; }

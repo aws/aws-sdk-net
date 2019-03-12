@@ -58,6 +58,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream to which you want to add the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -76,6 +77,7 @@ namespace Amazon.KinesisFirehose.Model
         /// A set of key-value pairs to use to create the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

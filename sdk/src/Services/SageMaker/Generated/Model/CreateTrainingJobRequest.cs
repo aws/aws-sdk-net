@@ -113,6 +113,7 @@ namespace Amazon.SageMaker.Model
         /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmSpecification AlgorithmSpecification
         {
             get { return this._algorithmSpecification; }
@@ -190,6 +191,7 @@ namespace Amazon.SageMaker.Model
         /// Constraint</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
         {
             get { return this._hyperParameters; }
@@ -223,6 +225,7 @@ namespace Amazon.SageMaker.Model
         /// makes it available as input streams. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -242,6 +245,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker creates subfolders for the artifacts. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputDataConfig OutputDataConfig
         {
             get { return this._outputDataConfig; }
@@ -269,6 +273,7 @@ namespace Amazon.SageMaker.Model
         /// training algorithms, specify an instance count greater than 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }
@@ -303,6 +308,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -331,6 +337,7 @@ namespace Amazon.SageMaker.Model
         /// a model using the <code>CreateModel</code> API. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }
@@ -351,6 +358,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -370,6 +378,7 @@ namespace Amazon.SageMaker.Model
         /// account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }

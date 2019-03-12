@@ -55,6 +55,7 @@ namespace Amazon.Rekognition.Model
         /// operation, which recognizes celebrities in an image. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

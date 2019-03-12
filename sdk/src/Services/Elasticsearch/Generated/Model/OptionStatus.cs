@@ -44,6 +44,7 @@ namespace Amazon.Elasticsearch.Model
         /// Timestamp which tells the creation date for the entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.Elasticsearch.Model
         /// Provides the <code>OptionState</code> for the Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionState State
         {
             get { return this._state; }
@@ -98,6 +100,7 @@ namespace Amazon.Elasticsearch.Model
         /// Timestamp which tells the last updated time for the entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateDate
         {
             get { return this._updateDate.GetValueOrDefault(); }
@@ -116,6 +119,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the latest version for the entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int UpdateVersion
         {
             get { return this._updateVersion.GetValueOrDefault(); }

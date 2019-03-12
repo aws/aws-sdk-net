@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// encryption. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldLevelEncryptionConfig FieldLevelEncryptionConfig
         {
             get { return this._fieldLevelEncryptionConfig; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudFront.Model
         /// public keys.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -82,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// The last time the field-level encryption configuration was changed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }

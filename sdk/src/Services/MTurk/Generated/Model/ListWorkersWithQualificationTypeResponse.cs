@@ -39,6 +39,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

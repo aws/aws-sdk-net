@@ -40,6 +40,7 @@ namespace Amazon.Rekognition.Model
         /// An array of strings (face IDs) of the faces that were deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public List<string> DeletedFaces
         {
             get { return this._deletedFaces; }

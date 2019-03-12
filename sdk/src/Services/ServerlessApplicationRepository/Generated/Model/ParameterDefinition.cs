@@ -236,6 +236,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -274,6 +275,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// A list of AWS SAM resources that use this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ReferencedByResources
         {
             get { return this._referencedByResources; }

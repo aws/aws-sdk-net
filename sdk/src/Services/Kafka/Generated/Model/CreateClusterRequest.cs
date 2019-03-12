@@ -46,6 +46,7 @@ namespace Amazon.Kafka.Model
         /// Information about the broker nodes in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BrokerNodeGroupInfo BrokerNodeGroupInfo
         {
             get { return this._brokerNodeGroupInfo; }
@@ -64,6 +65,7 @@ namespace Amazon.Kafka.Model
         /// The name of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -119,6 +121,7 @@ namespace Amazon.Kafka.Model
         /// The version of Apache Kafka.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string KafkaVersion
         {
             get { return this._kafkaVersion; }
@@ -137,6 +140,7 @@ namespace Amazon.Kafka.Model
         /// The number of Kafka broker nodes in the Amazon MSK cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public int NumberOfBrokerNodes
         {
             get { return this._numberOfBrokerNodes.GetValueOrDefault(); }

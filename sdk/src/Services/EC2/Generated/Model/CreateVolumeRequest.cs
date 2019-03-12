@@ -103,6 +103,7 @@ namespace Amazon.EC2.Model
         /// to list the Availability Zones that are currently available to you.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }

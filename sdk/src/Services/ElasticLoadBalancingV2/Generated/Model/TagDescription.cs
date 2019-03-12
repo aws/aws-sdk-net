@@ -59,6 +59,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Information about the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<Tag> Tags
         {
             get { return this._tags; }

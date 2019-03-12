@@ -76,6 +76,7 @@ namespace Amazon.EC2.Model
         /// One or more purchase requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<PurchaseRequest> PurchaseRequests
         {
             get { return this._purchaseRequests; }

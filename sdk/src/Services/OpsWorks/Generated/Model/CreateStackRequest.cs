@@ -236,6 +236,7 @@ namespace Amazon.OpsWorks.Model
         /// Identifiers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DefaultInstanceProfileArn
         {
             get { return this._defaultInstanceProfileArn; }
@@ -452,6 +453,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -491,6 +493,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Region
         {
             get { return this._region; }
@@ -513,6 +516,7 @@ namespace Amazon.OpsWorks.Model
         /// Identifiers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceRoleArn
         {
             get { return this._serviceRoleArn; }

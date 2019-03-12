@@ -125,6 +125,7 @@ namespace Amazon.Shield.Model
         /// The length, in seconds, of the AWS Shield Advanced subscription for the account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long TimeCommitmentInSeconds
         {
             get { return this._timeCommitmentInSeconds.GetValueOrDefault(); }

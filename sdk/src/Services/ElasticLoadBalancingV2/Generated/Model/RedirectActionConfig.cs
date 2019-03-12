@@ -82,6 +82,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The hostname. This component is not percent-encoded. The hostname can contain #{host}.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Host
         {
             get { return this._host; }
@@ -101,6 +102,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The path can contain #{host}, #{path}, and #{port}.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Path
         {
             get { return this._path; }
@@ -158,6 +160,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// reserved keywords.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Query
         {
             get { return this._query; }
@@ -177,6 +180,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// 302).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RedirectActionStatusCodeEnum StatusCode
         {
             get { return this._statusCode; }

@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -80,6 +80,7 @@ namespace Amazon.Glue.Model
         /// The name of a job to be executed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -116,6 +117,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure to be used with this action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }
@@ -136,6 +138,7 @@ namespace Amazon.Glue.Model
         /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }

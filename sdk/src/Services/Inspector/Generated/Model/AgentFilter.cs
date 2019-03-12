@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<string> AgentHealthCodes
         {
             get { return this._agentHealthCodes; }
@@ -61,6 +62,7 @@ namespace Amazon.Inspector.Model
         /// The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<string> AgentHealths
         {
             get { return this._agentHealths; }

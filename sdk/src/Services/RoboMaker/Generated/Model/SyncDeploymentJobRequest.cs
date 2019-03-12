@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// The target fleet for the synchronization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Fleet
         {
             get { return this._fleet; }

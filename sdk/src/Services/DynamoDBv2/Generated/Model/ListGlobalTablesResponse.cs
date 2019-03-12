@@ -59,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Last evaluated global table name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string LastEvaluatedGlobalTableName
         {
             get { return this._lastEvaluatedGlobalTableName; }

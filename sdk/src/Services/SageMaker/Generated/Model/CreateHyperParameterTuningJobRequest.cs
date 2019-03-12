@@ -52,6 +52,7 @@ namespace Amazon.SageMaker.Model
         /// see <a>automatic-model-tuning</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobConfig HyperParameterTuningJobConfig
         {
             get { return this._hyperParameterTuningJobConfig; }
@@ -73,6 +74,7 @@ namespace Amazon.SageMaker.Model
         /// A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HyperParameterTuningJobName
         {
             get { return this._hyperParameterTuningJobName; }
@@ -99,6 +101,7 @@ namespace Amazon.SageMaker.Model
         /// the tuning job launches.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -119,6 +122,7 @@ namespace Amazon.SageMaker.Model
         /// output data configuration, resource configuration, and stopping condition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTrainingJobDefinition TrainingJobDefinition
         {
             get { return this._trainingJobDefinition; }

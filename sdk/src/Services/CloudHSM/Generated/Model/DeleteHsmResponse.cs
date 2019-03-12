@@ -40,6 +40,7 @@ namespace Amazon.CloudHSM.Model
         /// The status of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

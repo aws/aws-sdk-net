@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// how many times a task is attempted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string AttemptId
         {
             get { return this._attemptId; }
@@ -81,6 +82,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline that provided the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -100,6 +102,7 @@ namespace Amazon.DataPipeline.Model
         /// and <a>ReportTaskProgress</a> actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string TaskId
         {
             get { return this._taskId; }

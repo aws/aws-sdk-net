@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// policy that was created by the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrafficPolicySummary> TrafficPolicySummaries
         {
             get { return this._trafficPolicySummaries; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53.Model
         /// in the <code>TrafficPolicyIdMarker</code> request parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.Route53.Model
         /// policies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string TrafficPolicyIdMarker
         {
             get { return this._trafficPolicyIdMarker; }
@@ -104,6 +107,7 @@ namespace Amazon.Route53.Model
         /// request that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

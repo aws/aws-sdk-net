@@ -63,6 +63,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the slot type. The name is case sensitive. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

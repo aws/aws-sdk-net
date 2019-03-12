@@ -50,6 +50,7 @@ namespace Amazon.MachineLearning.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }

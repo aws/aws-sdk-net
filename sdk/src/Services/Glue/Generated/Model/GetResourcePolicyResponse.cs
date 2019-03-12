@@ -61,6 +61,7 @@ namespace Amazon.Glue.Model
         /// Contains the hash value associated with this policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PolicyHash
         {
             get { return this._policyHash; }
@@ -79,6 +80,7 @@ namespace Amazon.Glue.Model
         /// Contains the requested policy document, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10240)]
         public string PolicyInJson
         {
             get { return this._policyInJson; }

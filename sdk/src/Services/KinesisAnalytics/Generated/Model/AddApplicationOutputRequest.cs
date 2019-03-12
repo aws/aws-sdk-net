@@ -76,6 +76,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the application to which you want to add the output configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -97,6 +98,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// is returned. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -118,6 +120,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// and record the formation to use when writing to the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Output Output
         {
             get { return this._output; }

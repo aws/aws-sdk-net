@@ -63,6 +63,7 @@ namespace Amazon.AppMesh.Model
         /// The list of existing virtual services for the specified service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<VirtualServiceRef> VirtualServices
         {
             get { return this._virtualServices; }

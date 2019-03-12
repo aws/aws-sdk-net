@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Brightness. Brightness level.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Brightness
         {
             get { return this._brightness.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Contrast. Contrast level.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Contrast
         {
             get { return this._contrast.GetValueOrDefault(); }
@@ -104,6 +106,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Hue. Hue in degrees.
         /// </summary>
+        [AWSProperty(Min=-180, Max=180)]
         public int Hue
         {
             get { return this._hue.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Saturation. Saturation level.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Saturation
         {
             get { return this._saturation.GetValueOrDefault(); }

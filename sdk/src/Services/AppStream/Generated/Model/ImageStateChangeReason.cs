@@ -59,6 +59,7 @@ namespace Amazon.AppStream.Model
         /// The state change reason message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Message
         {
             get { return this._message; }

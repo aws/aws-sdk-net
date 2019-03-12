@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The policy to detach.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The target from which the policy will be detached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Target
         {
             get { return this._target; }

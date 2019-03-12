@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// next set of training jobs, use it in the subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>TrainingJobSummary</code> objects, each listing a training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrainingJobSummary> TrainingJobSummaries
         {
             get { return this._trainingJobSummaries; }

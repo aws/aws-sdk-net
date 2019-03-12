@@ -61,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// The artifact's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -80,6 +81,7 @@ namespace Amazon.CodePipeline.Model
         /// ID (GitHub) or a revision ID (Amazon S3).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1500)]
         public string Revision
         {
             get { return this._revision; }

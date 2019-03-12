@@ -46,6 +46,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// maps to corresponding columns created in the in-application stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceSchema ReferenceSchema
         {
             get { return this._referenceSchema; }
@@ -85,6 +86,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the in-application table to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string TableName
         {
             get { return this._tableName; }

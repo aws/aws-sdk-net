@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConnectionEvents
         {
             get { return this._connectionEvents; }
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// The ARN of the SNS topic for the notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionNotificationArn
         {
             get { return this._connectionNotificationArn; }

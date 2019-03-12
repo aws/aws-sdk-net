@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// to the specified SNS topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -61,6 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// The name of the SNS topic from which to remove the directory as a publisher.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TopicName
         {
             get { return this._topicName; }

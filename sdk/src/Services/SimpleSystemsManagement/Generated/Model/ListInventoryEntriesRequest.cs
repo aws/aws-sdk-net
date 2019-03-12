@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters. Use a filter to return a more specific list of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<InventoryFilter> Filters
         {
             get { return this._filters; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance ID for which you want inventory information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of inventory item for which you want information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

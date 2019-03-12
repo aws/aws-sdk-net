@@ -102,6 +102,7 @@ namespace Amazon.DynamoDBv2.Model
         /// An array of attributes that describe the key schema for the table and indexes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AttributeDefinition> AttributeDefinitions
         {
             get { return this._attributeDefinitions; }
@@ -267,6 +268,7 @@ namespace Amazon.DynamoDBv2.Model
         /// the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
@@ -450,6 +452,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

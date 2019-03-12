@@ -41,6 +41,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Assignment to be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }

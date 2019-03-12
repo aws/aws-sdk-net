@@ -52,6 +52,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that you want to change name servers for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -89,6 +90,7 @@ namespace Amazon.Route53Domains.Model
         /// A list of new name servers for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Nameserver> Nameservers
         {
             get { return this._nameservers; }

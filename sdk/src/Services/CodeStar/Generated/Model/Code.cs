@@ -45,6 +45,7 @@ namespace Amazon.CodeStar.Model
         /// the project request are placed in the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CodeDestination Destination
         {
             get { return this._destination; }
@@ -64,6 +65,7 @@ namespace Amazon.CodeStar.Model
         /// AWS CodeStar retrieves the files during project creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CodeSource Source
         {
             get { return this._source; }

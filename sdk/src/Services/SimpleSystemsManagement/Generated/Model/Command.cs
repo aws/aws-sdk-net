@@ -80,6 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A unique identifier for this command.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string CommandId
         {
             get { return this._commandId; }
@@ -99,6 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the command should do.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string Comment
         {
             get { return this._comment; }
@@ -229,6 +231,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance IDs against which this command was requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }
@@ -252,6 +255,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -275,6 +279,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -312,6 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// was requested when issuing the command.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string OutputS3BucketName
         {
             get { return this._outputS3BucketName; }
@@ -331,6 +337,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// should be stored. This was requested when issuing the command.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string OutputS3KeyPrefix
         {
             get { return this._outputS3KeyPrefix; }
@@ -350,6 +357,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=20)]
         public string OutputS3Region
         {
             get { return this._outputS3Region; }
@@ -492,6 +500,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string StatusDetails
         {
             get { return this._statusDetails; }
@@ -530,6 +539,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

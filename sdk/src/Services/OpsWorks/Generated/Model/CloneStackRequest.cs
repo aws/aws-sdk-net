@@ -547,6 +547,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceRoleArn
         {
             get { return this._serviceRoleArn; }
@@ -565,6 +566,7 @@ namespace Amazon.OpsWorks.Model
         /// The source stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceStackId
         {
             get { return this._sourceStackId; }

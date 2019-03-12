@@ -67,6 +67,7 @@ namespace Amazon.ACMPCA.Model
         /// on-premises CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public MemoryStream Certificate
         {
             get { return this._certificate; }
@@ -91,6 +92,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -112,6 +114,7 @@ namespace Amazon.ACMPCA.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2097152)]
         public MemoryStream CertificateChain
         {
             get { return this._certificateChain; }

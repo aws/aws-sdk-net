@@ -111,6 +111,7 @@ namespace Amazon.MTurk.Model
         ///  A unique identifier for the assignment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }
@@ -189,6 +190,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -266,6 +268,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the Worker who accepted the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

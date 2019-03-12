@@ -43,6 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the attribute that contains the result of the math operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Attribute
         {
             get { return this._attribute; }
@@ -62,6 +63,7 @@ namespace Amazon.IoTAnalytics.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Math
         {
             get { return this._math; }
@@ -80,6 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'math' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -98,6 +101,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

@@ -44,6 +44,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string CommentId
         {
             get { return this._commentId; }
@@ -116,6 +117,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the user being replied to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RecipientId
         {
             get { return this._recipientId; }

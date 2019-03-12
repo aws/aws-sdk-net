@@ -81,6 +81,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -117,6 +118,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The metadata for the provisioning artifact. This is used with AWS Marketplace products.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, string> ProvisioningArtifactMetadata
         {
             get { return this._provisioningArtifactMetadata; }

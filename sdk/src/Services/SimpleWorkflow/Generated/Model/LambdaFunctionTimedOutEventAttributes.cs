@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }

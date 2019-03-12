@@ -55,6 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }

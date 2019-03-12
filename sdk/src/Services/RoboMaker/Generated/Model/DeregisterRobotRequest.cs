@@ -42,6 +42,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Fleet
         {
             get { return this._fleet; }
@@ -60,6 +61,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Robot
         {
             get { return this._robot; }

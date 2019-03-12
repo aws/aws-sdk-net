@@ -139,6 +139,7 @@ namespace Amazon.CodeCommit.Model
         /// The repository's default branch name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string DefaultBranch
         {
             get { return this._defaultBranch; }
@@ -175,6 +176,7 @@ namespace Amazon.CodeCommit.Model
         /// A comment or description about the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string RepositoryDescription
         {
             get { return this._repositoryDescription; }
@@ -211,6 +213,7 @@ namespace Amazon.CodeCommit.Model
         /// The repository's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

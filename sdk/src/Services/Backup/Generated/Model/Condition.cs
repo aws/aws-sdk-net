@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         /// <code>"ec2:ResourceTag/Department"</code> is the key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConditionKey
         {
             get { return this._conditionKey; }
@@ -64,6 +65,7 @@ namespace Amazon.Backup.Model
         /// used to filter resources in a selection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConditionType ConditionType
         {
             get { return this._conditionType; }
@@ -83,6 +85,7 @@ namespace Amazon.Backup.Model
         /// "accounting"</code>, <code>"accounting"</code> is the value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConditionValue
         {
             get { return this._conditionValue; }

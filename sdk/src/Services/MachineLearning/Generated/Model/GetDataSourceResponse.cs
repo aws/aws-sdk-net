@@ -139,6 +139,7 @@ namespace Amazon.MachineLearning.Model
         /// S3).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string DataLocationS3
         {
             get { return this._dataLocationS3; }
@@ -195,6 +196,7 @@ namespace Amazon.MachineLearning.Model
         /// to the value of the <code>DataSourceId</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }
@@ -218,6 +220,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         /// </note>
         /// </summary>
+        [AWSProperty(Max=131071)]
         public string DataSourceSchema
         {
             get { return this._dataSourceSchema; }
@@ -294,6 +297,7 @@ namespace Amazon.MachineLearning.Model
         /// The user-supplied description of the most recent details about creating the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Message
         {
             get { return this._message; }
@@ -312,6 +316,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -375,6 +380,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property RoleARN.
         /// </summary>
+        [AWSProperty(Min=1, Max=110)]
         public string RoleARN
         {
             get { return this._roleARN; }

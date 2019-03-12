@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project to remove tags from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeStar.Model
         /// The tags to remove from the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Tags
         {
             get { return this._tags; }

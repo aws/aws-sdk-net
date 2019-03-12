@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         /// The Availability Zone for the Dedicated Hosts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -110,6 +111,7 @@ namespace Amazon.EC2.Model
         /// the instance type, that is the only instance type that you can launch onto that host.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -128,6 +130,7 @@ namespace Amazon.EC2.Model
         /// The number of Dedicated Hosts to allocate to your account with these parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

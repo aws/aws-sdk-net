@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// The external ID of the run of the action that failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1500)]
         public string ExternalExecutionId
         {
             get { return this._externalExecutionId; }
@@ -60,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// The message about the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5000)]
         public string Message
         {
             get { return this._message; }
@@ -78,6 +80,7 @@ namespace Amazon.CodePipeline.Model
         /// The type of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FailureType Type
         {
             get { return this._type; }

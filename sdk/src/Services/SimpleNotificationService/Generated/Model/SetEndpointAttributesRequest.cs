@@ -63,6 +63,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -81,6 +82,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// EndpointArn used for SetEndpointAttributes action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointArn
         {
             get { return this._endpointArn; }

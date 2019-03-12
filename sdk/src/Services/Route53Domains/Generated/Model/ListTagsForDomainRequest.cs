@@ -47,6 +47,7 @@ namespace Amazon.Route53Domains.Model
         /// The domain for which you want to get a list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

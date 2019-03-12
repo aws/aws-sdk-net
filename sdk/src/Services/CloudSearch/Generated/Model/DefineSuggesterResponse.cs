@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Suggester.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SuggesterStatus Suggester
         {
             get { return this._suggester; }

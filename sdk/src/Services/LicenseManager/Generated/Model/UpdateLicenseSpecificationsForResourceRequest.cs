@@ -83,6 +83,7 @@ namespace Amazon.LicenseManager.Model
         /// ARN for an AWS server resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

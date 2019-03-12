@@ -43,6 +43,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project to get tags for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeStar.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.CodeStar.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -82,6 +82,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The maximum number of results to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=400)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

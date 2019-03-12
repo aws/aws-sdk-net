@@ -40,6 +40,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheck HealthCheck
         {
             get { return this._healthCheck; }

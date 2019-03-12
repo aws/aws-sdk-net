@@ -40,6 +40,7 @@ namespace Amazon.Rekognition.Model
         /// HTTP status code that indicates the result of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int StatusCode
         {
             get { return this._statusCode.GetValueOrDefault(); }

@@ -56,6 +56,7 @@ namespace Amazon.OpsWorksCM.Model
         /// This is not currently implemented for <code>DescribeServers</code> requests. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -92,6 +93,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Describes the server with the specified ServerName.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

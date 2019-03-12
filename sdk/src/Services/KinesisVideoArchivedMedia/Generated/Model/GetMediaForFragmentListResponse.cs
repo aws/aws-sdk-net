@@ -41,6 +41,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The content type of the requested media.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ContentType
         {
             get { return this._contentType; }

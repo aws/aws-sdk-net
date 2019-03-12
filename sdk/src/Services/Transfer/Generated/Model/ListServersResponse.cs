@@ -44,6 +44,7 @@ namespace Amazon.Transfer.Model
         /// servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -62,6 +63,7 @@ namespace Amazon.Transfer.Model
         /// An array of servers that were listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ListedServer> Servers
         {
             get { return this._servers; }

@@ -48,6 +48,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AppId
         {
             get { return this._appId; }
@@ -66,6 +67,7 @@ namespace Amazon.Amplify.Model
         ///  Name for the branch, for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -84,6 +86,7 @@ namespace Amazon.Amplify.Model
         ///  Commit Id from 3rd party repository provider for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string CommitId
         {
             get { return this._commitId; }
@@ -102,6 +105,7 @@ namespace Amazon.Amplify.Model
         ///  Commit message from 3rd party repository provider for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string CommitMessage
         {
             get { return this._commitMessage; }
@@ -138,6 +142,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string JobId
         {
             get { return this._jobId; }
@@ -156,6 +161,7 @@ namespace Amazon.Amplify.Model
         ///  Reason for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string JobReason
         {
             get { return this._jobReason; }
@@ -174,6 +180,7 @@ namespace Amazon.Amplify.Model
         ///  Type for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10)]
         public JobType JobType
         {
             get { return this._jobType; }

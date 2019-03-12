@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The result produced by the workflow execution upon successful completion.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Result
         {
             get { return this._result; }

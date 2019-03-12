@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// The unique name of the typed link facet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypedLinkName
         {
             get { return this._typedLinkName; }

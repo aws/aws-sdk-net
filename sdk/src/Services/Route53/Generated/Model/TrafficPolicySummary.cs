@@ -45,6 +45,7 @@ namespace Amazon.Route53.Model
         /// The ID that Amazon Route 53 assigned to the traffic policy when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -63,6 +64,7 @@ namespace Amazon.Route53.Model
         /// The name that you specified for the traffic policy when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=512)]
         public string Name
         {
             get { return this._name; }
@@ -82,6 +84,7 @@ namespace Amazon.Route53.Model
         /// a traffic policy to create a traffic policy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RRType Type
         {
             get { return this._type; }
@@ -100,6 +103,7 @@ namespace Amazon.Route53.Model
         /// The version number of the latest version of the traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int LatestVersion
         {
             get { return this._latestVersion.GetValueOrDefault(); }
@@ -118,6 +122,7 @@ namespace Amazon.Route53.Model
         /// The number of traffic policies that are associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int TrafficPolicyCount
         {
             get { return this._trafficPolicyCount.GetValueOrDefault(); }

@@ -87,6 +87,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session to add players to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -126,6 +127,7 @@ namespace Amazon.GameLift.Model
         /// List of unique identifiers for the players to be added.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<string> PlayerIds
         {
             get { return this._playerIds; }

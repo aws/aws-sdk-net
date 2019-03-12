@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// Specifies the behaviors that, when violated by a device (thing), cause an alert.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public List<Behavior> Behaviors
         {
             get { return this._behaviors; }

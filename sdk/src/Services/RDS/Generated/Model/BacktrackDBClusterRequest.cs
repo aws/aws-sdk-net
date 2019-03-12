@@ -78,6 +78,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>2017-07-08T18:00Z</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime BacktrackToUtc
         {
             get { return this._backtrackToUtc.GetValueOrDefault(); }
@@ -117,6 +118,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }

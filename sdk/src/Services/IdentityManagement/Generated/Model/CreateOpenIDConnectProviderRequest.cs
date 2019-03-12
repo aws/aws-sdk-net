@@ -132,6 +132,7 @@ namespace Amazon.IdentityManagement.Model
         /// the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ThumbprintList
         {
             get { return this._thumbprintList; }
@@ -160,6 +161,7 @@ namespace Amazon.IdentityManagement.Model
         /// AWS account, you will get an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Url
         {
             get { return this._url; }

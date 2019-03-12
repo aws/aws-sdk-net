@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ChannelId. Id of the channel whose schedule is being updated.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ChannelId
         {
             get { return this._channelId; }

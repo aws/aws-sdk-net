@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// The S3 bucket for output.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -59,6 +60,7 @@ namespace Amazon.RoboMaker.Model
         /// The S3 folder in the <code>s3Bucket</code> where output files will be placed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string S3Prefix
         {
             get { return this._s3Prefix; }

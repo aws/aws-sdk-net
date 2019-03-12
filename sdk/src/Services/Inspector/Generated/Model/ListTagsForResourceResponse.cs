@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// A collection of key and value pairs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }

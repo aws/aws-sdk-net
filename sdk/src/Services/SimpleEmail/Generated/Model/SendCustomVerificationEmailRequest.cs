@@ -75,6 +75,7 @@ namespace Amazon.SimpleEmail.Model
         /// The email address to verify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -94,6 +95,7 @@ namespace Amazon.SimpleEmail.Model
         /// email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

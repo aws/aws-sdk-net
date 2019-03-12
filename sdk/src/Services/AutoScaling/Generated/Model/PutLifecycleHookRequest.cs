@@ -101,6 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -165,6 +166,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the lifecycle hook.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string LifecycleHookName
         {
             get { return this._lifecycleHookName; }
@@ -216,6 +218,7 @@ namespace Amazon.AutoScaling.Model
         /// a message to the notification target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1023)]
         public string NotificationMetadata
         {
             get { return this._notificationMetadata; }
@@ -250,6 +253,7 @@ namespace Amazon.AutoScaling.Model
         /// Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1600)]
         public string NotificationTargetARN
         {
             get { return this._notificationTargetARN; }
@@ -274,6 +278,7 @@ namespace Amazon.AutoScaling.Model
         /// updating existing hooks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string RoleARN
         {
             get { return this._roleARN; }

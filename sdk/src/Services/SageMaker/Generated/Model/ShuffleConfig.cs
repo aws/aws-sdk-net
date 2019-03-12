@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
         /// Determines the shuffling order in <code>ShuffleConfig</code> value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Seed
         {
             get { return this._seed.GetValueOrDefault(); }

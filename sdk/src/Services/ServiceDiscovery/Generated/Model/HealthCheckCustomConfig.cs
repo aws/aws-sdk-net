@@ -129,6 +129,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// after the first request to make the change.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int FailureThreshold
         {
             get { return this._failureThreshold.GetValueOrDefault(); }

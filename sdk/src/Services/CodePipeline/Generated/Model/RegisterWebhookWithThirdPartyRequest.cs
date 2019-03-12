@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// third party. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string WebhookName
         {
             get { return this._webhookName; }

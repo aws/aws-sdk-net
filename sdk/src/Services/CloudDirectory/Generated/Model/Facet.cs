@@ -64,6 +64,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the <a>Facet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

@@ -67,6 +67,7 @@ namespace Amazon.Neptune.Model
         /// The name of the engine to retrieve DB instance options for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

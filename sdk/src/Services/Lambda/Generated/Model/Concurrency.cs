@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         /// Concurrency</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ReservedConcurrentExecutions
         {
             get { return this._reservedConcurrentExecutions.GetValueOrDefault(); }

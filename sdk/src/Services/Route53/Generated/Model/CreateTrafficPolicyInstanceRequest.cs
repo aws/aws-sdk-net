@@ -51,6 +51,7 @@ namespace Amazon.Route53.Model
         /// sets in by using the configuration in a traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -71,6 +72,7 @@ namespace Amazon.Route53.Model
         /// that Route 53 creates for this traffic policy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -90,6 +92,7 @@ namespace Amazon.Route53.Model
         /// record sets that it creates in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public long TTL
         {
             get { return this._ttl.GetValueOrDefault(); }
@@ -109,6 +112,7 @@ namespace Amazon.Route53.Model
         /// the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string TrafficPolicyId
         {
             get { return this._trafficPolicyId; }
@@ -128,6 +132,7 @@ namespace Amazon.Route53.Model
         /// in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int TrafficPolicyVersion
         {
             get { return this._trafficPolicyVersion.GetValueOrDefault(); }

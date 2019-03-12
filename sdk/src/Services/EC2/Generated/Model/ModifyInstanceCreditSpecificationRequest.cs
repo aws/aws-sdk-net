@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         /// Information about the credit option for CPU usage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InstanceCreditSpecificationRequest> InstanceCreditSpecifications
         {
             get { return this._instanceCreditSpecifications; }

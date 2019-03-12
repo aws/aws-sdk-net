@@ -66,6 +66,7 @@ namespace Amazon.KinesisVideo.Model
         /// How long the stream retains data, in hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int DataRetentionInHours
         {
             get { return this._dataRetentionInHours.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the device that is associated with the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DeviceName
         {
             get { return this._deviceName; }
@@ -103,6 +105,7 @@ namespace Amazon.KinesisVideo.Model
         /// uses to encrypt data on the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -121,6 +124,7 @@ namespace Amazon.KinesisVideo.Model
         /// The <code>MediaType</code> of the stream. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MediaType
         {
             get { return this._mediaType; }
@@ -157,6 +161,7 @@ namespace Amazon.KinesisVideo.Model
         /// The Amazon Resource Name (ARN) of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -175,6 +180,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -193,6 +199,7 @@ namespace Amazon.KinesisVideo.Model
         /// The version of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

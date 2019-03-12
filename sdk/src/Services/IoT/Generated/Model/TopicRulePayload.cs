@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The actions associated with the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Action> Actions
         {
             get { return this._actions; }
@@ -136,6 +137,7 @@ namespace Amazon.IoT.Model
         /// IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Sql
         {
             get { return this._sql; }

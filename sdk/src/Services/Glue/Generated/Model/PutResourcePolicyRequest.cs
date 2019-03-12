@@ -65,6 +65,7 @@ namespace Amazon.Glue.Model
         /// if no previous policy has been set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PolicyHashCondition
         {
             get { return this._policyHashCondition; }
@@ -83,6 +84,7 @@ namespace Amazon.Glue.Model
         /// Contains the policy document to set, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=10240)]
         public string PolicyInJson
         {
             get { return this._policyInJson; }

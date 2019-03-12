@@ -456,6 +456,7 @@ namespace Amazon.RDS.Model
         /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceClass
         {
             get { return this._dbInstanceClass; }
@@ -494,6 +495,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>mydbinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -951,6 +953,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

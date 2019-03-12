@@ -41,6 +41,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the user group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }

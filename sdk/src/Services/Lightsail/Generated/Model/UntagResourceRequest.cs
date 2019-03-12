@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the resource from which you are removing a tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -69,6 +70,7 @@ namespace Amazon.Lightsail.Model
         /// The tag keys to delete from the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -93,6 +93,7 @@ namespace Amazon.CloudTrail.Model
         /// selectors for a trail.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EventSelector> EventSelectors
         {
             get { return this._eventSelectors; }
@@ -142,6 +143,7 @@ namespace Amazon.CloudTrail.Model
         ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TrailName
         {
             get { return this._trailName; }

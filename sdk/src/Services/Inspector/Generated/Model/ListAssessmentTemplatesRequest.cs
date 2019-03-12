@@ -46,6 +46,7 @@ namespace Amazon.Inspector.Model
         /// want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> AssessmentTargetArns
         {
             get { return this._assessmentTargetArns; }
@@ -110,6 +111,7 @@ namespace Amazon.Inspector.Model
         /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }

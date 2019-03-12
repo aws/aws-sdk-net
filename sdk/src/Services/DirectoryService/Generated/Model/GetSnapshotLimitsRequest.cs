@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// Contains the identifier of the directory to obtain the limits for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

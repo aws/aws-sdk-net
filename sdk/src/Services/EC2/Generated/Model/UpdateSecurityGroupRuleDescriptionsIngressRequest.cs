@@ -90,6 +90,7 @@ namespace Amazon.EC2.Model
         /// The IP permissions for the security group rule. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IpPermission> IpPermissions
         {
             get { return this._ipPermissions; }

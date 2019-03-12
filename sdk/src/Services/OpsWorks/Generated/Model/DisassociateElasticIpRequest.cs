@@ -51,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// The Elastic IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticIp
         {
             get { return this._elasticIp; }

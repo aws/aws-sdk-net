@@ -45,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttachmentId
         {
             get { return this._attachmentId; }

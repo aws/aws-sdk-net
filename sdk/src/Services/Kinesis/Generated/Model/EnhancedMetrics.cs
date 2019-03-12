@@ -83,6 +83,7 @@ namespace Amazon.Kinesis.Model
         /// Kinesis Data Streams Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public List<string> ShardLevelMetrics
         {
             get { return this._shardLevelMetrics; }

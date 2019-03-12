@@ -41,6 +41,7 @@ namespace Amazon.ACMPCA.Model
         /// An alphanumeric string that contains a report identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string AuditReportId
         {
             get { return this._auditReportId; }

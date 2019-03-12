@@ -194,6 +194,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A cron expression that specifies a schedule when the association runs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ScheduleExpression
         {
             get { return this._scheduleExpression; }
@@ -212,6 +213,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instances targeted by the request to create an association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

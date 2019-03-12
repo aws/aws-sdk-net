@@ -91,6 +91,7 @@ namespace Amazon.SecurityToken.Model
         /// The encoded message that was returned with the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10240)]
         public string EncodedMessage
         {
             get { return this._encodedMessage; }

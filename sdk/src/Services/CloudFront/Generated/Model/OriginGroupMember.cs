@@ -40,6 +40,7 @@ namespace Amazon.CloudFront.Model
         /// The ID for an origin in an origin group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OriginId
         {
             get { return this._originId; }

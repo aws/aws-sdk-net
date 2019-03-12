@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The minimum length of the password policy that you have set. Cannot be less than 6.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=99)]
         public int MinimumLength
         {
             get { return this._minimumLength.GetValueOrDefault(); }

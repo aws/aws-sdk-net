@@ -38,6 +38,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Password.
         /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=128)]
         public string Password
         {
             get { return this._password; }
@@ -53,6 +54,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Username.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

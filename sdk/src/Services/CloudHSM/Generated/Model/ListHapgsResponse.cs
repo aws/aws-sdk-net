@@ -41,6 +41,7 @@ namespace Amazon.CloudHSM.Model
         /// The list of high-availability partition groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> HapgList
         {
             get { return this._hapgList; }

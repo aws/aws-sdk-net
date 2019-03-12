@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }

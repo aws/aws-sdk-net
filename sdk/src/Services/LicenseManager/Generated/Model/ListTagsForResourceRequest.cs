@@ -41,6 +41,7 @@ namespace Amazon.LicenseManager.Model
         /// ARN for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

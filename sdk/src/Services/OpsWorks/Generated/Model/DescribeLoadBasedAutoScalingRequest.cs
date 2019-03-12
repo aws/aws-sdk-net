@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// An array of layer IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> LayerIds
         {
             get { return this._layerIds; }

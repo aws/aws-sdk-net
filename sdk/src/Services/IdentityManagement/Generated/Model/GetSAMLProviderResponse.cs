@@ -60,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// The XML metadata document that includes information about an identity provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1000, Max=10000000)]
         public string SAMLMetadataDocument
         {
             get { return this._samlMetadataDocument; }

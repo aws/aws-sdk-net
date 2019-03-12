@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes whether to use the default CloudWatch logging configuration for an application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConfigurationType ConfigurationType
         {
             get { return this._configurationType; }

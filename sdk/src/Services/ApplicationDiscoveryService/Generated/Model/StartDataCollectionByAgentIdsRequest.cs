@@ -47,6 +47,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <i>Description</i> field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AgentIds
         {
             get { return this._agentIds; }

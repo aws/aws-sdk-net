@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> CrawlerNames
         {
             get { return this._crawlerNames; }

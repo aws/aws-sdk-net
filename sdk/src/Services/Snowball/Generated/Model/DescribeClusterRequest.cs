@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=39, Max=39)]
         public string ClusterId
         {
             get { return this._clusterId; }

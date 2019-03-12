@@ -60,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// tape gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -79,6 +80,7 @@ namespace Amazon.StorageGateway.Model
         /// tape shelf (VTS).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }

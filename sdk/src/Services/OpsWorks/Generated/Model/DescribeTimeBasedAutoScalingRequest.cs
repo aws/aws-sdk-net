@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// An array of instance IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }

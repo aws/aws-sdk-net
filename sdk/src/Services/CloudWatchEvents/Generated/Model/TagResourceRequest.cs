@@ -63,6 +63,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ARN of the CloudWatch Events rule that you're adding tags to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -81,6 +82,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The list of key-value pairs to associate with the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

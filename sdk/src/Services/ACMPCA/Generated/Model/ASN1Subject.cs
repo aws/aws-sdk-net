@@ -60,6 +60,7 @@ namespace Amazon.ACMPCA.Model
         /// Fully qualified domain name (FQDN) associated with the certificate subject.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string CommonName
         {
             get { return this._commonName; }
@@ -96,6 +97,7 @@ namespace Amazon.ACMPCA.Model
         /// Disambiguating information for the certificate subject.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string DistinguishedNameQualifier
         {
             get { return this._distinguishedNameQualifier; }
@@ -115,6 +117,7 @@ namespace Amazon.ACMPCA.Model
         /// for junior, Sr. for senior, and III for third.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public string GenerationQualifier
         {
             get { return this._generationQualifier; }
@@ -133,6 +136,7 @@ namespace Amazon.ACMPCA.Model
         /// First name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -152,6 +156,7 @@ namespace Amazon.ACMPCA.Model
         /// first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public string Initials
         {
             get { return this._initials; }
@@ -170,6 +175,7 @@ namespace Amazon.ACMPCA.Model
         /// The locality (such as a city or town) in which the certificate subject is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Locality
         {
             get { return this._locality; }
@@ -188,6 +194,7 @@ namespace Amazon.ACMPCA.Model
         /// Legal name of the organization with which the certificate subject is affiliated. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string Organization
         {
             get { return this._organization; }
@@ -207,6 +214,7 @@ namespace Amazon.ACMPCA.Model
         /// certificate subject is affiliated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string OrganizationalUnit
         {
             get { return this._organizationalUnit; }
@@ -226,6 +234,7 @@ namespace Amazon.ACMPCA.Model
         /// is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Pseudonym
         {
             get { return this._pseudonym; }
@@ -244,6 +253,7 @@ namespace Amazon.ACMPCA.Model
         /// The certificate serial number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -262,6 +272,7 @@ namespace Amazon.ACMPCA.Model
         /// State in which the subject of the certificate is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string State
         {
             get { return this._state; }
@@ -281,6 +292,7 @@ namespace Amazon.ACMPCA.Model
         /// last. In Asian cultures the surname is typically ordered first.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=40)]
         public string Surname
         {
             get { return this._surname; }
@@ -300,6 +312,7 @@ namespace Amazon.ACMPCA.Model
         /// certificate subject.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string Title
         {
             get { return this._title; }

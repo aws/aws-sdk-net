@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmail.Model
         /// action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BulkEmailDestinationStatus> Status
         {
             get { return this._status; }

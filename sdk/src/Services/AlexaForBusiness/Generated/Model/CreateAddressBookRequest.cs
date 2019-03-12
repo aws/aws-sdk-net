@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// A unique, user-specified identifier for the request that ensures idempotency.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The description of the address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

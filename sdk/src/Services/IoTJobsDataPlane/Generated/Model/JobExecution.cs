@@ -88,6 +88,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The content of the job document.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string JobDocument
         {
             get { return this._jobDocument; }
@@ -106,6 +107,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The unique identifier you assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -216,6 +218,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The name of the thing that is executing the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

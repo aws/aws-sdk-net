@@ -42,6 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// The names of the on-premises instances from which to remove tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceNames
         {
             get { return this._instanceNames; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// The tag key-value pairs to remove from the on-premises instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

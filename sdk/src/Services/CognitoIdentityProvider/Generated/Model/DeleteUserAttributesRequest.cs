@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token used in the request to delete user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -66,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> UserAttributeNames
         {
             get { return this._userAttributeNames; }

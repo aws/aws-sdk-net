@@ -50,6 +50,7 @@ namespace Amazon.ConfigService.Model
         /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> ComplianceTypes
         {
             get { return this._complianceTypes; }
@@ -87,6 +88,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the AWS resource for which you want compliance information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -105,6 +107,7 @@ namespace Amazon.ConfigService.Model
         /// The type of the AWS resource for which you want compliance information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

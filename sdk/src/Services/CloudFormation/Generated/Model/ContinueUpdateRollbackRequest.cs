@@ -63,6 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// received them.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -149,6 +150,7 @@ namespace Amazon.CloudFormation.Model
         /// session that is generated from your user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -174,6 +176,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

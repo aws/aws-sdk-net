@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         /// The logging options payload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggingOptionsPayload LoggingOptionsPayload
         {
             get { return this._loggingOptionsPayload; }

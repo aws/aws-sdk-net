@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual node that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualNodeData VirtualNode
         {
             get { return this._virtualNode; }

@@ -143,6 +143,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -172,6 +173,7 @@ namespace Amazon.CloudFront.Model
         /// Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

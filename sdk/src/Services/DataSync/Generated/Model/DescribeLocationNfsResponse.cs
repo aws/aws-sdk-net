@@ -61,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon resource Name (ARN) of the NFS location that was described.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string LocationArn
         {
             get { return this._locationArn; }

@@ -60,6 +60,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -95,6 +96,7 @@ namespace Amazon.ACMPCA.Model
         /// -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public MemoryStream Csr
         {
             get { return this._csr; }
@@ -118,6 +120,7 @@ namespace Amazon.ACMPCA.Model
         /// certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -136,6 +139,7 @@ namespace Amazon.ACMPCA.Model
         /// The name of the algorithm that will be used to sign the certificate to be issued.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SigningAlgorithm SigningAlgorithm
         {
             get { return this._signingAlgorithm; }
@@ -154,6 +158,7 @@ namespace Amazon.ACMPCA.Model
         /// The type of the validity period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Validity Validity
         {
             get { return this._validity; }

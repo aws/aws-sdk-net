@@ -51,6 +51,7 @@ namespace Amazon.CodeCommit.Model
         /// repository, this branch will be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -106,6 +107,7 @@ namespace Amazon.CodeCommit.Model
         /// The content of the file, in binary object format. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=6291456)]
         public MemoryStream FileContent
         {
             get { return this._fileContent; }
@@ -149,6 +151,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }
@@ -211,6 +214,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where you want to add or update the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

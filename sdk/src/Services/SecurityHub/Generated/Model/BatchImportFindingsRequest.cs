@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AwsSecurityFinding> Findings
         {
             get { return this._findings; }

@@ -52,6 +52,7 @@ namespace Amazon.DataSync.Model
         /// with Log Groups and Log Streams</a> in the <i>Amazon CloudWatch User Guide.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=562)]
         public string CloudWatchLogGroupArn
         {
             get { return this._cloudWatchLogGroupArn; }
@@ -88,6 +89,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the task execution that is syncing files.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string CurrentTaskExecutionArn
         {
             get { return this._currentTaskExecutionArn; }
@@ -106,6 +108,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the AWS storage resource's location.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string DestinationLocationArn
         {
             get { return this._destinationLocationArn; }
@@ -162,6 +165,7 @@ namespace Amazon.DataSync.Model
         /// The name of the task that was described.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -206,6 +210,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the source file system's location.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string SourceLocationArn
         {
             get { return this._sourceLocationArn; }
@@ -244,6 +249,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the task that was described.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TaskArn
         {
             get { return this._taskArn; }

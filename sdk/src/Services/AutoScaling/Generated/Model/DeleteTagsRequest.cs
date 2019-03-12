@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

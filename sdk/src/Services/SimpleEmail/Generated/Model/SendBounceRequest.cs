@@ -65,6 +65,7 @@ namespace Amazon.SimpleEmail.Model
         /// at least one <code>BouncedRecipientInfo</code> in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BouncedRecipientInfo> BouncedRecipientInfoList
         {
             get { return this._bouncedRecipientInfoList; }
@@ -84,6 +85,7 @@ namespace Amazon.SimpleEmail.Model
         /// that you have verified with Amazon SES.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BounceSender
         {
             get { return this._bounceSender; }
@@ -161,6 +163,7 @@ namespace Amazon.SimpleEmail.Model
         /// The message ID of the message to be bounced.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OriginalMessageId
         {
             get { return this._originalMessageId; }

@@ -43,6 +43,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property AvailabilityZone. The Availability Zone that the flow was
         /// created in.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -58,6 +59,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Description. A description of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -73,6 +75,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -88,6 +91,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -106,6 +110,7 @@ namespace Amazon.MediaConnect.Model
         /// AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by
         /// another AWS account).
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceType SourceType
         {
             get { return this._sourceType; }
@@ -121,6 +126,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Status. The current status of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Status Status
         {
             get { return this._status; }

@@ -50,6 +50,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -65,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayName.
         /// </summary>
+        [AWSProperty(Min=2, Max=255)]
         public string GatewayName
         {
             get { return this._gatewayName; }
@@ -83,6 +85,7 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the time zone of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=10)]
         public string GatewayTimezone
         {
             get { return this._gatewayTimezone; }

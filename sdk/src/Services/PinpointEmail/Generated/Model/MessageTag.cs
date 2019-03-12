@@ -52,6 +52,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -80,6 +81,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

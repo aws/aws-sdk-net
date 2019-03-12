@@ -43,6 +43,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX resource from which the tags should be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -62,6 +63,7 @@ namespace Amazon.DAX.Model
         /// are removed from the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -83,6 +83,7 @@ namespace Amazon.ECS.Model
         /// single operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Services
         {
             get { return this._services; }

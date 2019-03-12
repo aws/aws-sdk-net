@@ -45,6 +45,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the AWS CodeStar project from which you want to remove a team member.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string ProjectId
         {
             get { return this._projectId; }
@@ -64,6 +65,7 @@ namespace Amazon.CodeStar.Model
         /// the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

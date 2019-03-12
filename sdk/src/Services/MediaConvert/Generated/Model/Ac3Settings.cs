@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
         /// depend on the coding mode.
         /// </summary>
+        [AWSProperty(Min=64000, Max=640000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -92,6 +93,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Dialnorm. Sets the dialnorm for the output. If blank and
         /// input audio is Dolby Digital, dialnorm will be passed through.
         /// </summary>
+        [AWSProperty(Min=1, Max=31)]
         public int Dialnorm
         {
             get { return this._dialnorm.GetValueOrDefault(); }
@@ -152,6 +154,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SampleRate. Sample rate in hz. Sample rate is always 48000.
         /// </summary>
+        [AWSProperty(Min=48000, Max=48000)]
         public int SampleRate
         {
             get { return this._sampleRate.GetValueOrDefault(); }

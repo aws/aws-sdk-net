@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the execution property groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<PropertyGroup> PropertyGroupDescriptions
         {
             get { return this._propertyGroupDescriptions; }

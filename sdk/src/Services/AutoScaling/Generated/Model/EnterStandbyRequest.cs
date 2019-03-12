@@ -50,6 +50,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -87,6 +88,7 @@ namespace Amazon.AutoScaling.Model
         /// number of instances moved to <code>Standby</code> mode.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ShouldDecrementDesiredCapacity
         {
             get { return this._shouldDecrementDesiredCapacity.GetValueOrDefault(); }

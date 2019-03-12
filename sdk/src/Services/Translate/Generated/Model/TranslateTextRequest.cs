@@ -145,6 +145,7 @@ namespace Amazon.Translate.Model
         /// Amazon Translate will call Amazon Comprehend to determine the source language.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=5)]
         public string SourceLanguageCode
         {
             get { return this._sourceLanguageCode; }
@@ -164,6 +165,7 @@ namespace Amazon.Translate.Model
         /// be a language supported by Amazon Translate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=5)]
         public string TargetLanguageCode
         {
             get { return this._targetLanguageCode; }
@@ -202,6 +204,7 @@ namespace Amazon.Translate.Model
         /// on your character set, this may be fewer than 5,000 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5000)]
         public string Text
         {
             get { return this._text; }

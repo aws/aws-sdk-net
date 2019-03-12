@@ -63,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The certificate ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -117,6 +118,7 @@ namespace Amazon.IoT.Model
         /// The transfer message.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TransferMessage
         {
             get { return this._transferMessage; }
@@ -135,6 +137,7 @@ namespace Amazon.IoT.Model
         /// The AWS account to which the transfer was made.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string TransferredTo
         {
             get { return this._transferredTo; }

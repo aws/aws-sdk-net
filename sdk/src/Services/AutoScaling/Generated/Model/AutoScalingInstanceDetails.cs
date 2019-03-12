@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group for the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -65,6 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// The Availability Zone for the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -85,6 +87,7 @@ namespace Amazon.AutoScaling.Model
         /// and Amazon EC2 Auto Scaling should terminate and replace it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HealthStatus
         {
             get { return this._healthStatus; }
@@ -103,6 +106,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -122,6 +126,7 @@ namespace Amazon.AutoScaling.Model
         /// if you attached the instance to the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }
@@ -158,6 +163,7 @@ namespace Amazon.AutoScaling.Model
         /// The lifecycle state for the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string LifecycleState
         {
             get { return this._lifecycleState; }
@@ -177,6 +183,7 @@ namespace Amazon.AutoScaling.Model
         /// when scaling in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ProtectedFromScaleIn
         {
             get { return this._protectedFromScaleIn.GetValueOrDefault(); }

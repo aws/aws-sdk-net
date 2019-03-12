@@ -49,6 +49,7 @@ namespace Amazon.EKS.Model
         /// The name of the Amazon EKS cluster to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -67,6 +68,7 @@ namespace Amazon.EKS.Model
         /// The ID of the update to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdateId
         {
             get { return this._updateId; }

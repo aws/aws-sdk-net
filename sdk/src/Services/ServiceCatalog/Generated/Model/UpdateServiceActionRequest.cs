@@ -58,6 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -76,6 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// A map that defines the self-service action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, string> Definition
         {
             get { return this._definition; }
@@ -94,6 +96,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -112,6 +115,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -130,6 +134,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

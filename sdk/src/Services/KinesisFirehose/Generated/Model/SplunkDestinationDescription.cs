@@ -69,6 +69,7 @@ namespace Amazon.KinesisFirehose.Model
         /// settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=180, Max=600)]
         public int HECAcknowledgmentTimeoutInSeconds
         {
             get { return this._hecAcknowledgmentTimeoutInSeconds.GetValueOrDefault(); }

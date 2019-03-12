@@ -112,6 +112,7 @@ namespace Amazon.CloudFormation.Model
         /// The logical name of the resource specified in the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogicalResourceId
         {
             get { return this._logicalResourceId; }
@@ -152,6 +153,7 @@ namespace Amazon.CloudFormation.Model
         /// pair specifies a unique resource that contains the targeted resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<PhysicalResourceIdContextKeyValuePair> PhysicalResourceIdContext
         {
             get { return this._physicalResourceIdContext; }
@@ -190,6 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// The type of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -208,6 +211,7 @@ namespace Amazon.CloudFormation.Model
         /// The ID of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -246,6 +250,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackResourceDriftStatus StackResourceDriftStatus
         {
             get { return this._stackResourceDriftStatus; }
@@ -264,6 +269,7 @@ namespace Amazon.CloudFormation.Model
         /// Time at which AWS CloudFormation performed drift detection on the stack resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

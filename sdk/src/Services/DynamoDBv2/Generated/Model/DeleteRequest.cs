@@ -56,6 +56,7 @@ namespace Amazon.DynamoDBv2.Model
         /// data types must match those of the table's key schema.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }

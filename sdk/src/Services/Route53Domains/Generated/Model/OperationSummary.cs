@@ -43,6 +43,7 @@ namespace Amazon.Route53Domains.Model
         /// Identifier returned to track the requested action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// The current status of the requested operation in the system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OperationStatus Status
         {
             get { return this._status; }
@@ -79,6 +81,7 @@ namespace Amazon.Route53Domains.Model
         /// The date when the request was submitted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime SubmittedDate
         {
             get { return this._submittedDate.GetValueOrDefault(); }
@@ -97,6 +100,7 @@ namespace Amazon.Route53Domains.Model
         /// Type of the action requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OperationType Type
         {
             get { return this._type; }

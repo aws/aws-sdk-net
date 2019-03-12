@@ -51,6 +51,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string RepositoryDescription
         {
             get { return this._repositoryDescription; }
@@ -78,6 +79,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

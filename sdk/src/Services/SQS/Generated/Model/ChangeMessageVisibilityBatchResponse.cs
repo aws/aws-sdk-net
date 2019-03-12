@@ -43,6 +43,7 @@ namespace Amazon.SQS.Model
         /// A list of <code> <a>BatchResultErrorEntry</a> </code> items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BatchResultErrorEntry> Failed
         {
             get { return this._failed; }
@@ -61,6 +62,7 @@ namespace Amazon.SQS.Model
         /// A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ChangeMessageVisibilityBatchResultEntry> Successful
         {
             get { return this._successful; }

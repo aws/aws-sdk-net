@@ -46,6 +46,7 @@ namespace Amazon.Snowball.Model
         /// The number of <code>JobListEntry</code> objects to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.Snowball.Model
         /// point for your returned list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

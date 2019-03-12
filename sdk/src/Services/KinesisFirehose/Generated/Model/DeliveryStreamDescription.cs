@@ -70,6 +70,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DeliveryStreamARN
         {
             get { return this._deliveryStreamARN; }
@@ -106,6 +107,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -124,6 +126,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The status of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliveryStreamStatus DeliveryStreamStatus
         {
             get { return this._deliveryStreamStatus; }
@@ -152,6 +155,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliveryStreamType DeliveryStreamType
         {
             get { return this._deliveryStreamType; }
@@ -170,6 +174,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The destinations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DestinationDescription> Destinations
         {
             get { return this._destinations; }
@@ -188,6 +193,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Indicates whether there are more destinations available to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreDestinations
         {
             get { return this._hasMoreDestinations.GetValueOrDefault(); }
@@ -246,6 +252,7 @@ namespace Amazon.KinesisFirehose.Model
         /// stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string VersionId
         {
             get { return this._versionId; }

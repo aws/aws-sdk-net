@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the suspended process.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ProcessName
         {
             get { return this._processName; }
@@ -60,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// The reason that the process was suspended.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SuspensionReason
         {
             get { return this._suspensionReason; }

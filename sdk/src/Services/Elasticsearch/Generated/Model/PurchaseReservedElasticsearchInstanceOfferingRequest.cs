@@ -43,6 +43,7 @@ namespace Amazon.Elasticsearch.Model
         /// The number of Elasticsearch instances to reserve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.Elasticsearch.Model
         /// A customer-specified identifier to track this reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=64)]
         public string ReservationName
         {
             get { return this._reservationName; }
@@ -79,6 +81,7 @@ namespace Amazon.Elasticsearch.Model
         /// The ID of the reserved Elasticsearch instance offering to purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedElasticsearchInstanceOfferingId
         {
             get { return this._reservedElasticsearchInstanceOfferingId; }

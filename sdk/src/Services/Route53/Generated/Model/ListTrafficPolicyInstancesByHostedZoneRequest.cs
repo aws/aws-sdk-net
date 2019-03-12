@@ -59,6 +59,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that you want to list traffic policy instances for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -87,6 +88,7 @@ namespace Amazon.Route53.Model
         /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string TrafficPolicyInstanceNameMarker
         {
             get { return this._trafficPolicyInstanceNameMarker; }

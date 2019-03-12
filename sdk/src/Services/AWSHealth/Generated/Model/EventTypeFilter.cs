@@ -43,6 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// or <code>accountNotification</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> EventTypeCategories
         {
             get { return this._eventTypeCategories; }
@@ -61,6 +62,7 @@ namespace Amazon.AWSHealth.Model
         /// A list of event type codes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> EventTypeCodes
         {
             get { return this._eventTypeCodes; }
@@ -79,6 +81,7 @@ namespace Amazon.AWSHealth.Model
         /// The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Services
         {
             get { return this._services; }

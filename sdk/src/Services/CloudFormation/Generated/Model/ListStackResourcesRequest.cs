@@ -48,6 +48,7 @@ namespace Amazon.CloudFormation.Model
         /// A string that identifies the next page of stack resources that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudFormation.Model
         /// Default: There is no default value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }

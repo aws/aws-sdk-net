@@ -42,6 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// any differences detected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackResourceDrift StackResourceDrift
         {
             get { return this._stackResourceDrift; }

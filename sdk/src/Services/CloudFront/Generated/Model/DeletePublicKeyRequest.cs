@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// The ID of the public key you want to remove from CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

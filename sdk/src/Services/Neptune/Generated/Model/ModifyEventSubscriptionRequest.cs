@@ -135,6 +135,7 @@ namespace Amazon.Neptune.Model
         /// The name of the event notification subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

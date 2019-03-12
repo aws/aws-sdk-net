@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The name of the security configuration to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -92,6 +92,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -110,6 +111,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The record.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Record Record
         {
             get { return this._record; }

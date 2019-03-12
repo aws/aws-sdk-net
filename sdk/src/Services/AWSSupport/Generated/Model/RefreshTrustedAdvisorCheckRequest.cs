@@ -71,6 +71,7 @@ namespace Amazon.AWSSupport.Model
         /// error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CheckId
         {
             get { return this._checkId; }

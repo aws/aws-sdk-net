@@ -47,6 +47,7 @@ namespace Amazon.Amplify.Model
         ///  DNS Record for certificate verification. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string CertificateVerificationDNSRecord
         {
             get { return this._certificateVerificationDNSRecord; }
@@ -65,6 +66,7 @@ namespace Amazon.Amplify.Model
         ///  ARN for the Domain Association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string DomainAssociationArn
         {
             get { return this._domainAssociationArn; }
@@ -83,6 +85,7 @@ namespace Amazon.Amplify.Model
         ///  Name of the domain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -101,6 +104,7 @@ namespace Amazon.Amplify.Model
         ///  Status fo the Domain Association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainStatus DomainStatus
         {
             get { return this._domainStatus; }
@@ -119,6 +123,7 @@ namespace Amazon.Amplify.Model
         ///  Enables automated creation of Subdomains for branches. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableAutoSubDomain
         {
             get { return this._enableAutoSubDomain.GetValueOrDefault(); }
@@ -137,6 +142,7 @@ namespace Amazon.Amplify.Model
         ///  Reason for the current status of the Domain Association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string StatusReason
         {
             get { return this._statusReason; }
@@ -155,6 +161,7 @@ namespace Amazon.Amplify.Model
         ///  Subdomains for the Domain Association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public List<SubDomain> SubDomains
         {
             get { return this._subDomains; }

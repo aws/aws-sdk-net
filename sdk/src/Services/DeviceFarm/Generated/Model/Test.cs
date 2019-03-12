@@ -50,6 +50,7 @@ namespace Amazon.DeviceFarm.Model
         /// The test's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -122,6 +123,7 @@ namespace Amazon.DeviceFarm.Model
         /// A message about the test's result.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Message
         {
             get { return this._message; }
@@ -140,6 +142,7 @@ namespace Amazon.DeviceFarm.Model
         /// The test's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -71,6 +71,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A name for the metric filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FilterName
         {
             get { return this._filterName; }
@@ -89,6 +90,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A filter pattern for extracting metric data out of ingested log events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -107,6 +109,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -125,6 +128,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A collection of information that defines how metric data gets emitted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<MetricTransformation> MetricTransformations
         {
             get { return this._metricTransformations; }

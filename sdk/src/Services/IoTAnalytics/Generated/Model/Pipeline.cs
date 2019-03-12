@@ -45,6 +45,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The activities that perform transformations on the messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<PipelineActivity> Activities
         {
             get { return this._activities; }
@@ -117,6 +118,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

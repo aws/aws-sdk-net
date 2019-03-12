@@ -42,6 +42,7 @@ namespace Amazon.DLM.Model
         /// The interval. The supported values are 12 and 24.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int Interval
         {
             get { return this._interval.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.DLM.Model
         /// The interval unit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IntervalUnitValues IntervalUnit
         {
             get { return this._intervalUnit; }
@@ -82,6 +84,7 @@ namespace Amazon.DLM.Model
         /// The operation occurs within a one-hour window following the specified time.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1)]
         public List<string> Times
         {
             get { return this._times; }

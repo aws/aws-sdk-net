@@ -101,6 +101,7 @@ namespace Amazon.ConfigService.Model
         /// uses the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -152,6 +153,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }

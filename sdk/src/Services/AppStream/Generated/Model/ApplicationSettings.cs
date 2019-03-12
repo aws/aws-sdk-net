@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// sessions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// stacks by specifying the same settings group for each stack. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string SettingsGroup
         {
             get { return this._settingsGroup; }

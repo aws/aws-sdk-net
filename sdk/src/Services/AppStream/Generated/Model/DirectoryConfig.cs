@@ -62,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// The fully qualified name of the directory (for example, corp.example.com).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryName
         {
             get { return this._directoryName; }

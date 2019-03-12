@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// The email identity that you want to retrieve details for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

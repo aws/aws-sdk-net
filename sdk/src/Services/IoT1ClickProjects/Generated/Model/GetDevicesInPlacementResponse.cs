@@ -40,6 +40,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// An object containing the devices (zero or more) within the placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Devices
         {
             get { return this._devices; }

@@ -42,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// The new IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=36)]
         public string Ip
         {
             get { return this._ip; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53Resolver.Model
         /// address that you want to remove. To get this ID, use <a>GetResolverEndpoint</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string IpId
         {
             get { return this._ipId; }
@@ -80,6 +82,7 @@ namespace Amazon.Route53Resolver.Model
         /// this ID, use <a>GetResolverEndpoint</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string SubnetId
         {
             get { return this._subnetId; }

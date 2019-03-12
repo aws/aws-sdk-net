@@ -137,6 +137,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to retrieve port settings for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }

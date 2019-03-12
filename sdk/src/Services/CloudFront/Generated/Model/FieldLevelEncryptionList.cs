@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The maximum number of elements you want in the response body. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.CloudFront.Model
         /// The number of field-level encryption items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

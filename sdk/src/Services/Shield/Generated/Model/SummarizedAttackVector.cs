@@ -59,6 +59,7 @@ namespace Amazon.Shield.Model
         /// The attack type, for example, SNMP reflection or SYN flood.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VectorType
         {
             get { return this._vectorType; }

@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The ID of the catalog to migrate. Currently, this should be the AWS account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }

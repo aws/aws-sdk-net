@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CaptionChannel. Caption channel.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int CaptionChannel
         {
             get { return this._captionChannel.GetValueOrDefault(); }
@@ -56,6 +57,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CustomLanguageCode. Specify the language for this caption
         /// channel, using the ISO 639-2 or ISO 639-3 three-letter language code
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }

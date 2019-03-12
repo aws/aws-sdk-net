@@ -136,6 +136,7 @@ namespace Amazon.KeyManagementService.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=19, Max=24)]
         public string CloudHsmClusterId
         {
             get { return this._cloudHsmClusterId; }
@@ -155,6 +156,7 @@ namespace Amazon.KeyManagementService.Model
         /// AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string CustomKeyStoreName
         {
             get { return this._customKeyStoreName; }
@@ -180,6 +182,7 @@ namespace Amazon.KeyManagementService.Model
         /// change the password in the AWS CloudHSM cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }
@@ -200,6 +203,7 @@ namespace Amazon.KeyManagementService.Model
         /// the cluster</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5000)]
         public string TrustAnchorCertificate
         {
             get { return this._trustAnchorCertificate; }

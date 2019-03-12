@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpnGatewayId
         {
             get { return this._vpnGatewayId; }

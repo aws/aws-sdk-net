@@ -42,6 +42,7 @@ namespace Amazon.AppMesh.Model
         ///         one or more targets and their relative weights to distribute traffic with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<WeightedTarget> WeightedTargets
         {
             get { return this._weightedTargets; }

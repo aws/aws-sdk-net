@@ -98,6 +98,7 @@ namespace Amazon.Organizations.Model
         /// this parameter is a string of any of the characters in the ASCII character range.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

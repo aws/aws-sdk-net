@@ -44,6 +44,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// An optional description for the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -83,6 +84,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }

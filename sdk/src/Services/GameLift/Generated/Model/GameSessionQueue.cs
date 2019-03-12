@@ -103,6 +103,7 @@ namespace Amazon.GameLift.Model
         /// that is assigned to a game session queue and uniquely identifies it. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionQueueArn
         {
             get { return this._gameSessionQueueArn; }
@@ -122,6 +123,7 @@ namespace Amazon.GameLift.Model
         /// unique within each region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -166,6 +168,7 @@ namespace Amazon.GameLift.Model
         /// status.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TimeoutInSeconds
         {
             get { return this._timeoutInSeconds.GetValueOrDefault(); }

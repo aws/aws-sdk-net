@@ -62,6 +62,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of the deployment configuration to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DeploymentConfigName
         {
             get { return this._deploymentConfigName; }

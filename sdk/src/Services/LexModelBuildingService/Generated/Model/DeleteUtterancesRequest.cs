@@ -58,6 +58,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot that stored the utterances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -79,6 +80,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// operation request that contained the utterance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string UserId
         {
             get { return this._userId; }

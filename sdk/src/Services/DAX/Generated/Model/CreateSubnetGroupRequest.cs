@@ -61,6 +61,7 @@ namespace Amazon.DAX.Model
         /// A name for the subnet group. This value is stored as a lowercase string. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetGroupName
         {
             get { return this._subnetGroupName; }
@@ -79,6 +80,7 @@ namespace Amazon.DAX.Model
         /// A list of VPC subnet IDs for the subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

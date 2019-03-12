@@ -44,6 +44,7 @@ namespace Amazon.KinesisVideo.Model
         /// The maximum number of streams to return in the response. The default is 10,000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.KinesisVideo.Model
         /// another batch of streams, provide this token in your next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }

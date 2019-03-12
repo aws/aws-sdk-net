@@ -97,6 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and can also be obtained from <a>ListClusters</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobFlowId
         {
             get { return this._jobFlowId; }
@@ -115,6 +116,7 @@ namespace Amazon.ElasticMapReduce.Model
         ///  A list of <a>StepConfig</a> to be executed by the job flow. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<StepConfig> Steps
         {
             get { return this._steps; }

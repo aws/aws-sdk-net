@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// The new description that you want to apply to the specified role.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -76,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3600, Max=43200)]
         public int MaxSessionDuration
         {
             get { return this._maxSessionDuration.GetValueOrDefault(); }
@@ -94,6 +96,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the role that you want to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

@@ -52,6 +52,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string ARN
         {
             get { return this._arn; }
@@ -70,6 +71,7 @@ namespace Amazon.SecretsManager.Model
         /// The friendly name of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -94,6 +96,7 @@ namespace Amazon.SecretsManager.Model
         /// empty (as <code>null</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

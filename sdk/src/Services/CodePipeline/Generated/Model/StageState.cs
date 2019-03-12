@@ -97,6 +97,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string StageName
         {
             get { return this._stageName; }

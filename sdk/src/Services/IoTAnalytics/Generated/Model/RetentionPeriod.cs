@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The number of days that message data is kept. The "unlimited" parameter must be false.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int NumberOfDays
         {
             get { return this._numberOfDays.GetValueOrDefault(); }

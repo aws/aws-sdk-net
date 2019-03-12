@@ -46,6 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// This data isn't sent to the Lambda task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A string that identifies the Lambda function execution in the event history.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The optional input data to be supplied to the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -100,6 +103,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name, or ARN, of the Lambda function to schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -120,6 +124,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// is supplied, than a default value of 300s is assumed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string StartToCloseTimeout
         {
             get { return this._startToCloseTimeout; }

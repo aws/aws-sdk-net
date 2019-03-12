@@ -62,6 +62,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Specifies the oldest start or close date and time to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime OldestDate
         {
             get { return this._oldestDate.GetValueOrDefault(); }

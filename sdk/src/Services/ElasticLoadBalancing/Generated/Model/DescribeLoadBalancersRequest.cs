@@ -96,6 +96,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// default is 400.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=400)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

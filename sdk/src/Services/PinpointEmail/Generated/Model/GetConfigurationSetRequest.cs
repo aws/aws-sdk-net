@@ -50,6 +50,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that you want to obtain more information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model
         /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HealthStatus
         {
             get { return this._healthStatus; }
@@ -69,6 +70,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }

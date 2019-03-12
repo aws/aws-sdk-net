@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// An optional comment string describing why the job was canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Comment
         {
             get { return this._comment; }
@@ -88,6 +89,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier you assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -106,6 +108,7 @@ namespace Amazon.IoT.Model
         /// (Optional)A reason code string that explains why the job was canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string ReasonCode
         {
             get { return this._reasonCode; }

@@ -103,6 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// The serial number associated with <code>VirtualMFADevice</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }

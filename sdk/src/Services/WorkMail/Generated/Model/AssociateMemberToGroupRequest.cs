@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The group for which the member is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The member to associate to the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The organization under which the group exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

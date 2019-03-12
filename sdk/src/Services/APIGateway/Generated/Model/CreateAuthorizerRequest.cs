@@ -195,6 +195,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the authorizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -234,6 +235,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }
@@ -255,6 +257,7 @@ namespace Amazon.APIGateway.Model
         /// for using an Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthorizerType Type
         {
             get { return this._type; }

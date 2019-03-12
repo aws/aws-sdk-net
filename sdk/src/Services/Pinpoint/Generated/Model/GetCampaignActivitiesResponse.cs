@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ActivitiesResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivitiesResponse ActivitiesResponse
         {
             get { return this._activitiesResponse; }

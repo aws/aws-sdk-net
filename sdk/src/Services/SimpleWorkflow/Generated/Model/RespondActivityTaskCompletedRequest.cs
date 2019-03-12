@@ -91,6 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The result of the activity task. It is a free form string that is implementation specific.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Result
         {
             get { return this._result; }
@@ -116,6 +117,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

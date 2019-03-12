@@ -94,6 +94,7 @@ namespace Amazon.KeyManagementService.Model
         /// General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GranteePrincipal
         {
             get { return this._granteePrincipal; }
@@ -117,6 +118,7 @@ namespace Amazon.KeyManagementService.Model
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> GrantTokens
         {
             get { return this._grantTokens; }
@@ -157,6 +159,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -191,6 +194,7 @@ namespace Amazon.KeyManagementService.Model
         /// is returned. All grant tokens obtained in this way can be used interchangeably.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -209,6 +213,7 @@ namespace Amazon.KeyManagementService.Model
         /// A list of operations that the grant permits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Operations
         {
             get { return this._operations; }
@@ -237,6 +242,7 @@ namespace Amazon.KeyManagementService.Model
         /// General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RetiringPrincipal
         {
             get { return this._retiringPrincipal; }

@@ -68,6 +68,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the creator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CreatorId
         {
             get { return this._creatorId; }
@@ -86,6 +87,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -104,6 +106,7 @@ namespace Amazon.WorkDocs.Model
         /// List of labels on the folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> Labels
         {
             get { return this._labels; }
@@ -158,6 +161,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -176,6 +180,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the parent folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentFolderId
         {
             get { return this._parentFolderId; }
@@ -212,6 +217,7 @@ namespace Amazon.WorkDocs.Model
         /// The unique identifier created from the subfolders and documents of the folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Signature
         {
             get { return this._signature; }

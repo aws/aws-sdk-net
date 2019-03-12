@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// The type of abort action to initiate a job abort.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AbortAction Action
         {
             get { return this._action; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The type of job execution failure to define a rule to initiate a job abort.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobExecutionFailureType FailureType
         {
             get { return this._failureType; }
@@ -79,6 +81,7 @@ namespace Amazon.IoT.Model
         /// Minimum number of executed things before evaluating an abort rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int MinNumberOfExecutedThings
         {
             get { return this._minNumberOfExecutedThings.GetValueOrDefault(); }
@@ -103,6 +106,7 @@ namespace Amazon.IoT.Model
         /// but not 10.999).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public double ThresholdPercentage
         {
             get { return this._thresholdPercentage.GetValueOrDefault(); }

@@ -45,6 +45,7 @@ namespace Amazon.Lambda.Model
         /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string LayerName
         {
             get { return this._layerName; }
@@ -63,6 +64,7 @@ namespace Amazon.Lambda.Model
         /// The version number.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long VersionNumber
         {
             get { return this._versionNumber.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The message template for email messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string EmailMessage
         {
             get { return this._emailMessage; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The subject line for email messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string EmailSubject
         {
             get { return this._emailSubject; }
@@ -78,6 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The message template for SMS messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=140)]
         public string SMSMessage
         {
             get { return this._smsMessage; }

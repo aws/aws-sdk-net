@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -181,6 +182,7 @@ namespace Amazon.DeviceFarm.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

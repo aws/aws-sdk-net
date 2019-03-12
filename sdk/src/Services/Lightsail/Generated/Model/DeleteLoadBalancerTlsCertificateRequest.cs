@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The SSL/TLS certificate name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateName
         {
             get { return this._certificateName; }
@@ -93,6 +94,7 @@ namespace Amazon.Lightsail.Model
         /// The load balancer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

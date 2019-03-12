@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// means that patches are approved seven days after they are released. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public int ApproveAfterDays
         {
             get { return this._approveAfterDays.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The patch filter group that defines the criteria for the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PatchFilterGroup PatchFilterGroup
         {
             get { return this._patchFilterGroup; }

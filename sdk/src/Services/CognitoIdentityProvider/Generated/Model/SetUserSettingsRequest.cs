@@ -45,6 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token for the set user settings request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -63,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies the options for MFA (e.g., email or phone number).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MFAOptionType> MFAOptions
         {
             get { return this._mfaOptions; }

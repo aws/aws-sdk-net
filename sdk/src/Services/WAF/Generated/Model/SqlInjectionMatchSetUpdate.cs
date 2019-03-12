@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         /// <code>SqlInjectionMatchSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -65,6 +66,7 @@ namespace Amazon.WAF.Model
         /// header.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SqlInjectionMatchTuple SqlInjectionMatchTuple
         {
             get { return this._sqlInjectionMatchTuple; }

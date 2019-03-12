@@ -61,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The ID of the certificate. Certificate management operations only take a certificateId.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -79,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The certificate data, in PEM format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string CertificatePem
         {
             get { return this._certificatePem; }

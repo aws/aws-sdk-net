@@ -69,6 +69,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet alias. Specify the alias you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AliasId
         {
             get { return this._aliasId; }

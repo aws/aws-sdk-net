@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// A list of 1-50 attributes to remove from the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Attributes
         {
             get { return this._attributes; }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'removeAttributes' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

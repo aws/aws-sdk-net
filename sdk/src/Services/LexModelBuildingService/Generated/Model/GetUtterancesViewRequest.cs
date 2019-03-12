@@ -70,6 +70,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot for which utterance information should be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -89,6 +90,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// is 5 versions per request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> BotVersions
         {
             get { return this._botVersions; }
@@ -108,6 +110,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// return utterances that were not recognized, use <code>Missed</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType StatusType
         {
             get { return this._statusType; }

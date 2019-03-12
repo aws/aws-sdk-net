@@ -41,6 +41,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the ML object that was tagged.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResourceId
         {
             get { return this._resourceId; }

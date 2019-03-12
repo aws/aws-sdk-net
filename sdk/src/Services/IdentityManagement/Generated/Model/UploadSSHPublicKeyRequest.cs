@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string SSHPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }
@@ -96,6 +97,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

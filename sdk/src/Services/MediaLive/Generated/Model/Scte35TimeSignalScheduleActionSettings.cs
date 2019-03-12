@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Scte35Descriptors. The list of SCTE-35 descriptors accompanying
         /// the SCTE-35 time_signal.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Scte35Descriptor> Scte35Descriptors
         {
             get { return this._scte35Descriptors; }

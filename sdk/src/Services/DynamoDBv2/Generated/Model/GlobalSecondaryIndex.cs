@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// on this table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -84,6 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
@@ -104,6 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// which are automatically projected. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Projection Projection
         {
             get { return this._projection; }

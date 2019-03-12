@@ -44,6 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// The resource context key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// The resource context value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

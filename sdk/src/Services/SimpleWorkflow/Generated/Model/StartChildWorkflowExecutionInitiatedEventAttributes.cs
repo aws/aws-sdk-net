@@ -73,6 +73,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChildPolicy ChildPolicy
         {
             get { return this._childPolicy; }
@@ -92,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks. This data isn't sent to the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -113,6 +115,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// problems by tracing back the cause of events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -137,6 +140,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ExecutionStartToCloseTimeout
         {
             get { return this._executionStartToCloseTimeout; }
@@ -155,6 +159,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The inputs provided to the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -173,6 +178,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The IAM role to attach to the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string LambdaRole
         {
             get { return this._lambdaRole; }
@@ -191,6 +197,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The list of tags to associated with the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> TagList
         {
             get { return this._tagList; }
@@ -209,6 +216,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the task list used for the decision tasks of the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskList TaskList
         {
             get { return this._taskList; }
@@ -257,6 +265,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string TaskStartToCloseTimeout
         {
             get { return this._taskStartToCloseTimeout; }
@@ -275,6 +284,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>workflowId</code> of the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }
@@ -293,6 +303,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

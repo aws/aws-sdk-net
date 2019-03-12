@@ -171,6 +171,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to the next <code>AdminRespondToAuthChallenge</code> API call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

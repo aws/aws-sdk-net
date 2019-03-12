@@ -86,6 +86,7 @@ namespace Amazon.SimpleEmail.Model
         /// MAIL FROM domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }

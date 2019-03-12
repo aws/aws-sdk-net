@@ -50,6 +50,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The unique identifier of the scaling activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -68,6 +69,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// A simple description of what caused the scaling activity to happen.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cause
         {
             get { return this._cause; }
@@ -86,6 +88,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// A simple description of what action the scaling activity intends to accomplish.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -190,6 +193,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -265,6 +269,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -286,6 +291,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }
@@ -304,6 +310,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Unix timestamp for when the scaling activity began.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -322,6 +329,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Indicates the status of the scaling activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingActivityStatusCode StatusCode
         {
             get { return this._statusCode; }

@@ -187,6 +187,7 @@ namespace Amazon.Rekognition.Model
         /// in the input images.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -233,6 +234,7 @@ namespace Amazon.Rekognition.Model
         /// The ID you want to assign to all the faces detected in the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ExternalImageId
         {
             get { return this._externalImageId; }
@@ -259,6 +261,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image Image
         {
             get { return this._image; }
@@ -298,6 +301,7 @@ namespace Amazon.Rekognition.Model
         /// the face model.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxFaces
         {
             get { return this._maxFaces.GetValueOrDefault(); }

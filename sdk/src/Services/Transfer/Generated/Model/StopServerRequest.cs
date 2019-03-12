@@ -56,6 +56,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server that you stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }

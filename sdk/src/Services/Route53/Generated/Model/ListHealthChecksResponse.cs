@@ -45,6 +45,7 @@ namespace Amazon.Route53.Model
         /// check that is associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HealthCheck> HealthChecks
         {
             get { return this._healthChecks; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Marker
         {
             get { return this._marker; }
@@ -86,6 +88,7 @@ namespace Amazon.Route53.Model
         /// parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -107,6 +110,7 @@ namespace Amazon.Route53.Model
         /// in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string NextMarker
         {
             get { return this._nextMarker; }
@@ -126,6 +130,7 @@ namespace Amazon.Route53.Model
         /// <code>ListHealthChecks</code> that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

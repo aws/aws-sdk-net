@@ -48,6 +48,7 @@ namespace Amazon.StorageGateway.Model
         /// access mode for all directories inside the file share. The default value is 0777.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public string DirectoryMode
         {
             get { return this._directoryMode; }
@@ -67,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// file mode inside the file share. The default value is 0666. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public string FileMode
         {
             get { return this._fileMode; }
@@ -86,6 +88,7 @@ namespace Amazon.StorageGateway.Model
         /// The default value is nfsnobody. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4294967294)]
         public long GroupId
         {
             get { return this._groupId.GetValueOrDefault(); }
@@ -105,6 +108,7 @@ namespace Amazon.StorageGateway.Model
         /// ID specified). The default value is nfsnobody. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4294967294)]
         public long OwnerId
         {
             get { return this._ownerId.GetValueOrDefault(); }

@@ -59,6 +59,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The type of processor.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProcessorType Type
         {
             get { return this._type; }

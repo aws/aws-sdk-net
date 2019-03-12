@@ -49,6 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The limit of the request to list groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=60)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -86,6 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The username for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -104,6 +107,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

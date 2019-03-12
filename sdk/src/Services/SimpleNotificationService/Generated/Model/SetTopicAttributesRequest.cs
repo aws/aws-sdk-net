@@ -81,6 +81,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -117,6 +118,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

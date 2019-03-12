@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         /// you want to remove tags from. To get the ARN, send a GET request with the resource
         /// name.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Classification
         {
             get { return this._classification; }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// systems provide this level of information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime InstalledTime
         {
             get { return this._installedTime.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The operating system-specific ID of the patch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KBId
         {
             get { return this._kbId; }
@@ -101,6 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The severity of the patch (for example, Critical, Important, Moderate).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Severity
         {
             get { return this._severity; }
@@ -124,6 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PatchComplianceDataState State
         {
             get { return this._state; }
@@ -142,6 +147,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The title of the patch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

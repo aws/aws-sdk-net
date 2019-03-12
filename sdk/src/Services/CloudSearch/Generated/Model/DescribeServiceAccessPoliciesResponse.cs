@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch.Model
         /// The access rules configured for the domain specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccessPoliciesStatus AccessPolicies
         {
             get { return this._accessPolicies; }

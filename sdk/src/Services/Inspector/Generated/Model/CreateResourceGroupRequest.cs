@@ -48,6 +48,7 @@ namespace Amazon.Inspector.Model
         /// For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ResourceGroupTag> ResourceGroupTags
         {
             get { return this._resourceGroupTags; }

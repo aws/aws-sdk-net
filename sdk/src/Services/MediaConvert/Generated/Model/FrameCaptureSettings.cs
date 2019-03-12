@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of
         /// each Capture.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.MediaConvert.Model
         /// 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence
         /// number zero padded to 7 decimal places.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxCaptures. Maximum number of captures (encoded jpg output
         /// files).
         /// </summary>
+        [AWSProperty(Min=1, Max=10000000)]
         public int MaxCaptures
         {
             get { return this._maxCaptures.GetValueOrDefault(); }
@@ -97,6 +100,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Quality. JPEG Quality - a higher value equals higher quality.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Quality
         {
             get { return this._quality.GetValueOrDefault(); }

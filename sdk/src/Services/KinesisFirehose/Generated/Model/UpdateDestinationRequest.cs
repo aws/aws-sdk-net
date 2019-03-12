@@ -92,6 +92,7 @@ namespace Amazon.KinesisFirehose.Model
         /// configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string CurrentDeliveryStreamVersionId
         {
             get { return this._currentDeliveryStreamVersionId; }
@@ -110,6 +111,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -128,6 +130,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The ID of the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DestinationId
         {
             get { return this._destinationId; }

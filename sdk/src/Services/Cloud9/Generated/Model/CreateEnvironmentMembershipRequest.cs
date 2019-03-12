@@ -43,6 +43,7 @@ namespace Amazon.Cloud9.Model
         /// The ID of the environment that contains the environment member you want to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }
@@ -71,6 +72,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemberPermissions Permissions
         {
             get { return this._permissions; }
@@ -89,6 +91,7 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment member you want to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserArn
         {
             get { return this._userArn; }

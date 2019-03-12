@@ -59,6 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string SnsCallerArn
         {
             get { return this._snsCallerArn; }

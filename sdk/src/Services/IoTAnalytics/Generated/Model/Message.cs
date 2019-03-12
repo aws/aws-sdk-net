@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// batch sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string MessageId
         {
             get { return this._messageId; }
@@ -61,6 +62,7 @@ namespace Amazon.IoTAnalytics.Model
         /// binary data (in which case you must decode it by means of a pipeline activity).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Payload
         {
             get { return this._payload; }

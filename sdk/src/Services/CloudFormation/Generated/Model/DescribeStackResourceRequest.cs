@@ -52,6 +52,7 @@ namespace Amazon.CloudFormation.Model
         /// Default: There is no default value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogicalResourceId
         {
             get { return this._logicalResourceId; }
@@ -83,6 +84,7 @@ namespace Amazon.CloudFormation.Model
         /// Default: There is no default value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }

@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the session to terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=96)]
         public string SessionId
         {
             get { return this._sessionId; }

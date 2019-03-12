@@ -65,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// you specify here is the only service that can be accessed using these credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -91,6 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

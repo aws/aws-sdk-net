@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         /// but it will be deprecated in the future.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -62,6 +63,7 @@ namespace Amazon.Glue.Model
         /// The security group ID list used by the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> SecurityGroupIdList
         {
             get { return this._securityGroupIdList; }
@@ -80,6 +82,7 @@ namespace Amazon.Glue.Model
         /// The subnet ID used by the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SubnetId
         {
             get { return this._subnetId; }

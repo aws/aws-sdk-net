@@ -40,6 +40,7 @@ namespace Amazon.Amplify.Model
         ///  Domain Association structure. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainAssociation DomainAssociation
         {
             get { return this._domainAssociation; }

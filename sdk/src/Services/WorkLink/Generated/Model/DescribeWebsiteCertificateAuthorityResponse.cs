@@ -42,6 +42,7 @@ namespace Amazon.WorkLink.Model
         /// The root certificate of the certificate authority.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -78,6 +79,7 @@ namespace Amazon.WorkLink.Model
         /// The certificate name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }

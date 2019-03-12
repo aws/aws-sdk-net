@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Name (ARN), status, and latest version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationDetail ApplicationDetail
         {
             get { return this._applicationDetail; }

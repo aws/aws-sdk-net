@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch baseline to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }

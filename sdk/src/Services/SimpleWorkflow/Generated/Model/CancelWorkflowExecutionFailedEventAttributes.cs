@@ -50,6 +50,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CancelWorkflowExecutionFailedCause Cause
         {
             get { return this._cause; }
@@ -71,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }

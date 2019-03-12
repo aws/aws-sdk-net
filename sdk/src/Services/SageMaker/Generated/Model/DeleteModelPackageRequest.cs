@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         /// are a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

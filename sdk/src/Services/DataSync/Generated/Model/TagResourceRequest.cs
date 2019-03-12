@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the resource to apply the tag to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// The tags to apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

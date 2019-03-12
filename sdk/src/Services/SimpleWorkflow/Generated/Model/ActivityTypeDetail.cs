@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The configuration settings registered with the activity type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityTypeConfiguration Configuration
         {
             get { return this._configuration; }
@@ -76,6 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityTypeInfo TypeInfo
         {
             get { return this._typeInfo; }

@@ -50,6 +50,7 @@ namespace Amazon.CognitoSync.Model
         /// The name of the dataset to subcribe to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }
@@ -68,6 +69,7 @@ namespace Amazon.CognitoSync.Model
         /// The unique ID generated for this device by Cognito.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -86,6 +88,7 @@ namespace Amazon.CognitoSync.Model
         /// Unique ID for this identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -105,6 +108,7 @@ namespace Amazon.CognitoSync.Model
         /// by Amazon Cognito. The ID of the pool to which the identity belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

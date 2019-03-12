@@ -44,6 +44,7 @@ namespace Amazon.WorkDocs.Model
         /// The email address of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkDocs.Model
         /// The given name of the user before a rename operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -98,6 +101,7 @@ namespace Amazon.WorkDocs.Model
         /// The surname of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Surname
         {
             get { return this._surname; }
@@ -116,6 +120,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Username
         {
             get { return this._username; }

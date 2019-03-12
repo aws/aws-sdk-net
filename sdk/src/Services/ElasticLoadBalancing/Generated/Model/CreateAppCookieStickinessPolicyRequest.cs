@@ -81,6 +81,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the application cookie used for stickiness.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CookieName
         {
             get { return this._cookieName; }
@@ -99,6 +100,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -119,6 +121,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyName
         {
             get { return this._policyName; }

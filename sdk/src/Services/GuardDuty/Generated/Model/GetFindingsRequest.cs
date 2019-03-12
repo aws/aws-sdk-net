@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The ID of the detector that specifies the GuardDuty
         /// service whose findings you want to retrieve.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -56,6 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingIds. IDs of the findings that you want to retrieve.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> FindingIds
         {
             get { return this._findingIds; }

@@ -66,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

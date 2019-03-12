@@ -45,6 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// The expression to evaluate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=20971520)]
         public string Expression
         {
             get { return this._expression; }
@@ -63,6 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string ObjectId
         {
             get { return this._objectId; }
@@ -81,6 +83,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }

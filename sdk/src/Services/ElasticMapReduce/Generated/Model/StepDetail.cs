@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The description of the step status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StepExecutionStatusDetail ExecutionStatusDetail
         {
             get { return this._executionStatusDetail; }
@@ -75,6 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The step configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StepConfig StepConfig
         {
             get { return this._stepConfig; }

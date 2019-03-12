@@ -93,6 +93,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh in which to create the virtual node.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -111,6 +112,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual node specification to apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualNodeSpec Spec
         {
             get { return this._spec; }
@@ -129,6 +131,7 @@ namespace Amazon.AppMesh.Model
         /// The name to use for the virtual node.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualNodeName
         {
             get { return this._virtualNodeName; }

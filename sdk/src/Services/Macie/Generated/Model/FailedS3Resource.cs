@@ -42,6 +42,7 @@ namespace Amazon.Macie.Model
         /// The status code of a failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -60,6 +61,7 @@ namespace Amazon.Macie.Model
         /// The error message of a failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

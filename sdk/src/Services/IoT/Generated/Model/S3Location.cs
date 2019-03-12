@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The S3 key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Key
         {
             get { return this._key; }

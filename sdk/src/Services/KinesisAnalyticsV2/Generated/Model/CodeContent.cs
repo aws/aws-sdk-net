@@ -61,6 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The text-format code for a Java-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string TextContent
         {
             get { return this._textContent; }
@@ -79,6 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The zip-format code for a Java-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=52428800)]
         public MemoryStream ZipFileContent
         {
             get { return this._zipFileContent; }

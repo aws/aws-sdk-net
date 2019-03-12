@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the transform job to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TransformJobName
         {
             get { return this._transformJobName; }

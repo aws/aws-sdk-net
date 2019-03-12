@@ -83,6 +83,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Processing Unit (KPU) used by the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParallelismPerKPUUpdate
         {
             get { return this._parallelismPerKPUUpdate.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes updates to the initial number of parallel tasks an application can perform.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParallelismUpdate
         {
             get { return this._parallelismUpdate.GetValueOrDefault(); }

@@ -83,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChildPolicy ChildPolicy
         {
             get { return this._childPolicy; }
@@ -101,6 +102,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The details provided for the termination.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -119,6 +121,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The reason provided for the termination.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Reason
         {
             get { return this._reason; }

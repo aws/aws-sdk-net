@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// One or more Classic Load Balancers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<ClassicLoadBalancer> ClassicLoadBalancers
         {
             get { return this._classicLoadBalancers; }

@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// If you specify 0, AWS Config uses the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

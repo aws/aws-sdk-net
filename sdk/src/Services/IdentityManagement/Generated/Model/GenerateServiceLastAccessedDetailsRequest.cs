@@ -104,6 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// information about when the resource was last used in an attempt to access an AWS service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }

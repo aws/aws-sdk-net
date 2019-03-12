@@ -41,6 +41,7 @@ namespace Amazon.Lex.Model
         /// Text that is visible to the user on the button.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public string Text
         {
             get { return this._text; }
@@ -61,6 +62,7 @@ namespace Amazon.Lex.Model
         /// City."
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Value
         {
             get { return this._value; }

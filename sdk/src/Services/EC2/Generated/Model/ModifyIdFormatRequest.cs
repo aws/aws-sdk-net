@@ -86,6 +86,7 @@ namespace Amazon.EC2.Model
         /// that are currently within their opt-in period for longer IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Resource
         {
             get { return this._resource; }
@@ -104,6 +105,7 @@ namespace Amazon.EC2.Model
         /// Indicate whether the resource should use longer IDs (17-character IDs).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool UseLongIds
         {
             get { return this._useLongIds.GetValueOrDefault(); }

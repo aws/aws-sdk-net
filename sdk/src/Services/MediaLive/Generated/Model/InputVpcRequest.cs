@@ -59,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SubnetIds. A list of 2 VPC subnet IDs from the same VPC.Subnet
         /// IDs must be mapped to two unique availability zones (AZ).
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

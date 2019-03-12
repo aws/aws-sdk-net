@@ -70,6 +70,7 @@ namespace Amazon.Route53Domains.Model
         /// Constraint: Maximum 255 characters
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Name
         {
             get { return this._name; }

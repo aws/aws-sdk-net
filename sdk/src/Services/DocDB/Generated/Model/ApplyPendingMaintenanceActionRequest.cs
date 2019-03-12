@@ -47,6 +47,7 @@ namespace Amazon.DocDB.Model
         /// Valid values: <code>system-update</code>, <code>db-upgrade</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplyAction
         {
             get { return this._applyAction; }
@@ -85,6 +86,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptInType
         {
             get { return this._optInType; }
@@ -104,6 +106,7 @@ namespace Amazon.DocDB.Model
         /// applies to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceIdentifier
         {
             get { return this._resourceIdentifier; }

@@ -51,6 +51,7 @@ namespace Amazon.CertificateManager.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -70,6 +71,7 @@ namespace Amazon.CertificateManager.Model
         /// certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }

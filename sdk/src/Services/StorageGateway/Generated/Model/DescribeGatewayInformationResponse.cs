@@ -46,6 +46,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -65,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=30)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -120,6 +122,7 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the operating state of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=25)]
         public string GatewayState
         {
             get { return this._gatewayState; }
@@ -138,6 +141,7 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the time zone configured for the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=10)]
         public string GatewayTimezone
         {
             get { return this._gatewayTimezone; }
@@ -156,6 +160,7 @@ namespace Amazon.StorageGateway.Model
         /// The type of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string GatewayType
         {
             get { return this._gatewayType; }
@@ -175,6 +180,7 @@ namespace Amazon.StorageGateway.Model
         /// has never been updated, this field does not return a value in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public string LastSoftwareUpdate
         {
             get { return this._lastSoftwareUpdate; }
@@ -195,6 +201,7 @@ namespace Amazon.StorageGateway.Model
         /// returned in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public string NextUpdateAvailabilityDate
         {
             get { return this._nextUpdateAvailabilityDate; }

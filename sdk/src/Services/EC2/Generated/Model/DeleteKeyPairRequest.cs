@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// The name of the key pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyName
         {
             get { return this._keyName; }

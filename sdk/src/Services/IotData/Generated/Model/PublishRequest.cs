@@ -67,6 +67,7 @@ namespace Amazon.IotData.Model
         /// The Quality of Service (QoS) level.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public int Qos
         {
             get { return this._qos.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.IotData.Model
         /// The name of the MQTT topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Topic
         {
             get { return this._topic; }

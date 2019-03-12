@@ -87,6 +87,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain that contains the task lists being polled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -107,6 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The form of this identity is user defined.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Identity
         {
             get { return this._identity; }
@@ -132,6 +134,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskList TaskList
         {
             get { return this._taskList; }

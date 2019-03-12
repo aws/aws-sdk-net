@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// The launch configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<LaunchConfiguration> LaunchConfigurations
         {
             get { return this._launchConfigurations; }

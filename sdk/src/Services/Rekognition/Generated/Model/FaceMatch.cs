@@ -61,6 +61,7 @@ namespace Amazon.Rekognition.Model
         /// Confidence in the match of this face with the input face.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Similarity
         {
             get { return this._similarity.GetValueOrDefault(); }

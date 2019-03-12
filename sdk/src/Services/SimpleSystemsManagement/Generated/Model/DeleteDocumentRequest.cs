@@ -61,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

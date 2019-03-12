@@ -44,6 +44,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] Represents an update integration request's HTTP method.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HttpMethod
         {
             get { return this._httpMethod; }
@@ -81,6 +82,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] Represents an update integration request's resource identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -99,6 +101,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

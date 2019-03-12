@@ -58,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int BluePrimaryX
         {
             get { return this._bluePrimaryX.GetValueOrDefault(); }
@@ -76,6 +77,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int BluePrimaryY
         {
             get { return this._bluePrimaryY.GetValueOrDefault(); }
@@ -94,6 +96,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int GreenPrimaryX
         {
             get { return this._greenPrimaryX.GetValueOrDefault(); }
@@ -112,6 +115,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int GreenPrimaryY
         {
             get { return this._greenPrimaryY.GetValueOrDefault(); }
@@ -128,6 +132,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxContentLightLevel. Maximum light level among all samples
         /// in the coded video sequence, in units of candelas per square meter.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int MaxContentLightLevel
         {
             get { return this._maxContentLightLevel.GetValueOrDefault(); }
@@ -144,6 +149,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxFrameAverageLightLevel. Maximum average light level
         /// of any frame in the coded video sequence, in units of candelas per square meter.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int MaxFrameAverageLightLevel
         {
             get { return this._maxFrameAverageLightLevel.GetValueOrDefault(); }
@@ -160,6 +166,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxLuminance. Nominal maximum mastering display luminance
         /// in units of of 0.0001 candelas per square meter.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int MaxLuminance
         {
             get { return this._maxLuminance.GetValueOrDefault(); }
@@ -176,6 +183,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MinLuminance. Nominal minimum mastering display luminance
         /// in units of of 0.0001 candelas per square meter
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int MinLuminance
         {
             get { return this._minLuminance.GetValueOrDefault(); }
@@ -194,6 +202,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int RedPrimaryX
         {
             get { return this._redPrimaryX.GetValueOrDefault(); }
@@ -212,6 +221,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int RedPrimaryY
         {
             get { return this._redPrimaryY.GetValueOrDefault(); }
@@ -230,6 +240,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int WhitePointX
         {
             get { return this._whitePointX.GetValueOrDefault(); }
@@ -248,6 +259,7 @@ namespace Amazon.MediaConvert.Model
         /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
         /// color correction.
         /// </summary>
+        [AWSProperty(Min=0, Max=50000)]
         public int WhitePointY
         {
             get { return this._whitePointY.GetValueOrDefault(); }

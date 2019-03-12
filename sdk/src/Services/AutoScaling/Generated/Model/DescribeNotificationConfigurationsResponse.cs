@@ -62,6 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// The notification configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<NotificationConfiguration> NotificationConfigurations
         {
             get { return this._notificationConfigurations; }

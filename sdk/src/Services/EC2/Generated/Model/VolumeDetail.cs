@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         /// The size of the volume, in GiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Size
         {
             get { return this._size.GetValueOrDefault(); }

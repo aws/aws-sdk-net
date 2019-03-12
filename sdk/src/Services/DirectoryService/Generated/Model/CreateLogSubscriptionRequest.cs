@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// logs to your specified CloudWatch log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -63,6 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// forwarded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }

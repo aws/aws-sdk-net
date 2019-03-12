@@ -79,6 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The content of the association document for the instance(s).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Content
         {
             get { return this._content; }

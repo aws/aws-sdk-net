@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// The text of a note.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }
@@ -60,6 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// The timestamp of when the note was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdatedAt
         {
             get { return this._updatedAt; }
@@ -78,6 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// The principal that created a note.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdatedBy
         {
             get { return this._updatedBy; }

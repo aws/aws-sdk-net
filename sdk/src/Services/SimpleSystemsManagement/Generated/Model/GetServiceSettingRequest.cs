@@ -60,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the service setting to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string SettingId
         {
             get { return this._settingId; }

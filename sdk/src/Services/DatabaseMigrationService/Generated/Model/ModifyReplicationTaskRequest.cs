@@ -168,6 +168,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the replication task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationTaskArn
         {
             get { return this._replicationTaskArn; }

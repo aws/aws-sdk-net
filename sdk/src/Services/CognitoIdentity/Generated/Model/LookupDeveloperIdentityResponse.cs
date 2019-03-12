@@ -61,6 +61,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -84,6 +85,7 @@ namespace Amazon.CognitoIdentity.Model
         /// starting from the 11th match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

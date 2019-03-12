@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         /// clusters, and container instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

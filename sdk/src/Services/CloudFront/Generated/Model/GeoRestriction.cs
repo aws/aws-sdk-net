@@ -93,6 +93,7 @@ namespace Amazon.CloudFront.Model
         /// <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }
@@ -127,6 +128,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoRestrictionType RestrictionType
         {
             get { return this._restrictionType; }

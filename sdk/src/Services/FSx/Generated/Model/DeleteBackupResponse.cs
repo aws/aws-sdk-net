@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         /// The ID of the backup deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=128)]
         public string BackupId
         {
             get { return this._backupId; }

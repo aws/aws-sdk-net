@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// (1 week).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=180, Max=86400)]
         public int MaxSeconds
         {
             get { return this._maxSeconds.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// The minimum value of the duration range. Must be greater than zero.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=180, Max=86400)]
         public int MinSeconds
         {
             get { return this._minSeconds.GetValueOrDefault(); }

@@ -61,6 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The creation date and time of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDateTime
         {
             get { return this._creationDateTime.GetValueOrDefault(); }
@@ -97,6 +98,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Description of the job flow last changed state.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string LastStateChangeReason
         {
             get { return this._lastStateChangeReason; }
@@ -151,6 +153,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The state of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobFlowExecutionState State
         {
             get { return this._state; }

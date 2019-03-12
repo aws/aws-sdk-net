@@ -51,6 +51,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -69,6 +70,7 @@ namespace Amazon.WorkDocs.Model
         /// The email address of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -87,6 +89,7 @@ namespace Amazon.WorkDocs.Model
         /// The given name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -105,6 +108,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -123,6 +127,7 @@ namespace Amazon.WorkDocs.Model
         /// The password of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=32)]
         public string Password
         {
             get { return this._password; }
@@ -159,6 +164,7 @@ namespace Amazon.WorkDocs.Model
         /// The surname of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Surname
         {
             get { return this._surname; }
@@ -177,6 +183,7 @@ namespace Amazon.WorkDocs.Model
         /// The time zone ID of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string TimeZoneId
         {
             get { return this._timeZoneId; }
@@ -195,6 +202,7 @@ namespace Amazon.WorkDocs.Model
         /// The login name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Username
         {
             get { return this._username; }

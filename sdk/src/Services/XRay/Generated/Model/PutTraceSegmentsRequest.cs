@@ -107,6 +107,7 @@ namespace Amazon.XRay.Model
         /// A string containing a JSON document defining one or more segments or subsegments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TraceSegmentDocuments
         {
             get { return this._traceSegmentDocuments; }

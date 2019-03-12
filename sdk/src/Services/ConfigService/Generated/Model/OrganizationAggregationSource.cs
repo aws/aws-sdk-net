@@ -61,6 +61,7 @@ namespace Amazon.ConfigService.Model
         /// The source regions being aggregated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AwsRegions
         {
             get { return this._awsRegions; }
@@ -80,6 +81,7 @@ namespace Amazon.ConfigService.Model
         /// aggregator account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

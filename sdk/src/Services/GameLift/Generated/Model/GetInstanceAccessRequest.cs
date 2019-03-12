@@ -66,6 +66,7 @@ namespace Amazon.GameLift.Model
         /// for a short time before they are deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -85,6 +86,7 @@ namespace Amazon.GameLift.Model
         /// in any status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

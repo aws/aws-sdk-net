@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the finding that you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> FindingArns
         {
             get { return this._findingArns; }

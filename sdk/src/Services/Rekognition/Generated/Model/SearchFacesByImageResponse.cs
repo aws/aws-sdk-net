@@ -99,6 +99,7 @@ namespace Amazon.Rekognition.Model
         /// face.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float SearchedFaceConfidence
         {
             get { return this._searchedFaceConfidence.GetValueOrDefault(); }

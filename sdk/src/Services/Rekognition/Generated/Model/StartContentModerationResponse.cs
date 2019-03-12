@@ -41,6 +41,7 @@ namespace Amazon.Rekognition.Model
         /// identify the job in a subsequent call to <code>GetContentModeration</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }

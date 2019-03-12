@@ -44,6 +44,7 @@ namespace Amazon.AWSSupport.Model
         /// The category of the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Category
         {
             get { return this._category; }
@@ -63,6 +64,7 @@ namespace Amazon.AWSSupport.Model
         /// recommended actions (contains HTML markup).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +83,7 @@ namespace Amazon.AWSSupport.Model
         /// The unique identifier for the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -103,6 +106,7 @@ namespace Amazon.AWSSupport.Model
         /// shows just summary data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Metadata
         {
             get { return this._metadata; }
@@ -121,6 +125,7 @@ namespace Amazon.AWSSupport.Model
         /// The display name for the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

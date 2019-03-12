@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -64,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// The identifier of the entity (user or role).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -82,6 +84,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the entity (user or role).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -101,6 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -119,6 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// The type of entity (user or role).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyOwnerEntityType Type
         {
             get { return this._type; }

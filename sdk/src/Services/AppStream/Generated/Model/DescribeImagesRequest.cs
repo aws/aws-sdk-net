@@ -64,6 +64,7 @@ namespace Amazon.AppStream.Model
         /// The maximum size of each page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.AppStream.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

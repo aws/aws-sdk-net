@@ -49,6 +49,7 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -67,6 +68,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'addAttributes' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -85,6 +87,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

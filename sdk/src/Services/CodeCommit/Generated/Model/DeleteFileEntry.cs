@@ -40,6 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// The full path of the file that will be deleted, including the name of the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }

@@ -45,6 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of a domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -81,6 +82,7 @@ namespace Amazon.Route53Domains.Model
         /// The identifier for the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string OperationId
         {
             get { return this._operationId; }

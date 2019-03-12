@@ -73,6 +73,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventType EventType
         {
             get { return this._eventType; }
@@ -113,6 +114,7 @@ namespace Amazon.CloudFront.Model
         /// can't specify a Lambda alias or $LATEST.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LambdaFunctionARN
         {
             get { return this._lambdaFunctionARN; }

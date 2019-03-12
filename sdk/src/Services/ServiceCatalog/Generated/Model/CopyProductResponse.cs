@@ -40,6 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The token to use to track the progress of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string CopyProductToken
         {
             get { return this._copyProductToken; }

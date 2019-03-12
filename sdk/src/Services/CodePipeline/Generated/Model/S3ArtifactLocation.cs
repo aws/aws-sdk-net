@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -60,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// in the bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ObjectKey
         {
             get { return this._objectKey; }

@@ -60,6 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }

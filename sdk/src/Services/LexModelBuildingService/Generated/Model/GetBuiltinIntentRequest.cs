@@ -48,6 +48,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Built-in Intents</a> in the <i>Alexa Skills Kit</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Signature
         {
             get { return this._signature; }

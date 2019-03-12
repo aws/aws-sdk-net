@@ -61,6 +61,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupName
         {
             get { return this._cacheParameterGroupName; }

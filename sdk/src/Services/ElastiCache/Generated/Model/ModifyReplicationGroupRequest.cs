@@ -424,6 +424,7 @@ namespace Amazon.ElastiCache.Model
         /// The identifier of the replication group to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }

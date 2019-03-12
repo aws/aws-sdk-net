@@ -73,6 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -92,6 +93,7 @@ namespace Amazon.ServiceCatalog.Model
         /// and required if the product has more than one path.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PathId
         {
             get { return this._pathId; }
@@ -110,6 +112,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -129,6 +132,7 @@ namespace Amazon.ServiceCatalog.Model
         /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisionedProductId
         {
             get { return this._provisionedProductId; }
@@ -148,6 +152,7 @@ namespace Amazon.ServiceCatalog.Model
         /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string ProvisionedProductName
         {
             get { return this._provisionedProductName; }
@@ -166,6 +171,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -221,6 +227,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The idempotency token that uniquely identifies the provisioning update request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UpdateToken
         {
             get { return this._updateToken; }

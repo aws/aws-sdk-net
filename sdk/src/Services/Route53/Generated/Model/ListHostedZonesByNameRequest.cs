@@ -124,6 +124,7 @@ namespace Amazon.Route53.Model
         /// from the previous response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DNSName
         {
             get { return this._dnsName; }
@@ -152,6 +153,7 @@ namespace Amazon.Route53.Model
         /// element from the previous response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }

@@ -65,6 +65,7 @@ namespace Amazon.CodeCommit.Model
         /// The contents of your reply to a comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Content
         {
             get { return this._content; }
@@ -84,6 +85,7 @@ namespace Amazon.CodeCommit.Model
         /// use <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InReplyTo
         {
             get { return this._inReplyTo; }

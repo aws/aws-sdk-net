@@ -68,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The inputs for the STEP_FUNCTION task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string Input
         {
             get { return this._input; }
@@ -86,6 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the STEP_FUNCTION task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }

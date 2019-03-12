@@ -53,6 +53,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the resource to which you are adding tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -71,6 +72,7 @@ namespace Amazon.Lightsail.Model
         /// The tag key and optional value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

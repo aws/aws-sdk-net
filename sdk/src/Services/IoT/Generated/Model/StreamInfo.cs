@@ -65,6 +65,7 @@ namespace Amazon.IoT.Model
         /// The description of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -83,6 +84,7 @@ namespace Amazon.IoT.Model
         /// The files to stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<StreamFile> Files
         {
             get { return this._files; }
@@ -119,6 +121,7 @@ namespace Amazon.IoT.Model
         /// An IAM role AWS IoT assumes to access your S3 files.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -155,6 +158,7 @@ namespace Amazon.IoT.Model
         /// The stream ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamId
         {
             get { return this._streamId; }
@@ -173,6 +177,7 @@ namespace Amazon.IoT.Model
         /// The stream version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int StreamVersion
         {
             get { return this._streamVersion.GetValueOrDefault(); }

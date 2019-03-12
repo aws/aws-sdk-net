@@ -72,6 +72,7 @@ namespace Amazon.XRay.Model
         /// The end of the time frame for which to retrieve traces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -91,6 +92,7 @@ namespace Amazon.XRay.Model
         /// meet certain requirements.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string FilterExpression
         {
             get { return this._filterExpression; }
@@ -146,6 +148,7 @@ namespace Amazon.XRay.Model
         /// The start of the time frame for which to retrieve traces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

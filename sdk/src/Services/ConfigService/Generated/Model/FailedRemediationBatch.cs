@@ -41,6 +41,7 @@ namespace Amazon.ConfigService.Model
         /// Returns remediation configurations of the failed items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<RemediationConfiguration> FailedItems
         {
             get { return this._failedItems; }

@@ -40,6 +40,7 @@ namespace Amazon.Textract.Model
         /// The number of pages detected in the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Pages
         {
             get { return this._pages.GetValueOrDefault(); }

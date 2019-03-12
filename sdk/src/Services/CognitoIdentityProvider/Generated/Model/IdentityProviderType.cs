@@ -83,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A list of identity provider identifiers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> IdpIdentifiers
         {
             get { return this._idpIdentifiers; }
@@ -137,6 +138,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The identity provider name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }
@@ -173,6 +175,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

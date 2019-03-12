@@ -41,6 +41,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The identifier of the import job information to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImportId
         {
             get { return this._importId; }

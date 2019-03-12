@@ -48,6 +48,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>Evaluation</code> during creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }
@@ -67,6 +68,7 @@ namespace Amazon.MachineLearning.Model
         /// the current content. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string EvaluationName
         {
             get { return this._evaluationName; }

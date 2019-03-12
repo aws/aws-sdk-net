@@ -40,6 +40,7 @@ namespace Amazon.GameLift.Model
         /// Object that describes the newly created matchmaking rule set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MatchmakingRuleSet RuleSet
         {
             get { return this._ruleSet; }

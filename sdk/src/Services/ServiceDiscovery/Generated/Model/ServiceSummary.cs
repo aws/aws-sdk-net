@@ -49,6 +49,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -85,6 +86,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The description that you specify when you create the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -148,6 +150,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID that AWS Cloud Map assigned to the service when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Id
         {
             get { return this._id; }

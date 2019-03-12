@@ -99,6 +99,7 @@ namespace Amazon.Lambda.Model
         /// name, it's limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -135,6 +136,7 @@ namespace Amazon.Lambda.Model
         /// The maximum number of event source mappings to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

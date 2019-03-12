@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// The cluster's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EcsClusterArn
         {
             get { return this._ecsClusterArn; }
@@ -71,6 +72,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

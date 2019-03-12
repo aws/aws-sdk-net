@@ -61,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }

@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The maximum number of identity providers to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A pagination token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -79,6 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

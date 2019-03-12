@@ -56,6 +56,7 @@ namespace Amazon.DirectoryService.Model
         /// <code>Directory Details</code> page after the directory is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -94,6 +95,7 @@ namespace Amazon.DirectoryService.Model
         /// This name will resolve inside your VPC only. It does not need to be publicly resolvable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -112,6 +114,7 @@ namespace Amazon.DirectoryService.Model
         /// The password for the default administrative user named <code>Admin</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Password
         {
             get { return this._password; }
@@ -170,6 +173,7 @@ namespace Amazon.DirectoryService.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectoryVpcSettings VpcSettings
         {
             get { return this._vpcSettings; }

@@ -124,6 +124,7 @@ namespace Amazon.Route53.Model
         /// that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -171,6 +172,7 @@ namespace Amazon.Route53.Model
         /// stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -222,6 +224,7 @@ namespace Amazon.Route53.Model
         /// information about reusable delegation sets, see <a>CreateReusableDelegationSet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string DelegationSetId
         {
             get { return this._delegationSetId; }

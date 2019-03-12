@@ -68,6 +68,7 @@ namespace Amazon.EC2.Model
         /// batches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Resources
         {
             get { return this._resources; }

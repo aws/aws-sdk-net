@@ -44,6 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// The access rules you want to configure. These rules replace any existing rules. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessPolicies
         {
             get { return this._accessPolicies; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

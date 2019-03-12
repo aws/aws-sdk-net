@@ -45,6 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of the server for which neighbors are being listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationId
         {
             get { return this._configurationId; }

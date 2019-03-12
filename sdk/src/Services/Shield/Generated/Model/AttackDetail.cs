@@ -65,6 +65,7 @@ namespace Amazon.Shield.Model
         /// The unique identifier (ID) of the attack.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AttackId
         {
             get { return this._attackId; }
@@ -137,6 +138,7 @@ namespace Amazon.Shield.Model
         /// The ARN (Amazon Resource Name) of the resource that was attacked.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

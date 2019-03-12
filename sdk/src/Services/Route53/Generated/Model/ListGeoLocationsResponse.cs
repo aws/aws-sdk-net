@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// location that Amazon Route 53 supports for geolocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<GeoLocationDetails> GeoLocationDetailsList
         {
             get { return this._geoLocationDetailsList; }
@@ -68,6 +69,7 @@ namespace Amazon.Route53.Model
         /// <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -89,6 +91,7 @@ namespace Amazon.Route53.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string NextContinentCode
         {
             get { return this._nextContinentCode; }
@@ -109,6 +112,7 @@ namespace Amazon.Route53.Model
         /// <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public string NextCountryCode
         {
             get { return this._nextCountryCode; }
@@ -130,6 +134,7 @@ namespace Amazon.Route53.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public string NextSubdivisionCode
         {
             get { return this._nextSubdivisionCode; }
@@ -148,6 +153,7 @@ namespace Amazon.Route53.Model
         /// The value that you specified for <code>MaxItems</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

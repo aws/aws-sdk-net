@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The identifier for the resource server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Identifier
         {
             get { return this._identifier; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool that hosts the resource server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

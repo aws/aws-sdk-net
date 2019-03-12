@@ -46,6 +46,7 @@ namespace Amazon.Athena.Model
         /// The database to which the query belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Database
         {
             get { return this._database; }
@@ -64,6 +65,7 @@ namespace Amazon.Athena.Model
         /// The query description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -82,6 +84,7 @@ namespace Amazon.Athena.Model
         /// The query name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -118,6 +121,7 @@ namespace Amazon.Athena.Model
         /// The SQL query statements that comprise the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

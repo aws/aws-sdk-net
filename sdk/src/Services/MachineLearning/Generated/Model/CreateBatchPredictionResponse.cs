@@ -49,6 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// value is identical to the value of the <code>BatchPredictionId</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string BatchPredictionId
         {
             get { return this._batchPredictionId; }

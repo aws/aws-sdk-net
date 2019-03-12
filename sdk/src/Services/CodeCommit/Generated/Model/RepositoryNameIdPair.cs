@@ -59,6 +59,7 @@ namespace Amazon.CodeCommit.Model
         /// The name associated with the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

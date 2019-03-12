@@ -61,6 +61,7 @@ namespace Amazon.MobileAnalytics.Model
         /// A unique identifier for the session
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string Id
         {
             get { return this._id; }

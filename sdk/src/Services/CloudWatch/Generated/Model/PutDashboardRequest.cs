@@ -72,6 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DashboardBody
         {
             get { return this._dashboardBody; }
@@ -93,6 +94,7 @@ namespace Amazon.CloudWatch.Model
         /// and "_". This parameter is required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DashboardName
         {
             get { return this._dashboardName; }

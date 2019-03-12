@@ -83,6 +83,7 @@ namespace Amazon.IoT.Model
         /// The authorizer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AuthorizerName
         {
             get { return this._authorizerName; }
@@ -155,6 +156,7 @@ namespace Amazon.IoT.Model
         /// The key used to extract the token from the HTTP headers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TokenKeyName
         {
             get { return this._tokenKeyName; }

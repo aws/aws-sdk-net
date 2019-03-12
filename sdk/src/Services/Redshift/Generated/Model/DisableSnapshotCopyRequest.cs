@@ -55,6 +55,7 @@ namespace Amazon.Redshift.Model
         /// copy enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

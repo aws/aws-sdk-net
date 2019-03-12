@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// and <code>unlimited</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CpuCredits
         {
             get { return this._cpuCredits; }

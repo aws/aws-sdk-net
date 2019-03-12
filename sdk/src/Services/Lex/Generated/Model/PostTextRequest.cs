@@ -121,6 +121,7 @@ namespace Amazon.Lex.Model
         /// The alias of the Amazon Lex bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BotAlias
         {
             get { return this._botAlias; }
@@ -139,6 +140,7 @@ namespace Amazon.Lex.Model
         /// The name of the Amazon Lex bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BotName
         {
             get { return this._botName; }
@@ -157,6 +159,7 @@ namespace Amazon.Lex.Model
         /// The text that the user entered (Amazon Lex interprets this text).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string InputText
         {
             get { return this._inputText; }
@@ -256,6 +259,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string UserId
         {
             get { return this._userId; }

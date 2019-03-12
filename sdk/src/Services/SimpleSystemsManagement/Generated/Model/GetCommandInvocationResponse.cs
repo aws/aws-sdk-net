@@ -74,6 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parent command ID of the invocation plugin.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string CommandId
         {
             get { return this._commandId; }
@@ -92,6 +93,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The comment text for the command.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string Comment
         {
             get { return this._comment; }
@@ -243,6 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// is a plugin.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4)]
         public string PluginName
         {
             get { return this._pluginName; }
@@ -282,6 +285,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// finished executing, then this string is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8000)]
         public string StandardErrorContent
         {
             get { return this._standardErrorContent; }
@@ -321,6 +325,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// string is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=24000)]
         public string StandardOutputContent
         {
             get { return this._standardOutputContent; }
@@ -437,6 +442,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string StatusDetails
         {
             get { return this._statusDetails; }

@@ -42,6 +42,7 @@ namespace Amazon.PI.Model
         /// The time, in epoch format, associated with a particular <code>Value</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.PI.Model
         /// The actual value associated with a particular <code>Timestamp</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Value
         {
             get { return this._value.GetValueOrDefault(); }

@@ -78,6 +78,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public List<string> RetentionConfigurationNames
         {
             get { return this._retentionConfigurationNames; }

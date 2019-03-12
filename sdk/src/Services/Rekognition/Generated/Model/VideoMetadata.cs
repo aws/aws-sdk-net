@@ -64,6 +64,7 @@ namespace Amazon.Rekognition.Model
         /// Length of the video in milliseconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long DurationMillis
         {
             get { return this._durationMillis.GetValueOrDefault(); }
@@ -100,6 +101,7 @@ namespace Amazon.Rekognition.Model
         /// Vertical pixel dimension of the video.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long FrameHeight
         {
             get { return this._frameHeight.GetValueOrDefault(); }
@@ -136,6 +138,7 @@ namespace Amazon.Rekognition.Model
         /// Horizontal pixel dimension of the video.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long FrameWidth
         {
             get { return this._frameWidth.GetValueOrDefault(); }

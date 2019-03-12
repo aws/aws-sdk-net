@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of a resource that represents your subscription to a supported product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProductSubscriptionArn
         {
             get { return this._productSubscriptionArn; }

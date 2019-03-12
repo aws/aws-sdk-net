@@ -69,6 +69,7 @@ namespace Amazon.Route53.Model
         /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneIdMarker
         {
             get { return this._hostedZoneIdMarker; }
@@ -97,6 +98,7 @@ namespace Amazon.Route53.Model
         /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string TrafficPolicyInstanceNameMarker
         {
             get { return this._trafficPolicyInstanceNameMarker; }

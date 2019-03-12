@@ -55,6 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Identities
         {
             get { return this._identities; }

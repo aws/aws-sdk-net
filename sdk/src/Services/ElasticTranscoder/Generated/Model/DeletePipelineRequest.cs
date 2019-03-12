@@ -48,6 +48,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the pipeline that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

@@ -94,6 +94,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// equal to the On-Demand price.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string BidPrice
         {
             get { return this._bidPrice; }
@@ -153,6 +154,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Target number of instances for the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -171,6 +173,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The role of the instance group in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceRoleType InstanceRole
         {
             get { return this._instanceRole; }
@@ -189,6 +192,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -225,6 +229,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Friendly name given to the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -47,6 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// either be a group of account IDs or <i>All</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> AccountIdsToAdd
         {
             get { return this._accountIdsToAdd; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// same ID to remove, the system removes access to the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> AccountIdsToRemove
         {
             get { return this._accountIdsToRemove; }
@@ -86,6 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the document that you want to share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -104,6 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The permission type for the document. The permission type can be <i>Share</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentPermissionType PermissionType
         {
             get { return this._permissionType; }

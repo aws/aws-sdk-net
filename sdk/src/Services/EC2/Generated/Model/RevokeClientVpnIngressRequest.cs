@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint with which the authorization rule is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }
@@ -99,6 +100,7 @@ namespace Amazon.EC2.Model
         /// removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetNetworkCidr
         {
             get { return this._targetNetworkCidr; }

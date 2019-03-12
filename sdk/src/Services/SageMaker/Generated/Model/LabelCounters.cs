@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of objects that could not be labeled due to an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int FailedNonRetryableError
         {
             get { return this._failedNonRetryableError.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of objects labeled by a human worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int HumanLabeled
         {
             get { return this._humanLabeled.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of objects labeled by automated data labeling.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MachineLabeled
         {
             get { return this._machineLabeled.GetValueOrDefault(); }
@@ -98,6 +101,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of objects labeled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TotalLabeled
         {
             get { return this._totalLabeled.GetValueOrDefault(); }
@@ -116,6 +120,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of objects not yet labeled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Unlabeled
         {
             get { return this._unlabeled.GetValueOrDefault(); }

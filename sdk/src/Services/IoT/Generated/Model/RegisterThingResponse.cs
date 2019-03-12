@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// .
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string CertificatePem
         {
             get { return this._certificatePem; }

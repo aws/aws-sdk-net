@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         /// The type of resource to assign to a container. The only supported value is <code>GPU</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType Type
         {
             get { return this._type; }
@@ -64,6 +65,7 @@ namespace Amazon.ECS.Model
         /// on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

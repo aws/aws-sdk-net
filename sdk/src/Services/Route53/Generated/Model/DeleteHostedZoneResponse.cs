@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// to delete a hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeInfo ChangeInfo
         {
             get { return this._changeInfo; }

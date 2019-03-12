@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The results of the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Result
         {
             get { return this._result; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }

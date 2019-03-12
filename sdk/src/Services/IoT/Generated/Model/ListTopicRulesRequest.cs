@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

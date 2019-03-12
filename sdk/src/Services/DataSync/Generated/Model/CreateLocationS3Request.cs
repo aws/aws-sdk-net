@@ -54,6 +54,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=76)]
         public string S3BucketArn
         {
             get { return this._s3BucketArn; }
@@ -69,6 +70,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property S3Config.
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Config S3Config
         {
             get { return this._s3Config; }
@@ -88,6 +90,7 @@ namespace Amazon.DataSync.Model
         /// read data from the S3 source location or write data to the S3 destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=4096)]
         public string Subdirectory
         {
             get { return this._subdirectory; }
@@ -107,6 +110,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. We recommend using tags to name your resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

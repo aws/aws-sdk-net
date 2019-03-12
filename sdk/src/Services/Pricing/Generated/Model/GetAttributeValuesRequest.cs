@@ -47,6 +47,7 @@ namespace Amazon.Pricing.Model
         /// The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -65,6 +66,7 @@ namespace Amazon.Pricing.Model
         /// The maximum number of results to return in response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -102,6 +104,7 @@ namespace Amazon.Pricing.Model
         /// if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceCode
         {
             get { return this._serviceCode; }

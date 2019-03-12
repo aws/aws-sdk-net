@@ -61,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -97,6 +98,7 @@ namespace Amazon.CodePipeline.Model
         /// The version number of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

@@ -54,6 +54,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -86,6 +87,7 @@ namespace Amazon.ACMPCA.Model
         /// operation in the <i>AWS Certificate Manager API Reference</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string CertificateSerial
         {
             get { return this._certificateSerial; }
@@ -104,6 +106,7 @@ namespace Amazon.ACMPCA.Model
         /// Specifies why you revoked the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RevocationReason RevocationReason
         {
             get { return this._revocationReason; }

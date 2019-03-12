@@ -44,6 +44,7 @@ namespace Amazon.ConfigService.Model
         /// the result will be empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GroupByKey
         {
             get { return this._groupByKey; }
@@ -100,6 +101,7 @@ namespace Amazon.ConfigService.Model
         /// you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long TotalDiscoveredResources
         {
             get { return this._totalDiscoveredResources.GetValueOrDefault(); }

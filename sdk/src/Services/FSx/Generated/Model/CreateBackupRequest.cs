@@ -82,6 +82,7 @@ namespace Amazon.FSx.Model
         /// Command Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -100,6 +101,7 @@ namespace Amazon.FSx.Model
         /// The ID of the file system to back up.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -119,6 +121,7 @@ namespace Amazon.FSx.Model
         /// tag appears in the console as the backup name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

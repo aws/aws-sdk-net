@@ -56,6 +56,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Application Output</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DestinationSchema DestinationSchema
         {
             get { return this._destinationSchema; }
@@ -128,6 +129,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the in-application stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }

@@ -42,6 +42,7 @@ namespace Amazon.WorkMail.Model
         /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// any tokens.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

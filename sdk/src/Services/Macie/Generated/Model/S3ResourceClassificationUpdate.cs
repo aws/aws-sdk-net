@@ -43,6 +43,7 @@ namespace Amazon.Macie.Model
         /// The name of the S3 bucket whose classification types you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=500)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -62,6 +63,7 @@ namespace Amazon.Macie.Model
         /// Macie. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ClassificationTypeUpdate ClassificationTypeUpdate
         {
             get { return this._classificationTypeUpdate; }
@@ -80,6 +82,7 @@ namespace Amazon.Macie.Model
         /// The prefix of the S3 bucket whose classification types you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Prefix
         {
             get { return this._prefix; }

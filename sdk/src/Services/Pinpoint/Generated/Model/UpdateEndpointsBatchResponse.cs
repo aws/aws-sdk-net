@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property MessageBody.
         /// </summary>
+        [AWSProperty(Required=true)]
         public MessageBody MessageBody
         {
             get { return this._messageBody; }

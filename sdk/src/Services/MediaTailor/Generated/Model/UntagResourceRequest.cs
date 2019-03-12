@@ -44,6 +44,7 @@ namespace Amazon.MediaTailor.Model
         /// the response to any playback configuration request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -63,6 +64,7 @@ namespace Amazon.MediaTailor.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

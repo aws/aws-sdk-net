@@ -71,6 +71,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// in the report, such as individual resource IDs. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AdditionalSchemaElements
         {
             get { return this._additionalSchemaElements; }
@@ -86,6 +87,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property Compression.
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompressionFormat Compression
         {
             get { return this._compression; }
@@ -101,6 +103,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property Format.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportFormat Format
         {
             get { return this._format; }
@@ -136,6 +139,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property ReportName.
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string ReportName
         {
             get { return this._reportName; }
@@ -170,6 +174,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property S3Bucket.
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -185,6 +190,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property S3Prefix.
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string S3Prefix
         {
             get { return this._s3Prefix; }
@@ -200,6 +206,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property S3Region.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AWSRegion S3Region
         {
             get { return this._s3Region; }
@@ -215,6 +222,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property TimeUnit.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimeUnit TimeUnit
         {
             get { return this._timeUnit; }

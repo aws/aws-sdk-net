@@ -46,6 +46,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The ending date (e.g., 2016-12-31) of the usage data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndDate
         {
             get { return this._endDate; }
@@ -119,6 +120,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The starting date (e.g., 2016-01-01) of the usage data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StartDate
         {
             get { return this._startDate; }
@@ -137,6 +139,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The Id of the usage plan associated with the usage data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

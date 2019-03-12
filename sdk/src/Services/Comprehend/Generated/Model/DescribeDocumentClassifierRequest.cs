@@ -42,6 +42,7 @@ namespace Amazon.Comprehend.Model
         /// returns this identifier in its response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }

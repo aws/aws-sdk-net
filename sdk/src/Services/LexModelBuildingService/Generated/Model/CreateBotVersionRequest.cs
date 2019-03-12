@@ -84,6 +84,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }

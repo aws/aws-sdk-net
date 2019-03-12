@@ -41,6 +41,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the resource path.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -59,6 +60,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the resource path.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

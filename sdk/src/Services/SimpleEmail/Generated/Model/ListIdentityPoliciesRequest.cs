@@ -66,6 +66,7 @@ namespace Amazon.SimpleEmail.Model
         /// To successfully call this API, you must own the identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }

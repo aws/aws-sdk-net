@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of the cache security group to revoke ingress from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSecurityGroupName
         {
             get { return this._cacheSecurityGroupName; }
@@ -62,6 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of the Amazon EC2 security group to revoke access from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EC2SecurityGroupName
         {
             get { return this._ec2SecurityGroupName; }
@@ -82,6 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// for this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EC2SecurityGroupOwnerId
         {
             get { return this._ec2SecurityGroupOwnerId; }

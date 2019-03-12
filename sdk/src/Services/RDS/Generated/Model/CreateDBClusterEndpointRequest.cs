@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterEndpointIdentifier
         {
             get { return this._dbClusterEndpointIdentifier; }
@@ -71,6 +72,7 @@ namespace Amazon.RDS.Model
         /// is stored as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -89,6 +91,7 @@ namespace Amazon.RDS.Model
         /// The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointType
         {
             get { return this._endpointType; }

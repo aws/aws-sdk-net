@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the model to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -80,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

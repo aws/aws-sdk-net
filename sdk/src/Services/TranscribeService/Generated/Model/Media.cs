@@ -64,6 +64,7 @@ namespace Amazon.TranscribeService.Model
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string MediaFileUri
         {
             get { return this._mediaFileUri; }

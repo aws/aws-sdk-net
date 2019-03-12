@@ -59,6 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// The Elastic Load Balancing instance's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticLoadBalancerName
         {
             get { return this._elasticLoadBalancerName; }
@@ -77,6 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// The ID of the layer to which the Elastic Load Balancing instance is to be attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LayerId
         {
             get { return this._layerId; }

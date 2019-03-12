@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the CloudWatch log to receive application messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string LogStreamARN
         {
             get { return this._logStreamARN; }

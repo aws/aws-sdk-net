@@ -110,6 +110,7 @@ namespace Amazon.MediaLive.Model
         /// each output must have a unique value when its bitrate is rounded down to the nearest
         /// multiple of 1000.
         /// </summary>
+        [AWSProperty(Min=1000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -126,6 +127,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BufFillPct. Percentage of the buffer that should initially
         /// be filled (HRD buffer model).
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int BufFillPct
         {
             get { return this._bufFillPct.GetValueOrDefault(); }
@@ -141,6 +143,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits/second.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int BufSize
         {
             get { return this._bufSize.GetValueOrDefault(); }
@@ -238,6 +241,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property FramerateDenominator. Framerate denominator.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -254,6 +258,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateNumerator. Framerate numerator - framerate is
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -287,6 +292,7 @@ namespace Amazon.MediaLive.Model
         /// will receive an IDR frame as quickly as possible. Setting this value to 0 will break
         /// output segmenting.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int GopClosedCadence
         {
             get { return this._gopClosedCadence.GetValueOrDefault(); }
@@ -302,6 +308,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property GopNumBFrames. Number of B-frames between reference frames.
         /// </summary>
+        [AWSProperty(Min=0, Max=7)]
         public int GopNumBFrames
         {
             get { return this._gopNumBFrames.GetValueOrDefault(); }
@@ -384,6 +391,7 @@ namespace Amazon.MediaLive.Model
         /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
         /// of the video.
         /// </summary>
+        [AWSProperty(Min=1000)]
         public int MaxBitrate
         {
             get { return this._maxBitrate.GetValueOrDefault(); }
@@ -405,6 +413,7 @@ namespace Amazon.MediaLive.Model
         /// normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval
         /// - 1
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public int MinIInterval
         {
             get { return this._minIInterval.GetValueOrDefault(); }
@@ -421,6 +430,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NumRefFrames. Number of reference frames to use. The encoder
         /// may use more than requested if using B-frames and/or interlaced encoding.
         /// </summary>
+        [AWSProperty(Min=1, Max=6)]
         public int NumRefFrames
         {
             get { return this._numRefFrames.GetValueOrDefault(); }
@@ -455,6 +465,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParDenominator
         {
             get { return this._parDenominator.GetValueOrDefault(); }
@@ -505,6 +516,7 @@ namespace Amazon.MediaLive.Model
         /// Quality level: 7. Max bitrate: 1.5M to 3M- Smartphone: Quality level: 6. Max bitrate:
         /// 1M to 1.5M
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int QvbrQualityLevel
         {
             get { return this._qvbrQualityLevel.GetValueOrDefault(); }
@@ -578,6 +590,7 @@ namespace Amazon.MediaLive.Model
         /// is optional; when no value is specified the encoder will choose the number of slices
         /// based on encode resolution.
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public int Slices
         {
             get { return this._slices.GetValueOrDefault(); }
@@ -594,6 +607,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Softness. Softness. Selects quantizer matrix, larger values
         /// reduce high-frequency content in the encoded image.
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public int Softness
         {
             get { return this._softness.GetValueOrDefault(); }

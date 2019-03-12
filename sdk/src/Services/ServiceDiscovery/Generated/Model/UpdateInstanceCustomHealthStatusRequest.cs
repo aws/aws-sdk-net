@@ -56,6 +56,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the instance that you want to change the health status for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -75,6 +76,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// that you want to change the status for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceId
         {
             get { return this._serviceId; }
@@ -93,6 +95,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CustomHealthStatus Status
         {
             get { return this._status; }

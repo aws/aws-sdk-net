@@ -80,6 +80,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ChildId
         {
             get { return this._childId; }
@@ -105,6 +106,7 @@ namespace Amazon.Organizations.Model
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -140,6 +140,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance that you are modifying.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

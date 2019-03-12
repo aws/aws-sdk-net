@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// results, this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2024)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

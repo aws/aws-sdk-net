@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location of the input data objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelingJobS3DataSource S3DataSource
         {
             get { return this._s3DataSource; }

@@ -70,6 +70,7 @@ namespace Amazon.AutoScaling.Model
         /// AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -94,6 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// to launch instances into EC2-Classic.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -195,6 +197,7 @@ namespace Amazon.AutoScaling.Model
         /// Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string HealthCheckType
         {
             get { return this._healthCheckType; }
@@ -226,6 +229,7 @@ namespace Amazon.AutoScaling.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -251,6 +255,7 @@ namespace Amazon.AutoScaling.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }
@@ -337,6 +342,7 @@ namespace Amazon.AutoScaling.Model
         /// The maximum size of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxSize
         {
             get { return this._maxSize.GetValueOrDefault(); }
@@ -355,6 +361,7 @@ namespace Amazon.AutoScaling.Model
         /// The minimum size of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinSize
         {
             get { return this._minSize.GetValueOrDefault(); }
@@ -427,6 +434,7 @@ namespace Amazon.AutoScaling.Model
         /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup
         {
             get { return this._placementGroup; }
@@ -449,6 +457,7 @@ namespace Amazon.AutoScaling.Model
         /// Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ServiceLinkedRoleARN
         {
             get { return this._serviceLinkedRoleARN; }
@@ -544,6 +553,7 @@ namespace Amazon.AutoScaling.Model
         /// to launch instances into a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2047)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }

@@ -45,6 +45,7 @@ namespace Amazon.FMS.Model
         /// The Amazon Resource Name (ARN) of the specified policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PolicyArn
         {
             get { return this._policyArn; }
@@ -63,6 +64,7 @@ namespace Amazon.FMS.Model
         /// The ID of the specified policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -81,6 +83,7 @@ namespace Amazon.FMS.Model
         /// The friendly name of the specified policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -120,6 +123,7 @@ namespace Amazon.FMS.Model
         /// or <code>AWS::CloudFront::Distribution</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ResourceType
         {
             get { return this._resourceType; }

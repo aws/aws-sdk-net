@@ -91,6 +91,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies the backup plan to be associated with the selection of resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanId
         {
             get { return this._backupPlanId; }
@@ -115,6 +116,7 @@ namespace Amazon.Backup.Model
         /// an optional array of tags used to identify a set of resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupSelection BackupSelection
         {
             get { return this._backupSelection; }

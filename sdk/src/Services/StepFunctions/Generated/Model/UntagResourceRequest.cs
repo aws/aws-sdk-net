@@ -42,6 +42,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.StepFunctions.Model
         /// The list of tags to remove from the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

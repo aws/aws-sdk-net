@@ -64,6 +64,7 @@ namespace Amazon.Rekognition.Model
         /// such as a tree).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }
@@ -82,6 +83,7 @@ namespace Amazon.Rekognition.Model
         /// Identifier that you assign to all the faces in the input image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ExternalImageId
         {
             get { return this._externalImageId; }

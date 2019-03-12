@@ -40,6 +40,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool SnapshotsEnabled
         {
             get { return this._snapshotsEnabled.GetValueOrDefault(); }

@@ -62,6 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// Description of the address block.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }

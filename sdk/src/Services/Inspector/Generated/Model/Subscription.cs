@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// The list of existing event subscriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<EventSubscription> EventSubscriptions
         {
             get { return this._eventSubscriptions; }
@@ -62,6 +63,7 @@ namespace Amazon.Inspector.Model
         /// notification is sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string TopicArn
         {
             get { return this._topicArn; }

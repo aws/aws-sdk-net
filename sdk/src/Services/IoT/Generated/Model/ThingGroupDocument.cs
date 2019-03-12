@@ -80,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The thing group description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string ThingGroupDescription
         {
             get { return this._thingGroupDescription; }
@@ -98,6 +99,7 @@ namespace Amazon.IoT.Model
         /// The thing group ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupId
         {
             get { return this._thingGroupId; }
@@ -116,6 +118,7 @@ namespace Amazon.IoT.Model
         /// The thing group name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }

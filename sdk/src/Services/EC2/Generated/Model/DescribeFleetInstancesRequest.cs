@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// The ID of the EC2 Fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }

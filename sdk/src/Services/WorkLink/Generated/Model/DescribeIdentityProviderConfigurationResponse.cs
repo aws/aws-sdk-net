@@ -42,6 +42,7 @@ namespace Amazon.WorkLink.Model
         /// The SAML metadata document provided by the user’s identity provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=204800)]
         public string IdentityProviderSamlMetadata
         {
             get { return this._identityProviderSamlMetadata; }
@@ -78,6 +79,7 @@ namespace Amazon.WorkLink.Model
         /// The SAML metadata document uploaded to the user’s identity provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=204800)]
         public string ServiceProviderSamlMetadata
         {
             get { return this._serviceProviderSamlMetadata; }

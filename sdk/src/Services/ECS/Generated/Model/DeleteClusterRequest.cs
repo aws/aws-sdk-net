@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         /// The short name or full Amazon Resource Name (ARN) of the cluster to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cluster
         {
             get { return this._cluster; }

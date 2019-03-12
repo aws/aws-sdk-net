@@ -48,6 +48,7 @@ namespace Amazon.Amplify.Model
         ///  Commit Id from 3rd party repository provider for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string CommitId
         {
             get { return this._commitId; }
@@ -66,6 +67,7 @@ namespace Amazon.Amplify.Model
         ///  Commit message from 3rd party repository provider for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10000)]
         public string CommitMessage
         {
             get { return this._commitMessage; }
@@ -84,6 +86,7 @@ namespace Amazon.Amplify.Model
         ///  Commit date / time for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CommitTime
         {
             get { return this._commitTime.GetValueOrDefault(); }
@@ -120,6 +123,7 @@ namespace Amazon.Amplify.Model
         ///  Arn for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string JobArn
         {
             get { return this._jobArn; }
@@ -138,6 +142,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string JobId
         {
             get { return this._jobId; }
@@ -156,6 +161,7 @@ namespace Amazon.Amplify.Model
         ///  Type for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10)]
         public JobType JobType
         {
             get { return this._jobType; }
@@ -174,6 +180,7 @@ namespace Amazon.Amplify.Model
         ///  Start date / time for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -192,6 +199,7 @@ namespace Amazon.Amplify.Model
         ///  Status for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatus Status
         {
             get { return this._status; }

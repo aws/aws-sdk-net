@@ -43,6 +43,7 @@ namespace Amazon.Backup.Model
         /// ARN depends on the resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

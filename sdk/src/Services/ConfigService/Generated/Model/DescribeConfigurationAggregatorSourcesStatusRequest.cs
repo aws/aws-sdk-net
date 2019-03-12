@@ -47,6 +47,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration aggregator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationAggregatorName
         {
             get { return this._configurationAggregatorName; }
@@ -66,6 +67,7 @@ namespace Amazon.ConfigService.Model
         /// maximum. If you specify 0, AWS Config uses the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -116,6 +118,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> UpdateStatus
         {
             get { return this._updateStatus; }

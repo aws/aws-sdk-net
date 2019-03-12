@@ -65,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string CompilationJobArn
         {
             get { return this._compilationJobArn; }
@@ -83,6 +84,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model compilation job that you want a summary for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CompilationJobName
         {
             get { return this._compilationJobName; }
@@ -101,6 +103,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompilationJobStatus CompilationJobStatus
         {
             get { return this._compilationJobStatus; }
@@ -137,6 +140,7 @@ namespace Amazon.SageMaker.Model
         /// The type of device that the model will run on after compilation has completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetDevice CompilationTargetDevice
         {
             get { return this._compilationTargetDevice; }
@@ -155,6 +159,7 @@ namespace Amazon.SageMaker.Model
         /// The time when the model compilation job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }

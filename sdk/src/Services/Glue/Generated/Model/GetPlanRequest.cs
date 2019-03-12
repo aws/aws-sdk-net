@@ -81,6 +81,7 @@ namespace Amazon.Glue.Model
         /// The list of mappings from a source table to target tables.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MappingEntry> Mapping
         {
             get { return this._mapping; }
@@ -117,6 +118,7 @@ namespace Amazon.Glue.Model
         /// The source table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CatalogEntry Source
         {
             get { return this._source; }

@@ -137,6 +137,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int FailureThreshold
         {
             get { return this._failureThreshold.GetValueOrDefault(); }
@@ -164,6 +165,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// a value for <code>ResourcePath</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string ResourcePath
         {
             get { return this._resourcePath; }
@@ -222,6 +224,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheckType Type
         {
             get { return this._type; }

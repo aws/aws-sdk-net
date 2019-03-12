@@ -44,6 +44,7 @@ namespace Amazon.DeviceFarm.Model
         /// The artifact's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -80,6 +81,7 @@ namespace Amazon.DeviceFarm.Model
         /// The artifact's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -235,6 +237,7 @@ namespace Amazon.DeviceFarm.Model
         /// download the artifact's file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Url
         {
             get { return this._url; }

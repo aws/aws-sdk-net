@@ -88,6 +88,7 @@ namespace Amazon.MachineLearning.Model
         /// an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }
@@ -106,6 +107,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -185,6 +187,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RDSDataSpec RDSData
         {
             get { return this._rdsData; }
@@ -209,6 +212,7 @@ namespace Amazon.MachineLearning.Model
         ///  
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=110)]
         public string RoleARN
         {
             get { return this._roleARN; }

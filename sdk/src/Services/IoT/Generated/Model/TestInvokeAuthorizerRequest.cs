@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         /// The custom authorizer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AuthorizerName
         {
             get { return this._authorizerName; }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// The token returned by your custom authentication service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=6144)]
         public string Token
         {
             get { return this._token; }
@@ -82,6 +84,7 @@ namespace Amazon.IoT.Model
         /// key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2560)]
         public string TokenSignature
         {
             get { return this._tokenSignature; }

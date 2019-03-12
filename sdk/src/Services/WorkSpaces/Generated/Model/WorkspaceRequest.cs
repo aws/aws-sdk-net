@@ -48,6 +48,7 @@ namespace Amazon.WorkSpaces.Model
         /// to list the available bundles.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BundleId
         {
             get { return this._bundleId; }
@@ -67,6 +68,7 @@ namespace Amazon.WorkSpaces.Model
         /// <a>DescribeWorkspaceDirectories</a> to list the available directories.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -122,6 +124,7 @@ namespace Amazon.WorkSpaces.Model
         /// Service directory for the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string UserName
         {
             get { return this._userName; }

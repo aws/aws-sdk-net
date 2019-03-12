@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// List of attribute names whose values will be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AttributeNames
         {
             get { return this._attributeNames; }
@@ -82,6 +83,7 @@ namespace Amazon.CloudDirectory.Model
         /// the object resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -100,6 +102,7 @@ namespace Amazon.CloudDirectory.Model
         /// Reference that identifies the object whose attributes will be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }
@@ -119,6 +122,7 @@ namespace Amazon.CloudDirectory.Model
         /// for details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SchemaFacet SchemaFacet
         {
             get { return this._schemaFacet; }

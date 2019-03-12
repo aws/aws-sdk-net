@@ -95,6 +95,7 @@ namespace Amazon.GameLift.Model
         /// with. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -115,6 +116,7 @@ namespace Amazon.GameLift.Model
         /// account settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PeerVpcAwsAccountId
         {
             get { return this._peerVpcAwsAccountId; }
@@ -137,6 +139,7 @@ namespace Amazon.GameLift.Model
         /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PeerVpcId
         {
             get { return this._peerVpcId; }

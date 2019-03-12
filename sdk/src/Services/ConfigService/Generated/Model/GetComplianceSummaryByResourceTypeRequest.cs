@@ -49,6 +49,7 @@ namespace Amazon.ConfigService.Model
         /// You can specify that the resource type is an AWS account by specifying <code>AWS::::Account</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }

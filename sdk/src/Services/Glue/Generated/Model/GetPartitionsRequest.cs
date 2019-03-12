@@ -48,6 +48,7 @@ namespace Amazon.Glue.Model
         /// the AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -66,6 +67,7 @@ namespace Amazon.Glue.Model
         /// The name of the catalog database where the partitions reside.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -212,6 +214,7 @@ namespace Amazon.Glue.Model
         ///  <i>Sample API Call</i>: 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Expression
         {
             get { return this._expression; }
@@ -230,6 +233,7 @@ namespace Amazon.Glue.Model
         /// The maximum number of partitions to return in a single response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -284,6 +288,7 @@ namespace Amazon.Glue.Model
         /// The name of the partitions' table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

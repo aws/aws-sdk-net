@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// One or more flow log IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> FlowLogIds
         {
             get { return this._flowLogIds; }

@@ -160,6 +160,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Lex FAQ.</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ChildDirected
         {
             get { return this._childDirected.GetValueOrDefault(); }
@@ -221,6 +222,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -262,6 +264,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The default is 300 seconds (5 minutes).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=60, Max=86400)]
         public int IdleSessionTTLInSeconds
         {
             get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
@@ -305,6 +308,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The default is <code>en-US</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Locale Locale
         {
             get { return this._locale; }
@@ -323,6 +327,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot. The name is <i>not</i> case sensitive. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }

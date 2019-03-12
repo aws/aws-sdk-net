@@ -55,6 +55,7 @@ namespace Amazon.Route53.Model
         ///  <i>Optional:</i> Any comments you want to include about a change batch request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Comment
         {
             get { return this._comment; }
@@ -73,6 +74,7 @@ namespace Amazon.Route53.Model
         /// Information about the changes to make to the record sets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<Change> Changes
         {
             get { return this._changes; }

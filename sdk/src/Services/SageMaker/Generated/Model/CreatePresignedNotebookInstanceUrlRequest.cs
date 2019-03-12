@@ -57,6 +57,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the notebook instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }
@@ -75,6 +76,7 @@ namespace Amazon.SageMaker.Model
         /// The duration of the session, in seconds. The default is 12 hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1800, Max=43200)]
         public int SessionExpirationDurationInSeconds
         {
             get { return this._sessionExpirationDurationInSeconds.GetValueOrDefault(); }

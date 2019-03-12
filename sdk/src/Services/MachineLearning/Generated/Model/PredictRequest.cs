@@ -50,6 +50,7 @@ namespace Amazon.MachineLearning.Model
         /// A unique identifier of the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -65,6 +66,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property PredictEndpoint.
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string PredictEndpoint
         {
             get { return this._predictEndpoint; }
@@ -80,6 +82,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Record.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Record
         {
             get { return this._record; }

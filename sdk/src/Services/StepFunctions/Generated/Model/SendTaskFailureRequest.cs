@@ -43,6 +43,7 @@ namespace Amazon.StepFunctions.Model
         /// A more detailed explanation of the cause of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
         public string Cause
         {
             get { return this._cause; }
@@ -61,6 +62,7 @@ namespace Amazon.StepFunctions.Model
         /// The error code of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Error
         {
             get { return this._error; }
@@ -80,6 +82,7 @@ namespace Amazon.StepFunctions.Model
         /// the tasks are assigned to a worker (see GetActivityTask::taskToken).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// The HTTP port the custom origin listens on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HTTPPort
         {
             get { return this._httpPort.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.CloudFront.Model
         /// The HTTPS port the custom origin listens on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HTTPSPort
         {
             get { return this._httpsPort.GetValueOrDefault(); }
@@ -107,6 +109,7 @@ namespace Amazon.CloudFront.Model
         /// The origin protocol policy to apply to your origin.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OriginProtocolPolicy OriginProtocolPolicy
         {
             get { return this._originProtocolPolicy; }

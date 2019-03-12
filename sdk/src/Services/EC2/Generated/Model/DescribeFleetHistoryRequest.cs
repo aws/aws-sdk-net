@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The ID of the EC2 Fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -119,6 +120,7 @@ namespace Amazon.EC2.Model
         /// The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimeUtc
         {
             get { return this._startTimeUtc.GetValueOrDefault(); }

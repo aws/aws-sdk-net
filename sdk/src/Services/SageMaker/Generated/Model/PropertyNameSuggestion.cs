@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PropertyName
         {
             get { return this._propertyName; }

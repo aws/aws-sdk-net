@@ -102,6 +102,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -120,6 +121,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API protocol: Currently only WEBSOCKET is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProtocolType ProtocolType
         {
             get { return this._protocolType; }
@@ -138,6 +140,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The route selection expression for the API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteSelectionExpression
         {
             get { return this._routeSelectionExpression; }

@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptionGroupName
         {
             get { return this._optionGroupName; }

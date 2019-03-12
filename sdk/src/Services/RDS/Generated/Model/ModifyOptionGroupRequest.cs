@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptionGroupName
         {
             get { return this._optionGroupName; }

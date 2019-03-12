@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// to a valid CIDR range.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string AllowedIPRange
         {
             get { return this._allowedIPRange; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// property must be set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SecretToken
         {
             get { return this._secretToken; }

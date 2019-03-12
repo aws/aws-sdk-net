@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }
@@ -61,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// he Amazon Resource Name (ARN) of the resource for which you want to list tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

@@ -41,6 +41,7 @@ namespace Amazon.ECR.Model
         /// The list of image IDs for the requested repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ImageIdentifier> ImageIds
         {
             get { return this._imageIds; }

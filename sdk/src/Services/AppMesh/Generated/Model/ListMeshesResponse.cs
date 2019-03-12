@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
         /// The list of existing service meshes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MeshRef> Meshes
         {
             get { return this._meshes; }

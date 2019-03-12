@@ -41,6 +41,7 @@ namespace Amazon.Signer.Model
         /// The default format of an AWS Signer signing image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImageFormat DefaultFormat
         {
             get { return this._defaultFormat; }
@@ -59,6 +60,7 @@ namespace Amazon.Signer.Model
         /// The supported formats of an AWS Signer signing image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SupportedFormats
         {
             get { return this._supportedFormats; }

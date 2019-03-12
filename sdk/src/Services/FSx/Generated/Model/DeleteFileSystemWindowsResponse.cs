@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// The ID of the final backup for this file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=128)]
         public string FinalBackupId
         {
             get { return this._finalBackupId; }
@@ -60,6 +61,7 @@ namespace Amazon.FSx.Model
         /// The set of tags applied to the final backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> FinalBackupTags
         {
             get { return this._finalBackupTags; }

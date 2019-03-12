@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// A description of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The stream ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamId
         {
             get { return this._streamId; }
@@ -97,6 +99,7 @@ namespace Amazon.IoT.Model
         /// The stream version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int StreamVersion
         {
             get { return this._streamVersion.GetValueOrDefault(); }

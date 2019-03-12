@@ -73,6 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         /// if and only if no value for <code>LastEvaluatedBackupArn</code> is returned. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string LastEvaluatedBackupArn
         {
             get { return this._lastEvaluatedBackupArn; }

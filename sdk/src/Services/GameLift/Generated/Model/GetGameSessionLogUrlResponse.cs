@@ -42,6 +42,7 @@ namespace Amazon.GameLift.Model
         /// can request a new URL any time within the 14-day period that the logs are retained.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }

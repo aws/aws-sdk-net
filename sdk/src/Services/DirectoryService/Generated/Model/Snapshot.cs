@@ -63,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// The descriptive name of the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Name
         {
             get { return this._name; }

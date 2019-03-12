@@ -45,6 +45,7 @@ namespace Amazon.WAFRegional.Model
         /// value that you can use to get another batch of <code>ByteMatchSet</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.WAFRegional.Model
         /// another batch of <code>ByteMatchSets</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextMarker
         {
             get { return this._nextMarker; }

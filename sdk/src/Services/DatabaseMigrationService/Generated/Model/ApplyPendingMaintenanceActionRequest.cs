@@ -44,6 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The pending maintenance action to apply to this resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplyAction
         {
             get { return this._applyAction; }
@@ -82,6 +83,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptInType
         {
             get { return this._optInType; }
@@ -101,6 +103,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// action applies to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationInstanceArn
         {
             get { return this._replicationInstanceArn; }

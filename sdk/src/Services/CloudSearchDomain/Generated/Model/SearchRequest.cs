@@ -345,6 +345,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Query
         {
             get { return this._query; }

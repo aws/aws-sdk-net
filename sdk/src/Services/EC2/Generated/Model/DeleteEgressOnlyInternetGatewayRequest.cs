@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// The ID of the egress-only internet gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EgressOnlyInternetGatewayId
         {
             get { return this._egressOnlyInternetGatewayId; }

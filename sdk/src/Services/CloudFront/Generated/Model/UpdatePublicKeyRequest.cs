@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// ID of the public key to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -80,6 +81,7 @@ namespace Amazon.CloudFront.Model
         /// Request to update public key information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PublicKeyConfig PublicKeyConfig
         {
             get { return this._publicKeyConfig; }

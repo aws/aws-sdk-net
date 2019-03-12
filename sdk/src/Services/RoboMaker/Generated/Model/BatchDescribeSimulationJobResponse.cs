@@ -59,6 +59,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of unprocessed simulation job Amazon Resource Names (ARNs).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> UnprocessedJobs
         {
             get { return this._unprocessedJobs; }

@@ -61,6 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// can be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -90,6 +91,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResolverEndpointDirection Direction
         {
             get { return this._direction; }
@@ -110,6 +112,7 @@ namespace Amazon.Route53Resolver.Model
         /// your network to your VPCs (for inbound resolver endpoints). 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<IpAddressRequest> IpAddresses
         {
             get { return this._ipAddresses; }
@@ -129,6 +132,7 @@ namespace Amazon.Route53Resolver.Model
         /// in the Route 53 console.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -149,6 +153,7 @@ namespace Amazon.Route53Resolver.Model
         /// inbound resolver endpoints) or outbound rules (for outbound resolver endpoints).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }

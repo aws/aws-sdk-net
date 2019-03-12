@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The name of the topic rule to enable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleName
         {
             get { return this._ruleName; }

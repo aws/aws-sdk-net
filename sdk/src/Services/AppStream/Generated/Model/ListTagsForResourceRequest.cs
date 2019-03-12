@@ -48,6 +48,7 @@ namespace Amazon.AppStream.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

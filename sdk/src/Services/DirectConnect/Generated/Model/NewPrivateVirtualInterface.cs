@@ -85,6 +85,7 @@ namespace Amazon.DirectConnect.Model
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Asn
         {
             get { return this._asn.GetValueOrDefault(); }
@@ -194,6 +195,7 @@ namespace Amazon.DirectConnect.Model
         /// The name of the virtual interface assigned by the customer network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VirtualInterfaceName
         {
             get { return this._virtualInterfaceName; }
@@ -212,6 +214,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the VLAN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Vlan
         {
             get { return this._vlan.GetValueOrDefault(); }

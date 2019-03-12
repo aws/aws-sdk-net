@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ExportJobsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportJobsResponse ExportJobsResponse
         {
             get { return this._exportJobsResponse; }

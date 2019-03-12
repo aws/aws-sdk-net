@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<PatchOrchestratorFilter> Filters
         {
             get { return this._filters; }
@@ -69,6 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of patch baselines to return (per page).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

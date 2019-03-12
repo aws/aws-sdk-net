@@ -47,6 +47,7 @@ namespace Amazon.Inspector.Model
         /// The ID of the agent that is installed on the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -66,6 +67,7 @@ namespace Amazon.Inspector.Model
         /// the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string AmiId
         {
             get { return this._amiId; }
@@ -84,6 +86,7 @@ namespace Amazon.Inspector.Model
         /// The Auto Scaling group of the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AutoScalingGroup
         {
             get { return this._autoScalingGroup; }
@@ -102,6 +105,7 @@ namespace Amazon.Inspector.Model
         /// The hostname of the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -120,6 +124,7 @@ namespace Amazon.Inspector.Model
         /// The list of IP v4 addresses of the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> Ipv4Addresses
         {
             get { return this._ipv4Addresses; }
@@ -157,6 +162,7 @@ namespace Amazon.Inspector.Model
         /// The schema version of this data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int SchemaVersion
         {
             get { return this._schemaVersion.GetValueOrDefault(); }

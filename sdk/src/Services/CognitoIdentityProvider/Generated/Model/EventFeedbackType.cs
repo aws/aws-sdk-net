@@ -60,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The event feedback value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FeedbackValueType FeedbackValue
         {
             get { return this._feedbackValue; }
@@ -78,6 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Provider
         {
             get { return this._provider; }

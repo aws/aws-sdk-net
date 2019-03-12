@@ -75,6 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyInputList
         {
             get { return this._policyInputList; }

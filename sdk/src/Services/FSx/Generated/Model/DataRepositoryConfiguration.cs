@@ -44,6 +44,7 @@ namespace Amazon.FSx.Model
         /// and changed Lustre file system files in S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=900)]
         public string ExportPath
         {
             get { return this._exportPath; }
@@ -70,6 +71,7 @@ namespace Amazon.FSx.Model
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512000)]
         public int ImportedFileChunkSize
         {
             get { return this._importedFileChunkSize.GetValueOrDefault(); }
@@ -91,6 +93,7 @@ namespace Amazon.FSx.Model
         /// prefix are loaded into the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=900)]
         public string ImportPath
         {
             get { return this._importPath; }

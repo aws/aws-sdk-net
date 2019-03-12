@@ -49,6 +49,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -73,6 +74,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Up to 25 rules can be specified per identity provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, RoleMapping> RoleMappings
         {
             get { return this._roleMappings; }
@@ -92,6 +94,7 @@ namespace Amazon.CognitoIdentity.Model
         /// "authenticated" or "unauthenticated" and the value will be the Role ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2)]
         public Dictionary<string, string> Roles
         {
             get { return this._roles; }

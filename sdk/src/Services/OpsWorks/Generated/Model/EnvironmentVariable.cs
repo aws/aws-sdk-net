@@ -44,6 +44,7 @@ namespace Amazon.OpsWorks.Model
         /// and underscores (_), but it must start with a letter or underscore.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -85,6 +86,7 @@ namespace Amazon.OpsWorks.Model
         /// a value, it can contain up to 256 characters, which must all be printable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

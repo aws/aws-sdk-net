@@ -46,6 +46,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system for which the mount target is intended.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -82,6 +83,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Lifecycle state of the mount target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LifeCycleState LifeCycleState
         {
             get { return this._lifeCycleState; }
@@ -100,6 +102,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// System-assigned mount target ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MountTargetId
         {
             get { return this._mountTargetId; }
@@ -155,6 +158,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the mount target's subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

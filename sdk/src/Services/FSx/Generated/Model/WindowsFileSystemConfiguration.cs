@@ -47,6 +47,7 @@ namespace Amazon.FSx.Model
         /// join when it's created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string ActiveDirectoryId
         {
             get { return this._activeDirectoryId; }
@@ -66,6 +67,7 @@ namespace Amazon.FSx.Model
         /// backups. You can retain automatic backups for a maximum of 35 days.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=35)]
         public int AutomaticBackupRetentionDays
         {
             get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
@@ -106,6 +108,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to take daily automatic backups, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=5)]
         public string DailyAutomaticBackupStartTime
         {
             get { return this._dailyAutomaticBackupStartTime; }
@@ -124,6 +127,7 @@ namespace Amazon.FSx.Model
         /// The list of maintenance operations in progress for this file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> MaintenanceOperationsInProgress
         {
             get { return this._maintenanceOperationsInProgress; }
@@ -142,6 +146,7 @@ namespace Amazon.FSx.Model
         /// The throughput of an Amazon FSx file system, measured in megabytes per second.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=2048)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }
@@ -160,6 +165,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to perform weekly maintenance, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=7)]
         public string WeeklyMaintenanceStartTime
         {
             get { return this._weeklyMaintenanceStartTime; }

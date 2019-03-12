@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string FleetName
         {
             get { return this._fleetName; }
@@ -61,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

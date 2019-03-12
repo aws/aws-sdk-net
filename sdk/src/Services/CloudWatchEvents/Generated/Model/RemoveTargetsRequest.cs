@@ -78,6 +78,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The IDs of the targets to remove from the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Ids
         {
             get { return this._ids; }
@@ -96,6 +97,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Rule
         {
             get { return this._rule; }

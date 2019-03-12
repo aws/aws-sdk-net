@@ -53,6 +53,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }

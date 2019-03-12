@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The ID of the NAT gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NatGatewayId
         {
             get { return this._natGatewayId; }

@@ -67,6 +67,7 @@ namespace Amazon.CodeStar.Model
         /// creation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -103,6 +104,7 @@ namespace Amazon.CodeStar.Model
         /// The description of the project, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -121,6 +123,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }
@@ -139,6 +142,7 @@ namespace Amazon.CodeStar.Model
         /// The display name for the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -157,6 +161,7 @@ namespace Amazon.CodeStar.Model
         /// The ID for the AWS CodeStar project template used to create the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ProjectTemplateId
         {
             get { return this._projectTemplateId; }

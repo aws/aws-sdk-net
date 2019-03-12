@@ -41,6 +41,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot for which utterance information was returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }

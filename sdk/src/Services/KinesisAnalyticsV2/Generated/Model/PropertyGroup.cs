@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the key of an application execution property key-value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string PropertyGroupId
         {
             get { return this._propertyGroupId; }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the value of an application execution property key-value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> PropertyMap
         {
             get { return this._propertyMap; }

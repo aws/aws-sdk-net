@@ -44,6 +44,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository in which to test the triggers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }
@@ -62,6 +63,7 @@ namespace Amazon.CodeCommit.Model
         /// The list of triggers to test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RepositoryTrigger> Triggers
         {
             get { return this._triggers; }

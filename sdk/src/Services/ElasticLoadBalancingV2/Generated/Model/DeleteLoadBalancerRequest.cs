@@ -54,6 +54,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerArn
         {
             get { return this._loadBalancerArn; }

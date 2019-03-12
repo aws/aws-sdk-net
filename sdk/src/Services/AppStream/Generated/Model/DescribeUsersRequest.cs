@@ -44,6 +44,7 @@ namespace Amazon.AppStream.Model
         /// USERPOOL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }
@@ -81,6 +82,7 @@ namespace Amazon.AppStream.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

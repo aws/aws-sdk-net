@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UUID
         {
             get { return this._uuid; }

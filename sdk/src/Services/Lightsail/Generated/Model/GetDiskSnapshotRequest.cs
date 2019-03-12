@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskSnapshotName
         {
             get { return this._diskSnapshotName; }

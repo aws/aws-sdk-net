@@ -106,6 +106,7 @@ namespace Amazon.Rekognition.Model
         /// in the <code>FaceMatches</code> array.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float SimilarityThreshold
         {
             get { return this._similarityThreshold.GetValueOrDefault(); }
@@ -132,6 +133,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image SourceImage
         {
             get { return this._sourceImage; }
@@ -158,6 +160,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image TargetImage
         {
             get { return this._targetImage; }

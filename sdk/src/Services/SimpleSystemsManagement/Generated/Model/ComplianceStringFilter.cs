@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Key
         {
             get { return this._key; }
@@ -79,6 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The value for which to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<string> Values
         {
             get { return this._values; }

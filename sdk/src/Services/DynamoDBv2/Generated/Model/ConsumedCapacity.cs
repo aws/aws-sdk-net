@@ -140,6 +140,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table that was affected by the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

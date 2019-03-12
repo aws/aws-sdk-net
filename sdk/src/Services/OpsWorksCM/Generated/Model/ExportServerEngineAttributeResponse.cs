@@ -59,6 +59,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The server name used in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

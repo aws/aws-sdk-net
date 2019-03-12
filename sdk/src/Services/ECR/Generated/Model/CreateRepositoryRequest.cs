@@ -44,6 +44,7 @@ namespace Amazon.ECR.Model
         /// the repository into a category (such as <code>project-a/nginx-web-app</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

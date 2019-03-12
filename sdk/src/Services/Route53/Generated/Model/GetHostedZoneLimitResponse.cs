@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// is the maximum number of records that you can create in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZoneLimit Limit
         {
             get { return this._limit; }
@@ -64,6 +65,7 @@ namespace Amazon.Route53.Model
         /// you have created in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long Count
         {
             get { return this._count.GetValueOrDefault(); }

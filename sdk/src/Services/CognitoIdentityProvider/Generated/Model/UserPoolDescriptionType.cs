@@ -63,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID in a user pool description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string Id
         {
             get { return this._id; }
@@ -117,6 +118,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name in a user pool description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

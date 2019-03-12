@@ -45,6 +45,7 @@ namespace Amazon.MTurk.Model
         /// The HIT to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -63,6 +64,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the new HIT type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITTypeId
         {
             get { return this._hitTypeId; }

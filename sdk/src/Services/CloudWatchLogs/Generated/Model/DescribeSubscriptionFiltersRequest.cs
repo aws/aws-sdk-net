@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The prefix to match. If you don't specify a value, no prefix filter is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FilterNamePrefix
         {
             get { return this._filterNamePrefix; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// up to 50 items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -101,6 +104,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

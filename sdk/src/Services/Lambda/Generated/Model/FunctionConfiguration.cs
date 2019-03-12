@@ -113,6 +113,7 @@ namespace Amazon.Lambda.Model
         /// The function's description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -167,6 +168,7 @@ namespace Amazon.Lambda.Model
         /// The name of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=170)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -185,6 +187,7 @@ namespace Amazon.Lambda.Model
         /// The function that Lambda calls to begin executing your function.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string Handler
         {
             get { return this._handler; }
@@ -278,6 +281,7 @@ namespace Amazon.Lambda.Model
         /// The memory that's allocated to the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=128, Max=3008)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -350,6 +354,7 @@ namespace Amazon.Lambda.Model
         /// The amount of time that Lambda allows a function to run before stopping it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }
@@ -386,6 +391,7 @@ namespace Amazon.Lambda.Model
         /// The version of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Version
         {
             get { return this._version; }

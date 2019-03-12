@@ -41,6 +41,7 @@ namespace Amazon.DLM.Model
         /// The tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.DLM.Model
         /// The tag value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

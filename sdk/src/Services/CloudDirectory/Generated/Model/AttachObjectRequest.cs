@@ -54,6 +54,7 @@ namespace Amazon.CloudDirectory.Model
         /// The child object reference to be attached to the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ChildReference
         {
             get { return this._childReference; }
@@ -73,6 +74,7 @@ namespace Amazon.CloudDirectory.Model
         /// objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -91,6 +93,7 @@ namespace Amazon.CloudDirectory.Model
         /// The link name with which the child object is attached to the parent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }
@@ -109,6 +112,7 @@ namespace Amazon.CloudDirectory.Model
         /// The parent object reference.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ParentReference
         {
             get { return this._parentReference; }

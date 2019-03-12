@@ -45,6 +45,7 @@ namespace Amazon.Route53.Model
         /// to get detailed information about the change.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeInfo ChangeInfo
         {
             get { return this._changeInfo; }

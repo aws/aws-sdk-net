@@ -66,6 +66,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// that the remaining results can be retrieved. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,6 +87,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// results beyond the token, up to the value specified by <code>MaxResults</code>. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

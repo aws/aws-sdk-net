@@ -41,6 +41,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// An array of resource ARN(s).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

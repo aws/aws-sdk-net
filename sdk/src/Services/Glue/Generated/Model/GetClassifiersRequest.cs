@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// Size of the list to return (optional).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

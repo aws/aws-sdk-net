@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The ID of the internet gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InternetGatewayId
         {
             get { return this._internetGatewayId; }
@@ -63,6 +64,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

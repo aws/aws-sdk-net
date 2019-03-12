@@ -56,6 +56,7 @@ namespace Amazon.Translate.Model
         /// The description of the custom terminology being imported.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -94,6 +95,7 @@ namespace Amazon.Translate.Model
         /// an existing terminology of the same name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MergeStrategy MergeStrategy
         {
             get { return this._mergeStrategy; }
@@ -112,6 +114,7 @@ namespace Amazon.Translate.Model
         /// The name of the custom terminology being imported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -130,6 +133,7 @@ namespace Amazon.Translate.Model
         /// The terminology data for the custom terminology being imported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TerminologyData TerminologyData
         {
             get { return this._terminologyData; }

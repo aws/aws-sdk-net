@@ -101,6 +101,7 @@ namespace Amazon.Batch.Model
         /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironmentName
         {
             get { return this._computeEnvironmentName; }
@@ -153,6 +154,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceRole
         {
             get { return this._serviceRole; }
@@ -192,6 +194,7 @@ namespace Amazon.Batch.Model
         /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CEType Type
         {
             get { return this._type; }

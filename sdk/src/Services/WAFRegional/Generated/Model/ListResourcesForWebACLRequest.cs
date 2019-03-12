@@ -60,6 +60,7 @@ namespace Amazon.WAFRegional.Model
         /// The unique identifier (ID) of the web ACL for which to list the associated resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebACLId
         {
             get { return this._webACLId; }

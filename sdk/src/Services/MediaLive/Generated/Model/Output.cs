@@ -73,6 +73,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OutputName. The name used to identify an output.
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string OutputName
         {
             get { return this._outputName; }
@@ -88,6 +89,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OutputSettings. Output type-specific settings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputSettings OutputSettings
         {
             get { return this._outputSettings; }

@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// for this tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobObjective HyperParameterTuningJobObjective
         {
             get { return this._hyperParameterTuningJobObjective; }
@@ -64,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// this tuning job searches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ParameterRanges ParameterRanges
         {
             get { return this._parameterRanges; }
@@ -83,6 +85,7 @@ namespace Amazon.SageMaker.Model
         /// and parallel training jobs for this tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceLimits ResourceLimits
         {
             get { return this._resourceLimits; }
@@ -105,6 +108,7 @@ namespace Amazon.SageMaker.Model
         /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobStrategyType Strategy
         {
             get { return this._strategy; }

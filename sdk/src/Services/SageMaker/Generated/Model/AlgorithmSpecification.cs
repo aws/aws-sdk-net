@@ -53,6 +53,7 @@ namespace Amazon.SageMaker.Model
         /// for this parameter, you can't specify a value for <code>TrainingImage</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=170)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }
@@ -73,6 +74,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon CloudWatch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<MetricDefinition> MetricDefinitions
         {
             get { return this._metricDefinitions; }
@@ -96,6 +98,7 @@ namespace Amazon.SageMaker.Model
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string TrainingImage
         {
             get { return this._trainingImage; }
@@ -135,6 +138,7 @@ namespace Amazon.SageMaker.Model
         /// in training. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingInputMode TrainingInputMode
         {
             get { return this._trainingInputMode; }

@@ -58,6 +58,7 @@ namespace Amazon.Snowball.Model
         /// The ID for the address that you want the Snowball shipped to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -76,6 +77,7 @@ namespace Amazon.Snowball.Model
         /// The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -132,6 +134,7 @@ namespace Amazon.Snowball.Model
         /// The description of the job, provided at job creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -151,6 +154,7 @@ namespace Amazon.Snowball.Model
         /// its primary address. This field is not supported in most regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string ForwardingAddressId
         {
             get { return this._forwardingAddressId; }
@@ -169,6 +173,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string JobId
         {
             get { return this._jobId; }
@@ -246,6 +251,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS KMS.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string KmsKeyARN
         {
             get { return this._kmsKeyARN; }
@@ -305,6 +311,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

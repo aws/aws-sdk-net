@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -64,6 +65,7 @@ namespace Amazon.WAFRegional.Model
         /// (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivatedRule ActivatedRule
         {
             get { return this._activatedRule; }

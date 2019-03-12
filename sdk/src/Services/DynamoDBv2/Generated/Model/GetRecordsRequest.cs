@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of records to return from the shard. The upper limit is 1000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -77,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// iterator can be used to access the stream records in this shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ShardIterator
         {
             get { return this._shardIterator; }

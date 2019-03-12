@@ -45,6 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Name of the Amazon Rekognition stream processor. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

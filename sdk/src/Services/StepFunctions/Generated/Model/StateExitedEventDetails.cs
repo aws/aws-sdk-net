@@ -66,6 +66,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }
@@ -84,6 +85,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON output data of the state.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Output
         {
             get { return this._output; }

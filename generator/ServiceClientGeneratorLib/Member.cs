@@ -19,6 +19,7 @@ namespace ServiceClientGenerator
         public const string FlattenedKey = "flattened";
         public const string JsonValueKey = "jsonvalue";
         public const string DeprecatedKey = "deprecated";
+        public const string RequiredKey = "required";
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string HostLabelKey = "hostLabel";
 
@@ -856,6 +857,17 @@ namespace ServiceClientGenerator
                     return (bool)data[DeprecatedKey];
 
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the member is required
+        /// </summary>
+        public bool IsRequired
+        {
+            get
+            {
+                return OwningShape.IsFieldRequired(ModeledName);
             }
         }
 

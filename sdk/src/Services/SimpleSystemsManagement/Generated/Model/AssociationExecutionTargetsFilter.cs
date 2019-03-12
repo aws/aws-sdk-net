@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The key value used in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationExecutionTargetsFilterKey Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The value specified for the key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Value
         {
             get { return this._value; }

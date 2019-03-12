@@ -59,6 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>debuglevel=2</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Configuration
         {
             get { return this._configuration; }
@@ -77,6 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name specified to identify the patch source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -97,6 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// product values, see <a>PatchFilter</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> Products
         {
             get { return this._products; }

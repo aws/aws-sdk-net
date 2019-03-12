@@ -46,6 +46,7 @@ namespace Amazon.ConfigService.Model
         /// The region authorized to collect aggregated data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AwsRegion
         {
             get { return this._awsRegion; }

@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// manifest file.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public List<string> AttributeNames
         {
             get { return this._attributeNames; }
@@ -118,6 +119,7 @@ namespace Amazon.SageMaker.Model
         /// if the Channel's input mode is <code>Pipe</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DataType S3DataType
         {
             get { return this._s3DataType; }
@@ -198,6 +200,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

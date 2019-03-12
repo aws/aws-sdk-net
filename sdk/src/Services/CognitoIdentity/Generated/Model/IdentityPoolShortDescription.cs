@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A string that you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IdentityPoolName
         {
             get { return this._identityPoolName; }

@@ -62,6 +62,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of the cache parameter group to reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupName
         {
             get { return this._cacheParameterGroupName; }

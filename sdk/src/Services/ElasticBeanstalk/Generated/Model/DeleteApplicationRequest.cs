@@ -63,6 +63,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }

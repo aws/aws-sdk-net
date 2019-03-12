@@ -40,6 +40,7 @@ namespace Amazon.Signer.Model
         /// The Amazon Resource Name (ARN) of the certificates that is used to sign your code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

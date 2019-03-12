@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// An identifier that can be used to return the next set of user import jobs in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user import jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<UserImportJobType> UserImportJobs
         {
             get { return this._userImportJobs; }

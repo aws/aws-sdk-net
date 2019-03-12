@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a specific address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }

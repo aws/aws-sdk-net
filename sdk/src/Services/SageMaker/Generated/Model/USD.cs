@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The fractional portion, in cents, of the amount. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=99)]
         public int Cents
         {
             get { return this._cents.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The whole number of dollars in the amount.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public int Dollars
         {
             get { return this._dollars.GetValueOrDefault(); }
@@ -78,6 +80,7 @@ namespace Amazon.SageMaker.Model
         /// Fractions of a cent, in tenths.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=9)]
         public int TenthFractionsOfACent
         {
             get { return this._tenthFractionsOfACent.GetValueOrDefault(); }

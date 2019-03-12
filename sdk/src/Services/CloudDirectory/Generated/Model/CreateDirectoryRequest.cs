@@ -50,6 +50,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the <a>Directory</a>. Should be unique per account, per region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -69,6 +70,7 @@ namespace Amazon.CloudDirectory.Model
         /// data <a>Directory</a>. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

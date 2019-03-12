@@ -93,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  Information about the cancellation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -118,6 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

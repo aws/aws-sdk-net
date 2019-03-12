@@ -97,6 +97,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The version of the data set contents.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=36)]
         public string Version
         {
             get { return this._version; }

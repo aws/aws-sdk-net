@@ -62,6 +62,7 @@ namespace Amazon.Mobile.Model
         ///  Unique project identifier. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProjectId
         {
             get { return this._projectId; }

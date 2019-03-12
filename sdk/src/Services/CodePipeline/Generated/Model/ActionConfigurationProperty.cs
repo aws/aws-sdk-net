@@ -46,6 +46,7 @@ namespace Amazon.CodePipeline.Model
         /// The description of the action configuration property that will be displayed to users.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=160)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// Whether the configuration property is a key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Key
         {
             get { return this._key.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action configuration property.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string Name
         {
             get { return this._name; }
@@ -127,6 +130,7 @@ namespace Amazon.CodePipeline.Model
         /// Whether the configuration property is a required value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Required
         {
             get { return this._required.GetValueOrDefault(); }
@@ -151,6 +155,7 @@ namespace Amazon.CodePipeline.Model
         /// action will preserve the prior value of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Secret
         {
             get { return this._secret.GetValueOrDefault(); }

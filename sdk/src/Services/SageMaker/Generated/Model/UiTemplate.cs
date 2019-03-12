@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The content of the Liquid template for the worker user interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128000)]
         public string Content
         {
             get { return this._content; }

@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Capacity Reservation to be cancelled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CapacityReservationId
         {
             get { return this._capacityReservationId; }

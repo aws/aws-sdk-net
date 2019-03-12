@@ -96,6 +96,7 @@ namespace Amazon.IoT.Model
         /// The ID of the job to be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -134,6 +135,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing whose execution of the job will be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

@@ -48,6 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<InventoryAggregator> Aggregators
         {
             get { return this._aggregators; }
@@ -66,6 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters. Use a filter to return a more specific list of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<InventoryFilter> Filters
         {
             get { return this._filters; }
@@ -85,6 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -122,6 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The list of inventory item types to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<ResultAttribute> ResultAttributes
         {
             get { return this._resultAttributes; }

@@ -116,6 +116,7 @@ namespace Amazon.CodeBuild.Model
         ///  The AWS CodeBuild endpoint where webhook events are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PayloadUrl
         {
             get { return this._payloadUrl; }
@@ -139,6 +140,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Secret
         {
             get { return this._secret; }
@@ -157,6 +159,7 @@ namespace Amazon.CodeBuild.Model
         /// The URL to the webhook.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Url
         {
             get { return this._url; }

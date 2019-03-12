@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }

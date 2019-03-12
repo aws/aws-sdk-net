@@ -84,6 +84,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of an instance that matches the values that you specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -102,6 +103,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name of the namespace that you specified when you registered the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string NamespaceName
         {
             get { return this._namespaceName; }

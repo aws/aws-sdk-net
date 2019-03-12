@@ -59,6 +59,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the retrieved schema.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }

@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// The change identifier for the current revision.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ChangeIdentifier
         {
             get { return this._changeIdentifier; }
@@ -80,6 +81,7 @@ namespace Amazon.CodePipeline.Model
         /// The revision ID of the current version of an artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1500)]
         public string Revision
         {
             get { return this._revision; }
@@ -98,6 +100,7 @@ namespace Amazon.CodePipeline.Model
         /// The summary of the most recent revision of the artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionSummary
         {
             get { return this._revisionSummary; }

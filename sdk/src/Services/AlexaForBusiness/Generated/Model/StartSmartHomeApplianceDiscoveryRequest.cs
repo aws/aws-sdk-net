@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The room where smart home appliance discovery was initiated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoomArn
         {
             get { return this._roomArn; }

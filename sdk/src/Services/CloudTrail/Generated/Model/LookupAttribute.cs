@@ -41,6 +41,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies an attribute on which to filter the events returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LookupAttributeKey AttributeKey
         {
             get { return this._attributeKey; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies a value for the specified AttributeKey.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

@@ -50,6 +50,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -68,6 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -86,6 +88,7 @@ namespace Amazon.AutoScaling.Model
         /// The reason the activity began.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1023)]
         public string Cause
         {
             get { return this._cause; }
@@ -176,6 +179,7 @@ namespace Amazon.AutoScaling.Model
         /// The start time of the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -194,6 +198,7 @@ namespace Amazon.AutoScaling.Model
         /// The current status of the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingActivityStatusCode StatusCode
         {
             get { return this._statusCode; }
@@ -212,6 +217,7 @@ namespace Amazon.AutoScaling.Model
         /// A friendly, more verbose description of the activity status.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

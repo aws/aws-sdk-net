@@ -59,6 +59,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the LAG or connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -77,6 +78,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the virtual interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VirtualInterfaceId
         {
             get { return this._virtualInterfaceId; }

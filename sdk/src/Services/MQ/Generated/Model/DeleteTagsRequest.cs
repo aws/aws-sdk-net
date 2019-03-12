@@ -39,6 +39,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. the Amazon Resource Name (ARN)
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -54,6 +55,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property TagKeys. An array of tag keys to delete
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

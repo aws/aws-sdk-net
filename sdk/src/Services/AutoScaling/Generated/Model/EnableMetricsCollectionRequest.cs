@@ -46,6 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -65,6 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <code>1Minute</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Granularity
         {
             get { return this._granularity; }

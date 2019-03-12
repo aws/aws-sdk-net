@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the key pair for which you want to import the public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyPairName
         {
             get { return this._keyPairName; }
@@ -60,6 +61,7 @@ namespace Amazon.Lightsail.Model
         /// A base64-encoded public key of the <code>ssh-rsa</code> type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublicKeyBase64
         {
             get { return this._publicKeyBase64; }

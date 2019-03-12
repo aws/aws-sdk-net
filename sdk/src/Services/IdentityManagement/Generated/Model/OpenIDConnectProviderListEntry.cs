@@ -37,6 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }

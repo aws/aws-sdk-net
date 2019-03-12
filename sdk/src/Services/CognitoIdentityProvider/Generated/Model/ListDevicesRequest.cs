@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access tokens for the request to list devices.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The limit of the device request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=60)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The pagination token for the list request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

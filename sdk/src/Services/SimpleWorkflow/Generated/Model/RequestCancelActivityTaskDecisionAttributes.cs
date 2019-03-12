@@ -71,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>activityId</code> of the activity task to be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }

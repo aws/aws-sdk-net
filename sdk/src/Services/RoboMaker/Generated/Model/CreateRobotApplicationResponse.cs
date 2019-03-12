@@ -47,6 +47,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -83,6 +84,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -101,6 +103,7 @@ namespace Amazon.RoboMaker.Model
         /// The revision id of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string RevisionId
         {
             get { return this._revisionId; }
@@ -155,6 +158,7 @@ namespace Amazon.RoboMaker.Model
         /// The list of all tags added to the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -173,6 +177,7 @@ namespace Amazon.RoboMaker.Model
         /// The version of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Version
         {
             get { return this._version; }

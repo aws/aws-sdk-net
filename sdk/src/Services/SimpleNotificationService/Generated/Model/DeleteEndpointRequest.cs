@@ -49,6 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// EndpointArn of endpoint to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointArn
         {
             get { return this._endpointArn; }

@@ -46,6 +46,7 @@ namespace Amazon.WorkLink.Model
         /// The identifier used by users to sign in to the Amazon WorkLink app.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string CompanyCode
         {
             get { return this._companyCode; }
@@ -82,6 +83,7 @@ namespace Amazon.WorkLink.Model
         /// The name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -100,6 +102,7 @@ namespace Amazon.WorkLink.Model
         /// The name of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=48)]
         public string FleetName
         {
             get { return this._fleetName; }

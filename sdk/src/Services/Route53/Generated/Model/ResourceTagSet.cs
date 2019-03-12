@@ -69,6 +69,7 @@ namespace Amazon.Route53.Model
         /// The ID for the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -87,6 +88,7 @@ namespace Amazon.Route53.Model
         /// The tags associated with the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }

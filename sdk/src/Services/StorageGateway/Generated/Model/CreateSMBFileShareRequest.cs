@@ -78,6 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// is <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=15)]
         public string Authentication
         {
             get { return this._authentication; }
@@ -97,6 +98,7 @@ namespace Amazon.StorageGateway.Model
         /// file share creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=100)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -118,6 +120,7 @@ namespace Amazon.StorageGateway.Model
         /// Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=20)]
         public string DefaultStorageClass
         {
             get { return this._defaultStorageClass; }
@@ -137,6 +140,7 @@ namespace Amazon.StorageGateway.Model
         /// share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -177,6 +181,7 @@ namespace Amazon.StorageGateway.Model
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> InvalidUserList
         {
             get { return this._invalidUserList; }
@@ -215,6 +220,7 @@ namespace Amazon.StorageGateway.Model
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -233,6 +239,7 @@ namespace Amazon.StorageGateway.Model
         /// The ARN of the backed storage used for storing file data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=310)]
         public string LocationARN
         {
             get { return this._locationARN; }
@@ -309,6 +316,7 @@ namespace Amazon.StorageGateway.Model
         /// when it accesses the underlying storage. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Role
         {
             get { return this._role; }
@@ -356,6 +364,7 @@ namespace Amazon.StorageGateway.Model
         /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> ValidUserList
         {
             get { return this._validUserList; }

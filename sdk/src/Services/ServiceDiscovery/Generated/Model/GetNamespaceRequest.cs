@@ -41,6 +41,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the namespace that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Id
         {
             get { return this._id; }

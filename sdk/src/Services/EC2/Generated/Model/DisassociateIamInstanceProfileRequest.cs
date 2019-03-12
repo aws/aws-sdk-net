@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// The ID of the IAM instance profile association.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }

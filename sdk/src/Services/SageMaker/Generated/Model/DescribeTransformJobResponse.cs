@@ -80,6 +80,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the transform Job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.SageMaker.Model
         /// and values entries in the map.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -120,6 +122,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker Events with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -139,6 +142,7 @@ namespace Amazon.SageMaker.Model
         /// created the transform or training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -158,6 +162,7 @@ namespace Amazon.SageMaker.Model
         /// in a transform job. The default value is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxConcurrentTransforms
         {
             get { return this._maxConcurrentTransforms.GetValueOrDefault(); }
@@ -176,6 +181,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum payload size, in MB, used in the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxPayloadInMB
         {
             get { return this._maxPayloadInMB.GetValueOrDefault(); }
@@ -194,6 +200,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model used in the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -231,6 +238,7 @@ namespace Amazon.SageMaker.Model
         /// Describes the dataset to be transformed and the Amazon S3 location where it is stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformInput TransformInput
         {
             get { return this._transformInput; }
@@ -249,6 +257,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TransformJobArn
         {
             get { return this._transformJobArn; }
@@ -267,6 +276,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TransformJobName
         {
             get { return this._transformJobName; }
@@ -286,6 +296,7 @@ namespace Amazon.SageMaker.Model
         /// in the <code>FailureReason</code> field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformJobStatus TransformJobStatus
         {
             get { return this._transformJobStatus; }
@@ -324,6 +335,7 @@ namespace Amazon.SageMaker.Model
         /// for the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformResources TransformResources
         {
             get { return this._transformResources; }

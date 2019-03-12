@@ -135,6 +135,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the operation that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Id
         {
             get { return this._id; }

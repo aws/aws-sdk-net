@@ -73,6 +73,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Attributes. A list of attributes.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }
@@ -88,6 +89,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the item.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

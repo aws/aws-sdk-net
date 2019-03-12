@@ -102,6 +102,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// called "hadoop."
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Ec2KeyName
         {
             get { return this._ec2KeyName; }
@@ -131,6 +132,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// in an Amazon VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Ec2SubnetId
         {
             get { return this._ec2SubnetId; }
@@ -175,6 +177,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the Amazon EC2 security group for the master node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string EmrManagedMasterSecurityGroup
         {
             get { return this._emrManagedMasterSecurityGroup; }
@@ -193,6 +196,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the Amazon EC2 security group for the core and task nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string EmrManagedSlaveSecurityGroup
         {
             get { return this._emrManagedSlaveSecurityGroup; }
@@ -215,6 +219,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// call, in which case the default version of Hadoop for that AMI version is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string HadoopVersion
         {
             get { return this._hadoopVersion; }
@@ -311,6 +316,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type of the master node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string MasterInstanceType
         {
             get { return this._masterInstanceType; }
@@ -348,6 +354,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// clusters in VPC private subnets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ServiceAccessSecurityGroup
         {
             get { return this._serviceAccessSecurityGroup; }
@@ -366,6 +373,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type of the core and task nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string SlaveInstanceType
         {
             get { return this._slaveInstanceType; }

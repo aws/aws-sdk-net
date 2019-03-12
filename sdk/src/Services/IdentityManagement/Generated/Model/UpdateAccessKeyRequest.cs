@@ -79,6 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// or digit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -99,6 +100,7 @@ namespace Amazon.IdentityManagement.Model
         /// the key cannot be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -123,6 +125,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

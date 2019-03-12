@@ -42,6 +42,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// to describe. Value is required.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }

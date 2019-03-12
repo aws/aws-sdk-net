@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -66,6 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ShouldDecrementDesiredCapacity
         {
             get { return this._shouldDecrementDesiredCapacity.GetValueOrDefault(); }

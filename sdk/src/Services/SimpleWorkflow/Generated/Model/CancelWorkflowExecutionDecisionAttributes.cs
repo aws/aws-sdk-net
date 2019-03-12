@@ -71,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  Details of the cancellation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }

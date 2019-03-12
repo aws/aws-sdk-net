@@ -110,6 +110,7 @@ namespace Amazon.CodeBuild.Model
         /// A new or replacement description of the build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -139,6 +140,7 @@ namespace Amazon.CodeBuild.Model
         /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string EncryptionKey
         {
             get { return this._encryptionKey; }
@@ -199,6 +201,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -217,6 +220,7 @@ namespace Amazon.CodeBuild.Model
         ///  The number of minutes a build is allowed to be queued before it times out. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=480)]
         public int QueuedTimeoutInMinutes
         {
             get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
@@ -235,6 +239,7 @@ namespace Amazon.CodeBuild.Model
         ///  An array of <code>ProjectSource</code> objects. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=12)]
         public List<ProjectArtifacts> SecondaryArtifacts
         {
             get { return this._secondaryArtifacts; }
@@ -253,6 +258,7 @@ namespace Amazon.CodeBuild.Model
         ///  An array of <code>ProjectSource</code> objects. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=12)]
         public List<ProjectSource> SecondarySources
         {
             get { return this._secondarySources; }
@@ -272,6 +278,7 @@ namespace Amazon.CodeBuild.Model
         /// AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ServiceRole
         {
             get { return this._serviceRole; }
@@ -313,6 +320,7 @@ namespace Amazon.CodeBuild.Model
         /// project tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -332,6 +340,7 @@ namespace Amazon.CodeBuild.Model
         /// before timing out any related build that did not get marked as completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=480)]
         public int TimeoutInMinutes
         {
             get { return this._timeoutInMinutes.GetValueOrDefault(); }

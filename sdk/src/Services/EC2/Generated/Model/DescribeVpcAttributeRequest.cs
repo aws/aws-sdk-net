@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The VPC attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VpcAttributeName Attribute
         {
             get { return this._attribute; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

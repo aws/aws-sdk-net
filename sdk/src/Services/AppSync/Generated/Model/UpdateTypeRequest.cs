@@ -44,6 +44,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -80,6 +81,7 @@ namespace Amazon.AppSync.Model
         /// The new type format: SDL or JSON.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypeDefinitionFormat Format
         {
             get { return this._format; }
@@ -98,6 +100,7 @@ namespace Amazon.AppSync.Model
         /// The new type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypeName
         {
             get { return this._typeName; }

@@ -46,6 +46,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// The unique identifier of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -65,6 +66,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime FromTimeStampUtc
         {
             get { return this._fromTimeStampUtc.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// 100 is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -121,6 +124,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ToTimeStampUtc
         {
             get { return this._toTimeStampUtc.GetValueOrDefault(); }

@@ -51,6 +51,7 @@ namespace Amazon.CloudFront.Model
         /// to an Amazon S3 origin, specify none for the <code>Forward</code> element. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ItemSelection Forward
         {
             get { return this._forward; }

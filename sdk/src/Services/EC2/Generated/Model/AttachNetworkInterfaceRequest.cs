@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The index of the device for the network interface attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int DeviceIndex
         {
             get { return this._deviceIndex.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -79,6 +81,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }

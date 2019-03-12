@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch.Model
         /// The status of the index field being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IndexFieldStatus IndexField
         {
             get { return this._indexField; }

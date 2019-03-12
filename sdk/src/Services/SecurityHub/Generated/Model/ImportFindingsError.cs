@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// The code of the error made during the BatchImportFindings operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -60,6 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// The message of the error made during the BatchImportFindings operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }
@@ -78,6 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// The id of the error made during the BatchImportFindings operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

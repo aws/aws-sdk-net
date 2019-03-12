@@ -48,6 +48,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string BucketARN
         {
             get { return this._bucketARN; }
@@ -67,6 +68,7 @@ namespace Amazon.KinesisFirehose.Model
         /// default values are used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BufferingHints BufferingHints
         {
             get { return this._bufferingHints; }
@@ -103,6 +105,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompressionFormat CompressionFormat
         {
             get { return this._compressionFormat; }
@@ -121,6 +124,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The encryption configuration. If no value is specified, the default is no encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionConfiguration EncryptionConfiguration
         {
             get { return this._encryptionConfiguration; }
@@ -182,6 +186,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }

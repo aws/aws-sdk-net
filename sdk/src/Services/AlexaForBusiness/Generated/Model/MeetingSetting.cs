@@ -56,6 +56,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The values that indicate whether the pin is always required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RequirePin RequirePin
         {
             get { return this._requirePin; }

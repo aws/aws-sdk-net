@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// One or more Spot Instance request IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SpotInstanceRequestIds
         {
             get { return this._spotInstanceRequestIds; }

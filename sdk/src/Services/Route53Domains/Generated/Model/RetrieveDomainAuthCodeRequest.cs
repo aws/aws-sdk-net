@@ -42,6 +42,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that you want to get an authorization code for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

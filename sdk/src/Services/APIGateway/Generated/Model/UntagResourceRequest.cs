@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// At present, <a>Stage</a> is the only taggable resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The Tag keys to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

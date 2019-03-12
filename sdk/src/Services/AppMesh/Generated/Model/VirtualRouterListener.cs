@@ -37,6 +37,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property PortMapping.
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortMapping PortMapping
         {
             get { return this._portMapping; }

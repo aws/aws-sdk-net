@@ -69,6 +69,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string InputId
         {
             get { return this._inputId; }
@@ -201,6 +202,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The in-application name prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string NamePrefix
         {
             get { return this._namePrefix; }

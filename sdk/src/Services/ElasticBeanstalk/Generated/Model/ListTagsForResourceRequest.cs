@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Must be the ARN of an Elastic Beanstalk environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -73,6 +73,7 @@ namespace Amazon.AppStream.Model
         /// this image. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string AppstreamAgentVersion
         {
             get { return this._appstreamAgentVersion; }
@@ -145,6 +146,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -163,6 +165,7 @@ namespace Amazon.AppStream.Model
         /// The image name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -217,6 +220,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

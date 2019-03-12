@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         /// The name of the trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

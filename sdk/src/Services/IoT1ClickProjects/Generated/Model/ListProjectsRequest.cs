@@ -43,6 +43,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// 100 is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The token to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

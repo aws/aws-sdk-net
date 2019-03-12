@@ -61,6 +61,7 @@ namespace Amazon.Athena.Model
         /// The unique name of the workgroup to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WorkGroup
         {
             get { return this._workGroup; }

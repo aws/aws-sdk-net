@@ -45,6 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// use. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ContactEmail
         {
             get { return this._contactEmail; }
@@ -63,6 +64,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the organization sending the enrollment invite to a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string OrganizationName
         {
             get { return this._organizationName; }
@@ -82,6 +84,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// the invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> PrivateSkillIds
         {
             get { return this._privateSkillIds; }

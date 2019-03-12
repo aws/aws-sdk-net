@@ -44,6 +44,7 @@ namespace Amazon.ResourceGroups.Model
         /// including letters, numbers, hyphens, underscores, punctuation, and spaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -62,6 +63,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group for which you want to update its description.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }

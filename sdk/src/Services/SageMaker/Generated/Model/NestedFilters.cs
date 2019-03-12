@@ -71,6 +71,7 @@ namespace Amazon.SageMaker.Model
         /// property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// property name, such as <code>InputDataConfig</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string NestedPropertyName
         {
             get { return this._nestedPropertyName; }

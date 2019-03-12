@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The ID of the security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// The name of the security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string GroupName
         {
             get { return this._groupName; }

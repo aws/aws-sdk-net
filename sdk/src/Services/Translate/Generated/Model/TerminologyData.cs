@@ -41,6 +41,7 @@ namespace Amazon.Translate.Model
         /// The file containing the custom terminology data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10485760)]
         public MemoryStream File
         {
             get { return this._file; }
@@ -59,6 +60,7 @@ namespace Amazon.Translate.Model
         /// The data format of the custom terminology. Either CSV or TMX.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TerminologyDataFormat Format
         {
             get { return this._format; }

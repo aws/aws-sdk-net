@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The authentication type for the user. You must specify USERPOOL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }
@@ -60,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// The email address of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

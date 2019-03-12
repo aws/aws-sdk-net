@@ -59,6 +59,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the queue that you are creating.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

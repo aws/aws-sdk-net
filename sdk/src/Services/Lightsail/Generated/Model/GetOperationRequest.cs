@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         /// A GUID used to identify the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OperationId
         {
             get { return this._operationId; }

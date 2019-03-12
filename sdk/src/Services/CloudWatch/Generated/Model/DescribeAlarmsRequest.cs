@@ -48,6 +48,7 @@ namespace Amazon.CloudWatch.Model
         /// The action name prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ActionPrefix
         {
             get { return this._actionPrefix; }
@@ -66,6 +67,7 @@ namespace Amazon.CloudWatch.Model
         /// The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AlarmNamePrefix
         {
             get { return this._alarmNamePrefix; }
@@ -84,6 +86,7 @@ namespace Amazon.CloudWatch.Model
         /// The names of the alarms.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<string> AlarmNames
         {
             get { return this._alarmNames; }
@@ -102,6 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// The maximum number of alarm descriptions to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxRecords
         {
             get { return this._maxRecords.GetValueOrDefault(); }
@@ -120,6 +124,7 @@ namespace Amazon.CloudWatch.Model
         /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -88,6 +88,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database that you are deleting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

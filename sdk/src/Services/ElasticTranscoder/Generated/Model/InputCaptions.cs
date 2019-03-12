@@ -42,6 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// omit all sidecar captions, leave <code>CaptionSources</code> blank.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<CaptionSource> CaptionSources
         {
             get { return this._captionSources; }

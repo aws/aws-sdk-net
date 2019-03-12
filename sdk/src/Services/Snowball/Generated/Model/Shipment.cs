@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         /// Status information for a shipment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Status
         {
             get { return this._status; }
@@ -65,6 +66,7 @@ namespace Amazon.Snowball.Model
         /// For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TrackingNumber
         {
             get { return this._trackingNumber; }

@@ -71,6 +71,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -89,6 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A new description for this version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -112,6 +114,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string VersionLabel
         {
             get { return this._versionLabel; }

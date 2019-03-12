@@ -80,6 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

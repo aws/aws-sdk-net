@@ -173,6 +173,7 @@ namespace Amazon.GameLift.Model
         /// Human-readable description of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -191,6 +192,7 @@ namespace Amazon.GameLift.Model
         /// Identifier for a fleet that is unique across all regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -252,6 +254,7 @@ namespace Amazon.GameLift.Model
         /// Access external resources from a game server</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string InstanceRoleArn
         {
             get { return this._instanceRoleArn; }
@@ -316,6 +319,7 @@ namespace Amazon.GameLift.Model
         /// a fleet metric group. A fleet can be included in only one metric group at a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1)]
         public List<string> MetricGroups
         {
             get { return this._metricGroups; }
@@ -334,6 +338,7 @@ namespace Amazon.GameLift.Model
         /// Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -420,6 +425,7 @@ namespace Amazon.GameLift.Model
         /// in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ServerLaunchParameters
         {
             get { return this._serverLaunchParameters; }
@@ -440,6 +446,7 @@ namespace Amazon.GameLift.Model
         /// after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ServerLaunchPath
         {
             get { return this._serverLaunchPath; }
@@ -508,6 +515,7 @@ namespace Amazon.GameLift.Model
         /// includes auto-scaling.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> StoppedActions
         {
             get { return this._stoppedActions; }

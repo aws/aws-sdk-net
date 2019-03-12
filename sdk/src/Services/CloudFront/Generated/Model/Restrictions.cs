@@ -52,6 +52,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property GeoRestriction.
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoRestriction GeoRestriction
         {
             get { return this._geoRestriction; }

@@ -40,6 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The retention period for workflow executions in this domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public string WorkflowExecutionRetentionPeriodInDays
         {
             get { return this._workflowExecutionRetentionPeriodInDays; }

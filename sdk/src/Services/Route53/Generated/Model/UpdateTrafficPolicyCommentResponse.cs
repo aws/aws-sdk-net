@@ -40,6 +40,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains settings for the specified traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrafficPolicy TrafficPolicy
         {
             get { return this._trafficPolicy; }

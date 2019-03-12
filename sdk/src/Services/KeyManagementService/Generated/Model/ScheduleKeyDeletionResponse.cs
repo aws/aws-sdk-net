@@ -59,6 +59,7 @@ namespace Amazon.KeyManagementService.Model
         /// The unique identifier of the customer master key (CMK) for which deletion is scheduled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

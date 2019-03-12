@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// The cluster identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

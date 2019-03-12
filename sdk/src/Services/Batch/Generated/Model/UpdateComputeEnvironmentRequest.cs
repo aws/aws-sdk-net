@@ -44,6 +44,7 @@ namespace Amazon.Batch.Model
         /// The name or full Amazon Resource Name (ARN) of the compute environment to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironment
         {
             get { return this._computeEnvironment; }

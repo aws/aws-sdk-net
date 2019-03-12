@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public DateTime IngestionTime
         {
             get { return this._ingestionTime.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The data contained in the log event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Message
         {
             get { return this._message; }
@@ -80,6 +82,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

@@ -65,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CodeRepositorySummary> CodeRepositorySummaryList
         {
             get { return this._codeRepositorySummaryList; }
@@ -85,6 +86,7 @@ namespace Amazon.SageMaker.Model
         /// use the token in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

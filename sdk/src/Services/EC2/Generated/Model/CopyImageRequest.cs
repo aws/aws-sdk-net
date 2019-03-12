@@ -181,6 +181,7 @@ namespace Amazon.EC2.Model
         /// The name of the new AMI in the destination region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -199,6 +200,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AMI to copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceImageId
         {
             get { return this._sourceImageId; }
@@ -217,6 +219,7 @@ namespace Amazon.EC2.Model
         /// The name of the region that contains the AMI to copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceRegion
         {
             get { return this._sourceRegion; }

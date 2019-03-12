@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }

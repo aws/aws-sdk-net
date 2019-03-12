@@ -68,6 +68,7 @@ namespace Amazon.SimpleEmail.Model
         /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }
@@ -86,6 +87,7 @@ namespace Amazon.SimpleEmail.Model
         /// The type of notifications that will be published to the specified Amazon SNS topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NotificationType NotificationType
         {
             get { return this._notificationType; }

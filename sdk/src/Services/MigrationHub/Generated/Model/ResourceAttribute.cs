@@ -71,6 +71,7 @@ namespace Amazon.MigrationHub.Model
         /// Type of resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceAttributeType Type
         {
             get { return this._type; }
@@ -89,6 +90,7 @@ namespace Amazon.MigrationHub.Model
         /// Value of the resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

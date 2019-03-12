@@ -53,6 +53,7 @@ namespace Amazon.CodeCommit.Model
         /// are limited to 1,000 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string RepositoryDescription
         {
             get { return this._repositoryDescription; }
@@ -71,6 +72,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository to set or change the comment or description for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

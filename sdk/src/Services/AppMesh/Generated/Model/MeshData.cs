@@ -42,6 +42,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -60,6 +61,7 @@ namespace Amazon.AppMesh.Model
         /// The associated metadata for the service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceMetadata Metadata
         {
             get { return this._metadata; }
@@ -78,6 +80,7 @@ namespace Amazon.AppMesh.Model
         /// The status of the service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MeshStatus Status
         {
             get { return this._status; }

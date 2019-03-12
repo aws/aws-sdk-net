@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <code>Marker</code> request parameter to retrieve more items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.CloudFront.Model
         /// ID of the last identity on that page). 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Marker
         {
             get { return this._marker; }
@@ -117,6 +119,7 @@ namespace Amazon.CloudFront.Model
         /// The maximum number of origin access identities you want in the response body. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -156,6 +159,7 @@ namespace Amazon.CloudFront.Model
         /// AWS account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

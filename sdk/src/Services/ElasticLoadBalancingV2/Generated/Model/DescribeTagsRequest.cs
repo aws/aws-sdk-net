@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Names (ARN) of the resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ResourceArns
         {
             get { return this._resourceArns; }

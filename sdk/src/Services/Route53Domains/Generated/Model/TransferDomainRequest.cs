@@ -84,6 +84,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -102,6 +103,7 @@ namespace Amazon.Route53Domains.Model
         /// The authorization code for the domain. You get this value from the current registrar.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AuthCode
         {
             get { return this._authCode; }
@@ -148,6 +150,7 @@ namespace Amazon.Route53Domains.Model
         /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -171,6 +174,7 @@ namespace Amazon.Route53Domains.Model
         /// Default: 1
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public int DurationInYears
         {
             get { return this._durationInYears.GetValueOrDefault(); }
@@ -189,6 +193,7 @@ namespace Amazon.Route53Domains.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=3)]
         public string IdnLangCode
         {
             get { return this._idnLangCode; }
@@ -303,6 +308,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -321,6 +327,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

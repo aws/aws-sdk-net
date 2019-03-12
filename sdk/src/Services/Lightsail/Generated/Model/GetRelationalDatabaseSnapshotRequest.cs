@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database snapshot for which to get information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseSnapshotName
         {
             get { return this._relationalDatabaseSnapshotName; }

@@ -57,6 +57,7 @@ namespace Amazon.Kinesis.Model
         /// registered with a given data stream. The description of a consumer contains its ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ConsumerARN
         {
             get { return this._consumerARN; }
@@ -75,6 +76,7 @@ namespace Amazon.Kinesis.Model
         /// The name that you gave to the consumer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ConsumerName
         {
             get { return this._consumerName; }
@@ -95,6 +97,7 @@ namespace Amazon.Kinesis.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }

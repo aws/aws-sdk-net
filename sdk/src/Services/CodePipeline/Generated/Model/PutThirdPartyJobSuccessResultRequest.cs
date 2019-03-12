@@ -47,6 +47,7 @@ namespace Amazon.CodePipeline.Model
         /// calling entity is allowed access to the job and its details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -69,6 +70,7 @@ namespace Amazon.CodePipeline.Model
         /// When the action is complete, no continuation token should be supplied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ContinuationToken
         {
             get { return this._continuationToken; }
@@ -124,6 +126,7 @@ namespace Amazon.CodePipeline.Model
         /// The ID of the job that successfully completed. This is the same ID returned from PollForThirdPartyJobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string JobId
         {
             get { return this._jobId; }

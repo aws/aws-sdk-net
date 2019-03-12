@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The status code of a failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FailedItemErrorCode FailureCode
         {
             get { return this._failureCode; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Retryable
         {
             get { return this._retryable.GetValueOrDefault(); }

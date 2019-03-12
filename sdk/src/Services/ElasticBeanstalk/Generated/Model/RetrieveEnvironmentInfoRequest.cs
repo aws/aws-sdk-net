@@ -106,6 +106,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -124,6 +125,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The type of information to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EnvironmentInfoType InfoType
         {
             get { return this._infoType; }

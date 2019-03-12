@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// Name of the table. For Hive compatibility, this must be entirely lowercase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

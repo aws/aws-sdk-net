@@ -60,6 +60,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -78,6 +79,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment template that is associated with the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTemplateArn
         {
             get { return this._assessmentTemplateArn; }
@@ -115,6 +117,7 @@ namespace Amazon.Inspector.Model
         /// The time when <a>StartAssessmentRun</a> was called.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -134,6 +137,7 @@ namespace Amazon.Inspector.Model
         /// from the agents is completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool DataCollected
         {
             get { return this._dataCollected.GetValueOrDefault(); }
@@ -152,6 +156,7 @@ namespace Amazon.Inspector.Model
         /// The duration of the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=180, Max=86400)]
         public int DurationInSeconds
         {
             get { return this._durationInSeconds.GetValueOrDefault(); }
@@ -170,6 +175,7 @@ namespace Amazon.Inspector.Model
         /// Provides a total count of generated findings per severity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, int> FindingCounts
         {
             get { return this._findingCounts; }
@@ -188,6 +194,7 @@ namespace Amazon.Inspector.Model
         /// The auto-generated name for the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string Name
         {
             get { return this._name; }
@@ -207,6 +214,7 @@ namespace Amazon.Inspector.Model
         /// generated finding is added to this list only once.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<AssessmentRunNotification> Notifications
         {
             get { return this._notifications; }
@@ -225,6 +233,7 @@ namespace Amazon.Inspector.Model
         /// The rules packages selected for the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> RulesPackageArns
         {
             get { return this._rulesPackageArns; }
@@ -261,6 +270,7 @@ namespace Amazon.Inspector.Model
         /// The state of the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssessmentRunState State
         {
             get { return this._state; }
@@ -279,6 +289,7 @@ namespace Amazon.Inspector.Model
         /// The last time when the assessment run's state changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StateChangedAt
         {
             get { return this._stateChangedAt.GetValueOrDefault(); }
@@ -297,6 +308,7 @@ namespace Amazon.Inspector.Model
         /// A list of the assessment run state changes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<AssessmentRunStateChange> StateChanges
         {
             get { return this._stateChanges; }
@@ -315,6 +327,7 @@ namespace Amazon.Inspector.Model
         /// The user-defined attributes that are assigned to every generated finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Attribute> UserAttributesForFindings
         {
             get { return this._userAttributesForFindings; }

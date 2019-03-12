@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndpointsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public EndpointsResponse EndpointsResponse
         {
             get { return this._endpointsResponse; }

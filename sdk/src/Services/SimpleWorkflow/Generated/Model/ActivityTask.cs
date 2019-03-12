@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The unique ID of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of this activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// user defined and should be meaningful to the activity implementation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -100,6 +103,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The ID of the <code>ActivityTaskStarted</code> event recorded in the history.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -119,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// progress and response information back to the system about the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }
@@ -137,6 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow execution that started this activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution WorkflowExecution
         {
             get { return this._workflowExecution; }

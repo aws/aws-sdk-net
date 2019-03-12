@@ -219,6 +219,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>myexamplecluster</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -656,6 +657,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -701,6 +703,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -728,6 +731,7 @@ namespace Amazon.Redshift.Model
         /// | <code>dc2.8xlarge</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NodeType
         {
             get { return this._nodeType; }

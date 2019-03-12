@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// The 12-digit account ID of the account being aggregated. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -78,6 +79,7 @@ namespace Amazon.ConfigService.Model
         /// The source regions being aggregated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AwsRegions
         {
             get { return this._awsRegions; }

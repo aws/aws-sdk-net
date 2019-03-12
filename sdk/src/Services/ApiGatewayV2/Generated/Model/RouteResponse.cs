@@ -116,6 +116,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// Represents the route response key of a route response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteResponseKey
         {
             get { return this._routeResponseKey; }

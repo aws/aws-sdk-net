@@ -50,6 +50,7 @@ namespace Amazon.DynamoDBv2.Model
         /// when determining the total.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<string> NonKeyAttributes
         {
             get { return this._nonKeyAttributes; }

@@ -59,6 +59,7 @@ namespace Amazon.CodeBuild.Model
         /// The IDs of builds for which information could not be found.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> BuildsNotFound
         {
             get { return this._buildsNotFound; }

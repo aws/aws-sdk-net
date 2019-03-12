@@ -65,6 +65,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -86,6 +87,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// start reading.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InputConfiguration> InputConfigurations
         {
             get { return this._inputConfigurations; }

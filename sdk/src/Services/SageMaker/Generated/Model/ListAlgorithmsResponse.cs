@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// &gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AlgorithmSummary> AlgorithmSummaryList
         {
             get { return this._algorithmSummaryList; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// next set of algorithms, use it in the subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// The alias for the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=62)]
         public string Alias
         {
             get { return this._alias; }

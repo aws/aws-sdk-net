@@ -136,6 +136,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -155,6 +156,7 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -175,6 +177,7 @@ namespace Amazon.GameLift.Model
         /// the result set, do not specify a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -195,6 +198,7 @@ namespace Amazon.GameLift.Model
         /// last two are transitory). 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StatusFilter
         {
             get { return this._statusFilter; }

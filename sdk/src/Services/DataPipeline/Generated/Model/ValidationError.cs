@@ -60,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// The identifier of the object that contains the validation error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Id
         {
             get { return this._id; }

@@ -51,6 +51,7 @@ namespace Amazon.Route53Resolver.Model
         /// can be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -72,6 +73,7 @@ namespace Amazon.Route53Resolver.Model
         /// contains the most specific domain name (www.example.com).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -91,6 +93,7 @@ namespace Amazon.Route53Resolver.Model
         /// Route 53 console.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -110,6 +113,7 @@ namespace Amazon.Route53Resolver.Model
         /// to the IP addresses that you specify in <code>TargetIps</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }
@@ -128,6 +132,7 @@ namespace Amazon.Route53Resolver.Model
         /// Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuleTypeOption RuleType
         {
             get { return this._ruleType; }
@@ -165,6 +170,7 @@ namespace Amazon.Route53Resolver.Model
         /// addresses. Separate IP addresses with a comma.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<TargetAddress> TargetIps
         {
             get { return this._targetIps; }

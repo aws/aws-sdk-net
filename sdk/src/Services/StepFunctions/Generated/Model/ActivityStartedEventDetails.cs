@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// workers when calling <a>GetActivityTask</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string WorkerName
         {
             get { return this._workerName; }

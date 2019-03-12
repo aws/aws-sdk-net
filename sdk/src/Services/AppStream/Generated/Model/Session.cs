@@ -87,6 +87,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet for the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string FleetName
         {
             get { return this._fleetName; }
@@ -105,6 +106,7 @@ namespace Amazon.AppStream.Model
         /// The identifier of the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Id
         {
             get { return this._id; }
@@ -165,6 +167,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack for the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -201,6 +204,7 @@ namespace Amazon.AppStream.Model
         /// The current state of the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamSessionState State
         {
             get { return this._state; }
@@ -219,6 +223,7 @@ namespace Amazon.AppStream.Model
         /// The identifier of the user for whom the session was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=32)]
         public string UserId
         {
             get { return this._userId; }

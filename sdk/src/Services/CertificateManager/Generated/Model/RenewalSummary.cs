@@ -49,6 +49,7 @@ namespace Amazon.CertificateManager.Model
         /// type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public List<DomainValidation> DomainValidationOptions
         {
             get { return this._domainValidationOptions; }
@@ -68,6 +69,7 @@ namespace Amazon.CertificateManager.Model
         /// renewal</a> of the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RenewalStatus RenewalStatus
         {
             get { return this._renewalStatus; }
@@ -104,6 +106,7 @@ namespace Amazon.CertificateManager.Model
         /// The time at which the renewal summary was last updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdatedAt
         {
             get { return this._updatedAt.GetValueOrDefault(); }

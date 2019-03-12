@@ -65,6 +65,7 @@ namespace Amazon.Lambda.Model
         /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string LayerName
         {
             get { return this._layerName; }
@@ -101,6 +102,7 @@ namespace Amazon.Lambda.Model
         /// The maximum number of versions to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

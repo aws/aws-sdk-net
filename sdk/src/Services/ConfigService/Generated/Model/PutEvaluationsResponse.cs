@@ -40,6 +40,7 @@ namespace Amazon.ConfigService.Model
         /// Requests that failed because of a client or server error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<Evaluation> FailedEvaluations
         {
             get { return this._failedEvaluations; }

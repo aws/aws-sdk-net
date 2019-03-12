@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// from a different VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Groups
         {
             get { return this._groups; }
@@ -77,6 +78,7 @@ namespace Amazon.EC2.Model
         /// The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -95,6 +97,7 @@ namespace Amazon.EC2.Model
         /// The ID of a ClassicLink-enabled VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

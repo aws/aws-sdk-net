@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// to a hyperparameter tuning job when you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string HyperParameterTuningJobArn
         {
             get { return this._hyperParameterTuningJobArn; }

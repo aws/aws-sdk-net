@@ -90,6 +90,7 @@ namespace Amazon.Rekognition.Model
         /// from a call to <code>StartPersonTracking</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -110,6 +111,7 @@ namespace Amazon.Rekognition.Model
         /// is returned. The default value is 1000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -130,6 +132,7 @@ namespace Amazon.Rekognition.Model
         /// pagination token to retrieve the next set of persons. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

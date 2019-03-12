@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// in AWS Marketplace that you are subscribed to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=170)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// (<code>.tar.gz</code> suffix).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }

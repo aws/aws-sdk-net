@@ -70,6 +70,7 @@ namespace Amazon.Redshift.Model
         /// IAM roles.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

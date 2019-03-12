@@ -54,6 +54,7 @@ namespace Amazon.GameLift.Model
         /// is created for the match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -93,6 +94,7 @@ namespace Amazon.GameLift.Model
         /// If there is not enough recent data, this property may be empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int EstimatedWaitTime
         {
             get { return this._estimatedWaitTime.GetValueOrDefault(); }
@@ -273,6 +275,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking ticket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

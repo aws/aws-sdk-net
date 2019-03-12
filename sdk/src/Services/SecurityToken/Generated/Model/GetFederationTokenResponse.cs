@@ -90,6 +90,7 @@ namespace Amazon.SecurityToken.Model
         /// policies for which the packed size is greater than 100 percent of the allowed value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PackedPolicySize
         {
             get { return this._packedPolicySize.GetValueOrDefault(); }

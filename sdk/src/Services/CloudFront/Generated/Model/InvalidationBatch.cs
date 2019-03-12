@@ -84,6 +84,7 @@ namespace Amazon.CloudFront.Model
         /// request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -104,6 +105,7 @@ namespace Amazon.CloudFront.Model
         /// the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Paths Paths
         {
             get { return this._paths; }

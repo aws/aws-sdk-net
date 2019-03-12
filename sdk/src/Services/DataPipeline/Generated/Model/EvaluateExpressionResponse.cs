@@ -40,6 +40,7 @@ namespace Amazon.DataPipeline.Model
         /// The evaluated expression.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=20971520)]
         public string EvaluatedExpression
         {
             get { return this._evaluatedExpression; }

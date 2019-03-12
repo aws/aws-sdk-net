@@ -41,6 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -59,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }

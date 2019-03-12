@@ -51,6 +51,7 @@ namespace Amazon.CloudFormation.Model
         /// next page of exported output values that you asked to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

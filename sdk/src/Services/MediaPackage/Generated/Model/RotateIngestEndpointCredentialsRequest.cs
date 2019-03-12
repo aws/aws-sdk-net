@@ -40,6 +40,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Id. The ID of the channel the IngestEndpoint is on.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -56,6 +57,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property IngestEndpointId. The id of the IngestEndpoint whose credentials
         /// should be rotated
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IngestEndpointId
         {
             get { return this._ingestEndpointId; }

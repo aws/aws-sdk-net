@@ -45,6 +45,7 @@ namespace Amazon.FMS.Model
         /// value in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -48,6 +48,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The client request token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -66,6 +67,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The content range of the reports.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BusinessReportContentRange ContentRange
         {
             get { return this._contentRange; }
@@ -85,6 +87,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// files).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BusinessReportFormat Format
         {
             get { return this._format; }
@@ -141,6 +144,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The S3 key where the report is delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }
@@ -159,6 +163,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name identifier of the schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ScheduleName
         {
             get { return this._scheduleName; }

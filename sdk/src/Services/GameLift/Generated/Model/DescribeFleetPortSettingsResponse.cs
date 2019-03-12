@@ -40,6 +40,7 @@ namespace Amazon.GameLift.Model
         /// Object that contains port settings for the requested fleet ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<IpPermission> InboundPermissions
         {
             get { return this._inboundPermissions; }

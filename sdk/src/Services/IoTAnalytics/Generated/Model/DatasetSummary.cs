@@ -45,6 +45,7 @@ namespace Amazon.IoTAnalytics.Model
         /// A list of "DataActionSummary" objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<DatasetActionSummary> Actions
         {
             get { return this._actions; }
@@ -81,6 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }
@@ -137,6 +139,7 @@ namespace Amazon.IoTAnalytics.Model
         /// or contain up to five DataSetTrigger objects
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<DatasetTrigger> Triggers
         {
             get { return this._triggers; }

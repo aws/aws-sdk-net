@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model
         /// name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string LaunchTemplateId
         {
             get { return this._launchTemplateId; }
@@ -70,6 +71,7 @@ namespace Amazon.AutoScaling.Model
         /// ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string LaunchTemplateName
         {
             get { return this._launchTemplateName; }
@@ -92,6 +94,7 @@ namespace Amazon.AutoScaling.Model
         /// The default value is <code>$Default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Version
         {
             get { return this._version; }

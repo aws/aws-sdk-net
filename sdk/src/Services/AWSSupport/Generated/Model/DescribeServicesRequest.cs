@@ -75,6 +75,7 @@ namespace Amazon.AWSSupport.Model
         /// A JSON-formatted list of service codes available for AWS services.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> ServiceCodeList
         {
             get { return this._serviceCodeList; }

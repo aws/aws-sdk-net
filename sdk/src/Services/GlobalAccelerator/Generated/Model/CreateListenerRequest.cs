@@ -48,6 +48,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of your accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }
@@ -109,6 +110,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// is, the uniqueness—of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -127,6 +129,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The list of port ranges to support for connections from clients to your accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<PortRange> PortRanges
         {
             get { return this._portRanges; }
@@ -145,6 +148,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The protocol for connections from clients to your accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Protocol Protocol
         {
             get { return this._protocol; }

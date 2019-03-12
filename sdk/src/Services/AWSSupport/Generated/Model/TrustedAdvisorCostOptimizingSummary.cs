@@ -42,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// taken.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double EstimatedMonthlySavings
         {
             get { return this._estimatedMonthlySavings.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// are taken.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double EstimatedPercentMonthlySavings
         {
             get { return this._estimatedPercentMonthlySavings.GetValueOrDefault(); }

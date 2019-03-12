@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// A list of the names of crawlers about which to retrieve metrics.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> CrawlerNameList
         {
             get { return this._crawlerNameList; }
@@ -61,6 +62,7 @@ namespace Amazon.Glue.Model
         /// The maximum size of a list to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -68,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// This parameter is reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<AdditionalAttribute> AdditionalAttributes
         {
             get { return this._additionalAttributes; }

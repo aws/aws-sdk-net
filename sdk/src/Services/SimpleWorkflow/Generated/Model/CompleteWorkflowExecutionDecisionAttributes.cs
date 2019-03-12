@@ -71,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The result of the workflow execution. The form of the result is implementation defined.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Result
         {
             get { return this._result; }

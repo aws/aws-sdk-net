@@ -41,6 +41,7 @@ namespace Amazon.Macie.Model
         /// The ID of the member account that you want to remove from Amazon Macie.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MemberAccountId
         {
             get { return this._memberAccountId; }

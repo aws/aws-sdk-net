@@ -98,6 +98,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string CertificateBody
         {
             get { return this._certificateBody; }
@@ -122,6 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

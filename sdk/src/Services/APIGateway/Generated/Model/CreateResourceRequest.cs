@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The parent resource's identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParentId
         {
             get { return this._parentId; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// The last path segment for this resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PathPart
         {
             get { return this._pathPart; }
@@ -79,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

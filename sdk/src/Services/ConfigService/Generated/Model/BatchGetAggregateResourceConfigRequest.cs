@@ -55,6 +55,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration aggregator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationAggregatorName
         {
             get { return this._configurationAggregatorName; }
@@ -73,6 +74,7 @@ namespace Amazon.ConfigService.Model
         /// A list of aggregate ResourceIdentifiers objects. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<AggregateResourceIdentifier> ResourceIdentifiers
         {
             get { return this._resourceIdentifiers; }

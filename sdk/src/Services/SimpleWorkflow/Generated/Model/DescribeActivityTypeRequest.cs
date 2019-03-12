@@ -85,6 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// and <code>version</code> that were supplied when the activity was registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -103,6 +104,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain in which the activity type is registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }

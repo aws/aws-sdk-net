@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HostedZone> HostedZones
         {
             get { return this._hostedZones; }
@@ -64,6 +65,7 @@ namespace Amazon.Route53.Model
         /// that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Marker
         {
             get { return this._marker; }
@@ -85,6 +87,7 @@ namespace Amazon.Route53.Model
         /// parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -110,6 +113,7 @@ namespace Amazon.Route53.Model
         /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string NextMarker
         {
             get { return this._nextMarker; }
@@ -129,6 +133,7 @@ namespace Amazon.Route53.Model
         /// <code>ListHostedZones</code> that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

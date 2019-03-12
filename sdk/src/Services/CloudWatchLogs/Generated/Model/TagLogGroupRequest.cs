@@ -53,6 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -71,6 +72,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The key-value pairs to use for the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

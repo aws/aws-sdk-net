@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         /// The unique ID of the query execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueryExecutionId
         {
             get { return this._queryExecutionId; }

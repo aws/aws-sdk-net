@@ -46,6 +46,7 @@ namespace Amazon.TranscribeService.Model
         /// the vocabulary. The URI is available for a limited time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string DownloadUri
         {
             get { return this._downloadUri; }
@@ -119,6 +120,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of the vocabulary to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string VocabularyName
         {
             get { return this._vocabularyName; }

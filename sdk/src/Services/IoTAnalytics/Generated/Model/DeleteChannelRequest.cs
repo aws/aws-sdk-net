@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the channel to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChannelName
         {
             get { return this._channelName; }

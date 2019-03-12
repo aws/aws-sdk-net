@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// up to 50 items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -103,6 +105,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// export tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string TaskId
         {
             get { return this._taskId; }

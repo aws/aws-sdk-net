@@ -43,6 +43,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -89,6 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduleActivityTaskFailedCause Cause
         {
             get { return this._cause; }
@@ -109,6 +112,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// for diagnosing problems by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// Information about a resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<ResourceGroup> ResourceGroups
         {
             get { return this._resourceGroups; }

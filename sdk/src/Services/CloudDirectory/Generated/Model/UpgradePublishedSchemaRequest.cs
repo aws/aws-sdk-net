@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the development schema with the changes used for the upgrade.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DevelopmentSchemaArn
         {
             get { return this._developmentSchemaArn; }
@@ -85,6 +86,7 @@ namespace Amazon.CloudDirectory.Model
         /// is NOT optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public string MinorVersion
         {
             get { return this._minorVersion; }
@@ -103,6 +105,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the published schema to be upgraded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublishedSchemaArn
         {
             get { return this._publishedSchemaArn; }

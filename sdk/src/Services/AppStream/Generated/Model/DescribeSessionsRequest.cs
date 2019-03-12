@@ -70,6 +70,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet. This value is case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string FleetName
         {
             get { return this._fleetName; }
@@ -108,6 +109,7 @@ namespace Amazon.AppStream.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -126,6 +128,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack. This value is case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -144,6 +147,7 @@ namespace Amazon.AppStream.Model
         /// The user identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=32)]
         public string UserId
         {
             get { return this._userId; }

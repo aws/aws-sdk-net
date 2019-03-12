@@ -63,6 +63,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +101,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }
@@ -136,6 +138,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the bot. For a new bot, the version is always <code>$LATEST</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

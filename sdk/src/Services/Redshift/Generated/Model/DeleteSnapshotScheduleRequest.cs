@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier of the snapshot schedule to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

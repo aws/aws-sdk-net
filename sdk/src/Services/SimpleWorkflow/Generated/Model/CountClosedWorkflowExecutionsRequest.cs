@@ -148,6 +148,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain containing the workflow executions to count.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }

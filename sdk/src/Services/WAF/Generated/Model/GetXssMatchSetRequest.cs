@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string XssMatchSetId
         {
             get { return this._xssMatchSetId; }

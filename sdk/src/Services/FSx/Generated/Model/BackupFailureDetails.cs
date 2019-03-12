@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         /// A message describing the backup creation failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Message
         {
             get { return this._message; }

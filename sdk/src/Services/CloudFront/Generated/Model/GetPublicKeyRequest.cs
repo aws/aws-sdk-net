@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         /// Request the ID for the public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

@@ -64,6 +64,7 @@ namespace Amazon.IdentityManagement.Model
         /// The date when the password for the user was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateDate
         {
             get { return this._createDate.GetValueOrDefault(); }
@@ -100,6 +101,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the user, which can be used for signing in to the AWS Management Console.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

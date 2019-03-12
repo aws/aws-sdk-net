@@ -46,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application associated with the configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -64,6 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the configuration template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }

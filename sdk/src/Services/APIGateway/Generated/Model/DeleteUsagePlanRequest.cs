@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The Id of the to-be-deleted usage plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

@@ -47,6 +47,7 @@ namespace Amazon.Elasticsearch.Model
         /// for existing domain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -65,6 +66,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticsearchVersion
         {
             get { return this._elasticsearchVersion; }
@@ -84,6 +86,7 @@ namespace Amazon.Elasticsearch.Model
         /// </code> are needed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ESPartitionInstanceType InstanceType
         {
             get { return this._instanceType; }

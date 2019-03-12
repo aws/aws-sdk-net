@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the newly created file share. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }

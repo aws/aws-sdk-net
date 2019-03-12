@@ -44,6 +44,7 @@ namespace Amazon.FMS.Model
         /// The AWS account that owns the resources that you want to get the details for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string MemberAccount
         {
             get { return this._memberAccount; }
@@ -63,6 +64,7 @@ namespace Amazon.FMS.Model
         /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }

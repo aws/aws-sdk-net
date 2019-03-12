@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The availability options configured for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Options
         {
             get { return this._options.GetValueOrDefault(); }
@@ -56,6 +57,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Status.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

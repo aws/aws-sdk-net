@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -60,6 +61,7 @@ namespace Amazon.DataPipeline.Model
         /// The tags to add, as key/value pairs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }

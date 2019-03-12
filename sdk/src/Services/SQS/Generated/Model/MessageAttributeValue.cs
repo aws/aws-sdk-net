@@ -97,6 +97,7 @@ namespace Amazon.SQS.Model
         /// SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DataType
         {
             get { return this._dataType; }

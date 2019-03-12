@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The AWS Key Management Service ID of the key used to encrypt the output data, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -59,6 +60,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 location to write output data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

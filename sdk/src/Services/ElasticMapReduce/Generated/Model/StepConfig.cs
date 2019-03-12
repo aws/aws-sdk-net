@@ -78,6 +78,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The JAR file used for the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HadoopJarStepConfig HadoopJarStep
         {
             get { return this._hadoopJarStep; }
@@ -96,6 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

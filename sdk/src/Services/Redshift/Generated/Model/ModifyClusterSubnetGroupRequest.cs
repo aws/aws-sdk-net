@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// The name of the subnet group to be modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -80,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

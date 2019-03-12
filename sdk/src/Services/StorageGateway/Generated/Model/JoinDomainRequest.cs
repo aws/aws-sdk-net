@@ -66,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// The name of the domain that you want the gateway to join.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -85,6 +86,7 @@ namespace Amazon.StorageGateway.Model
         /// to return a list of gateways for your account and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -105,6 +107,7 @@ namespace Amazon.StorageGateway.Model
         /// gateway will join within the AD domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string OrganizationalUnit
         {
             get { return this._organizationalUnit; }
@@ -124,6 +127,7 @@ namespace Amazon.StorageGateway.Model
         /// Directory domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Password
         {
             get { return this._password; }
@@ -143,6 +147,7 @@ namespace Amazon.StorageGateway.Model
         /// domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string UserName
         {
             get { return this._userName; }

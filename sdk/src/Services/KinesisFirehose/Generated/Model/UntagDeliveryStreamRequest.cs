@@ -52,6 +52,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -70,6 +71,7 @@ namespace Amazon.KinesisFirehose.Model
         /// A list of tag keys. Each corresponding tag is removed from the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

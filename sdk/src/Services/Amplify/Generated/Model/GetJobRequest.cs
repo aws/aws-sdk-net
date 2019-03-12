@@ -43,6 +43,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AppId
         {
             get { return this._appId; }
@@ -61,6 +62,7 @@ namespace Amazon.Amplify.Model
         ///  Name for the branch, for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -79,6 +81,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for the Job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string JobId
         {
             get { return this._jobId; }

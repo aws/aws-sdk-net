@@ -90,6 +90,7 @@ namespace Amazon.CloudFront.Model
         /// The streaming distribution's configuration information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamingDistributionConfig StreamingDistributionConfig
         {
             get { return this._streamingDistributionConfig; }

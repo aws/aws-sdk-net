@@ -61,6 +61,7 @@ namespace Amazon.WAFRegional.Model
         /// Specifies where in a web request to look for the <code>RegexPatternSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldToMatch FieldToMatch
         {
             get { return this._fieldToMatch; }
@@ -89,6 +90,7 @@ namespace Amazon.WAFRegional.Model
         /// <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RegexPatternSetId
         {
             get { return this._regexPatternSetId; }
@@ -240,6 +242,7 @@ namespace Amazon.WAFRegional.Model
         /// Specify <code>NONE</code> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TextTransformation TextTransformation
         {
             get { return this._textTransformation; }

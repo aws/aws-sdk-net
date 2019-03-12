@@ -51,6 +51,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

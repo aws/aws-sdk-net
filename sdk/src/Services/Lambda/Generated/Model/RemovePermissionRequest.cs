@@ -66,6 +66,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -84,6 +85,7 @@ namespace Amazon.Lambda.Model
         /// Specify a version or alias to remove permissions from a published version of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Qualifier
         {
             get { return this._qualifier; }
@@ -121,6 +123,7 @@ namespace Amazon.Lambda.Model
         /// Statement ID of the permission to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string StatementId
         {
             get { return this._statementId; }

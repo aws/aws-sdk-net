@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         /// The validation status of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ModelPackageStatusItem> ValidationStatuses
         {
             get { return this._validationStatuses; }

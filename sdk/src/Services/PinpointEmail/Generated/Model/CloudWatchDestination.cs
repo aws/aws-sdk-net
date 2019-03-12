@@ -42,6 +42,7 @@ namespace Amazon.PinpointEmail.Model
         /// Amazon CloudWatch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CloudWatchDimensionConfiguration> DimensionConfigurations
         {
             get { return this._dimensionConfigurations; }

@@ -282,6 +282,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RawMessage RawMessage
         {
             get { return this._rawMessage; }

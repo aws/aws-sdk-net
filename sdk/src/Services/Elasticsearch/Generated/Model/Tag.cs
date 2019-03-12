@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// the Elasticsearch domain to which they are attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +64,7 @@ namespace Amazon.Elasticsearch.Model
         /// : Trinity</code>
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -95,6 +95,7 @@ namespace Amazon.AWSSupport.Model
         /// The email addresses in the CC line of an email to be added to the support case.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> CcEmailAddresses
         {
             get { return this._ccEmailAddresses; }
@@ -113,6 +114,7 @@ namespace Amazon.AWSSupport.Model
         /// The body of an email communication to add to the support case.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8000)]
         public string CommunicationBody
         {
             get { return this._communicationBody; }

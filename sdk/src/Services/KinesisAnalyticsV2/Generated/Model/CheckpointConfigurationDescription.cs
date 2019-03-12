@@ -63,6 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the interval in milliseconds between checkpoint operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CheckpointInterval
         {
             get { return this._checkpointInterval.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// that a new checkpoint operation can start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long MinPauseBetweenCheckpoints
         {
             get { return this._minPauseBetweenCheckpoints.GetValueOrDefault(); }

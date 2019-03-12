@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ParametersFilterKey Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The filter values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Values
         {
             get { return this._values; }

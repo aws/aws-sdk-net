@@ -86,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -105,6 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the group was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateDate
         {
             get { return this._createDate.GetValueOrDefault(); }
@@ -125,6 +127,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -143,6 +146,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name that identifies the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -162,6 +166,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }

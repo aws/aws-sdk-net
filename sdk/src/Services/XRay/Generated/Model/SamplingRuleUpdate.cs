@@ -51,6 +51,7 @@ namespace Amazon.XRay.Model
         /// Matches attributes derived from the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -87,6 +88,7 @@ namespace Amazon.XRay.Model
         /// Matches the hostname from a request URL.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Host
         {
             get { return this._host; }
@@ -105,6 +107,7 @@ namespace Amazon.XRay.Model
         /// Matches the HTTP method of a request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public string HTTPMethod
         {
             get { return this._httpMethod; }
@@ -161,6 +164,7 @@ namespace Amazon.XRay.Model
         /// Matches the ARN of the AWS resource on which the service runs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -197,6 +201,7 @@ namespace Amazon.XRay.Model
         /// The name of the sampling rule. Specify a rule by either name or ARN, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string RuleName
         {
             get { return this._ruleName; }
@@ -215,6 +220,7 @@ namespace Amazon.XRay.Model
         /// Matches the <code>name</code> that the service uses to identify itself in segments.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -233,6 +239,7 @@ namespace Amazon.XRay.Model
         /// Matches the <code>origin</code> that the service uses to identify its type in segments.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string ServiceType
         {
             get { return this._serviceType; }
@@ -251,6 +258,7 @@ namespace Amazon.XRay.Model
         /// Matches the path from a request URL.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string URLPath
         {
             get { return this._urlPath; }

@@ -46,6 +46,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>Authorizer</a> resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizerId
         {
             get { return this._authorizerId; }
@@ -83,6 +84,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

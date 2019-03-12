@@ -52,6 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         /// is an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1283)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -70,6 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The tags to be assigned to the Amazon DynamoDB resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

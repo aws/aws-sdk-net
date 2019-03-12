@@ -48,6 +48,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=5242880)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -66,6 +67,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// The MIME type of the inference returned in the response body.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -81,6 +83,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property CustomAttributes.
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string CustomAttributes
         {
             get { return this._customAttributes; }
@@ -99,6 +102,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Identifies the production variant that was invoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string InvokedProductionVariant
         {
             get { return this._invokedProductionVariant; }

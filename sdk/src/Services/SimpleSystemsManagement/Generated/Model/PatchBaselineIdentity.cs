@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The description of the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string BaselineDescription
         {
             get { return this._baselineDescription; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }
@@ -80,6 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string BaselineName
         {
             get { return this._baselineName; }

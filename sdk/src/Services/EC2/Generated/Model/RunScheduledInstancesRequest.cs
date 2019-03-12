@@ -101,6 +101,7 @@ namespace Amazon.EC2.Model
         /// and platform of the schedule that you purchased.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduledInstancesLaunchSpecification LaunchSpecification
         {
             get { return this._launchSpecification; }
@@ -119,6 +120,7 @@ namespace Amazon.EC2.Model
         /// The Scheduled Instance ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ScheduledInstanceId
         {
             get { return this._scheduledInstanceId; }

@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// Name of the crawler to retrieve metadata for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the webhook you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

@@ -60,6 +60,7 @@ namespace Amazon.ConfigService.Model
         /// The region where the account is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Region
         {
             get { return this._region; }

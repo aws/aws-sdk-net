@@ -100,6 +100,7 @@ namespace Amazon.IoT.Model
         /// The security profile whose behavior is in violation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }
@@ -118,6 +119,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing responsible for the active violation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }
@@ -136,6 +138,7 @@ namespace Amazon.IoT.Model
         /// The ID of the active violation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ViolationId
         {
             get { return this._violationId; }

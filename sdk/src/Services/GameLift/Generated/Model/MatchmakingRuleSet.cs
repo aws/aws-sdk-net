@@ -104,6 +104,7 @@ namespace Amazon.GameLift.Model
         /// are not allowed in JSON, but most elements support a description field.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public string RuleSetBody
         {
             get { return this._ruleSetBody; }
@@ -122,6 +123,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking rule set
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

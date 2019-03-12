@@ -49,6 +49,7 @@ namespace Amazon.Kinesis.Model
         /// The number of enhanced fan-out consumers registered with the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000000)]
         public int ConsumerCount
         {
             get { return this._consumerCount.GetValueOrDefault(); }
@@ -94,6 +95,7 @@ namespace Amazon.Kinesis.Model
         /// Represents the current enhanced monitoring settings of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EnhancedMetrics> EnhancedMonitoring
         {
             get { return this._enhancedMonitoring; }
@@ -139,6 +141,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -157,6 +160,7 @@ namespace Amazon.Kinesis.Model
         /// The number of open shards in the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000)]
         public int OpenShardCount
         {
             get { return this._openShardCount.GetValueOrDefault(); }
@@ -175,6 +179,7 @@ namespace Amazon.Kinesis.Model
         /// The current retention period, in hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100000)]
         public int RetentionPeriodHours
         {
             get { return this._retentionPeriodHours.GetValueOrDefault(); }
@@ -193,6 +198,7 @@ namespace Amazon.Kinesis.Model
         /// The Amazon Resource Name (ARN) for the stream being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -211,6 +217,7 @@ namespace Amazon.Kinesis.Model
         /// The approximate time that the stream was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StreamCreationTimestamp
         {
             get { return this._streamCreationTimestamp.GetValueOrDefault(); }
@@ -229,6 +236,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -271,6 +279,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamStatus StreamStatus
         {
             get { return this._streamStatus; }

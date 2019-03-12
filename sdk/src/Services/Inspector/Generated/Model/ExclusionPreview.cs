@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The system-defined attributes for the exclusion preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The description of the exclusion preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=20000)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// The recommendation for the exclusion preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=20000)]
         public string Recommendation
         {
             get { return this._recommendation; }
@@ -99,6 +102,7 @@ namespace Amazon.Inspector.Model
         /// The AWS resources for which the exclusion preview pertains.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<Scope> Scopes
         {
             get { return this._scopes; }
@@ -117,6 +121,7 @@ namespace Amazon.Inspector.Model
         /// The name of the exclusion preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=20000)]
         public string Title
         {
             get { return this._title; }

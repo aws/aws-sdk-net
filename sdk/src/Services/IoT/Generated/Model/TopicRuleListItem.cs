@@ -98,6 +98,7 @@ namespace Amazon.IoT.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string RuleName
         {
             get { return this._ruleName; }

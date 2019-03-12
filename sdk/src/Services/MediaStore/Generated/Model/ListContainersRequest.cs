@@ -57,6 +57,7 @@ namespace Amazon.MediaStore.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -77,6 +78,7 @@ namespace Amazon.MediaStore.Model
         /// token is included in a response only if there actually are more containers to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -148,6 +148,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// can be up to 40 characters long. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string Id
         {
             get { return this._id; }

@@ -55,6 +55,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -184,6 +185,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The integration ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IntegrationId
         {
             get { return this._integrationId; }
@@ -383,6 +385,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// or 29 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimeoutInMillis
         {
             get { return this._timeoutInMillis.GetValueOrDefault(); }

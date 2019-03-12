@@ -69,6 +69,7 @@ namespace Amazon.WAF.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -88,6 +89,7 @@ namespace Amazon.WAF.Model
         /// <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GeoMatchSetId
         {
             get { return this._geoMatchSetId; }

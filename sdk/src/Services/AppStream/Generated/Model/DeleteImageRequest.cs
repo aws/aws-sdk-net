@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

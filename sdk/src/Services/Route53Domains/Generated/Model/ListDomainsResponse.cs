@@ -41,6 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// A summary of domains.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DomainSummary> Domains
         {
             get { return this._domains; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// value of <code>Marker</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string NextPageMarker
         {
             get { return this._nextPageMarker; }

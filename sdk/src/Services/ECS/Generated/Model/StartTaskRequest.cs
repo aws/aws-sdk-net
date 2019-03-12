@@ -78,6 +78,7 @@ namespace Amazon.ECS.Model
         /// you would like to place your task. You can specify up to 10 container instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ContainerInstances
         {
             get { return this._containerInstances; }
@@ -234,6 +235,7 @@ namespace Amazon.ECS.Model
         /// length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -254,6 +256,7 @@ namespace Amazon.ECS.Model
         /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TaskDefinition
         {
             get { return this._taskDefinition; }

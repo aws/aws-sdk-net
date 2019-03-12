@@ -51,6 +51,7 @@ namespace Amazon.Route53.Model
         /// of hosted zones that you can associate with the specified reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReusableDelegationSetLimitType Type
         {
             get { return this._type; }
@@ -69,6 +70,7 @@ namespace Amazon.Route53.Model
         /// The ID of the delegation set that you want to get the limit for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string DelegationSetId
         {
             get { return this._delegationSetId; }

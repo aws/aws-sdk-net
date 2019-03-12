@@ -51,6 +51,7 @@ namespace Amazon.CodeCommit.Model
         /// The names of the repositories to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> RepositoryNames
         {
             get { return this._repositoryNames; }

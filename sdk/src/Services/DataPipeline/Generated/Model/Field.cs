@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// The field identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Key
         {
             get { return this._key; }
@@ -62,6 +63,7 @@ namespace Amazon.DataPipeline.Model
         /// The field value, expressed as the identifier of another object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RefValue
         {
             get { return this._refValue; }
@@ -80,6 +82,7 @@ namespace Amazon.DataPipeline.Model
         /// The field value, expressed as a String.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string StringValue
         {
             get { return this._stringValue; }

@@ -121,6 +121,7 @@ namespace Amazon.Kinesis.Model
         /// The records associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public List<PutRecordsRequestEntry> Records
         {
             get { return this._records; }
@@ -139,6 +140,7 @@ namespace Amazon.Kinesis.Model
         /// The stream name associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

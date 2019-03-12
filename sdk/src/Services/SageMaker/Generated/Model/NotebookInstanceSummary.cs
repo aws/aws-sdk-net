@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=3)]
         public List<string> AdditionalCodeRepositories
         {
             get { return this._additionalCodeRepositories; }
@@ -97,6 +98,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DefaultCodeRepository
         {
             get { return this._defaultCodeRepository; }
@@ -151,6 +153,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the notebook instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string NotebookInstanceArn
         {
             get { return this._notebookInstanceArn; }
@@ -175,6 +178,7 @@ namespace Amazon.SageMaker.Model
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }
@@ -193,6 +197,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the notebook instance that you want a summary for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }

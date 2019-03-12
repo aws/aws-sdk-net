@@ -51,6 +51,7 @@ namespace Amazon.Inspector.Model
         /// The name must be unique within the AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string AssessmentTargetName
         {
             get { return this._assessmentTargetName; }
@@ -71,6 +72,7 @@ namespace Amazon.Inspector.Model
         /// and region are included in the assessment target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string ResourceGroupArn
         {
             get { return this._resourceGroupArn; }

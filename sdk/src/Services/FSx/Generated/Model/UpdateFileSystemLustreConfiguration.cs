@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to perform weekly maintenance, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=7)]
         public string WeeklyMaintenanceStartTime
         {
             get { return this._weeklyMaintenanceStartTime; }

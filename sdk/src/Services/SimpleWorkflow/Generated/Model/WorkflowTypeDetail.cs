@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowTypeConfiguration Configuration
         {
             get { return this._configuration; }
@@ -77,6 +78,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowTypeInfo TypeInfo
         {
             get { return this._typeInfo; }

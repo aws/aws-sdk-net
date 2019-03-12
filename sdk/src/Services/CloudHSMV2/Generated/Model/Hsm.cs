@@ -119,6 +119,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The HSM's identifier (ID).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HsmId
         {
             get { return this._hsmId; }

@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         ///  The ARN of the policy used to set the permissions boundary for the user or role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PermissionsBoundaryArn
         {
             get { return this._permissionsBoundaryArn; }

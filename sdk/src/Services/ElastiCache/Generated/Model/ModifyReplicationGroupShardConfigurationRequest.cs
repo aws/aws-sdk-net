@@ -52,6 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// Value: true
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ApplyImmediately
         {
             get { return this._applyImmediately.GetValueOrDefault(); }
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NodeGroupCount
         {
             get { return this._nodeGroupCount.GetValueOrDefault(); }
@@ -140,6 +142,7 @@ namespace Amazon.ElastiCache.Model
         /// the shards are to be configured.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }

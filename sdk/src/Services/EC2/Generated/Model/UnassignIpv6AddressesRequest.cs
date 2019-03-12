@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The IPv6 addresses to unassign from the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Ipv6Addresses
         {
             get { return this._ipv6Addresses; }
@@ -60,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }

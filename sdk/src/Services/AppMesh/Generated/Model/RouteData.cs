@@ -45,6 +45,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh that the route resides in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -63,6 +64,7 @@ namespace Amazon.AppMesh.Model
         /// The associated metadata for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceMetadata Metadata
         {
             get { return this._metadata; }
@@ -81,6 +83,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string RouteName
         {
             get { return this._routeName; }
@@ -99,6 +102,7 @@ namespace Amazon.AppMesh.Model
         /// The specifications of the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteSpec Spec
         {
             get { return this._spec; }
@@ -117,6 +121,7 @@ namespace Amazon.AppMesh.Model
         /// The status of the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteStatus Status
         {
             get { return this._status; }
@@ -135,6 +140,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual router that the route is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

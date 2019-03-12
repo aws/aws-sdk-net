@@ -47,6 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// A short description of the reason that the service-linked role deletion failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Reason
         {
             get { return this._reason; }

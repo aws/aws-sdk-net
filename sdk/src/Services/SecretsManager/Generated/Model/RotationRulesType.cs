@@ -48,6 +48,7 @@ namespace Amazon.SecretsManager.Model
         /// the top of the hour and influenced by a variety of factors that help distribute load.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public long AutomaticallyAfterDays
         {
             get { return this._automaticallyAfterDays.GetValueOrDefault(); }

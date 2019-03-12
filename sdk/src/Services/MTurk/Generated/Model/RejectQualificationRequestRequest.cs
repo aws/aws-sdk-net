@@ -50,6 +50,7 @@ namespace Amazon.MTurk.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QualificationRequestId
         {
             get { return this._qualificationRequestId; }

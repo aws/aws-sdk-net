@@ -78,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The ARN associated with the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string BackupArn
         {
             get { return this._backupArn; }
@@ -96,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the new table to which the backup must be restored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TargetTableName
         {
             get { return this._targetTableName; }

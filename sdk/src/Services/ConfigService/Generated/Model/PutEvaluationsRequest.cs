@@ -46,6 +46,7 @@ namespace Amazon.ConfigService.Model
         /// the AWS Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<Evaluation> Evaluations
         {
             get { return this._evaluations; }
@@ -65,6 +66,7 @@ namespace Amazon.ConfigService.Model
         /// the rule and the event that triggered the evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResultToken
         {
             get { return this._resultToken; }

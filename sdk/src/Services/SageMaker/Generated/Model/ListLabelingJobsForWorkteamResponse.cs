@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<LabelingJobForWorkteamSummary> LabelingJobSummaryList
         {
             get { return this._labelingJobSummaryList; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// next set of labeling jobs, use it in the subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

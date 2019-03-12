@@ -59,6 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// The public DNS name of the calling task runner.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -104,6 +105,7 @@ namespace Amazon.DataPipeline.Model
         /// be an exact, case-sensitive, match.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string WorkerGroup
         {
             get { return this._workerGroup; }

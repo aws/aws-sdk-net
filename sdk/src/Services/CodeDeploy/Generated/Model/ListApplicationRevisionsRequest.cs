@@ -48,6 +48,7 @@ namespace Amazon.CodeDeploy.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }

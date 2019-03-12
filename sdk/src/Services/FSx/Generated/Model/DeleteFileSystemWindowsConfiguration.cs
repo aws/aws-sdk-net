@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// A set of tags for your final backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> FinalBackupTags
         {
             get { return this._finalBackupTags; }

@@ -87,6 +87,7 @@ namespace Amazon.DataSync.Model
         /// The total time in milliseconds that AWS DataSync spent in the PREPARING phase. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long PrepareDuration
         {
             get { return this._prepareDuration.GetValueOrDefault(); }
@@ -123,6 +124,7 @@ namespace Amazon.DataSync.Model
         /// The total time in milliseconds that AWS DataSync spent in the TRANSFERRING phase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long TransferDuration
         {
             get { return this._transferDuration.GetValueOrDefault(); }
@@ -159,6 +161,7 @@ namespace Amazon.DataSync.Model
         /// The total time in milliseconds that AWS DataSync spent in the VERIFYING phase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long VerifyDuration
         {
             get { return this._verifyDuration.GetValueOrDefault(); }

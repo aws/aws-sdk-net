@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model
         /// Any comments that you want to include about the hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Comment
         {
             get { return this._comment; }

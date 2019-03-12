@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the instance that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -60,6 +61,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the service that the instance is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceId
         {
             get { return this._serviceId; }

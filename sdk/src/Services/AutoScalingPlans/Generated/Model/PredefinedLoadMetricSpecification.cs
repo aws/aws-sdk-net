@@ -41,6 +41,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The metric type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoadMetricType PredefinedLoadMetricType
         {
             get { return this._predefinedLoadMetricType; }
@@ -77,6 +78,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1023)]
         public string ResourceLabel
         {
             get { return this._resourceLabel; }

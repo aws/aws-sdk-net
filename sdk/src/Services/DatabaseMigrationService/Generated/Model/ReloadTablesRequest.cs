@@ -71,6 +71,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the replication task. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationTaskArn
         {
             get { return this._replicationTaskArn; }
@@ -89,6 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The name and schema of the table to be reloaded. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TableToReload> TablesToReload
         {
             get { return this._tablesToReload; }

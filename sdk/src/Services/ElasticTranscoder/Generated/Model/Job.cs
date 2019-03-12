@@ -108,6 +108,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// for this job, Elastic Transcoder stitches the files together to make one output.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<JobInput> Inputs
         {
             get { return this._inputs; }
@@ -158,6 +159,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string OutputKeyPrefix
         {
             get { return this._outputKeyPrefix; }

@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// The details about the failure of a job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FailureDetails FailureDetails
         {
             get { return this._failureDetails; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// from PollForJobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }

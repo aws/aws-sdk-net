@@ -71,6 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// it begins disposing of old resources immediately once the operation completes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=180)]
         public int MonitoringTimeInMinutes
         {
             get { return this._monitoringTimeInMinutes.GetValueOrDefault(); }
@@ -117,6 +118,7 @@ namespace Amazon.CloudFormation.Model
         /// back. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<RollbackTrigger> RollbackTriggers
         {
             get { return this._rollbackTriggers; }

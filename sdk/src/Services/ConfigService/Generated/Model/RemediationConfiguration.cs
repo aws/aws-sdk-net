@@ -46,6 +46,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -64,6 +65,7 @@ namespace Amazon.ConfigService.Model
         /// An object of the RemediationParameterValue.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public Dictionary<string, RemediationParameterValue> Parameters
         {
             get { return this._parameters; }
@@ -100,6 +102,7 @@ namespace Amazon.ConfigService.Model
         /// Target ID is the name of the public document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TargetId
         {
             get { return this._targetId; }
@@ -118,6 +121,7 @@ namespace Amazon.ConfigService.Model
         /// The type of the target. Target executes remediation. For example, SSM document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RemediationTargetType TargetType
         {
             get { return this._targetType; }

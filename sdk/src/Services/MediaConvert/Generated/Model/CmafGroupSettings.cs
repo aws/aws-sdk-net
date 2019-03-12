@@ -139,6 +139,7 @@ namespace Amazon.MediaConvert.Model
         /// a single output file and it does not cause the creation of many output files as in
         /// other output types.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FragmentLength
         {
             get { return this._fragmentLength.GetValueOrDefault(); }
@@ -185,6 +186,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MinBufferTime. Minimum time of initially buffered media
         /// that is needed to ensure smooth playout.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int MinBufferTime
         {
             get { return this._minBufferTime.GetValueOrDefault(); }
@@ -247,6 +249,7 @@ namespace Amazon.MediaConvert.Model
         /// segments. If you set it to segmented files, the service creates multiple files for
         /// each output, each with the content of one segment.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
         {
             get { return this._segmentLength.GetValueOrDefault(); }

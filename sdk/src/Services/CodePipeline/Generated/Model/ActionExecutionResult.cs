@@ -79,6 +79,7 @@ namespace Amazon.CodePipeline.Model
         /// or deployment endpoint) that is used when running the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ExternalExecutionUrl
         {
             get { return this._externalExecutionUrl; }

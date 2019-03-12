@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// A description for the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -61,6 +62,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DnsConfigChange DnsConfig
         {
             get { return this._dnsConfig; }

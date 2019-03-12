@@ -42,6 +42,7 @@ namespace Amazon.AppMesh.Model
         /// The full Amazon Resource Name (ARN) for the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -60,6 +61,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh that the virtual service resides in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -78,6 +80,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VirtualServiceName
         {
             get { return this._virtualServiceName; }

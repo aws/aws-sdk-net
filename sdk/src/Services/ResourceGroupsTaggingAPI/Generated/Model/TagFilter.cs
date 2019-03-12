@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// like a category for more specific tag values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// within a tag category (key).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<string> Values
         {
             get { return this._values; }

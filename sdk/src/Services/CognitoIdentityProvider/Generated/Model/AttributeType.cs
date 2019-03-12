@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The value of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Value
         {
             get { return this._value; }

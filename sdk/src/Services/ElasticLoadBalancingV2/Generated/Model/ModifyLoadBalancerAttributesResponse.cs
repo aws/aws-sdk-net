@@ -40,6 +40,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Information about the load balancer attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<LoadBalancerAttribute> Attributes
         {
             get { return this._attributes; }

@@ -62,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the resource (for example, <code>sg-xxxxxx</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }

@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
         /// that you want to view tags for.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -139,6 +139,7 @@ namespace Amazon.Redshift.Model
         /// to it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -232,6 +233,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

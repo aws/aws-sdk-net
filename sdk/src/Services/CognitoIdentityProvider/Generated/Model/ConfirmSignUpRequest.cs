@@ -67,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the app client associated with the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -85,6 +86,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The confirmation code sent by a user's request to confirm registration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ConfirmationCode
         {
             get { return this._confirmationCode; }
@@ -127,6 +129,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a user pool client and username plus the client ID in the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SecretHash
         {
             get { return this._secretHash; }
@@ -164,6 +167,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user whose registration you wish to confirm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

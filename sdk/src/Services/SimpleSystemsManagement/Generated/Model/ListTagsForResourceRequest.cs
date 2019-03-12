@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The resource ID for which you want to see a list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Returns a list of tags for a specific resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceTypeForTagging ResourceType
         {
             get { return this._resourceType; }

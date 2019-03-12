@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The date and time that this query was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group scanned by this query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -81,6 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The unique ID number of this query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string QueryId
         {
             get { return this._queryId; }
@@ -99,6 +102,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The query string used in this query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string QueryString
         {
             get { return this._queryString; }

@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationRecorderName
         {
             get { return this._configurationRecorderName; }

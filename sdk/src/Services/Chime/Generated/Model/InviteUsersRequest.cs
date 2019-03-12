@@ -44,6 +44,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -62,6 +63,7 @@ namespace Amazon.Chime.Model
         /// The user email addresses to which to send the invite.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> UserEmailList
         {
             get { return this._userEmailList; }

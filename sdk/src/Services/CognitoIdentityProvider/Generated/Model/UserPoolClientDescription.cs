@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the client associated with the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client name from the user pool client description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientName
         {
             get { return this._clientName; }
@@ -78,6 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to describe the user pool client.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

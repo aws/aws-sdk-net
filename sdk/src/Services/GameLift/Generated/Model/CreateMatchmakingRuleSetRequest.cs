@@ -115,6 +115,7 @@ namespace Amazon.GameLift.Model
         /// the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -134,6 +135,7 @@ namespace Amazon.GameLift.Model
         /// not allowed in JSON, but most elements support a description field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public string RuleSetBody
         {
             get { return this._ruleSetBody; }

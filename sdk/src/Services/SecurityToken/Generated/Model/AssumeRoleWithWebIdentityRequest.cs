@@ -191,6 +191,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=900, Max=43200)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -235,6 +236,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Policy
         {
             get { return this._policy; }
@@ -263,6 +265,7 @@ namespace Amazon.SecurityToken.Model
         /// Do not specify this value for OpenID Connect ID tokens.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=2048)]
         public string ProviderId
         {
             get { return this._providerId; }
@@ -281,6 +284,7 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -309,6 +313,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string RoleSessionName
         {
             get { return this._roleSessionName; }
@@ -330,6 +335,7 @@ namespace Amazon.SecurityToken.Model
         /// call. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=2048)]
         public string WebIdentityToken
         {
             get { return this._webIdentityToken; }

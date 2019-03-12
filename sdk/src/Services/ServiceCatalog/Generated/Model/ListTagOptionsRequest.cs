@@ -61,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.ServiceCatalog.Model
         /// use null.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2024)]
         public string PageToken
         {
             get { return this._pageToken; }

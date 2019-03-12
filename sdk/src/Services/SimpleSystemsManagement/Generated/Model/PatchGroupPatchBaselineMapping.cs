@@ -60,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch group registered with the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string PatchGroup
         {
             get { return this._patchGroup; }

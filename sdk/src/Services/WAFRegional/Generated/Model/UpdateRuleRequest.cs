@@ -101,6 +101,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -120,6 +121,7 @@ namespace Amazon.WAFRegional.Model
         /// is returned by <code>CreateRule</code> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }
@@ -153,6 +155,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RuleUpdate> Updates
         {
             get { return this._updates; }

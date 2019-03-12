@@ -45,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// to return a list of gateways for your account and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -63,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of a virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }
@@ -81,6 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// The barcode that identifies a specific virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }

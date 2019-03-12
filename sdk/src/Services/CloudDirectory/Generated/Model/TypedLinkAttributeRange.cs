@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The unique name of the typed link attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=230)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// The range of attribute values that are being selected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedAttributeValueRange Range
         {
             get { return this._range; }

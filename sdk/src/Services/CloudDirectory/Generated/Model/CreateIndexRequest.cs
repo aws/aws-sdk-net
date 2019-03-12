@@ -46,6 +46,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the directory where the index should be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudDirectory.Model
         /// Indicates whether the attribute that is being indexed has unique values or not.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsUnique
         {
             get { return this._isUnique.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the link between the parent object and the index object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }
@@ -101,6 +104,7 @@ namespace Amazon.CloudDirectory.Model
         /// is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AttributeKey> OrderedIndexedAttributeList
         {
             get { return this._orderedIndexedAttributeList; }

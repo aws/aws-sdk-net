@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         /// ascending order.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder
         {
             get { return this._computeEnvironmentOrder; }
@@ -66,6 +67,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueueArn
         {
             get { return this._jobQueueArn; }
@@ -84,6 +86,7 @@ namespace Amazon.Batch.Model
         /// The name of the job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueueName
         {
             get { return this._jobQueueName; }
@@ -102,6 +105,7 @@ namespace Amazon.Batch.Model
         /// The priority of the job queue. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -120,6 +124,7 @@ namespace Amazon.Batch.Model
         /// Describes the ability of the queue to accept new jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JQState State
         {
             get { return this._state; }

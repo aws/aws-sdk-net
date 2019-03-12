@@ -90,6 +90,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DomainARN
         {
             get { return this._domainARN; }
@@ -108,6 +109,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The Elasticsearch index name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -188,6 +190,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -230,6 +233,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The configuration for the backup Amazon S3 location.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DestinationConfiguration S3Configuration
         {
             get { return this._s3Configuration; }
@@ -250,6 +254,7 @@ namespace Amazon.KinesisFirehose.Model
         /// type, Kinesis Data Firehose returns an error during run time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

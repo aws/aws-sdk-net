@@ -49,6 +49,7 @@ namespace Amazon.DynamoDBv2.Model
         /// ARN associated with the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string BackupArn
         {
             get { return this._backupArn; }
@@ -104,6 +105,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the specified backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string BackupName
         {
             get { return this._backupName; }
@@ -122,6 +124,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Size of the backup in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long BackupSizeBytes
         {
             get { return this._backupSizeBytes.GetValueOrDefault(); }
@@ -228,6 +231,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

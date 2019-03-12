@@ -56,6 +56,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SdtInterval. The number of milliseconds between instances
         /// of this table in the output transport stream.
         /// </summary>
+        [AWSProperty(Min=25, Max=2000)]
         public int SdtInterval
         {
             get { return this._sdtInterval.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ServiceName. The service name placed in the service_descriptor
         /// in the Service Description Table. Maximum length is 256 characters.
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -88,6 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ServiceProviderName. The service provider name placed in
         /// the service_descriptor in the Service Description Table. Maximum length is 256 characters.
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ServiceProviderName
         {
             get { return this._serviceProviderName; }

@@ -49,6 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// The ID of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ChangeSetId
         {
             get { return this._changeSetId; }
@@ -67,6 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -103,6 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// Descriptive information about the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// a <code>WebACL</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -66,6 +67,7 @@ namespace Amazon.WAF.Model
         ///  <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebACLId
         {
             get { return this._webACLId; }

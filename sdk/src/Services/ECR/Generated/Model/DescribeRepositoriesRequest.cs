@@ -51,6 +51,7 @@ namespace Amazon.ECR.Model
         /// option cannot be used when you specify repositories with <code>repositoryNames</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -118,6 +119,7 @@ namespace Amazon.ECR.Model
         /// in a registry are described.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> RepositoryNames
         {
             get { return this._repositoryNames; }

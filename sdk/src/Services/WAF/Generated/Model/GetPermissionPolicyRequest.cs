@@ -41,6 +41,7 @@ namespace Amazon.WAF.Model
         /// The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

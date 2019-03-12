@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>ApiKey</a> resource to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiKey
         {
             get { return this._apiKey; }

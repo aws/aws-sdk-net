@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         /// preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTemplateArn
         {
             get { return this._assessmentTemplateArn; }

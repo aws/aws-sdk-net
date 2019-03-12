@@ -88,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// and an associated value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -112,6 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

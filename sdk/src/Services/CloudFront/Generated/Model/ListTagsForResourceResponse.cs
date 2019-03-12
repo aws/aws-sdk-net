@@ -40,6 +40,7 @@ namespace Amazon.CloudFront.Model
         ///  A complex type that contains zero or more <code>Tag</code> elements.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Tags Tags
         {
             get { return this._tags; }

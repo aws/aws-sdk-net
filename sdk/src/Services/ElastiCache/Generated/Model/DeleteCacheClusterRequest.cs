@@ -70,6 +70,7 @@ namespace Amazon.ElastiCache.Model
         /// The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheClusterId
         {
             get { return this._cacheClusterId; }

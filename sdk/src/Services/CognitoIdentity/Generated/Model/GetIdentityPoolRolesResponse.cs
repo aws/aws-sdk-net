@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentity.Model
         /// or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, RoleMapping> RoleMappings
         {
             get { return this._roleMappings; }
@@ -81,6 +83,7 @@ namespace Amazon.CognitoIdentity.Model
         /// roles are supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2)]
         public Dictionary<string, string> Roles
         {
             get { return this._roles; }

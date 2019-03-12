@@ -43,6 +43,7 @@ namespace Amazon.Macie.Model
         /// The name of the S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=500)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -61,6 +62,7 @@ namespace Amazon.Macie.Model
         /// The prefix of the S3 bucket. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Prefix
         {
             get { return this._prefix; }

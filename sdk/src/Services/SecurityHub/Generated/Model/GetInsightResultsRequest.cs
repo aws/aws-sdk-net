@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the insight whose results you want to see.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InsightArn
         {
             get { return this._insightArn; }

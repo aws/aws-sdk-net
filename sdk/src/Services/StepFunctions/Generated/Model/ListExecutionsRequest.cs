@@ -67,6 +67,7 @@ namespace Amazon.StepFunctions.Model
         /// be fewer than the specified maximum.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.StepFunctions.Model
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -107,6 +109,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the state machine whose executions is listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }

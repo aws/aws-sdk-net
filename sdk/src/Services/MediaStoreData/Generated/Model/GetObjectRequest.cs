@@ -76,6 +76,7 @@ namespace Amazon.MediaStoreData.Model
         /// the same name. The file name can include or omit an extension. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=900)]
         public string Path
         {
             get { return this._path; }

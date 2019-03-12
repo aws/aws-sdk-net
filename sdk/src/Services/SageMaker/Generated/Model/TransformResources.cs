@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// provide a value greater than 1. The default value is <code>1</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// suffice. There is no default value for <code>InstanceType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -102,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

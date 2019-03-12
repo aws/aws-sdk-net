@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <code>false</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Success
         {
             get { return this._success.GetValueOrDefault(); }

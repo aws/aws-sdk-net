@@ -61,6 +61,7 @@ namespace Amazon.SecurityToken.Model
         /// The AWS ARN associated with the calling entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }

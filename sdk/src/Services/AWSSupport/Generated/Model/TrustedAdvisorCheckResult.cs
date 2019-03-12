@@ -46,6 +46,7 @@ namespace Amazon.AWSSupport.Model
         /// the only category that is currently supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedAdvisorCategorySpecificSummary CategorySpecificSummary
         {
             get { return this._categorySpecificSummary; }
@@ -64,6 +65,7 @@ namespace Amazon.AWSSupport.Model
         /// The unique identifier for the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CheckId
         {
             get { return this._checkId; }
@@ -82,6 +84,7 @@ namespace Amazon.AWSSupport.Model
         /// The details about each resource listed in the check result.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrustedAdvisorResourceDetail> FlaggedResources
         {
             get { return this._flaggedResources; }
@@ -97,6 +100,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ResourcesSummary.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedAdvisorResourcesSummary ResourcesSummary
         {
             get { return this._resourcesSummary; }
@@ -116,6 +120,7 @@ namespace Amazon.AWSSupport.Model
         /// "not_available".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }
@@ -134,6 +139,7 @@ namespace Amazon.AWSSupport.Model
         /// The time of the last refresh of the check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Timestamp
         {
             get { return this._timestamp; }

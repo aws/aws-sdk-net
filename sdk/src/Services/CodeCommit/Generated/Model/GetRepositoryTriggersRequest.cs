@@ -41,6 +41,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository for which the trigger is configured.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

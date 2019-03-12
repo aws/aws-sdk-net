@@ -41,6 +41,7 @@ namespace Amazon.Kinesis.Model
         /// If set to <code>true</code>, there are more streams available to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreStreams
         {
             get { return this._hasMoreStreams.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Kinesis.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> StreamNames
         {
             get { return this._streamNames; }

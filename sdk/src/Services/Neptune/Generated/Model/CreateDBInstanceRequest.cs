@@ -274,6 +274,7 @@ namespace Amazon.Neptune.Model
         /// Not all DB instance classes are available in all AWS Regions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceClass
         {
             get { return this._dbInstanceClass; }
@@ -312,6 +313,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>mydbinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -531,6 +533,7 @@ namespace Amazon.Neptune.Model
         /// Valid Values: <code>neptune</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

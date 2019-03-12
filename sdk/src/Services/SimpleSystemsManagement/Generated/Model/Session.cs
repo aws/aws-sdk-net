@@ -48,6 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Details
         {
             get { return this._details; }
@@ -121,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the AWS user account that started the session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Owner
         {
             get { return this._owner; }
@@ -139,6 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=96)]
         public string SessionId
         {
             get { return this._sessionId; }
@@ -193,6 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance that the Session Manager session connected to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string Target
         {
             get { return this._target; }

@@ -107,6 +107,7 @@ namespace Amazon.Glue.Model
         /// or a custom format.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string InputFormat
         {
             get { return this._inputFormat; }
@@ -127,6 +128,7 @@ namespace Amazon.Glue.Model
         /// name.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2056)]
         public string Location
         {
             get { return this._location; }
@@ -164,6 +166,7 @@ namespace Amazon.Glue.Model
         /// or a custom format.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string OutputFormat
         {
             get { return this._outputFormat; }

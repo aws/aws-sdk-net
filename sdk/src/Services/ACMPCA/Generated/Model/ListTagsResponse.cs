@@ -42,6 +42,7 @@ namespace Amazon.ACMPCA.Model
         /// parameter in a subsequent pagination request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.ACMPCA.Model
         /// The tags associated with your private CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

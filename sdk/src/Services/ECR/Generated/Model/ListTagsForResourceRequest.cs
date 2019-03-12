@@ -42,6 +42,7 @@ namespace Amazon.ECR.Model
         /// tags. Currently, the only supported resource is an Amazon ECR repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

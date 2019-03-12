@@ -43,6 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// The content of the file, if a source file is not specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=6291456)]
         public MemoryStream FileContent
         {
             get { return this._fileContent; }
@@ -80,6 +81,7 @@ namespace Amazon.CodeCommit.Model
         /// The full path to the file in the repository, including the name of the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }

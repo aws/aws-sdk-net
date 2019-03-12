@@ -45,6 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// up to 100 tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -87,6 +88,7 @@ namespace Amazon.Route53Resolver.Model
         /// The Amazon Resource Name (ARN) for the resource that you want to list tags for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

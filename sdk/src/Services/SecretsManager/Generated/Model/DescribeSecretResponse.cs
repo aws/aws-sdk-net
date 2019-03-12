@@ -52,6 +52,7 @@ namespace Amazon.SecretsManager.Model
         /// The ARN of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string ARN
         {
             get { return this._arn; }
@@ -95,6 +96,7 @@ namespace Amazon.SecretsManager.Model
         /// The user-provided description of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -117,6 +119,7 @@ namespace Amazon.SecretsManager.Model
         /// for this account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -191,6 +194,7 @@ namespace Amazon.SecretsManager.Model
         /// The user-provided friendly name of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -233,6 +237,7 @@ namespace Amazon.SecretsManager.Model
         /// either automatically per the schedule or manually by a call to <code>RotateSecret</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string RotationLambdaARN
         {
             get { return this._rotationLambdaARN; }

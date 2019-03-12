@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// help you organize and categorize your resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The value for the specified tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

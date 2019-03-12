@@ -45,6 +45,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the ML object to tag. For example, <code>exampleModelId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -63,6 +64,7 @@ namespace Amazon.MachineLearning.Model
         /// The type of the ML object to tag. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaggableResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -82,6 +84,7 @@ namespace Amazon.MachineLearning.Model
         /// a value, Amazon ML creates a tag with the specified key and a value of null.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public List<Tag> Tags
         {
             get { return this._tags; }

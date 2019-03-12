@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The number of instances associated with the variant.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int CurrentInstanceCount
         {
             get { return this._currentInstanceCount.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.SageMaker.Model
         /// The weight associated with the variant.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public float CurrentWeight
         {
             get { return this._currentWeight.GetValueOrDefault(); }
@@ -104,6 +106,7 @@ namespace Amazon.SageMaker.Model
         /// request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int DesiredInstanceCount
         {
             get { return this._desiredInstanceCount.GetValueOrDefault(); }
@@ -123,6 +126,7 @@ namespace Amazon.SageMaker.Model
         /// request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public float DesiredWeight
         {
             get { return this._desiredWeight.GetValueOrDefault(); }
@@ -141,6 +145,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the variant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

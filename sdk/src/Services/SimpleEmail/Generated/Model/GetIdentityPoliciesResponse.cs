@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// A map of policy names to policies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Policies
         {
             get { return this._policies; }

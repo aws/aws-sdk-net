@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The Availability Zone in which to create the default subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }

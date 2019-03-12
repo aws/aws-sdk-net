@@ -44,6 +44,7 @@ namespace Amazon.Macie.Model
         /// is set to null. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }

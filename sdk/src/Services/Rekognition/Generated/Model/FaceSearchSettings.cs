@@ -42,6 +42,7 @@ namespace Amazon.Rekognition.Model
         /// The ID of a collection that contains faces that you want to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -61,6 +62,7 @@ namespace Amazon.Rekognition.Model
         /// face. Default is 70. 0 is the lowest confidence. 100 is the highest confidence.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float FaceMatchThreshold
         {
             get { return this._faceMatchThreshold.GetValueOrDefault(); }

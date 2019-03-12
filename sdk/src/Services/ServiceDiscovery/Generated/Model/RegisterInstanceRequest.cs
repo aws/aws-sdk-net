@@ -240,6 +240,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// is 1,024 characters. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -262,6 +263,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -307,6 +309,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -325,6 +328,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the service that you want to use for settings for the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceId
         {
             get { return this._serviceId; }

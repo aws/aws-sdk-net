@@ -45,6 +45,7 @@ namespace Amazon.SQS.Model
         /// An identifier for the message in this batch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -85,6 +86,7 @@ namespace Amazon.SQS.Model
         /// message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MD5OfMessageBody
         {
             get { return this._md5OfMessageBody; }
@@ -103,6 +105,7 @@ namespace Amazon.SQS.Model
         /// An identifier for the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageId
         {
             get { return this._messageId; }

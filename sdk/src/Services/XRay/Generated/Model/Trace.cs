@@ -61,6 +61,7 @@ namespace Amazon.XRay.Model
         /// The unique identifier for the request that generated the trace's segments and subsegments.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=35)]
         public string Id
         {
             get { return this._id; }

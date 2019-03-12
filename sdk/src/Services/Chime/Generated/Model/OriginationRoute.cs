@@ -64,6 +64,7 @@ namespace Amazon.Chime.Model
         /// The designated origination route port. Defaults to 5060.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.Chime.Model
         /// hosts are attempted first.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -121,6 +123,7 @@ namespace Amazon.Chime.Model
         /// among them based on their relative weight.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Weight
         {
             get { return this._weight.GetValueOrDefault(); }

@@ -82,6 +82,7 @@ namespace Amazon.WAF.Model
         /// of a <code>Rule</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -102,6 +103,7 @@ namespace Amazon.WAF.Model
         /// you want to include in a <code>Rule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Predicate> Predicates
         {
             get { return this._predicates; }
@@ -128,6 +130,7 @@ namespace Amazon.WAF.Model
         ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

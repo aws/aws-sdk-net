@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -80,6 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// the service where to continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -103,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PolicyArn
         {
             get { return this._policyArn; }

@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         /// The list of values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

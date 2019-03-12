@@ -83,6 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A unique resource name for a time-based scaling configuration option.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceName
         {
             get { return this._resourceName; }

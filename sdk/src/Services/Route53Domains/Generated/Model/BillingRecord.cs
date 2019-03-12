@@ -65,6 +65,7 @@ namespace Amazon.Route53Domains.Model
         /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

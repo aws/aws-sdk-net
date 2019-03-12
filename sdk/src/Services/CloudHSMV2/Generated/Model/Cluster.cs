@@ -160,6 +160,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The default password for the cluster's Pre-Crypto Officer (PRECO) user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=32)]
         public string PreCoPassword
         {
             get { return this._preCoPassword; }
@@ -233,6 +234,7 @@ namespace Amazon.CloudHSMV2.Model
         /// A description of the cluster's state.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=300)]
         public string StateMessage
         {
             get { return this._stateMessage; }

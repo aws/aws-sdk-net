@@ -45,6 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// scaling activity will not cause an instance group to grow above or below these limits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingConstraints Constraints
         {
             get { return this._constraints; }
@@ -63,6 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The scale-in and scale-out rules that comprise the automatic scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ScalingRule> Rules
         {
             get { return this._rules; }

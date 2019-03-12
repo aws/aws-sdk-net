@@ -68,6 +68,7 @@ namespace Amazon.Inspector.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -86,6 +87,7 @@ namespace Amazon.Inspector.Model
         /// The name of a private DNS associated with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PrivateDnsName
         {
             get { return this._privateDnsName; }
@@ -104,6 +106,7 @@ namespace Amazon.Inspector.Model
         /// The private IP address associated with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PrivateIpAddress
         {
             get { return this._privateIpAddress; }
@@ -141,6 +144,7 @@ namespace Amazon.Inspector.Model
         /// The name of a public DNS associated with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PublicDnsName
         {
             get { return this._publicDnsName; }
@@ -159,6 +163,7 @@ namespace Amazon.Inspector.Model
         /// The public IP address from which the network interface is reachable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PublicIp
         {
             get { return this._publicIp; }
@@ -196,6 +201,7 @@ namespace Amazon.Inspector.Model
         /// The ID of a subnet associated with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string SubnetId
         {
             get { return this._subnetId; }
@@ -214,6 +220,7 @@ namespace Amazon.Inspector.Model
         /// The ID of a VPC associated with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string VpcId
         {
             get { return this._vpcId; }

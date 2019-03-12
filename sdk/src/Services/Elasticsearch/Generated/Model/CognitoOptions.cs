@@ -63,6 +63,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the Cognito identity pool ID for Kibana authentication.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -82,6 +83,7 @@ namespace Amazon.Elasticsearch.Model
         /// resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -100,6 +102,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the Cognito user pool ID for Kibana authentication.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

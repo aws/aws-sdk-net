@@ -43,6 +43,7 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
         /// broker.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BrokerId
         {
             get { return this._brokerId; }
@@ -110,6 +111,7 @@ namespace Amazon.MQ.Model
         /// can contain only alphanumeric characters, dashes, periods, underscores, and tildes
         /// (- . _ ~). This value must be 2-100 characters long.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Username
         {
             get { return this._username; }

@@ -44,6 +44,7 @@ namespace Amazon.Elasticsearch.Model
         /// to 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

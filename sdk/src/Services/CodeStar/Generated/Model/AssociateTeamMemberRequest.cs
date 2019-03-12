@@ -46,6 +46,7 @@ namespace Amazon.CodeStar.Model
         /// member association to the project. This token can be used to repeat the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -64,6 +65,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project to which you will add the IAM user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string ProjectId
         {
             get { return this._projectId; }
@@ -83,6 +85,7 @@ namespace Amazon.CodeStar.Model
         /// actions a user can take in an AWS CodeStar project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProjectRole
         {
             get { return this._projectRole; }
@@ -121,6 +124,7 @@ namespace Amazon.CodeStar.Model
         /// project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

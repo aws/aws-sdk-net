@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// A list of operations that are part of the batch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BatchWriteOperation> Operations
         {
             get { return this._operations; }

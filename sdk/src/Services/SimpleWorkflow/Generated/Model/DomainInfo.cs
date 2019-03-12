@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The description of the domain provided through <a>RegisterDomain</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain. This name is unique within the account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -90,6 +92,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegistrationStatus Status
         {
             get { return this._status; }

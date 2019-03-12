@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// The names of the on-premises instances about which to get information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceNames
         {
             get { return this._instanceNames; }

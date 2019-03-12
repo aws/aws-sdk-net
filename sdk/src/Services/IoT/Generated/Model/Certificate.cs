@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// ID.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }

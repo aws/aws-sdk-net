@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// nextToken values are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

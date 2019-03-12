@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ContainerSettings. Settings specific to the container type
         /// of the file.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArchiveContainerSettings ContainerSettings
         {
             get { return this._containerSettings; }

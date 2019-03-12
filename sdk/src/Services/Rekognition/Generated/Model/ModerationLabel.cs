@@ -51,6 +51,7 @@ namespace Amazon.Rekognition.Model
         /// the operation returns labels with a confidence value greater than or equal to 50 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }

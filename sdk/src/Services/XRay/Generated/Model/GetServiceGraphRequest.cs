@@ -49,6 +49,7 @@ namespace Amazon.XRay.Model
         /// The end of the timeframe for which to generate a graph.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -67,6 +68,7 @@ namespace Amazon.XRay.Model
         /// The ARN of a group to generate a graph based on.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=400)]
         public string GroupARN
         {
             get { return this._groupARN; }
@@ -85,6 +87,7 @@ namespace Amazon.XRay.Model
         /// The name of a group to generate a graph based on.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -121,6 +124,7 @@ namespace Amazon.XRay.Model
         /// The start of the time frame for which to generate a graph.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

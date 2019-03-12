@@ -52,6 +52,7 @@ namespace Amazon.OpsWorks.Model
         /// The database password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DbPassword
         {
             get { return this._dbPassword; }
@@ -70,6 +71,7 @@ namespace Amazon.OpsWorks.Model
         /// The database's master user name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DbUser
         {
             get { return this._dbUser; }
@@ -88,6 +90,7 @@ namespace Amazon.OpsWorks.Model
         /// The Amazon RDS instance's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RdsDbInstanceArn
         {
             get { return this._rdsDbInstanceArn; }
@@ -106,6 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// Indicates whether AWS or the customer owns and manages the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Owner Owner
         {
             get { return this._owner; }
@@ -62,6 +63,7 @@ namespace Amazon.ConfigService.Model
         /// AWS resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<SourceDetail> SourceDetails
         {
             get { return this._sourceDetails; }
@@ -87,6 +89,7 @@ namespace Amazon.ConfigService.Model
         /// Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }

@@ -51,6 +51,7 @@ namespace Amazon.Kinesis.Model
         /// important to keep in mind if you have IAM policies that reference consumer ARNs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ConsumerARN
         {
             get { return this._consumerARN; }
@@ -66,6 +67,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ConsumerCreationTimestamp.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ConsumerCreationTimestamp
         {
             get { return this._consumerCreationTimestamp.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the consumer is something you choose when you register the consumer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConsumerName
         {
             get { return this._consumerName; }
@@ -103,6 +106,7 @@ namespace Amazon.Kinesis.Model
         /// states.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConsumerStatus ConsumerStatus
         {
             get { return this._consumerStatus; }
@@ -121,6 +125,7 @@ namespace Amazon.Kinesis.Model
         /// The ARN of the stream with which you registered the consumer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }

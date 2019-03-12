@@ -50,6 +50,7 @@ namespace Amazon.RoboMaker.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -97,6 +98,7 @@ namespace Amazon.RoboMaker.Model
         /// in to your simulation job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -117,6 +119,7 @@ namespace Amazon.RoboMaker.Model
         /// will transition to <code>Completed</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long MaxJobDurationInSeconds
         {
             get { return this._maxJobDurationInSeconds.GetValueOrDefault(); }
@@ -153,6 +156,7 @@ namespace Amazon.RoboMaker.Model
         /// The robot application to use in the simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<RobotApplicationConfig> RobotApplications
         {
             get { return this._robotApplications; }
@@ -171,6 +175,7 @@ namespace Amazon.RoboMaker.Model
         /// The simulation application to use in the simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<SimulationApplicationConfig> SimulationApplications
         {
             get { return this._simulationApplications; }
@@ -189,6 +194,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

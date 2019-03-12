@@ -46,6 +46,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Valid Values: text/plain | text/css | text/html | application/javascript | application/json
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -64,6 +65,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string MessageBody
         {
             get { return this._messageBody; }
@@ -82,6 +84,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The HTTP response code (2XX, 4XX, or 5XX).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StatusCode
         {
             get { return this._statusCode; }

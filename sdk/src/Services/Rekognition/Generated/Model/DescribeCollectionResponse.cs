@@ -82,6 +82,7 @@ namespace Amazon.Rekognition.Model
         /// use <a>IndexFaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long FaceCount
         {
             get { return this._faceCount.GetValueOrDefault(); }

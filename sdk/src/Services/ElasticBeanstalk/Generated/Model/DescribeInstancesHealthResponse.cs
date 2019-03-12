@@ -66,6 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Pagination token for the next page of results, if available.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NextToken
         {
             get { return this._nextToken; }

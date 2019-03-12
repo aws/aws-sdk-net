@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// part.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Template Template
         {
             get { return this._template; }

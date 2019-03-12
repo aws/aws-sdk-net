@@ -51,6 +51,7 @@ namespace Amazon.PinpointEmail.Model
         /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BehaviorOnMxFailure BehaviorOnMxFailure
         {
             get { return this._behaviorOnMxFailure; }
@@ -69,6 +70,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of a domain that an email identity uses as a custom MAIL FROM domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MailFromDomain
         {
             get { return this._mailFromDomain; }
@@ -108,6 +110,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MailFromDomainStatus MailFromDomainStatus
         {
             get { return this._mailFromDomainStatus; }

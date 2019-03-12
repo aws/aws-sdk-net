@@ -106,6 +106,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// hyphen, and must not begin with "internal-".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -231,6 +232,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// One or more tags to assign to the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<Tag> Tags
         {
             get { return this._tags; }

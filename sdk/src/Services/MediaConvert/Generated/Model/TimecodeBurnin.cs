@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FontSize. Use Font Size (FontSize) to set the font size
         /// of any burned-in timecode. Valid values are 10, 16, 32, 48.
         /// </summary>
+        [AWSProperty(Min=10, Max=48)]
         public int FontSize
         {
             get { return this._fontSize.GetValueOrDefault(); }

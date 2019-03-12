@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// be the AWS account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -63,6 +64,7 @@ namespace Amazon.Glue.Model
         /// The name of the metadata database in which the partition is to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -82,6 +84,7 @@ namespace Amazon.Glue.Model
         /// created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<PartitionInput> PartitionInputList
         {
             get { return this._partitionInputList; }
@@ -100,6 +103,7 @@ namespace Amazon.Glue.Model
         /// The name of the metadata table in which the partition is to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

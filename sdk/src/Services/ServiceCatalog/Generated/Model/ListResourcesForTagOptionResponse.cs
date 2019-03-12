@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// use null.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2024)]
         public string PageToken
         {
             get { return this._pageToken; }

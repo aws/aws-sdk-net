@@ -91,6 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NewPath
         {
             get { return this._newPath; }
@@ -116,6 +117,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NewServerCertificateName
         {
             get { return this._newServerCertificateName; }
@@ -140,6 +142,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ServerCertificateName
         {
             get { return this._serverCertificateName; }

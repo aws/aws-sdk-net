@@ -61,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// If no additional page exists, this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

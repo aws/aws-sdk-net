@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the resource you want to remove the tags from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -62,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// of a key/value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -57,6 +57,7 @@ namespace Amazon.PI.Model
         /// The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -107,6 +108,7 @@ namespace Amazon.PI.Model
         /// for a dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DimensionGroup GroupBy
         {
             get { return this._groupBy; }
@@ -131,6 +133,7 @@ namespace Amazon.PI.Model
         /// value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identifier
         {
             get { return this._identifier; }
@@ -151,6 +154,7 @@ namespace Amazon.PI.Model
         /// so that the remaining results can be retrieved. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -184,6 +188,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Metric
         {
             get { return this._metric; }
@@ -288,6 +293,7 @@ namespace Amazon.PI.Model
         /// value for <i>ServiceType</i> is: <code>RDS</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceType ServiceType
         {
             get { return this._serviceType; }
@@ -313,6 +319,7 @@ namespace Amazon.PI.Model
         /// The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

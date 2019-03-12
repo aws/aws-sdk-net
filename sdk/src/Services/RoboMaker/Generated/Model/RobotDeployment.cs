@@ -46,6 +46,7 @@ namespace Amazon.RoboMaker.Model
         /// The robot deployment Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }

@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The alias associated with the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=62)]
         public string Alias
         {
             get { return this._alias; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// regarding unexpected behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }
@@ -99,6 +101,7 @@ namespace Amazon.WorkMail.Model
         /// The state associated with the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string State
         {
             get { return this._state; }

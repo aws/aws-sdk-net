@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// SNS Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

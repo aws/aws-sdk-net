@@ -41,6 +41,7 @@ namespace Amazon.AWSSupport.Model
         /// is eligible for refresh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedAdvisorCheckRefreshStatus Status
         {
             get { return this._status; }

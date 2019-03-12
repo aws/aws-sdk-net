@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The unique ID assigned to this export.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportId
         {
             get { return this._exportId; }

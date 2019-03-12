@@ -81,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the member.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -99,6 +100,7 @@ namespace Amazon.WorkMail.Model
         /// The name of the member.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Name
         {
             get { return this._name; }

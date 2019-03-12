@@ -91,6 +91,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -110,6 +111,7 @@ namespace Amazon.GameLift.Model
         /// to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

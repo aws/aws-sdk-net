@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// permissions boundary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

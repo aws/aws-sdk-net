@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The expressions configured for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ExpressionStatus> Expressions
         {
             get { return this._expressions; }

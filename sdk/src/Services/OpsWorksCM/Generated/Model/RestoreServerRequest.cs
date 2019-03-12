@@ -60,6 +60,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The ID of the backup that you want to use to restore a server. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=79)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -119,6 +120,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The name of the server that you want to restore. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

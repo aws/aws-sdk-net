@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         ///  Branch name setting for the Subdomain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -59,6 +60,7 @@ namespace Amazon.Amplify.Model
         ///  Prefix setting for the Subdomain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Prefix
         {
             get { return this._prefix; }

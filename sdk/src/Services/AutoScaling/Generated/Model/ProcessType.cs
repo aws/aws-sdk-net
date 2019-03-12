@@ -79,6 +79,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProcessName
         {
             get { return this._processName; }

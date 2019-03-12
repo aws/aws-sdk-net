@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AvailBlankingImage. Blanking image to be used. Leave empty
         /// for solid black. Only bmp and png images are supported.
         /// </summary>
+        [AWSProperty(Min=14)]
         public string AvailBlankingImage
         {
             get { return this._availBlankingImage; }

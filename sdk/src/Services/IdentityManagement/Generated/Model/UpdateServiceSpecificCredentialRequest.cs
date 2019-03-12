@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// or digit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string ServiceSpecificCredentialId
         {
             get { return this._serviceSpecificCredentialId; }
@@ -70,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
         /// The status to be assigned to the service-specific credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -96,6 +98,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

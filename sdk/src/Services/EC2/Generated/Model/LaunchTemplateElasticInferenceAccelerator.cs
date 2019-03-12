@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// and eia1.xlarge. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

@@ -46,6 +46,7 @@ namespace Amazon.Amplify.Model
         ///  Url to teh artifact for the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string ArtifactsUrl
         {
             get { return this._artifactsUrl; }
@@ -64,6 +65,7 @@ namespace Amazon.Amplify.Model
         ///  End date/ time of the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.Amplify.Model
         ///  Url to the logs for the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string LogUrl
         {
             get { return this._logUrl; }
@@ -118,6 +121,7 @@ namespace Amazon.Amplify.Model
         ///  Start date/ time of the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -136,6 +140,7 @@ namespace Amazon.Amplify.Model
         ///  Status of the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatus Status
         {
             get { return this._status; }
@@ -154,6 +159,7 @@ namespace Amazon.Amplify.Model
         ///  Name of the execution step. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string StepName
         {
             get { return this._stepName; }

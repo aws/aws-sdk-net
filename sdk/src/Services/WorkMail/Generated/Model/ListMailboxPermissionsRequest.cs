@@ -44,6 +44,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the entity (user or group) for which to list mailbox permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkMail.Model
         /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.WorkMail.Model
         /// any tokens.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -99,6 +102,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization under which the entity (user or group) exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

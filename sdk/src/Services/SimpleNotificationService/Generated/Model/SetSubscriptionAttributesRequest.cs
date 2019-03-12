@@ -83,6 +83,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -119,6 +120,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the subscription to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionArn
         {
             get { return this._subscriptionArn; }

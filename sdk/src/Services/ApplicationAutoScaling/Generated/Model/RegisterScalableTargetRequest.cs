@@ -148,6 +148,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -174,6 +175,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// to modify the scalable target on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -249,6 +251,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -270,6 +273,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

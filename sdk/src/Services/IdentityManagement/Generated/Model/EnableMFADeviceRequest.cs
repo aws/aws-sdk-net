@@ -60,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=6)]
         public string AuthenticationCode1
         {
             get { return this._authenticationCode1; }
@@ -92,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=6)]
         public string AuthenticationCode2
         {
             get { return this._authenticationCode2; }
@@ -117,6 +119,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -141,6 +144,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

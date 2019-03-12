@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the model for which to generate a template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

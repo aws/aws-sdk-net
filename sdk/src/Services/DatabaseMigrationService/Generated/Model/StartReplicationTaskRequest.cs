@@ -139,6 +139,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the replication task to be started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationTaskArn
         {
             get { return this._replicationTaskArn; }
@@ -157,6 +158,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The type of replication task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StartReplicationTaskTypeValue StartReplicationTaskType
         {
             get { return this._startReplicationTaskType; }

@@ -78,6 +78,7 @@ namespace Amazon.MediaLive.Model
         /// this name to uniquely identify this Description.  Description names should be unique
         /// within this Live Event.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -134,6 +135,7 @@ namespace Amazon.MediaLive.Model
         /// used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is
         /// recommended for most content.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Sharpness
         {
             get { return this._sharpness.GetValueOrDefault(); }

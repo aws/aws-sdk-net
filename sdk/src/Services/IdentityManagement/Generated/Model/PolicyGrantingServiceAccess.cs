@@ -57,6 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string EntityName
         {
             get { return this._entityName; }
@@ -97,6 +98,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyArn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PolicyArn
         {
             get { return this._policyArn; }
@@ -115,6 +117,7 @@ namespace Amazon.IdentityManagement.Model
         /// The policy name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -134,6 +137,7 @@ namespace Amazon.IdentityManagement.Model
         /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType PolicyType
         {
             get { return this._policyType; }

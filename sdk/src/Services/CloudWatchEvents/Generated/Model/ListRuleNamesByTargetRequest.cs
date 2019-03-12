@@ -44,6 +44,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The maximum number of results to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -80,6 +82,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The Amazon Resource Name (ARN) of the target resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string TargetArn
         {
             get { return this._targetArn; }

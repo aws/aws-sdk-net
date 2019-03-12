@@ -63,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }
@@ -82,6 +83,7 @@ namespace Amazon.CloudDirectory.Model
         /// the map value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AttributeKeyAndValue> ObjectAttributeList
         {
             get { return this._objectAttributeList; }
@@ -119,6 +121,7 @@ namespace Amazon.CloudDirectory.Model
         /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SchemaFacet> SchemaFacet
         {
             get { return this._schemaFacet; }

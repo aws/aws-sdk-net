@@ -41,6 +41,7 @@ namespace Amazon.Snowball.Model
         /// create a job to specify which address you want the Snowball for that job shipped to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string AddressId
         {
             get { return this._addressId; }

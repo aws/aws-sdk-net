@@ -49,6 +49,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public List<string> AgentIds
         {
             get { return this._agentIds; }
@@ -69,6 +70,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }
@@ -89,6 +91,7 @@ namespace Amazon.Inspector.Model
         /// property of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<string> AutoScalingGroups
         {
             get { return this._autoScalingGroups; }
@@ -127,6 +130,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> RuleNames
         {
             get { return this._ruleNames; }
@@ -147,6 +151,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> RulesPackageArns
         {
             get { return this._rulesPackageArns; }
@@ -167,6 +172,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> Severities
         {
             get { return this._severities; }
@@ -187,6 +193,7 @@ namespace Amazon.Inspector.Model
         /// <a>Finding</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Attribute> UserAttributes
         {
             get { return this._userAttributes; }

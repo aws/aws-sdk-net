@@ -53,6 +53,7 @@ namespace Amazon.Route53.Model
         /// that was returned in the previous response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string TrafficPolicyIdMarker
         {
             get { return this._trafficPolicyIdMarker; }

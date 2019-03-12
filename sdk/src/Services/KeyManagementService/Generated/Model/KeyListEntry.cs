@@ -41,6 +41,7 @@ namespace Amazon.KeyManagementService.Model
         /// ARN of the key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string KeyArn
         {
             get { return this._keyArn; }
@@ -59,6 +60,7 @@ namespace Amazon.KeyManagementService.Model
         /// Unique identifier of the key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

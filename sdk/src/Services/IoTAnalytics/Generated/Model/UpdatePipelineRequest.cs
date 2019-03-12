@@ -50,6 +50,7 @@ namespace Amazon.IoTAnalytics.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<PipelineActivity> PipelineActivities
         {
             get { return this._pipelineActivities; }
@@ -68,6 +69,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the pipeline to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PipelineName
         {
             get { return this._pipelineName; }

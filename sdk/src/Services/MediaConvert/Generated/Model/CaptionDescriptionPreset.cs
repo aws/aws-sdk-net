@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// uses this language information to choose the font language for rendering the captions
         /// text.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }

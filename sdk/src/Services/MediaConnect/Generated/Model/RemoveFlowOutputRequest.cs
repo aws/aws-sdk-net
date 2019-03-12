@@ -42,6 +42,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to remove an output from.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -57,6 +58,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property OutputArn. The ARN of the output that you want to remove.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutputArn
         {
             get { return this._outputArn; }

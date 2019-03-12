@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         /// to an AWS Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DbiResourceId
         {
             get { return this._dbiResourceId; }

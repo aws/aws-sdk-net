@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// more results to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeStar.Model
         /// A list of projects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ProjectSummary> Projects
         {
             get { return this._projects; }

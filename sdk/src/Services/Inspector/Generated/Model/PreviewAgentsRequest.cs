@@ -66,6 +66,7 @@ namespace Amazon.Inspector.Model
         /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -84,6 +85,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment target whose agents you want to preview.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string PreviewAgentsArn
         {
             get { return this._previewAgentsArn; }

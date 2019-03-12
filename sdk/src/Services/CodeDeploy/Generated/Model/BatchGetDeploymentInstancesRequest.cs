@@ -52,6 +52,7 @@ namespace Amazon.CodeDeploy.Model
         ///  The unique ID of a deployment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeploymentId
         {
             get { return this._deploymentId; }
@@ -70,6 +71,7 @@ namespace Amazon.CodeDeploy.Model
         /// The unique IDs of instances used in the deployment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }

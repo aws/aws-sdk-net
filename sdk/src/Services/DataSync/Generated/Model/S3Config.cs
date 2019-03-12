@@ -44,6 +44,7 @@ namespace Amazon.DataSync.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string BucketAccessRoleArn
         {
             get { return this._bucketAccessRoleArn; }

@@ -47,6 +47,7 @@ namespace Amazon.DeviceFarm.Model
         /// The AWS account number specified in the <code>AccountSettings</code> container.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=16)]
         public string AwsAccountNumber
         {
             get { return this._awsAccountNumber; }

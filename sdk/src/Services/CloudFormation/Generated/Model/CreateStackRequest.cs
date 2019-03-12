@@ -212,6 +212,7 @@ namespace Amazon.CloudFormation.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -284,6 +285,7 @@ namespace Amazon.CloudFormation.Model
         /// (CLI).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationARNs
         {
             get { return this._notificationARNs; }
@@ -390,6 +392,7 @@ namespace Amazon.CloudFormation.Model
         /// session that is generated from your user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -434,6 +437,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }
@@ -455,6 +459,7 @@ namespace Amazon.CloudFormation.Model
         /// parameter, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string StackPolicyBody
         {
             get { return this._stackPolicyBody; }
@@ -476,6 +481,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string StackPolicyURL
         {
             get { return this._stackPolicyURL; }
@@ -495,6 +501,7 @@ namespace Amazon.CloudFormation.Model
         /// tags to the resources created in the stack. A maximum number of 50 tags can be specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -520,6 +527,7 @@ namespace Amazon.CloudFormation.Model
         /// parameter, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -546,6 +554,7 @@ namespace Amazon.CloudFormation.Model
         /// parameter, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }
@@ -566,6 +575,7 @@ namespace Amazon.CloudFormation.Model
         /// will be rolled back.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int TimeoutInMinutes
         {
             get { return this._timeoutInMinutes.GetValueOrDefault(); }

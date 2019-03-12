@@ -47,6 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long InitiatedEventId
         {
             get { return this._initiatedEventId.GetValueOrDefault(); }
@@ -67,6 +68,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// problems by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the timeout that caused the child workflow execution to time out.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecutionTimeoutType TimeoutType
         {
             get { return this._timeoutType; }
@@ -103,6 +106,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The child workflow execution that timed out.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution WorkflowExecution
         {
             get { return this._workflowExecution; }
@@ -121,6 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

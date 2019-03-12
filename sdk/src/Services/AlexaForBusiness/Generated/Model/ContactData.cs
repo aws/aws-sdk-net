@@ -62,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the contact to display on the console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -80,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The first name of the contact, used to call the contact on the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -98,6 +100,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The last name of the contact, used to call the contact on the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string LastName
         {
             get { return this._lastName; }

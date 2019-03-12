@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The zip code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CountryCode
         {
             get { return this._countryCode; }
@@ -63,6 +64,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// data over the telephone network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public string OneClickIdDelay
         {
             get { return this._oneClickIdDelay; }
@@ -83,6 +85,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// data over the telephone network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public string OneClickPinDelay
         {
             get { return this._oneClickPinDelay; }
@@ -101,6 +104,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The phone number to call to join the conference.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

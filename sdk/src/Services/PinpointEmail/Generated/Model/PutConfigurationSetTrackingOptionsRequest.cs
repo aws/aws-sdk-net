@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that you want to add a custom tracking domain to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

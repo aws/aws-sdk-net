@@ -42,6 +42,7 @@ namespace Amazon.WorkDocs.Model
         /// The endpoint of the subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string EndPoint
         {
             get { return this._endPoint; }
@@ -78,6 +79,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string SubscriptionId
         {
             get { return this._subscriptionId; }

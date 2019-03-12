@@ -67,6 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// Gateway snapshot <b>Details</b> pane, <b>Description</b> field
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SnapshotDescription
         {
             get { return this._snapshotDescription; }
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// operation to return to retrieve the TargetARN for specified VolumeARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

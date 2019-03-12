@@ -129,6 +129,7 @@ namespace Amazon.CloudSearch.Model
         /// a document's ID, you can use the name <code>_id</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string IndexFieldName
         {
             get { return this._indexFieldName; }
@@ -144,6 +145,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property IndexFieldType.
         /// </summary>
+        [AWSProperty(Required=true)]
         public IndexFieldType IndexFieldType
         {
             get { return this._indexFieldType; }

@@ -128,6 +128,7 @@ namespace Amazon.MediaConvert.Model
         /// job. For details about permissions, see the User Guide topic at the User Guide at
         /// http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Role
         {
             get { return this._role; }
@@ -143,6 +144,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Settings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobSettings Settings
         {
             get { return this._settings; }
@@ -162,6 +164,7 @@ namespace Amazon.MediaConvert.Model
         /// the service begins processing your job to the time it completes the transcode or encounters
         /// an error.
         /// </summary>
+        [AWSProperty(Min=10, Max=600)]
         public long StatusUpdateIntervalInSecs
         {
             get { return this._statusUpdateIntervalInSecs.GetValueOrDefault(); }

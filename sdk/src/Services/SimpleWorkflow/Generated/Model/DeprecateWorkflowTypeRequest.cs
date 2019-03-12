@@ -90,6 +90,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain in which the workflow type is registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -108,6 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow type to deprecate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

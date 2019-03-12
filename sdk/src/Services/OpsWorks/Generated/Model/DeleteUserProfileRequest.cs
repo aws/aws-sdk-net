@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// The user's IAM ARN. This can also be a federated user's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamUserArn
         {
             get { return this._iamUserArn; }

@@ -70,6 +70,7 @@ namespace Amazon.WorkSpaces.Model
         /// The user name for the service account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string CustomerUserName
         {
             get { return this._customerUserName; }
@@ -198,6 +199,7 @@ namespace Amazon.WorkSpaces.Model
         /// Amazon WorkSpaces client application to connect to the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string RegistrationCode
         {
             get { return this._registrationCode; }

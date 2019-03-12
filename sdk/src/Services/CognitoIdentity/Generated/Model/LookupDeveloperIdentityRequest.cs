@@ -68,6 +68,7 @@ namespace Amazon.CognitoIdentity.Model
         /// with the number of users.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DeveloperUserIdentifier
         {
             get { return this._developerUserIdentifier; }
@@ -86,6 +87,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -104,6 +106,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -122,6 +125,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The maximum number of identities to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -145,6 +149,7 @@ namespace Amazon.CognitoIdentity.Model
         /// starting from the 11th match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

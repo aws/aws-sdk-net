@@ -61,6 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the product configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

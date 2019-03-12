@@ -42,6 +42,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the tagged ML object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -78,6 +79,7 @@ namespace Amazon.MachineLearning.Model
         /// A list of tags associated with the ML object.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<Tag> Tags
         {
             get { return this._tags; }

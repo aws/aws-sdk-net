@@ -61,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudDirectory.Model
         /// Parent reference from which the object with the specified link name is detached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ParentReference
         {
             get { return this._parentReference; }

@@ -53,6 +53,7 @@ namespace Amazon.DocDB.Model
         /// state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterSnapshotIdentifier
         {
             get { return this._dbClusterSnapshotIdentifier; }

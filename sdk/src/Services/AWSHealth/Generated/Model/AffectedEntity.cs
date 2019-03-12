@@ -67,6 +67,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1600)]
         public string EntityArn
         {
             get { return this._entityArn; }
@@ -100,6 +101,7 @@ namespace Amazon.AWSHealth.Model
         /// The ID of the affected entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string EntityValue
         {
             get { return this._entityValue; }
@@ -120,6 +122,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1600)]
         public string EventArn
         {
             get { return this._eventArn; }
@@ -175,6 +178,7 @@ namespace Amazon.AWSHealth.Model
         /// A map of entity tags attached to the affected entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -135,6 +135,7 @@ namespace Amazon.EC2.Model
         /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=255)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -153,6 +154,7 @@ namespace Amazon.EC2.Model
         /// The token to retrieve the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

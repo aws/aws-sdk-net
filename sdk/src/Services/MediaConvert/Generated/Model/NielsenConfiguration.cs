@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// to set the Nielsen measurement system breakout code. Supported values are 0, 3, 7,
         /// and 9.
         /// </summary>
+        [AWSProperty(Min=0, Max=9)]
         public int BreakoutCode
         {
             get { return this._breakoutCode.GetValueOrDefault(); }

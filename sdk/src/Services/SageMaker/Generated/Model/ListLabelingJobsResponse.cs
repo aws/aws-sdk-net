@@ -60,6 +60,7 @@ namespace Amazon.SageMaker.Model
         /// next set of labeling jobs, use it in the subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

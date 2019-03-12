@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -87,6 +89,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public string StartToFireTimeout
         {
             get { return this._startToFireTimeout; }
@@ -105,6 +108,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The unique ID of the timer that was started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TimerId
         {
             get { return this._timerId; }

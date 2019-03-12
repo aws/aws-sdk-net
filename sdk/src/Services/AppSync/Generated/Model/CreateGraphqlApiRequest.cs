@@ -45,6 +45,7 @@ namespace Amazon.AppSync.Model
         /// The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }
@@ -81,6 +82,7 @@ namespace Amazon.AppSync.Model
         /// A user-supplied name for the <code>GraphqlApi</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

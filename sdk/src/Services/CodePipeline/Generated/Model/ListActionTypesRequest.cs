@@ -61,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// be used to return the next set of action types in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

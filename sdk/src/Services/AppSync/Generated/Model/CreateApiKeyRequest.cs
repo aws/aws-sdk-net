@@ -43,6 +43,7 @@ namespace Amazon.AppSync.Model
         /// The ID for your GraphQL API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }

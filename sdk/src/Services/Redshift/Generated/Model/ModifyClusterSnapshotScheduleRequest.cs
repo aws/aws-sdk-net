@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the cluster whose snapshot schedule you want to modify. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

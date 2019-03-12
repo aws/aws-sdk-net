@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network ACL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkAclId
         {
             get { return this._networkAclId; }

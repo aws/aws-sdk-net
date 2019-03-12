@@ -54,6 +54,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// of <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

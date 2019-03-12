@@ -47,6 +47,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -65,6 +66,7 @@ namespace Amazon.Connect.Model
         /// The identifiers for the security profiles to assign to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SecurityProfileIds
         {
             get { return this._securityProfileIds; }
@@ -83,6 +85,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the user account to assign the security profiles.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserId
         {
             get { return this._userId; }

@@ -70,6 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of an Amazon EC2 key pair that can be used to ssh to the master node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Ec2KeyName
         {
             get { return this._ec2KeyName; }
@@ -89,6 +90,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// of the subnet where the cluster was launched.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Ec2SubnetId
         {
             get { return this._ec2SubnetId; }
@@ -107,6 +109,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Hadoop version for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string HadoopVersion
         {
             get { return this._hadoopVersion; }
@@ -127,6 +130,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// one instance is the master node and all others are core and task nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -181,6 +185,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Amazon EC2 instance identifier of the master node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string MasterInstanceId
         {
             get { return this._masterInstanceId; }
@@ -199,6 +204,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Amazon EC2 master node instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MasterInstanceType
         {
             get { return this._masterInstanceType; }
@@ -218,6 +224,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// private DNS name. On a public subnet, this is the public DNS name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string MasterPublicDnsName
         {
             get { return this._masterPublicDnsName; }
@@ -276,6 +283,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Amazon EC2 core and task node instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SlaveInstanceType
         {
             get { return this._slaveInstanceType; }

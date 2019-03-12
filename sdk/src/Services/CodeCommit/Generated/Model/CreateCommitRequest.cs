@@ -69,6 +69,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the branch where you will create the commit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -199,6 +200,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where you will create the commit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

@@ -85,6 +85,7 @@ namespace Amazon.KeyManagementService.Model
         /// The principal that receives the grant's permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GranteePrincipal
         {
             get { return this._granteePrincipal; }
@@ -103,6 +104,7 @@ namespace Amazon.KeyManagementService.Model
         /// The unique identifier for the grant.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string GrantId
         {
             get { return this._grantId; }
@@ -121,6 +123,7 @@ namespace Amazon.KeyManagementService.Model
         /// The AWS account under which the grant was issued.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string IssuingAccount
         {
             get { return this._issuingAccount; }
@@ -139,6 +142,7 @@ namespace Amazon.KeyManagementService.Model
         /// The unique identifier for the customer master key (CMK) to which the grant applies.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -158,6 +162,7 @@ namespace Amazon.KeyManagementService.Model
         /// request, that name is returned. Otherwise this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -194,6 +199,7 @@ namespace Amazon.KeyManagementService.Model
         /// The principal that can retire the grant.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RetiringPrincipal
         {
             get { return this._retiringPrincipal; }

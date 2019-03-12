@@ -44,6 +44,7 @@ namespace Amazon.CodeStar.Model
         /// with Teams</a> in the <i>AWS CodeStar User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProjectRole
         {
             get { return this._projectRole; }
@@ -81,6 +82,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the user in IAM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

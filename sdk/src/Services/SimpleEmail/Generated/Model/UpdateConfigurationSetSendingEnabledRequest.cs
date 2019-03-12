@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the configuration set that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -70,6 +71,7 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

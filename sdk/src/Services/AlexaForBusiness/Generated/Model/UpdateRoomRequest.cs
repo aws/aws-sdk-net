@@ -45,6 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated description for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +82,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated provider calendar ARN for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string ProviderCalendarId
         {
             get { return this._providerCalendarId; }
@@ -117,6 +119,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated name for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RoomName
         {
             get { return this._roomName; }

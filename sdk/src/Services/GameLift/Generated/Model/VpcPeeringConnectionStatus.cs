@@ -44,6 +44,7 @@ namespace Amazon.GameLift.Model
         /// Code indicating the status of a VPC peering connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Code
         {
             get { return this._code; }
@@ -62,6 +63,7 @@ namespace Amazon.GameLift.Model
         /// Additional messaging associated with the connection status. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }

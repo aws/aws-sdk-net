@@ -138,6 +138,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name given to the import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

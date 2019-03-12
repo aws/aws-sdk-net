@@ -123,6 +123,7 @@ namespace Amazon.SageMaker.Model
         /// properties. You must specify a valid property name for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -200,6 +201,7 @@ namespace Amazon.SageMaker.Model
         /// must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

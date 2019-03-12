@@ -60,6 +60,7 @@ namespace Amazon.AppStream.Model
         /// The distinguished name of the organizational unit for computer accounts.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string OrganizationalUnitDistinguishedName
         {
             get { return this._organizationalUnitDistinguishedName; }

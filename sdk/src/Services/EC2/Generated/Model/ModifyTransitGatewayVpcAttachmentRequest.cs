@@ -99,6 +99,7 @@ namespace Amazon.EC2.Model
         /// The ID of the attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayAttachmentId
         {
             get { return this._transitGatewayAttachmentId; }

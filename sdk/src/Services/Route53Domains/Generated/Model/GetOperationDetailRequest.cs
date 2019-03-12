@@ -42,6 +42,7 @@ namespace Amazon.Route53Domains.Model
         /// 53 returned the identifier in the response to the original request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string OperationId
         {
             get { return this._operationId; }

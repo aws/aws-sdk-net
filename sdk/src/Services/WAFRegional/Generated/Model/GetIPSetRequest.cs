@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IPSetId
         {
             get { return this._ipSetId; }

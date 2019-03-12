@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the link between the parent and the child object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }

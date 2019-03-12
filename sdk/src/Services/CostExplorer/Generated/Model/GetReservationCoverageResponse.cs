@@ -42,6 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// The amount of time that your reservations covered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CoverageByTime> CoveragesByTime
         {
             get { return this._coveragesByTime; }

@@ -239,6 +239,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -378,6 +379,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }
@@ -479,6 +481,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -502,6 +505,7 @@ namespace Amazon.RDS.Model
         /// Constraints: Must contain from 8 to 41 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -653,6 +657,7 @@ namespace Amazon.RDS.Model
         /// Aurora DB cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }
@@ -672,6 +677,7 @@ namespace Amazon.RDS.Model
         /// that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3IngestionRoleArn
         {
             get { return this._s3IngestionRoleArn; }
@@ -715,6 +721,7 @@ namespace Amazon.RDS.Model
         /// Valid values: <code>mysql</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceEngine
         {
             get { return this._sourceEngine; }
@@ -741,6 +748,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>5.6.22</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceEngineVersion
         {
             get { return this._sourceEngineVersion; }

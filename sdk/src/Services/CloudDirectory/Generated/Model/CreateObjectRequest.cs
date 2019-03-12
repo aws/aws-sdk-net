@@ -49,6 +49,7 @@ namespace Amazon.CloudDirectory.Model
         /// the object will be created. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -67,6 +68,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of link that is used to attach this object to a parent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string LinkName
         {
             get { return this._linkName; }
@@ -123,6 +125,7 @@ namespace Amazon.CloudDirectory.Model
         /// components. See <a>SchemaFacet</a> for details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SchemaFacet> SchemaFacets
         {
             get { return this._schemaFacets; }

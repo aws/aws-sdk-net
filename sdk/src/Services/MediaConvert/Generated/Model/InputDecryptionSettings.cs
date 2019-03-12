@@ -56,6 +56,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property EncryptedDecryptionKey. Decryption key either 128 or 192
         /// or 256 bits encrypted with KMS
         /// </summary>
+        [AWSProperty(Min=24, Max=512)]
         public string EncryptedDecryptionKey
         {
             get { return this._encryptedDecryptionKey; }
@@ -72,6 +73,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property InitializationVector. Initialization Vector 96 bits (CTR/GCM
         /// mode only) or 128 bits.
         /// </summary>
+        [AWSProperty(Min=16, Max=24)]
         public string InitializationVector
         {
             get { return this._initializationVector; }
@@ -88,6 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property KmsKeyRegion. The AWS region in which decryption key was
         /// encrypted with KMS
         /// </summary>
+        [AWSProperty(Min=9, Max=19)]
         public string KmsKeyRegion
         {
             get { return this._kmsKeyRegion; }

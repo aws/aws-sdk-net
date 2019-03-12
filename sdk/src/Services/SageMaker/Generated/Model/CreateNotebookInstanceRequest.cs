@@ -137,6 +137,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=3)]
         public List<string> AdditionalCodeRepositories
         {
             get { return this._additionalCodeRepositories; }
@@ -161,6 +162,7 @@ namespace Amazon.SageMaker.Model
         /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DefaultCodeRepository
         {
             get { return this._defaultCodeRepository; }
@@ -206,6 +208,7 @@ namespace Amazon.SageMaker.Model
         /// The type of ML compute instance to launch for the notebook instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -227,6 +230,7 @@ namespace Amazon.SageMaker.Model
         /// and Disabling Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -247,6 +251,7 @@ namespace Amazon.SageMaker.Model
         /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string LifecycleConfigName
         {
             get { return this._lifecycleConfigName; }
@@ -265,6 +270,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the new notebook instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }
@@ -294,6 +300,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -339,6 +346,7 @@ namespace Amazon.SageMaker.Model
         /// the same VPC as specified in the subnet. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -358,6 +366,7 @@ namespace Amazon.SageMaker.Model
         /// your ML compute instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string SubnetId
         {
             get { return this._subnetId; }
@@ -377,6 +386,7 @@ namespace Amazon.SageMaker.Model
         /// using the <code>CreateTags</code> API.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -396,6 +406,7 @@ namespace Amazon.SageMaker.Model
         /// default value is 5 GB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=16384)]
         public int VolumeSizeInGB
         {
             get { return this._volumeSizeInGB.GetValueOrDefault(); }

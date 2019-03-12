@@ -109,6 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthFlowType AuthFlow
         {
             get { return this._authFlow; }
@@ -164,6 +165,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }

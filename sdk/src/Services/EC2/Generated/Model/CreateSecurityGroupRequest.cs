@@ -108,6 +108,7 @@ namespace Amazon.EC2.Model
         /// Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -138,6 +139,7 @@ namespace Amazon.EC2.Model
         /// Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupName
         {
             get { return this._groupName; }

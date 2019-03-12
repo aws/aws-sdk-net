@@ -42,6 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// Resource of the ARN to be tagged.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.LicenseManager.Model
         /// Names of the tags to attach to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

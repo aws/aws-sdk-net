@@ -64,6 +64,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the directory that the index exists in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -82,6 +83,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference to the index to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference IndexReference
         {
             get { return this._indexReference; }
@@ -102,6 +104,7 @@ namespace Amazon.CloudDirectory.Model
         /// Cloud Directory Limits</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -62,6 +62,7 @@ namespace Amazon.DAX.Model
         /// group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

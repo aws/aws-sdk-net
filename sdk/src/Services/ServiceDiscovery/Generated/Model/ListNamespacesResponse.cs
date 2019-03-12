@@ -70,6 +70,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

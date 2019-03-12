@@ -45,6 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// The device pool's description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Description
         {
             get { return this._description; }
@@ -89,6 +90,7 @@ namespace Amazon.DeviceFarm.Model
         /// The device pool's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -107,6 +109,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the project for the device pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string ProjectArn
         {
             get { return this._projectArn; }
@@ -125,6 +128,7 @@ namespace Amazon.DeviceFarm.Model
         /// The device pool's rules.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Rule> Rules
         {
             get { return this._rules; }

@@ -53,6 +53,7 @@ namespace Amazon.CodePipeline.Model
         /// The category of the custom action that you want to delete, such as source or deploy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionCategory Category
         {
             get { return this._category; }
@@ -71,6 +72,7 @@ namespace Amazon.CodePipeline.Model
         /// The provider of the service used in the custom action, such as AWS CodeDeploy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public string Provider
         {
             get { return this._provider; }
@@ -89,6 +91,7 @@ namespace Amazon.CodePipeline.Model
         /// The version of the custom action to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=9)]
         public string Version
         {
             get { return this._version; }

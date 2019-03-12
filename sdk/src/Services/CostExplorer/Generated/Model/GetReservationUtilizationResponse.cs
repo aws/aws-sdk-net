@@ -79,6 +79,7 @@ namespace Amazon.CostExplorer.Model
         /// The amount of time that you used your RIs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<UtilizationByTime> UtilizationsByTime
         {
             get { return this._utilizationsByTime; }

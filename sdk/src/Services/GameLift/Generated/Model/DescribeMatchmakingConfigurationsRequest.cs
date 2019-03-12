@@ -85,6 +85,7 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages. This parameter is limited to 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -124,6 +125,7 @@ namespace Amazon.GameLift.Model
         /// the result set, do not specify a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -143,6 +145,7 @@ namespace Amazon.GameLift.Model
         /// configurations that use this rule set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

@@ -51,6 +51,7 @@ namespace Amazon.Shield.Model
         /// also return a <code>NextToken</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -70,6 +71,7 @@ namespace Amazon.Shield.Model
         /// Pass null if this is the first call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

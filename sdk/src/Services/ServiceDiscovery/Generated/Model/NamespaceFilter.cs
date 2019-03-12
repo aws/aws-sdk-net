@@ -78,6 +78,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Specify <code>TYPE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NamespaceFilterName Name
         {
             get { return this._name; }
@@ -102,6 +103,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <code>DNS_PRIVATE</code>, or both.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

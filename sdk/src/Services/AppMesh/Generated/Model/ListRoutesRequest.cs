@@ -51,6 +51,7 @@ namespace Amazon.AppMesh.Model
         /// value if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh in which to list routes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -108,6 +110,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual router to list routes in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

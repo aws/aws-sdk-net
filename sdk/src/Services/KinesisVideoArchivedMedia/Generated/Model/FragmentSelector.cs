@@ -69,6 +69,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The origin of the timestamps to use (Server or Producer).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FragmentSelectorType FragmentSelectorType
         {
             get { return this._fragmentSelectorType; }
@@ -87,6 +88,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The range of timestamps to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimestampRange TimestampRange
         {
             get { return this._timestampRange; }

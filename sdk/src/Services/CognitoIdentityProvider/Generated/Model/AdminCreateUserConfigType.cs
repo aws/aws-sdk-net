@@ -87,6 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The default value for this parameter is 7.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=365)]
         public int UnusedAccountValidityDays
         {
             get { return this._unusedAccountValidityDays.GetValueOrDefault(); }

@@ -70,6 +70,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A description that can help diagnose the cause of the fault.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1728)]
         public string Message
         {
             get { return this._message; }

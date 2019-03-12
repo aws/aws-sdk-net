@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the namespace that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Id
         {
             get { return this._id; }

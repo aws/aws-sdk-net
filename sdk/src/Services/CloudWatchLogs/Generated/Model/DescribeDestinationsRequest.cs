@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The prefix to match. If you don't specify a value, no prefix filter is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string DestinationNamePrefix
         {
             get { return this._destinationNamePrefix; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// up to 50 items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

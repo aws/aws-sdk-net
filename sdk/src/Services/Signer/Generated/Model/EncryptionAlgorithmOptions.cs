@@ -41,6 +41,7 @@ namespace Amazon.Signer.Model
         /// The set of accepted encryption algorithms that are allowed in an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AllowedValues
         {
             get { return this._allowedValues; }
@@ -59,6 +60,7 @@ namespace Amazon.Signer.Model
         /// The default encryption algorithm that is used by an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionAlgorithm DefaultValue
         {
             get { return this._defaultValue; }

@@ -176,6 +176,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where you posted a comment on a pull request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

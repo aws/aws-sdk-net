@@ -43,6 +43,7 @@ namespace Amazon.DataSync.Model
         /// The maximum number of executed tasks to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.DataSync.Model
         /// executed tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=93)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -80,6 +82,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the task whose tasks you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TaskArn
         {
             get { return this._taskArn; }

@@ -43,6 +43,7 @@ namespace Amazon.KinesisFirehose.Model
         /// and call <code>ListTagsForDeliveryStream</code> again.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreTags
         {
             get { return this._hasMoreTags.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisFirehose.Model
         /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

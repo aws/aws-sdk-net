@@ -42,6 +42,7 @@ namespace Amazon.CertificateManager.Model
         /// The base64 PEM-encoded certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -61,6 +62,7 @@ namespace Amazon.CertificateManager.Model
         /// you are exporting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }
@@ -80,6 +82,7 @@ namespace Amazon.CertificateManager.Model
         /// is output in PKCS #8 format and is base64 PEM-encoded. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=524288)]
         public string PrivateKey
         {
             get { return this._privateKey; }

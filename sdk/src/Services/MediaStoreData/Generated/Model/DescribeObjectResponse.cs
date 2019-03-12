@@ -67,6 +67,7 @@ namespace Amazon.MediaStoreData.Model
         /// The length of the object in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ContentLength
         {
             get { return this._contentLength.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.MediaStoreData.Model
         /// The ETag that represents a unique instance of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ETag
         {
             get { return this._eTag; }

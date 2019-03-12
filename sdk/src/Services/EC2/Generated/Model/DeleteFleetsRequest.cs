@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the EC2 Fleets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> FleetIds
         {
             get { return this._fleetIds; }
@@ -69,6 +70,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether to terminate instances for an EC2 Fleet if it is deleted successfully.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool TerminateInstances
         {
             get { return this._terminateInstances.GetValueOrDefault(); }

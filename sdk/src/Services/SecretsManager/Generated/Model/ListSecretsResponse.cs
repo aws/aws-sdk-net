@@ -47,6 +47,7 @@ namespace Amazon.SecretsManager.Model
         /// empty (as <code>null</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

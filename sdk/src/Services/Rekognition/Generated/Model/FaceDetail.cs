@@ -145,6 +145,7 @@ namespace Amazon.Rekognition.Model
         /// such as a tree). Default attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }

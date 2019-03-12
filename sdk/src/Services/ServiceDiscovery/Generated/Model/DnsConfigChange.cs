@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// that you want AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DnsRecord> DnsRecords
         {
             get { return this._dnsRecords; }

@@ -53,6 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// a-zA-Z0-9_.-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AllowedPattern
         {
             get { return this._allowedPattern; }
@@ -71,6 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Information about the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -89,6 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the query key used for this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -107,6 +110,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Labels assigned to the parameter version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Labels
         {
             get { return this._labels; }
@@ -161,6 +165,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }
@@ -197,6 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string Value
         {
             get { return this._value; }

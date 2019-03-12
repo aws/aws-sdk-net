@@ -153,6 +153,7 @@ namespace Amazon.Route53.Model
         /// list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -172,6 +173,7 @@ namespace Amazon.Route53.Model
         /// to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string StartRecordName
         {
             get { return this._startRecordName; }
@@ -254,6 +256,7 @@ namespace Amazon.Route53.Model
         /// and type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StartRecordIdentifier
         {
             get { return this._startRecordIdentifier; }

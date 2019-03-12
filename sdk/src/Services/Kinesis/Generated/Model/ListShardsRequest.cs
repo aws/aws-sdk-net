@@ -65,6 +65,7 @@ namespace Amazon.Kinesis.Model
         /// You cannot specify this parameter if you specify <code>NextToken</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartShardId
         {
             get { return this._exclusiveStartShardId; }
@@ -91,6 +92,7 @@ namespace Amazon.Kinesis.Model
         /// call to <code>ListShards</code> to list the next set of shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -135,6 +137,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -182,6 +185,7 @@ namespace Amazon.Kinesis.Model
         /// You cannot specify this parameter if you specify the <code>NextToken</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

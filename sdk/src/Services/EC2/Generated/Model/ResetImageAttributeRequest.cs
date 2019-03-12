@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         /// The attribute to reset (currently you can only reset the launch permission attribute).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResetImageAttributeName Attribute
         {
             get { return this._attribute; }
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageId
         {
             get { return this._imageId; }

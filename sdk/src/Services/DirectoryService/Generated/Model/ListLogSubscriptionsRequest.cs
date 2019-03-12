@@ -64,6 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of items returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

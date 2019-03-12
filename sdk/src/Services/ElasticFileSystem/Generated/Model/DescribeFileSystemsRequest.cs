@@ -77,6 +77,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// You specify a creation token when you create an Amazon EFS file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CreationToken
         {
             get { return this._creationToken; }
@@ -134,6 +135,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// (integer). Currently, this number is automatically set to 10. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

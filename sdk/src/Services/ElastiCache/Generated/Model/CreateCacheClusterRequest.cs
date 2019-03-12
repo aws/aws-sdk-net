@@ -193,6 +193,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheClusterId
         {
             get { return this._cacheClusterId; }

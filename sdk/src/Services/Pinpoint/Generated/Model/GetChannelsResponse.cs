@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ChannelsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChannelsResponse ChannelsResponse
         {
             get { return this._channelsResponse; }

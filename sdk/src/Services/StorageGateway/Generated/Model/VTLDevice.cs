@@ -63,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// changer).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VTLDeviceARN
         {
             get { return this._vtlDeviceARN; }

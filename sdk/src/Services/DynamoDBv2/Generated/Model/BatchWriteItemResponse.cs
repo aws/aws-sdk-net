@@ -158,6 +158,7 @@ namespace Amazon.DynamoDBv2.Model
         /// map.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public Dictionary<string, List<WriteRequest>> UnprocessedItems
         {
             get { return this._unprocessedItems; }

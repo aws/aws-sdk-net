@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// Information about the authentication method to be used to authenticate clients.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ClientVpnAuthenticationRequest> AuthenticationOptions
         {
             get { return this._authenticationOptions; }
@@ -73,6 +74,7 @@ namespace Amazon.EC2.Model
         /// or greater.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientCidrBlock
         {
             get { return this._clientCidrBlock; }
@@ -133,6 +135,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConnectionLogOptions ConnectionLogOptions
         {
             get { return this._connectionLogOptions; }
@@ -190,6 +193,7 @@ namespace Amazon.EC2.Model
         /// Certificate Manager User Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerCertificateArn
         {
             get { return this._serverCertificateArn; }

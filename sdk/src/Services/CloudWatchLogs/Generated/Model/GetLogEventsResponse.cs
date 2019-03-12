@@ -62,6 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// it will return the same token you passed in.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextBackwardToken
         {
             get { return this._nextBackwardToken; }
@@ -82,6 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// you passed in.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextForwardToken
         {
             get { return this._nextForwardToken; }

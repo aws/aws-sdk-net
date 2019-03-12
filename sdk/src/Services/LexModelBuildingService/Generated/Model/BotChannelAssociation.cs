@@ -49,6 +49,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// is being made. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string BotAlias
         {
             get { return this._botAlias; }
@@ -67,6 +68,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Provides information necessary to communicate with the messaging platform. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, string> BotConfiguration
         {
             get { return this._botConfiguration; }
@@ -90,6 +92,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -127,6 +130,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A text description of the association you are creating. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -164,6 +168,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the association between the bot and the channel. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

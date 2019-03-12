@@ -60,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// each region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }

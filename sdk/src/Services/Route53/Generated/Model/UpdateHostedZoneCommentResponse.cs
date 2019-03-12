@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZone HostedZone
         {
             get { return this._hostedZone; }

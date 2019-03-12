@@ -56,6 +56,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property DeviceDefinitionId. The ID of the device definition.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceDefinitionId
         {
             get { return this._deviceDefinitionId; }

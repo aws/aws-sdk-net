@@ -63,6 +63,7 @@ namespace Amazon.MediaStore.Model
         /// you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Container Container
         {
             get { return this._container; }

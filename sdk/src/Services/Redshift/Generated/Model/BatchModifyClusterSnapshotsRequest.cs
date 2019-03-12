@@ -92,6 +92,7 @@ namespace Amazon.Redshift.Model
         /// A list of snapshot identifiers you want to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SnapshotIdentifierList
         {
             get { return this._snapshotIdentifierList; }

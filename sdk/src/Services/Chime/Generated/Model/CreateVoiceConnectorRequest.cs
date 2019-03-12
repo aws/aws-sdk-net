@@ -45,6 +45,7 @@ namespace Amazon.Chime.Model
         /// The name of the Amazon Chime Voice Connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -63,6 +64,7 @@ namespace Amazon.Chime.Model
         /// When enabled, requires encryption for the Amazon Chime Voice Connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool RequireEncryption
         {
             get { return this._requireEncryption.GetValueOrDefault(); }

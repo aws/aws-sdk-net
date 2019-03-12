@@ -66,6 +66,7 @@ namespace Amazon.Kinesis.Model
         /// the total size must not exceed the maximum record size (1 MB).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1048576)]
         public MemoryStream Data
         {
             get { return this._data; }
@@ -113,6 +114,7 @@ namespace Amazon.Kinesis.Model
         /// Identifies which shard in the stream the data record is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PartitionKey
         {
             get { return this._partitionKey; }
@@ -131,6 +133,7 @@ namespace Amazon.Kinesis.Model
         /// The unique identifier of the record within its shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SequenceNumber
         {
             get { return this._sequenceNumber; }

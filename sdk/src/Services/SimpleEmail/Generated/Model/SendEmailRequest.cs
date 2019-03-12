@@ -129,6 +129,7 @@ namespace Amazon.SimpleEmail.Model
         /// The destination for this email, composed of To:, CC:, and BCC: fields.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }
@@ -147,6 +148,7 @@ namespace Amazon.SimpleEmail.Model
         /// The message to be sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Message Message
         {
             get { return this._message; }
@@ -262,6 +264,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Source
         {
             get { return this._source; }

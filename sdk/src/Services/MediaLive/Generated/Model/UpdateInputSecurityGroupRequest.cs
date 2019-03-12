@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InputSecurityGroupId. The id of the Input Security Group
         /// to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputSecurityGroupId
         {
             get { return this._inputSecurityGroupId; }

@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         /// The information about the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

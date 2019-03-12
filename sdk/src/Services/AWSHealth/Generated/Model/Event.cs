@@ -53,6 +53,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -108,6 +109,7 @@ namespace Amazon.AWSHealth.Model
         /// and <code>accountNotification</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public EventTypeCategory EventTypeCategory
         {
             get { return this._eventTypeCategory; }
@@ -127,6 +129,7 @@ namespace Amazon.AWSHealth.Model
         /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=100)]
         public string EventTypeCode
         {
             get { return this._eventTypeCode; }
@@ -181,6 +184,7 @@ namespace Amazon.AWSHealth.Model
         /// The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=30)]
         public string Service
         {
             get { return this._service; }

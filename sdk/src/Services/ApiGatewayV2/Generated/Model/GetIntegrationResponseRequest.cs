@@ -43,6 +43,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -61,6 +62,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The integration ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IntegrationId
         {
             get { return this._integrationId; }
@@ -76,6 +78,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// <summary>
         /// Gets and sets the property IntegrationResponseId. The integration response ID.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IntegrationResponseId
         {
             get { return this._integrationResponseId; }

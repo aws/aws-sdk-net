@@ -49,6 +49,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string DeviceType
         {
             get { return this._deviceType; }
@@ -67,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the medium changer you want to select.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VTLDeviceARN
         {
             get { return this._vtlDeviceARN; }

@@ -49,6 +49,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the deployment job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -85,6 +86,7 @@ namespace Amazon.RoboMaker.Model
         /// The deployment application configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<DeploymentApplicationConfig> DeploymentApplicationConfigs
         {
             get { return this._deploymentApplicationConfigs; }
@@ -157,6 +159,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Fleet
         {
             get { return this._fleet; }
@@ -211,6 +214,7 @@ namespace Amazon.RoboMaker.Model
         /// The list of all tags added to the specified deployment job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -54,6 +54,7 @@ namespace Amazon.Route53Domains.Model
         /// the current expiration date for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int CurrentExpiryYear
         {
             get { return this._currentExpiryYear.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that you want to renew.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -98,6 +100,7 @@ namespace Amazon.Route53Domains.Model
         /// Default: 1
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int DurationInYears
         {
             get { return this._durationInYears.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<AlgorithmValidationProfile> ValidationProfiles
         {
             get { return this._validationProfiles; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The IAM roles that Amazon SageMaker uses to run the training jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ValidationRole
         {
             get { return this._validationRole; }

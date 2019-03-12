@@ -59,6 +59,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The job flow ID in which the instance groups are added.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string JobFlowId
         {
             get { return this._jobFlowId; }

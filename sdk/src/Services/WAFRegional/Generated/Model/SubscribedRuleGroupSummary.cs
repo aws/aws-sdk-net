@@ -44,6 +44,7 @@ namespace Amazon.WAFRegional.Model
         /// whitespace. You can't change the name of the metric after you create the <code>RuleGroup</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -63,6 +64,7 @@ namespace Amazon.WAFRegional.Model
         /// name of a <code>RuleGroup</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -81,6 +83,7 @@ namespace Amazon.WAFRegional.Model
         /// A unique identifier for a <code>RuleGroup</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleGroupId
         {
             get { return this._ruleGroupId; }

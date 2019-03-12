@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of aliases associated with the account. AWS supports only one alias per account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountAliases
         {
             get { return this._accountAliases; }
@@ -85,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }

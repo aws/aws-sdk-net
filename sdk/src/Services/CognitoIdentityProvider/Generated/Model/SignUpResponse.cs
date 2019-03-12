@@ -61,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A response from the server indicating that a user registration has been confirmed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool UserConfirmed
         {
             get { return this._userConfirmed.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The UUID of the authenticated user. This is not the same as <code>username</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserSub
         {
             get { return this._userSub; }

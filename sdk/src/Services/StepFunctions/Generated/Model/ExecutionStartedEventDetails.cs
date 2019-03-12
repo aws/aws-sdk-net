@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON data input to the execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -59,6 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }

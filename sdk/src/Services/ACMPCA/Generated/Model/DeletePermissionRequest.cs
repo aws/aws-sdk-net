@@ -52,6 +52,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -71,6 +72,7 @@ namespace Amazon.ACMPCA.Model
         /// the only valid service principal is <code>acm.amazonaws.com</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string Principal
         {
             get { return this._principal; }
@@ -89,6 +91,7 @@ namespace Amazon.ACMPCA.Model
         /// The AWS account that calls this operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }

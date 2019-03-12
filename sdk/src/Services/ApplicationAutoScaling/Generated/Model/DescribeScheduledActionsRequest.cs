@@ -153,6 +153,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -268,6 +269,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

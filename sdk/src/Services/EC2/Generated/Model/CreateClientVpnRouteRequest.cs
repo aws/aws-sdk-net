@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint to which to add the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }
@@ -99,6 +100,7 @@ namespace Amazon.EC2.Model
         /// Route address ranges cannot overlap with the CIDR range specified for client allocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -118,6 +120,7 @@ namespace Amazon.EC2.Model
         /// must be an existing target network of the Client VPN endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetVpcSubnetId
         {
             get { return this._targetVpcSubnetId; }

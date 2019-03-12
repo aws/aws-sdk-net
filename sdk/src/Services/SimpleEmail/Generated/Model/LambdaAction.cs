@@ -59,6 +59,7 @@ namespace Amazon.SimpleEmail.Model
         /// Lambda Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionArn
         {
             get { return this._functionArn; }

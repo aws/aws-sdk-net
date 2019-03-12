@@ -158,6 +158,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserPoolArn
         {
             get { return this._userPoolArn; }
@@ -176,6 +177,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The ID of the Amazon Cognito user pool client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserPoolClientId
         {
             get { return this._userPoolClientId; }
@@ -194,6 +196,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserPoolDomain
         {
             get { return this._userPoolDomain; }

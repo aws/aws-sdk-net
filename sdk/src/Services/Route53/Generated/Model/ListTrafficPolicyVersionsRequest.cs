@@ -49,6 +49,7 @@ namespace Amazon.Route53.Model
         /// all versions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -76,6 +77,7 @@ namespace Amazon.Route53.Model
         /// of <code>TrafficPolicyVersionMarker</code> in the previous response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4)]
         public string TrafficPolicyVersionMarker
         {
             get { return this._trafficPolicyVersionMarker; }

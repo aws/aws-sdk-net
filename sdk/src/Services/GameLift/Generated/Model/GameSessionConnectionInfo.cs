@@ -48,6 +48,7 @@ namespace Amazon.GameLift.Model
         /// that is assigned to a game session and uniquely identifies it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionArn
         {
             get { return this._gameSessionArn; }
@@ -105,6 +106,7 @@ namespace Amazon.GameLift.Model
         /// app needs both the IP address and port number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

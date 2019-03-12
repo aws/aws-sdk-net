@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The response submitted by a reviewer assigned to an approval action request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApprovalStatus Status
         {
             get { return this._status; }
@@ -59,6 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// The summary of the current status of the approval request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=512)]
         public string Summary
         {
             get { return this._summary; }

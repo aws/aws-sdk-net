@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=256)]
         public string ContextKeyName
         {
             get { return this._contextKeyName; }

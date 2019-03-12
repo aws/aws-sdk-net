@@ -38,6 +38,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DatabaseName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -56,6 +57,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of an RDS DB instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string InstanceIdentifier
         {
             get { return this._instanceIdentifier; }

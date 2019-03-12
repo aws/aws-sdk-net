@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PipelineDeclaration Pipeline
         {
             get { return this._pipeline; }

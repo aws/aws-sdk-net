@@ -68,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey.
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -113,6 +114,7 @@ namespace Amazon.StorageGateway.Model
         /// for this volume as the new target name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string TargetName
         {
             get { return this._targetName; }
@@ -131,6 +133,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the storage volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }
@@ -151,6 +154,7 @@ namespace Amazon.StorageGateway.Model
         /// Your Volumes to a Different Gateway</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=50)]
         public string VolumeAttachmentStatus
         {
             get { return this._volumeAttachmentStatus; }
@@ -169,6 +173,7 @@ namespace Amazon.StorageGateway.Model
         /// The unique identifier of the volume, e.g. vol-AE4B946D.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=30)]
         public string VolumeId
         {
             get { return this._volumeId; }
@@ -244,6 +249,7 @@ namespace Amazon.StorageGateway.Model
         /// One of the VolumeStatus values that indicates the state of the storage volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=50)]
         public string VolumeStatus
         {
             get { return this._volumeStatus; }
@@ -262,6 +268,7 @@ namespace Amazon.StorageGateway.Model
         /// One of the VolumeType enumeration values that describes the type of the volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=100)]
         public string VolumeType
         {
             get { return this._volumeType; }

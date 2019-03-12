@@ -91,6 +91,7 @@ namespace Amazon.WorkSpaces.Model
         /// The maximum number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -110,6 +111,7 @@ namespace Amazon.WorkSpaces.Model
         /// provide this token to receive the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -128,6 +130,7 @@ namespace Amazon.WorkSpaces.Model
         /// The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string UserName
         {
             get { return this._userName; }
@@ -153,6 +156,7 @@ namespace Amazon.WorkSpaces.Model
         /// this identifier, no information is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> WorkspaceIds
         {
             get { return this._workspaceIds; }

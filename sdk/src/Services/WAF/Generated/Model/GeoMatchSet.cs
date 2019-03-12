@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// want AWS WAF to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<GeoMatchConstraint> GeoMatchConstraints
         {
             get { return this._geoMatchConstraints; }
@@ -69,6 +70,7 @@ namespace Amazon.WAF.Model
         ///  <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GeoMatchSetId
         {
             get { return this._geoMatchSetId; }
@@ -88,6 +90,7 @@ namespace Amazon.WAF.Model
         /// of an <code>GeoMatchSet</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

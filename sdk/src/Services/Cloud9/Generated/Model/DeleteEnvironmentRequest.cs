@@ -42,6 +42,7 @@ namespace Amazon.Cloud9.Model
         /// The ID of the environment to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

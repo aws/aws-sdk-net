@@ -62,6 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// on a domain name, or report some other type of abuse.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=254)]
         public string AbuseContactEmail
         {
             get { return this._abuseContactEmail; }
@@ -80,6 +81,7 @@ namespace Amazon.Route53Domains.Model
         /// Phone number for reporting abuse.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public string AbuseContactPhone
         {
             get { return this._abuseContactPhone; }
@@ -98,6 +100,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain administrative contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -193,6 +196,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of a domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -230,6 +234,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Nameserver> Nameservers
         {
             get { return this._nameservers; }
@@ -248,6 +253,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain registrant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -398,6 +404,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain technical contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

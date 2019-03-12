@@ -45,6 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> CustomerDnsIps
         {
             get { return this._customerDnsIps; }
@@ -77,6 +78,7 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string CustomerUserName
         {
             get { return this._customerUserName; }
@@ -95,6 +97,7 @@ namespace Amazon.DirectoryService.Model
         /// A list of subnet identifiers in the VPC in which the AD Connector is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -113,6 +116,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the VPC in which the AD Connector is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

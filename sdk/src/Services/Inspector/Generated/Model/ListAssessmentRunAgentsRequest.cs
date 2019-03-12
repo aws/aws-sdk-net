@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment run whose agents you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }
@@ -109,6 +110,7 @@ namespace Amazon.Inspector.Model
         /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }

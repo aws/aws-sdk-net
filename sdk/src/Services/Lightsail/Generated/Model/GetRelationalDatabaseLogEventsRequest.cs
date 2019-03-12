@@ -87,6 +87,7 @@ namespace Amazon.Lightsail.Model
         /// available log streams.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogStreamName
         {
             get { return this._logStreamName; }
@@ -124,6 +125,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database for which to get log events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

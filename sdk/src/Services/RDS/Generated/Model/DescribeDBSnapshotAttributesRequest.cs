@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         /// The identifier for the DB snapshot to describe the attributes for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }

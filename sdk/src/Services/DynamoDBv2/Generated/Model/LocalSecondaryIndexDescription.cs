@@ -63,6 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents the name of the local secondary index.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -141,6 +142,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }

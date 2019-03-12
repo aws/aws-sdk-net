@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the AWS Managed Microsoft AD directory that you want to stop sharing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -60,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier for the directory consumer account with whom the directory has to be unshared.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UnshareTarget UnshareTarget
         {
             get { return this._unshareTarget; }

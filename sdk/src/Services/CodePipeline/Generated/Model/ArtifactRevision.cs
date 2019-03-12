@@ -65,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// might be defined by the user when an action is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -84,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// in Amazon S3 buckets, the ETag value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RevisionChangeIdentifier
         {
             get { return this._revisionChangeIdentifier; }
@@ -102,6 +104,7 @@ namespace Amazon.CodePipeline.Model
         /// The revision ID of the artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1500)]
         public string RevisionId
         {
             get { return this._revisionId; }
@@ -123,6 +126,7 @@ namespace Amazon.CodePipeline.Model
         /// key specified in the object metadata.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionSummary
         {
             get { return this._revisionSummary; }
@@ -142,6 +146,7 @@ namespace Amazon.CodePipeline.Model
         /// repositories, the commit ID is linked to a commit details page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionUrl
         {
             get { return this._revisionUrl; }

@@ -40,6 +40,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string LocationArn
         {
             get { return this._locationArn; }

@@ -127,6 +127,7 @@ namespace Amazon.GameLift.Model
         /// Actual number of active instances in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ACTIVE
         {
             get { return this._active.GetValueOrDefault(); }
@@ -145,6 +146,7 @@ namespace Amazon.GameLift.Model
         /// Ideal number of active instances in the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int DESIRED
         {
             get { return this._desired.GetValueOrDefault(); }
@@ -163,6 +165,7 @@ namespace Amazon.GameLift.Model
         /// Number of active instances in the fleet that are not currently hosting a game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int IDLE
         {
             get { return this._idle.GetValueOrDefault(); }
@@ -181,6 +184,7 @@ namespace Amazon.GameLift.Model
         /// Maximum value allowed for the fleet's instance count.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MAXIMUM
         {
             get { return this._maximum.GetValueOrDefault(); }
@@ -199,6 +203,7 @@ namespace Amazon.GameLift.Model
         /// Minimum value allowed for the fleet's instance count.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MINIMUM
         {
             get { return this._minimum.GetValueOrDefault(); }
@@ -217,6 +222,7 @@ namespace Amazon.GameLift.Model
         /// Number of instances in the fleet that are starting but not yet active.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PENDING
         {
             get { return this._pending.GetValueOrDefault(); }
@@ -235,6 +241,7 @@ namespace Amazon.GameLift.Model
         /// Number of instances in the fleet that are no longer active but haven't yet been terminated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TERMINATING
         {
             get { return this._terminating.GetValueOrDefault(); }

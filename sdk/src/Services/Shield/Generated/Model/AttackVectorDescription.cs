@@ -101,6 +101,7 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VectorType
         {
             get { return this._vectorType; }

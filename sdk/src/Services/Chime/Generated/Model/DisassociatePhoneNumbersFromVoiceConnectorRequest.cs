@@ -60,6 +60,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime Voice Connector ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

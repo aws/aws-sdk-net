@@ -47,6 +47,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The phone number to opt in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

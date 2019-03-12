@@ -45,6 +45,7 @@ namespace Amazon.Snowball.Model
         /// and UTF-8 binary sorted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string BeginMarker
         {
             get { return this._beginMarker; }
@@ -64,6 +65,7 @@ namespace Amazon.Snowball.Model
         /// UTF-8 binary sorted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string EndMarker
         {
             get { return this._endMarker; }

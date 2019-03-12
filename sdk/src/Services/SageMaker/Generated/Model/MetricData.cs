@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }

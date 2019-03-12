@@ -111,6 +111,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -141,6 +142,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// the option to use. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public List<EnumerationValue> EnumerationValues
         {
             get { return this._enumerationValues; }
@@ -170,6 +172,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Type Reference</a> in the <i>Alexa Skills Kit</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

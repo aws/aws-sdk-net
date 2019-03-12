@@ -45,6 +45,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -99,6 +100,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the model. Must be alphanumeric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -118,6 +120,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// draft 4 model.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Schema
         {
             get { return this._schema; }

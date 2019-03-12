@@ -61,6 +61,7 @@ namespace Amazon.CognitoIdentity.Model
         /// User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string DestinationUserIdentifier
         {
             get { return this._destinationUserIdentifier; }
@@ -83,6 +84,7 @@ namespace Amazon.CognitoIdentity.Model
         /// as period (.), underscore (_), and dash (-).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DeveloperProviderName
         {
             get { return this._developerProviderName; }
@@ -101,6 +103,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -119,6 +122,7 @@ namespace Amazon.CognitoIdentity.Model
         /// User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string SourceUserIdentifier
         {
             get { return this._sourceUserIdentifier; }

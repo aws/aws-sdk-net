@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// to failover to the second origin.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusCodes StatusCodes
         {
             get { return this._statusCodes; }

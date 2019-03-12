@@ -56,6 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A name for the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DestinationName
         {
             get { return this._destinationName; }
@@ -75,6 +76,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Kinesis PutRecord operation on the destination stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -93,6 +95,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ARN of an Amazon Kinesis stream to which to deliver matching log events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string TargetArn
         {
             get { return this._targetArn; }

@@ -101,6 +101,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string Name
         {
             get { return this._name; }

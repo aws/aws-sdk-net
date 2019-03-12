@@ -46,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The conditions that trigger an automatic scaling activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingAction Action
         {
             get { return this._action; }
@@ -83,6 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// a scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -102,6 +104,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// triggered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingTrigger Trigger
         {
             get { return this._trigger; }

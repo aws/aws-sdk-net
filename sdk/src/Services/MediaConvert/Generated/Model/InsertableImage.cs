@@ -49,6 +49,7 @@ namespace Amazon.MediaConvert.Model
         /// to remain on the output video. This duration includes fade-in time but not fade-out
         /// time.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int Duration
         {
             get { return this._duration.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.MediaConvert.Model
         /// setting. If you don't specify a value for Fade-in, the image will appear abruptly
         /// at the overlay start time.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int FadeIn
         {
             get { return this._fadeIn.GetValueOrDefault(); }
@@ -86,6 +88,7 @@ namespace Amazon.MediaConvert.Model
         /// the overlaid image has faded to total transparency. If you don't specify a value for
         /// Fade-out, the image will disappear abruptly at the end of the inserted image duration.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int FadeOut
         {
             get { return this._fadeOut.GetValueOrDefault(); }
@@ -104,6 +107,7 @@ namespace Amazon.MediaConvert.Model
         /// will crop your overlaid image to fit. To use the native height of the image, keep
         /// this setting blank.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int Height
         {
             get { return this._height.GetValueOrDefault(); }
@@ -120,6 +124,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ImageInserterInput. Specify the Amazon S3 location of the
         /// image that you want to overlay on the video. Use a PNG or TGA file.
         /// </summary>
+        [AWSProperty(Min=14)]
         public string ImageInserterInput
         {
             get { return this._imageInserterInput; }
@@ -137,6 +142,7 @@ namespace Amazon.MediaConvert.Model
         /// image and the left edge of the video frame. Required for any image overlay that you
         /// specify.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int ImageX
         {
             get { return this._imageX.GetValueOrDefault(); }
@@ -154,6 +160,7 @@ namespace Amazon.MediaConvert.Model
         /// image and the top edge of the video frame. Required for any image overlay that you
         /// specify.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int ImageY
         {
             get { return this._imageY.GetValueOrDefault(); }
@@ -171,6 +178,7 @@ namespace Amazon.MediaConvert.Model
         /// Images with higher values for Layer appear on top of images with lower values for
         /// Layer.
         /// </summary>
+        [AWSProperty(Min=0, Max=99)]
         public int Layer
         {
             get { return this._layer.GetValueOrDefault(); }
@@ -188,6 +196,7 @@ namespace Amazon.MediaConvert.Model
         /// underlying video shows through the inserted image. 0 is transparent and 100 is fully
         /// opaque. Default is 50.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Opacity
         {
             get { return this._opacity.GetValueOrDefault(); }
@@ -223,6 +232,7 @@ namespace Amazon.MediaConvert.Model
         /// will crop your overlaid image to fit. To use the native width of the image, keep this
         /// setting blank.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int Width
         {
             get { return this._width.GetValueOrDefault(); }

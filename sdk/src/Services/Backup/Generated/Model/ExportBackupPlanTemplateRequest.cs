@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies a backup plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanId
         {
             get { return this._backupPlanId; }

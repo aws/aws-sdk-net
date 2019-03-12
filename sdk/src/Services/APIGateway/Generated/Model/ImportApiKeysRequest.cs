@@ -45,6 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Key File Format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -83,6 +84,7 @@ namespace Amazon.APIGateway.Model
         /// the <code>csv</code> format is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApiKeysFormat Format
         {
             get { return this._format; }

@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// The name of the billing group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string BillingGroupName
         {
             get { return this._billingGroupName; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return per request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

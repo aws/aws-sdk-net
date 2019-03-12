@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         /// A list of mappings to the specified targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MappingEntry> Mapping
         {
             get { return this._mapping; }

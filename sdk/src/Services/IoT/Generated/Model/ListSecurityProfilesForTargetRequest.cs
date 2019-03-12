@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return at one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -98,6 +99,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the target (thing group) whose attached security profiles you want to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecurityProfileTargetArn
         {
             get { return this._securityProfileTargetArn; }

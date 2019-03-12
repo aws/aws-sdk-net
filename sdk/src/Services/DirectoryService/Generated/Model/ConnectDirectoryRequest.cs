@@ -56,6 +56,7 @@ namespace Amazon.DirectoryService.Model
         /// the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectoryConnectSettings ConnectSettings
         {
             get { return this._connectSettings; }
@@ -74,6 +75,7 @@ namespace Amazon.DirectoryService.Model
         /// A textual description for the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -92,6 +94,7 @@ namespace Amazon.DirectoryService.Model
         /// The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -110,6 +113,7 @@ namespace Amazon.DirectoryService.Model
         /// The password for the on-premises user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }
@@ -146,6 +150,7 @@ namespace Amazon.DirectoryService.Model
         /// The size of the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectorySize Size
         {
             get { return this._size; }

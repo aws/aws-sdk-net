@@ -42,6 +42,7 @@ namespace Amazon.CertificateManager.Model
         /// A fully qualified domain name (FQDN) in the certificate request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -86,6 +87,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string ValidationDomain
         {
             get { return this._validationDomain; }

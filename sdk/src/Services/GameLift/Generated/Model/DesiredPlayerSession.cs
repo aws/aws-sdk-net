@@ -43,6 +43,7 @@ namespace Amazon.GameLift.Model
         /// data, so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string PlayerData
         {
             get { return this._playerData; }
@@ -61,6 +62,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a player to associate with the player session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }

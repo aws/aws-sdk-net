@@ -47,6 +47,7 @@ namespace Amazon.CodePipeline.Model
         /// The configuration information for the action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionTypeId ActionTypeId
         {
             get { return this._actionTypeId; }
@@ -101,6 +102,7 @@ namespace Amazon.CodePipeline.Model
         /// The action declaration's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -137,6 +139,7 @@ namespace Amazon.CodePipeline.Model
         /// The action declaration's AWS Region, such as us-east-1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=30)]
         public string Region
         {
             get { return this._region; }
@@ -156,6 +159,7 @@ namespace Amazon.CodePipeline.Model
         /// through the roleArn for the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -174,6 +178,7 @@ namespace Amazon.CodePipeline.Model
         /// The order in which actions are run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int RunOrder
         {
             get { return this._runOrder.GetValueOrDefault(); }

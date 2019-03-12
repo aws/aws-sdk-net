@@ -57,6 +57,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -75,6 +76,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the IAM role of the state machine.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -93,6 +95,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the state machine.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }

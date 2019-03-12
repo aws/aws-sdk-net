@@ -52,6 +52,7 @@ namespace Amazon.AppStream.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -70,6 +71,7 @@ namespace Amazon.AppStream.Model
         /// The tag keys for the tags to disassociate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

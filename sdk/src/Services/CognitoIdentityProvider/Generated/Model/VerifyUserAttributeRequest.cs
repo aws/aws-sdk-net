@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Represents the access token of the request to verify user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The attribute name in the request to verify user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -80,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The verification code in the request to verify user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Code
         {
             get { return this._code; }

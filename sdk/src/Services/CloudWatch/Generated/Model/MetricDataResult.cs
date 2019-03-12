@@ -47,6 +47,7 @@ namespace Amazon.CloudWatch.Model
         /// The short name you specified to represent this metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Id
         {
             get { return this._id; }

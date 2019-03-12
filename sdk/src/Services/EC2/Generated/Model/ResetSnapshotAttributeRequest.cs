@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// can be reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotAttributeName Attribute
         {
             get { return this._attribute; }
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// The ID of the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

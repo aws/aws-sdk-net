@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model
         /// The thing group description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string ThingGroupDescription
         {
             get { return this._thingGroupDescription; }

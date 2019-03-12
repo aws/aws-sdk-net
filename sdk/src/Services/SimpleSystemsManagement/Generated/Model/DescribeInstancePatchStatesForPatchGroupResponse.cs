@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The high-level patch state for the requested instances. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<InstancePatchState> InstancePatchStates
         {
             get { return this._instancePatchStates; }

@@ -87,6 +87,7 @@ namespace Amazon.ECS.Model
         /// </code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContainerInstance
         {
             get { return this._containerInstance; }

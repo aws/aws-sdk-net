@@ -113,6 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskHeartbeatTimeout
         {
             get { return this._defaultTaskHeartbeatTimeout; }
@@ -184,6 +185,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskScheduleToCloseTimeout
         {
             get { return this._defaultTaskScheduleToCloseTimeout; }
@@ -209,6 +211,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskScheduleToStartTimeout
         {
             get { return this._defaultTaskScheduleToStartTimeout; }
@@ -234,6 +237,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskStartToCloseTimeout
         {
             get { return this._defaultTaskStartToCloseTimeout; }
@@ -252,6 +256,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A textual description of the activity type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -270,6 +275,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain in which this activity is to be registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -295,6 +301,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -325,6 +332,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

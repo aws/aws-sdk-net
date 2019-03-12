@@ -101,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The thing whose group memberships will be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

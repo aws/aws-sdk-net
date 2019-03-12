@@ -244,6 +244,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -264,6 +265,7 @@ namespace Amazon.CloudTrail.Model
         /// S3 Bucket Naming Requirements</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }

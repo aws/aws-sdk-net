@@ -82,6 +82,7 @@ namespace Amazon.MTurk.Model
         /// The HITId of the HIT for which results have been returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -133,6 +134,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -153,6 +153,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentCommandName Name
         {
             get { return this._name; }

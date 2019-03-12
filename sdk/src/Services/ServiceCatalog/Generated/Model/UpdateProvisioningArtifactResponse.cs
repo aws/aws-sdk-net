@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The URL of the CloudFormation template in Amazon S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, string> Info
         {
             get { return this._info; }

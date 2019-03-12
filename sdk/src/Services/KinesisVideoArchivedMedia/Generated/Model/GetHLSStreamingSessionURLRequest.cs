@@ -341,6 +341,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The default is 300 (5 minutes).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=300, Max=43200)]
         public int Expires
         {
             get { return this._expires.GetValueOrDefault(); }
@@ -410,6 +411,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// with 10-second fragments.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public long MaxMediaPlaylistFragmentResults
         {
             get { return this._maxMediaPlaylistFragmentResults.GetValueOrDefault(); }
@@ -496,6 +498,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -518,6 +521,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

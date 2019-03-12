@@ -46,6 +46,7 @@ namespace Amazon.GameLift.Model
         /// Game property identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.GameLift.Model
         /// Game property value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=96)]
         public string Value
         {
             get { return this._value; }

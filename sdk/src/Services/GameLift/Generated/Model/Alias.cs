@@ -72,6 +72,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for an alias; alias ARNs are unique across all regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AliasArn
         {
             get { return this._aliasArn; }
@@ -165,6 +166,7 @@ namespace Amazon.GameLift.Model
         /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

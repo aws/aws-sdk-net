@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobName.
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         /// provided, the AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -62,6 +63,7 @@ namespace Amazon.Glue.Model
         /// The security configuration to set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DataCatalogEncryptionSettings DataCatalogEncryptionSettings
         {
             get { return this._dataCatalogEncryptionSettings; }

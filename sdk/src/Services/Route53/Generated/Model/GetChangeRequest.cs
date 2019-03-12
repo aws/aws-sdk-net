@@ -71,6 +71,7 @@ namespace Amazon.Route53.Model
         /// you submitted the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }

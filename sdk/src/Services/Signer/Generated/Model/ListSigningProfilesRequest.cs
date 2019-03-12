@@ -67,6 +67,7 @@ namespace Amazon.Signer.Model
         /// The maximum number of profiles to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

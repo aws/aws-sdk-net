@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model
         /// any, for this streaming distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Aliases Aliases
         {
             get { return this._aliases; }
@@ -75,6 +76,7 @@ namespace Amazon.CloudFront.Model
         /// where <code>123456789012</code> is your AWS account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }
@@ -93,6 +95,7 @@ namespace Amazon.CloudFront.Model
         /// The comment originally specified when this distribution was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -111,6 +114,7 @@ namespace Amazon.CloudFront.Model
         /// The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -129,6 +133,7 @@ namespace Amazon.CloudFront.Model
         /// Whether the distribution is enabled to accept end user requests for content.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -147,6 +152,7 @@ namespace Amazon.CloudFront.Model
         /// The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -165,6 +171,7 @@ namespace Amazon.CloudFront.Model
         /// The date and time the distribution was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }
@@ -180,6 +187,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PriceClass.
         /// </summary>
+        [AWSProperty(Required=true)]
         public PriceClass PriceClass
         {
             get { return this._priceClass; }
@@ -199,6 +207,7 @@ namespace Amazon.CloudFront.Model
         /// want CloudFront to get your media files for distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Origin S3Origin
         {
             get { return this._s3Origin; }
@@ -219,6 +228,7 @@ namespace Amazon.CloudFront.Model
         /// system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }
@@ -247,6 +257,7 @@ namespace Amazon.CloudFront.Model
         /// that you want to include in the updated distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedSigners TrustedSigners
         {
             get { return this._trustedSigners; }

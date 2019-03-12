@@ -76,6 +76,7 @@ namespace Amazon.QuickSight.Model
         /// AWS account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -94,6 +95,7 @@ namespace Amazon.QuickSight.Model
         /// The email address of the user that you want to register.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Email
         {
             get { return this._email; }
@@ -141,6 +143,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IdentityType IdentityType
         {
             get { return this._identityType; }
@@ -159,6 +162,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -180,6 +184,7 @@ namespace Amazon.QuickSight.Model
         /// <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=64)]
         public string SessionName
         {
             get { return this._sessionName; }
@@ -198,6 +203,7 @@ namespace Amazon.QuickSight.Model
         /// The Amazon QuickSight user name that you want to create for the user you are registering.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string UserName
         {
             get { return this._userName; }
@@ -231,6 +237,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UserRole UserRole
         {
             get { return this._userRole; }

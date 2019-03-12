@@ -38,6 +38,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property BulkDeploymentId. The ID of the bulk deployment.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BulkDeploymentId
         {
             get { return this._bulkDeploymentId; }

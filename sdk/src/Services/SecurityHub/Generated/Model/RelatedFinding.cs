@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The solution-generated identifier for a related finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -59,6 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the solution that generated a related finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProductArn
         {
             get { return this._productArn; }

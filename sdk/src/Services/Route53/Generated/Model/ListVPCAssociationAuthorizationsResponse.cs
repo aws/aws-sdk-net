@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that you can associate the listed VPCs with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -64,6 +65,7 @@ namespace Amazon.Route53.Model
         /// request parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -82,6 +84,7 @@ namespace Amazon.Route53.Model
         /// The list of VPCs that are authorized to be associated with the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<VPC> VPCs
         {
             get { return this._vpCs; }

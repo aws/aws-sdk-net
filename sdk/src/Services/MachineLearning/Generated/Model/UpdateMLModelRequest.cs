@@ -49,6 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>MLModel</code> during creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -67,6 +68,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string MLModelName
         {
             get { return this._mlModelName; }

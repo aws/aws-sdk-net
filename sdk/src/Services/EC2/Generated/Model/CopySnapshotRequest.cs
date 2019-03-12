@@ -230,6 +230,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Region that contains the snapshot to be copied.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceRegion
         {
             get { return this._sourceRegion; }
@@ -248,6 +249,7 @@ namespace Amazon.EC2.Model
         /// The ID of the EBS snapshot to copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceSnapshotId
         {
             get { return this._sourceSnapshotId; }

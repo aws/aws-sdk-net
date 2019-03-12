@@ -61,6 +61,7 @@ namespace Amazon.DAX.Model
         /// The name of the subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetGroupName
         {
             get { return this._subnetGroupName; }

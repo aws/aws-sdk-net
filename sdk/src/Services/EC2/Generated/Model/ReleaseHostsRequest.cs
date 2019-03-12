@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Dedicated Hosts to release.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> HostIds
         {
             get { return this._hostIds; }

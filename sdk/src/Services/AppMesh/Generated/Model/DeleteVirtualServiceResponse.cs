@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual service that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualServiceData VirtualService
         {
             get { return this._virtualService; }

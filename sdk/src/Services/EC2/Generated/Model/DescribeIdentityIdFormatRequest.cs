@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// The ARN of the principal, which can be an IAM role, IAM user, or the root user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PrincipalArn
         {
             get { return this._principalArn; }

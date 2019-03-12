@@ -49,6 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of the snapshot to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

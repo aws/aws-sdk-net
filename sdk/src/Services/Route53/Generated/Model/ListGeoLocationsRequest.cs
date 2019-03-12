@@ -62,6 +62,7 @@ namespace Amazon.Route53.Model
         /// with their subdivisions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string StartContinentCode
         {
             get { return this._startContinentCode; }
@@ -89,6 +90,7 @@ namespace Amazon.Route53.Model
         /// standard 3166-1 alpha-2</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public string StartCountryCode
         {
             get { return this._startCountryCode; }
@@ -117,6 +119,7 @@ namespace Amazon.Route53.Model
         /// and <code>startsubdivisioncode</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public string StartSubdivisionCode
         {
             get { return this._startSubdivisionCode; }

@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the IP address filter to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilterName
         {
             get { return this._filterName; }

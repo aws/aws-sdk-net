@@ -43,6 +43,7 @@ namespace Amazon.CloudDirectory.Model
         ///  <a>Facet</a> structure that is associated with the typed link facet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedLinkFacet Facet
         {
             get { return this._facet; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

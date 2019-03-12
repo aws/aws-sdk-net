@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing details about the new group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Group Group
         {
             get { return this._group; }

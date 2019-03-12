@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The ID of the attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayAttachmentId
         {
             get { return this._transitGatewayAttachmentId; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the propagation route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

@@ -67,6 +67,7 @@ namespace Amazon.SageMaker.Model
         /// jobs for warm start tuning jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<ParentHyperParameterTuningJob> ParentHyperParameterTuningJobs
         {
             get { return this._parentHyperParameterTuningJobs; }
@@ -109,6 +110,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobWarmStartType WarmStartType
         {
             get { return this._warmStartType; }

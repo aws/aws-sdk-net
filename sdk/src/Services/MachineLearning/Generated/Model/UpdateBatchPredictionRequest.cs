@@ -48,6 +48,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>BatchPrediction</code> during creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string BatchPredictionId
         {
             get { return this._batchPredictionId; }
@@ -66,6 +67,7 @@ namespace Amazon.MachineLearning.Model
         /// A new user-supplied name or description of the <code>BatchPrediction</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string BatchPredictionName
         {
             get { return this._batchPredictionName; }

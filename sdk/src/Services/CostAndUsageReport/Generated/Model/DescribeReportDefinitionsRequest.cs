@@ -39,6 +39,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property MaxResults.
         /// </summary>
+        [AWSProperty(Min=5, Max=5)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// A <code>Workteam</code> instance that contains information about the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscribedWorkteam SubscribedWorkteam
         {
             get { return this._subscribedWorkteam; }

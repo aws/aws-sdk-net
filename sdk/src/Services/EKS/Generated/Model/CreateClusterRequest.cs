@@ -94,6 +94,7 @@ namespace Amazon.EKS.Model
         /// The unique name to give to your cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -118,6 +119,7 @@ namespace Amazon.EKS.Model
         /// that you use a dedicated security group for your cluster control plane.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VpcConfigRequest ResourcesVpcConfig
         {
             get { return this._resourcesVpcConfig; }
@@ -139,6 +141,7 @@ namespace Amazon.EKS.Model
         /// EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

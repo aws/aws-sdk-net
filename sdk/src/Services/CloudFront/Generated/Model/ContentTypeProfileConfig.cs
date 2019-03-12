@@ -62,6 +62,7 @@ namespace Amazon.CloudFront.Model
         /// default), an error is returned when the content type is unknown. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ForwardWhenContentTypeIsUnknown
         {
             get { return this._forwardWhenContentTypeIsUnknown.GetValueOrDefault(); }

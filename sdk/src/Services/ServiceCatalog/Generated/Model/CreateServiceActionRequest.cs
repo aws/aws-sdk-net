@@ -59,6 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -104,6 +105,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public Dictionary<string, string> Definition
         {
             get { return this._definition; }
@@ -122,6 +124,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The service action definition type. For example, <code>SSM_AUTOMATION</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceActionDefinitionType DefinitionType
         {
             get { return this._definitionType; }
@@ -140,6 +143,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -159,6 +163,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -177,6 +182,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// The metric type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricType PredefinedMetricType
         {
             get { return this._predefinedMetricType; }
@@ -93,6 +94,7 @@ namespace Amazon.AutoScaling.Model
         /// to the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1023)]
         public string ResourceLabel
         {
             get { return this._resourceLabel; }

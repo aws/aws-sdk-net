@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the schema to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

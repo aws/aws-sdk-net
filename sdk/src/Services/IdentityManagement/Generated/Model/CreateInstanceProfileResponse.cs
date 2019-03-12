@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing details about the new instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceProfile InstanceProfile
         {
             get { return this._instanceProfile; }

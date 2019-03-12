@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

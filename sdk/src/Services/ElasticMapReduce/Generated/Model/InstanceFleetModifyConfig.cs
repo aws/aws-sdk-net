@@ -49,6 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A unique identifier for the instance fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceFleetId
         {
             get { return this._instanceFleetId; }
@@ -68,6 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetOnDemandCapacity
         {
             get { return this._targetOnDemandCapacity.GetValueOrDefault(); }
@@ -87,6 +89,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <a>InstanceFleetConfig$TargetSpotCapacity</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetSpotCapacity
         {
             get { return this._targetSpotCapacity.GetValueOrDefault(); }

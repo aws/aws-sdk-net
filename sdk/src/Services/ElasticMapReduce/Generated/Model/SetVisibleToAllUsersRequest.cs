@@ -46,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Identifiers of the job flows to receive the new visibility setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> JobFlowIds
         {
             get { return this._jobFlowIds; }
@@ -68,6 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool VisibleToAllUsers
         {
             get { return this._visibleToAllUsers.GetValueOrDefault(); }

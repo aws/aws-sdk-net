@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// The Elasticsearch domain that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

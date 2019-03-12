@@ -71,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The unique ID of the timer to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TimerId
         {
             get { return this._timerId; }

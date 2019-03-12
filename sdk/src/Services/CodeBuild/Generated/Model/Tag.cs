@@ -46,6 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// The tag's key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=127)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.CodeBuild.Model
         /// The tag's value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Value
         {
             get { return this._value; }

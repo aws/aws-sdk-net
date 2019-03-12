@@ -140,6 +140,7 @@ namespace Amazon.EC2.Model
         /// The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CidrBlock
         {
             get { return this._cidrBlock; }
@@ -177,6 +178,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

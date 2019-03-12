@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The normalized severity of a finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Normalized
         {
             get { return this._normalized.GetValueOrDefault(); }

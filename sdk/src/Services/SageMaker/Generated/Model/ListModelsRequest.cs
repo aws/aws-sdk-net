@@ -84,6 +84,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of models to return in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// job whose name contains the specified string.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -123,6 +125,7 @@ namespace Amazon.SageMaker.Model
         /// in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

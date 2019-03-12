@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The conference preference of a specific conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConferencePreference ConferencePreference
         {
             get { return this._conferencePreference; }

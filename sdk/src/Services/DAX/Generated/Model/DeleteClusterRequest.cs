@@ -44,6 +44,7 @@ namespace Amazon.DAX.Model
         /// The name of the cluster to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterName
         {
             get { return this._clusterName; }

@@ -44,6 +44,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The format of the exported data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportType ExportType
         {
             get { return this._exportType; }
@@ -62,6 +63,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot to export.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -80,6 +82,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The type of resource to export. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -98,6 +101,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the bot to export.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SqlInjectionMatchSetId
         {
             get { return this._sqlInjectionMatchSetId; }

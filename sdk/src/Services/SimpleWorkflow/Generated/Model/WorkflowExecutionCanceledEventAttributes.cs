@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The details of the cancellation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }

@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// calling entity is allowed access to the job and its details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -63,6 +64,7 @@ namespace Amazon.CodePipeline.Model
         /// Represents information about failure details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FailureDetails FailureDetails
         {
             get { return this._failureDetails; }
@@ -81,6 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string JobId
         {
             get { return this._jobId; }

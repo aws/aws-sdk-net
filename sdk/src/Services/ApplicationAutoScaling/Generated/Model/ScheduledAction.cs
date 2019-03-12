@@ -49,6 +49,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The date and time that the scheduled action was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -135,6 +136,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -276,6 +278,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string Schedule
         {
             get { return this._schedule; }
@@ -294,6 +297,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Amazon Resource Name (ARN) of the scheduled action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ScheduledActionARN
         {
             get { return this._scheduledActionARN; }
@@ -312,6 +316,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The name of the scheduled action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }
@@ -333,6 +338,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

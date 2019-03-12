@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The S3 bucket that contains the input file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=256)]
         public string InputFileBucket
         {
             get { return this._inputFileBucket; }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// JSON file. Each line contains the parameter values to provision one device (thing).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string InputFileKey
         {
             get { return this._inputFileKey; }
@@ -81,6 +83,7 @@ namespace Amazon.IoT.Model
         /// The IAM role ARN that grants permission the input file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -99,6 +102,7 @@ namespace Amazon.IoT.Model
         /// The provisioning template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateBody
         {
             get { return this._templateBody; }

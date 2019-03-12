@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The delivery stream name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The IAM role that grants access to the Amazon Kinesis Firehose stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

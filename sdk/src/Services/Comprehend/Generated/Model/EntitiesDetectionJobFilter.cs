@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         /// Filters on the name of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

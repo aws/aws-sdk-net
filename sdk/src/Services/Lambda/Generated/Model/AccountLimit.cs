@@ -120,6 +120,7 @@ namespace Amazon.Lambda.Model
         /// reserved for individual functions with <a>PutFunctionConcurrency</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int UnreservedConcurrentExecutions
         {
             get { return this._unreservedConcurrentExecutions.GetValueOrDefault(); }

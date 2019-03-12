@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// Indicates the maximum number of items that you want in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -82,6 +83,7 @@ namespace Amazon.SecurityHub.Model
         /// The list of standards subscription ARNS that you want to list and describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> StandardsSubscriptionArns
         {
             get { return this._standardsSubscriptionArns; }

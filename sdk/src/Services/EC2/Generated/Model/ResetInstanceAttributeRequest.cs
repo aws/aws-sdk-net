@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceAttributeName Attribute
         {
             get { return this._attribute; }
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

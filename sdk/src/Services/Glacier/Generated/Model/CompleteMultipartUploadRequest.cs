@@ -136,6 +136,7 @@ namespace Amazon.Glacier.Model
         /// hyphens ('-') in the ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -194,6 +195,7 @@ namespace Amazon.Glacier.Model
         /// The upload ID of the multipart upload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UploadId
         {
             get { return this._uploadId; }
@@ -212,6 +214,7 @@ namespace Amazon.Glacier.Model
         /// The name of the vault.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VaultName
         {
             get { return this._vaultName; }

@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The ID of the security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }

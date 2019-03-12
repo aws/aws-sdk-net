@@ -67,6 +67,7 @@ namespace Amazon.SimpleEmail.Model
         /// To successfully call this API, you must own the identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }
@@ -85,6 +86,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the policy to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string PolicyName
         {
             get { return this._policyName; }

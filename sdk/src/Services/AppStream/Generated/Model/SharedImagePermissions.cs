@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// Describes the permissions for a shared image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImagePermissions ImagePermissions
         {
             get { return this._imagePermissions; }
@@ -60,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// The 12-digit identifier of the AWS account with which the image is shared.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SharedAccountId
         {
             get { return this._sharedAccountId; }

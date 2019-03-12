@@ -119,6 +119,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The port on which the load balancer is listening.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

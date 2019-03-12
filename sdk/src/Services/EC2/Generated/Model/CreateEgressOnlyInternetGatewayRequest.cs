@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC for which to create the egress-only internet gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

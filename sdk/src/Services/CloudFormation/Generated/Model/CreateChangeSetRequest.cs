@@ -214,6 +214,7 @@ namespace Amazon.CloudFormation.Model
         /// It must start with an alphabetic character and cannot exceed 128 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -266,6 +267,7 @@ namespace Amazon.CloudFormation.Model
         /// requests to ensure that AWS CloudFormation successfully received them.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -284,6 +286,7 @@ namespace Amazon.CloudFormation.Model
         /// A description to help you identify this change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -304,6 +307,7 @@ namespace Amazon.CloudFormation.Model
         /// notification topics, specify an empty list.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationARNs
         {
             get { return this._notificationARNs; }
@@ -381,6 +385,7 @@ namespace Amazon.CloudFormation.Model
         /// session that is generated from your user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -421,6 +426,7 @@ namespace Amazon.CloudFormation.Model
         /// input values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -440,6 +446,7 @@ namespace Amazon.CloudFormation.Model
         /// tags to resources in the stack. You can specify a maximum of 50 tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -464,6 +471,7 @@ namespace Amazon.CloudFormation.Model
         /// Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -488,6 +496,7 @@ namespace Amazon.CloudFormation.Model
         /// Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

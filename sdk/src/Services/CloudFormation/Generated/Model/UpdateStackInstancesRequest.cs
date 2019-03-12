@@ -73,6 +73,7 @@ namespace Amazon.CloudFormation.Model
         /// instances in the specified accounts and regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Accounts
         {
             get { return this._accounts; }
@@ -102,6 +103,7 @@ namespace Amazon.CloudFormation.Model
         /// If you don't specify an operation ID, the SDK generates one automatically. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -208,6 +210,7 @@ namespace Amazon.CloudFormation.Model
         /// in the specified accounts and regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Regions
         {
             get { return this._regions; }
@@ -226,6 +229,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack set associated with the stack instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

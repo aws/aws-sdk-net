@@ -60,6 +60,7 @@ namespace Amazon.AppMesh.Model
         /// </para>
         ///          </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -78,6 +79,7 @@ namespace Amazon.AppMesh.Model
         /// The Unix epoch timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -96,6 +98,7 @@ namespace Amazon.AppMesh.Model
         /// The Unix epoch timestamp in seconds for when the resource was last updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastUpdatedAt
         {
             get { return this._lastUpdatedAt.GetValueOrDefault(); }
@@ -114,6 +117,7 @@ namespace Amazon.AppMesh.Model
         /// The unique identifier for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Uid
         {
             get { return this._uid; }
@@ -133,6 +137,7 @@ namespace Amazon.AppMesh.Model
         /// is         incremented each time that they're updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Version
         {
             get { return this._version.GetValueOrDefault(); }

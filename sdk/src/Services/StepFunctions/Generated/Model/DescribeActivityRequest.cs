@@ -48,6 +48,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the activity to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityArn
         {
             get { return this._activityArn; }

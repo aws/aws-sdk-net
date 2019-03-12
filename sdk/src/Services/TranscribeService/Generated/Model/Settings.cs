@@ -76,6 +76,7 @@ namespace Amazon.TranscribeService.Model
         /// field to true.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10)]
         public int MaxSpeakerLabels
         {
             get { return this._maxSpeakerLabels.GetValueOrDefault(); }
@@ -120,6 +121,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of a vocabulary to use when processing the transcription job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string VocabularyName
         {
             get { return this._vocabularyName; }

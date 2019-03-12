@@ -49,6 +49,7 @@ namespace Amazon.KeyManagementService.Model
         /// Identifier of the grant to be revoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GrantId
         {
             get { return this._grantId; }
@@ -89,6 +90,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

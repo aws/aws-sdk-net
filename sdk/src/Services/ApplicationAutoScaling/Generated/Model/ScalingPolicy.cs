@@ -67,6 +67,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Unix timestamp for when the scaling policy was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Amazon Resource Name (ARN) of the scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string PolicyARN
         {
             get { return this._policyARN; }
@@ -103,6 +105,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The name of the scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -121,6 +124,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The scaling policy type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType PolicyType
         {
             get { return this._policyType; }
@@ -189,6 +193,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -264,6 +269,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -285,6 +291,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

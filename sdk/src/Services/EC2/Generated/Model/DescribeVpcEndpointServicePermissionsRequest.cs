@@ -112,6 +112,7 @@ namespace Amazon.EC2.Model
         /// The ID of the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceId
         {
             get { return this._serviceId; }

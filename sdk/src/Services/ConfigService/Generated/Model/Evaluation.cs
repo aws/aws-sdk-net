@@ -45,6 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Supplementary information about how the evaluation determined the compliance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Annotation
         {
             get { return this._annotation; }
@@ -63,6 +64,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the AWS resource that was evaluated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=768)]
         public string ComplianceResourceId
         {
             get { return this._complianceResourceId; }
@@ -81,6 +83,7 @@ namespace Amazon.ConfigService.Model
         /// The type of AWS resource that was evaluated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ComplianceResourceType
         {
             get { return this._complianceResourceType; }
@@ -113,6 +116,7 @@ namespace Amazon.ConfigService.Model
         /// value to AWS Config.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComplianceType ComplianceType
         {
             get { return this._complianceType; }
@@ -135,6 +139,7 @@ namespace Amazon.ConfigService.Model
         /// hours).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime OrderingTimestamp
         {
             get { return this._orderingTimestamp.GetValueOrDefault(); }

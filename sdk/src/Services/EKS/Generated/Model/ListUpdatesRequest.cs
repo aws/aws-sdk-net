@@ -50,6 +50,7 @@ namespace Amazon.EKS.Model
         /// to 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.EKS.Model
         /// The name of the Amazon EKS cluster for which to list updates.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

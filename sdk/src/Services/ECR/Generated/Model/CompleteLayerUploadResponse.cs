@@ -79,6 +79,7 @@ namespace Amazon.ECR.Model
         /// The repository name associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

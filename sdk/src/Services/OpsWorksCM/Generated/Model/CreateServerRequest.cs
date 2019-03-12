@@ -118,6 +118,7 @@ namespace Amazon.OpsWorksCM.Model
         /// represented by BackupId. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=79)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -138,6 +139,7 @@ namespace Amazon.OpsWorksCM.Model
         /// value is <code>1</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int BackupRetentionCount
         {
             get { return this._backupRetentionCount.GetValueOrDefault(); }
@@ -293,6 +295,7 @@ namespace Amazon.OpsWorksCM.Model
         /// need. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceProfileArn
         {
             get { return this._instanceProfileArn; }
@@ -313,6 +316,7 @@ namespace Amazon.OpsWorksCM.Model
         /// and greater. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -447,6 +451,7 @@ namespace Amazon.OpsWorksCM.Model
         /// (-) are allowed, up to a maximum of 40 characters. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }
@@ -470,6 +475,7 @@ namespace Amazon.OpsWorksCM.Model
         /// profile that you need. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceRoleArn
         {
             get { return this._serviceRoleArn; }

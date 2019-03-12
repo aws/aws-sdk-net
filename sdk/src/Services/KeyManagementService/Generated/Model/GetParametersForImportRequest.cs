@@ -93,6 +93,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -113,6 +114,7 @@ namespace Amazon.KeyManagementService.Model
         /// the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmSpec WrappingAlgorithm
         {
             get { return this._wrappingAlgorithm; }
@@ -132,6 +134,7 @@ namespace Amazon.KeyManagementService.Model
         /// public keys are supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WrappingKeySpec WrappingKeySpec
         {
             get { return this._wrappingKeySpec; }

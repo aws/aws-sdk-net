@@ -74,6 +74,7 @@ namespace Amazon.DataPipeline.Model
         /// for <a>PollForTask</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TaskId
         {
             get { return this._taskId; }

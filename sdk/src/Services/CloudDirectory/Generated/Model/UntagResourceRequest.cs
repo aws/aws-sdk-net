@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// Keys of the tag that need to be removed from the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

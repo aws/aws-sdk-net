@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Destination.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }
@@ -80,6 +81,7 @@ namespace Amazon.SimpleEmail.Model
         /// tags in the email template.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=262144)]
         public string ReplacementTemplateData
         {
             get { return this._replacementTemplateData; }

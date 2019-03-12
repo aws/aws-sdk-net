@@ -101,6 +101,7 @@ namespace Amazon.AppSync.Model
         /// must exactly match the value of <code>iss</code> in the ID token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Issuer
         {
             get { return this._issuer; }

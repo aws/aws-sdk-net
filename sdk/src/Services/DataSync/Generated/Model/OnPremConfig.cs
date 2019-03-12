@@ -41,6 +41,7 @@ namespace Amazon.DataSync.Model
         /// ARNs)of the agents to use for an NFS location.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public List<string> AgentArns
         {
             get { return this._agentArns; }

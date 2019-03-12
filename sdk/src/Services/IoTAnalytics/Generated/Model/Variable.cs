@@ -82,6 +82,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the variable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -118,6 +119,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The value of the variable as a string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string StringValue
         {
             get { return this._stringValue; }

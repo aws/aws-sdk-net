@@ -46,6 +46,7 @@ namespace Amazon.TranscribeService.Model
         /// operation to return in the next page of jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

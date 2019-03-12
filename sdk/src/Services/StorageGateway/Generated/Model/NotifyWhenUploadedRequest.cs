@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }

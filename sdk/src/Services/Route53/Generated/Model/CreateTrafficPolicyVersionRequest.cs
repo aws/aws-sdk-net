@@ -49,6 +49,7 @@ namespace Amazon.Route53.Model
         /// The ID of the traffic policy for which you want to create a new version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -69,6 +70,7 @@ namespace Amazon.Route53.Model
         /// about the JSON format, see <a>CreateTrafficPolicy</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=102400)]
         public string Document
         {
             get { return this._document; }
@@ -88,6 +90,7 @@ namespace Amazon.Route53.Model
         /// if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Comment
         {
             get { return this._comment; }

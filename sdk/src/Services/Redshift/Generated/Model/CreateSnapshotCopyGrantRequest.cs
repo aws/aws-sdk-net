@@ -97,6 +97,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotCopyGrantName
         {
             get { return this._snapshotCopyGrantName; }

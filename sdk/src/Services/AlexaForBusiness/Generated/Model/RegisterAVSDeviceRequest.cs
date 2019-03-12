@@ -47,6 +47,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// new product on Amazon's Developer Console.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AmazonId
         {
             get { return this._amazonId; }
@@ -65,6 +66,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The client ID of the OEM used for code-based linking authorization on an AVS device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -84,6 +86,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// AVS device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceSerialNumber
         {
             get { return this._deviceSerialNumber; }
@@ -102,6 +105,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The product ID used to identify your AVS device during authorization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProductId
         {
             get { return this._productId; }
@@ -122,6 +126,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// specification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserCode
         {
             get { return this._userCode; }

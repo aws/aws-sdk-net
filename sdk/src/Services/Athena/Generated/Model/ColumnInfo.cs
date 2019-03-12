@@ -103,6 +103,7 @@ namespace Amazon.Athena.Model
         /// The name of the column.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -213,6 +214,7 @@ namespace Amazon.Athena.Model
         /// The data type of the column.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Nested aggregators to further refine aggregation for an inventory type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<InventoryAggregator> Aggregators
         {
             get { return this._aggregators; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The inventory type and attribute name for aggregation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Expression
         {
             get { return this._expression; }
@@ -79,6 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// return a count of resources that match and don't match the specified criteria.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<InventoryGroup> Groups
         {
             get { return this._groups; }

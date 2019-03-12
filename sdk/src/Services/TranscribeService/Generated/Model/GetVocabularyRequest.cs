@@ -41,6 +41,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of the vocabulary to return information about. The name is case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string VocabularyName
         {
             get { return this._vocabularyName; }

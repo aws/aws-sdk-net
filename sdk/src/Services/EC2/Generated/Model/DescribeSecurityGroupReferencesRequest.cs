@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// One or more security group IDs in your account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> GroupId
         {
             get { return this._groupId; }

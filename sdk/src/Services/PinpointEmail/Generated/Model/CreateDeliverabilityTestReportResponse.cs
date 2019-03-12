@@ -45,6 +45,7 @@ namespace Amazon.PinpointEmail.Model
         /// to view the results of the test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliverabilityTestStatus DeliverabilityTestStatus
         {
             get { return this._deliverabilityTestStatus; }
@@ -63,6 +64,7 @@ namespace Amazon.PinpointEmail.Model
         /// A unique string that identifies the predictive inbox placement test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReportId
         {
             get { return this._reportId; }

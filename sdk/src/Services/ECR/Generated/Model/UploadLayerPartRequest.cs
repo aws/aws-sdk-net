@@ -54,6 +54,7 @@ namespace Amazon.ECR.Model
         /// The base64-encoded layer part payload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream LayerPartBlob
         {
             get { return this._layerPartBlob; }
@@ -72,6 +73,7 @@ namespace Amazon.ECR.Model
         /// The integer value of the first byte of the layer part.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long PartFirstByte
         {
             get { return this._partFirstByte.GetValueOrDefault(); }
@@ -90,6 +92,7 @@ namespace Amazon.ECR.Model
         /// The integer value of the last byte of the layer part.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long PartLastByte
         {
             get { return this._partLastByte.GetValueOrDefault(); }
@@ -127,6 +130,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository to which you are uploading layer parts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }
@@ -146,6 +150,7 @@ namespace Amazon.ECR.Model
         /// the layer part upload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UploadId
         {
             get { return this._uploadId; }

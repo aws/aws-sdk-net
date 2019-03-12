@@ -58,6 +58,7 @@ namespace Amazon.MTurk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Destination
         {
             get { return this._destination; }
@@ -80,6 +81,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> EventTypes
         {
             get { return this._eventTypes; }
@@ -99,6 +101,7 @@ namespace Amazon.MTurk.Model
         /// | SQS | SNS. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NotificationTransport Transport
         {
             get { return this._transport; }
@@ -117,6 +120,7 @@ namespace Amazon.MTurk.Model
         /// The version of the Notification API to use. Valid value is 2006-05-05.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Version
         {
             get { return this._version; }

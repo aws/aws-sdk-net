@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the activation that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActivationId
         {
             get { return this._activationId; }

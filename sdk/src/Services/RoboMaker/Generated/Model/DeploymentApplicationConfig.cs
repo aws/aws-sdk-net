@@ -42,6 +42,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Application
         {
             get { return this._application; }
@@ -60,6 +61,7 @@ namespace Amazon.RoboMaker.Model
         /// The version of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ApplicationVersion
         {
             get { return this._applicationVersion; }
@@ -78,6 +80,7 @@ namespace Amazon.RoboMaker.Model
         /// The launch configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentLaunchConfig LaunchConfig
         {
             get { return this._launchConfig; }

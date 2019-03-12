@@ -52,6 +52,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AccountId. AWS account ID where the activity occurred that
         /// prompted GuardDuty to generate a finding.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -67,6 +68,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Arn. The ARN of a finding described by the action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -97,6 +99,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. The time stamp at which a finding was generated.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreatedAt
         {
             get { return this._createdAt; }
@@ -128,6 +131,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Id. The identifier that corresponds to a finding described
         /// by the action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -159,6 +163,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Region. The AWS region where the activity occurred that
         /// prompted GuardDuty to generate a finding.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Region
         {
             get { return this._region; }
@@ -175,6 +180,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Resource. The AWS resource associated with the activity
         /// that prompted GuardDuty to generate a finding.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Resource Resource
         {
             get { return this._resource; }
@@ -190,6 +196,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. Findings' schema version.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaVersion
         {
             get { return this._schemaVersion; }
@@ -221,6 +228,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Severity. The severity of a finding.
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Severity
         {
             get { return this._severity.GetValueOrDefault(); }
@@ -251,6 +259,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Type. The type of a finding described by the action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }
@@ -266,6 +275,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. The time stamp at which a finding was last updated.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdatedAt
         {
             get { return this._updatedAt; }

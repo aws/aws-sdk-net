@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of objects containing metadata about the access keys.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AccessKeyMetadata> AccessKeyMetadata
         {
             get { return this._accessKeyMetadata; }
@@ -85,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }

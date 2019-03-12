@@ -57,6 +57,7 @@ namespace Amazon.Route53.Model
         /// all of the configurations that are associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -86,6 +87,7 @@ namespace Amazon.Route53.Model
         /// the previous response and specify that value for <code>NextToken</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

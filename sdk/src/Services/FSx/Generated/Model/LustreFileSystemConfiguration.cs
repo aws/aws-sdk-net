@@ -56,6 +56,7 @@ namespace Amazon.FSx.Model
         /// The UTC time that you want to begin your weekly maintenance window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=7)]
         public string WeeklyMaintenanceStartTime
         {
             get { return this._weeklyMaintenanceStartTime; }

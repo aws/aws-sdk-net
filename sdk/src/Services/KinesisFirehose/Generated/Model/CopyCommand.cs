@@ -110,6 +110,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the target table. The table must already exist in the database.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string DataTableName
         {
             get { return this._dataTableName; }

@@ -76,6 +76,7 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -112,6 +113,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

@@ -44,6 +44,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The plan identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PlanId
         {
             get { return this._planId; }
@@ -80,6 +81,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The user-friendly name of the provisioned product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ProvisionedProductName
         {
             get { return this._provisionedProductName; }
@@ -98,6 +100,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -116,6 +119,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisionProductId
         {
             get { return this._provisionProductId; }

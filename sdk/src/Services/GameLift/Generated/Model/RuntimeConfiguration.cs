@@ -143,6 +143,7 @@ namespace Amazon.GameLift.Model
         /// the game session status is changed to <code>TERMINATED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=600)]
         public int GameSessionActivationTimeoutSeconds
         {
             get { return this._gameSessionActivationTimeoutSeconds.GetValueOrDefault(); }
@@ -163,6 +164,7 @@ namespace Amazon.GameLift.Model
         /// can be used for new game activations at any one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int MaxConcurrentGameSessionActivations
         {
             get { return this._maxConcurrentGameSessionActivations.GetValueOrDefault(); }
@@ -182,6 +184,7 @@ namespace Amazon.GameLift.Model
         /// run on each instance in a fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<ServerProcess> ServerProcesses
         {
             get { return this._serverProcesses; }

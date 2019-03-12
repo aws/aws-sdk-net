@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// The configuration properties for the action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<ActionConfigurationProperty> ActionConfigurationProperties
         {
             get { return this._actionConfigurationProperties; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// Represents information about an action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionTypeId Id
         {
             get { return this._id; }
@@ -80,6 +82,7 @@ namespace Amazon.CodePipeline.Model
         /// The details of the input artifact for the action, such as its commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactDetails InputArtifactDetails
         {
             get { return this._inputArtifactDetails; }
@@ -98,6 +101,7 @@ namespace Amazon.CodePipeline.Model
         /// The details of the output artifact of the action, such as its commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactDetails OutputArtifactDetails
         {
             get { return this._outputArtifactDetails; }

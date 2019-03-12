@@ -44,6 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// prefix: <code>aws:</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudFormation.Model
         /// of 256 characters for a tag value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

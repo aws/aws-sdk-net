@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern.
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -58,6 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The log event messages to test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> LogEventMessages
         {
             get { return this._logEventMessages; }

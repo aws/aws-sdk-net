@@ -73,6 +73,7 @@ namespace Amazon.ECS.Model
         /// the family, or full Amazon Resource Name (ARN) of the task definition to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TaskDefinition
         {
             get { return this._taskDefinition; }

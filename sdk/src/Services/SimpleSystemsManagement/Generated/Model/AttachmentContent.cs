@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The cryptographic hash value of the document content.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Hash
         {
             get { return this._hash; }

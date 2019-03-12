@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         /// The name of the domain that you want to update to the latest service software.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

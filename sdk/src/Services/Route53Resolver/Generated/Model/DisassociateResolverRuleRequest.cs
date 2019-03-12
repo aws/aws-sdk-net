@@ -49,6 +49,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver rule that you want to disassociate from the specified VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverRuleId
         {
             get { return this._resolverRuleId; }
@@ -67,6 +68,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the VPC that you want to disassociate the resolver rule from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string VPCId
         {
             get { return this._vpcId; }

@@ -106,6 +106,7 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property DomainName. The name of the domain in which the attributes
         /// are being stored.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -121,6 +122,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Items. A list of items on which to perform the operation.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ReplaceableItem> Items
         {
             get { return this._items; }

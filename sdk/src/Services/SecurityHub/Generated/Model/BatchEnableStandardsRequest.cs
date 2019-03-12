@@ -44,6 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// The list of standards that you want to enable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<StandardsSubscriptionRequest> StandardsSubscriptionRequests
         {
             get { return this._standardsSubscriptionRequests; }

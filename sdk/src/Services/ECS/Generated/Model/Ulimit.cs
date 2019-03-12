@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         /// The hard limit for the ulimit type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HardLimit
         {
             get { return this._hardLimit.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.ECS.Model
         /// The <code>type</code> of the <code>ulimit</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UlimitName Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.ECS.Model
         /// The soft limit for the ulimit type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SoftLimit
         {
             get { return this._softLimit.GetValueOrDefault(); }

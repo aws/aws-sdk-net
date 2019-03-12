@@ -40,6 +40,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the newly registered HIT type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITTypeId
         {
             get { return this._hitTypeId; }

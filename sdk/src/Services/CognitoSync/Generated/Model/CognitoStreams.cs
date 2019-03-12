@@ -41,6 +41,7 @@ namespace Amazon.CognitoSync.Model
         /// in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync)
         /// to invoke PutRecord on your Cognito stream.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -82,6 +83,7 @@ namespace Amazon.CognitoSync.Model
         /// This stream must be in the developers account and in the same region as the identity
         /// pool.
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

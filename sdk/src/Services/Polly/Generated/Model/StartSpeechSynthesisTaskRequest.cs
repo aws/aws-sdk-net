@@ -86,6 +86,7 @@ namespace Amazon.Polly.Model
         /// the language of the voice. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> LexiconNames
         {
             get { return this._lexiconNames; }
@@ -105,6 +106,7 @@ namespace Amazon.Polly.Model
         /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputFormat OutputFormat
         {
             get { return this._outputFormat; }
@@ -123,6 +125,7 @@ namespace Amazon.Polly.Model
         /// Amazon S3 bucket name to which the output file will be saved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutputS3BucketName
         {
             get { return this._outputS3BucketName; }
@@ -205,6 +208,7 @@ namespace Amazon.Polly.Model
         /// The type of speech marks returned for the input text.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4)]
         public List<string> SpeechMarkTypes
         {
             get { return this._speechMarkTypes; }
@@ -224,6 +228,7 @@ namespace Amazon.Polly.Model
         /// format for the input text. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }
@@ -261,6 +266,7 @@ namespace Amazon.Polly.Model
         /// Voice ID to use for the synthesis. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VoiceId VoiceId
         {
             get { return this._voiceId; }

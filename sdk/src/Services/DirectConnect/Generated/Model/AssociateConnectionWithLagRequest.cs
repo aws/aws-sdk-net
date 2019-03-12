@@ -61,6 +61,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -79,6 +80,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the LAG with which to associate the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LagId
         {
             get { return this._lagId; }

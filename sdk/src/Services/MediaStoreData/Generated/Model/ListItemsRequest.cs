@@ -53,6 +53,7 @@ namespace Amazon.MediaStoreData.Model
         /// pagination with a maximum of 1,000 results per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -98,6 +99,7 @@ namespace Amazon.MediaStoreData.Model
         /// name&gt;/&lt;file name&gt;
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=900)]
         public string Path
         {
             get { return this._path; }

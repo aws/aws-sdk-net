@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         /// you've brought to this or another region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }

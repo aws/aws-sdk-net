@@ -47,6 +47,7 @@ namespace Amazon.DeviceFarm.Model
         /// The latitude.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Latitude
         {
             get { return this._latitude.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.DeviceFarm.Model
         /// The longitude.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Longitude
         {
             get { return this._longitude.GetValueOrDefault(); }

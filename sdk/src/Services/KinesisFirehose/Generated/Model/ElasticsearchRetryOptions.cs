@@ -44,6 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         /// is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7200)]
         public int DurationInSeconds
         {
             get { return this._durationInSeconds.GetValueOrDefault(); }

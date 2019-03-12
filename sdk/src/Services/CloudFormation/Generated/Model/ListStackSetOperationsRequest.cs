@@ -46,6 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.CloudFormation.Model
         /// is set to <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -87,6 +89,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack set that you want to get operation summaries for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

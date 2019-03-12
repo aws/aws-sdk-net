@@ -117,6 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthFlowType AuthFlow
         {
             get { return this._authFlow; }
@@ -178,6 +179,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -235,6 +237,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

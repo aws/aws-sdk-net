@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The Elastic IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublicIp
         {
             get { return this._publicIp; }

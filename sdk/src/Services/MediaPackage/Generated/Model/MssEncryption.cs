@@ -37,6 +37,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property SpekeKeyProvider.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SpekeKeyProvider SpekeKeyProvider
         {
             get { return this._spekeKeyProvider; }

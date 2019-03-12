@@ -70,6 +70,7 @@ namespace Amazon.CertificateManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -97,6 +98,7 @@ namespace Amazon.CertificateManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -116,6 +118,7 @@ namespace Amazon.CertificateManager.Model
         /// domain ownership.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<DomainValidationOption> DomainValidationOptions
         {
             get { return this._domainValidationOptions; }
@@ -138,6 +141,7 @@ namespace Amazon.CertificateManager.Model
         /// idempotency token for each call, ACM recognizes that you are requesting multiple certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -207,6 +211,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> SubjectAlternativeNames
         {
             get { return this._subjectAlternativeNames; }

@@ -57,6 +57,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>StackName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }

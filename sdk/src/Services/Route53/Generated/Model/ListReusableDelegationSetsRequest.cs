@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model
         /// there are no more reusable delegation sets to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Marker
         {
             get { return this._marker; }

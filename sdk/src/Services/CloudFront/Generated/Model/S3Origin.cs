@@ -67,6 +67,7 @@ namespace Amazon.CloudFront.Model
         /// The DNS name of the Amazon S3 origin. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -108,6 +109,7 @@ namespace Amazon.CloudFront.Model
         /// <i>Amazon Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OriginAccessIdentity
         {
             get { return this._originAccessIdentity; }

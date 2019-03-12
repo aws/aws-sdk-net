@@ -77,6 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The Availability Zones.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -95,6 +96,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

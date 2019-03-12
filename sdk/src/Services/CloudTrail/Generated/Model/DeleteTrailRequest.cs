@@ -45,6 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

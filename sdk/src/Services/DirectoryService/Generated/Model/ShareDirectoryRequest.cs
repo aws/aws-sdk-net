@@ -67,6 +67,7 @@ namespace Amazon.DirectoryService.Model
         /// AWS accounts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -87,6 +88,7 @@ namespace Amazon.DirectoryService.Model
         /// account by sending a directory sharing request (<code>HANDSHAKE</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ShareMethod ShareMethod
         {
             get { return this._shareMethod; }
@@ -107,6 +109,7 @@ namespace Amazon.DirectoryService.Model
         /// determine whether to approve or reject the share invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ShareNotes
         {
             get { return this._shareNotes; }
@@ -125,6 +128,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier for the directory consumer account with whom the directory is to be shared.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ShareTarget ShareTarget
         {
             get { return this._shareTarget; }

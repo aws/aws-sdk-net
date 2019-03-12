@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// The phone number ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PhoneNumberId
         {
             get { return this._phoneNumberId; }

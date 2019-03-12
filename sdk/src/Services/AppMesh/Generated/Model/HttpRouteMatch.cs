@@ -46,6 +46,7 @@ namespace Amazon.AppMesh.Model
         /// your prefix should be         <code>/metrics</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Prefix
         {
             get { return this._prefix; }

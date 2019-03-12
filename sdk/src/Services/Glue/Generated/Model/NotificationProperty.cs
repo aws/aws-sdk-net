@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int NotifyDelayAfter
         {
             get { return this._notifyDelayAfter.GetValueOrDefault(); }

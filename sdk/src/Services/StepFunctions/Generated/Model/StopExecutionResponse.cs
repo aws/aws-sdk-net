@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions.Model
         /// The date the execution is stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StopDate
         {
             get { return this._stopDate.GetValueOrDefault(); }

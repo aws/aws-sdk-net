@@ -50,6 +50,7 @@ namespace Amazon.CognitoSync.Model
         /// The unique ID for this identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -69,6 +70,7 @@ namespace Amazon.CognitoSync.Model
         /// by Amazon Cognito. Here, the ID of the pool that the identity belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -87,6 +89,7 @@ namespace Amazon.CognitoSync.Model
         /// The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Platform Platform
         {
             get { return this._platform; }
@@ -105,6 +108,7 @@ namespace Amazon.CognitoSync.Model
         /// The push token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Token
         {
             get { return this._token; }

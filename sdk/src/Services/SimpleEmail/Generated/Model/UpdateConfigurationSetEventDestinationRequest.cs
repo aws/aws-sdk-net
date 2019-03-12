@@ -58,6 +58,7 @@ namespace Amazon.SimpleEmail.Model
         /// to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -77,6 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventDestination EventDestination
         {
             get { return this._eventDestination; }

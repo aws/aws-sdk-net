@@ -82,6 +82,7 @@ namespace Amazon.MigrationHub.Model
         /// Unique identifier that references the migration task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MigrationTaskName
         {
             get { return this._migrationTaskName; }
@@ -102,6 +103,7 @@ namespace Amazon.MigrationHub.Model
         /// then the migration task will be considered stale.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int NextUpdateSeconds
         {
             get { return this._nextUpdateSeconds.GetValueOrDefault(); }
@@ -120,6 +122,7 @@ namespace Amazon.MigrationHub.Model
         /// The name of the ProgressUpdateStream. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ProgressUpdateStream
         {
             get { return this._progressUpdateStream; }
@@ -138,6 +141,7 @@ namespace Amazon.MigrationHub.Model
         /// Information about the task's progress and status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Task Task
         {
             get { return this._task; }
@@ -156,6 +160,7 @@ namespace Amazon.MigrationHub.Model
         /// The timestamp when the task was gathered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateDateTime
         {
             get { return this._updateDateTime.GetValueOrDefault(); }

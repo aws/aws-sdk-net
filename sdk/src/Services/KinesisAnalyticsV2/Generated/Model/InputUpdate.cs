@@ -47,6 +47,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The input ID of the application input to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string InputId
         {
             get { return this._inputId; }
@@ -160,6 +161,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the specific streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string NamePrefixUpdate
         {
             get { return this._namePrefixUpdate; }

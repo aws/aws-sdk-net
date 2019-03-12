@@ -63,6 +63,7 @@ namespace Amazon.AppMesh.Model
         /// The list of existing virtual nodes for the specified service mesh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<VirtualNodeRef> VirtualNodes
         {
             get { return this._virtualNodes; }

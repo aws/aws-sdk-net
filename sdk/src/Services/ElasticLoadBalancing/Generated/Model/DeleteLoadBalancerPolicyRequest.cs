@@ -59,6 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -77,6 +78,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyName
         {
             get { return this._policyName; }

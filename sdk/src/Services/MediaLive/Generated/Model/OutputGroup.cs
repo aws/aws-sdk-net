@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         /// user.  Only letters, numbers, and the underscore character allowed; only 32 characters
         /// allowed.
         /// </summary>
+        [AWSProperty(Max=32)]
         public string Name
         {
             get { return this._name; }
@@ -58,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property OutputGroupSettings. Settings associated with the output
         /// group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputGroupSettings OutputGroupSettings
         {
             get { return this._outputGroupSettings; }
@@ -73,6 +75,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Outputs.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Output> Outputs
         {
             get { return this._outputs; }

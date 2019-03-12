@@ -103,6 +103,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// and grants no other permissions to any other user or group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public List<Permission> Permissions
         {
             get { return this._permissions; }

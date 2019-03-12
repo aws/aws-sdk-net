@@ -42,6 +42,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the placement within a project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PlacementName
         {
             get { return this._placementName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The project containing the placement to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }

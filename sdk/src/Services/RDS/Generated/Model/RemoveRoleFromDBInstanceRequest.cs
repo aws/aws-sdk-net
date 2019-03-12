@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB instance to disassociate the IAM role from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -62,6 +63,7 @@ namespace Amazon.RDS.Model
         /// from. For the list of supported feature names, see <a>DBEngineVersion</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FeatureName
         {
             get { return this._featureName; }
@@ -81,6 +83,7 @@ namespace Amazon.RDS.Model
         /// for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

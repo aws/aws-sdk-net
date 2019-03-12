@@ -40,6 +40,7 @@ namespace Amazon.CertificateManager.Model
         /// The key-value pairs that define the applied tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

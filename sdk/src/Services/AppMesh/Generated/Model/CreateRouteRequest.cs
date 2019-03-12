@@ -78,6 +78,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh in which to create the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -96,6 +97,7 @@ namespace Amazon.AppMesh.Model
         /// The name to use for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string RouteName
         {
             get { return this._routeName; }
@@ -114,6 +116,7 @@ namespace Amazon.AppMesh.Model
         /// The route specification to apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteSpec Spec
         {
             get { return this._spec; }
@@ -132,6 +135,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual router in which to create the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

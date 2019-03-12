@@ -49,6 +49,7 @@ namespace Amazon.AppMesh.Model
         /// value if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

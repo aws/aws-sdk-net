@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         /// the VPC that is specified in the <code>Subnets</code> field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// model. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16)]
         public List<string> Subnets
         {
             get { return this._subnets; }

@@ -40,6 +40,7 @@ namespace Amazon.Route53.Model
         /// The number of health checks associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long HealthCheckCount
         {
             get { return this._healthCheckCount.GetValueOrDefault(); }

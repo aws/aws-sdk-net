@@ -60,6 +60,7 @@ namespace Amazon.EC2.Model
         /// The Convertible Reserved Instance offering ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OfferingId
         {
             get { return this._offeringId; }

@@ -50,6 +50,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The unique ID of the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -87,6 +89,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks. This data isn't sent to the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -107,6 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// for diagnosing problems by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -128,6 +132,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// or return a result, it is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string HeartbeatTimeout
         {
             get { return this._heartbeatTimeout; }
@@ -146,6 +151,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The input provided to the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -164,6 +170,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The maximum amount of time for this activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ScheduleToCloseTimeout
         {
             get { return this._scheduleToCloseTimeout; }
@@ -182,6 +189,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The maximum amount of time the activity task can wait to be assigned to a worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ScheduleToStartTimeout
         {
             get { return this._scheduleToStartTimeout; }
@@ -200,6 +208,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The maximum amount of time a worker may take to process the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string StartToCloseTimeout
         {
             get { return this._startToCloseTimeout; }
@@ -218,6 +227,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The task list in which the activity task has been scheduled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskList TaskList
         {
             get { return this._taskList; }

@@ -50,6 +50,7 @@ namespace Amazon.CognitoSync.Model
         /// The events to configure
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1)]
         public Dictionary<string, string> Events
         {
             get { return this._events; }
@@ -68,6 +69,7 @@ namespace Amazon.CognitoSync.Model
         /// The Cognito Identity Pool to use when configuring Cognito Events
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

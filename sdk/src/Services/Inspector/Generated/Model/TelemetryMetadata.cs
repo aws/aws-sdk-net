@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         /// The count of messages that the agent sends to the Amazon Inspector service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Count
         {
             get { return this._count.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.Inspector.Model
         /// A specific type of behavioral data that is collected by the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string MessageType
         {
             get { return this._messageType; }

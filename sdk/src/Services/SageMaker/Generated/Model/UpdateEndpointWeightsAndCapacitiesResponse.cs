@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the updated endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string EndpointArn
         {
             get { return this._endpointArn; }

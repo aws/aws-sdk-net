@@ -40,6 +40,7 @@ namespace Amazon.Amplify.Model
         ///  Branch structure for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Branch Branch
         {
             get { return this._branch; }

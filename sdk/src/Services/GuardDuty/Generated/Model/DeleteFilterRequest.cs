@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID that specifies the detector where
         /// you want to delete a filter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -55,6 +56,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FilterName. The name of the filter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilterName
         {
             get { return this._filterName; }

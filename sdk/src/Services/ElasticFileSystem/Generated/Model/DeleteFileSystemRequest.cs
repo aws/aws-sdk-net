@@ -77,6 +77,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

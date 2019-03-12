@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the device for which to request details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceArn
         {
             get { return this._deviceArn; }

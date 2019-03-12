@@ -57,6 +57,7 @@ namespace Amazon.KeyManagementService.Model
         /// slash (alias/). Aliases that begin with "alias/aws" are reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string AliasName
         {
             get { return this._aliasName; }

@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// The maximum number of tasks to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// An opaque string that indicates the position at which to begin the next list of tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=93)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         /// located. The URI must be in the same region as the API endpoint that you are calling.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

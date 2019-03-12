@@ -318,6 +318,7 @@ namespace Amazon.CostExplorer.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateInterval TimePeriod
         {
             get { return this._timePeriod; }

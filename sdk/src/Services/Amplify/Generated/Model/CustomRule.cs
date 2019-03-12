@@ -43,6 +43,7 @@ namespace Amazon.Amplify.Model
         ///  The condition for a URL rewrite or redirect rule, e.g. country code. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Condition
         {
             get { return this._condition; }
@@ -61,6 +62,7 @@ namespace Amazon.Amplify.Model
         ///  The source pattern for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Source
         {
             get { return this._source; }
@@ -79,6 +81,7 @@ namespace Amazon.Amplify.Model
         ///  The status code for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string Status
         {
             get { return this._status; }
@@ -97,6 +100,7 @@ namespace Amazon.Amplify.Model
         ///  The target pattern for a URL rewrite or redirect rule. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Target
         {
             get { return this._target; }

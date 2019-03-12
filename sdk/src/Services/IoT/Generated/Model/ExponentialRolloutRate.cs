@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// rollout.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int BaseRatePerMinute
         {
             get { return this._baseRatePerMinute.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The exponential factor to increase the rate of rollout for a job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public double IncrementFactor
         {
             get { return this._incrementFactor.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.IoT.Model
         /// AWS IoT supports up to one digit after the decimal (for example, 1.5, but not 1.55).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RateIncreaseCriteria RateIncreaseCriteria
         {
             get { return this._rateIncreaseCriteria; }

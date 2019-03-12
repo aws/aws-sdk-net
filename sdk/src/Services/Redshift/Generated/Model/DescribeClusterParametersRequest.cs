@@ -111,6 +111,7 @@ namespace Amazon.Redshift.Model
         /// The name of a cluster parameter group for which to return details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

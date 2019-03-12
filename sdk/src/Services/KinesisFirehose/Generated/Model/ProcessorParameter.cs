@@ -41,6 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProcessorParameterName ParameterName
         {
             get { return this._parameterName; }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ParameterValue
         {
             get { return this._parameterValue; }

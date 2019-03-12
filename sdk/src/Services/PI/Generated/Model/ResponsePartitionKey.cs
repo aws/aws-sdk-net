@@ -42,6 +42,7 @@ namespace Amazon.PI.Model
         /// A dimension map that contains the dimension(s) for this partition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Dimensions
         {
             get { return this._dimensions; }

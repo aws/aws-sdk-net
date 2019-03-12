@@ -48,6 +48,7 @@ namespace Amazon.IoTAnalytics.Model
         /// minutes, which is the maximum timeout duration for Lambda functions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int BatchSize
         {
             get { return this._batchSize.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the Lambda function that is run on the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string LambdaName
         {
             get { return this._lambdaName; }
@@ -84,6 +86,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'lambda' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -102,6 +105,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

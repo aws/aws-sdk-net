@@ -45,6 +45,7 @@ namespace Amazon.MachineLearning.Model
         /// data files.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string DataLocationS3
         {
             get { return this._dataLocationS3; }
@@ -249,6 +250,7 @@ namespace Amazon.MachineLearning.Model
         ///  "excludedVariableNames": [ "F6" ] } 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=131071)]
         public string DataSchema
         {
             get { return this._dataSchema; }
@@ -268,6 +270,7 @@ namespace Amazon.MachineLearning.Model
         /// or the <code>DataSchemaLocationS3</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string DataSchemaLocationS3
         {
             get { return this._dataSchemaLocationS3; }

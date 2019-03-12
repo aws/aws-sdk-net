@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data store
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatastoreName
         {
             get { return this._datastoreName; }

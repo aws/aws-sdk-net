@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>RequestValidator</a> to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RequestValidatorId
         {
             get { return this._requestValidatorId; }
@@ -60,6 +61,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

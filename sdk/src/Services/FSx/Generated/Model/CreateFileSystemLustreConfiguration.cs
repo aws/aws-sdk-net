@@ -59,6 +59,7 @@ namespace Amazon.FSx.Model
         /// bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=900)]
         public string ExportPath
         {
             get { return this._exportPath; }
@@ -85,6 +86,7 @@ namespace Amazon.FSx.Model
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512000)]
         public int ImportedFileChunkSize
         {
             get { return this._importedFileChunkSize.GetValueOrDefault(); }
@@ -108,6 +110,7 @@ namespace Amazon.FSx.Model
         /// are loaded into the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=900)]
         public string ImportPath
         {
             get { return this._importPath; }
@@ -126,6 +129,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to perform weekly maintenance, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=7)]
         public string WeeklyMaintenanceStartTime
         {
             get { return this._weeklyMaintenanceStartTime; }

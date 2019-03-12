@@ -77,6 +77,7 @@ namespace Amazon.DLM.Model
         /// The name of the schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string Name
         {
             get { return this._name; }
@@ -114,6 +115,7 @@ namespace Amazon.DLM.Model
         /// to the AWS-added lifecycle tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> TagsToAdd
         {
             get { return this._tagsToAdd; }

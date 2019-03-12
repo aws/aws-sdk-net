@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// any names, AWS Config returns details for all your rules.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<string> ConfigRuleNames
         {
             get { return this._configRuleNames; }

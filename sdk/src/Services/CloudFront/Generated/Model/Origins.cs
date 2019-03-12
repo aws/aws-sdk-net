@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that contains origins or origin groups for this distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<Origin> Items
         {
             get { return this._items; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The number of origins or origin groups for this distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The number of custom headers, if any, for this distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

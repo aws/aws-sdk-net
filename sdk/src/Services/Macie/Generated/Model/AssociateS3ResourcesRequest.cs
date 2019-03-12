@@ -65,6 +65,7 @@ namespace Amazon.Macie.Model
         /// classification. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<S3ResourceClassification> S3Resources
         {
             get { return this._s3Resources; }

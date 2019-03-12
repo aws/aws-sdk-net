@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database for which to get log streams.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

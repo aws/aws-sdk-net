@@ -44,6 +44,7 @@ namespace Amazon.Athena.Model
         /// workgroup resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=75)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Athena.Model
         /// the specified ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -82,6 +84,7 @@ namespace Amazon.Athena.Model
         /// Lists the tags for the workgroup resource with the specified ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

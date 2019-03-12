@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmail.Model
         /// The identity to be removed from the list of identities for the AWS Account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }

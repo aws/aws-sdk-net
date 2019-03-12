@@ -68,6 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -90,6 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Condition: You cannot specify both this and a configuration template name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -108,6 +110,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A list of the options and desired values to evaluate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ConfigurationOptionSetting> OptionSettings
         {
             get { return this._optionSettings; }
@@ -130,6 +133,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Condition: You cannot specify both this and an environment name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }

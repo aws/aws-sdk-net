@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the work team to return a description of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string WorkteamName
         {
             get { return this._workteamName; }

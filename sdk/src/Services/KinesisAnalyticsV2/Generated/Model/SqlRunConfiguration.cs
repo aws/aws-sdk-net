@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string InputId
         {
             get { return this._inputId; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// source. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputStartingPositionConfiguration InputStartingPositionConfiguration
         {
             get { return this._inputStartingPositionConfiguration; }

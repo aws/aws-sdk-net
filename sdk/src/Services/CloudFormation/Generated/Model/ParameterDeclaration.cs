@@ -63,6 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// The description that is associate with the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

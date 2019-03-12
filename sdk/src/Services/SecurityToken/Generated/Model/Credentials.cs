@@ -63,6 +63,7 @@ namespace Amazon.SecurityToken.Model
         /// The access key ID that identifies the temporary security credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -81,6 +82,7 @@ namespace Amazon.SecurityToken.Model
         /// The date on which the current credentials expire.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Expiration
         {
             get { return this._expiration.GetValueOrDefault(); }
@@ -99,6 +101,7 @@ namespace Amazon.SecurityToken.Model
         /// The secret access key that can be used to sign requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -117,6 +120,7 @@ namespace Amazon.SecurityToken.Model
         /// The token that users must pass to the service API to use the temporary credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SessionToken
         {
             get { return this._sessionToken; }

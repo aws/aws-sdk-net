@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Arn. The ARN of the ACM certificate that you want to associate
         /// with your MediaConvert resource.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

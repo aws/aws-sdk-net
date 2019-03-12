@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         /// "curling_") + name modifier + the counter (5 digits, starting from 00001) + extension
         /// (which is always .jpg).  For example, curlingLow.00001.jpg
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputLocationRef Destination
         {
             get { return this._destination; }

@@ -51,6 +51,7 @@ namespace Amazon.EKS.Model
         /// The name of the cluster to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

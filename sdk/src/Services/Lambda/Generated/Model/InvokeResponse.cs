@@ -45,6 +45,7 @@ namespace Amazon.Lambda.Model
         /// this indicates which version the alias resolved to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ExecutedVersion
         {
             get { return this._executedVersion; }

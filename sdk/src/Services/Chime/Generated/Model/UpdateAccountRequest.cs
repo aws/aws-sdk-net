@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -61,6 +62,7 @@ namespace Amazon.Chime.Model
         /// The new name for the specified Amazon Chime account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

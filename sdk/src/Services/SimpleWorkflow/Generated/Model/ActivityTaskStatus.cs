@@ -40,6 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Set to <code>true</code> if cancellation of the task is requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool CancelRequested
         {
             get { return this._cancelRequested.GetValueOrDefault(); }

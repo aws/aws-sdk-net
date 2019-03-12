@@ -89,6 +89,7 @@ namespace Amazon.SageMaker.Model
         /// and within your AWS account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CompilationJobName
         {
             get { return this._compilationJobName; }
@@ -108,6 +109,7 @@ namespace Amazon.SageMaker.Model
         /// of the expected data inputs, and the framework in which the model was trained.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputConfig InputConfig
         {
             get { return this._inputConfig; }
@@ -127,6 +129,7 @@ namespace Amazon.SageMaker.Model
         /// device the model runs on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputConfig OutputConfig
         {
             get { return this._outputConfig; }
@@ -173,6 +176,7 @@ namespace Amazon.SageMaker.Model
         /// SageMaker Roles.</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -191,6 +195,7 @@ namespace Amazon.SageMaker.Model
         /// The duration allowed for model compilation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }

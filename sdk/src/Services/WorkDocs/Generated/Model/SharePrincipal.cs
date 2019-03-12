@@ -42,6 +42,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the recipient.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkDocs.Model
         /// The role of the recipient.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RoleType Role
         {
             get { return this._role; }
@@ -78,6 +80,7 @@ namespace Amazon.WorkDocs.Model
         /// The type of the recipient.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PrincipalType Type
         {
             get { return this._type; }

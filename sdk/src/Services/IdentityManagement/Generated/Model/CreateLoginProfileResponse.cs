@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing the user name and password create date.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoginProfile LoginProfile
         {
             get { return this._loginProfile; }

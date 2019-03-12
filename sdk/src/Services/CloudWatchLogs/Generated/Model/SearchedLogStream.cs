@@ -41,6 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogStreamName
         {
             get { return this._logStreamName; }

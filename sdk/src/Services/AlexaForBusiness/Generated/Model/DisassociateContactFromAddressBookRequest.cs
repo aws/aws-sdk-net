@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the address from which to disassociate the contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AddressBookArn
         {
             get { return this._addressBookArn; }
@@ -60,6 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the contact to disassociate from an address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContactArn
         {
             get { return this._contactArn; }

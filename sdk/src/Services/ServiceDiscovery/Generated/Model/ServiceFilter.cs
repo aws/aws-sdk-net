@@ -78,6 +78,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Specify <code>NAMESPACE_ID</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceFilterName Name
         {
             get { return this._name; }
@@ -97,6 +98,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// to filter the list of services.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

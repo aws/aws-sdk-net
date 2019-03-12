@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of parameters that are not formatted correctly or do not run when executed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> InvalidParameters
         {
             get { return this._invalidParameters; }

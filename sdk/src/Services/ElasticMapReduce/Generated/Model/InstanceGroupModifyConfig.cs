@@ -96,6 +96,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Unique ID of the instance group to expand or shrink.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string InstanceGroupId
         {
             get { return this._instanceGroupId; }

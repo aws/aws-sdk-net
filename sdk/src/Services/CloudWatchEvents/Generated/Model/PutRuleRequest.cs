@@ -111,6 +111,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// A description of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -148,6 +149,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The name of the rule that you are creating or updating.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -166,6 +168,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The Amazon Resource Name (ARN) of the IAM role associated with the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -184,6 +187,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ScheduleExpression
         {
             get { return this._scheduleExpression; }

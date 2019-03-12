@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model
         /// VPC association.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -82,6 +83,7 @@ namespace Amazon.Route53.Model
         /// with a private hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VPC VPC
         {
             get { return this._vpc; }

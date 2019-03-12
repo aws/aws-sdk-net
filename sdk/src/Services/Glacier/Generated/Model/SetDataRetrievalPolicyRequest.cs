@@ -57,6 +57,7 @@ namespace Amazon.Glacier.Model
         /// in the ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }

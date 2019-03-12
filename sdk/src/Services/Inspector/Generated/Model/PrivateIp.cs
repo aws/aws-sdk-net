@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The DNS name of the private IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PrivateDnsName
         {
             get { return this._privateDnsName; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// The full IP address of the network inteface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string PrivateIpAddress
         {
             get { return this._privateIpAddress; }

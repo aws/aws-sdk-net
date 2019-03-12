@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The details of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -81,6 +83,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The descriptive reason provided for the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Reason
         {
             get { return this._reason; }

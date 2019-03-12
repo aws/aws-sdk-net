@@ -81,6 +81,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The ID of the record.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string RecordId
         {
             get { return this._recordId; }

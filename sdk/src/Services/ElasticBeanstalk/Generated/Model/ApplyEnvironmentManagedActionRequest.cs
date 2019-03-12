@@ -45,6 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The action ID of the scheduled managed action to execute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActionId
         {
             get { return this._actionId; }

@@ -60,6 +60,7 @@ namespace Amazon.CloudHSM.Model
         /// The ARN of the client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientArn
         {
             get { return this._clientArn; }
@@ -78,6 +79,7 @@ namespace Amazon.CloudHSM.Model
         /// The client version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ClientVersion ClientVersion
         {
             get { return this._clientVersion; }
@@ -97,6 +99,7 @@ namespace Amazon.CloudHSM.Model
         /// with the client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> HapgList
         {
             get { return this._hapgList; }

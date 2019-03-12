@@ -78,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -96,6 +97,7 @@ namespace Amazon.CloudFront.Model
         /// Any comments you want to include about the streaming distribution. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -114,6 +116,7 @@ namespace Amazon.CloudFront.Model
         /// Whether the streaming distribution is enabled to accept user requests for content.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -171,6 +174,7 @@ namespace Amazon.CloudFront.Model
         /// want CloudFront to get your media files for distribution. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Origin S3Origin
         {
             get { return this._s3Origin; }
@@ -194,6 +198,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedSigners TrustedSigners
         {
             get { return this._trustedSigners; }

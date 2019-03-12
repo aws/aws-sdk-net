@@ -58,6 +58,7 @@ namespace Amazon.Amplify.Model
         ///  ARN for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -76,6 +77,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AppId
         {
             get { return this._appId; }
@@ -94,6 +96,7 @@ namespace Amazon.Amplify.Model
         ///  Basic Authorization credentials for branches for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -112,6 +115,7 @@ namespace Amazon.Amplify.Model
         ///  BuildSpec content for Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -130,6 +134,7 @@ namespace Amazon.Amplify.Model
         ///  Create date / time for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -166,6 +171,7 @@ namespace Amazon.Amplify.Model
         ///  Default domain for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string DefaultDomain
         {
             get { return this._defaultDomain; }
@@ -184,6 +190,7 @@ namespace Amazon.Amplify.Model
         ///  Description for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -202,6 +209,7 @@ namespace Amazon.Amplify.Model
         ///  Enables Basic Authorization for branches for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableBasicAuth
         {
             get { return this._enableBasicAuth.GetValueOrDefault(); }
@@ -220,6 +228,7 @@ namespace Amazon.Amplify.Model
         ///  Enables auto-building of branches for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableBranchAutoBuild
         {
             get { return this._enableBranchAutoBuild.GetValueOrDefault(); }
@@ -238,6 +247,7 @@ namespace Amazon.Amplify.Model
         ///  Environment Variables for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> EnvironmentVariables
         {
             get { return this._environmentVariables; }
@@ -256,6 +266,7 @@ namespace Amazon.Amplify.Model
         ///  IAM service role ARN for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -274,6 +285,7 @@ namespace Amazon.Amplify.Model
         ///  Name for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -292,6 +304,7 @@ namespace Amazon.Amplify.Model
         ///  Platform for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Platform Platform
         {
             get { return this._platform; }
@@ -328,6 +341,7 @@ namespace Amazon.Amplify.Model
         ///  Repository for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string Repository
         {
             get { return this._repository; }
@@ -364,6 +378,7 @@ namespace Amazon.Amplify.Model
         ///  Update date / time for the Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateTime
         {
             get { return this._updateTime.GetValueOrDefault(); }

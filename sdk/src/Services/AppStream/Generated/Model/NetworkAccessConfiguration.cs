@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string EniId
         {
             get { return this._eniId; }
@@ -61,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// in your VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string EniPrivateIpAddress
         {
             get { return this._eniPrivateIpAddress; }

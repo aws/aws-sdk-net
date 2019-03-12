@@ -61,6 +61,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The maximum number of intent versions to return in the response. The default is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the intent for which versions should be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

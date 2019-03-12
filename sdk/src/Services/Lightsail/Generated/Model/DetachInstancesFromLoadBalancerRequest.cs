@@ -56,6 +56,7 @@ namespace Amazon.Lightsail.Model
         /// the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceNames
         {
             get { return this._instanceNames; }
@@ -74,6 +75,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the Lightsail load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

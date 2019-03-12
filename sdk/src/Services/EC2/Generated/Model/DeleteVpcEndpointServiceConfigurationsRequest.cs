@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The IDs of one or more services.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ServiceIds
         {
             get { return this._serviceIds; }

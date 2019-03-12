@@ -49,6 +49,7 @@ namespace Amazon.SimpleEmail.Model
         /// The domain to be verified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Domain
         {
             get { return this._domain; }

@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// The granularity of the metric. The only valid value is <code>1Minute</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Granularity
         {
             get { return this._granularity; }
@@ -92,6 +93,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Metric
         {
             get { return this._metric; }

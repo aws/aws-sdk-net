@@ -100,6 +100,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// your application code must create these streams. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string ApplicationCode
         {
             get { return this._applicationCode; }
@@ -118,6 +119,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Summary description of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ApplicationDescription
         {
             get { return this._applicationDescription; }
@@ -136,6 +138,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }

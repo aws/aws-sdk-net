@@ -78,6 +78,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComputeType ComputeType
         {
             get { return this._computeType; }
@@ -127,6 +128,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Image
         {
             get { return this._image; }
@@ -245,6 +247,7 @@ namespace Amazon.CodeBuild.Model
         /// The type of build environment to use for related builds.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EnvironmentType Type
         {
             get { return this._type; }

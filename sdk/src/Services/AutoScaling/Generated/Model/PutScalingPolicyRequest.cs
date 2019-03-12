@@ -64,6 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AdjustmentType
         {
             get { return this._adjustmentType; }
@@ -82,6 +83,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -159,6 +161,7 @@ namespace Amazon.AutoScaling.Model
         /// This parameter is supported if the policy type is <code>StepScaling</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string MetricAggregationType
         {
             get { return this._metricAggregationType; }
@@ -220,6 +223,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -240,6 +244,7 @@ namespace Amazon.AutoScaling.Model
         /// as <code>SimpleScaling</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string PolicyType
         {
             get { return this._policyType; }

@@ -80,6 +80,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// If the protocol of the target group is TCP, you can't modify this setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=300)]
         public int HealthCheckIntervalSeconds
         {
             get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string HealthCheckPath
         {
             get { return this._healthCheckPath; }
@@ -164,6 +166,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// If the protocol of the target group is TCP, you can't modify this setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=120)]
         public int HealthCheckTimeoutSeconds
         {
             get { return this._healthCheckTimeoutSeconds.GetValueOrDefault(); }
@@ -183,6 +186,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// target healthy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10)]
         public int HealthyThresholdCount
         {
             get { return this._healthyThresholdCount.GetValueOrDefault(); }
@@ -224,6 +228,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the target group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetGroupArn
         {
             get { return this._targetGroupArn; }
@@ -244,6 +249,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// threshold count.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=10)]
         public int UnhealthyThresholdCount
         {
             get { return this._unhealthyThresholdCount.GetValueOrDefault(); }

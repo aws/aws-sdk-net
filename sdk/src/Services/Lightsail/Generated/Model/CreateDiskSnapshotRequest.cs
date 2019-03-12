@@ -101,6 +101,7 @@ namespace Amazon.Lightsail.Model
         /// on the source disk.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskSnapshotName
         {
             get { return this._diskSnapshotName; }

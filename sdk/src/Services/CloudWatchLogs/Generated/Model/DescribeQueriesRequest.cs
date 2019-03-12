@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Limits the returned queries to only those for the specified log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Limits the number of returned queries to the specified number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

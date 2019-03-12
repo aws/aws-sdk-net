@@ -105,6 +105,7 @@ namespace Amazon.DeviceFarm.Model
         /// Farm will extract to external data for Android or the app's sandbox for iOS.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string ExtraDataPackageArn
         {
             get { return this._extraDataPackageArn; }
@@ -159,6 +160,7 @@ namespace Amazon.DeviceFarm.Model
         /// Reserved for internal use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string NetworkProfileArn
         {
             get { return this._networkProfileArn; }

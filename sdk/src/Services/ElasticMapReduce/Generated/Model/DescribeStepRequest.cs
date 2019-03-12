@@ -42,6 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the cluster with steps to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -60,6 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the step to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StepId
         {
             get { return this._stepId; }

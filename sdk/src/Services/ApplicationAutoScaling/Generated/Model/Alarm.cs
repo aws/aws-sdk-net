@@ -41,6 +41,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Amazon Resource Name (ARN) of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AlarmARN
         {
             get { return this._alarmARN; }
@@ -59,6 +60,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The name of the alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AlarmName
         {
             get { return this._alarmName; }

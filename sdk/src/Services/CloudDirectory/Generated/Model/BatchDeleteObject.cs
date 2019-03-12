@@ -40,6 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that identifies the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

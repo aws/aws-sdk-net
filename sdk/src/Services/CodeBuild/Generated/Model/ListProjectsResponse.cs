@@ -62,6 +62,7 @@ namespace Amazon.CodeBuild.Model
         /// build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> Projects
         {
             get { return this._projects; }

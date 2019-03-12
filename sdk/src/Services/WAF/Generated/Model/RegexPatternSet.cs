@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         /// after you create a <code>RegexPatternSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -70,6 +71,7 @@ namespace Amazon.WAF.Model
         ///  <code>RegexMatchSetId</code> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RegexPatternSetId
         {
             get { return this._regexPatternSetId; }
@@ -89,6 +91,7 @@ namespace Amazon.WAF.Model
         /// for, such as <code>B[a@]dB[o0]t</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10)]
         public List<string> RegexPatternStrings
         {
             get { return this._regexPatternStrings; }

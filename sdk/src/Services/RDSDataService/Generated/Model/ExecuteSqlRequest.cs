@@ -43,6 +43,7 @@ namespace Amazon.RDSDataService.Model
         /// Gets and sets the property AwsSecretStoreArn. ARN of the db credentials in AWS Secret
         /// Store or the friendly secret name
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string AwsSecretStoreArn
         {
             get { return this._awsSecretStoreArn; }
@@ -58,6 +59,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property Database. Target DB name
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Database
         {
             get { return this._database; }
@@ -74,6 +76,7 @@ namespace Amazon.RDSDataService.Model
         /// Gets and sets the property DbClusterOrInstanceArn. ARN of the target db cluster or
         /// instance
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string DbClusterOrInstanceArn
         {
             get { return this._dbClusterOrInstanceArn; }
@@ -89,6 +92,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property Schema. Target Schema name
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Schema
         {
             get { return this._schema; }
@@ -105,6 +109,7 @@ namespace Amazon.RDSDataService.Model
         /// Gets and sets the property SqlStatements. SQL statement(s) to be executed. Statements
         /// can be chained by using semicolons
         /// </summary>
+        [AWSProperty(Required=true, Max=65536)]
         public string SqlStatements
         {
             get { return this._sqlStatements; }

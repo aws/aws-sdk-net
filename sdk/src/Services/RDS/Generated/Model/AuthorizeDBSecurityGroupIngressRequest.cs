@@ -94,6 +94,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB security group to add authorization to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSecurityGroupName
         {
             get { return this._dbSecurityGroupName; }

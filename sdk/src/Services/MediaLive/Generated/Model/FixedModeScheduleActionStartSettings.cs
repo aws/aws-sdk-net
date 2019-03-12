@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         /// are digits (for example, mm might be 01) except for the two constants "T" for time
         /// and "Z" for "UTC format".
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Time
         {
             get { return this._time; }

@@ -43,6 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=7, Max=36)]
         public string Ip
         {
             get { return this._ip; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53Resolver.Model
         /// The port at <code>Ip</code> that you want to forward DNS queries to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

@@ -45,6 +45,7 @@ namespace Amazon.Kinesis.Model
         /// moment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long MillisBehindLatest
         {
             get { return this._millisBehindLatest.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.Kinesis.Model
         /// does not return any more data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextShardIterator
         {
             get { return this._nextShardIterator; }
@@ -83,6 +85,7 @@ namespace Amazon.Kinesis.Model
         /// The data records retrieved from the shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Record> Records
         {
             get { return this._records; }

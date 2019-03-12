@@ -60,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The description of the thing type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string ThingTypeDescription
         {
             get { return this._thingTypeDescription; }

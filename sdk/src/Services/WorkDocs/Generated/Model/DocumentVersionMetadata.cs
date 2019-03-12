@@ -88,6 +88,7 @@ namespace Amazon.WorkDocs.Model
         /// The content type of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -124,6 +125,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the creator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CreatorId
         {
             get { return this._creatorId; }
@@ -142,6 +144,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -178,6 +181,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -196,6 +200,7 @@ namespace Amazon.WorkDocs.Model
         /// The signature of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Signature
         {
             get { return this._signature; }

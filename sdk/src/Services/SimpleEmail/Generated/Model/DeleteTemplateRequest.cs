@@ -46,6 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the template to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

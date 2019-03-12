@@ -63,6 +63,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Attributes. The list of attributes for a replaceable item.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ReplaceableAttribute> Attributes
         {
             get { return this._attributes; }
@@ -78,6 +79,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the replaceable item.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

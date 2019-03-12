@@ -77,6 +77,7 @@ namespace Amazon.KinesisVideo.Model
         /// buffer when either limit is reached.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int DataRetentionInHours
         {
             get { return this._dataRetentionInHours.GetValueOrDefault(); }
@@ -100,6 +101,7 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DeviceName
         {
             get { return this._deviceName; }
@@ -129,6 +131,7 @@ namespace Amazon.KinesisVideo.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -154,6 +157,7 @@ namespace Amazon.KinesisVideo.Model
         /// This parameter is optional; the default value is <code>null</code> (or empty in JSON).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MediaType
         {
             get { return this._mediaType; }
@@ -177,6 +181,7 @@ namespace Amazon.KinesisVideo.Model
         /// and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -196,6 +201,7 @@ namespace Amazon.KinesisVideo.Model
         /// (the value is optional).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

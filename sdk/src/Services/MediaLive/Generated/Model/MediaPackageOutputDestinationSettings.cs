@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         /// to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must
         /// be in the same region.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ChannelId
         {
             get { return this._channelId; }

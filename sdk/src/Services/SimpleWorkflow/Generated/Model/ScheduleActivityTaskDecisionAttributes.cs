@@ -100,6 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityId
         {
             get { return this._activityId; }
@@ -118,6 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The type of the activity task to schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivityType ActivityType
         {
             get { return this._activityType; }
@@ -137,6 +139,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks. This data isn't sent to the activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -164,6 +167,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string HeartbeatTimeout
         {
             get { return this._heartbeatTimeout; }
@@ -182,6 +186,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The input provided to the activity task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -212,6 +217,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ScheduleToCloseTimeout
         {
             get { return this._scheduleToCloseTimeout; }
@@ -244,6 +250,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ScheduleToStartTimeout
         {
             get { return this._scheduleToStartTimeout; }
@@ -276,6 +283,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string StartToCloseTimeout
         {
             get { return this._startToCloseTimeout; }

@@ -63,6 +63,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name used to label and identify the VPC link.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -82,6 +83,7 @@ namespace Amazon.APIGateway.Model
         /// The network load balancers must be owned by the same AWS account of the API owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TargetArns
         {
             get { return this._targetArns; }

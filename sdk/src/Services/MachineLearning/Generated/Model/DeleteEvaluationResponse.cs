@@ -48,6 +48,7 @@ namespace Amazon.MachineLearning.Model
         /// should be identical to the value of the <code>EvaluationId</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }

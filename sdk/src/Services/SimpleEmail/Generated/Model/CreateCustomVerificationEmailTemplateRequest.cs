@@ -57,6 +57,7 @@ namespace Amazon.SimpleEmail.Model
         /// is not successfully verified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FailureRedirectionURL
         {
             get { return this._failureRedirectionURL; }
@@ -75,6 +76,7 @@ namespace Amazon.SimpleEmail.Model
         /// The email address that the custom verification email is sent from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FromEmailAddress
         {
             get { return this._fromEmailAddress; }
@@ -94,6 +96,7 @@ namespace Amazon.SimpleEmail.Model
         /// is successfully verified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SuccessRedirectionURL
         {
             get { return this._successRedirectionURL; }
@@ -115,6 +118,7 @@ namespace Amazon.SimpleEmail.Model
         /// Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateContent
         {
             get { return this._templateContent; }
@@ -133,6 +137,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the custom verification email template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }
@@ -151,6 +156,7 @@ namespace Amazon.SimpleEmail.Model
         /// The subject line of the custom verification email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateSubject
         {
             get { return this._templateSubject; }

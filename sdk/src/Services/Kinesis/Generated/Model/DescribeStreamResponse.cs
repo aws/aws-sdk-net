@@ -41,6 +41,7 @@ namespace Amazon.Kinesis.Model
         /// of shard objects that comprise the stream, and whether there are more shards available.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamDescription StreamDescription
         {
             get { return this._streamDescription; }

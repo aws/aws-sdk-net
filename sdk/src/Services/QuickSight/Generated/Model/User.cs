@@ -156,6 +156,7 @@ namespace Amazon.QuickSight.Model
         /// The user's user name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string UserName
         {
             get { return this._userName; }

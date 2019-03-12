@@ -48,6 +48,7 @@ namespace Amazon.IoT.Model
         /// The attribute name used to search for things.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -66,6 +67,7 @@ namespace Amazon.IoT.Model
         /// The attribute value used to search for things.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=800)]
         public string AttributeValue
         {
             get { return this._attributeValue; }
@@ -102,6 +104,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return in this operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -120,6 +123,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing type used to search for things.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingTypeName
         {
             get { return this._thingTypeName; }

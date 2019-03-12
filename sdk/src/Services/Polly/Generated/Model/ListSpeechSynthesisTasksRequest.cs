@@ -45,6 +45,7 @@ namespace Amazon.Polly.Model
         /// Maximum number of speech synthesis tasks returned in a List operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

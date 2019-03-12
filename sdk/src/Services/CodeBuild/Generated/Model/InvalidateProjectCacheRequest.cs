@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the AWS CodeBuild build project that the cache is reset for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ProjectName
         {
             get { return this._projectName; }

@@ -74,6 +74,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Source608ChannelNumber. Specifies the 608/708 channel number
         /// within the video track from which to extract captions. Unused for passthrough.
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public int Source608ChannelNumber
         {
             get { return this._source608ChannelNumber.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Source608TrackNumber. This field is unused and deprecated.
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public int Source608TrackNumber
         {
             get { return this._source608TrackNumber.GetValueOrDefault(); }

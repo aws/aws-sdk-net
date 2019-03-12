@@ -44,6 +44,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the compute environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironment
         {
             get { return this._computeEnvironment; }
@@ -62,6 +63,7 @@ namespace Amazon.Batch.Model
         /// The order of the compute environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Order
         {
             get { return this._order.GetValueOrDefault(); }

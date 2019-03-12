@@ -273,6 +273,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

@@ -41,6 +41,7 @@ namespace Amazon.WAFRegional.Model
         /// The name of the <code>SizeConstraintSet</code>, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -69,6 +70,7 @@ namespace Amazon.WAFRegional.Model
         /// by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SizeConstraintSetId
         {
             get { return this._sizeConstraintSetId; }

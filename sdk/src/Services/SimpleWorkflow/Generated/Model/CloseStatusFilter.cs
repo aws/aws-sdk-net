@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the criteria of this filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CloseStatus Status
         {
             get { return this._status; }

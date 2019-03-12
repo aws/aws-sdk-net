@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// The Amazon RDS instance's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RdsDbInstanceArn
         {
             get { return this._rdsDbInstanceArn; }

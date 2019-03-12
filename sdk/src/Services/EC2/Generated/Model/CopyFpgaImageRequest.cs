@@ -101,6 +101,7 @@ namespace Amazon.EC2.Model
         /// The ID of the source AFI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceFpgaImageId
         {
             get { return this._sourceFpgaImageId; }
@@ -119,6 +120,7 @@ namespace Amazon.EC2.Model
         /// The region that contains the source AFI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceRegion
         {
             get { return this._sourceRegion; }

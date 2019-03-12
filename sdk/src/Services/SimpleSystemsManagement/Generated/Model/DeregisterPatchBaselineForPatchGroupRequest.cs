@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch baseline to deregister the patch group from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch group that should be deregistered from the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PatchGroup
         {
             get { return this._patchGroup; }

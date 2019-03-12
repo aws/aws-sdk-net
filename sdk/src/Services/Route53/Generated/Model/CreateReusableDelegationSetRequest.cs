@@ -114,6 +114,7 @@ namespace Amazon.Route53.Model
         /// stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -133,6 +134,7 @@ namespace Amazon.Route53.Model
         /// ID for that hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }

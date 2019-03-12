@@ -44,6 +44,7 @@ namespace Amazon.Transfer.Model
         /// <code>NextToken</code> parameter to continue listing additional users.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -63,6 +64,7 @@ namespace Amazon.Transfer.Model
         /// to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -82,6 +84,7 @@ namespace Amazon.Transfer.Model
         /// that you specify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ListedUser> Users
         {
             get { return this._users; }

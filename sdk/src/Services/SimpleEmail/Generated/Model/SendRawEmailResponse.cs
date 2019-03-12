@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageId
         {
             get { return this._messageId; }

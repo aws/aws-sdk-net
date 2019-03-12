@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Group> Groups
         {
             get { return this._groups; }
@@ -85,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }

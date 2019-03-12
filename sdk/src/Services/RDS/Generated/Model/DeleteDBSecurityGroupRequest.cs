@@ -86,6 +86,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSecurityGroupName
         {
             get { return this._dbSecurityGroupName; }

@@ -106,6 +106,7 @@ namespace Amazon.CodeCommit.Model
         /// clarify what should be reviewed and other details of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Description
         {
             get { return this._description; }
@@ -200,6 +201,7 @@ namespace Amazon.CodeCommit.Model
         /// pull requests to other users of the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=150)]
         public string Title
         {
             get { return this._title; }

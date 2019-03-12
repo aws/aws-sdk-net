@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// stops scheduling new tasks for execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=23)]
         public int Cutoff
         {
             get { return this._cutoff.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A description of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -87,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The duration of the Maintenance Window in hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=24)]
         public int Duration
         {
             get { return this._duration.GetValueOrDefault(); }
@@ -142,6 +145,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -179,6 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The schedule of the Maintenance Window in the form of a cron or rate expression.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Schedule
         {
             get { return this._schedule; }
@@ -235,6 +240,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

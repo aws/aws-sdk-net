@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1283)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

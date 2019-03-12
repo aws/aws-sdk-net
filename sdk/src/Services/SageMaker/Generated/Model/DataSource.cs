@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The S3 location of the data source that is associated with a channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DataSource S3DataSource
         {
             get { return this._s3DataSource; }

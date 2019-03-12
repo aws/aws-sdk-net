@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ClientID
         {
             get { return this._clientID; }
@@ -75,6 +76,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string OpenIDConnectProviderArn
         {
             get { return this._openIDConnectProviderArn; }

@@ -43,6 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A list of configuration items that you want to tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConfigurationIds
         {
             get { return this._configurationIds; }
@@ -66,6 +67,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         ///  <code>{"key": "serverType", "value": "webServer"}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

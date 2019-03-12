@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The current application version ID when the snapshot was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long ApplicationVersionId
         {
             get { return this._applicationVersionId.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The identifier for the application snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SnapshotName
         {
             get { return this._snapshotName; }
@@ -97,6 +99,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The status of the application snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotStatus SnapshotStatus
         {
             get { return this._snapshotStatus; }

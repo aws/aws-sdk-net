@@ -56,6 +56,7 @@ namespace Amazon.Organizations.Model
         /// Specifies the type of policy that you want to include in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType Filter
         {
             get { return this._filter; }
@@ -81,6 +82,7 @@ namespace Amazon.Organizations.Model
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

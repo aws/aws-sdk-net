@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationSettingsResource.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationSettingsResource ApplicationSettingsResource
         {
             get { return this._applicationSettingsResource; }

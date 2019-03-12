@@ -87,6 +87,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }
@@ -108,6 +109,7 @@ namespace Amazon.Neptune.Model
         /// cluster parameter group family.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }
@@ -126,6 +128,7 @@ namespace Amazon.Neptune.Model
         /// The description for the DB cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

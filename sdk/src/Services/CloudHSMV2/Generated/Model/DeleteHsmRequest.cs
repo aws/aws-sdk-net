@@ -46,6 +46,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The identifier (ID) of the cluster that contains the HSM that you are deleting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }

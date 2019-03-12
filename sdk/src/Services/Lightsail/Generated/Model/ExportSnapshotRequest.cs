@@ -66,6 +66,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance or disk snapshot to be exported to Amazon EC2.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceSnapshotName
         {
             get { return this._sourceSnapshotName; }

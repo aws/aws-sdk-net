@@ -95,6 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The default value is <code>0</code> if no value is specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int StackSetFailureToleranceCount
         {
             get { return this._stackSetFailureToleranceCount.GetValueOrDefault(); }
@@ -129,6 +130,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <code>StackSetFailureTolerancePercentage</code>, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int StackSetFailureTolerancePercentage
         {
             get { return this._stackSetFailureTolerancePercentage.GetValueOrDefault(); }
@@ -164,6 +166,7 @@ namespace Amazon.ServiceCatalog.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int StackSetMaxConcurrencyCount
         {
             get { return this._stackSetMaxConcurrencyCount.GetValueOrDefault(); }
@@ -204,6 +207,7 @@ namespace Amazon.ServiceCatalog.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int StackSetMaxConcurrencyPercentage
         {
             get { return this._stackSetMaxConcurrencyPercentage.GetValueOrDefault(); }

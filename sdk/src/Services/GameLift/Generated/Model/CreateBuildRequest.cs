@@ -127,6 +127,7 @@ namespace Amazon.GameLift.Model
         /// You can use <a>UpdateBuild</a> to change this value later. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -190,6 +191,7 @@ namespace Amazon.GameLift.Model
         /// You can use <a>UpdateBuild</a> to change this value later. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Version
         {
             get { return this._version; }

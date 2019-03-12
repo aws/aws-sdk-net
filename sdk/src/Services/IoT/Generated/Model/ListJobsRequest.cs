@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return per request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -122,6 +123,7 @@ namespace Amazon.IoT.Model
         /// A filter that limits the returned jobs to those for the specified group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupId
         {
             get { return this._thingGroupId; }
@@ -140,6 +142,7 @@ namespace Amazon.IoT.Model
         /// A filter that limits the returned jobs to those for the specified group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }

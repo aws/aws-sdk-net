@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=131072)]
         public string AssumeRolePolicyDocument
         {
             get { return this._assumeRolePolicyDocument; }
@@ -90,6 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// A description of the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -123,6 +125,7 @@ namespace Amazon.IdentityManagement.Model
         /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3600, Max=43200)]
         public int MaxSessionDuration
         {
             get { return this._maxSessionDuration.GetValueOrDefault(); }
@@ -154,6 +157,7 @@ namespace Amazon.IdentityManagement.Model
         /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -172,6 +176,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ARN of the policy that is used to set the permissions boundary for the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PermissionsBoundary
         {
             get { return this._permissionsBoundary; }
@@ -201,6 +206,7 @@ namespace Amazon.IdentityManagement.Model
         /// both "PRODROLE" and "prodrole".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -228,6 +234,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -84,6 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and terminate EC2 instances in an instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string AutoScalingRole
         {
             get { return this._autoScalingRole; }
@@ -140,6 +141,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Linux AMI if the cluster uses a custom AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string CustomAmiId
         {
             get { return this._customAmiId; }
@@ -444,6 +446,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the security configuration applied to the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }

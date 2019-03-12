@@ -43,6 +43,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -63,6 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// to use the last definition that was activated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Version
         {
             get { return this._version; }

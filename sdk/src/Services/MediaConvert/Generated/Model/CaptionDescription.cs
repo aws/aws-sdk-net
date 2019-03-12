@@ -44,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         /// "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from
         /// each input.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string CaptionSelectorName
         {
             get { return this._captionSelectorName; }
@@ -64,6 +65,7 @@ namespace Amazon.MediaConvert.Model
         /// uses this language information to choose the font language for rendering the captions
         /// text.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }

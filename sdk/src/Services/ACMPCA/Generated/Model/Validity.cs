@@ -43,6 +43,7 @@ namespace Amazon.ACMPCA.Model
         /// Specifies whether the <code>Value</code> parameter represents days, months, or years.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ValidityPeriodType Type
         {
             get { return this._type; }
@@ -61,6 +62,7 @@ namespace Amazon.ACMPCA.Model
         /// Time period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long Value
         {
             get { return this._value.GetValueOrDefault(); }

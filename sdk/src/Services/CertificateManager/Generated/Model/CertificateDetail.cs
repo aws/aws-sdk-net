@@ -68,6 +68,7 @@ namespace Amazon.CertificateManager.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -92,6 +93,7 @@ namespace Amazon.CertificateManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -129,6 +131,7 @@ namespace Amazon.CertificateManager.Model
         /// The fully qualified domain name for the certificate, such as www.example.com or example.com.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -149,6 +152,7 @@ namespace Amazon.CertificateManager.Model
         /// the certificate type is <code>AMAZON_ISSUED</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public List<DomainValidation> DomainValidationOptions
         {
             get { return this._domainValidationOptions; }
@@ -530,6 +534,7 @@ namespace Amazon.CertificateManager.Model
         /// the website. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> SubjectAlternativeNames
         {
             get { return this._subjectAlternativeNames; }

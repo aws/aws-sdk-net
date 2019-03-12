@@ -56,6 +56,7 @@ namespace Amazon.Snowball.Model
         /// The ID for the address that you want the Snowball shipped to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -76,6 +77,7 @@ namespace Amazon.Snowball.Model
         /// from the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=39, Max=39)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -95,6 +97,7 @@ namespace Amazon.Snowball.Model
         /// Photos 2016-08-11</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -113,6 +116,7 @@ namespace Amazon.Snowball.Model
         /// The forwarding address ID for a job. This field is not supported in most regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string ForwardingAddressId
         {
             get { return this._forwardingAddressId; }
@@ -151,6 +155,7 @@ namespace Amazon.Snowball.Model
         /// AWS Key Management Service (KMS) API action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string KmsKeyARN
         {
             get { return this._kmsKeyARN; }
@@ -221,6 +226,7 @@ namespace Amazon.Snowball.Model
         /// AWS Identity and Access Management (IAM) API action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

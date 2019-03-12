@@ -67,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID of the app associated with the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -86,6 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// more information, see 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ConfirmationCode
         {
             get { return this._confirmationCode; }
@@ -104,6 +106,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password sent by a user's request to retrieve a forgotten password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -123,6 +126,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a user pool client and username plus the client ID in the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SecretHash
         {
             get { return this._secretHash; }
@@ -161,6 +165,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

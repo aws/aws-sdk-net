@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier of the directory consumer account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -59,6 +60,7 @@ namespace Amazon.DirectoryService.Model
         /// Type of identifier to be used in the <code>Id</code> field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetType Type
         {
             get { return this._type; }

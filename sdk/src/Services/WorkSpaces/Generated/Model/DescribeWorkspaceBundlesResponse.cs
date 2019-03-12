@@ -61,6 +61,7 @@ namespace Amazon.WorkSpaces.Model
         /// frame.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NextToken
         {
             get { return this._nextToken; }

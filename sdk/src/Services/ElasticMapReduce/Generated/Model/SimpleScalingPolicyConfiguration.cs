@@ -97,6 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ScalingAdjustment
         {
             get { return this._scalingAdjustment.GetValueOrDefault(); }

@@ -74,6 +74,7 @@ namespace Amazon.DirectConnect.Model
         /// The port bandwidth, in Gbps. The possible values are 1 and 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Bandwidth
         {
             get { return this._bandwidth; }
@@ -92,6 +93,7 @@ namespace Amazon.DirectConnect.Model
         /// The name of the interconnect.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InterconnectName
         {
             get { return this._interconnectName; }
@@ -128,6 +130,7 @@ namespace Amazon.DirectConnect.Model
         /// The location of the interconnect.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Location
         {
             get { return this._location; }

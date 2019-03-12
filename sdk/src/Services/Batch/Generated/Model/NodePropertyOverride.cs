@@ -64,6 +64,7 @@ namespace Amazon.Batch.Model
         /// highest possible node index is used to end the range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetNodes
         {
             get { return this._targetNodes; }

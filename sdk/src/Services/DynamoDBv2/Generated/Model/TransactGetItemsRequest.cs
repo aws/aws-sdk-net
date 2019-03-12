@@ -87,6 +87,7 @@ namespace Amazon.DynamoDBv2.Model
         /// a <code>Get</code> structure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<TransactGetItem> TransactItems
         {
             get { return this._transactItems; }

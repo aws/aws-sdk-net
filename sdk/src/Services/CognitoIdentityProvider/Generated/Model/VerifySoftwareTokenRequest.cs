@@ -82,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The session which should be passed both ways in challenge-response calls to the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }
@@ -100,6 +101,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The one time password computed using the secret code returned by 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=6)]
         public string UserCode
         {
             get { return this._userCode; }

@@ -64,6 +64,7 @@ namespace Amazon.Chime.Model
         /// The name of the Amazon Chime Voice Connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

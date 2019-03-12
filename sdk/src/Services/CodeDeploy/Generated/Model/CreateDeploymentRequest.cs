@@ -50,6 +50,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -93,6 +94,7 @@ namespace Amazon.CodeDeploy.Model
         /// CodeDeployDefault.OneAtATime is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DeploymentConfigName
         {
             get { return this._deploymentConfigName; }
@@ -111,6 +113,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of the deployment group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DeploymentGroupName
         {
             get { return this._deploymentGroupName; }

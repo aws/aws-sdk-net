@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the standard that you want to enable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StandardsArn
         {
             get { return this._standardsArn; }

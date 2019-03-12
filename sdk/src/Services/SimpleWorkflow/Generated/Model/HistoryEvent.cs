@@ -742,6 +742,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the workflow execution history.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long EventId
         {
             get { return this._eventId.GetValueOrDefault(); }
@@ -760,6 +761,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The date and time when the event occurred.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EventTimestamp
         {
             get { return this._eventTimestamp.GetValueOrDefault(); }
@@ -778,6 +780,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the history event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventType EventType
         {
             get { return this._eventType; }

@@ -45,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey.
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }
@@ -104,6 +106,7 @@ namespace Amazon.StorageGateway.Model
         /// The barcode that identifies a specific virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }
@@ -199,6 +202,7 @@ namespace Amazon.StorageGateway.Model
         /// The virtual tape library (VTL) device that the virtual tape is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VTLDevice
         {
             get { return this._vtlDevice; }

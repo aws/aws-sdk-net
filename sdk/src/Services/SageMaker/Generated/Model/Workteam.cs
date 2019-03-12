@@ -65,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -101,6 +102,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Cognito user groups that make up the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<MemberDefinition> MemberDefinitions
         {
             get { return this._memberDefinitions; }
@@ -156,6 +158,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) that identifies the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }
@@ -174,6 +177,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string WorkteamName
         {
             get { return this._workteamName; }

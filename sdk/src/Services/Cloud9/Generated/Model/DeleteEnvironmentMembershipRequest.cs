@@ -42,6 +42,7 @@ namespace Amazon.Cloud9.Model
         /// The ID of the environment to delete the environment member from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }
@@ -60,6 +61,7 @@ namespace Amazon.Cloud9.Model
         /// The Amazon Resource Name (ARN) of the environment member to delete from the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserArn
         {
             get { return this._userArn; }

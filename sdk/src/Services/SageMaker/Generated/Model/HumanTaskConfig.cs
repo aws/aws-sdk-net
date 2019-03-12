@@ -51,6 +51,7 @@ namespace Amazon.SageMaker.Model
         /// Configures how labels are consolidated across human workers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AnnotationConsolidationConfig AnnotationConsolidationConfig
         {
             get { return this._annotationConsolidationConfig; }
@@ -70,6 +71,7 @@ namespace Amazon.SageMaker.Model
         /// the same time. Each object may have more than one worker at one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxConcurrentTaskCount
         {
             get { return this._maxConcurrentTaskCount.GetValueOrDefault(); }
@@ -88,6 +90,7 @@ namespace Amazon.SageMaker.Model
         /// The number of human workers that will label an object. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=9)]
         public int NumberOfHumanWorkersPerDataObject
         {
             get { return this._numberOfHumanWorkersPerDataObject.GetValueOrDefault(); }
@@ -223,6 +226,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }
@@ -259,6 +263,7 @@ namespace Amazon.SageMaker.Model
         /// The length of time that a task remains available for labelling by human workers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=864000)]
         public int TaskAvailabilityLifetimeInSeconds
         {
             get { return this._taskAvailabilityLifetimeInSeconds.GetValueOrDefault(); }
@@ -277,6 +282,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the task for your human workers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string TaskDescription
         {
             get { return this._taskDescription; }
@@ -296,6 +302,7 @@ namespace Amazon.SageMaker.Model
         /// the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<string> TaskKeywords
         {
             get { return this._taskKeywords; }
@@ -314,6 +321,7 @@ namespace Amazon.SageMaker.Model
         /// The amount of time that a worker has to complete a task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=3600)]
         public int TaskTimeLimitInSeconds
         {
             get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }
@@ -332,6 +340,7 @@ namespace Amazon.SageMaker.Model
         /// A title for the task for your human workers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TaskTitle
         {
             get { return this._taskTitle; }
@@ -350,6 +359,7 @@ namespace Amazon.SageMaker.Model
         /// Information about the user interface that workers use to complete the labeling task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UiConfig UiConfig
         {
             get { return this._uiConfig; }
@@ -368,6 +378,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

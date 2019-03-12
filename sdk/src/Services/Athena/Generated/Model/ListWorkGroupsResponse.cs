@@ -41,6 +41,7 @@ namespace Amazon.Athena.Model
         /// A token to be used by the next request if this request is truncated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -59,6 +60,7 @@ namespace Amazon.Athena.Model
         /// The list of workgroups, including their names, descriptions, creation times, and states.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<WorkGroupSummary> WorkGroups
         {
             get { return this._workGroups; }

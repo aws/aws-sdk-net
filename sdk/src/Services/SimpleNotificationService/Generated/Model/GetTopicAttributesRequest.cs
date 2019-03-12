@@ -56,6 +56,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic whose properties you want to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

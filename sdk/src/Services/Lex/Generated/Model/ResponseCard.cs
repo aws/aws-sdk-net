@@ -63,6 +63,7 @@ namespace Amazon.Lex.Model
         /// An array of attachment objects representing options.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<GenericAttachment> GenericAttachments
         {
             get { return this._genericAttachments; }

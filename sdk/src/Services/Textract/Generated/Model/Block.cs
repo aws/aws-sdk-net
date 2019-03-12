@@ -132,6 +132,7 @@ namespace Amazon.Textract.Model
         /// isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ColumnIndex
         {
             get { return this._columnIndex.GetValueOrDefault(); }
@@ -151,6 +152,7 @@ namespace Amazon.Textract.Model
         /// by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ColumnSpan
         {
             get { return this._columnSpan.GetValueOrDefault(); }
@@ -170,6 +172,7 @@ namespace Amazon.Textract.Model
         /// the accuracy of the geometry points around the recognized text.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }
@@ -257,6 +260,7 @@ namespace Amazon.Textract.Model
         /// The page in which a block was detected.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Page
         {
             get { return this._page.GetValueOrDefault(); }
@@ -306,6 +310,7 @@ namespace Amazon.Textract.Model
         /// isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int RowIndex
         {
             get { return this._rowIndex.GetValueOrDefault(); }
@@ -325,6 +330,7 @@ namespace Amazon.Textract.Model
         /// and <code>GetDocumentTextDetection</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int RowSpan
         {
             get { return this._rowSpan.GetValueOrDefault(); }

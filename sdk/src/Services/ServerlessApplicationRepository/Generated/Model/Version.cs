@@ -48,6 +48,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The application Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -66,6 +67,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The date and time this resource was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreationTime
         {
             get { return this._creationTime; }
@@ -84,6 +86,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// An array of parameter types supported by the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ParameterDefinition> ParameterDefinitions
         {
             get { return this._parameterDefinitions; }
@@ -142,6 +145,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// will fail.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> RequiredCapabilities
         {
             get { return this._requiredCapabilities; }
@@ -161,6 +165,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// region in which it is being retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ResourcesSupported
         {
             get { return this._resourcesSupported.GetValueOrDefault(); }
@@ -183,6 +188,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         ///  <a href="https://semver.org/">https://semver.org/</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SemanticVersion
         {
             get { return this._semanticVersion; }
@@ -243,6 +249,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// A link to the packaged AWS SAM template of your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateUrl
         {
             get { return this._templateUrl; }

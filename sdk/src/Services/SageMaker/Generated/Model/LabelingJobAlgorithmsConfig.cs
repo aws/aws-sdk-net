@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string InitialActiveLearningModelArn
         {
             get { return this._initialActiveLearningModelArn; }
@@ -93,6 +94,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string LabelingJobAlgorithmSpecificationArn
         {
             get { return this._labelingJobAlgorithmSpecificationArn; }

@@ -86,6 +86,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -104,6 +105,7 @@ namespace Amazon.EC2.Model
         /// The type of permission to grant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InterfacePermissionType Permission
         {
             get { return this._permission; }

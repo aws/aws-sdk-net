@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// both objects reside. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that identifies the object to which the policy will be attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }
@@ -81,6 +83,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that is associated with the policy object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference PolicyReference
         {
             get { return this._policyReference; }

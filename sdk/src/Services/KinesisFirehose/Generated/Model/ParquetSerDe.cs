@@ -49,6 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         /// the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=67108864)]
         public int BlockSizeBytes
         {
             get { return this._blockSizeBytes.GetValueOrDefault(); }
@@ -107,6 +108,7 @@ namespace Amazon.KinesisFirehose.Model
         /// from Amazon S3 to HDFS before querying. The default is 0.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxPaddingBytes
         {
             get { return this._maxPaddingBytes.GetValueOrDefault(); }
@@ -127,6 +129,7 @@ namespace Amazon.KinesisFirehose.Model
         /// KiB and the default is 1 MiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=65536)]
         public int PageSizeBytes
         {
             get { return this._pageSizeBytes.GetValueOrDefault(); }

@@ -48,6 +48,7 @@ namespace Amazon.Chime.Model
         /// List of phone number IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> PhoneNumberIds
         {
             get { return this._phoneNumberIds; }

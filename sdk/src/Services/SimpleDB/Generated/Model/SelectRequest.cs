@@ -116,6 +116,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property SelectExpression. The expression used to query the domain.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SelectExpression
         {
             get { return this._selectExpression; }

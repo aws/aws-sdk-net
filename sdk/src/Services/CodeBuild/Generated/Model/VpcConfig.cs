@@ -42,6 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// A list of one or more security groups IDs in your Amazon VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeBuild.Model
         /// A list of one or more subnet IDs in your Amazon VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public List<string> Subnets
         {
             get { return this._subnets; }
@@ -78,6 +80,7 @@ namespace Amazon.CodeBuild.Model
         /// The ID of the Amazon VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string VpcId
         {
             get { return this._vpcId; }

@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// more results to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeStar.Model
         /// All the user profiles configured in AWS CodeStar for an AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<UserProfileSummary> UserProfiles
         {
             get { return this._userProfiles; }

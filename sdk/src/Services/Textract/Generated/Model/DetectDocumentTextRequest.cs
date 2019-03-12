@@ -52,6 +52,7 @@ namespace Amazon.Textract.Model
         /// must be an image in JPG or PNG format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Document Document
         {
             get { return this._document; }

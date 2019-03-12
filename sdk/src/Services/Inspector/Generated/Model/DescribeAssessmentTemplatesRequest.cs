@@ -39,6 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArns.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> AssessmentTemplateArns
         {
             get { return this._assessmentTemplateArns; }

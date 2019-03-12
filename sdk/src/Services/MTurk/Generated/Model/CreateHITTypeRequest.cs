@@ -54,6 +54,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long AssignmentDurationInSeconds
         {
             get { return this._assignmentDurationInSeconds.GetValueOrDefault(); }
@@ -96,6 +97,7 @@ namespace Amazon.MTurk.Model
         /// before accepting it. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -156,6 +158,7 @@ namespace Amazon.MTurk.Model
         /// HIT. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Reward
         {
             get { return this._reward; }
@@ -176,6 +179,7 @@ namespace Amazon.MTurk.Model
         /// search results, and everywhere the HIT is mentioned. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

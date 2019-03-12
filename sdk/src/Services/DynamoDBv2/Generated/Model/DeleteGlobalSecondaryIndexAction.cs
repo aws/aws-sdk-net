@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the global secondary index to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }

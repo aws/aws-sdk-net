@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// The origin access identity's ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

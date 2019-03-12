@@ -53,6 +53,7 @@ namespace Amazon.Amplify.Model
         ///  Credentials for Basic Authorization for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -71,6 +72,7 @@ namespace Amazon.Amplify.Model
         ///  BuildSpec for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -107,6 +109,7 @@ namespace Amazon.Amplify.Model
         ///  Description for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -180,6 +183,7 @@ namespace Amazon.Amplify.Model
         ///  AWS IAM service role for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -198,6 +202,7 @@ namespace Amazon.Amplify.Model
         ///  Name for the Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -217,6 +222,7 @@ namespace Amazon.Amplify.Model
         /// webhook and read-only deploy key. OAuth token is not stored. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public string OauthToken
         {
             get { return this._oauthToken; }
@@ -235,6 +241,7 @@ namespace Amazon.Amplify.Model
         ///  Platform / framework for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Platform Platform
         {
             get { return this._platform; }
@@ -253,6 +260,7 @@ namespace Amazon.Amplify.Model
         ///  Repository for an Amplify App 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string Repository
         {
             get { return this._repository; }

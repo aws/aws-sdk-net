@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The document versions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<DocumentVersionInfo> DocumentVersions
         {
             get { return this._documentVersions; }

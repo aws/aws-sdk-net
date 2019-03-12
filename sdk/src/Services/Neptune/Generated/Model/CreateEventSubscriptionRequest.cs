@@ -108,6 +108,7 @@ namespace Amazon.Neptune.Model
         /// ARN is created by Amazon SNS when you create a topic and subscribe to it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -205,6 +206,7 @@ namespace Amazon.Neptune.Model
         /// Constraints: The name must be less than 255 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

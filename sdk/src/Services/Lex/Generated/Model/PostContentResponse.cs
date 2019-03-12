@@ -233,6 +233,7 @@ namespace Amazon.Lex.Model
         /// response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }

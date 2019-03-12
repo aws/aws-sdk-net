@@ -79,6 +79,7 @@ namespace Amazon.Glue.Model
         /// Specifies the source table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CatalogEntry Source
         {
             get { return this._source; }

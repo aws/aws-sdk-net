@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// The number of traffic policy instances that are associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TrafficPolicyInstanceCount
         {
             get { return this._trafficPolicyInstanceCount.GetValueOrDefault(); }

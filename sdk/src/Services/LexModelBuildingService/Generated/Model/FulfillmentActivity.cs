@@ -84,6 +84,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// the slot data to the client application. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FulfillmentActivityType Type
         {
             get { return this._type; }

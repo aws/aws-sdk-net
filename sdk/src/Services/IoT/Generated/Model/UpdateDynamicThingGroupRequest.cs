@@ -69,6 +69,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -87,6 +88,7 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group search query string to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string QueryString
         {
             get { return this._queryString; }
@@ -129,6 +131,7 @@ namespace Amazon.IoT.Model
         /// The name of the dynamic thing group to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }
@@ -147,6 +150,7 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group properties to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ThingGroupProperties ThingGroupProperties
         {
             get { return this._thingGroupProperties; }

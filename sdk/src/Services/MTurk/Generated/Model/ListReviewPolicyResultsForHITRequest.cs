@@ -50,6 +50,7 @@ namespace Amazon.MTurk.Model
         /// The unique identifier of the HIT to retrieve review results for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -68,6 +69,7 @@ namespace Amazon.MTurk.Model
         /// Limit the number of results returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,6 +88,7 @@ namespace Amazon.MTurk.Model
         /// Pagination token
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

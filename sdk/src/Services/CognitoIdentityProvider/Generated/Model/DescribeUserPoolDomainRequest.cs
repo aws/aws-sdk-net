@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The domain string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string Domain
         {
             get { return this._domain; }

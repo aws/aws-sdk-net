@@ -74,6 +74,7 @@ namespace Amazon.FSx.Model
         /// The DNS name for the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=275)]
         public string DNSName
         {
             get { return this._dnsName; }
@@ -107,6 +108,7 @@ namespace Amazon.FSx.Model
         /// The eight-digit ID of the file system that was automatically assigned by Amazon FSx.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -144,6 +146,7 @@ namespace Amazon.FSx.Model
         /// data for an Amazon FSx for Windows File Server file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -203,6 +206,7 @@ namespace Amazon.FSx.Model
         /// Id. For an Amazon FSx for Lustre file system, you can have more than one.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> NetworkInterfaceIds
         {
             get { return this._networkInterfaceIds; }
@@ -222,6 +226,7 @@ namespace Amazon.FSx.Model
         /// IAM user, the AWS account to which the IAM user belongs is the owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string OwnerId
         {
             get { return this._ownerId; }
@@ -240,6 +245,7 @@ namespace Amazon.FSx.Model
         /// The resource ARN of the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=512)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -258,6 +264,7 @@ namespace Amazon.FSx.Model
         /// The storage capacity of the file system in gigabytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }
@@ -278,6 +285,7 @@ namespace Amazon.FSx.Model
         /// this subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -297,6 +305,7 @@ namespace Amazon.FSx.Model
         /// Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -315,6 +324,7 @@ namespace Amazon.FSx.Model
         /// The ID of the primary VPC for the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=21)]
         public string VpcId
         {
             get { return this._vpcId; }

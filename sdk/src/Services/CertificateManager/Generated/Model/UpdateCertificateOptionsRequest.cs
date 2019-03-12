@@ -50,6 +50,7 @@ namespace Amazon.CertificateManager.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -71,6 +72,7 @@ namespace Amazon.CertificateManager.Model
         /// that have not been logged typically produce an error message in a browser. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CertificateOptions Options
         {
             get { return this._options; }

@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// The replacement JSON schema.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Document
         {
             get { return this._document; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the schema to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

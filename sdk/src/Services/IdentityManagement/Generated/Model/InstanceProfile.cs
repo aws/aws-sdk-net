@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// The date when the instance profile was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateDate
         {
             get { return this._createDate.GetValueOrDefault(); }
@@ -107,6 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string InstanceProfileId
         {
             get { return this._instanceProfileId; }
@@ -125,6 +128,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name identifying the instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string InstanceProfileName
         {
             get { return this._instanceProfileName; }
@@ -144,6 +148,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -162,6 +167,7 @@ namespace Amazon.IdentityManagement.Model
         /// The role associated with the instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Role> Roles
         {
             get { return this._roles; }

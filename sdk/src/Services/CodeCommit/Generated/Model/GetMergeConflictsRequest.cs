@@ -46,6 +46,7 @@ namespace Amazon.CodeCommit.Model
         /// For example, a branch name or a full commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCommitSpecifier
         {
             get { return this._destinationCommitSpecifier; }
@@ -65,6 +66,7 @@ namespace Amazon.CodeCommit.Model
         /// is FAST_FORWARD_MERGE.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MergeOptionTypeEnum MergeOption
         {
             get { return this._mergeOption; }
@@ -83,6 +85,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where the pull request was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }
@@ -102,6 +105,7 @@ namespace Amazon.CodeCommit.Model
         /// For example, a branch name or a full commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceCommitSpecifier
         {
             get { return this._sourceCommitSpecifier; }

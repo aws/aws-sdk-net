@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
         /// The action to take if a match is determined.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HttpRouteAction Action
         {
             get { return this._action; }
@@ -59,6 +60,7 @@ namespace Amazon.AppMesh.Model
         /// The criteria for determining an HTTP request match.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HttpRouteMatch Match
         {
             get { return this._match; }

@@ -42,6 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// The names of the on-premises instances to which to add tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceNames
         {
             get { return this._instanceNames; }
@@ -65,6 +66,7 @@ namespace Amazon.CodeDeploy.Model
         /// tags are not allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

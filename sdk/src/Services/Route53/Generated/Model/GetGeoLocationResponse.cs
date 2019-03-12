@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// names for the specified geolocation code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoLocationDetails GeoLocationDetails
         {
             get { return this._geoLocationDetails; }

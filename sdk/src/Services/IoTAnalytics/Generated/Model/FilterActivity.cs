@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// An expression that looks like a SQL WHERE clause that must return a Boolean value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Filter
         {
             get { return this._filter; }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'filter' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

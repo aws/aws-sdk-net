@@ -51,6 +51,7 @@ namespace Amazon.Backup.Model
         /// or more sets of <code>Rules</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BackupPlanInput BackupPlan
         {
             get { return this._backupPlan; }

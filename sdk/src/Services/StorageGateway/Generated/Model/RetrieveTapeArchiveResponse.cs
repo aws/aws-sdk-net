@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the retrieved virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }

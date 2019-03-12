@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SegmentResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SegmentResponse SegmentResponse
         {
             get { return this._segmentResponse; }

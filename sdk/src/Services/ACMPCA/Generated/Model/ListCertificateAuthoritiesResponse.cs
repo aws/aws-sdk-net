@@ -60,6 +60,7 @@ namespace Amazon.ACMPCA.Model
         /// parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }

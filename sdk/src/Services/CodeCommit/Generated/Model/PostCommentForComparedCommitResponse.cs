@@ -154,6 +154,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where you posted a comment on the comparison between commits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

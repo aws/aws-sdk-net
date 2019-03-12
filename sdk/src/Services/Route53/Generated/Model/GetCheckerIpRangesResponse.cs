@@ -37,6 +37,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CheckerIpRanges.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> CheckerIpRanges
         {
             get { return this._checkerIpRanges; }

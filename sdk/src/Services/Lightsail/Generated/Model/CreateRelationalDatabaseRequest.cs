@@ -96,6 +96,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterDatabaseName
         {
             get { return this._masterDatabaseName; }
@@ -142,6 +143,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -309,6 +311,7 @@ namespace Amazon.Lightsail.Model
         /// blueprints</code> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseBlueprintId
         {
             get { return this._relationalDatabaseBlueprintId; }
@@ -333,6 +336,7 @@ namespace Amazon.Lightsail.Model
         /// bundles</code> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseBundleId
         {
             get { return this._relationalDatabaseBundleId; }
@@ -364,6 +368,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

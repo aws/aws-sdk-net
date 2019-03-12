@@ -48,6 +48,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -84,6 +85,7 @@ namespace Amazon.AppSync.Model
         /// The new field name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FieldName
         {
             get { return this._fieldName; }
@@ -150,6 +152,7 @@ namespace Amazon.AppSync.Model
         /// The new request mapping template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }
@@ -168,6 +171,7 @@ namespace Amazon.AppSync.Model
         /// The new response mapping template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string ResponseMappingTemplate
         {
             get { return this._responseMappingTemplate; }
@@ -186,6 +190,7 @@ namespace Amazon.AppSync.Model
         /// The new type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypeName
         {
             get { return this._typeName; }

@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// The instance tenancy attribute for the VPC. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VpcTenancy InstanceTenancy
         {
             get { return this._instanceTenancy; }
@@ -74,6 +75,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

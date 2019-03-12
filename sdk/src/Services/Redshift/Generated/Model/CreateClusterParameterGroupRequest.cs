@@ -59,6 +59,7 @@ namespace Amazon.Redshift.Model
         /// A description of the parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -87,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupFamily
         {
             get { return this._parameterGroupFamily; }
@@ -130,6 +132,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

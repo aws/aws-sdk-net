@@ -44,6 +44,7 @@ namespace Amazon.MigrationHub.Model
         /// The maximum number of results returned per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.MigrationHub.Model
         /// The name of the MigrationTask.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MigrationTaskName
         {
             get { return this._migrationTaskName; }
@@ -100,6 +102,7 @@ namespace Amazon.MigrationHub.Model
         /// The name of the ProgressUpdateStream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ProgressUpdateStream
         {
             get { return this._progressUpdateStream; }

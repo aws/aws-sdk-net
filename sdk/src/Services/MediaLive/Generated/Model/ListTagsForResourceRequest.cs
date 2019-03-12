@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ResourceArn.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

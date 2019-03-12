@@ -62,6 +62,7 @@ namespace Amazon.ElastiCache.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

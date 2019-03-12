@@ -53,6 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// or aws:updateSSMAgent. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4)]
         public string Name
         {
             get { return this._name; }
@@ -71,6 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Output of the plugin execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2500)]
         public string Output
         {
             get { return this._output; }
@@ -111,6 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// awsrunShellScript is the name of the plugin.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string OutputS3BucketName
         {
             get { return this._outputS3BucketName; }
@@ -152,6 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// awsrunShellScript is the name of the plugin.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string OutputS3KeyPrefix
         {
             get { return this._outputS3KeyPrefix; }
@@ -171,6 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=20)]
         public string OutputS3Region
         {
             get { return this._outputS3Region; }
@@ -356,6 +361,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string StatusDetails
         {
             get { return this._statusDetails; }

@@ -92,6 +92,7 @@ namespace Amazon.Lambda.Model
         /// The code for the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FunctionCode Code
         {
             get { return this._code; }
@@ -130,6 +131,7 @@ namespace Amazon.Lambda.Model
         /// A description of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -185,6 +187,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -206,6 +209,7 @@ namespace Amazon.Lambda.Model
         /// Model</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string Handler
         {
             get { return this._handler; }
@@ -266,6 +270,7 @@ namespace Amazon.Lambda.Model
         /// a multiple of 64 MB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=128, Max=3008)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -302,6 +307,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the function's execution role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Role
         {
             get { return this._role; }
@@ -320,6 +326,7 @@ namespace Amazon.Lambda.Model
         /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Runtime Runtime
         {
             get { return this._runtime; }
@@ -358,6 +365,7 @@ namespace Amazon.Lambda.Model
         /// is 3 seconds. The maximum allowed value is 900 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }

@@ -54,6 +54,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Id. The ID of the Channel to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

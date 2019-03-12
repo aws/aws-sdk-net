@@ -44,6 +44,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -62,6 +63,7 @@ namespace Amazon.AppSync.Model
         /// The type format: SDL or JSON.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypeDefinitionFormat Format
         {
             get { return this._format; }
@@ -80,6 +82,7 @@ namespace Amazon.AppSync.Model
         /// The maximum number of results you want the request to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

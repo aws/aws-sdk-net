@@ -44,6 +44,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh that the virtual service resides in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -59,6 +60,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Metadata.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceMetadata Metadata
         {
             get { return this._metadata; }
@@ -77,6 +79,7 @@ namespace Amazon.AppMesh.Model
         /// The specifications of the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualServiceSpec Spec
         {
             get { return this._spec; }
@@ -95,6 +98,7 @@ namespace Amazon.AppMesh.Model
         /// The current status of the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualServiceStatus Status
         {
             get { return this._status; }
@@ -113,6 +117,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VirtualServiceName
         {
             get { return this._virtualServiceName; }

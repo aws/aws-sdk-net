@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// Specifies the name of the engine that this option group should be associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EngineName
         {
             get { return this._engineName; }
@@ -64,6 +65,7 @@ namespace Amazon.RDS.Model
         /// with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MajorEngineVersion
         {
             get { return this._majorEngineVersion; }
@@ -82,6 +84,7 @@ namespace Amazon.RDS.Model
         /// The description of the option group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptionGroupDescription
         {
             get { return this._optionGroupDescription; }
@@ -120,6 +123,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>myoptiongroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptionGroupName
         {
             get { return this._optionGroupName; }

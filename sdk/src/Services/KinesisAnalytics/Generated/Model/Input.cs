@@ -100,6 +100,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Also used to describe the format of the reference data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceSchema InputSchema
         {
             get { return this._inputSchema; }
@@ -171,6 +172,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string NamePrefix
         {
             get { return this._namePrefix; }

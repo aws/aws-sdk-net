@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The last sequence number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=21, Max=40)]
         public string EndingSequenceNumber
         {
             get { return this._endingSequenceNumber; }
@@ -60,6 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The first sequence number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=21, Max=40)]
         public string StartingSequenceNumber
         {
             get { return this._startingSequenceNumber; }

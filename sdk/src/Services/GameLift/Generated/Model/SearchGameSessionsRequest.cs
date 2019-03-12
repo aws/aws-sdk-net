@@ -237,6 +237,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string FilterExpression
         {
             get { return this._filterExpression; }
@@ -276,6 +277,7 @@ namespace Amazon.GameLift.Model
         /// is 20, even if this value is not set or is set higher than 20. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -296,6 +298,7 @@ namespace Amazon.GameLift.Model
         /// the result set, do not specify a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -333,6 +336,7 @@ namespace Amazon.GameLift.Model
         /// returned at the end of the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string SortExpression
         {
             get { return this._sortExpression; }

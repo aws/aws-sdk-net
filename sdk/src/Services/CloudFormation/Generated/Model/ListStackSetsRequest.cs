@@ -46,6 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

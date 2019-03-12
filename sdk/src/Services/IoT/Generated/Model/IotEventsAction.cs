@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The name of the AWS IoT Events input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string InputName
         {
             get { return this._inputName; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// will be processed by an AWS IoT Events detector.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string MessageId
         {
             get { return this._messageId; }
@@ -80,6 +82,7 @@ namespace Amazon.IoT.Model
         /// Events detector. ("Action":"iotevents:BatchPutMessage").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

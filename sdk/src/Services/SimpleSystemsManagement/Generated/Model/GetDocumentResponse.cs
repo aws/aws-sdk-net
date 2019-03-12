@@ -66,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The contents of the Systems Manager document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Content
         {
             get { return this._content; }

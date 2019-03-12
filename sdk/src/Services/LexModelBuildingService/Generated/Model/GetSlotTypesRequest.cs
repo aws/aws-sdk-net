@@ -58,6 +58,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The maximum number of slot types to return in the response. The default is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -77,6 +78,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NameContains
         {
             get { return this._nameContains; }

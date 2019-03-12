@@ -42,6 +42,7 @@ namespace Amazon.WorkDocs.Model
         /// results, the string is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkDocs.Model
         /// The subscriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public List<Subscription> Subscriptions
         {
             get { return this._subscriptions; }

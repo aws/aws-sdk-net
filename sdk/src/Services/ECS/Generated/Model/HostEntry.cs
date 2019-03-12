@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         /// The hostname to use in the <code>/etc/hosts</code> entry.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -60,6 +61,7 @@ namespace Amazon.ECS.Model
         /// The IP address to use in the <code>/etc/hosts</code> entry.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpAddress
         {
             get { return this._ipAddress; }

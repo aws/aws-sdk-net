@@ -49,6 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The phone number for which you want to check the opt out status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

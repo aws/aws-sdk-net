@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the <code>DomainName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

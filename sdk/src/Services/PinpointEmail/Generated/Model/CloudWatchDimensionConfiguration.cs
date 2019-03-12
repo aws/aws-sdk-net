@@ -55,6 +55,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DefaultDimensionValue
         {
             get { return this._defaultDimensionValue; }
@@ -84,6 +85,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DimensionName
         {
             get { return this._dimensionName; }
@@ -107,6 +109,7 @@ namespace Amazon.PinpointEmail.Model
         /// <code>linkTags</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DimensionValueSource DimensionValueSource
         {
             get { return this._dimensionValueSource; }

@@ -45,6 +45,7 @@ namespace Amazon.APIGateway.Model
         /// import from an OpenAPI file, this is a JSON object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -102,6 +103,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

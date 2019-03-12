@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the Amazon SageMaker notebook instance to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string NotebookInstanceName
         {
             get { return this._notebookInstanceName; }

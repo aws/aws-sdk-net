@@ -127,6 +127,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -142,6 +143,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SourceArn. The ARN of the source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceArn
         {
             get { return this._sourceArn; }

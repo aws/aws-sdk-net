@@ -44,6 +44,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON data passed to the resource referenced in a task state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=32768)]
         public string Parameters
         {
             get { return this._parameters; }
@@ -62,6 +63,7 @@ namespace Amazon.StepFunctions.Model
         /// The region of the scheduled task
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Region
         {
             get { return this._region; }
@@ -80,6 +82,7 @@ namespace Amazon.StepFunctions.Model
         /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Resource
         {
             get { return this._resource; }
@@ -98,6 +101,7 @@ namespace Amazon.StepFunctions.Model
         /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string ResourceType
         {
             get { return this._resourceType; }

@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteTableId
         {
             get { return this._routeTableId; }

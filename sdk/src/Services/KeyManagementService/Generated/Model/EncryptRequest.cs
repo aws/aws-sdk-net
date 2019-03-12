@@ -109,6 +109,7 @@ namespace Amazon.KeyManagementService.Model
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> GrantTokens
         {
             get { return this._grantTokens; }
@@ -159,6 +160,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the alias name and alias ARN, use <a>ListAliases</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -177,6 +179,7 @@ namespace Amazon.KeyManagementService.Model
         /// Data to be encrypted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

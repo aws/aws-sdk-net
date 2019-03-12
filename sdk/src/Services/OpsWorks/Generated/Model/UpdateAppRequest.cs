@@ -59,6 +59,7 @@ namespace Amazon.OpsWorks.Model
         /// The app ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AppId
         {
             get { return this._appId; }

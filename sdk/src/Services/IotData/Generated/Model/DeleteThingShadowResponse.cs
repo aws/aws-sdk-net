@@ -40,6 +40,7 @@ namespace Amazon.IotData.Model
         /// The state information, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Payload
         {
             get { return this._payload; }

@@ -55,6 +55,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the subscription whose properties you want to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionArn
         {
             get { return this._subscriptionArn; }

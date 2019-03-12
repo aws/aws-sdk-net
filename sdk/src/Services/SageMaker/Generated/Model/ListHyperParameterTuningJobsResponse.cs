@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// that the <code>ListHyperParameterTuningJobs</code> request returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HyperParameterTuningJobSummary> HyperParameterTuningJobSummaries
         {
             get { return this._hyperParameterTuningJobSummaries; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// jobs, use the token in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

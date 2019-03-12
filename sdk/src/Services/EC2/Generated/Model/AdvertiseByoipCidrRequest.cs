@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// You can't advertise only a portion of the provisioned range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }

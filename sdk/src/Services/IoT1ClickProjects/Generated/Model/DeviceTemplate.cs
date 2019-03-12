@@ -60,6 +60,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The device type, which currently must be <code>"button"</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string DeviceType
         {
             get { return this._deviceType; }

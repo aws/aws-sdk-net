@@ -54,6 +54,7 @@ namespace Amazon.OpsWorks.Model
         /// The Elastic IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticIp
         {
             get { return this._elasticIp; }
@@ -72,6 +73,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

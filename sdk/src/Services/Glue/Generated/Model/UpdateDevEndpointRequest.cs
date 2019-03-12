@@ -48,6 +48,7 @@ namespace Amazon.Glue.Model
         /// The map of arguments to add the map of arguments used to configure the DevEndpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> AddArguments
         {
             get { return this._addArguments; }
@@ -66,6 +67,7 @@ namespace Amazon.Glue.Model
         /// The list of public keys for the DevEndpoint to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> AddPublicKeys
         {
             get { return this._addPublicKeys; }
@@ -121,6 +123,7 @@ namespace Amazon.Glue.Model
         /// The list of public keys to be deleted from the DevEndpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> DeletePublicKeys
         {
             get { return this._deletePublicKeys; }
@@ -139,6 +142,7 @@ namespace Amazon.Glue.Model
         /// The name of the DevEndpoint to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointName
         {
             get { return this._endpointName; }

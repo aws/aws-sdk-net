@@ -53,6 +53,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string BatchPredictionId
         {
             get { return this._batchPredictionId; }

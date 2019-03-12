@@ -61,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// in base64.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<MemoryStream> Payloads
         {
             get { return this._payloads; }

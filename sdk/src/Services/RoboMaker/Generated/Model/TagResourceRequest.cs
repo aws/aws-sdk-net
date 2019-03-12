@@ -53,6 +53,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -71,6 +72,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

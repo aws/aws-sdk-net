@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// region1, region2 if the region was chosen as <code>GroupByKey</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -60,6 +61,7 @@ namespace Amazon.ConfigService.Model
         /// The number of resources in the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ResourceCount
         {
             get { return this._resourceCount.GetValueOrDefault(); }

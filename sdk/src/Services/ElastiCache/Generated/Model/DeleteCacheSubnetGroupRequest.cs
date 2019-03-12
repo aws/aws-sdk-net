@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSubnetGroupName
         {
             get { return this._cacheSubnetGroupName; }

@@ -82,6 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -106,6 +107,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NewGroupName
         {
             get { return this._newGroupName; }
@@ -132,6 +134,7 @@ namespace Amazon.IdentityManagement.Model
         /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NewPath
         {
             get { return this._newPath; }

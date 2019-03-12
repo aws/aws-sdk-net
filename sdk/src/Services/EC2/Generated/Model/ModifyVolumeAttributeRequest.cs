@@ -73,6 +73,7 @@ namespace Amazon.EC2.Model
         /// The ID of the volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VolumeId
         {
             get { return this._volumeId; }

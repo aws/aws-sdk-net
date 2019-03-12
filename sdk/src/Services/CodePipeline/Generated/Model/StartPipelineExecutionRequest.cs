@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// The system-generated unique ID used to identify a unique execution request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -61,6 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

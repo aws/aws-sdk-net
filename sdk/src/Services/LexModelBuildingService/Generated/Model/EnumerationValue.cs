@@ -79,6 +79,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The value of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string Value
         {
             get { return this._value; }

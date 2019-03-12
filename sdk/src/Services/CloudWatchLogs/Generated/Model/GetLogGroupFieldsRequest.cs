@@ -55,6 +55,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -80,6 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long Time
         {
             get { return this._time.GetValueOrDefault(); }

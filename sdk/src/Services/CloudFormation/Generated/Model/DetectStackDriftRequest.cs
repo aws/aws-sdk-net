@@ -75,6 +75,7 @@ namespace Amazon.CloudFormation.Model
         /// The logical names of any resources you want to use as filters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public List<string> LogicalResourceIds
         {
             get { return this._logicalResourceIds; }
@@ -93,6 +94,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the stack for which you want to detect drift. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

@@ -69,6 +69,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository to which you intend to upload layers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

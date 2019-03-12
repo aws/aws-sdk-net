@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the job definition. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinitionArn
         {
             get { return this._jobDefinitionArn; }
@@ -60,6 +61,7 @@ namespace Amazon.Batch.Model
         /// The name of the job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinitionName
         {
             get { return this._jobDefinitionName; }
@@ -78,6 +80,7 @@ namespace Amazon.Batch.Model
         /// The revision of the job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Revision
         {
             get { return this._revision.GetValueOrDefault(); }

@@ -43,6 +43,7 @@ namespace Amazon.Elasticsearch.Model
         /// The name of the domain that you want to stop the latest service software update on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

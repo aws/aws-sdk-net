@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// Description of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -63,6 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// and @pipelineState.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Field> Fields
         {
             get { return this._fields; }
@@ -81,6 +83,7 @@ namespace Amazon.DataPipeline.Model
         /// The name of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -100,6 +103,7 @@ namespace Amazon.DataPipeline.Model
         /// the form <code>df-297EG78HU43EEXAMPLE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -120,6 +124,7 @@ namespace Amazon.DataPipeline.Model
         /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }

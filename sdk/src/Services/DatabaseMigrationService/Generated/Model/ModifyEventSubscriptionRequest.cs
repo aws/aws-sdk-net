@@ -124,6 +124,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The name of the AWS DMS event notification subscription to be modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

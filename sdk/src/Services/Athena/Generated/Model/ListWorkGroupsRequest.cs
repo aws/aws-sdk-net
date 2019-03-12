@@ -42,6 +42,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of workgroups to return in this request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Athena.Model
         /// A token to be used by the next request if this request is truncated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

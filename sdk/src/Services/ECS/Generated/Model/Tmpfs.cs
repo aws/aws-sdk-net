@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         /// The absolute file path where the tmpfs volume is to be mounted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContainerPath
         {
             get { return this._containerPath; }
@@ -87,6 +88,7 @@ namespace Amazon.ECS.Model
         /// The size (in MiB) of the tmpfs volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Size
         {
             get { return this._size.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the assignment associated with this bonus payment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }
@@ -113,6 +114,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Worker to whom the bonus was paid.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

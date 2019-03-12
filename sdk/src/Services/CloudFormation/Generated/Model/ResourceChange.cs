@@ -155,6 +155,7 @@ namespace Amazon.CloudFormation.Model
         /// The type of AWS CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

@@ -54,6 +54,7 @@ namespace Amazon.CodePipeline.Model
         /// Represents information about an action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionTypeId ActionTypeId
         {
             get { return this._actionTypeId; }
@@ -72,6 +73,7 @@ namespace Amazon.CodePipeline.Model
         /// The maximum number of jobs to return in a poll for jobs call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxBatchSize
         {
             get { return this._maxBatchSize.GetValueOrDefault(); }
@@ -93,6 +95,7 @@ namespace Amazon.CodePipeline.Model
         /// matches the mapped value will be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public Dictionary<string, string> QueryParam
         {
             get { return this._queryParam; }

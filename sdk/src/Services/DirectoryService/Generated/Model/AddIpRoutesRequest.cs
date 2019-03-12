@@ -55,6 +55,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory to which to add the address block.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -74,6 +75,7 @@ namespace Amazon.DirectoryService.Model
         /// address block of the DNS server used for your on-premises domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IpRoute> IpRoutes
         {
             get { return this._ipRoutes; }

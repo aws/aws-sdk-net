@@ -98,6 +98,7 @@ namespace Amazon.StorageGateway.Model
         /// of a tape drive or media changer target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

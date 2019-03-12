@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxResults. Optional. Number of jobs, up to twenty, that
         /// will be returned at one time.
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

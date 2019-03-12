@@ -77,6 +77,7 @@ namespace Amazon.MediaStore.Model
         /// For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ARN
         {
             get { return this._arn; }
@@ -115,6 +116,7 @@ namespace Amazon.MediaStore.Model
         /// is created. Once the value has been assigned, it does not change.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -133,6 +135,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -154,6 +157,7 @@ namespace Amazon.MediaStore.Model
         /// is available, the status changes to <code>ACTIVE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16)]
         public ContainerStatus Status
         {
             get { return this._status; }

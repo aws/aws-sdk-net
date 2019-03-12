@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         /// Valid values: <code>system-update</code>, <code>db-upgrade</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplyAction
         {
             get { return this._applyAction; }
@@ -85,6 +86,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptInType
         {
             get { return this._optInType; }
@@ -105,6 +107,7 @@ namespace Amazon.RDS.Model
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceIdentifier
         {
             get { return this._resourceIdentifier; }

@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The protocol, including SIP, SIPS, and H323.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CommsProtocol CommsProtocol
         {
             get { return this._commsProtocol; }
@@ -59,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Endpoint
         {
             get { return this._endpoint; }

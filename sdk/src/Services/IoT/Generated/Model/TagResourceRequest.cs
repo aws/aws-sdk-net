@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The new or modified tags for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -41,6 +41,7 @@ namespace Amazon.Kinesis.Model
         /// The number of open shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000)]
         public int OpenShardCount
         {
             get { return this._openShardCount.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.Kinesis.Model
         /// The maximum number of shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000)]
         public int ShardLimit
         {
             get { return this._shardLimit.GetValueOrDefault(); }

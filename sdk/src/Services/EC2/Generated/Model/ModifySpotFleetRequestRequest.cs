@@ -94,6 +94,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SpotFleetRequestId
         {
             get { return this._spotFleetRequestId; }

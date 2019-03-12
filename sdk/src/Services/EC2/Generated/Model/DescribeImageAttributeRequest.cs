@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// <a>DescribeImages</a> to get information about the block device mapping for the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImageAttributeName Attribute
         {
             get { return this._attribute; }
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageId
         {
             get { return this._imageId; }

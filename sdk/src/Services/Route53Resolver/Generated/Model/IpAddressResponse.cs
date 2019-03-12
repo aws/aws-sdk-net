@@ -48,6 +48,7 @@ namespace Amazon.Route53Resolver.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=40)]
         public string CreationTime
         {
             get { return this._creationTime; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53Resolver.Model
         /// One IP address that the resolver endpoint uses for DNS queries.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=36)]
         public string Ip
         {
             get { return this._ip; }
@@ -84,6 +86,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of one IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string IpId
         {
             get { return this._ipId; }
@@ -103,6 +106,7 @@ namespace Amazon.Route53Resolver.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=40)]
         public string ModificationTime
         {
             get { return this._modificationTime; }
@@ -139,6 +143,7 @@ namespace Amazon.Route53Resolver.Model
         /// A message that provides additional information about the status of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string StatusMessage
         {
             get { return this._statusMessage; }
@@ -157,6 +162,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of one subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string SubnetId
         {
             get { return this._subnetId; }

@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the group from which members are removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the member to be removed to the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the group exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

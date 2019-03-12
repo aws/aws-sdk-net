@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The resource identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -60,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The TagOption identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TagOptionId
         {
             get { return this._tagOptionId; }

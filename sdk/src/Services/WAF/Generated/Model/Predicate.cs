@@ -48,6 +48,7 @@ namespace Amazon.WAF.Model
         /// or <code>List</code> command.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DataId
         {
             get { return this._dataId; }
@@ -80,6 +81,7 @@ namespace Amazon.WAF.Model
         /// on all IP addresses <i>except</i> <code>192.0.2.44</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Negated
         {
             get { return this._negated.GetValueOrDefault(); }
@@ -98,6 +100,7 @@ namespace Amazon.WAF.Model
         /// The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PredicateType Type
         {
             get { return this._type; }

@@ -42,6 +42,7 @@ namespace Amazon.MigrationHub.Model
         /// Filter to limit the maximum number of results to list per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

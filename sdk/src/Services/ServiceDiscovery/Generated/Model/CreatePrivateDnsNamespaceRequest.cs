@@ -52,6 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -70,6 +71,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// A description for the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -90,6 +92,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// that has the same name as the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -108,6 +111,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the Amazon VPC that you want to associate the namespace with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Vpc
         {
             get { return this._vpc; }

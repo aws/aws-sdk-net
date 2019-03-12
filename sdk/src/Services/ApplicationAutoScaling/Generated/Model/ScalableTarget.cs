@@ -46,6 +46,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Unix timestamp for when the scalable target was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The maximum value to scale to in response to a scale-out event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxCapacity
         {
             get { return this._maxCapacity.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The minimum value to scale to in response to a scale-in event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinCapacity
         {
             get { return this._minCapacity.GetValueOrDefault(); }
@@ -150,6 +153,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -169,6 +173,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// target on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -244,6 +249,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -265,6 +271,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

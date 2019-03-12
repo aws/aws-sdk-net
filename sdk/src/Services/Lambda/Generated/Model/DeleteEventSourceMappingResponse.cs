@@ -48,6 +48,7 @@ namespace Amazon.Lambda.Model
         /// The maximum number of items to retrieve in a single batch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int BatchSize
         {
             get { return this._batchSize.GetValueOrDefault(); }

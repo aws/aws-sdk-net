@@ -57,6 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -75,6 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The portfolio identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PortfolioId
         {
             get { return this._portfolioId; }
@@ -93,6 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The ARN of the principal (IAM user, role, or group).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string PrincipalARN
         {
             get { return this._principalARN; }
@@ -111,6 +114,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The principal type. The supported value is <code>IAM</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PrincipalType PrincipalType
         {
             get { return this._principalType; }

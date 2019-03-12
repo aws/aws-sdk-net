@@ -77,6 +77,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking configuration
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

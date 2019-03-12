@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// specified by the field-level encryption query argument, fle-profile, is unknown.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ForwardWhenQueryArgProfileIsUnknown
         {
             get { return this._forwardWhenQueryArgProfileIsUnknown.GetValueOrDefault(); }

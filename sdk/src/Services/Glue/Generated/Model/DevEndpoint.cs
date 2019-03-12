@@ -65,6 +65,7 @@ namespace Amazon.Glue.Model
         /// Note that currently, we only support "--enable-glue-datacatalog": "" as a valid argument.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Arguments
         {
             get { return this._arguments; }
@@ -325,6 +326,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> PublicKeys
         {
             get { return this._publicKeys; }
@@ -361,6 +363,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure to be used with this DevEndpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }

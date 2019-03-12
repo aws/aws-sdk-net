@@ -311,6 +311,7 @@ namespace Amazon.DynamoDBv2.Model
         /// primary key, you must provide values for both the partition key and the sort key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }
@@ -400,6 +401,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table from which to delete the item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

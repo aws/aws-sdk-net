@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// Telemetry details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5000)]
         public List<TelemetryMetadata> TelemetryMetadata
         {
             get { return this._telemetryMetadata; }

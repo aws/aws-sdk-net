@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The number of workflow executions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }

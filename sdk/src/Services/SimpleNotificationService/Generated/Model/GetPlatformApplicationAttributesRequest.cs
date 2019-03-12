@@ -43,6 +43,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformApplicationArn
         {
             get { return this._platformApplicationArn; }

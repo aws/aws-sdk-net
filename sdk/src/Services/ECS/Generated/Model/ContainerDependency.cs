@@ -67,6 +67,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContainerCondition Condition
         {
             get { return this._condition; }
@@ -85,6 +86,7 @@ namespace Amazon.ECS.Model
         /// The name of a container.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContainerName
         {
             get { return this._containerName; }

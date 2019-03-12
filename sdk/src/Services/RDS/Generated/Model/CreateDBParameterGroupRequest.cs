@@ -102,6 +102,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }
@@ -141,6 +142,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupName
         {
             get { return this._dbParameterGroupName; }
@@ -159,6 +161,7 @@ namespace Amazon.RDS.Model
         /// The description for the DB parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

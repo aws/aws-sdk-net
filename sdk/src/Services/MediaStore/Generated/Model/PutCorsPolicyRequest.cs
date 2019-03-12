@@ -59,6 +59,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container that you want to assign the CORS policy to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContainerName
         {
             get { return this._containerName; }
@@ -77,6 +78,7 @@ namespace Amazon.MediaStore.Model
         /// The CORS policy to apply to the container. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<CorsRule> CorsPolicy
         {
             get { return this._corsPolicy; }

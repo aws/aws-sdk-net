@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property AttributesResource.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AttributesResource AttributesResource
         {
             get { return this._attributesResource; }

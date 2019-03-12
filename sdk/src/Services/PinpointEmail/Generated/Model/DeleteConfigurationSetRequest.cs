@@ -49,6 +49,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

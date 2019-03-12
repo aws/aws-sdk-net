@@ -78,6 +78,7 @@ namespace Amazon.ECR.Model
         /// to 100 results and a <code>nextToken</code> value, if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -143,6 +144,7 @@ namespace Amazon.ECR.Model
         /// The repository with image IDs to be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

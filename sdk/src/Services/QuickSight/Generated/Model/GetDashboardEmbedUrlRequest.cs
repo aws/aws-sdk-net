@@ -90,6 +90,7 @@ namespace Amazon.QuickSight.Model
         /// AWS account ID that contains the dashboard you are embedding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -108,6 +109,7 @@ namespace Amazon.QuickSight.Model
         /// The ID for the dashboard, also added to IAM policy
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DashboardId
         {
             get { return this._dashboardId; }
@@ -126,6 +128,7 @@ namespace Amazon.QuickSight.Model
         /// The authentication method the user uses to sign in (IAM only).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IdentityType IdentityType
         {
             get { return this._identityType; }
@@ -164,6 +167,7 @@ namespace Amazon.QuickSight.Model
         /// 600 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=15, Max=600)]
         public long SessionLifetimeInMinutes
         {
             get { return this._sessionLifetimeInMinutes.GetValueOrDefault(); }

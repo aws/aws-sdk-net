@@ -41,6 +41,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }

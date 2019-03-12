@@ -120,6 +120,7 @@ namespace Amazon.Batch.Model
         /// or the Amazon Resource Name (ARN) for the job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinition
         {
             get { return this._jobDefinition; }
@@ -139,6 +140,7 @@ namespace Amazon.Batch.Model
         /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobName
         {
             get { return this._jobName; }
@@ -158,6 +160,7 @@ namespace Amazon.Batch.Model
         /// the Amazon Resource Name (ARN) of the queue. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueue
         {
             get { return this._jobQueue; }

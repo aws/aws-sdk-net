@@ -48,6 +48,7 @@ namespace Amazon.ConfigService.Model
         /// If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ComplianceResourceId
         {
             get { return this._complianceResourceId; }
@@ -68,6 +69,7 @@ namespace Amazon.ConfigService.Model
         /// <code>ComplianceResourceId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> ComplianceResourceTypes
         {
             get { return this._complianceResourceTypes; }
@@ -87,6 +89,7 @@ namespace Amazon.ConfigService.Model
         /// evaluation for the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TagKey
         {
             get { return this._tagKey; }
@@ -107,6 +110,7 @@ namespace Amazon.ConfigService.Model
         /// a value for <code>TagKey</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string TagValue
         {
             get { return this._tagValue; }

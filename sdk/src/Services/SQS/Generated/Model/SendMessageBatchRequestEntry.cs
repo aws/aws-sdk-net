@@ -98,6 +98,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -136,6 +137,7 @@ namespace Amazon.SQS.Model
         /// The body of the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageBody
         {
             get { return this._messageBody; }

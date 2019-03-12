@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the labeling job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SageMaker.Model
         /// job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string JobReferenceCode
         {
             get { return this._jobReferenceCode; }
@@ -99,6 +101,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the labeling job that the work team is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string LabelingJobName
         {
             get { return this._labelingJobName; }
@@ -114,6 +117,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property WorkRequesterAccountId.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WorkRequesterAccountId
         {
             get { return this._workRequesterAccountId; }

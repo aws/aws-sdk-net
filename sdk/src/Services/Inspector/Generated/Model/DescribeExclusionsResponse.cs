@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// Information about the exclusions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public Dictionary<string, Exclusion> Exclusions
         {
             get { return this._exclusions; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }

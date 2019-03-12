@@ -100,6 +100,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -175,6 +176,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// be the same for all outputs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public List<string> OutputKeys
         {
             get { return this._outputKeys; }
@@ -230,6 +232,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Information that further explains the status.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string StatusDetail
         {
             get { return this._statusDetail; }

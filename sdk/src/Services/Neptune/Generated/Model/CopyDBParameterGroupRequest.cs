@@ -60,6 +60,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBParameterGroupIdentifier
         {
             get { return this._sourceDBParameterGroupIdentifier; }
@@ -93,6 +94,7 @@ namespace Amazon.Neptune.Model
         /// A description for the copied DB parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBParameterGroupDescription
         {
             get { return this._targetDBParameterGroupDescription; }
@@ -135,6 +137,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>my-db-parameter-group</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBParameterGroupIdentifier
         {
             get { return this._targetDBParameterGroupIdentifier; }

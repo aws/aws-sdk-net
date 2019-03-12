@@ -66,6 +66,7 @@ namespace Amazon.CloudDirectory.Model
         /// the object resides. For more information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -103,6 +104,7 @@ namespace Amazon.CloudDirectory.Model
         /// number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -139,6 +141,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that identifies the object whose attributes will be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

@@ -57,6 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// "Resource": "logArn" } ] } </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5120)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

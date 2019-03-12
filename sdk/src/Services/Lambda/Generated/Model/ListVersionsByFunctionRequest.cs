@@ -63,6 +63,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=170)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -100,6 +101,7 @@ namespace Amazon.Lambda.Model
         /// Limit the number of versions that are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.KeyManagementService.Model
         /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -60,6 +61,7 @@ namespace Amazon.KeyManagementService.Model
         /// The ID of the key used during encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

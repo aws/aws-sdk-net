@@ -71,6 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -110,6 +111,7 @@ namespace Amazon.ServiceCatalog.Model
         /// request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -128,6 +130,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The Amazon Resource Name (ARN) of the source product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string SourceProductArn
         {
             get { return this._sourceProductArn; }
@@ -165,6 +168,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the target product. By default, a new product is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TargetProductId
         {
             get { return this._targetProductId; }
@@ -183,6 +187,7 @@ namespace Amazon.ServiceCatalog.Model
         /// A name for the target product. The default is the name of the source product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string TargetProductName
         {
             get { return this._targetProductName; }

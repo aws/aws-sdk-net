@@ -78,6 +78,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property EntitlementArn. The ARN of the entitlement that you want
         /// to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntitlementArn
         {
             get { return this._entitlementArn; }
@@ -94,6 +95,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property FlowArn. The flow that is associated with the entitlement
         /// that you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }

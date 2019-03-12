@@ -71,6 +71,7 @@ namespace Amazon.Comprehend.Model
         ///  The maximum number of results to return on each page. The default is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.Comprehend.Model
         /// Identifies the next page of results to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

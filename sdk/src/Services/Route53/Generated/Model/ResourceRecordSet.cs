@@ -118,6 +118,7 @@ namespace Amazon.Route53.Model
         /// In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -212,6 +213,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RRType Type
         {
             get { return this._type; }
@@ -240,6 +242,7 @@ namespace Amazon.Route53.Model
         /// a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SetIdentifier
         {
             get { return this._setIdentifier; }
@@ -301,6 +304,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public long Weight
         {
             get { return this._weight.GetValueOrDefault(); }
@@ -359,6 +363,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public ResourceRecordSetRegion Region
         {
             get { return this._region; }
@@ -602,6 +607,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public long TTL
         {
             get { return this._ttl.GetValueOrDefault(); }
@@ -625,6 +631,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<ResourceRecord> ResourceRecords
         {
             get { return this._resourceRecords; }
@@ -858,6 +865,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string HealthCheckId
         {
             get { return this._healthCheckId; }
@@ -887,6 +895,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string TrafficPolicyInstanceId
         {
             get { return this._trafficPolicyInstanceId; }

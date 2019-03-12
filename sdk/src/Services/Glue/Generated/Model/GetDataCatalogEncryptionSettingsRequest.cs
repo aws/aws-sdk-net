@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// is provided, the AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }

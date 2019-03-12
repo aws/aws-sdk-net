@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string OutputS3BucketName
         {
             get { return this._outputS3BucketName; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Amazon S3 bucket subfolder.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string OutputS3KeyPrefix
         {
             get { return this._outputS3KeyPrefix; }
@@ -79,6 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=20)]
         public string OutputS3Region
         {
             get { return this._outputS3Region; }

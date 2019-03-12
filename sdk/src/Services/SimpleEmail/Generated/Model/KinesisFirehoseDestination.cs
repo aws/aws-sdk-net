@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// published to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeliveryStreamARN
         {
             get { return this._deliveryStreamARN; }
@@ -70,6 +71,7 @@ namespace Amazon.SimpleEmail.Model
         /// Amazon Kinesis Firehose stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IAMRoleARN
         {
             get { return this._iamRoleARN; }

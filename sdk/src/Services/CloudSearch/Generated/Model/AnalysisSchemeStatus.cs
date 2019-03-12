@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Options.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AnalysisScheme Options
         {
             get { return this._options; }
@@ -53,6 +54,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Status.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

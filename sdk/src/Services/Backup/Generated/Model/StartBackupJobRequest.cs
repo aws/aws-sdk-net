@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         /// they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupVaultName
         {
             get { return this._backupVaultName; }
@@ -88,6 +89,7 @@ namespace Amazon.Backup.Model
         /// <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -176,6 +178,7 @@ namespace Amazon.Backup.Model
         /// ARN depends on the resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

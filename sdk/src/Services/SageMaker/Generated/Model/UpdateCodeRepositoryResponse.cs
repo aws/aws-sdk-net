@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the Git repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string CodeRepositoryArn
         {
             get { return this._codeRepositoryArn; }

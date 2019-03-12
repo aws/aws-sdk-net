@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// pool clients.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -81,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to list user pool clients.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

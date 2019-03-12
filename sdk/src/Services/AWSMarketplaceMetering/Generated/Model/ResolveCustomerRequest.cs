@@ -46,6 +46,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// a CustomerIdentifier and product code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RegistrationToken
         {
             get { return this._registrationToken; }

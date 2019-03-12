@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// If an error occurred, the error information about the last crawl.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }
@@ -63,6 +64,7 @@ namespace Amazon.Glue.Model
         /// The log group for the last crawl.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroup
         {
             get { return this._logGroup; }
@@ -81,6 +83,7 @@ namespace Amazon.Glue.Model
         /// The log stream for the last crawl.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogStream
         {
             get { return this._logStream; }
@@ -99,6 +102,7 @@ namespace Amazon.Glue.Model
         /// The prefix for a message about this crawl.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string MessagePrefix
         {
             get { return this._messagePrefix; }

@@ -60,6 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The creation date and time of the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDateTime
         {
             get { return this._creationDateTime.GetValueOrDefault(); }
@@ -96,6 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A description of the step's current state.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string LastStateChangeReason
         {
             get { return this._lastStateChangeReason; }
@@ -132,6 +134,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The state of the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StepExecutionState State
         {
             get { return this._state; }

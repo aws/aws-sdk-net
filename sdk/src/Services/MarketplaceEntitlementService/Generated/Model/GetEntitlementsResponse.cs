@@ -43,6 +43,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public List<Entitlement> Entitlements
         {
             get { return this._entitlements; }

@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// for DNS query logging that is associated with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<QueryLoggingConfig> QueryLoggingConfigs
         {
             get { return this._queryLoggingConfigs; }
@@ -68,6 +69,7 @@ namespace Amazon.Route53.Model
         /// in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -41,6 +41,7 @@ namespace Amazon.WorkLink.Model
         /// authority certificate used to issue device certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
         public string DeviceCaCertificate
         {
             get { return this._deviceCaCertificate; }

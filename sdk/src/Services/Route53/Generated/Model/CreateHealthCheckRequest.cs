@@ -116,6 +116,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -134,6 +135,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains settings for a new health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheckConfig HealthCheckConfig
         {
             get { return this._healthCheckConfig; }

@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The names of all crawlers in the account, or the crawlers with the specified tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> CrawlerNames
         {
             get { return this._crawlerNames; }

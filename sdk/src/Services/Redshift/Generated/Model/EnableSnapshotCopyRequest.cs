@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         /// cross-region snapshot copy enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -75,6 +76,7 @@ namespace Amazon.Redshift.Model
         /// and Endpoints</a> in the Amazon Web Services General Reference. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationRegion
         {
             get { return this._destinationRegion; }

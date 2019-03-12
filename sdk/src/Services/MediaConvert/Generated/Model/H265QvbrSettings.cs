@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// of the video element is less than or equal to the value you set multiplied by the
         /// number of seconds of encoded output.
         /// </summary>
+        [AWSProperty(Min=1000, Max=1466400000)]
         public int MaxAverageBitrate
         {
             get { return this._maxAverageBitrate.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.MediaConvert.Model
         /// Level 10 results in nearly lossless compression. The quality level for most broadcast-quality
         /// transcodes is between 6 and 9.
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int QvbrQualityLevel
         {
             get { return this._qvbrQualityLevel.GetValueOrDefault(); }

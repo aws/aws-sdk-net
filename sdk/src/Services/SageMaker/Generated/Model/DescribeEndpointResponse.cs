@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the endpoint was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string EndpointArn
         {
             get { return this._endpointArn; }
@@ -83,6 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint configuration associated with this endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }
@@ -101,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// Name of the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -163,6 +167,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EndpointStatus EndpointStatus
         {
             get { return this._endpointStatus; }
@@ -181,6 +186,7 @@ namespace Amazon.SageMaker.Model
         /// If the status of the endpoint is <code>Failed</code>, the reason why it failed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -199,6 +205,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the endpoint was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }
@@ -218,6 +225,7 @@ namespace Amazon.SageMaker.Model
         /// this endpoint. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<ProductionVariantSummary> ProductionVariants
         {
             get { return this._productionVariants; }

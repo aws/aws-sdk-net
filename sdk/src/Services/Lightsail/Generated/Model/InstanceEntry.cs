@@ -45,6 +45,7 @@ namespace Amazon.Lightsail.Model
         /// The Availability Zone for the new Amazon EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -63,6 +64,7 @@ namespace Amazon.Lightsail.Model
         /// The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -102,6 +104,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortInfoSourceType PortInfoSource
         {
             get { return this._portInfoSource; }
@@ -126,6 +129,7 @@ namespace Amazon.Lightsail.Model
         /// snapshot records that you can use to create a CloudFormation stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceName
         {
             get { return this._sourceName; }

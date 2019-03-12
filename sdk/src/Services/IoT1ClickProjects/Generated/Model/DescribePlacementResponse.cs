@@ -40,6 +40,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// An object describing the placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PlacementDescription Placement
         {
             get { return this._placement; }

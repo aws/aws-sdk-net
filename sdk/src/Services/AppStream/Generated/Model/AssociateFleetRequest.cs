@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string FleetName
         {
             get { return this._fleetName; }
@@ -60,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

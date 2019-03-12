@@ -62,6 +62,7 @@ namespace Amazon.CodeStar.Model
         /// are stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string BucketName
         {
             get { return this._bucketName; }

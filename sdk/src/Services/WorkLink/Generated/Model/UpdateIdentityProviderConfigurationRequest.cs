@@ -43,6 +43,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkLink.Model
         /// IdentityProviderSamlMetadata is unset if null is passed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=204800)]
         public string IdentityProviderSamlMetadata
         {
             get { return this._identityProviderSamlMetadata; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkLink.Model
         /// The type of identity provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IdentityProviderType IdentityProviderType
         {
             get { return this._identityProviderType; }

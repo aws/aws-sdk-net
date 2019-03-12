@@ -53,6 +53,7 @@ namespace Amazon.Athena.Model
         /// the specified ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -71,6 +72,7 @@ namespace Amazon.Athena.Model
         /// One or more tags, separated by commas, to be added to the resource, such as a workgroup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

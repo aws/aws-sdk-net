@@ -46,6 +46,7 @@ namespace Amazon.GameLift.Model
         /// Number of server processes using this configuration to run concurrently on an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int ConcurrentExecutions
         {
             get { return this._concurrentExecutions.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.GameLift.Model
         /// must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>". 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string LaunchPath
         {
             get { return this._launchPath; }
@@ -87,6 +89,7 @@ namespace Amazon.GameLift.Model
         /// Optional list of parameters to pass to the server executable on launch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Parameters
         {
             get { return this._parameters; }

@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the app about which you are requesting information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -62,6 +63,7 @@ namespace Amazon.DeviceFarm.Model
         /// information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string RemoteAccessSessionArn
         {
             get { return this._remoteAccessSessionArn; }

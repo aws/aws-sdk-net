@@ -151,6 +151,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of recommendations that you want returned in a single response object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }
@@ -187,6 +188,7 @@ namespace Amazon.CostExplorer.Model
         /// The specific service that you want recommendations for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Service
         {
             get { return this._service; }

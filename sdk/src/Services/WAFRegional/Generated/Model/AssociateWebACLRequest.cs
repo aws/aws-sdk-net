@@ -59,6 +59,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -77,6 +78,7 @@ namespace Amazon.WAFRegional.Model
         /// A unique identifier (ID) for the web ACL. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebACLId
         {
             get { return this._webACLId; }

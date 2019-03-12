@@ -46,6 +46,7 @@ namespace Amazon.Kinesis.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartTagKey
         {
             get { return this._exclusiveStartTagKey; }
@@ -67,6 +68,7 @@ namespace Amazon.Kinesis.Model
         /// the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

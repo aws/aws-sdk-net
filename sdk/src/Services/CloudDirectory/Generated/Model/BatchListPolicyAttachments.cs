@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.CloudDirectory.Model
         /// The reference that identifies the policy object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference PolicyReference
         {
             get { return this._policyReference; }

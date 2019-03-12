@@ -128,6 +128,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -222,6 +223,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -278,6 +280,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// An array of sample utterances configured for the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> SampleUtterances
         {
             get { return this._sampleUtterances; }
@@ -296,6 +299,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// An array of intent slots configured for the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<Slot> Slots
         {
             get { return this._slots; }
@@ -314,6 +318,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

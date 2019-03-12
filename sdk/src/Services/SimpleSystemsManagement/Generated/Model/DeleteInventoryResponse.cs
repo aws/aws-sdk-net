@@ -83,6 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the inventory data type specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

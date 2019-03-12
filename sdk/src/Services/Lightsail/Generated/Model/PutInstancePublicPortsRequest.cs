@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The Lightsail instance name of the public port(s) you are setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }
@@ -69,6 +70,7 @@ namespace Amazon.Lightsail.Model
         /// Specifies information about the public port(s).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PortInfo> PortInfos
         {
             get { return this._portInfos; }

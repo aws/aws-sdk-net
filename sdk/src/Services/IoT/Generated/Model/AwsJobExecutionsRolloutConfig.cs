@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of OTA update job executions started per minute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaximumPerMinute
         {
             get { return this._maximumPerMinute.GetValueOrDefault(); }

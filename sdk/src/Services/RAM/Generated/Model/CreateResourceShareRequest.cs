@@ -84,6 +84,7 @@ namespace Amazon.RAM.Model
         /// The name of the resource share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

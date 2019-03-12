@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// specified reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReusableDelegationSetLimit Limit
         {
             get { return this._limit; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53.Model
         /// delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long Count
         {
             get { return this._count.GetValueOrDefault(); }

@@ -135,6 +135,7 @@ namespace Amazon.CloudSearch.Model
         /// The name of the source field to map to the field. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SourceField
         {
             get { return this._sourceField; }

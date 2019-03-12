@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// Specifies the status of the request to generate an assessment report. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportStatus Status
         {
             get { return this._status; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// is only returned if the report is successfully generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Url
         {
             get { return this._url; }

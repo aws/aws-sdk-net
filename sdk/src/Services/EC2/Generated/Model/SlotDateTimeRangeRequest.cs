@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The earliest date and time, in UTC, for the Scheduled Instance to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EarliestTimeUtc
         {
             get { return this._earliestTimeUtc.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// must be later than or equal to the earliest date and at most three months in the future.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LatestTimeUtc
         {
             get { return this._latestTimeUtc.GetValueOrDefault(); }

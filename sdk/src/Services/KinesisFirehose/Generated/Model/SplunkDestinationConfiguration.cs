@@ -69,6 +69,7 @@ namespace Amazon.KinesisFirehose.Model
         /// settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=180, Max=600)]
         public int HECAcknowledgmentTimeoutInSeconds
         {
             get { return this._hecAcknowledgmentTimeoutInSeconds.GetValueOrDefault(); }
@@ -88,6 +89,7 @@ namespace Amazon.KinesisFirehose.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HECEndpoint
         {
             get { return this._hecEndpoint; }
@@ -106,6 +108,7 @@ namespace Amazon.KinesisFirehose.Model
         /// This type can be either "Raw" or "Event."
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HECEndpointType HECEndpointType
         {
             get { return this._hecEndpointType; }
@@ -125,6 +128,7 @@ namespace Amazon.KinesisFirehose.Model
         /// endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HECToken
         {
             get { return this._hecToken; }
@@ -202,6 +206,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The configuration for the backup Amazon S3 location.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DestinationConfiguration S3Configuration
         {
             get { return this._s3Configuration; }

@@ -41,6 +41,7 @@ namespace Amazon.XRay.Model
         /// Information about rules that the service is using to sample requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=25)]
         public List<SamplingStatisticsDocument> SamplingStatisticsDocuments
         {
             get { return this._samplingStatisticsDocuments; }

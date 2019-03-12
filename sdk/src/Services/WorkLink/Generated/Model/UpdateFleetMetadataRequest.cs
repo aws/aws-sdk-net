@@ -43,6 +43,7 @@ namespace Amazon.WorkLink.Model
         /// The fleet name to display. The existing DisplayName is unset if null is passed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }

@@ -43,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifiers of the directories. If the value is null, all directories are retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> DirectoryIds
         {
             get { return this._directoryIds; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkSpaces.Model
         /// provide this token to receive the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NextToken
         {
             get { return this._nextToken; }

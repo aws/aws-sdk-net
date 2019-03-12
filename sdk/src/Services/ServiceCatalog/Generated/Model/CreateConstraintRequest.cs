@@ -60,6 +60,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -78,6 +79,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -97,6 +99,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -171,6 +174,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Parameters
         {
             get { return this._parameters; }
@@ -189,6 +193,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The portfolio identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PortfolioId
         {
             get { return this._portfolioId; }
@@ -207,6 +212,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -242,6 +248,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Type
         {
             get { return this._type; }

@@ -63,6 +63,7 @@ namespace Amazon.CloudHSM.Model
         /// The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -86,6 +87,7 @@ namespace Amazon.CloudHSM.Model
         /// existing tag, use <a>AddTagsToResource</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeyList
         {
             get { return this._tagKeyList; }

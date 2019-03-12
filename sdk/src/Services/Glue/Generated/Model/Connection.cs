@@ -109,6 +109,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> ConnectionProperties
         {
             get { return this._connectionProperties; }
@@ -163,6 +164,7 @@ namespace Amazon.Glue.Model
         /// The description of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -181,6 +183,7 @@ namespace Amazon.Glue.Model
         /// The user, group, or role that last updated this connection definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string LastUpdatedBy
         {
             get { return this._lastUpdatedBy; }
@@ -217,6 +220,7 @@ namespace Amazon.Glue.Model
         /// A list of criteria that can be used in selecting this connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> MatchCriteria
         {
             get { return this._matchCriteria; }
@@ -235,6 +239,7 @@ namespace Amazon.Glue.Model
         /// The name of the connection definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

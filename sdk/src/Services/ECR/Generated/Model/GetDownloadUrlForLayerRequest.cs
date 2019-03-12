@@ -52,6 +52,7 @@ namespace Amazon.ECR.Model
         /// The digest of the image layer to download.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LayerDigest
         {
             get { return this._layerDigest; }
@@ -89,6 +90,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository that is associated with the image layer to download.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

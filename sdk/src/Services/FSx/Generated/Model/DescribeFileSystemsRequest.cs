@@ -78,6 +78,7 @@ namespace Amazon.FSx.Model
         /// (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> FileSystemIds
         {
             get { return this._fileSystemIds; }
@@ -99,6 +100,7 @@ namespace Amazon.FSx.Model
         /// the service's internal maximum number of items per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -119,6 +121,7 @@ namespace Amazon.FSx.Model
         /// returning call left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

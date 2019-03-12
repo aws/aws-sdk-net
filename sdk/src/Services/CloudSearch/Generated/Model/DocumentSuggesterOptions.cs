@@ -88,6 +88,7 @@ namespace Amazon.CloudSearch.Model
         /// The name of the index field you want to use for suggestions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string SourceField
         {
             get { return this._sourceField; }

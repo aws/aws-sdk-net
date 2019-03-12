@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The association ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -70,6 +71,7 @@ namespace Amazon.EC2.Model
         /// The ID of the new route table to associate with the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteTableId
         {
             get { return this._routeTableId; }

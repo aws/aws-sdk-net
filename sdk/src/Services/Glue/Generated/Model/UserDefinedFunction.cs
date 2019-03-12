@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// The Java class that contains the function code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClassName
         {
             get { return this._className; }
@@ -81,6 +82,7 @@ namespace Amazon.Glue.Model
         /// The name of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -99,6 +101,7 @@ namespace Amazon.Glue.Model
         /// The owner of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string OwnerName
         {
             get { return this._ownerName; }
@@ -135,6 +138,7 @@ namespace Amazon.Glue.Model
         /// The resource URIs for the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public List<ResourceUri> ResourceUris
         {
             get { return this._resourceUris; }

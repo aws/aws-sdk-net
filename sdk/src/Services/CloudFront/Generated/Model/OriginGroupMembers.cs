@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         /// Items (origins) in an origin group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=2)]
         public List<OriginGroupMember> Items
         {
             get { return this._items; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudFront.Model
         /// The number of origins in an origin group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

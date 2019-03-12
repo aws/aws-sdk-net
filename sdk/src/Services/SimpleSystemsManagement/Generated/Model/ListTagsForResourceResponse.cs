@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> TagList
         {
             get { return this._tagList; }

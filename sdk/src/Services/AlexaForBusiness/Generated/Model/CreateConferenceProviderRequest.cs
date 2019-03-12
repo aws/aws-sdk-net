@@ -46,6 +46,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The request token of the client.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -64,6 +65,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ConferenceProviderName
         {
             get { return this._conferenceProviderName; }
@@ -82,6 +84,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// Represents a type within a list of predefined types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConferenceProviderType ConferenceProviderType
         {
             get { return this._conferenceProviderType; }
@@ -118,6 +121,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The meeting settings for the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MeetingSetting MeetingSetting
         {
             get { return this._meetingSetting; }

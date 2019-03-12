@@ -65,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// Default value is 100. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// be used to return the next set of action executions in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -102,6 +104,7 @@ namespace Amazon.CodePipeline.Model
         ///  The name of the pipeline for which you want to list action execution history.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }

@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ElasticsearchDomainStatus> DomainStatusList
         {
             get { return this._domainStatusList; }

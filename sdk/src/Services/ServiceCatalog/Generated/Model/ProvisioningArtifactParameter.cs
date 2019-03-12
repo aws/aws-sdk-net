@@ -118,6 +118,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The parameter key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string ParameterKey
         {
             get { return this._parameterKey; }

@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> Values
         {
             get { return this._values; }

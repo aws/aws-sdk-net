@@ -50,6 +50,7 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=25)]
         public string BandwidthType
         {
             get { return this._bandwidthType; }
@@ -65,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

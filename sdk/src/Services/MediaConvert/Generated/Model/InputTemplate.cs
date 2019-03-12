@@ -147,6 +147,7 @@ namespace Amazon.MediaConvert.Model
         /// adjust the magnitude the input filter settings (Deblock and Denoise). The range is
         /// -5 to 5. Default is 0.
         /// </summary>
+        [AWSProperty(Min=-5, Max=5)]
         public int FilterStrength
         {
             get { return this._filterStrength.GetValueOrDefault(); }
@@ -202,6 +203,7 @@ namespace Amazon.MediaConvert.Model
         /// not currently supported. Default is the first program within the transport stream.
         /// If the program you specify doesn't exist, the transcoding service will use this default.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int ProgramNumber
         {
             get { return this._programNumber.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// The number of findings that cannot be imported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int FailedCount
         {
             get { return this._failedCount.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// The number of findings that were successfully imported
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SuccessCount
         {
             get { return this._successCount.GetValueOrDefault(); }

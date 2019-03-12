@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Supported filter keys are <b>Name</b> and <b>Enabled</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<MaintenanceWindowFilter> Filters
         {
             get { return this._filters; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

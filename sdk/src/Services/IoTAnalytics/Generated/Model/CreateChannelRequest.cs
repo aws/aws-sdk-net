@@ -44,6 +44,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -80,6 +81,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Metadata which can be used to manage the channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

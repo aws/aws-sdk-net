@@ -64,6 +64,7 @@ namespace Amazon.CloudFormation.Model
         /// next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -82,6 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// A string that identifies the next page of stack resource drift results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -100,6 +102,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the stack for which you want drift information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -139,6 +142,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public List<string> StackResourceDriftStatusFilters
         {
             get { return this._stackResourceDriftStatusFilters; }

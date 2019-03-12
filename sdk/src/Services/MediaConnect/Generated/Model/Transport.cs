@@ -73,6 +73,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Protocol. The protocol that is used by the source or output.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Protocol Protocol
         {
             get { return this._protocol; }

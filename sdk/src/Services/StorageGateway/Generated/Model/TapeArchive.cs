@@ -68,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey.
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -91,6 +92,7 @@ namespace Amazon.StorageGateway.Model
         /// The virtual tape is retrieved from the virtual tape shelf (VTS).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string RetrievedTo
         {
             get { return this._retrievedTo; }
@@ -109,6 +111,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of an archived virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }
@@ -127,6 +130,7 @@ namespace Amazon.StorageGateway.Model
         /// The barcode that identifies the archived virtual tape.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }

@@ -43,6 +43,7 @@ namespace Amazon.CloudHSMV2.Model
         /// cluster ID, use <a>DescribeClusters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudHSMV2.Model
         /// tag keys, not the tag values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeyList
         {
             get { return this._tagKeyList; }

@@ -53,6 +53,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -291,6 +292,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }

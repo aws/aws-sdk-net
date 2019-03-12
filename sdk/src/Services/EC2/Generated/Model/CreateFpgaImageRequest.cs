@@ -96,6 +96,7 @@ namespace Amazon.EC2.Model
         /// tarball.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StorageLocation InputStorageLocation
         {
             get { return this._inputStorageLocation; }

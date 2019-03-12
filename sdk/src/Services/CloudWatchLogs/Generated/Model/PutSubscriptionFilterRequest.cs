@@ -98,6 +98,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -140,6 +141,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FilterName
         {
             get { return this._filterName; }
@@ -158,6 +160,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A filter pattern for subscribing to a filtered stream of log events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -176,6 +179,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -196,6 +200,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// working with a logical destination for cross-account delivery.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string RoleArn
         {
             get { return this._roleArn; }

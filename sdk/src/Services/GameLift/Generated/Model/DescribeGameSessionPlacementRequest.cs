@@ -85,6 +85,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a game session placement to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string PlacementId
         {
             get { return this._placementId; }

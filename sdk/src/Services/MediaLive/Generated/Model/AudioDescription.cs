@@ -63,6 +63,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property AudioSelectorName. The name of the AudioSelector used as
         /// the source for this AudioDescription.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AudioSelectorName
         {
             get { return this._audioSelectorName; }
@@ -131,6 +132,7 @@ namespace Amazon.MediaLive.Model
         /// track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language
         /// code specified in the input.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string LanguageCode
         {
             get { return this._languageCode; }
@@ -166,6 +168,7 @@ namespace Amazon.MediaLive.Model
         /// this name to uniquely identify this AudioDescription.  Description names should be
         /// unique within this Live Event.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

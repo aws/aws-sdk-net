@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string InstanceType
         {
             get { return this._instanceType; }

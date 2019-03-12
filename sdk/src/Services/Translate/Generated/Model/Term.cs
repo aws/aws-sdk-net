@@ -41,6 +41,7 @@ namespace Amazon.Translate.Model
         /// The source text of the term being translated by the custom terminology.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string SourceText
         {
             get { return this._sourceText; }
@@ -59,6 +60,7 @@ namespace Amazon.Translate.Model
         /// The target text of the term being translated by the custom terminology.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string TargetText
         {
             get { return this._targetText; }

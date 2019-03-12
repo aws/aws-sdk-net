@@ -52,6 +52,7 @@ namespace Amazon.IoT.Model
         /// The certificate ID of the CA certificate used to sign this certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CaCertificateId
         {
             get { return this._caCertificateId; }
@@ -88,6 +89,7 @@ namespace Amazon.IoT.Model
         /// The ID of the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -106,6 +108,7 @@ namespace Amazon.IoT.Model
         /// The certificate data, in PEM format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string CertificatePem
         {
             get { return this._certificatePem; }
@@ -142,6 +145,7 @@ namespace Amazon.IoT.Model
         /// The customer version of the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int CustomerVersion
         {
             get { return this._customerVersion.GetValueOrDefault(); }
@@ -196,6 +200,7 @@ namespace Amazon.IoT.Model
         /// The ID of the AWS account that owns the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string OwnedBy
         {
             get { return this._ownedBy; }
@@ -214,6 +219,7 @@ namespace Amazon.IoT.Model
         /// The ID of the AWS account of the previous owner of the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string PreviousOwnedBy
         {
             get { return this._previousOwnedBy; }

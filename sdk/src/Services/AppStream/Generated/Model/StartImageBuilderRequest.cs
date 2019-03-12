@@ -43,6 +43,7 @@ namespace Amazon.AppStream.Model
         /// version of the AppStream 2.0 agent, specify [LATEST]. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string AppstreamAgentVersion
         {
             get { return this._appstreamAgentVersion; }
@@ -61,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

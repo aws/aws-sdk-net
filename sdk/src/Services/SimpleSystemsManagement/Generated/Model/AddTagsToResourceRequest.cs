@@ -95,6 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -120,6 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceTypeForTagging ResourceType
         {
             get { return this._resourceType; }
@@ -145,6 +147,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }

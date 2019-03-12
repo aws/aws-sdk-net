@@ -171,6 +171,7 @@ namespace Amazon.Glue.Model
         /// Description of the job being defined.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -300,6 +301,7 @@ namespace Amazon.Glue.Model
         /// The name you assign to this job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -354,6 +356,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure to be used with this job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }
@@ -374,6 +377,7 @@ namespace Amazon.Glue.Model
         /// minutes (48 hours).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }

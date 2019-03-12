@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// Pinpoint sends email events to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeliveryStreamArn
         {
             get { return this._deliveryStreamArn; }
@@ -63,6 +64,7 @@ namespace Amazon.PinpointEmail.Model
         /// email events to the Amazon Kinesis Data Firehose stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }

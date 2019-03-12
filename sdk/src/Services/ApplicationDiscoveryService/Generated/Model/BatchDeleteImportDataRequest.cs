@@ -51,6 +51,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The IDs for the import tasks that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> ImportTaskIds
         {
             get { return this._importTaskIds; }

@@ -64,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// property of the <a>AssessmentTemplate</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string NamePattern
         {
             get { return this._namePattern; }
@@ -84,6 +85,7 @@ namespace Amazon.Inspector.Model
         /// the <a>AssessmentTemplate</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> RulesPackageArns
         {
             get { return this._rulesPackageArns; }

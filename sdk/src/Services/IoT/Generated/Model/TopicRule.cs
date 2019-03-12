@@ -47,6 +47,7 @@ namespace Amazon.IoT.Model
         /// The actions associated with the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Action> Actions
         {
             get { return this._actions; }
@@ -155,6 +156,7 @@ namespace Amazon.IoT.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string RuleName
         {
             get { return this._ruleName; }

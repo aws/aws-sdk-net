@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The ID of the pipeline execution associated with the stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PipelineExecutionId
         {
             get { return this._pipelineExecutionId; }
@@ -59,6 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// The status of the stage, or for a completed stage, the last status of the stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StageExecutionStatus Status
         {
             get { return this._status; }

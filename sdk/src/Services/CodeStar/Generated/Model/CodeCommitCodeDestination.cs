@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// The name of the AWS CodeCommit repository to be created in AWS CodeStar.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

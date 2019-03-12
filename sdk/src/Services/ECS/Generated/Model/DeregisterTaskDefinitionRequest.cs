@@ -63,6 +63,7 @@ namespace Amazon.ECS.Model
         /// a <code>revision</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TaskDefinition
         {
             get { return this._taskDefinition; }

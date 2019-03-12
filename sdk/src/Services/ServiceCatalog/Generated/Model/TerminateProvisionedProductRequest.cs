@@ -67,6 +67,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -105,6 +106,7 @@ namespace Amazon.ServiceCatalog.Model
         /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisionedProductId
         {
             get { return this._provisionedProductId; }
@@ -124,6 +126,7 @@ namespace Amazon.ServiceCatalog.Model
         /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string ProvisionedProductName
         {
             get { return this._provisionedProductName; }
@@ -144,6 +147,7 @@ namespace Amazon.ServiceCatalog.Model
         /// subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TerminateToken
         {
             get { return this._terminateToken; }

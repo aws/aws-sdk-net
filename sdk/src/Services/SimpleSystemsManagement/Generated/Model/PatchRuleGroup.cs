@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The rules that make up the rule group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<PatchRule> PatchRules
         {
             get { return this._patchRules; }

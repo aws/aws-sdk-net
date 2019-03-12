@@ -41,6 +41,7 @@ namespace Amazon.Mobile.Model
         ///  Unique bundle identifier. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BundleId
         {
             get { return this._bundleId; }

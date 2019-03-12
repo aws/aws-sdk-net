@@ -67,6 +67,7 @@ namespace Amazon.APIGateway.Model
         /// 'swagger' for Swagger/OpenAPI 2.0.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportType
         {
             get { return this._exportType; }
@@ -109,6 +110,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }
@@ -127,6 +129,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the <a>Stage</a> that will be exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StageName
         {
             get { return this._stageName; }

@@ -71,6 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string ExclusiveStartTableName
         {
             get { return this._exclusiveStartTableName; }
@@ -90,6 +91,7 @@ namespace Amazon.DynamoDBv2.Model
         /// limit is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

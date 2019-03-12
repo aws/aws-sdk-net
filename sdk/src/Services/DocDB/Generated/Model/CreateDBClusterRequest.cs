@@ -128,6 +128,7 @@ namespace Amazon.DocDB.Model
         /// Example: <code>my-cluster</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -213,6 +214,7 @@ namespace Amazon.DocDB.Model
         /// Valid values: <code>docdb</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

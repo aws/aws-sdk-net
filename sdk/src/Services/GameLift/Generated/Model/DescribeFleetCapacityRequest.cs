@@ -146,6 +146,7 @@ namespace Amazon.GameLift.Model
         /// capacity information for all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> FleetIds
         {
             get { return this._fleetIds; }
@@ -166,6 +167,7 @@ namespace Amazon.GameLift.Model
         /// specifies one or a list of fleet IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -187,6 +189,7 @@ namespace Amazon.GameLift.Model
         /// specifies one or a list of fleet IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

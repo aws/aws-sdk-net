@@ -72,6 +72,7 @@ namespace Amazon.SageMaker.Model
         /// and values entries in the map.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -91,6 +92,7 @@ namespace Amazon.SageMaker.Model
         /// job. The default value is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxConcurrentTransforms
         {
             get { return this._maxConcurrentTransforms.GetValueOrDefault(); }
@@ -110,6 +112,7 @@ namespace Amazon.SageMaker.Model
         /// (without metadata).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxPayloadInMB
         {
             get { return this._maxPayloadInMB.GetValueOrDefault(); }
@@ -128,6 +131,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the input source and the way the transform job consumes it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformInput TransformInput
         {
             get { return this._transformInput; }
@@ -147,6 +151,7 @@ namespace Amazon.SageMaker.Model
         /// from the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformOutput TransformOutput
         {
             get { return this._transformOutput; }
@@ -165,6 +170,7 @@ namespace Amazon.SageMaker.Model
         /// Identifies the ML compute instances for the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformResources TransformResources
         {
             get { return this._transformResources; }

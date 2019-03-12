@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// the value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

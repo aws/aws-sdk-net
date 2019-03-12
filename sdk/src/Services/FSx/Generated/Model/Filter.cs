@@ -60,6 +60,7 @@ namespace Amazon.FSx.Model
         /// The values of the filter. These are all the values for any of the applied filters.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> Values
         {
             get { return this._values; }

@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The key value used in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationExecutionFilterKey Key
         {
             get { return this._key; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The filter type specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationFilterOperatorType Type
         {
             get { return this._type; }
@@ -78,6 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The value specified for the key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Value
         {
             get { return this._value; }

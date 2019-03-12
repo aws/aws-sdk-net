@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         /// batches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Resources
         {
             get { return this._resources; }
@@ -95,6 +96,7 @@ namespace Amazon.EC2.Model
         /// to an empty string. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

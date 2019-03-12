@@ -129,6 +129,7 @@ namespace Amazon.AutoScaling.Model
         /// For more information about this format, see <a href="http://crontab.org">Crontab</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Recurrence
         {
             get { return this._recurrence; }
@@ -147,6 +148,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the scaling action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

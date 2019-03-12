@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmail.Model
         /// The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VerificationStatus VerificationStatus
         {
             get { return this._verificationStatus; }

@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// within the account you are using.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// Indicates whether there were validation errors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Errored
         {
             get { return this._errored.GetValueOrDefault(); }

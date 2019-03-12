@@ -48,6 +48,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }
@@ -67,6 +68,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// of the bot. To delete the <code>$LATEST</code> version, use the <a>DeleteBot</a> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

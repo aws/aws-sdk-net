@@ -41,6 +41,7 @@ namespace Amazon.DirectConnect.Model
         /// The Amazon Resource Names (ARNs) of the resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ResourceArns
         {
             get { return this._resourceArns; }

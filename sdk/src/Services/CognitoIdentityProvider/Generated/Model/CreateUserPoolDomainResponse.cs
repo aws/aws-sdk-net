@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// up with your Domain Name Service (DNS) provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string CloudFrontDomain
         {
             get { return this._cloudFrontDomain; }

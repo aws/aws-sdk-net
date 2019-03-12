@@ -43,6 +43,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The date when the project was originally created, in UNIX epoch time format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedDate
         {
             get { return this._createdDate.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project being summarized.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }
@@ -81,6 +83,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// same.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdatedDate
         {
             get { return this._updatedDate.GetValueOrDefault(); }

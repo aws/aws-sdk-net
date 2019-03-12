@@ -53,6 +53,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -74,6 +75,7 @@ namespace Amazon.CognitoIdentity.Model
         /// or any other OpenId Connect provider, always include the <code>id_token</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, string> Logins
         {
             get { return this._logins; }

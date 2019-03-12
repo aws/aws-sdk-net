@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ResourceArn.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -54,6 +55,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property TagsModel.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TagsModel TagsModel
         {
             get { return this._tagsModel; }

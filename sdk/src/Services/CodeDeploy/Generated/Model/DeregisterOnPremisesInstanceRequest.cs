@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of the on-premises instance to deregister.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }

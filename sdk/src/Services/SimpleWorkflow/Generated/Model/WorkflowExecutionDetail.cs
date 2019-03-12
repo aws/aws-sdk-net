@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// etc.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecutionConfiguration ExecutionConfiguration
         {
             get { return this._executionConfiguration; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Information about the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecutionInfo ExecutionInfo
         {
             get { return this._executionInfo; }
@@ -103,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// task using <a>RespondDecisionTaskCompleted</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string LatestExecutionContext
         {
             get { return this._latestExecutionContext; }
@@ -122,6 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// of all types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecutionOpenCounts OpenCounts
         {
             get { return this._openCounts; }

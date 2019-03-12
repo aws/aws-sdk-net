@@ -41,6 +41,7 @@ namespace Amazon.AWSSupport.Model
         /// Information about all available Trusted Advisor checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrustedAdvisorCheckDescription> Checks
         {
             get { return this._checks; }

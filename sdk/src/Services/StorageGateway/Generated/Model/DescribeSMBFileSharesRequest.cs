@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> FileShareARNList
         {
             get { return this._fileShareARNList; }

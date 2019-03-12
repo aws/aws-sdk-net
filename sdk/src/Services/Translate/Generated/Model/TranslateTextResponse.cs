@@ -62,6 +62,7 @@ namespace Amazon.Translate.Model
         /// The language code for the language of the source text. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=5)]
         public string SourceLanguageCode
         {
             get { return this._sourceLanguageCode; }
@@ -80,6 +81,7 @@ namespace Amazon.Translate.Model
         /// The language code for the language of the target text. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=5)]
         public string TargetLanguageCode
         {
             get { return this._targetLanguageCode; }
@@ -98,6 +100,7 @@ namespace Amazon.Translate.Model
         /// The the translated text. The maximum length of this text is 5kb.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10000)]
         public string TranslatedText
         {
             get { return this._translatedText; }

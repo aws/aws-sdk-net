@@ -62,6 +62,7 @@ namespace Amazon.CloudDirectory.Model
         /// number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -98,6 +99,7 @@ namespace Amazon.CloudDirectory.Model
         /// Reference of the object whose attributes need to be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

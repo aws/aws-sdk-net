@@ -43,6 +43,7 @@ namespace Amazon.ECR.Model
         /// The integer value of the last byte received in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long LastByteReceived
         {
             get { return this._lastByteReceived.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.ECR.Model
         /// The repository name associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

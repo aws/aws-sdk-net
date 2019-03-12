@@ -41,6 +41,7 @@ namespace Amazon.MQ.Model
         /// and underscores, and must not contain whitespaces, brackets, wildcard characters,
         /// or special characters.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BrokerId
         {
             get { return this._brokerId; }

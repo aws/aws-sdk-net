@@ -69,6 +69,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX cluster from which you want to remove nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -87,6 +88,7 @@ namespace Amazon.DAX.Model
         /// The new number of nodes for the DAX cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NewReplicationFactor
         {
             get { return this._newReplicationFactor.GetValueOrDefault(); }

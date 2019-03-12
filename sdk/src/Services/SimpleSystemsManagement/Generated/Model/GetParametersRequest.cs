@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Names of the parameters for which you want to query information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> Names
         {
             get { return this._names; }

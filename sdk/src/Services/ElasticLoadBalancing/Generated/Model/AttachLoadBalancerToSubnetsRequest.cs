@@ -50,6 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -68,6 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The IDs of the subnets to add. You can add only one subnet per Availability Zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subnets
         {
             get { return this._subnets; }

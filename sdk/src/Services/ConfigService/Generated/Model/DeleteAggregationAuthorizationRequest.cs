@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// The 12-digit account ID of the account authorized to aggregate data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizedAccountId
         {
             get { return this._authorizedAccountId; }
@@ -61,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// The region authorized to collect aggregated data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AuthorizedAwsRegion
         {
             get { return this._authorizedAwsRegion; }

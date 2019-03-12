@@ -43,6 +43,7 @@ namespace Amazon.Amplify.Model
         ///  Branch Name for Production Branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -79,6 +80,7 @@ namespace Amazon.Amplify.Model
         ///  Status of Production Branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string Status
         {
             get { return this._status; }
@@ -97,6 +99,7 @@ namespace Amazon.Amplify.Model
         ///  Thumbnail Url for Production Branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string ThumbnailUrl
         {
             get { return this._thumbnailUrl; }

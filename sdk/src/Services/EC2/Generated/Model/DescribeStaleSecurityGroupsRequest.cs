@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=255)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.EC2.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -83,6 +85,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

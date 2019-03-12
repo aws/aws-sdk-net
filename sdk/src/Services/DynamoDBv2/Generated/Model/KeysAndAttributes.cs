@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AttributesToGet
         {
             get { return this._attributesToGet; }
@@ -162,6 +163,7 @@ namespace Amazon.DynamoDBv2.Model
         /// with the items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<Dictionary<string, AttributeValue>> Keys
         {
             get { return this._keys; }

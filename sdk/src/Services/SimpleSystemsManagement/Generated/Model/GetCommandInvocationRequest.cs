@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Required) The parent command ID of the invocation plugin.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string CommandId
         {
             get { return this._commandId; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// for Systems Manager.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// contains only one plugin, the name can be omitted and the details will be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4)]
         public string PluginName
         {
             get { return this._pluginName; }

@@ -52,6 +52,7 @@ namespace Amazon.Route53.Model
         /// The ID of the health check that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string HealthCheckId
         {
             get { return this._healthCheckId; }

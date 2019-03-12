@@ -46,6 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of active discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ActiveConnectors
         {
             get { return this._activeConnectors.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of blacklisted discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int BlackListedConnectors
         {
             get { return this._blackListedConnectors.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of healthy discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HealthyConnectors
         {
             get { return this._healthyConnectors.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of discovery connectors with status SHUTDOWN,
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ShutdownConnectors
         {
             get { return this._shutdownConnectors.GetValueOrDefault(); }
@@ -118,6 +122,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Total number of discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TotalConnectors
         {
             get { return this._totalConnectors.GetValueOrDefault(); }
@@ -136,6 +141,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of unhealthy discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int UnhealthyConnectors
         {
             get { return this._unhealthyConnectors.GetValueOrDefault(); }
@@ -154,6 +160,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of unknown discovery connectors.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int UnknownConnectors
         {
             get { return this._unknownConnectors.GetValueOrDefault(); }

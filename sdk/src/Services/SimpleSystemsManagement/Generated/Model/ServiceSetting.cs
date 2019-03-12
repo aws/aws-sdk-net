@@ -119,6 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the service setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string SettingId
         {
             get { return this._settingId; }
@@ -137,6 +138,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The value of the service setting.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string SettingValue
         {
             get { return this._settingValue; }

@@ -43,6 +43,7 @@ namespace Amazon.ECR.Model
         /// the only supported resource is an Amazon ECR repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.ECR.Model
         /// The keys of the tags to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

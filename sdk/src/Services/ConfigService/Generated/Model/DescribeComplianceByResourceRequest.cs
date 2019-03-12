@@ -83,6 +83,7 @@ namespace Amazon.ConfigService.Model
         /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> ComplianceTypes
         {
             get { return this._complianceTypes; }
@@ -103,6 +104,7 @@ namespace Amazon.ConfigService.Model
         /// default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -142,6 +144,7 @@ namespace Amazon.ConfigService.Model
         /// <code>ResourceType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -162,6 +165,7 @@ namespace Amazon.ConfigService.Model
         /// type is an AWS account by specifying <code>AWS::::Account</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

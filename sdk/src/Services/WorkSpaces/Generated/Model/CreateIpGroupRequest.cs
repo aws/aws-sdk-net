@@ -77,6 +77,7 @@ namespace Amazon.WorkSpaces.Model
         /// The name of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupName
         {
             get { return this._groupName; }

@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The client ID for the Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ProviderName
         {
             get { return this._providerName; }

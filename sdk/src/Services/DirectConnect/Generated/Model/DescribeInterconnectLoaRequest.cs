@@ -56,6 +56,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the interconnect.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InterconnectId
         {
             get { return this._interconnectId; }

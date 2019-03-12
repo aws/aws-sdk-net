@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OfferingId. Unique offering ID, e.g. '87654321'
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OfferingId
         {
             get { return this._offeringId; }

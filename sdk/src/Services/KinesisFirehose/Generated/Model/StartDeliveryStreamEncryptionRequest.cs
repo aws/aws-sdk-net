@@ -71,6 +71,7 @@ namespace Amazon.KinesisFirehose.Model
         /// (SSE).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }

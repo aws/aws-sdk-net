@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         /// A customer-supplied backup plan document in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanTemplateJson
         {
             get { return this._backupPlanTemplateJson; }

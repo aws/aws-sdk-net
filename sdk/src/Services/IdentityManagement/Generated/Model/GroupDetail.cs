@@ -49,6 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -106,6 +107,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -124,6 +126,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name that identifies the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -161,6 +164,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }

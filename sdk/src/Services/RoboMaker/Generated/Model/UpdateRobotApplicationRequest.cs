@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// The application information for the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Application
         {
             get { return this._application; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// The revision id for the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string CurrentRevisionId
         {
             get { return this._currentRevisionId; }
@@ -80,6 +82,7 @@ namespace Amazon.RoboMaker.Model
         /// The robot software suite used by the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RobotSoftwareSuite RobotSoftwareSuite
         {
             get { return this._robotSoftwareSuite; }
@@ -98,6 +101,7 @@ namespace Amazon.RoboMaker.Model
         /// The sources of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SourceConfig> Sources
         {
             get { return this._sources; }

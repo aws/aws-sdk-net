@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// while rendering the template. If there were no errors, the list is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RenderingError> Errors
         {
             get { return this._errors; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// A Liquid template that renders the HTML for the worker UI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RenderedContent
         {
             get { return this._renderedContent; }

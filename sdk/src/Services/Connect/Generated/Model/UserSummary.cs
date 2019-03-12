@@ -79,6 +79,7 @@ namespace Amazon.Connect.Model
         /// The Amazon Connect user name for the user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string Username
         {
             get { return this._username; }

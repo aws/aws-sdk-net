@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The key of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AttributeKey Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// The value of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedAttributeValue Value
         {
             get { return this._value; }

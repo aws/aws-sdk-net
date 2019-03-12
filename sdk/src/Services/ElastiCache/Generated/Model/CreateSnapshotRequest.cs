@@ -86,6 +86,7 @@ namespace Amazon.ElastiCache.Model
         /// A name for the snapshot being created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

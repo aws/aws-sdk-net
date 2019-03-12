@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// and a DNS server in each of these subnets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the VPC in which to create the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

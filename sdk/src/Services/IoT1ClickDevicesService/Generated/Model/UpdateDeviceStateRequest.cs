@@ -43,6 +43,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// The unique identifier of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceId
         {
             get { return this._deviceId; }

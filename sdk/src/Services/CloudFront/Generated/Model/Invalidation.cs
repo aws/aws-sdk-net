@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         /// The date and time the invalidation request was first made. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.CloudFront.Model
         /// The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -84,6 +86,7 @@ namespace Amazon.CloudFront.Model
         /// The current invalidation information for the batch request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InvalidationBatch InvalidationBatch
         {
             get { return this._invalidationBatch; }
@@ -103,6 +106,7 @@ namespace Amazon.CloudFront.Model
         /// status is <code>Completed</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

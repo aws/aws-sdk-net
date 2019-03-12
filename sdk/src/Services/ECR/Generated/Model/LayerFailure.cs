@@ -78,6 +78,7 @@ namespace Amazon.ECR.Model
         /// The layer digest associated with the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public string LayerDigest
         {
             get { return this._layerDigest; }

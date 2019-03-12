@@ -158,6 +158,7 @@ namespace Amazon.AppSync.Model
         /// version of the request mapping template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }
@@ -176,6 +177,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> response mapping template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string ResponseMappingTemplate
         {
             get { return this._responseMappingTemplate; }

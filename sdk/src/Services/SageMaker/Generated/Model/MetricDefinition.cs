@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// Objective Metrics</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public string Regex
         {
             get { return this._regex; }

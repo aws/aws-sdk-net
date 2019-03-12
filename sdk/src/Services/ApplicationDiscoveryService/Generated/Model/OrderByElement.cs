@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The field on which to order.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FieldName
         {
             get { return this._fieldName; }

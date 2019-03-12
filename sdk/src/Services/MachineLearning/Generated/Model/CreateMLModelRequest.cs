@@ -74,6 +74,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -92,6 +93,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string MLModelName
         {
             get { return this._mlModelName; }
@@ -119,6 +121,7 @@ namespace Amazon.MachineLearning.Model
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MLModelType MLModelType
         {
             get { return this._mlModelType; }
@@ -211,6 +214,7 @@ namespace Amazon.MachineLearning.Model
         /// recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=131071)]
         public string Recipe
         {
             get { return this._recipe; }
@@ -231,6 +235,7 @@ namespace Amazon.MachineLearning.Model
         /// you don't specify a recipe or its URI, Amazon ML creates a default.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string RecipeUri
         {
             get { return this._recipeUri; }
@@ -249,6 +254,7 @@ namespace Amazon.MachineLearning.Model
         /// The <code>DataSource</code> that points to the training data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string TrainingDataSourceId
         {
             get { return this._trainingDataSourceId; }

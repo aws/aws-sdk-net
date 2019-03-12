@@ -60,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccountTakeoverEventActionType EventAction
         {
             get { return this._eventAction; }
@@ -78,6 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Flag specifying whether to send a notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Notify
         {
             get { return this._notify.GetValueOrDefault(); }

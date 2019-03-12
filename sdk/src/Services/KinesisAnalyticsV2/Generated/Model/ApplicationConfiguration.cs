@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The code location and type parameters for a Java-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationCodeConfiguration ApplicationCodeConfiguration
         {
             get { return this._applicationCodeConfiguration; }

@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A user-defined string.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AdditionalInfo
         {
             get { return this._additionalInfo; }
@@ -61,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the status changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Date
         {
             get { return this._date.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The reason for the status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }
@@ -97,6 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationStatusName Name
         {
             get { return this._name; }

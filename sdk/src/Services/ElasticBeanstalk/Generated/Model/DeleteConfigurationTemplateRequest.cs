@@ -66,6 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application to delete the configuration template from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -84,6 +85,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the configuration template to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }

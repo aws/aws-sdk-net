@@ -108,6 +108,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }
@@ -127,6 +128,7 @@ namespace Amazon.SQS.Model
         /// This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReceiptHandle
         {
             get { return this._receiptHandle; }
@@ -146,6 +148,7 @@ namespace Amazon.SQS.Model
         /// to <code>43200</code>. Maximum: 12 hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int VisibilityTimeout
         {
             get { return this._visibilityTimeout.GetValueOrDefault(); }

@@ -61,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// The Trust ID of the trust relationship to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TrustId
         {
             get { return this._trustId; }

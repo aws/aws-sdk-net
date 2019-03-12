@@ -121,6 +121,7 @@ namespace Amazon.CloudFront.Model
         /// error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -153,6 +154,7 @@ namespace Amazon.CloudFront.Model
         /// new comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -205,6 +207,7 @@ namespace Amazon.CloudFront.Model
         /// elements. You must create exactly one default cache behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DefaultCacheBehavior DefaultCacheBehavior
         {
             get { return this._defaultCacheBehavior; }
@@ -269,6 +272,7 @@ namespace Amazon.CloudFront.Model
         /// From this field, you can enable or disable the selected distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -418,6 +422,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that contains information about origins for this distribution. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Origins Origins
         {
             get { return this._origins; }

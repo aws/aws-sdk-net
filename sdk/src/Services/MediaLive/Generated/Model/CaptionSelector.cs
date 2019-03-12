@@ -58,6 +58,7 @@ namespace Amazon.MediaLive.Model
         /// is used to associate this caption selector with one or more caption descriptions.
         ///  Names must be unique within an event.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

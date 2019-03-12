@@ -60,6 +60,7 @@ namespace Amazon.PinpointEmail.Model
         /// The email address or domain that you want to verify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

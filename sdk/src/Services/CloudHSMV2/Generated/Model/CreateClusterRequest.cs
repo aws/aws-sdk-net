@@ -43,6 +43,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HsmType
         {
             get { return this._hsmType; }
@@ -92,6 +93,7 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

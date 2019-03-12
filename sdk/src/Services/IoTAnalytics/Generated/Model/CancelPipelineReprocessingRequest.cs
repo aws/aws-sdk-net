@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of pipeline for which data reprocessing is canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The ID of the reprocessing task (returned by "StartPipelineReprocessing").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReprocessingId
         {
             get { return this._reprocessingId; }

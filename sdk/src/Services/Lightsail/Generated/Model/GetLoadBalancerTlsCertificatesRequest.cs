@@ -52,6 +52,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the load balancer you associated with your SSL/TLS certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

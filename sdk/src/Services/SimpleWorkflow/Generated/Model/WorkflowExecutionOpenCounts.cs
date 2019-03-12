@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The count of activity tasks whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int OpenActivityTasks
         {
             get { return this._openActivityTasks.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The count of child workflow executions whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int OpenChildWorkflowExecutions
         {
             get { return this._openChildWorkflowExecutions.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// most one open decision task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public int OpenDecisionTasks
         {
             get { return this._openDecisionTasks.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The count of Lambda tasks whose status is <code>OPEN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int OpenLambdaFunctions
         {
             get { return this._openLambdaFunctions.GetValueOrDefault(); }
@@ -118,6 +122,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The count of timers started by this workflow execution that have not fired yet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int OpenTimers
         {
             get { return this._openTimers.GetValueOrDefault(); }

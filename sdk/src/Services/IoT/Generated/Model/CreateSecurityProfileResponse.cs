@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model
         /// The name you gave to the security profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }

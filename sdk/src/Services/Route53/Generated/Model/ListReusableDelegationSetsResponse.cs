@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// delegation set that was created by the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DelegationSet> DelegationSets
         {
             get { return this._delegationSets; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53.Model
         /// that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Marker
         {
             get { return this._marker; }
@@ -84,6 +86,7 @@ namespace Amazon.Route53.Model
         /// A flag that indicates whether there are more reusable delegation sets to be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -105,6 +108,7 @@ namespace Amazon.Route53.Model
         /// of <code>NextMarker</code> in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string NextMarker
         {
             get { return this._nextMarker; }
@@ -124,6 +128,7 @@ namespace Amazon.Route53.Model
         /// <code>ListReusableDelegationSets</code> that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

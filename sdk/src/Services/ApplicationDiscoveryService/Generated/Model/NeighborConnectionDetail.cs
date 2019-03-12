@@ -44,6 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The number of open network connections with the neighboring server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ConnectionsCount
         {
             get { return this._connectionsCount.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The ID of the server that accepted the network connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationServerId
         {
             get { return this._destinationServerId; }
@@ -98,6 +100,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The ID of the server that opened the network connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceServerId
         {
             get { return this._sourceServerId; }

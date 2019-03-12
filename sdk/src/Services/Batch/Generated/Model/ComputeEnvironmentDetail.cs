@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the compute environment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironmentArn
         {
             get { return this._computeEnvironmentArn; }
@@ -66,6 +67,7 @@ namespace Amazon.Batch.Model
         /// The name of the compute environment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironmentName
         {
             get { return this._computeEnvironmentName; }
@@ -103,6 +105,7 @@ namespace Amazon.Batch.Model
         /// environment. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EcsClusterArn
         {
             get { return this._ecsClusterArn; }

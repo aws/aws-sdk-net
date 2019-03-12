@@ -63,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The email message template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string EmailMessage
         {
             get { return this._emailMessage; }
@@ -81,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The email message template for sending a confirmation link to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string EmailMessageByLink
         {
             get { return this._emailMessageByLink; }
@@ -99,6 +101,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The subject line for the email message template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string EmailSubject
         {
             get { return this._emailSubject; }
@@ -118,6 +121,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string EmailSubjectByLink
         {
             get { return this._emailSubjectByLink; }
@@ -136,6 +140,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The SMS message template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=140)]
         public string SmsMessage
         {
             get { return this._smsMessage; }

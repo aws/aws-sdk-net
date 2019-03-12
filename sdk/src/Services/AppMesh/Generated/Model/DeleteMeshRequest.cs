@@ -47,6 +47,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }

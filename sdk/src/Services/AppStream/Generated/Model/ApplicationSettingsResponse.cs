@@ -63,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// an S3 bucket is created. The bucket is unique to the AWS account and the Region. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }
@@ -82,6 +83,7 @@ namespace Amazon.AppStream.Model
         /// stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string SettingsGroup
         {
             get { return this._settingsGroup; }

@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the contact for which to request details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContactArn
         {
             get { return this._contactArn; }

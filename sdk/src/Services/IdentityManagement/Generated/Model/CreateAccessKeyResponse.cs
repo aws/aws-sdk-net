@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure with details about the access key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccessKey AccessKey
         {
             get { return this._accessKey; }

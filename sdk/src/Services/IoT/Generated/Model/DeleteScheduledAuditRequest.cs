@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The name of the scheduled audit you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScheduledAuditName
         {
             get { return this._scheduledAuditName; }

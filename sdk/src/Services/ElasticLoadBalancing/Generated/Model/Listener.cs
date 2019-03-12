@@ -69,6 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The port on which the instance is listening.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public int InstancePort
         {
             get { return this._instancePort.GetValueOrDefault(); }
@@ -123,6 +124,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// list: 25, 80, 443, 465, 587, 1024-65535.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int LoadBalancerPort
         {
             get { return this._loadBalancerPort.GetValueOrDefault(); }
@@ -141,6 +143,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Protocol
         {
             get { return this._protocol; }

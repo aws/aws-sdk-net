@@ -86,6 +86,7 @@ namespace Amazon.DirectoryService.Model
         /// items is specified by the limitations of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

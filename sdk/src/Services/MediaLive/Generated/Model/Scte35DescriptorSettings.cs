@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SegmentationDescriptorScte35DescriptorSettings. SCTE-35
         /// Segmentation Descriptor.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35SegmentationDescriptor SegmentationDescriptorScte35DescriptorSettings
         {
             get { return this._segmentationDescriptorScte35DescriptorSettings; }

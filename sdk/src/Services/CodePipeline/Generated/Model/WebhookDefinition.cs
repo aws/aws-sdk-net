@@ -59,6 +59,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WebhookAuthenticationType Authentication
         {
             get { return this._authentication; }
@@ -80,6 +81,7 @@ namespace Amazon.CodePipeline.Model
         /// set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WebhookAuthConfiguration AuthenticationConfiguration
         {
             get { return this._authenticationConfiguration; }
@@ -99,6 +101,7 @@ namespace Amazon.CodePipeline.Model
         /// URL. All defined rules must pass for the request to be accepted and the pipeline started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=5)]
         public List<WebhookFilterRule> Filters
         {
             get { return this._filters; }
@@ -117,6 +120,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the webhook.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -136,6 +140,7 @@ namespace Amazon.CodePipeline.Model
         /// must be from the source (first) stage of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TargetAction
         {
             get { return this._targetAction; }
@@ -154,6 +159,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline you want to connect to the webhook.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TargetPipeline
         {
             get { return this._targetPipeline; }

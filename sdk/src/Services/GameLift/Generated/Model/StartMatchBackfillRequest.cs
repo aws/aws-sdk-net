@@ -96,6 +96,7 @@ namespace Amazon.GameLift.Model
         /// the matchmaking configuration name is "MM-4v4".) Use only the name for this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -115,6 +116,7 @@ namespace Amazon.GameLift.Model
         /// that is assigned to a game session and uniquely identifies it. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GameSessionArn
         {
             get { return this._gameSessionArn; }
@@ -150,6 +152,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Player> Players
         {
             get { return this._players; }
@@ -170,6 +173,7 @@ namespace Amazon.GameLift.Model
         /// match backfill ticket status and retrieve match results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

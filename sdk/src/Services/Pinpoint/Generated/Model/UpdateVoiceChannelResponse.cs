@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property VoiceChannelResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public VoiceChannelResponse VoiceChannelResponse
         {
             get { return this._voiceChannelResponse; }

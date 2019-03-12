@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// The groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AutoScalingGroup> AutoScalingGroups
         {
             get { return this._autoScalingGroups; }

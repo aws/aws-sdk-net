@@ -61,6 +61,7 @@ namespace Amazon.ConfigService.Model
         /// The source region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Region
         {
             get { return this._region; }
@@ -79,6 +80,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }

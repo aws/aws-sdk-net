@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// will not return any more data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextShardIterator
         {
             get { return this._nextShardIterator; }

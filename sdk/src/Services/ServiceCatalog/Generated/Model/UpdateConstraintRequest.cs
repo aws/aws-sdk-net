@@ -56,6 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -74,6 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated description of the constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -92,6 +94,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

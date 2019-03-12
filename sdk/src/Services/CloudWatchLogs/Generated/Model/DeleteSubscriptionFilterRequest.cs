@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the subscription filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FilterName
         {
             get { return this._filterName; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }

@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// and <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Type
         {
             get { return this._type; }

@@ -44,6 +44,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -64,6 +65,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// file system, you don't need to provide this value in your request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double ProvisionedThroughputInMibps
         {
             get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }

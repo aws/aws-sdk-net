@@ -143,6 +143,7 @@ namespace Amazon.APIGateway.Model
         /// <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentationPartType Type
         {
             get { return this._type; }

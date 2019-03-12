@@ -55,6 +55,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of an existing application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -75,6 +76,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// the <code>ConcurrentModificationException</code> is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -96,6 +98,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ReferenceId
         {
             get { return this._referenceId; }

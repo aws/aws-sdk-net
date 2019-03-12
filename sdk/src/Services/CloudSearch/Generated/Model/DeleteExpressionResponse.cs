@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The status of the expression being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExpressionStatus Expression
         {
             get { return this._expression; }

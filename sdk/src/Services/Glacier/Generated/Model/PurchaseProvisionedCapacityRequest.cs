@@ -44,6 +44,7 @@ namespace Amazon.Glacier.Model
         /// use an account ID, don't include any hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }

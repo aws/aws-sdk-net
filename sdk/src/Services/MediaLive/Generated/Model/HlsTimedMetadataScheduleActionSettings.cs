@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Id3. Base64 string formatted according to the ID3 specification:
         /// http://id3.org/id3v2.4.0-structure
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id3
         {
             get { return this._id3; }

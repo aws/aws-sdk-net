@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobSummary.
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobSummary JobSummary
         {
             get { return this._jobSummary; }

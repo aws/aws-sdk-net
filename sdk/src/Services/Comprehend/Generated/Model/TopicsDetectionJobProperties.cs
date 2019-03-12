@@ -84,6 +84,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier assigned to the topic detection job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }
@@ -102,6 +103,7 @@ namespace Amazon.Comprehend.Model
         /// The name of the topic detection job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

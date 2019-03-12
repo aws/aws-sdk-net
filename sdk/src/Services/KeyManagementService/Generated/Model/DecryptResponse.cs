@@ -42,6 +42,7 @@ namespace Amazon.KeyManagementService.Model
         /// are encountered during the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -61,6 +62,7 @@ namespace Amazon.KeyManagementService.Model
         /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public MemoryStream Plaintext
         {
             get { return this._plaintext; }

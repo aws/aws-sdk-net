@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The Lightsail instance on which to base your snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }
@@ -69,6 +70,7 @@ namespace Amazon.Lightsail.Model
         /// The name for your new snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceSnapshotName
         {
             get { return this._instanceSnapshotName; }

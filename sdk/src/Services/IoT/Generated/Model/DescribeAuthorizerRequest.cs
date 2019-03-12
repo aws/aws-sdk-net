@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The name of the authorizer to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AuthorizerName
         {
             get { return this._authorizerName; }

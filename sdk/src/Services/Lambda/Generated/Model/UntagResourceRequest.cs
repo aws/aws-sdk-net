@@ -43,6 +43,7 @@ namespace Amazon.Lambda.Model
         /// The function's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Resource
         {
             get { return this._resource; }
@@ -61,6 +62,7 @@ namespace Amazon.Lambda.Model
         /// A list of tag keys to remove from the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

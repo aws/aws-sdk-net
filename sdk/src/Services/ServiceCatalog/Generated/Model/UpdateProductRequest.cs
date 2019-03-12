@@ -64,6 +64,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -82,6 +83,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The tags to add to the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<Tag> AddTags
         {
             get { return this._addTags; }
@@ -100,6 +102,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated description of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Description
         {
             get { return this._description; }
@@ -118,6 +121,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated distributor of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Distributor
         {
             get { return this._distributor; }
@@ -136,6 +140,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -154,6 +159,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated product name.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Name
         {
             get { return this._name; }
@@ -172,6 +178,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated owner of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Owner
         {
             get { return this._owner; }
@@ -208,6 +215,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated support description for the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string SupportDescription
         {
             get { return this._supportDescription; }
@@ -226,6 +234,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated support email for the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=254)]
         public string SupportEmail
         {
             get { return this._supportEmail; }
@@ -244,6 +253,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The updated support URL for the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2083)]
         public string SupportUrl
         {
             get { return this._supportUrl; }

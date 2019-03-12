@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment template whose tags you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

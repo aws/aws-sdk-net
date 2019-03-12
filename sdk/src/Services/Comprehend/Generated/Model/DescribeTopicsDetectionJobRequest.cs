@@ -42,6 +42,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier assigned by the user to the detection job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

@@ -51,6 +51,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -74,6 +75,7 @@ namespace Amazon.IoT.Model
         /// Syntax</a> for information about query string syntax.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string QueryString
         {
             get { return this._queryString; }
@@ -134,6 +136,7 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group name to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }

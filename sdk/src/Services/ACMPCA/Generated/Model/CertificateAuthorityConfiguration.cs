@@ -48,6 +48,7 @@ namespace Amazon.ACMPCA.Model
         /// pair creates when it issues a certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public KeyAlgorithm KeyAlgorithm
         {
             get { return this._keyAlgorithm; }
@@ -66,6 +67,7 @@ namespace Amazon.ACMPCA.Model
         /// Name of the algorithm your private CA uses to sign certificate requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SigningAlgorithm SigningAlgorithm
         {
             get { return this._signingAlgorithm; }
@@ -84,6 +86,7 @@ namespace Amazon.ACMPCA.Model
         /// Structure that contains X.500 distinguished name information for your private CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ASN1Subject Subject
         {
             get { return this._subject; }

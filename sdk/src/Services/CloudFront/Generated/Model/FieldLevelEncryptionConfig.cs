@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// A unique number that ensures the request can't be replayed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }

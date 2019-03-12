@@ -56,6 +56,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the configuration set from which you want to delete the tracking options.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

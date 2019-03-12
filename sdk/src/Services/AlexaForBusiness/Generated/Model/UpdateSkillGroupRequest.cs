@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated description for the skill group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +80,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated name for the skill group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SkillGroupName
         {
             get { return this._skillGroupName; }

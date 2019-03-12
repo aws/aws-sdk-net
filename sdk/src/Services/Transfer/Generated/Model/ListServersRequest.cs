@@ -44,6 +44,7 @@ namespace Amazon.Transfer.Model
         /// query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Transfer.Model
         /// parameter in a subsequent command to continue listing additional servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }

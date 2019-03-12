@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The ID of a file associated with a stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int FileId
         {
             get { return this._fileId.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The stream ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamId
         {
             get { return this._streamId; }

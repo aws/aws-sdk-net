@@ -66,6 +66,7 @@ namespace Amazon.DataPipeline.Model
         /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }
@@ -85,6 +86,7 @@ namespace Amazon.DataPipeline.Model
         /// can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ObjectIds
         {
             get { return this._objectIds; }
@@ -103,6 +105,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline that contains the object definitions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }

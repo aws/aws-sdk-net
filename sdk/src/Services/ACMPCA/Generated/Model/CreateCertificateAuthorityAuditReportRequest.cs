@@ -46,6 +46,7 @@ namespace Amazon.ACMPCA.Model
         /// The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuditReportResponseFormat AuditReportResponseFormat
         {
             get { return this._auditReportResponseFormat; }
@@ -69,6 +70,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -87,6 +89,7 @@ namespace Amazon.ACMPCA.Model
         /// The name of the S3 bucket that will contain the audit report.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }

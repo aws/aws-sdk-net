@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) that identifies the created activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityArn
         {
             get { return this._activityArn; }
@@ -59,6 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// The date the activity is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }

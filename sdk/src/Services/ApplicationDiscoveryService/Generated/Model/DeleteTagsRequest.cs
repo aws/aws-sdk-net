@@ -43,6 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A list of configuration items with tags that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConfigurationIds
         {
             get { return this._configurationIds; }

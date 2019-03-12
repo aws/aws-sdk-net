@@ -44,6 +44,7 @@ namespace Amazon.AppStream.Model
         /// The name of the private image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -62,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// The 12-digit identifier of the AWS account for which to delete image permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SharedAccountId
         {
             get { return this._sharedAccountId; }

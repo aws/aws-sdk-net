@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB cluster to disassociate the IAM role from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -70,6 +71,7 @@ namespace Amazon.RDS.Model
         /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

@@ -43,6 +43,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CustomerIdentifier
         {
             get { return this._customerIdentifier; }
@@ -62,6 +63,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Subsequent BatchMeterUsage calls should be made using this product code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

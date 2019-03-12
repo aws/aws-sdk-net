@@ -44,6 +44,7 @@ namespace Amazon.FSx.Model
         /// backups. You can retain automatic backups for a maximum of 35 days.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=35)]
         public int AutomaticBackupRetentionDays
         {
             get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to take daily automatic backups, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=5)]
         public string DailyAutomaticBackupStartTime
         {
             get { return this._dailyAutomaticBackupStartTime; }
@@ -80,6 +82,7 @@ namespace Amazon.FSx.Model
         /// The preferred time to perform weekly maintenance, in the UTC time zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=7)]
         public string WeeklyMaintenanceStartTime
         {
             get { return this._weeklyMaintenanceStartTime; }

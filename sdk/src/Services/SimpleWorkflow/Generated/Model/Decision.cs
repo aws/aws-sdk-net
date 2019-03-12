@@ -383,6 +383,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Specifies the type of the decision.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DecisionType DecisionType
         {
             get { return this._decisionType; }

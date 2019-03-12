@@ -56,6 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -93,6 +94,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The plan identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PlanId
         {
             get { return this._planId; }

@@ -53,6 +53,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// the tags only, not the file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -72,6 +73,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// pair. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

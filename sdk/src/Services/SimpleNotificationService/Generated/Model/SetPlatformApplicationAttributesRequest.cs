@@ -95,6 +95,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -113,6 +114,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// PlatformApplicationArn for SetPlatformApplicationAttributes action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformApplicationArn
         {
             get { return this._platformApplicationArn; }

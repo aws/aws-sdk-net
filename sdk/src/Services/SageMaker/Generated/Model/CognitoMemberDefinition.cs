@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// Cognito.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// An identifier for a user group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserGroup
         {
             get { return this._userGroup; }
@@ -81,6 +83,7 @@ namespace Amazon.SageMaker.Model
         /// that you are calling.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPool
         {
             get { return this._userPool; }

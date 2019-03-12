@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property APNSChannelResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public APNSChannelResponse APNSChannelResponse
         {
             get { return this._apnsChannelResponse; }

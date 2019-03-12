@@ -47,6 +47,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The application source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationSource ApplicationSource
         {
             get { return this._applicationSource; }
@@ -83,6 +84,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The scaling instructions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ScalingInstruction> ScalingInstructions
         {
             get { return this._scalingInstructions; }
@@ -101,6 +103,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScalingPlanName
         {
             get { return this._scalingPlanName; }
@@ -119,6 +122,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The version number of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScalingPlanVersion
         {
             get { return this._scalingPlanVersion.GetValueOrDefault(); }
@@ -171,6 +175,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingPlanStatusCode StatusCode
         {
             get { return this._statusCode; }

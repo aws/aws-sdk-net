@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Job.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Job Job
         {
             get { return this._job; }

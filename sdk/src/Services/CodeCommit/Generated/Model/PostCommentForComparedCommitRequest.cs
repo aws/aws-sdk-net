@@ -47,6 +47,7 @@ namespace Amazon.CodeCommit.Model
         /// commit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AfterCommitId
         {
             get { return this._afterCommitId; }
@@ -105,6 +106,7 @@ namespace Amazon.CodeCommit.Model
         /// The content of the comment you want to make.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Content
         {
             get { return this._content; }
@@ -142,6 +144,7 @@ namespace Amazon.CodeCommit.Model
         /// commits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

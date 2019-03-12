@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// with the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DhcpOptionsId
         {
             get { return this._dhcpOptionsId; }
@@ -90,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

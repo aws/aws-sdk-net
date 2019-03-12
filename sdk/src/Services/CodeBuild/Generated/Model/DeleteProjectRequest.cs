@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

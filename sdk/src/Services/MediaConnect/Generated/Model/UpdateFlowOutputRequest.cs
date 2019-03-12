@@ -97,6 +97,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property FlowArn. The flow that is associated with the output that
         /// you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -128,6 +129,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property OutputArn. The ARN of the output that you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutputArn
         {
             get { return this._outputArn; }

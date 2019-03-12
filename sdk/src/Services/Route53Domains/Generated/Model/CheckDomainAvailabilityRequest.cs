@@ -49,6 +49,7 @@ namespace Amazon.Route53Domains.Model
         /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -67,6 +68,7 @@ namespace Amazon.Route53Domains.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=3)]
         public string IdnLangCode
         {
             get { return this._idnLangCode; }

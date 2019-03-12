@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The IDs of the builds to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Ids
         {
             get { return this._ids; }

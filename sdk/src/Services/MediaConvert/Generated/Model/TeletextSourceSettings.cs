@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         /// three-digit hexadecimal page number that will be used for Teletext captions. Do not
         /// use this setting if you are passing through teletext from the input source to output.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string PageNumber
         {
             get { return this._pageNumber; }

@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The aggregation field name. Currently not supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string AggregationField
         {
             get { return this._aggregationField; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The name of the index to search. The default value is <code>AWS_Things</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -81,6 +83,7 @@ namespace Amazon.IoT.Model
         /// of all indexed things in your AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string QueryString
         {
             get { return this._queryString; }

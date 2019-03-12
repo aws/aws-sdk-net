@@ -90,6 +90,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ARN of the IAM identity (user, group, or role) whose policies you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -110,6 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -137,6 +139,7 @@ namespace Amazon.IdentityManagement.Model
         /// Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<string> ServiceNamespaces
         {
             get { return this._serviceNamespaces; }

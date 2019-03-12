@@ -134,6 +134,7 @@ namespace Amazon.CloudWatch.Model
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
@@ -157,6 +158,7 @@ namespace Amazon.CloudWatch.Model
         /// time stamp. The time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTimeUtc
         {
             get { return this._endTimeUtc.GetValueOrDefault(); }
@@ -178,6 +180,7 @@ namespace Amazon.CloudWatch.Model
         /// metric values are negative numbers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> ExtendedStatistics
         {
             get { return this._extendedStatistics; }
@@ -196,6 +199,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the metric, with or without spaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -214,6 +218,7 @@ namespace Amazon.CloudWatch.Model
         /// The namespace of the metric, with or without spaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -256,6 +261,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -309,6 +315,7 @@ namespace Amazon.CloudWatch.Model
         /// and 15:07:15. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimeUtc
         {
             get { return this._startTimeUtc.GetValueOrDefault(); }
@@ -329,6 +336,7 @@ namespace Amazon.CloudWatch.Model
         /// or <code>ExtendedStatistics</code>, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<string> Statistics
         {
             get { return this._statistics; }

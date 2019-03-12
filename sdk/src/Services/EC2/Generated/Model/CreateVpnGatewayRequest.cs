@@ -107,6 +107,7 @@ namespace Amazon.EC2.Model
         /// The type of VPN connection this virtual private gateway supports.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GatewayType Type
         {
             get { return this._type; }

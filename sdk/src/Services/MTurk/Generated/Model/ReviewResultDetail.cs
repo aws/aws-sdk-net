@@ -46,6 +46,7 @@ namespace Amazon.MTurk.Model
         ///  A unique identifier of the Review action result. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ActionId
         {
             get { return this._actionId; }
@@ -86,6 +87,7 @@ namespace Amazon.MTurk.Model
         /// the result describes the Worker's performance on the HIT. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string QuestionId
         {
             get { return this._questionId; }
@@ -107,6 +109,7 @@ namespace Amazon.MTurk.Model
         /// itself. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SubjectId
         {
             get { return this._subjectId; }

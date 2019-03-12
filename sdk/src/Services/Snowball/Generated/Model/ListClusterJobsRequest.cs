@@ -45,6 +45,7 @@ namespace Amazon.Snowball.Model
         /// The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=39, Max=39)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -63,6 +64,7 @@ namespace Amazon.Snowball.Model
         /// The number of <code>JobListEntry</code> objects to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.Snowball.Model
         /// point for your returned list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -64,6 +64,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the AWS resource that was evaluated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -82,6 +83,7 @@ namespace Amazon.ConfigService.Model
         /// The type of the AWS resource that was evaluated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

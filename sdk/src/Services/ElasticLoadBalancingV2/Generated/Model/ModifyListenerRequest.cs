@@ -123,6 +123,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ListenerArn
         {
             get { return this._listenerArn; }
@@ -141,6 +142,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The port for connections from clients to the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

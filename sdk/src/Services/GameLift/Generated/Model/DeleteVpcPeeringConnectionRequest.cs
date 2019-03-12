@@ -78,6 +78,7 @@ namespace Amazon.GameLift.Model
         /// VPC peering connection record.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -97,6 +98,7 @@ namespace Amazon.GameLift.Model
         /// object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string VpcPeeringConnectionId
         {
             get { return this._vpcPeeringConnectionId; }

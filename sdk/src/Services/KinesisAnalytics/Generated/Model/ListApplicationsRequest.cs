@@ -60,6 +60,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// to get the next page of applications.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartApplicationName
         {
             get { return this._exclusiveStartApplicationName; }
@@ -78,6 +79,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Maximum number of applications to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

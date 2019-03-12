@@ -80,6 +80,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CacheLength. Cache length, in seconds, is used to calculate
         /// buffer size.
         /// </summary>
+        [AWSProperty(Min=30)]
         public int CacheLength
         {
             get { return this._cacheLength.GetValueOrDefault(); }
@@ -133,6 +134,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RestartDelay. If a streaming output fails, number of seconds
         /// to wait until a restart is initiated. A value of 0 means never restart.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int RestartDelay
         {
             get { return this._restartDelay.GetValueOrDefault(); }

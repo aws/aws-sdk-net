@@ -41,6 +41,7 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property BrokerId. The unique ID that Amazon MQ generates for the
         /// broker.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BrokerId
         {
             get { return this._brokerId; }
@@ -57,6 +58,7 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property MaxResults. The maximum number of ActiveMQ users that can
         /// be returned per page (20 by default). This value must be an integer from 5 to 100.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

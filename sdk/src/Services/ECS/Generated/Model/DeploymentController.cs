@@ -61,6 +61,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeploymentControllerType Type
         {
             get { return this._type; }

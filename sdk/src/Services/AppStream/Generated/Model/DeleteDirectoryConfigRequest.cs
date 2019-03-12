@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The name of the directory configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryName
         {
             get { return this._directoryName; }

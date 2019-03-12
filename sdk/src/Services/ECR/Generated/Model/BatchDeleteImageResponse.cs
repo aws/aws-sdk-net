@@ -59,6 +59,7 @@ namespace Amazon.ECR.Model
         /// The image IDs of the deleted images.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ImageIdentifier> ImageIds
         {
             get { return this._imageIds; }

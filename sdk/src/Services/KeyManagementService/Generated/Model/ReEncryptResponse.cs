@@ -43,6 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -61,6 +62,7 @@ namespace Amazon.KeyManagementService.Model
         /// Unique identifier of the CMK used to reencrypt the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -79,6 +81,7 @@ namespace Amazon.KeyManagementService.Model
         /// Unique identifier of the CMK used to originally encrypt the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string SourceKeyId
         {
             get { return this._sourceKeyId; }

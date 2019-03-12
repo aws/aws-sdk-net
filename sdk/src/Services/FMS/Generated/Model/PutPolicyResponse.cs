@@ -59,6 +59,7 @@ namespace Amazon.FMS.Model
         /// The Amazon Resource Name (ARN) of the policy that was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PolicyArn
         {
             get { return this._policyArn; }

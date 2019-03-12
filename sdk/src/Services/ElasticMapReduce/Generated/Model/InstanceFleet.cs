@@ -133,6 +133,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A friendly name for the instance fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -153,6 +154,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// than or greater than <code>TargetOnDemandCapacity</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ProvisionedOnDemandCapacity
         {
             get { return this._provisionedOnDemandCapacity.GetValueOrDefault(); }
@@ -173,6 +175,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// than <code>TargetSpotCapacity</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ProvisionedSpotCapacity
         {
             get { return this._provisionedSpotCapacity.GetValueOrDefault(); }
@@ -228,6 +231,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetOnDemandCapacity
         {
             get { return this._targetOnDemandCapacity.GetValueOrDefault(); }
@@ -264,6 +268,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetSpotCapacity
         {
             get { return this._targetSpotCapacity.GetValueOrDefault(); }

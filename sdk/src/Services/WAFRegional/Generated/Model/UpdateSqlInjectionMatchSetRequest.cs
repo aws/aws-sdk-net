@@ -99,6 +99,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -119,6 +120,7 @@ namespace Amazon.WAFRegional.Model
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SqlInjectionMatchSetId
         {
             get { return this._sqlInjectionMatchSetId; }
@@ -154,6 +156,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<SqlInjectionMatchSetUpdate> Updates
         {
             get { return this._updates; }

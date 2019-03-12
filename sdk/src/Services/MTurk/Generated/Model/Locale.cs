@@ -42,6 +42,7 @@ namespace Amazon.MTurk.Model
         /// code US refers to the United States of America. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=2)]
         public string Country
         {
             get { return this._country; }
@@ -61,6 +62,7 @@ namespace Amazon.MTurk.Model
         /// the code WA refers to the state of Washington.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string Subdivision
         {
             get { return this._subdivision; }

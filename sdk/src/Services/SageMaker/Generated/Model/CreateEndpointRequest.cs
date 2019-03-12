@@ -84,6 +84,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }
@@ -103,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }
@@ -123,6 +125,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

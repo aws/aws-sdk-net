@@ -119,6 +119,7 @@ namespace Amazon.IoT.Model
         /// The name of the scheduled audit.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ScheduledAuditName
         {
             get { return this._scheduledAuditName; }

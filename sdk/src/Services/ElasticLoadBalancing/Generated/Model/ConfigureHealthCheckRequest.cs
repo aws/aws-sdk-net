@@ -65,6 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The configuration information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheck HealthCheck
         {
             get { return this._healthCheck; }
@@ -83,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

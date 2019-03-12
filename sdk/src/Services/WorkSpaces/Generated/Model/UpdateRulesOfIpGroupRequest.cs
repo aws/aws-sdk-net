@@ -43,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkSpaces.Model
         /// One or more rules.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IpRuleItem> UserRules
         {
             get { return this._userRules; }

@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// set of lifecycle configurations, use it in the next request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

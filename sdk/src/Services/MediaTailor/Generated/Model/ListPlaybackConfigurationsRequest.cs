@@ -46,6 +46,7 @@ namespace Amazon.MediaTailor.Model
         /// Maximum number of records to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

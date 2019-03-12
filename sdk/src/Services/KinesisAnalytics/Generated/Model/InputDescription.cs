@@ -68,6 +68,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Analytics assigns to each input configuration you add to your application. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string InputId
         {
             get { return this._inputId; }
@@ -202,6 +203,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// In-application name prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string NamePrefix
         {
             get { return this._namePrefix; }

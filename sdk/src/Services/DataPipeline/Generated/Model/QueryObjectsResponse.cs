@@ -80,6 +80,7 @@ namespace Amazon.DataPipeline.Model
         /// there are no more results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }

@@ -73,6 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The global table name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string GlobalTableName
         {
             get { return this._globalTableName; }
@@ -91,6 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A list of regions that should be added or removed from the global table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ReplicaUpdate> ReplicaUpdates
         {
             get { return this._replicaUpdates; }

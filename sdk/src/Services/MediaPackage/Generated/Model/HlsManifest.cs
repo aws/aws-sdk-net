@@ -64,6 +64,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property Id. The ID of the manifest. The ID must be unique within
         /// the OriginEndpoint and it cannot be changed after it is created.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

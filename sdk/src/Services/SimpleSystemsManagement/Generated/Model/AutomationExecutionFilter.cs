@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AutomationExecutionFilterKey Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The values used to limit the execution information associated with the filter's key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> Values
         {
             get { return this._values; }

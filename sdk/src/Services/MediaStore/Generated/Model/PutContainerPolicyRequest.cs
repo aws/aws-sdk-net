@@ -52,6 +52,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContainerName
         {
             get { return this._containerName; }
@@ -79,6 +80,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8192)]
         public string Policy
         {
             get { return this._policy; }

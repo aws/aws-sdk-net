@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The S3 bucket that contains the updated firmware.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Bucket
         {
             get { return this._bucket; }

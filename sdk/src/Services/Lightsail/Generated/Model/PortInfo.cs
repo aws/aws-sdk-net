@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         /// The first port in the range.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int FromPort
         {
             get { return this._fromPort.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.Lightsail.Model
         /// The last port in the range.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int ToPort
         {
             get { return this._toPort.GetValueOrDefault(); }

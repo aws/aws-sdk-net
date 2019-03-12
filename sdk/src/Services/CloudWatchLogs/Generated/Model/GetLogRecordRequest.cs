@@ -51,6 +51,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// to retrieve that complete log event record.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogRecordPointer
         {
             get { return this._logRecordPointer; }

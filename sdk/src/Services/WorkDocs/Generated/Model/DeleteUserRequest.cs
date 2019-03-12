@@ -43,6 +43,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string UserId
         {
             get { return this._userId; }

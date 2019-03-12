@@ -93,6 +93,7 @@ namespace Amazon.CloudFormation.Model
         /// The ARN of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ChangeSetId
         {
             get { return this._changeSetId; }
@@ -111,6 +112,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -147,6 +149,7 @@ namespace Amazon.CloudFormation.Model
         /// Information about the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -188,6 +191,7 @@ namespace Amazon.CloudFormation.Model
         /// there is no additional page, this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -207,6 +211,7 @@ namespace Amazon.CloudFormation.Model
         /// associated with the stack if you execute the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationARNs
         {
             get { return this._notificationARNs; }
@@ -338,6 +343,7 @@ namespace Amazon.CloudFormation.Model
         /// If you execute the change set, the tags that will be associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

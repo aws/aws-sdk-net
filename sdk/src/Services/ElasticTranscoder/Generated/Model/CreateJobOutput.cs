@@ -201,6 +201,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// in the output bucket, the job fails. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Key
         {
             get { return this._key; }

@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The set of patch filters that make up the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=4)]
         public List<PatchFilter> PatchFilters
         {
             get { return this._patchFilters; }

@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Amazon Resource Name (ARN) of the destination AWS Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARNUpdate
         {
             get { return this._resourceARNUpdate; }

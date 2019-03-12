@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// A list of the partition values in the request for which partions were not returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public List<PartitionValueList> UnprocessedKeys
         {
             get { return this._unprocessedKeys; }

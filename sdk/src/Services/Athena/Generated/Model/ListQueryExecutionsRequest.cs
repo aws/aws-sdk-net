@@ -50,6 +50,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of query executions to return in this request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.Athena.Model
         /// The token that specifies where to start pagination if a previous request was truncated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -45,6 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Identifier
         {
             get { return this._identifier; }
@@ -63,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A friendly name for the resource server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -81,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=25)]
         public List<ResourceServerScopeType> Scopes
         {
             get { return this._scopes; }
@@ -99,6 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

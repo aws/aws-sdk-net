@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         /// link.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudDirectory.Model
         /// Used to accept a typed link specifier as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedLinkSpecifier TypedLinkSpecifier
         {
             get { return this._typedLinkSpecifier; }

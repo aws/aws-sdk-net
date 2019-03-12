@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// Description of the database
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -61,6 +62,7 @@ namespace Amazon.Glue.Model
         /// The location of the database (for example, an HDFS path).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string LocationUri
         {
             get { return this._locationUri; }
@@ -80,6 +82,7 @@ namespace Amazon.Glue.Model
         /// is stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

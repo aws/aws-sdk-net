@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the IAM role that grants access.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The name of the MQTT topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Topic
         {
             get { return this._topic; }

@@ -57,6 +57,7 @@ namespace Amazon.ACMPCA.Model
         /// <code>GetCertificate</code>, and <code>ListPermissions</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=3)]
         public List<string> Actions
         {
             get { return this._actions; }
@@ -82,6 +83,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -101,6 +103,7 @@ namespace Amazon.ACMPCA.Model
         /// principal is <code>acm.amazonaws.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string Principal
         {
             get { return this._principal; }
@@ -119,6 +122,7 @@ namespace Amazon.ACMPCA.Model
         /// The ID of the calling account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string SourceAccount
         {
             get { return this._sourceAccount; }

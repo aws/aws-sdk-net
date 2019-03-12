@@ -69,6 +69,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// AWS Cloud Map returns up to 100 namespaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

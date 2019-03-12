@@ -54,6 +54,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property DomainName. The name of the domain to delete.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

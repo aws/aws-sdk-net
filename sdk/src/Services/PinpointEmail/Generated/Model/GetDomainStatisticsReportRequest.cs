@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// The domain that you want to obtain deliverability metrics for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Domain
         {
             get { return this._domain; }
@@ -64,6 +65,7 @@ namespace Amazon.PinpointEmail.Model
         /// days after the <code>StartDate</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndDate
         {
             get { return this._endDate.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.PinpointEmail.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartDate
         {
             get { return this._startDate.GetValueOrDefault(); }

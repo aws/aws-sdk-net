@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh to delete the virtual router in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -66,6 +67,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual router to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

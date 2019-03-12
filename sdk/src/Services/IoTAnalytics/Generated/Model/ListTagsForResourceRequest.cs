@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The ARN of the resource whose tags you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

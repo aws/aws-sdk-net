@@ -42,6 +42,7 @@ namespace Amazon.Chime.Model
         /// The request containing the phone number IDs and product types to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<UpdatePhoneNumberRequestItem> UpdatePhoneNumberRequestItems
         {
             get { return this._updatePhoneNumberRequestItems; }

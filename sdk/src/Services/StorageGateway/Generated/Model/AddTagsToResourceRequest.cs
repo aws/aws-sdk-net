@@ -67,6 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the resource you want to add tags to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -94,6 +95,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

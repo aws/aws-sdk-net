@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StepExecutionFilterKey Key
         {
             get { return this._key; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The values of the filter key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> Values
         {
             get { return this._values; }

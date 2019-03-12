@@ -44,6 +44,7 @@ namespace Amazon.WAF.Model
         /// Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -66,6 +67,7 @@ namespace Amazon.WAF.Model
         /// is considered to match.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SizeConstraint SizeConstraint
         {
             get { return this._sizeConstraint; }

@@ -57,6 +57,7 @@ namespace Amazon.Snowball.Model
         /// The unique ID for an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -75,6 +76,7 @@ namespace Amazon.Snowball.Model
         /// The city in an address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string City
         {
             get { return this._city; }
@@ -93,6 +95,7 @@ namespace Amazon.Snowball.Model
         /// The name of the company to receive a Snowball at an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Company
         {
             get { return this._company; }
@@ -111,6 +114,7 @@ namespace Amazon.Snowball.Model
         /// The country in an address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Country
         {
             get { return this._country; }
@@ -148,6 +152,7 @@ namespace Amazon.Snowball.Model
         /// This field is no longer used and the value is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Landmark
         {
             get { return this._landmark; }
@@ -166,6 +171,7 @@ namespace Amazon.Snowball.Model
         /// The name of a person to receive a Snowball at an address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -184,6 +190,7 @@ namespace Amazon.Snowball.Model
         /// The phone number associated with an address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -202,6 +209,7 @@ namespace Amazon.Snowball.Model
         /// The postal code in an address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -220,6 +228,7 @@ namespace Amazon.Snowball.Model
         /// This field is no longer used and the value is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PrefectureOrDistrict
         {
             get { return this._prefectureOrDistrict; }
@@ -238,6 +247,7 @@ namespace Amazon.Snowball.Model
         /// The state or province in an address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StateOrProvince
         {
             get { return this._stateOrProvince; }
@@ -256,6 +266,7 @@ namespace Amazon.Snowball.Model
         /// The first line in a street address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Street1
         {
             get { return this._street1; }
@@ -274,6 +285,7 @@ namespace Amazon.Snowball.Model
         /// The second line in a street address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Street2
         {
             get { return this._street2; }
@@ -292,6 +304,7 @@ namespace Amazon.Snowball.Model
         /// The third line in a street address that a Snowball is to be delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Street3
         {
             get { return this._street3; }

@@ -42,6 +42,7 @@ namespace Amazon.ACMPCA.Model
         /// parameter in a subsequent pagination request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -61,6 +62,7 @@ namespace Amazon.ACMPCA.Model
         /// the action enabled, the policy provided, and the time of creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public List<Permission> Permissions
         {
             get { return this._permissions; }

@@ -92,6 +92,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure to be used by this Crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string CrawlerSecurityConfiguration
         {
             get { return this._crawlerSecurityConfiguration; }
@@ -128,6 +129,7 @@ namespace Amazon.Glue.Model
         /// A description of the new crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -146,6 +148,7 @@ namespace Amazon.Glue.Model
         /// Name of the new crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -220,6 +223,7 @@ namespace Amazon.Glue.Model
         /// The table prefix used for catalog tables that are created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string TablePrefix
         {
             get { return this._tablePrefix; }

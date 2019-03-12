@@ -60,6 +60,7 @@ namespace Amazon.Glue.Model
         /// The name of the table in question.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string TableName
         {
             get { return this._tableName; }
@@ -79,6 +80,7 @@ namespace Amazon.Glue.Model
         /// of an integer. Each version is incremented by 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string VersionId
         {
             get { return this._versionId; }

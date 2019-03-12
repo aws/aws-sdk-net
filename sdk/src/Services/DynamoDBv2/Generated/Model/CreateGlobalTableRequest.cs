@@ -95,6 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The global table name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string GlobalTableName
         {
             get { return this._globalTableName; }
@@ -113,6 +114,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The regions where the global table needs to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Replica> ReplicationGroup
         {
             get { return this._replicationGroup; }

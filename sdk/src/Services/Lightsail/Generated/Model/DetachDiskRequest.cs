@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskName
         {
             get { return this._diskName; }

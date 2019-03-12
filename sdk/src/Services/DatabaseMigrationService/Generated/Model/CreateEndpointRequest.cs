@@ -189,6 +189,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// two consecutive hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointIdentifier
         {
             get { return this._endpointIdentifier; }
@@ -207,6 +208,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The type of endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReplicationEndpointTypeValue EndpointType
         {
             get { return this._endpointType; }
@@ -229,6 +231,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <code>mongodb</code>, and <code>sqlserver</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EngineName
         {
             get { return this._engineName; }

@@ -100,6 +100,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CurrentMetric> CurrentMetrics
         {
             get { return this._currentMetrics; }
@@ -131,6 +132,7 @@ namespace Amazon.Connect.Model
         /// The queue ID is also included in the URL, and is the string after 'queue/'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Filters Filters
         {
             get { return this._filters; }
@@ -157,6 +159,7 @@ namespace Amazon.Connect.Model
         /// is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2)]
         public List<string> Groupings
         {
             get { return this._groupings; }
@@ -179,6 +182,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -198,6 +202,7 @@ namespace Amazon.Connect.Model
         /// in the response, between 1 and 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

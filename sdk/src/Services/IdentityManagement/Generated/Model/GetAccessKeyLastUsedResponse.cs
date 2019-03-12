@@ -61,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the AWS IAM user that owns this access key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

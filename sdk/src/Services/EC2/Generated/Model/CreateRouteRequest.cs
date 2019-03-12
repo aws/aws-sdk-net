@@ -211,6 +211,7 @@ namespace Amazon.EC2.Model
         /// The ID of the route table for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteTableId
         {
             get { return this._routeTableId; }

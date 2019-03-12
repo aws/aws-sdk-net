@@ -73,6 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The domain string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string Domain
         {
             get { return this._domain; }
@@ -91,6 +92,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

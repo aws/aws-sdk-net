@@ -47,6 +47,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -65,6 +66,7 @@ namespace Amazon.AppSync.Model
         /// The schema definition, in GraphQL schema language format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Definition
         {
             get { return this._definition; }

@@ -51,6 +51,7 @@ namespace Amazon.Glue.Model
         /// The maximum size of information to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

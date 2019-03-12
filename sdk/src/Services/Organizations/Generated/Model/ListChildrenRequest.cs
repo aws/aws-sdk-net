@@ -59,6 +59,7 @@ namespace Amazon.Organizations.Model
         /// Filters the output to include only the specified child type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChildType ChildType
         {
             get { return this._childType; }
@@ -84,6 +85,7 @@ namespace Amazon.Organizations.Model
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -140,6 +142,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParentId
         {
             get { return this._parentId; }

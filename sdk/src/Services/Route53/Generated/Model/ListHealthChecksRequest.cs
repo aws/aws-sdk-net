@@ -55,6 +55,7 @@ namespace Amazon.Route53.Model
         /// there are no more health checks to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Marker
         {
             get { return this._marker; }

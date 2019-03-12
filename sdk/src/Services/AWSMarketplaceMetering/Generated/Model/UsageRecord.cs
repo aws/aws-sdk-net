@@ -51,6 +51,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// an individual buyer in your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CustomerIdentifier
         {
             get { return this._customerIdentifier; }
@@ -70,6 +71,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// are specified. These represent different units of value in your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Dimension
         {
             get { return this._dimension; }
@@ -89,6 +91,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// to <code>0</code> if not specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }
@@ -112,6 +115,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Your application can meter usage for up to one hour in the past.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

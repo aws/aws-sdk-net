@@ -57,6 +57,7 @@ namespace Amazon.CloudHSM.Model
         /// The ARN of the client to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientArn
         {
             get { return this._clientArn; }

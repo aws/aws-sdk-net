@@ -43,6 +43,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// in your template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -61,6 +62,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The input value associated with the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

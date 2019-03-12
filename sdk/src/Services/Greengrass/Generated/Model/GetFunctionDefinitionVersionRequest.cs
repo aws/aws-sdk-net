@@ -41,6 +41,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionDefinitionId
         {
             get { return this._functionDefinitionId; }
@@ -57,6 +58,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property FunctionDefinitionVersionId. The ID of the function definition
         /// version.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionDefinitionVersionId
         {
             get { return this._functionDefinitionVersionId; }

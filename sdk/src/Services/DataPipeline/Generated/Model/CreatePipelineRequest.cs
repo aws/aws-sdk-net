@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// The description for the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +65,7 @@ namespace Amazon.DataPipeline.Model
         /// identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -84,6 +86,7 @@ namespace Amazon.DataPipeline.Model
         /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -111,6 +114,7 @@ namespace Amazon.DataPipeline.Model
         /// scoped to the AWS account or IAM user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string UniqueId
         {
             get { return this._uniqueId; }

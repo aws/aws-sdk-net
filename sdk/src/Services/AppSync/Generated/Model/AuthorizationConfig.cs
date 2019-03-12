@@ -46,6 +46,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthorizationType AuthorizationType
         {
             get { return this._authorizationType; }

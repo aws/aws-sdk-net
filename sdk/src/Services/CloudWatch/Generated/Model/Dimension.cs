@@ -41,6 +41,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudWatch.Model
         /// The value representing the dimension measurement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Value
         {
             get { return this._value; }

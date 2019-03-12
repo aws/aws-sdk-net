@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -63,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string AttributeName
         {
             get { return this._attributeName; }

@@ -65,6 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The port number associated with the EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstancePort
         {
             get { return this._instancePort.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -102,6 +104,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// from the EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyNames
         {
             get { return this._policyNames; }

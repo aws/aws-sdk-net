@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution that has been stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }

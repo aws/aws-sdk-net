@@ -54,6 +54,7 @@ namespace Amazon.Comprehend.Model
         /// The Amazon Resource Name (ARN) that identifies the document classifier. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }

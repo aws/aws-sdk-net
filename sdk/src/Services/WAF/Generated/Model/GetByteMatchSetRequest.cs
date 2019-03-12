@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ByteMatchSetId
         {
             get { return this._byteMatchSetId; }

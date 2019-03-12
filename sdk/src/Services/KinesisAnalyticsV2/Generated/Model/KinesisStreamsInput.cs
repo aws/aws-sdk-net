@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the input Kinesis data stream to read.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

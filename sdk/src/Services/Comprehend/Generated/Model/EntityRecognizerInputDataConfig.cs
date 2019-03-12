@@ -61,6 +61,7 @@ namespace Amazon.Comprehend.Model
         /// S3 location of the documents folder for an entity recognizer
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EntityRecognizerDocuments Documents
         {
             get { return this._documents; }
@@ -97,6 +98,7 @@ namespace Amazon.Comprehend.Model
         /// The entity types in the input data for an entity recognizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EntityTypesListItem> EntityTypes
         {
             get { return this._entityTypes; }

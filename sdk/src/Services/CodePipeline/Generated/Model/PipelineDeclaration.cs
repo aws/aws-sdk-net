@@ -88,6 +88,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action to be performed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -107,6 +108,7 @@ namespace Amazon.CodePipeline.Model
         /// with no actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -125,6 +127,7 @@ namespace Amazon.CodePipeline.Model
         /// The stage in which to perform the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<StageDeclaration> Stages
         {
             get { return this._stages; }
@@ -144,6 +147,7 @@ namespace Amazon.CodePipeline.Model
         /// 1. This number is automatically incremented when a pipeline is updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

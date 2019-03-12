@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         /// The name of the container that will serve as the App Mesh proxy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContainerName
         {
             get { return this._containerName; }

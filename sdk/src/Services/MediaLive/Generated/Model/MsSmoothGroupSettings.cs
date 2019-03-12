@@ -109,6 +109,7 @@ namespace Amazon.MediaLive.Model
         /// during this time and the cache will be be delivered to the IIS server once the connection
         /// is re-established.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ConnectionRetryInterval
         {
             get { return this._connectionRetryInterval.GetValueOrDefault(); }
@@ -125,6 +126,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Destination. Smooth Streaming publish point on an IIS server.
         /// Elemental Live acts as a "Push" encoder to IIS.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputLocationRef Destination
         {
             get { return this._destination; }
@@ -193,6 +195,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FilecacheDuration. Size in seconds of file cache for streaming
         /// outputs.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int FilecacheDuration
         {
             get { return this._filecacheDuration.GetValueOrDefault(); }
@@ -209,6 +212,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FragmentLength. Length of mp4 fragments to generate (in
         /// seconds). Fragment length must be compatible with GOP size and framerate.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int FragmentLength
         {
             get { return this._fragmentLength.GetValueOrDefault(); }
@@ -240,6 +244,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property NumRetries. Number of retry attempts.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int NumRetries
         {
             get { return this._numRetries.GetValueOrDefault(); }
@@ -257,6 +262,7 @@ namespace Amazon.MediaLive.Model
         /// due to output failure, due to exhausting the numRetries on one segment, or exceeding
         /// filecacheDuration.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int RestartDelay
         {
             get { return this._restartDelay.GetValueOrDefault(); }
@@ -289,6 +295,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SendDelayMs. Number of milliseconds to delay the output
         /// from the second pipeline.
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public int SendDelayMs
         {
             get { return this._sendDelayMs.GetValueOrDefault(); }

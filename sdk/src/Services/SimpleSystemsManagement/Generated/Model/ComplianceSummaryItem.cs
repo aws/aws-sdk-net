@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Patch, or Custom:string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }

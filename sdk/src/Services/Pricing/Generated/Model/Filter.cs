@@ -54,6 +54,7 @@ namespace Amazon.Pricing.Model
         /// attribute name to get the prices for only Amazon EC2 volumes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Field
         {
             get { return this._field; }
@@ -77,6 +78,7 @@ namespace Amazon.Pricing.Model
         /// that match both the given filter field and the given value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FilterType Type
         {
             get { return this._type; }
@@ -98,6 +100,7 @@ namespace Amazon.Pricing.Model
         /// returned products to match, such as a <code>Provisioned IOPS</code> volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

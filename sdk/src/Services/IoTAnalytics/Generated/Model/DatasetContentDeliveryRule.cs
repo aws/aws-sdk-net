@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The destination to which data set contents are delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DatasetContentDeliveryDestination Destination
         {
             get { return this._destination; }

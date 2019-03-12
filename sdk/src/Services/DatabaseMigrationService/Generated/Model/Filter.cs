@@ -41,6 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The filter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

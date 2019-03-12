@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EventsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventsResponse EventsResponse
         {
             get { return this._eventsResponse; }

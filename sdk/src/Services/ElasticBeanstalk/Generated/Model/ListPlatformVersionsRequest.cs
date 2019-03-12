@@ -62,6 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The maximum number of platform values returned in one call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxRecords
         {
             get { return this._maxRecords.GetValueOrDefault(); }

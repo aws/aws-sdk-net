@@ -41,6 +41,7 @@ namespace Amazon.Translate.Model
         /// The name of the custom terminology being deleted. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

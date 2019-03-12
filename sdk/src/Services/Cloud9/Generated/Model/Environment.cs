@@ -64,6 +64,7 @@ namespace Amazon.Cloud9.Model
         /// The description for the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -118,6 +119,7 @@ namespace Amazon.Cloud9.Model
         /// The name of the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public string Name
         {
             get { return this._name; }

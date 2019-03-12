@@ -58,6 +58,7 @@ namespace Amazon.OpsWorksCM.Model
         /// to the <code>NextToken</code> request parameter to get the next set of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server for which you want to view events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

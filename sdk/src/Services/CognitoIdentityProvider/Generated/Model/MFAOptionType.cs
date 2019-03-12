@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The attribute name of the MFA option type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string AttributeName
         {
             get { return this._attributeName; }

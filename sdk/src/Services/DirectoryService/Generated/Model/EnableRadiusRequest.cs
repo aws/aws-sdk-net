@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory for which to enable MFA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -61,6 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// A <a>RadiusSettings</a> object that contains information about the RADIUS server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RadiusSettings RadiusSettings
         {
             get { return this._radiusSettings; }

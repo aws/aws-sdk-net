@@ -212,6 +212,7 @@ namespace Amazon.GameLift.Model
         /// scaling event is triggered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int EvaluationPeriods
         {
             get { return this._evaluationPeriods.GetValueOrDefault(); }
@@ -231,6 +232,7 @@ namespace Amazon.GameLift.Model
         /// of the following statuses: ERROR or DELETING.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -307,6 +309,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricName MetricName
         {
             get { return this._metricName; }
@@ -326,6 +329,7 @@ namespace Amazon.GameLift.Model
         /// to be unique. A fleet can have only one scaling policy with the same name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

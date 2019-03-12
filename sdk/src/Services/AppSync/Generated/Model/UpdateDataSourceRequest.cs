@@ -50,6 +50,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -158,6 +159,7 @@ namespace Amazon.AppSync.Model
         /// The new name for the data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -212,6 +214,7 @@ namespace Amazon.AppSync.Model
         /// The new data source type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DataSourceType Type
         {
             get { return this._type; }

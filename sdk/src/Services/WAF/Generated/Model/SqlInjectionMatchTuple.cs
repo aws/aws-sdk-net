@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// Specifies where in a web request to look for snippets of malicious SQL code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldToMatch FieldToMatch
         {
             get { return this._fieldToMatch; }
@@ -194,6 +195,7 @@ namespace Amazon.WAF.Model
         /// Specify <code>NONE</code> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TextTransformation TextTransformation
         {
             get { return this._textTransformation; }

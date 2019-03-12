@@ -64,6 +64,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// the streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -83,6 +84,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// operation to find the current application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The <a>Input</a> to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Input Input
         {
             get { return this._input; }

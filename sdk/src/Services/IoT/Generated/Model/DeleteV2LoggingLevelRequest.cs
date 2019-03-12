@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The name of the resource for which you are configuring logging.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetName
         {
             get { return this._targetName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogTargetType TargetType
         {
             get { return this._targetType; }

@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// An array of Amazon Kinesis Data Firehose ARNs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> LogDestinationConfigs
         {
             get { return this._logDestinationConfigs; }
@@ -81,6 +82,7 @@ namespace Amazon.WAFRegional.Model
         /// The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

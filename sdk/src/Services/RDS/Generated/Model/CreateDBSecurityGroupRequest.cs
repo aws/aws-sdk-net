@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         /// The description for the DB security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSecurityGroupDescription
         {
             get { return this._dbSecurityGroupDescription; }
@@ -108,6 +109,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>mysecuritygroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSecurityGroupName
         {
             get { return this._dbSecurityGroupName; }

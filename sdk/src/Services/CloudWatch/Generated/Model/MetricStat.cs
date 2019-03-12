@@ -44,6 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// The metric to return, including the metric name, namespace, and dimensions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Metric Metric
         {
             get { return this._metric; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// The period, in seconds, to use when retrieving the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.CloudWatch.Model
         /// The statistic to return. It can include any CloudWatch statistic or extended statistic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Stat
         {
             get { return this._stat; }

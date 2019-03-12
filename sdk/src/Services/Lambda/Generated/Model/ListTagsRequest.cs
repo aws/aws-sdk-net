@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         /// The function's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Resource
         {
             get { return this._resource; }

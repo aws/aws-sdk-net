@@ -46,6 +46,7 @@ namespace Amazon.AWSSupport.Model
         /// for operations that take them.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Language
         {
             get { return this._language; }

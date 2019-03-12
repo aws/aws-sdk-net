@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainStatusList.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DomainStatus> DomainStatusList
         {
             get { return this._domainStatusList; }

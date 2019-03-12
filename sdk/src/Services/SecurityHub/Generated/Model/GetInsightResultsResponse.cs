@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// The insight results returned by the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InsightResults InsightResults
         {
             get { return this._insightResults; }

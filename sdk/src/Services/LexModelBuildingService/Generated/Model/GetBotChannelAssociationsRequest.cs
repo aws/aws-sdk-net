@@ -52,6 +52,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// is being made.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BotAlias
         {
             get { return this._botAlias; }
@@ -70,6 +71,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the Amazon Lex bot in the association.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -88,6 +90,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The maximum number of associations to return in the response. The default is 50. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -109,6 +112,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NameContains
         {
             get { return this._nameContains; }

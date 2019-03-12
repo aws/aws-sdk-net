@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The time at which resource group is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.Inspector.Model
         /// in the <a>CreateResourceGroup</a> action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ResourceGroupTag> Tags
         {
             get { return this._tags; }

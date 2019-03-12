@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         /// AWS account ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -84,6 +85,7 @@ namespace Amazon.Glue.Model
         /// The name of the connection definition to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

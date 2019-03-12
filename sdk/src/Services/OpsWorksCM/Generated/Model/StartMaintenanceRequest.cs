@@ -72,6 +72,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server on which to run maintenance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

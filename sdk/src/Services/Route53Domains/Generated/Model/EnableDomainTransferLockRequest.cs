@@ -44,6 +44,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that you want to set the transfer lock for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

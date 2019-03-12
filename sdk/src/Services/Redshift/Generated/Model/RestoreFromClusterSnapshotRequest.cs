@@ -202,6 +202,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -632,6 +633,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

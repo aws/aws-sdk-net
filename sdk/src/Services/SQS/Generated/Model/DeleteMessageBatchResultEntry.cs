@@ -40,6 +40,7 @@ namespace Amazon.SQS.Model
         /// Represents a successfully deleted message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

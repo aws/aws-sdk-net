@@ -130,6 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The fully qualified host name of the managed instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ComputerName
         {
             get { return this._computerName; }
@@ -150,6 +151,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -186,6 +188,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The IP address of the managed instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=46)]
         public string IPAddress
         {
             get { return this._ipAddress; }

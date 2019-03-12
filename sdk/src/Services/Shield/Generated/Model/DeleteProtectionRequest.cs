@@ -41,6 +41,7 @@ namespace Amazon.Shield.Model
         /// The unique identifier (ID) for the <a>Protection</a> object to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string ProtectionId
         {
             get { return this._protectionId; }

@@ -150,6 +150,7 @@ namespace Amazon.EC2.Model
         /// The ID of the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

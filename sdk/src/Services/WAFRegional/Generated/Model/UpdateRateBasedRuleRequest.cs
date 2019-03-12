@@ -107,6 +107,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -128,6 +129,7 @@ namespace Amazon.WAFRegional.Model
         /// are also met, AWS WAF triggers the action that is specified for this rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2000, Max=2000000000)]
         public long RateLimit
         {
             get { return this._rateLimit.GetValueOrDefault(); }
@@ -147,6 +149,7 @@ namespace Amazon.WAFRegional.Model
         /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }
@@ -166,6 +169,7 @@ namespace Amazon.WAFRegional.Model
         /// from a <a>RateBasedRule</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RuleUpdate> Updates
         {
             get { return this._updates; }

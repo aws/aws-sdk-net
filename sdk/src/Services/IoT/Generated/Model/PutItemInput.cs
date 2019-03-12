@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The table where the message data will be written
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

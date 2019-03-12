@@ -42,6 +42,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudSearch.Model
         /// The name of the index field your want to remove from the domain's indexing options.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string IndexFieldName
         {
             get { return this._indexFieldName; }

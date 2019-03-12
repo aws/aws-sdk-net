@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the channel where the messages are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -97,6 +98,7 @@ namespace Amazon.IoTAnalytics.Model
         /// 29} or {"__temp_01": 29} are invalid in message payloads. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Message> Messages
         {
             get { return this._messages; }

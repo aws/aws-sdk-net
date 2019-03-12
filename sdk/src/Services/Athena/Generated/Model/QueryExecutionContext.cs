@@ -40,6 +40,7 @@ namespace Amazon.Athena.Model
         /// The name of the database.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Database
         {
             get { return this._database; }

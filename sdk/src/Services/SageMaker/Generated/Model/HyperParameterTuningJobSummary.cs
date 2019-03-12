@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the tuning job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string HyperParameterTuningJobArn
         {
             get { return this._hyperParameterTuningJobArn; }
@@ -103,6 +105,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HyperParameterTuningJobName
         {
             get { return this._hyperParameterTuningJobName; }
@@ -121,6 +124,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobStatus HyperParameterTuningJobStatus
         {
             get { return this._hyperParameterTuningJobStatus; }
@@ -158,6 +162,7 @@ namespace Amazon.SageMaker.Model
         /// categorized by objective metric status, that this tuning job launched.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectiveStatusCounters ObjectiveStatusCounters
         {
             get { return this._objectiveStatusCounters; }
@@ -196,6 +201,7 @@ namespace Amazon.SageMaker.Model
         /// to use for each iteration. Currently, the only valid value is Bayesian.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobStrategyType Strategy
         {
             get { return this._strategy; }
@@ -215,6 +221,7 @@ namespace Amazon.SageMaker.Model
         /// jobs, categorized by status, that this tuning job launched.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobStatusCounters TrainingJobStatusCounters
         {
             get { return this._trainingJobStatusCounters; }

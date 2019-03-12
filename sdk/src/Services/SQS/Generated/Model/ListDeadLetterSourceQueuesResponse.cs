@@ -41,6 +41,7 @@ namespace Amazon.SQS.Model
         /// configured with a dead-letter queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> QueueUrls
         {
             get { return this._queueUrls; }

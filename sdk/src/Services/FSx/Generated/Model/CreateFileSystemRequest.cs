@@ -90,6 +90,7 @@ namespace Amazon.FSx.Model
         /// Command Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -108,6 +109,7 @@ namespace Amazon.FSx.Model
         /// The type of file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FileSystemType FileSystemType
         {
             get { return this._fileSystemType; }
@@ -123,6 +125,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId.
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -158,6 +161,7 @@ namespace Amazon.FSx.Model
         /// This list isn't returned in later describe requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -186,6 +190,7 @@ namespace Amazon.FSx.Model
         /// capacity is provisioned in increments of 3,600 GiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int StorageCapacity
         {
             get { return this._storageCapacity.GetValueOrDefault(); }
@@ -206,6 +211,7 @@ namespace Amazon.FSx.Model
         /// Zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -225,6 +231,7 @@ namespace Amazon.FSx.Model
         /// the <code>Name</code> tag appears in the console as the file system name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

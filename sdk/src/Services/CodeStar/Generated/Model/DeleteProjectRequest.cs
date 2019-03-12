@@ -45,6 +45,7 @@ namespace Amazon.CodeStar.Model
         /// deletion. This token can be used to repeat the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -84,6 +85,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project to be deleted in AWS CodeStar.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }

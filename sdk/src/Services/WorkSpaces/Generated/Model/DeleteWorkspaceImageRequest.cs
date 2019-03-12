@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImageId
         {
             get { return this._imageId; }

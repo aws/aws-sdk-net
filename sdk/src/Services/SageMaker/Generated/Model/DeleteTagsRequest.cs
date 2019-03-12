@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the resource whose tags you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -72,6 +73,7 @@ namespace Amazon.SageMaker.Model
         /// An array or one or more tag keys to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -63,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=6)]
         public int DayOfWeek
         {
             get { return this._dayOfWeek.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -97,6 +99,7 @@ namespace Amazon.StorageGateway.Model
         /// is the hour (0 to 23). The hour of the day is in the time zone of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=23)]
         public int HourOfDay
         {
             get { return this._hourOfDay.GetValueOrDefault(); }
@@ -117,6 +120,7 @@ namespace Amazon.StorageGateway.Model
         /// gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=59)]
         public int MinuteOfHour
         {
             get { return this._minuteOfHour.GetValueOrDefault(); }
@@ -136,6 +140,7 @@ namespace Amazon.StorageGateway.Model
         /// day of week specified should be in the time zone of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=10)]
         public string Timezone
         {
             get { return this._timezone; }

@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// How long (in seconds) the credentials will be valid.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=900, Max=3600)]
         public int CredentialDurationSeconds
         {
             get { return this._credentialDurationSeconds.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// having to update the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RoleAlias
         {
             get { return this._roleAlias; }
@@ -80,6 +82,7 @@ namespace Amazon.IoT.Model
         /// The role ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

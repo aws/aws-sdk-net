@@ -195,6 +195,7 @@ namespace Amazon.SecretsManager.Model
         /// This value becomes the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -213,6 +214,7 @@ namespace Amazon.SecretsManager.Model
         /// (Optional) Specifies a user-provided description of the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -255,6 +257,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -285,6 +288,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Name
         {
             get { return this._name; }
@@ -316,6 +320,7 @@ namespace Amazon.SecretsManager.Model
         /// only by using the AWS CLI or one of the AWS SDKs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7168)]
         public MemoryStream SecretBinary
         {
             get { return this._secretBinary; }
@@ -364,6 +369,7 @@ namespace Amazon.SecretsManager.Model
         /// JSON text. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7168)]
         public string SecretString
         {
             get { return this._secretString; }

@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         ///  The user-supplied instance identifier. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }

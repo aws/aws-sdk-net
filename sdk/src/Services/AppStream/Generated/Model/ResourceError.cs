@@ -60,6 +60,7 @@ namespace Amazon.AppStream.Model
         /// The error message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

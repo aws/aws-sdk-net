@@ -66,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// can only specify one resource ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> ResourceIds
         {
             get { return this._resourceIds; }
@@ -122,6 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// supported resource type is <code>ManagedInstance</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }

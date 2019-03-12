@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         /// (systemclock): Use the UTC time.-Start at 0 (zerobased): The time of the first frame
         /// of the event will be 00:00:00:00.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimecodeConfigSource Source
         {
             get { return this._source; }
@@ -61,6 +62,7 @@ namespace Amazon.MediaLive.Model
         /// are permitted to avoid unnecessary discontinuities in the output timecode. No timecode
         /// sync when this is not specified.
         /// </summary>
+        [AWSProperty(Min=1, Max=1000000)]
         public int SyncThreshold
         {
             get { return this._syncThreshold.GetValueOrDefault(); }

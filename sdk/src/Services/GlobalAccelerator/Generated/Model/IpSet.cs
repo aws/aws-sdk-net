@@ -42,6 +42,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// of two IP addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2)]
         public List<string> IpAddresses
         {
             get { return this._ipAddresses; }
@@ -60,6 +61,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The types of IP addresses included in this IP set.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string IpFamily
         {
             get { return this._ipFamily; }

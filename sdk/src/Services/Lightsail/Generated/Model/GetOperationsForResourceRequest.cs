@@ -61,6 +61,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the resource for which you are requesting information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

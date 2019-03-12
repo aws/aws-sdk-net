@@ -51,6 +51,7 @@ namespace Amazon.CloudFormation.Model
         /// that are importing this value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportName
         {
             get { return this._exportName; }
@@ -70,6 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// next page of stacks that are importing the specified exported output value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

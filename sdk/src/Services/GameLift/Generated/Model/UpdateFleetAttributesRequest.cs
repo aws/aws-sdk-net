@@ -139,6 +139,7 @@ namespace Amazon.GameLift.Model
         /// Human-readable description of a fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -157,6 +158,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to update attribute metadata for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -178,6 +180,7 @@ namespace Amazon.GameLift.Model
         /// fleet can only be included in one metric group at a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1)]
         public List<string> MetricGroups
         {
             get { return this._metricGroups; }
@@ -196,6 +199,7 @@ namespace Amazon.GameLift.Model
         /// Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

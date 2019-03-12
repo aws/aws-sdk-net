@@ -49,6 +49,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment target that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTargetArn
         {
             get { return this._assessmentTargetArn; }
@@ -67,6 +68,7 @@ namespace Amazon.Inspector.Model
         /// The name of the assessment target that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string AssessmentTargetName
         {
             get { return this._assessmentTargetName; }
@@ -86,6 +88,7 @@ namespace Amazon.Inspector.Model
         /// with the assessment target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string ResourceGroupArn
         {
             get { return this._resourceGroupArn; }

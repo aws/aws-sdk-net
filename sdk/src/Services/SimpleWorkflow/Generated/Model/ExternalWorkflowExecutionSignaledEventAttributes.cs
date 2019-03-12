@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long InitiatedEventId
         {
             get { return this._initiatedEventId.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The external workflow execution that the signal was delivered to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution WorkflowExecution
         {
             get { return this._workflowExecution; }

@@ -43,6 +43,7 @@ namespace Amazon.Textract.Model
         /// permissions to the Amazon SNS topic. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -61,6 +62,7 @@ namespace Amazon.Textract.Model
         /// The Amazon SNS topic that Amazon Textract posts the completion status to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1024)]
         public string SNSTopicArn
         {
             get { return this._snsTopicArn; }

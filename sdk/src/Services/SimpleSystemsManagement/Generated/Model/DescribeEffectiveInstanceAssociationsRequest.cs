@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance ID for which you want to view all associations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.WAF.Model
         /// in a <a>GetGeoMatchSet</a> request to get detailed information about an <a>GeoMatchSet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GeoMatchSetId
         {
             get { return this._geoMatchSetId; }
@@ -61,6 +62,7 @@ namespace Amazon.WAF.Model
         /// of an <code>GeoMatchSet</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

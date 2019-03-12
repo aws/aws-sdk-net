@@ -42,6 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// The current name of the application you want to change.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// The new name to give the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NewApplicationName
         {
             get { return this._newApplicationName; }

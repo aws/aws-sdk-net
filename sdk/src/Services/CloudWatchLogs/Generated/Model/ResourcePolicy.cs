@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// after Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long LastUpdatedTime
         {
             get { return this._lastUpdatedTime.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The details of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5120)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public List<RecordColumn> RecordColumnUpdates
         {
             get { return this._recordColumnUpdates; }

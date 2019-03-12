@@ -43,6 +43,7 @@ namespace Amazon.Cloud9.Model
         /// Any new or replacement description for the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -61,6 +62,7 @@ namespace Amazon.Cloud9.Model
         /// The ID of the environment to change settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }
@@ -79,6 +81,7 @@ namespace Amazon.Cloud9.Model
         /// A replacement name for the environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public string Name
         {
             get { return this._name; }

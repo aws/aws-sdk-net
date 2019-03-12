@@ -60,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The description of the address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -78,6 +79,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

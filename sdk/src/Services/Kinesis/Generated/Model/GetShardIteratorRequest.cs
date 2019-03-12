@@ -95,6 +95,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the Kinesis Data Streams shard to get the iterator for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardId
         {
             get { return this._shardId; }
@@ -143,6 +144,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ShardIteratorType ShardIteratorType
         {
             get { return this._shardIteratorType; }
@@ -180,6 +182,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the Amazon Kinesis data stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

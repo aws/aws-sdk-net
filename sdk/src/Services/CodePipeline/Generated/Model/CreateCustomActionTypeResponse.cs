@@ -40,6 +40,7 @@ namespace Amazon.CodePipeline.Model
         /// Returns information about the details of an action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionType ActionType
         {
             get { return this._actionType; }

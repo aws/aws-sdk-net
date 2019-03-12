@@ -85,6 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  Detailed information about the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -103,6 +104,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Description of the error that may assist in diagnostics.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Reason
         {
             get { return this._reason; }
@@ -128,6 +130,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

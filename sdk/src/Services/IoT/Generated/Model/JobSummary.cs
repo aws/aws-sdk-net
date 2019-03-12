@@ -101,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier you assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -177,6 +178,7 @@ namespace Amazon.IoT.Model
         /// The ID of the thing group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupId
         {
             get { return this._thingGroupId; }

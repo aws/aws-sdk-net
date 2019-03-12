@@ -55,6 +55,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -74,6 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Provisioning Artifact ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<ServiceActionAssociation> ServiceActionAssociations
         {
             get { return this._serviceActionAssociations; }

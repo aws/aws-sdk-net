@@ -118,6 +118,7 @@ namespace Amazon.ElastiCache.Model
         /// to 5 node groups in any rolling 24-hour period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public string NodeGroupId
         {
             get { return this._nodeGroupId; }
@@ -137,6 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// tested by this operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }

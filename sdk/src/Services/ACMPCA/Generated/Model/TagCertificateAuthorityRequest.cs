@@ -55,6 +55,7 @@ namespace Amazon.ACMPCA.Model
         /// </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -73,6 +74,7 @@ namespace Amazon.ACMPCA.Model
         /// List of tags to be associated with the CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

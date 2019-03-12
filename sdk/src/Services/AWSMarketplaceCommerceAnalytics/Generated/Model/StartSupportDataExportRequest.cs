@@ -54,6 +54,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// will be returned, unmodified, in the Amazon SNS notification message and the data
         /// set metadata file.
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public Dictionary<string, string> CustomerDefinedValues
         {
             get { return this._customerDefinedValues; }
@@ -85,6 +86,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// </ul> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public SupportDataSetType DataSetType
         {
             get { return this._dataSetType; }
@@ -101,6 +103,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property DestinationS3BucketName. The name (friendly name, not ARN)
         /// of the destination S3 bucket.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string DestinationS3BucketName
         {
             get { return this._destinations3BucketName; }
@@ -138,6 +141,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// set in UTC. This parameter only affects the customer_support_contacts_data data set
         /// type.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime FromDate
         {
             get { return this._fromDate.GetValueOrDefault(); }
@@ -154,6 +158,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property RoleNameArn. The Amazon Resource Name (ARN) of the Role
         /// with an attached permissions policy to interact with the provided AWS services.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string RoleNameArn
         {
             get { return this._roleNameArn; }
@@ -170,6 +175,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property SnsTopicArn. Amazon Resource Name (ARN) for the SNS Topic
         /// that will be notified when the data set has been published or if an error has occurred.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

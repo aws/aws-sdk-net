@@ -207,6 +207,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Rule
         {
             get { return this._rule; }
@@ -225,6 +226,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The targets to update or add to the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<Target> Targets
         {
             get { return this._targets; }

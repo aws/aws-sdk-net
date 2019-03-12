@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// Name of the job definition to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// Specifies the values with which to update the job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobUpdate JobUpdate
         {
             get { return this._jobUpdate; }

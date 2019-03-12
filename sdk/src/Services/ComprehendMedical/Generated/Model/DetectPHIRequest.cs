@@ -43,6 +43,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Each string must contain fewer than 20,000 bytes of characters. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20000)]
         public string Text
         {
             get { return this._text; }

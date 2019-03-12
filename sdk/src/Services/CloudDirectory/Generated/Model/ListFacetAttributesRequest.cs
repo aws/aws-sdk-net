@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the facet whose attributes will be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -98,6 +100,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the schema where the facet resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

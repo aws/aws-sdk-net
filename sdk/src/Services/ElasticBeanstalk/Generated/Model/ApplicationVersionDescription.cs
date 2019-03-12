@@ -54,6 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application to which the application version belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -144,6 +145,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The description of the application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -246,6 +248,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A unique identifier for the application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string VersionLabel
         {
             get { return this._versionLabel; }

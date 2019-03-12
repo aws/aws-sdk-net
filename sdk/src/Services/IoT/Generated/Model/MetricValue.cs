@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// that numeric value to be compared with the <code>metric</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long Count
         {
             get { return this._count.GetValueOrDefault(); }

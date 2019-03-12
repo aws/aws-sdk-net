@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the contact to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContactArn
         {
             get { return this._contactArn; }

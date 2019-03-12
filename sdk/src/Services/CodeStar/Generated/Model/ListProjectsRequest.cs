@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// The maximum amount of data that can be contained in a single set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CodeStar.Model
         /// cannot be returned in one response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }

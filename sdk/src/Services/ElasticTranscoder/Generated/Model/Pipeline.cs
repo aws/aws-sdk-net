@@ -76,6 +76,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string AwsKmsKeyArn
         {
             get { return this._awsKmsKeyArn; }
@@ -224,6 +225,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Constraints: Maximum 40 characters
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string Name
         {
             get { return this._name; }

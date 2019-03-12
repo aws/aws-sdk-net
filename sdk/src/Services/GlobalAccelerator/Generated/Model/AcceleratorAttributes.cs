@@ -68,6 +68,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Global Accelerator permission to write to the bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string FlowLogsS3Bucket
         {
             get { return this._flowLogsS3Bucket; }
@@ -88,6 +89,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// a prefix, the flow logs are stored in the root of the bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string FlowLogsS3Prefix
         {
             get { return this._flowLogsS3Prefix; }

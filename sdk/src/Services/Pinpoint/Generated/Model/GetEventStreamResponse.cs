@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EventStream.
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventStream EventStream
         {
             get { return this._eventStream; }

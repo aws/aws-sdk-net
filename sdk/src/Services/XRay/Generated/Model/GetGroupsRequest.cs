@@ -41,6 +41,7 @@ namespace Amazon.XRay.Model
         /// Pagination token. Not used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string NextToken
         {
             get { return this._nextToken; }

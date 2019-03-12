@@ -51,6 +51,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Amazon Kinesis Analytics application name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -72,6 +73,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -95,6 +97,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string OutputId
         {
             get { return this._outputId; }

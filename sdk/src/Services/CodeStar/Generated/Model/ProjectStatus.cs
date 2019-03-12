@@ -41,6 +41,7 @@ namespace Amazon.CodeStar.Model
         /// In the case of a project creation or deletion failure, a reason for the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Reason
         {
             get { return this._reason; }
@@ -59,6 +60,7 @@ namespace Amazon.CodeStar.Model
         /// The phase of completion for a project creation or deletion.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string State
         {
             get { return this._state; }

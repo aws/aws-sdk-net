@@ -62,6 +62,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of one or more security groups IDs in your VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }
@@ -80,6 +81,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of one or more subnet IDs in your VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16)]
         public List<string> Subnets
         {
             get { return this._subnets; }

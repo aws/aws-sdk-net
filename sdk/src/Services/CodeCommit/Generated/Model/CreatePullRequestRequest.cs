@@ -71,6 +71,7 @@ namespace Amazon.CodeCommit.Model
         /// A description of the pull request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Description
         {
             get { return this._description; }
@@ -91,6 +92,7 @@ namespace Amazon.CodeCommit.Model
         /// the code to be merged after the pull request is closed (the destination branch).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -110,6 +112,7 @@ namespace Amazon.CodeCommit.Model
         /// to other users in the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=150)]
         public string Title
         {
             get { return this._title; }

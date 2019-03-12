@@ -46,6 +46,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -65,6 +66,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Data Firehose supports one destination per delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ExclusiveStartDestinationId
         {
             get { return this._exclusiveStartDestinationId; }
@@ -84,6 +86,7 @@ namespace Amazon.KinesisFirehose.Model
         /// delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

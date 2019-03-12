@@ -45,6 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// findings and that result in a subset of findings that are included in this insight.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AwsSecurityFindingFilters Filters
         {
             get { return this._filters; }
@@ -65,6 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// findings under a single operand. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupByAttribute
         {
             get { return this._groupByAttribute; }
@@ -83,6 +85,7 @@ namespace Amazon.SecurityHub.Model
         /// The user-defined name that identifies the insight that you want to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

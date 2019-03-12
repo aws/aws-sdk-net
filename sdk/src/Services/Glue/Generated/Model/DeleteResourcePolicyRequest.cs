@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The hash value returned when this policy was set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PolicyHashCondition
         {
             get { return this._policyHashCondition; }

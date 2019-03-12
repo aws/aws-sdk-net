@@ -142,6 +142,7 @@ namespace Amazon.SageMaker.Model
         /// If the training job failed, the reason it failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -161,6 +162,7 @@ namespace Amazon.SageMaker.Model
         /// if the training job was configured to use metrics.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<MetricData> FinalMetricDataList
         {
             get { return this._finalMetricDataList; }
@@ -179,6 +181,7 @@ namespace Amazon.SageMaker.Model
         /// Algorithm-specific parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
         {
             get { return this._hyperParameters; }
@@ -197,6 +200,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Channel</code> objects that describes each data input channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8)]
         public List<Channel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -215,6 +219,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }
@@ -307,6 +312,7 @@ namespace Amazon.SageMaker.Model
         /// The AWS Identity and Access Management (IAM) role configured for the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -450,6 +456,7 @@ namespace Amazon.SageMaker.Model
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -490,6 +497,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }
@@ -508,6 +516,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }
@@ -597,6 +606,7 @@ namespace Amazon.SageMaker.Model
         /// training job was launched by a hyperparameter tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string TuningJobArn
         {
             get { return this._tuningJobArn; }

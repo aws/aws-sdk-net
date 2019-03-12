@@ -73,6 +73,7 @@ namespace Amazon.EC2.Model
         /// The number of Reserved Instances to purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -110,6 +111,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Reserved Instance offering to purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedInstancesOfferingId
         {
             get { return this._reservedInstancesOfferingId; }

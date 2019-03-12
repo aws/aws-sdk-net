@@ -97,6 +97,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository associated with the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

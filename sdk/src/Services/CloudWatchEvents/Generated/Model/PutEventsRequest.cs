@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// the event, and so on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<PutEventsRequestEntry> Entries
         {
             get { return this._entries; }

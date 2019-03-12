@@ -59,6 +59,7 @@ namespace Amazon.AppMesh.Model
         /// The port mapping information for the listener.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortMapping PortMapping
         {
             get { return this._portMapping; }

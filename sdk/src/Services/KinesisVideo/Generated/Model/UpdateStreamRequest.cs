@@ -61,6 +61,7 @@ namespace Amazon.KinesisVideo.Model
         /// The version of the stream whose metadata you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CurrentVersion
         {
             get { return this._currentVersion; }
@@ -84,6 +85,7 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DeviceName
         {
             get { return this._deviceName; }
@@ -111,6 +113,7 @@ namespace Amazon.KinesisVideo.Model
         /// if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MediaType
         {
             get { return this._mediaType; }
@@ -129,6 +132,7 @@ namespace Amazon.KinesisVideo.Model
         /// The ARN of the stream whose metadata you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -152,6 +156,7 @@ namespace Amazon.KinesisVideo.Model
         /// and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

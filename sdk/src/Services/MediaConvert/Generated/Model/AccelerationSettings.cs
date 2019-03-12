@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Mode. Acceleration configuration for the job.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccelerationMode Mode
         {
             get { return this._mode; }

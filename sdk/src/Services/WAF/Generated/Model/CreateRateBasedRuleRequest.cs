@@ -148,6 +148,7 @@ namespace Amazon.WAF.Model
         /// information, see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -168,6 +169,7 @@ namespace Amazon.WAF.Model
         /// contain whitespace. You can't change the name of the metric after you create the <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -187,6 +189,7 @@ namespace Amazon.WAF.Model
         /// of a <code>RateBasedRule</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -208,6 +211,7 @@ namespace Amazon.WAF.Model
         /// IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RateKey RateKey
         {
             get { return this._rateKey; }
@@ -229,6 +233,7 @@ namespace Amazon.WAF.Model
         /// in the rule are also met, AWS WAF triggers the action that is specified for this rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2000, Max=2000000000)]
         public long RateLimit
         {
             get { return this._rateLimit.GetValueOrDefault(); }

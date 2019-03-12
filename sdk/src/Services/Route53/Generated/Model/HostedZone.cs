@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model
         /// The ID that Amazon Route 53 assigned to the hosted zone when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }
@@ -88,6 +89,7 @@ namespace Amazon.Route53.Model
         /// <a>CreateHostedZone</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -107,6 +109,7 @@ namespace Amazon.Route53.Model
         /// hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string CallerReference
         {
             get { return this._callerReference; }

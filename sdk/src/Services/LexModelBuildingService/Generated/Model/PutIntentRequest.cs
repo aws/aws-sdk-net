@@ -230,6 +230,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -360,6 +361,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Built-in Intents</a> in the <i>Alexa Skills Kit</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -429,6 +431,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// In each utterance, a slot name is enclosed in curly braces. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> SampleUtterances
         {
             get { return this._sampleUtterances; }
@@ -449,6 +452,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<Slot> Slots
         {
             get { return this._slots; }

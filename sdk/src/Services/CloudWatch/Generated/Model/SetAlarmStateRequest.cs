@@ -51,6 +51,7 @@ namespace Amazon.CloudWatch.Model
         /// length is 255 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AlarmName
         {
             get { return this._alarmName; }
@@ -69,6 +70,7 @@ namespace Amazon.CloudWatch.Model
         /// The reason that this alarm is set to this specific state, in text format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1023)]
         public string StateReason
         {
             get { return this._stateReason; }
@@ -87,6 +89,7 @@ namespace Amazon.CloudWatch.Model
         /// The reason that this alarm is set to this specific state, in JSON format.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4000)]
         public string StateReasonData
         {
             get { return this._stateReasonData; }
@@ -105,6 +108,7 @@ namespace Amazon.CloudWatch.Model
         /// The value of the state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StateValue StateValue
         {
             get { return this._stateValue; }

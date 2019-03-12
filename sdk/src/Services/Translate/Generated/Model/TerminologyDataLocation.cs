@@ -41,6 +41,7 @@ namespace Amazon.Translate.Model
         /// The location of the custom terminology data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10000)]
         public string Location
         {
             get { return this._location; }
@@ -59,6 +60,7 @@ namespace Amazon.Translate.Model
         /// The repository type for the custom terminology data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10000)]
         public string RepositoryType
         {
             get { return this._repositoryType; }

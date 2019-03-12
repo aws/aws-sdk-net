@@ -58,6 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// disk IDs from the <a>ListLocalDisks</a> API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DiskIds
         {
             get { return this._diskIds; }
@@ -73,6 +74,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

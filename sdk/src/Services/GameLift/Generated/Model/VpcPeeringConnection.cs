@@ -93,6 +93,7 @@ namespace Amazon.GameLift.Model
         /// This VPC is managed by Amazon GameLift and does not appear in your AWS account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string GameLiftVpcId
         {
             get { return this._gameLiftVpcId; }
@@ -113,6 +114,7 @@ namespace Amazon.GameLift.Model
         /// overlap or the peering connection cannot be created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string IpV4CidrBlock
         {
             get { return this._ipV4CidrBlock; }
@@ -135,6 +137,7 @@ namespace Amazon.GameLift.Model
         /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PeerVpcId
         {
             get { return this._peerVpcId; }
@@ -174,6 +177,7 @@ namespace Amazon.GameLift.Model
         /// with <a>DeleteVpcPeeringConnection</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string VpcPeeringConnectionId
         {
             get { return this._vpcPeeringConnectionId; }

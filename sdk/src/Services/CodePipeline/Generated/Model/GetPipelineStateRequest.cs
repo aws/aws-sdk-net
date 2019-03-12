@@ -48,6 +48,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline about which you want to get information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

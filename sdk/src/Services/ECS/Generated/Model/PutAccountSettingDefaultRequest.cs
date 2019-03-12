@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         /// affected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SettingName Name
         {
             get { return this._name; }
@@ -67,6 +68,7 @@ namespace Amazon.ECS.Model
         /// and <code>disabled</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

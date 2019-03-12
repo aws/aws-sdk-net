@@ -70,6 +70,7 @@ namespace Amazon.Lambda.Model
         /// or <code>lambda:GetFunction</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Action
         {
             get { return this._action; }
@@ -88,6 +89,7 @@ namespace Amazon.Lambda.Model
         /// For Alexa Smart Home functions, a token that must be supplied by the invoker.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string EventSourceToken
         {
             get { return this._eventSourceToken; }
@@ -127,6 +129,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -147,6 +150,7 @@ namespace Amazon.Lambda.Model
         /// through that service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Principal
         {
             get { return this._principal; }
@@ -165,6 +169,7 @@ namespace Amazon.Lambda.Model
         /// Specify a version or alias to add permissions to a published version of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Qualifier
         {
             get { return this._qualifier; }
@@ -244,6 +249,7 @@ namespace Amazon.Lambda.Model
         /// A statement identifier that differentiates the statement from others in the same policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string StatementId
         {
             get { return this._statementId; }

@@ -203,6 +203,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string EventId
         {
             get { return this._eventId; }
@@ -240,6 +241,7 @@ namespace Amazon.GameLift.Model
         /// Additional information related to the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Message
         {
             get { return this._message; }
@@ -260,6 +262,7 @@ namespace Amazon.GameLift.Model
         /// fleet creation logs through the Amazon GameLift console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PreSignedLogUrl
         {
             get { return this._preSignedLogUrl; }
@@ -278,6 +281,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for an event resource, such as a fleet ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ResourceId
         {
             get { return this._resourceId; }

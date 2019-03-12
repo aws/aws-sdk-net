@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// At present, <a>Stage</a> is the only taggable resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -63,6 +64,7 @@ namespace Amazon.APIGateway.Model
         /// The tag value can be up to 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

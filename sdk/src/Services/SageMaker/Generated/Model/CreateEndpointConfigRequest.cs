@@ -70,6 +70,7 @@ namespace Amazon.SageMaker.Model
         /// request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointConfigName
         {
             get { return this._endpointConfigName; }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// hosts the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -109,6 +111,7 @@ namespace Amazon.SageMaker.Model
         /// to host at this endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<ProductionVariant> ProductionVariants
         {
             get { return this._productionVariants; }
@@ -129,6 +132,7 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

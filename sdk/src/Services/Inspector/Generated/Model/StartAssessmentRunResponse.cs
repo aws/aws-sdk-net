@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment run that has been started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }

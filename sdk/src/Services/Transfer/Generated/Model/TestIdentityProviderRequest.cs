@@ -48,6 +48,7 @@ namespace Amazon.Transfer.Model
         /// method is tested with a user name and password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -66,6 +67,7 @@ namespace Amazon.Transfer.Model
         /// This request parameter is name of the user account to be tested.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

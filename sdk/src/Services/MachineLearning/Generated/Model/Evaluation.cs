@@ -112,6 +112,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string EvaluationDataSourceId
         {
             get { return this._evaluationDataSourceId; }
@@ -130,6 +131,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID that is assigned to the <code>Evaluation</code> at creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }
@@ -164,6 +166,7 @@ namespace Amazon.MachineLearning.Model
         /// is used in the evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string InputDataLocationS3
         {
             get { return this._inputDataLocationS3; }
@@ -201,6 +204,7 @@ namespace Amazon.MachineLearning.Model
         /// A description of the most recent details about evaluating the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Message
         {
             get { return this._message; }
@@ -219,6 +223,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the <code>MLModel</code> that is the focus of the evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -237,6 +242,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>Evaluation</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }

@@ -63,6 +63,7 @@ namespace Amazon.CloudSearch.Model
         /// Gets and sets the property DefaultValue. A value to use for the field if the field
         /// isn't specified for a document.
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string DefaultValue
         {
             get { return this._defaultValue; }
@@ -132,6 +133,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property SourceField.
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SourceField
         {
             get { return this._sourceField; }

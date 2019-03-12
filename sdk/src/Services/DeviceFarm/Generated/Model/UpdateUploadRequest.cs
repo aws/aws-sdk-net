@@ -44,6 +44,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the uploaded test spec.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -62,6 +63,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's content type (for example, "application/x-yaml").
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -101,6 +103,7 @@ namespace Amazon.DeviceFarm.Model
         /// extension.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

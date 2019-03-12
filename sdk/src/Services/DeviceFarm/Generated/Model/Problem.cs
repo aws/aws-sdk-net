@@ -82,6 +82,7 @@ namespace Amazon.DeviceFarm.Model
         /// A message about the problem's result.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Message
         {
             get { return this._message; }

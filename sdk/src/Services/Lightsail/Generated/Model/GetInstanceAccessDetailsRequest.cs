@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance to access.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }

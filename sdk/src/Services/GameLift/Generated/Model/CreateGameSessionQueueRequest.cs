@@ -116,6 +116,7 @@ namespace Amazon.GameLift.Model
         /// unique within each region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -162,6 +163,7 @@ namespace Amazon.GameLift.Model
         /// status.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TimeoutInSeconds
         {
             get { return this._timeoutInSeconds.GetValueOrDefault(); }

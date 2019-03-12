@@ -63,6 +63,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the HIT to extend.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -81,6 +82,7 @@ namespace Amazon.MTurk.Model
         /// The number of additional assignments to request for this HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumberOfAdditionalAssignments
         {
             get { return this._numberOfAdditionalAssignments.GetValueOrDefault(); }
@@ -103,6 +105,7 @@ namespace Amazon.MTurk.Model
         /// subsequent calls will return an error with a message containing the request ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UniqueRequestToken
         {
             get { return this._uniqueRequestToken; }

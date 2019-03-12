@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data store where processed messages are stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatastoreName
         {
             get { return this._datastoreName; }
@@ -59,6 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'datastore' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

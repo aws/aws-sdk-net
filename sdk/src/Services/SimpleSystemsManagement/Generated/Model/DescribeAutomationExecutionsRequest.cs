@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Filters used to limit the scope of executions that are requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<AutomationExecutionFilter> Filters
         {
             get { return this._filters; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

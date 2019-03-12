@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// An unique identifier for the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string JobFlowId
         {
             get { return this._jobFlowId; }

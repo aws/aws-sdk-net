@@ -59,6 +59,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property ResourceId. The resource ID to include in key requests.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -75,6 +76,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property RoleArn. An Amazon Resource Name (ARN) of an IAM role that
         /// AWS ElementalMediaPackage will assume when accessing the key provider service.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -90,6 +92,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property SystemIds. The system IDs to include in key requests.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SystemIds
         {
             get { return this._systemIds; }
@@ -105,6 +108,7 @@ namespace Amazon.MediaPackage.Model
         /// <summary>
         /// Gets and sets the property Url. The URL of the external key provider service.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Url
         {
             get { return this._url; }

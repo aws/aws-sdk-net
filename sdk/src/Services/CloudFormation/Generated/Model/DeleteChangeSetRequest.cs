@@ -49,6 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or Amazon Resource Name (ARN) of the change set that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -68,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// (ARN) that is associated with it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StackName
         {
             get { return this._stackName; }

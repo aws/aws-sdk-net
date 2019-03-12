@@ -43,6 +43,7 @@ namespace Amazon.Budgets.Model
         /// The <code>accountId</code> that is associated with the budget.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -61,6 +62,7 @@ namespace Amazon.Budgets.Model
         /// The budget object that you want to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Budget Budget
         {
             get { return this._budget; }
@@ -82,6 +84,7 @@ namespace Amazon.Budgets.Model
         /// call, AWS creates the notifications and subscribers for you.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<NotificationWithSubscribers> NotificationsWithSubscribers
         {
             get { return this._notificationsWithSubscribers; }

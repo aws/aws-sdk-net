@@ -55,6 +55,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int NewGameSessionsPerCreator
         {
             get { return this._newGameSessionsPerCreator.GetValueOrDefault(); }
@@ -73,6 +74,7 @@ namespace Amazon.GameLift.Model
         /// Time span used in evaluating the resource creation limit policy. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PolicyPeriodInMinutes
         {
             get { return this._policyPeriodInMinutes.GetValueOrDefault(); }

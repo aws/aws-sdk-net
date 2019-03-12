@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SessionFilterKey Key
         {
             get { return this._key; }
@@ -107,6 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Value
         {
             get { return this._value; }

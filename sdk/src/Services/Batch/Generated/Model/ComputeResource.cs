@@ -135,6 +135,7 @@ namespace Amazon.Batch.Model
         /// ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceRole
         {
             get { return this._instanceRole; }
@@ -157,6 +158,7 @@ namespace Amazon.Batch.Model
         /// M, and R instance families) on the fly that match the demand of your job queues.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceTypes
         {
             get { return this._instanceTypes; }
@@ -196,6 +198,7 @@ namespace Amazon.Batch.Model
         /// The maximum number of EC2 vCPUs that an environment can reach. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxvCpus
         {
             get { return this._maxvCpus.GetValueOrDefault(); }
@@ -215,6 +218,7 @@ namespace Amazon.Batch.Model
         /// environment is <code>DISABLED</code>). 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinvCpus
         {
             get { return this._minvCpus.GetValueOrDefault(); }
@@ -294,6 +298,7 @@ namespace Amazon.Batch.Model
         /// The VPC subnets into which the compute resources are launched. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subnets
         {
             get { return this._subnets; }
@@ -331,6 +336,7 @@ namespace Amazon.Batch.Model
         /// The type of compute environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CRType Type
         {
             get { return this._type; }

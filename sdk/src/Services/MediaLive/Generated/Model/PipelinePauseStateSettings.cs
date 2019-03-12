@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property PipelineId. Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
         /// </summary>
+        [AWSProperty(Required=true)]
         public PipelineId PipelineId
         {
             get { return this._pipelineId; }

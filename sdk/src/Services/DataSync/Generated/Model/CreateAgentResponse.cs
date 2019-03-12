@@ -41,6 +41,7 @@ namespace Amazon.DataSync.Model
         /// to return a list of agents for your account and AWS Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AgentArn
         {
             get { return this._agentArn; }

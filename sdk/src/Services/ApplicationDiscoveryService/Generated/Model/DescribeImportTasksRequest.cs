@@ -64,6 +64,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The maximum number of results that you want this request to return, up to 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

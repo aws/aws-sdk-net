@@ -80,6 +80,7 @@ namespace Amazon.FSx.Model
         /// If any IDs are not found, BackupNotFound will be thrown.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> BackupIds
         {
             get { return this._backupIds; }
@@ -98,6 +99,7 @@ namespace Amazon.FSx.Model
         /// (Optional) Filters structure. Supported names are file-system-id and backup-type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -119,6 +121,7 @@ namespace Amazon.FSx.Model
         /// internal maximum number of items per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -139,6 +142,7 @@ namespace Amazon.FSx.Model
         /// returning call left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

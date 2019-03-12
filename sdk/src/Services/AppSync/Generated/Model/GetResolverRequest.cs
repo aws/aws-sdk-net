@@ -43,6 +43,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -61,6 +62,7 @@ namespace Amazon.AppSync.Model
         /// The resolver field name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FieldName
         {
             get { return this._fieldName; }
@@ -79,6 +81,7 @@ namespace Amazon.AppSync.Model
         /// The resolver type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypeName
         {
             get { return this._typeName; }

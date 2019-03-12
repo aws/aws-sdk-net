@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         /// they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupVaultName
         {
             get { return this._backupVaultName; }
@@ -159,6 +160,7 @@ namespace Amazon.Backup.Model
         /// The maximum number of items to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// Key-value pairs that define the properties of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Field> Fields
         {
             get { return this._fields; }
@@ -62,6 +63,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Id
         {
             get { return this._id; }
@@ -80,6 +82,7 @@ namespace Amazon.DataPipeline.Model
         /// The name of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

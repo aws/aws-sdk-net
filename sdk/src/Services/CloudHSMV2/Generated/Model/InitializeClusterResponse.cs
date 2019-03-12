@@ -59,6 +59,7 @@ namespace Amazon.CloudHSMV2.Model
         /// A description of the cluster's state.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=300)]
         public string StateMessage
         {
             get { return this._stateMessage; }

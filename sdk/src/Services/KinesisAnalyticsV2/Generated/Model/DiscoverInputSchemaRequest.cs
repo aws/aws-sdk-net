@@ -94,6 +94,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Amazon Resource Name (ARN) of the streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -130,6 +131,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the role that is used to access the streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ServiceExecutionRole
         {
             get { return this._serviceExecutionRole; }

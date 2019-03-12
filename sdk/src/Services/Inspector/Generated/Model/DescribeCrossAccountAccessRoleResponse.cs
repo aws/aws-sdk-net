@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The date when the cross-account access role was registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime RegisteredAt
         {
             get { return this._registeredAt.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.Inspector.Model
         /// account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -80,6 +82,7 @@ namespace Amazon.Inspector.Model
         /// to enable Amazon Inspector to access your AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Valid
         {
             get { return this._valid.GetValueOrDefault(); }

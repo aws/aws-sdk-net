@@ -82,6 +82,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }

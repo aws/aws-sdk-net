@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of fleet details meeting the request criteria.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public List<Fleet> FleetDetails
         {
             get { return this._fleetDetails; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// when there are no more results to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -66,6 +66,7 @@ namespace Amazon.CodeCommit.Model
         /// examples that was created off of the root directory (/) of a repository. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FolderPath
         {
             get { return this._folderPath; }
@@ -84,6 +85,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

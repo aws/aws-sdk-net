@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -62,6 +63,7 @@ namespace Amazon.WAFRegional.Model
         /// to add to a <code>Rule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Predicate Predicate
         {
             get { return this._predicate; }

@@ -52,6 +52,7 @@ namespace Amazon.ECR.Model
         /// authorization tokens. If you do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> RegistryIds
         {
             get { return this._registryIds; }

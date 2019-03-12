@@ -78,6 +78,7 @@ namespace Amazon.EC2.Model
         /// subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -114,6 +115,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayId
         {
             get { return this._transitGatewayId; }
@@ -132,6 +134,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

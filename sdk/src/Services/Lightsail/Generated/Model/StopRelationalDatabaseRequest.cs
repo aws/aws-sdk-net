@@ -50,6 +50,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

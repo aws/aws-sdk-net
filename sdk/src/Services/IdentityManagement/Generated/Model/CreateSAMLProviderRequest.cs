@@ -77,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -104,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1000, Max=10000000)]
         public string SAMLMetadataDocument
         {
             get { return this._samlMetadataDocument; }

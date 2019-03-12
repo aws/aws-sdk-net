@@ -48,6 +48,7 @@ namespace Amazon.CognitoSync.Model
         /// The Cognito Identity Pool ID for the request
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

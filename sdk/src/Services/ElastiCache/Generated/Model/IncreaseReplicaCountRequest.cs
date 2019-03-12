@@ -48,6 +48,7 @@ namespace Amazon.ElastiCache.Model
         /// the number of replica nodes is increased during the next maintenance window.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ApplyImmediately
         {
             get { return this._applyImmediately.GetValueOrDefault(); }
@@ -107,6 +108,7 @@ namespace Amazon.ElastiCache.Model
         /// The id of the replication group to which you want to add replica nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }

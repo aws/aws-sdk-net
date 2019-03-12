@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>IAM User Guide</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -70,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
         /// The policy that grants an entity permission to assume the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string AssumeRolePolicyDocument
         {
             get { return this._assumeRolePolicyDocument; }
@@ -89,6 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the role was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateDate
         {
             get { return this._createDate.GetValueOrDefault(); }
@@ -107,6 +110,7 @@ namespace Amazon.IdentityManagement.Model
         /// A description of the role that you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -127,6 +131,7 @@ namespace Amazon.IdentityManagement.Model
         /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3600, Max=43200)]
         public int MaxSessionDuration
         {
             get { return this._maxSessionDuration.GetValueOrDefault(); }
@@ -146,6 +151,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -189,6 +195,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string RoleId
         {
             get { return this._roleId; }
@@ -207,6 +214,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name that identifies the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -227,6 +235,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM Identities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

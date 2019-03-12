@@ -81,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// At present, <a>Stage</a> is the only taggable resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -59,6 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// The resource identifier, in the form of a directory ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ResourceId
         {
             get { return this._resourceId; }

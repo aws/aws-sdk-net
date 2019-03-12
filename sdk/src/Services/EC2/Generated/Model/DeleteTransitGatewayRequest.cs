@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayId
         {
             get { return this._transitGatewayId; }

@@ -44,6 +44,7 @@ namespace Amazon.Route53Resolver.Model
         /// The new settings for the resolver rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResolverRuleConfig Config
         {
             get { return this._config; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver rule that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverRuleId
         {
             get { return this._resolverRuleId; }

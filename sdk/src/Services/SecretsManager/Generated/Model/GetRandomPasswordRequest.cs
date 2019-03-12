@@ -66,6 +66,7 @@ namespace Amazon.SecretsManager.Model
         /// The default is that all characters from the included sets can be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string ExcludeCharacters
         {
             get { return this._excludeCharacters; }
@@ -192,6 +193,7 @@ namespace Amazon.SecretsManager.Model
         /// this parameter is 32 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public long PasswordLength
         {
             get { return this._passwordLength.GetValueOrDefault(); }

@@ -81,6 +81,7 @@ namespace Amazon.FMS.Model
         /// considered non-compliant if it is not associated with the specified policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ViolatorCount
         {
             get { return this._violatorCount.GetValueOrDefault(); }

@@ -108,6 +108,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Dimensions
         {
             get { return this._dimensions; }
@@ -151,6 +152,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Group
         {
             get { return this._group; }
@@ -169,6 +171,7 @@ namespace Amazon.PI.Model
         /// The maximum number of items to fetch for this dimension group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

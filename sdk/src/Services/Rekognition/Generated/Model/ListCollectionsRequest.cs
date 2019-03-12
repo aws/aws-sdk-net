@@ -54,6 +54,7 @@ namespace Amazon.Rekognition.Model
         /// Maximum number of collection IDs to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.Rekognition.Model
         /// Pagination token from the previous response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

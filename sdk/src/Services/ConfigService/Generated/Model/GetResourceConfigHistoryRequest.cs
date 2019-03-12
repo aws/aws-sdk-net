@@ -125,6 +125,7 @@ namespace Amazon.ConfigService.Model
         /// default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -162,6 +163,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the resource (for example., <code>sg-xxxxxx</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -180,6 +182,7 @@ namespace Amazon.ConfigService.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType ResourceType
         {
             get { return this._resourceType; }

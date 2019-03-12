@@ -41,6 +41,7 @@ namespace Amazon.AppStream.Model
         /// The identifier of the streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string SessionId
         {
             get { return this._sessionId; }

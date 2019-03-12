@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The assessment run state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssessmentRunState State
         {
             get { return this._state; }
@@ -59,6 +60,7 @@ namespace Amazon.Inspector.Model
         /// The last time the assessment run state changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StateChangedAt
         {
             get { return this._stateChangedAt.GetValueOrDefault(); }

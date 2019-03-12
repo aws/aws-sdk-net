@@ -57,6 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// existing tag value will be updated to the new value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -75,6 +76,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The value of the tag. Tag values are case-sensitive and can be null.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -68,6 +68,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// </para>
         ///  <ul> <li>application/json</li> <li>application/xml</li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContentType ContentType
         {
             get { return this._contentType; }
@@ -86,6 +87,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// A batch of documents formatted in JSON or HTML.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Stream Documents
         {
             get { return this._documents; }

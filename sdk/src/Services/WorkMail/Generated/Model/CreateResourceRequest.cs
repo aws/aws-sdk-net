@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The name of the created resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string Name
         {
             get { return this._name; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier associated with the organization for which the resource is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The type of the created resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType Type
         {
             get { return this._type; }

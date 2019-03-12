@@ -66,6 +66,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system whose tag set you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -105,6 +106,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// this number is automatically set to 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

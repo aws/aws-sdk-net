@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The name of the trigger to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// The new values with which to update the trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TriggerUpdate TriggerUpdate
         {
             get { return this._triggerUpdate; }

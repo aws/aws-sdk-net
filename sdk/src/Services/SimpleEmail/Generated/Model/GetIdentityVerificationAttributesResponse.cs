@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmail.Model
         /// A map of Identities to IdentityVerificationAttributes objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, IdentityVerificationAttributes> VerificationAttributes
         {
             get { return this._verificationAttributes; }

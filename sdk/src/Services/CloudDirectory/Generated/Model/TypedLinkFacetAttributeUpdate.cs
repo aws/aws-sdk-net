@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The action to perform when updating the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UpdateActionType Action
         {
             get { return this._action; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// The attribute to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedLinkAttributeDefinition Attribute
         {
             get { return this._attribute; }

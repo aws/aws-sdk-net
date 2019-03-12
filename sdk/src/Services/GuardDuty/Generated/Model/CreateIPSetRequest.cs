@@ -45,6 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Activate. A boolean value that indicates whether GuardDuty
         /// is to start using the uploaded IPSet.
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Activate
         {
             get { return this._activate.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ClientToken. The idempotency token for the create request.
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -76,6 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector that you want
         /// to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -91,6 +94,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Format. The format of the file that contains the IPSet.
         /// </summary>
+        [AWSProperty(Required=true)]
         public IpSetFormat Format
         {
             get { return this._format; }
@@ -107,6 +111,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Location. The URI of the file that contains the IPSet.
         /// For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Location
         {
             get { return this._location; }
@@ -124,6 +129,7 @@ namespace Amazon.GuardDuty.Model
         /// name is displayed in all findings that are triggered by activity that involves IP
         /// addresses included in this IPSet.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

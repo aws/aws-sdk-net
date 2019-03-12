@@ -47,6 +47,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the preset for which you want to get detailed information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

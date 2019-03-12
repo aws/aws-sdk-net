@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The name of the column.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Column
         {
             get { return this._column; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// descending order (<code>==0</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public int SortOrder
         {
             get { return this._sortOrder.GetValueOrDefault(); }

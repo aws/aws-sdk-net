@@ -59,6 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The Amazon Resource Name (ARN) of the email source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string SourceArn
         {
             get { return this._sourceArn; }

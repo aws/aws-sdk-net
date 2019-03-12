@@ -172,6 +172,7 @@ namespace Amazon.Route53.Model
         /// change.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -190,6 +191,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains an optional comment and the <code>Changes</code> element.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeBatch ChangeBatch
         {
             get { return this._changeBatch; }

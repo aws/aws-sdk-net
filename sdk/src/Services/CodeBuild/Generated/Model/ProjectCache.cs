@@ -154,6 +154,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CacheType Type
         {
             get { return this._type; }

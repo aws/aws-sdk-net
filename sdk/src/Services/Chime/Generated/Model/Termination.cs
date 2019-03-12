@@ -82,6 +82,7 @@ namespace Amazon.Chime.Model
         /// of 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int CpsLimit
         {
             get { return this._cpsLimit.GetValueOrDefault(); }

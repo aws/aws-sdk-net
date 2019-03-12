@@ -51,6 +51,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -69,6 +70,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// A description for the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -87,6 +89,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name that you want to assign to this namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }

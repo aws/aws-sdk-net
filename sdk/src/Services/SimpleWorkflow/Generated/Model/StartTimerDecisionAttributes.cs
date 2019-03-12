@@ -74,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -96,6 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public string StartToFireTimeout
         {
             get { return this._startToFireTimeout; }
@@ -121,6 +123,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TimerId
         {
             get { return this._timerId; }

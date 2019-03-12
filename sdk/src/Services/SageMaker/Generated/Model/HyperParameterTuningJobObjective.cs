@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the metric to use for the objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// Whether to minimize or maximize the objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobObjectiveType Type
         {
             get { return this._type; }

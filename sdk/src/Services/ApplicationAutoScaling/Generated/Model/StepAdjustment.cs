@@ -133,6 +133,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// scalable dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ScalingAdjustment
         {
             get { return this._scalingAdjustment.GetValueOrDefault(); }

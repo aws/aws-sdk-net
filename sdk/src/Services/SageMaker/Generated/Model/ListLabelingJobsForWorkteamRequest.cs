@@ -85,6 +85,7 @@ namespace Amazon.SageMaker.Model
         /// string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string JobReferenceCodeContains
         {
             get { return this._jobReferenceCodeContains; }
@@ -103,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of labeling jobs to return in each page of the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -123,6 +125,7 @@ namespace Amazon.SageMaker.Model
         /// of labeling jobs, use the token in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -178,6 +181,7 @@ namespace Amazon.SageMaker.Model
         /// jobs for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

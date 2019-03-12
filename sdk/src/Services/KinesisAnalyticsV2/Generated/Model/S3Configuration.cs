@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the S3 bucket that contains the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string BucketARN
         {
             get { return this._bucketARN; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the object that contains the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string FileKey
         {
             get { return this._fileKey; }

@@ -62,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }
@@ -80,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the <a>Stage</a> resource to change information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StageName
         {
             get { return this._stageName; }

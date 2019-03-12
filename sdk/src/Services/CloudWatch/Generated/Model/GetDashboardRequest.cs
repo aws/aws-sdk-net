@@ -48,6 +48,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the dashboard to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DashboardName
         {
             get { return this._dashboardName; }

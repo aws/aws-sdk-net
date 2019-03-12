@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains information about the reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DelegationSet DelegationSet
         {
             get { return this._delegationSet; }

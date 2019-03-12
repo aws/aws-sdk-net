@@ -91,6 +91,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogsConfigStatusType Status
         {
             get { return this._status; }

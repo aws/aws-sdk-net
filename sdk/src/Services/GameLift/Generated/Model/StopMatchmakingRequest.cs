@@ -65,6 +65,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking ticket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

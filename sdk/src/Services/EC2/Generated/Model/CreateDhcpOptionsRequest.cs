@@ -106,6 +106,7 @@ namespace Amazon.EC2.Model
         /// A DHCP configuration option.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DhcpConfiguration> DhcpConfigurations
         {
             get { return this._dhcpConfigurations; }

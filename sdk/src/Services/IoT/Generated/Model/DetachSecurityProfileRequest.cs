@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The security profile that is detached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the thing group from which the security profile is detached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecurityProfileTargetArn
         {
             get { return this._securityProfileTargetArn; }

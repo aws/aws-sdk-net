@@ -87,6 +87,7 @@ namespace Amazon.KeyManagementService.Model
         /// not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -113,6 +114,7 @@ namespace Amazon.KeyManagementService.Model
         /// not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CustomKeyStoreName
         {
             get { return this._customKeyStoreName; }
@@ -133,6 +135,7 @@ namespace Amazon.KeyManagementService.Model
         /// might return fewer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -153,6 +156,7 @@ namespace Amazon.KeyManagementService.Model
         /// you just received.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Marker
         {
             get { return this._marker; }

@@ -46,6 +46,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// A unique, user-specified identifier for this request that ensures idempotency. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -64,6 +65,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The email address for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Email
         {
             get { return this._email; }
@@ -82,6 +84,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The first name for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -100,6 +103,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The last name for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public string LastName
         {
             get { return this._lastName; }
@@ -136,6 +140,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserId
         {
             get { return this._userId; }

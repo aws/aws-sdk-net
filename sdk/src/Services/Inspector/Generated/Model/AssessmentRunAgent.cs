@@ -47,6 +47,7 @@ namespace Amazon.Inspector.Model
         /// The current health state of the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AgentHealth AgentHealth
         {
             get { return this._agentHealth; }
@@ -65,6 +66,7 @@ namespace Amazon.Inspector.Model
         /// The detailed health state of the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AgentHealthCode AgentHealthCode
         {
             get { return this._agentHealthCode; }
@@ -83,6 +85,7 @@ namespace Amazon.Inspector.Model
         /// The description for the agent health code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public string AgentHealthDetails
         {
             get { return this._agentHealthDetails; }
@@ -101,6 +104,7 @@ namespace Amazon.Inspector.Model
         /// The AWS account of the EC2 instance where the agent is installed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -119,6 +123,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment run that is associated with the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }
@@ -137,6 +142,7 @@ namespace Amazon.Inspector.Model
         /// The Auto Scaling group of the EC2 instance that is specified by the agent ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AutoScalingGroup
         {
             get { return this._autoScalingGroup; }
@@ -155,6 +161,7 @@ namespace Amazon.Inspector.Model
         /// The Amazon Inspector application data metrics that are collected by the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5000)]
         public List<TelemetryMetadata> TelemetryMetadata
         {
             get { return this._telemetryMetadata; }

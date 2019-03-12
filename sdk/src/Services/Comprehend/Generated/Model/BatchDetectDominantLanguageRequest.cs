@@ -45,6 +45,7 @@ namespace Amazon.Comprehend.Model
         /// fewer than 5,000 bytes of UTF-8 encoded characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TextList
         {
             get { return this._textList; }

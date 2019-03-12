@@ -95,6 +95,7 @@ namespace Amazon.DirectConnect.Model
         /// values are 1Gbps and 10Gbps.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionsBandwidth
         {
             get { return this._connectionsBandwidth; }
@@ -113,6 +114,7 @@ namespace Amazon.DirectConnect.Model
         /// The name of the LAG.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LagName
         {
             get { return this._lagName; }
@@ -131,6 +133,7 @@ namespace Amazon.DirectConnect.Model
         /// The location for the LAG.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Location
         {
             get { return this._location; }
@@ -149,6 +152,7 @@ namespace Amazon.DirectConnect.Model
         /// The number of physical connections initially provisioned and bundled by the LAG.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumberOfConnections
         {
             get { return this._numberOfConnections.GetValueOrDefault(); }

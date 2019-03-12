@@ -94,6 +94,7 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -113,6 +114,7 @@ namespace Amazon.GameLift.Model
         /// rule set name is different from the optional "name" field in the rule set body.) 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Names
         {
             get { return this._names; }
@@ -133,6 +135,7 @@ namespace Amazon.GameLift.Model
         /// the result set, do not specify a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

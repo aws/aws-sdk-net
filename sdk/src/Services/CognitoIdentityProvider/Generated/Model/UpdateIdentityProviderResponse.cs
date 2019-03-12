@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The identity provider object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IdentityProviderType IdentityProvider
         {
             get { return this._identityProvider; }

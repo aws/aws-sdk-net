@@ -48,6 +48,7 @@ namespace Amazon.Route53Domains.Model
         /// element.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string Marker
         {
             get { return this._marker; }
@@ -70,6 +71,7 @@ namespace Amazon.Route53Domains.Model
         /// Default: 20
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

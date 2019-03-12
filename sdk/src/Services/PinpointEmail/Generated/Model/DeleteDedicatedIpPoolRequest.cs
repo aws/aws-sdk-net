@@ -41,6 +41,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the dedicated IP pool that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PoolName
         {
             get { return this._poolName; }

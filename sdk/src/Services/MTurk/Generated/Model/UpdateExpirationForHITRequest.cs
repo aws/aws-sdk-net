@@ -44,6 +44,7 @@ namespace Amazon.MTurk.Model
         ///  The date and time at which you want the HIT to expire 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ExpireAt
         {
             get { return this._expireAt.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.MTurk.Model
         ///  The HIT to update. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }

@@ -59,6 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The detectorID that specifies the GuardDuty
         /// service whose IPSet you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -75,6 +76,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property IpSetId. The unique ID that specifies the IPSet that you
         /// want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpSetId
         {
             get { return this._ipSetId; }

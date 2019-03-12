@@ -42,6 +42,7 @@ namespace Amazon.Signer.Model
         /// The ID of the signing job on input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }

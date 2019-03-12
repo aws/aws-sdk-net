@@ -46,6 +46,7 @@ namespace Amazon.CloudDirectory.Model
         /// in a single page. This is for future use and is not supported currently.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.CloudDirectory.Model
         /// The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

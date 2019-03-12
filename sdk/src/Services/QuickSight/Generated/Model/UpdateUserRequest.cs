@@ -67,6 +67,7 @@ namespace Amazon.QuickSight.Model
         /// AWS account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -85,6 +86,7 @@ namespace Amazon.QuickSight.Model
         /// The email address of the user that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Email
         {
             get { return this._email; }
@@ -103,6 +105,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -136,6 +139,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UserRole Role
         {
             get { return this._role; }
@@ -154,6 +158,7 @@ namespace Amazon.QuickSight.Model
         /// The Amazon QuickSight user name that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string UserName
         {
             get { return this._userName; }

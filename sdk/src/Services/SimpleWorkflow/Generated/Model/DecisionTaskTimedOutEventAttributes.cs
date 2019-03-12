@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of timeout that expired before the decision task could be completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DecisionTaskTimeoutType TimeoutType
         {
             get { return this._timeoutType; }

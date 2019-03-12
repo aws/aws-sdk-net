@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComputeType ComputeType
         {
             get { return this._computeType; }
@@ -61,6 +62,7 @@ namespace Amazon.IoTAnalytics.Model
         /// to execute the "containerAction" (min: 1, max: 50).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public int VolumeSizeInGB
         {
             get { return this._volumeSizeInGB.GetValueOrDefault(); }

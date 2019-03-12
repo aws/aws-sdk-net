@@ -111,6 +111,7 @@ namespace Amazon.CloudHSM.Model
         /// The ARN of the HSM to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HsmArn
         {
             get { return this._hsmArn; }

@@ -199,6 +199,7 @@ namespace Amazon.RDS.Model
         /// that identifies a DB instance. This parameter is stored as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -743,6 +744,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBInstanceIdentifier
         {
             get { return this._sourceDBInstanceIdentifier; }

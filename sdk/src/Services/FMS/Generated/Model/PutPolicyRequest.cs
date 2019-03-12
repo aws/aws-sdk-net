@@ -41,6 +41,7 @@ namespace Amazon.FMS.Model
         /// The details of the AWS Firewall Manager policy to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Policy Policy
         {
             get { return this._policy; }

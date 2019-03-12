@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// operation to return to retrieve the TargetARN for specified VolumeARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

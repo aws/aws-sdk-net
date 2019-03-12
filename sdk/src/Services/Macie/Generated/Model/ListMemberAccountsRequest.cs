@@ -43,6 +43,7 @@ namespace Amazon.Macie.Model
         /// The default value is 250. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Macie.Model
         /// to continue listing data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string NextToken
         {
             get { return this._nextToken; }

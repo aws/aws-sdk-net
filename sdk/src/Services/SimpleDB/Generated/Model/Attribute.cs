@@ -92,6 +92,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the attribute.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -107,6 +108,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Value. The value of the attribute.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

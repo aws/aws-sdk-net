@@ -55,6 +55,7 @@ namespace Amazon.DirectoryService.Model
         /// error if the alias already exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=62)]
         public string Alias
         {
             get { return this._alias; }
@@ -73,6 +74,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory for which to create the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

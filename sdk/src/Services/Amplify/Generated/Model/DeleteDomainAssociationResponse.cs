@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property DomainAssociation.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainAssociation DomainAssociation
         {
             get { return this._domainAssociation; }

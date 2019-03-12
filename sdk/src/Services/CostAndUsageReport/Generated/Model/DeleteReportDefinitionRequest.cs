@@ -38,6 +38,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// <summary>
         /// Gets and sets the property ReportName.
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ReportName
         {
             get { return this._reportName; }

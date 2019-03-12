@@ -54,6 +54,7 @@ namespace Amazon.Signer.Model
         /// value in a subsequent request to retrieve additional items. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

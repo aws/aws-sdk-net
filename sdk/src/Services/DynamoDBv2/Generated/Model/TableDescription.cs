@@ -296,6 +296,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
@@ -315,6 +316,7 @@ namespace Amazon.DynamoDBv2.Model
         /// table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string LatestStreamArn
         {
             get { return this._latestStreamArn; }
@@ -559,6 +561,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

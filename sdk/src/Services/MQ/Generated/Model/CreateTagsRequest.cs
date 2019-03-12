@@ -39,6 +39,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. the Amazon Resource Name (ARN)
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

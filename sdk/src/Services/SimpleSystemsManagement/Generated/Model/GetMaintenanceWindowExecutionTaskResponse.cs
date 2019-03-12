@@ -70,6 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The defined maximum number of task executions that could be run in parallel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -89,6 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// task execution would have been stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -107,6 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The priority of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -179,6 +182,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The details explaining the Status. Only available for certain status values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=250)]
         public string StatusDetails
         {
             get { return this._statusDetails; }
@@ -197,6 +201,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ARN of the executed task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string TaskArn
         {
             get { return this._taskArn; }
@@ -215,6 +220,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the specific task execution in the Maintenance Window task that was retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string TaskExecutionId
         {
             get { return this._taskExecutionId; }
@@ -288,6 +294,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution that includes the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }

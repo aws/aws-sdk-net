@@ -52,6 +52,7 @@ namespace Amazon.CodePipeline.Model
         /// calling entity is allowed access to the job and its details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -70,6 +71,7 @@ namespace Amazon.CodePipeline.Model
         /// The unique system-generated ID used for identifying the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string JobId
         {
             get { return this._jobId; }

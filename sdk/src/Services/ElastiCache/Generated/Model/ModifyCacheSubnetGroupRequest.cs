@@ -69,6 +69,7 @@ namespace Amazon.ElastiCache.Model
         /// Example: <code>mysubnetgroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSubnetGroupName
         {
             get { return this._cacheSubnetGroupName; }

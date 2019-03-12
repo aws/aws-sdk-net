@@ -48,6 +48,7 @@ namespace Amazon.Athena.Model
         /// An array of query IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> NamedQueryIds
         {
             get { return this._namedQueryIds; }

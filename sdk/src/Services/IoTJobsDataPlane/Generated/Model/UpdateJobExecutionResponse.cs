@@ -59,6 +59,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The contents of the Job Documents.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string JobDocument
         {
             get { return this._jobDocument; }

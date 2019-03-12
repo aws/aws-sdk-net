@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The domain name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

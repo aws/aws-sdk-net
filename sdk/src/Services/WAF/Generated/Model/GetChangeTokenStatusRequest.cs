@@ -59,6 +59,7 @@ namespace Amazon.WAF.Model
         /// returned in the <code>GetChangeToken</code> response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }

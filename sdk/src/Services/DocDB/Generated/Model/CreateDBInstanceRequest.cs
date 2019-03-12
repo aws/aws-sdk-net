@@ -104,6 +104,7 @@ namespace Amazon.DocDB.Model
         /// The identifier of the DB cluster that the instance will belong to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -123,6 +124,7 @@ namespace Amazon.DocDB.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceClass
         {
             get { return this._dbInstanceClass; }
@@ -161,6 +163,7 @@ namespace Amazon.DocDB.Model
         /// Example: <code>mydbinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -183,6 +186,7 @@ namespace Amazon.DocDB.Model
         /// Valid value: <code>docdb</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

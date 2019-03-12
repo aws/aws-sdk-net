@@ -42,6 +42,7 @@ namespace Amazon.StorageGateway.Model
         /// for the initiator that was used to connect to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }
@@ -60,6 +61,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the volume that was attached to the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

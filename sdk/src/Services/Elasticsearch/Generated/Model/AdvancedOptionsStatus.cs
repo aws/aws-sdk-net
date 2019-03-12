@@ -53,6 +53,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the status of advanced options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Options
         {
             get { return this._options; }
@@ -72,6 +73,7 @@ namespace Amazon.Elasticsearch.Model
         /// Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

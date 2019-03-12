@@ -40,6 +40,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes application updates.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationDetail ApplicationDetail
         {
             get { return this._applicationDetail; }

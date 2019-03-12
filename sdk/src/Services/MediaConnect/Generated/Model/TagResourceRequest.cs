@@ -41,6 +41,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
         /// that you want to add tags to.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -58,6 +59,7 @@ namespace Amazon.MediaConnect.Model
         /// a maximum character length of 128 characters, and tag values can have a maximum length
         /// of 256 characters.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

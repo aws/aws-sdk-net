@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string BidPrice
         {
             get { return this._bidPrice; }
@@ -78,6 +79,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double BidPriceAsPercentageOfOnDemandPrice
         {
             get { return this._bidPriceAsPercentageOfOnDemandPrice.GetValueOrDefault(); }
@@ -134,6 +136,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// An EC2 instance type, such as <code>m3.xlarge</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -155,6 +158,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Defaults to 1 if not specified. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int WeightedCapacity
         {
             get { return this._weightedCapacity.GetValueOrDefault(); }

@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The index fields configured for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IndexFieldStatus> IndexFields
         {
             get { return this._indexFields; }

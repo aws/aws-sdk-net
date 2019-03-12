@@ -62,6 +62,7 @@ namespace Amazon.Glue.Model
         /// for that connection definition to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> MatchCriteria
         {
             get { return this._matchCriteria; }

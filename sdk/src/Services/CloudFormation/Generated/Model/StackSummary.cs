@@ -50,6 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// The time the stack was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -193,6 +194,7 @@ namespace Amazon.CloudFormation.Model
         /// The name associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }
@@ -211,6 +213,7 @@ namespace Amazon.CloudFormation.Model
         /// The current status of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackStatus StackStatus
         {
             get { return this._stackStatus; }

@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// a <a>GetIPSet</a> request to get detailed information about an <a>IPSet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IPSetId
         {
             get { return this._ipSetId; }
@@ -61,6 +62,7 @@ namespace Amazon.WAFRegional.Model
         /// <code>IPSet</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

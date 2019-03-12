@@ -41,6 +41,7 @@ namespace Amazon.CodeStar.Model
         /// the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }

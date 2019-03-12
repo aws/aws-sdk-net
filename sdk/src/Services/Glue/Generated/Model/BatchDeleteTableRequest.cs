@@ -58,6 +58,7 @@ namespace Amazon.Glue.Model
         /// ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -77,6 +78,7 @@ namespace Amazon.Glue.Model
         /// this name is entirely lowercase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -95,6 +97,7 @@ namespace Amazon.Glue.Model
         /// A list of the table to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> TablesToDelete
         {
             get { return this._tablesToDelete; }

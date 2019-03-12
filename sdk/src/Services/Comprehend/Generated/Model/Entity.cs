@@ -109,6 +109,7 @@ namespace Amazon.Comprehend.Model
         /// The text of the entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Text
         {
             get { return this._text; }

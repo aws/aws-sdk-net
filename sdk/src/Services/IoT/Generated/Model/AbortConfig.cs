@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The list of abort criteria to define rules to abort the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<AbortCriteria> CriteriaList
         {
             get { return this._criteriaList; }

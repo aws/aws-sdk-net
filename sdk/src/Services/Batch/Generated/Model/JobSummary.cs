@@ -106,6 +106,7 @@ namespace Amazon.Batch.Model
         /// The ID of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }
@@ -124,6 +125,7 @@ namespace Amazon.Batch.Model
         /// The name of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobName
         {
             get { return this._jobName; }

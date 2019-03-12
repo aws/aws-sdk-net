@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The DNS host name for the Docker container.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string ContainerHostname
         {
             get { return this._containerHostname; }
@@ -70,6 +71,7 @@ namespace Amazon.SageMaker.Model
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -88,6 +90,7 @@ namespace Amazon.SageMaker.Model
         /// An MD5 hash of the training algorithm that identifies the Docker image used for training.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=72)]
         public string ImageDigest
         {
             get { return this._imageDigest; }
@@ -108,6 +111,7 @@ namespace Amazon.SageMaker.Model
         /// (<code>.tar.gz</code> suffix).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }
@@ -126,6 +130,7 @@ namespace Amazon.SageMaker.Model
         /// The AWS Marketplace product ID of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ProductId
         {
             get { return this._productId; }

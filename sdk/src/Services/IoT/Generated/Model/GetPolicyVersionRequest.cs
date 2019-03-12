@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The name of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The policy version ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyVersionId
         {
             get { return this._policyVersionId; }

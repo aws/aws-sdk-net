@@ -49,6 +49,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server that has this user assigned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -68,6 +69,7 @@ namespace Amazon.Transfer.Model
         /// credentials to use the AWS Transfer service and perform file transfer tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

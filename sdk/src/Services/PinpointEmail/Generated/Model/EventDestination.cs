@@ -113,6 +113,7 @@ namespace Amazon.PinpointEmail.Model
         /// The types of events that Amazon Pinpoint sends to the specified event destinations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> MatchingEventTypes
         {
             get { return this._matchingEventTypes; }
@@ -131,6 +132,7 @@ namespace Amazon.PinpointEmail.Model
         /// A name that identifies the event destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

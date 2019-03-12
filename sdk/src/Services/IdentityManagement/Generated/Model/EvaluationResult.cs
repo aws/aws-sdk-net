@@ -53,6 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the API operation tested on the indicated resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=128)]
         public string EvalActionName
         {
             get { return this._evalActionName; }
@@ -71,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// The result of the simulation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyEvaluationDecisionType EvalDecision
         {
             get { return this._evalDecision; }
@@ -112,6 +114,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ARN of the resource that the indicated API operation was tested on.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string EvalResourceName
         {
             get { return this._evalResourceName; }

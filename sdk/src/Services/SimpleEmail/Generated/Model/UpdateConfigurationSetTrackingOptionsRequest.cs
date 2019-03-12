@@ -52,6 +52,7 @@ namespace Amazon.SimpleEmail.Model
         /// domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -67,6 +68,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property TrackingOptions.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrackingOptions TrackingOptions
         {
             get { return this._trackingOptions; }

@@ -45,6 +45,7 @@ namespace Amazon.DLM.Model
         /// A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +65,7 @@ namespace Amazon.DLM.Model
         /// by the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -86,6 +88,7 @@ namespace Amazon.DLM.Model
         /// Target tags cannot be re-used across lifecycle policies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyDetails PolicyDetails
         {
             get { return this._policyDetails; }
@@ -104,6 +107,7 @@ namespace Amazon.DLM.Model
         /// The desired activation state of the lifecycle policy after creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SettablePolicyStateValues State
         {
             get { return this._state; }

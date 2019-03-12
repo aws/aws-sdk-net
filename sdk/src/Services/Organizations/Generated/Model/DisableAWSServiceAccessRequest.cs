@@ -75,6 +75,7 @@ namespace Amazon.Organizations.Model
         /// with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ServicePrincipal
         {
             get { return this._servicePrincipal; }

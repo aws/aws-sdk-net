@@ -60,6 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskHeartbeatTimeout
         {
             get { return this._defaultTaskHeartbeatTimeout; }
@@ -136,6 +137,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskScheduleToCloseTimeout
         {
             get { return this._defaultTaskScheduleToCloseTimeout; }
@@ -162,6 +164,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskScheduleToStartTimeout
         {
             get { return this._defaultTaskScheduleToStartTimeout; }
@@ -187,6 +190,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskStartToCloseTimeout
         {
             get { return this._defaultTaskStartToCloseTimeout; }

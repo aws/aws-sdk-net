@@ -79,6 +79,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return at one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

@@ -60,6 +60,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the group member (user).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string MemberName
         {
             get { return this._memberName; }

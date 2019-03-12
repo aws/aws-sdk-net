@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// shelf (VTS).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }

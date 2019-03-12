@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// want Amazon Route 53 to send query logs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public QueryLoggingConfig QueryLoggingConfig
         {
             get { return this._queryLoggingConfig; }
@@ -61,6 +62,7 @@ namespace Amazon.Route53.Model
         /// The unique URL representing the new query logging configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Location
         {
             get { return this._location; }

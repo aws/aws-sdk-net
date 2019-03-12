@@ -43,6 +43,7 @@ namespace Amazon.MigrationHub.Model
         /// for clarity or for later reference.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -61,6 +62,7 @@ namespace Amazon.MigrationHub.Model
         /// An ARN that uniquely identifies the result of a migration task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string Name
         {
             get { return this._name; }

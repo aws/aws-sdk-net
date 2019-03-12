@@ -127,6 +127,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session that the player session is connected to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -165,6 +166,7 @@ namespace Amazon.GameLift.Model
         /// data, so it can be formatted as needed for use in the game. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string PlayerData
         {
             get { return this._playerData; }
@@ -183,6 +185,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a player that is associated with this player session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }
@@ -220,6 +223,7 @@ namespace Amazon.GameLift.Model
         /// an app needs both the IP address and port number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60000)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

@@ -41,6 +41,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The ending timestamp in the range of timestamps for which to return fragments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTimestamp
         {
             get { return this._endTimestamp.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The starting timestamp in the range of timestamps for which to return fragments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimestamp
         {
             get { return this._startTimestamp.GetValueOrDefault(); }

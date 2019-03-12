@@ -95,6 +95,7 @@ namespace Amazon.CodeBuild.Model
         /// Information about the Git clone depth for the build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int GitCloneDepth
         {
             get { return this._gitCloneDepth.GetValueOrDefault(); }
@@ -287,6 +288,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceType Type
         {
             get { return this._type; }

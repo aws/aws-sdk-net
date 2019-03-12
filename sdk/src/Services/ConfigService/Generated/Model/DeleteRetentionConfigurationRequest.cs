@@ -41,6 +41,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the retention configuration to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string RetentionConfigurationName
         {
             get { return this._retentionConfigurationName; }

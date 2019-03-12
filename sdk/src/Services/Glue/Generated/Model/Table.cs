@@ -55,6 +55,7 @@ namespace Amazon.Glue.Model
         /// Person or entity who created the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CreatedBy
         {
             get { return this._createdBy; }
@@ -92,6 +93,7 @@ namespace Amazon.Glue.Model
         /// this must be all lowercase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -110,6 +112,7 @@ namespace Amazon.Glue.Model
         /// Description of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -165,6 +168,7 @@ namespace Amazon.Glue.Model
         /// Name of the table. For Hive compatibility, this must be entirely lowercase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -183,6 +187,7 @@ namespace Amazon.Glue.Model
         /// Owner of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Owner
         {
             get { return this._owner; }
@@ -248,6 +253,7 @@ namespace Amazon.Glue.Model
         /// Retention time for this table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Retention
         {
             get { return this._retention.GetValueOrDefault(); }
@@ -284,6 +290,7 @@ namespace Amazon.Glue.Model
         /// The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string TableType
         {
             get { return this._tableType; }
@@ -320,6 +327,7 @@ namespace Amazon.Glue.Model
         /// If the table is a view, the expanded text of the view; otherwise <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=409600)]
         public string ViewExpandedText
         {
             get { return this._viewExpandedText; }
@@ -338,6 +346,7 @@ namespace Amazon.Glue.Model
         /// If the table is a view, the original text of the view; otherwise <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=409600)]
         public string ViewOriginalText
         {
             get { return this._viewOriginalText; }

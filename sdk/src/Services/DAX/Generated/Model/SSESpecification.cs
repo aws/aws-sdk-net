@@ -41,6 +41,7 @@ namespace Amazon.DAX.Model
         /// the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

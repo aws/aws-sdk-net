@@ -116,6 +116,7 @@ namespace Amazon.SecurityToken.Model
         /// exceeded the allowed space.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PackedPolicySize
         {
             get { return this._packedPolicySize.GetValueOrDefault(); }
@@ -160,6 +161,7 @@ namespace Amazon.SecurityToken.Model
         /// (Subject) claim. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=255)]
         public string SubjectFromWebIdentityToken
         {
             get { return this._subjectFromWebIdentityToken; }

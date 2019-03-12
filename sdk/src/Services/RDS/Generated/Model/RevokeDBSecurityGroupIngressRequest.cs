@@ -81,6 +81,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB security group to revoke ingress from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSecurityGroupName
         {
             get { return this._dbSecurityGroupName; }

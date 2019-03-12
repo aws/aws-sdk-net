@@ -89,6 +89,7 @@ namespace Amazon.IoT.Model
         /// using the jobId to refer to the deleted job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }

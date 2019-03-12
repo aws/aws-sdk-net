@@ -60,6 +60,7 @@ namespace Amazon.ACMPCA.Model
         /// is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=200)]
         public string Arn
         {
             get { return this._arn; }

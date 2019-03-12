@@ -132,6 +132,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow execution this information is about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution Execution
         {
             get { return this._execution; }
@@ -150,6 +151,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The current status of the execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExecutionStatus ExecutionStatus
         {
             get { return this._executionStatus; }
@@ -187,6 +189,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The time when the execution was started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimestamp
         {
             get { return this._startTimestamp.GetValueOrDefault(); }
@@ -207,6 +210,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// can have a maximum of 5 tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> TagList
         {
             get { return this._tagList; }
@@ -225,6 +229,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

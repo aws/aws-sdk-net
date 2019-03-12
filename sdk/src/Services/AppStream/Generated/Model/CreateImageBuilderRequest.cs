@@ -59,6 +59,7 @@ namespace Amazon.AppStream.Model
         /// version of the AppStream 2.0 agent, specify [LATEST]. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string AppstreamAgentVersion
         {
             get { return this._appstreamAgentVersion; }
@@ -77,6 +78,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -95,6 +97,7 @@ namespace Amazon.AppStream.Model
         /// The image builder name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -168,6 +171,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image used to create the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ImageName
         {
             get { return this._imageName; }
@@ -186,6 +190,7 @@ namespace Amazon.AppStream.Model
         /// The instance type to use when launching the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -204,6 +209,7 @@ namespace Amazon.AppStream.Model
         /// A unique name for the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -233,6 +239,7 @@ namespace Amazon.AppStream.Model
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

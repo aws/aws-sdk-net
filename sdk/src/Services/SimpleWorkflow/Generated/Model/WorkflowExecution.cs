@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A system-generated unique identifier for the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The user defined identifier associated with the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

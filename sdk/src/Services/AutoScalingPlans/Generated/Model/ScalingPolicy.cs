@@ -42,6 +42,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -60,6 +61,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The type of scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType PolicyType
         {
             get { return this._policyType; }

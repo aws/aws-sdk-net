@@ -41,6 +41,7 @@ namespace Amazon.WAFRegional.Model
         /// The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

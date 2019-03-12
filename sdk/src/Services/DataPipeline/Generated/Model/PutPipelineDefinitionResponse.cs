@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// to commit the corrected pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Errored
         {
             get { return this._errored.GetValueOrDefault(); }

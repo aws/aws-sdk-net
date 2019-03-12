@@ -77,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// such as <code>iam:CreateUser</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ActionNames
         {
             get { return this._actionNames; }
@@ -103,6 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// role, federated user, or a service principal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string CallerArn
         {
             get { return this._callerArn; }
@@ -143,6 +145,7 @@ namespace Amazon.IdentityManagement.Model
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -171,6 +174,7 @@ namespace Amazon.IdentityManagement.Model
         /// the service where to continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -216,6 +220,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyInputList
         {
             get { return this._policyInputList; }
@@ -336,6 +341,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResourceHandlingOption
         {
             get { return this._resourceHandlingOption; }
@@ -367,6 +373,7 @@ namespace Amazon.IdentityManagement.Model
         /// ARN: <code>arn:aws:iam::112233445566-ID:root</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceOwner
         {
             get { return this._resourceOwner; }
@@ -407,6 +414,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

@@ -64,6 +64,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// This job definition must already exist.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinition
         {
             get { return this._jobDefinition; }
@@ -82,6 +83,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The name to use for this execution of the job, if the target is an AWS Batch job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobName
         {
             get { return this._jobName; }

@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         /// in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery,
         /// input switching, input disruptions, picture reordering, etc.
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public int BufferMsec
         {
             get { return this._bufferMsec.GetValueOrDefault(); }
@@ -58,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ContainerSettings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public UdpContainerSettings ContainerSettings
         {
             get { return this._containerSettings; }
@@ -75,6 +77,7 @@ namespace Amazon.MediaLive.Model
         /// or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001
         /// or udp://10.100.100.100:5002).
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputLocationRef Destination
         {
             get { return this._destination; }

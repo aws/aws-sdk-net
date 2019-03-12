@@ -41,6 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A list of completed and failed managed actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ManagedActionHistoryItem> ManagedActionHistoryItems
         {
             get { return this._managedActionHistoryItems; }

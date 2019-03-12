@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -59,6 +60,7 @@ namespace Amazon.CodeBuild.Model
         /// The ID of the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string SubnetId
         {
             get { return this._subnetId; }

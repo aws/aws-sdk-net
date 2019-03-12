@@ -57,6 +57,7 @@ namespace Amazon.KeyManagementService.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -75,6 +76,7 @@ namespace Amazon.KeyManagementService.Model
         /// The length of the byte string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public int NumberOfBytes
         {
             get { return this._numberOfBytes.GetValueOrDefault(); }

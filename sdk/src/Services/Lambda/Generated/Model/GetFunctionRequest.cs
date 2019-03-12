@@ -65,6 +65,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=170)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -83,6 +84,7 @@ namespace Amazon.Lambda.Model
         /// Specify a version or alias to get details about a published version of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Qualifier
         {
             get { return this._qualifier; }

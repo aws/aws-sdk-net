@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The size of the disk image, in GiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Bytes
         {
             get { return this._bytes.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The disk image format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DiskImageFormat Format
         {
             get { return this._format; }
@@ -87,6 +89,7 @@ namespace Amazon.EC2.Model
         /// Import Manifest</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ImportManifestUrl
         {
             get { return this._importManifestUrl; }

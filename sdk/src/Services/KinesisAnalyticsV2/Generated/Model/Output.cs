@@ -47,6 +47,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the data format when records are written to the destination. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DestinationSchema DestinationSchema
         {
             get { return this._destinationSchema; }
@@ -119,6 +120,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the in-application stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }

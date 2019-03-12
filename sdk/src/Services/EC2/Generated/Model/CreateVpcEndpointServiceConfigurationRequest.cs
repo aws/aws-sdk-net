@@ -91,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> NetworkLoadBalancerArns
         {
             get { return this._networkLoadBalancerArns; }

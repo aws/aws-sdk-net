@@ -81,6 +81,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -99,6 +100,7 @@ namespace Amazon.DataPipeline.Model
         /// The objects that define the pipeline changes to validate against the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PipelineObject> PipelineObjects
         {
             get { return this._pipelineObjects; }

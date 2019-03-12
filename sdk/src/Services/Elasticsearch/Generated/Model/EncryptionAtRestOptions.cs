@@ -59,6 +59,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the KMS Key ID for Encryption At Rest options.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

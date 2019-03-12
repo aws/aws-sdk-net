@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A list of upcoming and in-progress managed actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ManagedAction> ManagedActions
         {
             get { return this._managedActions; }

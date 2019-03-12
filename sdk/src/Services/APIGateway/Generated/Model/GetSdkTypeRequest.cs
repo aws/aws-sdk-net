@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the queried <a>SdkType</a> instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

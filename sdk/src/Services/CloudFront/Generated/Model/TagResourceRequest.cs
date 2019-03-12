@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         ///  An ARN of a CloudFront resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Resource
         {
             get { return this._resource; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudFront.Model
         ///  A complex type that contains zero or more <code>Tag</code> elements.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Tags Tags
         {
             get { return this._tags; }

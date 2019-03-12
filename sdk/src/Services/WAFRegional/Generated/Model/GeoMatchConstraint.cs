@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// is the only valid value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoMatchConstraintType Type
         {
             get { return this._type; }
@@ -60,6 +61,7 @@ namespace Amazon.WAFRegional.Model
         /// The country that you want AWS WAF to search for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GeoMatchConstraintValue Value
         {
             get { return this._value; }

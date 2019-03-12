@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) for the directory to which to add the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// The tags to be assigned to the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

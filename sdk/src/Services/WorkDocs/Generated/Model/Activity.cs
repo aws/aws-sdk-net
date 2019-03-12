@@ -106,6 +106,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }

@@ -64,6 +64,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -82,6 +83,7 @@ namespace Amazon.Lambda.Model
         /// Specify a function version to only list aliases that invoke that version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string FunctionVersion
         {
             get { return this._functionVersion; }
@@ -119,6 +121,7 @@ namespace Amazon.Lambda.Model
         /// Limit the number of aliases returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

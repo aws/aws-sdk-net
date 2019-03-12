@@ -57,6 +57,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of your existing application to which you want to add the streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -76,6 +77,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// operation to find the current application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -94,6 +96,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The <a>Input</a> to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Input Input
         {
             get { return this._input; }

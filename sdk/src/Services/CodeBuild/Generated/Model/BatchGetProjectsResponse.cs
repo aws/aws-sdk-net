@@ -59,6 +59,7 @@ namespace Amazon.CodeBuild.Model
         /// The names of build projects for which information could not be found.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> ProjectsNotFound
         {
             get { return this._projectsNotFound; }

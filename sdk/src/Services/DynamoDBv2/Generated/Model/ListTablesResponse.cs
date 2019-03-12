@@ -48,6 +48,7 @@ namespace Amazon.DynamoDBv2.Model
         /// this means that there are no more table names to be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string LastEvaluatedTableName
         {
             get { return this._lastEvaluatedTableName; }

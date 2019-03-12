@@ -97,6 +97,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<EngineAttribute> EngineAttributes
         {
             get { return this._engineAttributes; }
@@ -115,6 +116,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the node. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NodeName
         {
             get { return this._nodeName; }
@@ -133,6 +135,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server with which to associate the node. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

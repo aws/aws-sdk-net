@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// The items (status codes) for an origin group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<int> Items
         {
             get { return this._items; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The number of status codes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

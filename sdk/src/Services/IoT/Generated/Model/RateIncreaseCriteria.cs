@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// of rollout.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int NumberOfNotifiedThings
         {
             get { return this._numberOfNotifiedThings.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// of rollout.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int NumberOfSucceededThings
         {
             get { return this._numberOfSucceededThings.GetValueOrDefault(); }

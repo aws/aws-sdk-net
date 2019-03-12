@@ -117,6 +117,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Timestamp.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

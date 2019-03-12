@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule that was used in the evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -61,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the evaluated AWS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -79,6 +81,7 @@ namespace Amazon.ConfigService.Model
         /// The type of AWS resource that was evaluated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

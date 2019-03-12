@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// failed or did not emit an objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Failed
         {
             get { return this._failed.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.SageMaker.Model
         /// objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Pending
         {
             get { return this._pending.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.SageMaker.Model
         /// tuning job and used in the hyperparameter tuning process.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Succeeded
         {
             get { return this._succeeded.GetValueOrDefault(); }

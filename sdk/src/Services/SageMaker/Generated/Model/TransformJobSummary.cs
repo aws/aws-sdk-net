@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the transform Job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// If the transform job failed, the reason it failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -121,6 +123,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TransformJobArn
         {
             get { return this._transformJobArn; }
@@ -139,6 +142,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TransformJobName
         {
             get { return this._transformJobName; }
@@ -157,6 +161,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformJobStatus TransformJobStatus
         {
             get { return this._transformJobStatus; }

@@ -43,6 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the webhook you want to deregister.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string WebhookName
         {
             get { return this._webhookName; }

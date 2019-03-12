@@ -62,6 +62,7 @@ namespace Amazon.Glue.Model
         /// Optional custom grok patterns used by this classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16000)]
         public string CustomPatterns
         {
             get { return this._customPatterns; }
@@ -80,6 +81,7 @@ namespace Amazon.Glue.Model
         /// The grok pattern used by this classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string GrokPattern
         {
             get { return this._grokPattern; }
@@ -98,6 +100,7 @@ namespace Amazon.Glue.Model
         /// The name of the <code>GrokClassifier</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

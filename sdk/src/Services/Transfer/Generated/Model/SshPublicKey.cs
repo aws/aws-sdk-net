@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         /// The date that the public key was added to the user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime DateImported
         {
             get { return this._dateImported.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Transfer.Model
         /// The content of the SSH public key as specified by the <code>PublicKeyId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string SshPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }
@@ -82,6 +84,7 @@ namespace Amazon.Transfer.Model
         /// The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SshPublicKeyId
         {
             get { return this._sshPublicKeyId; }

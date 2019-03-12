@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         /// Specifies the node index for the main node of a multi-node parallel job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MainNode
         {
             get { return this._mainNode.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Batch.Model
         /// A list of node ranges and their properties associated with a multi-node parallel job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<NodeRangeProperty> NodeRangeProperties
         {
             get { return this._nodeRangeProperties; }
@@ -78,6 +80,7 @@ namespace Amazon.Batch.Model
         /// The number of nodes associated with a multi-node parallel job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumNodes
         {
             get { return this._numNodes.GetValueOrDefault(); }

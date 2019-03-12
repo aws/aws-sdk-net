@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// The ID of the DHCP options set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DhcpOptionsId
         {
             get { return this._dhcpOptionsId; }

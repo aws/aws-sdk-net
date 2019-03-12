@@ -43,6 +43,7 @@ namespace Amazon.Athena.Model
         /// applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ErrorCode
         {
             get { return this._errorCode; }

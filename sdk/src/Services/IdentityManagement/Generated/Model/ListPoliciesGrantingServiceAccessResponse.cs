@@ -65,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -84,6 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// the permissions policies attached to the specified identity (user, group, or role).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ListPoliciesGrantingServiceAccessEntry> PoliciesGrantingServiceAccess
         {
             get { return this._policiesGrantingServiceAccess; }

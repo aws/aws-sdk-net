@@ -52,6 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of an Amazon S3 bucket where execution logs are stored .
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }
@@ -70,6 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) The Amazon S3 bucket subfolder. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }
@@ -88,6 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The region where the Amazon S3 bucket is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=20)]
         public string S3Region
         {
             get { return this._s3Region; }

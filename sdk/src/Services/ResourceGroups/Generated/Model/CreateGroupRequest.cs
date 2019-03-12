@@ -45,6 +45,7 @@ namespace Amazon.ResourceGroups.Model
         /// including letters, numbers, hyphens, underscores, punctuation, and spaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -67,6 +68,7 @@ namespace Amazon.ResourceGroups.Model
         /// A resource group name must be unique within your account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -85,6 +87,7 @@ namespace Amazon.ResourceGroups.Model
         /// The resource query that determines which AWS resources are members of this group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceQuery ResourceQuery
         {
             get { return this._resourceQuery; }

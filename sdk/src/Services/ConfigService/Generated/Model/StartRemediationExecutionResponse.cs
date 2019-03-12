@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ResourceKey> FailedItems
         {
             get { return this._failedItems; }

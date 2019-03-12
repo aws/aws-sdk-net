@@ -61,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// The logical name of the resource for which to return drift information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogicalResourceId
         {
             get { return this._logicalResourceId; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the stack to which the resource belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

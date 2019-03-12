@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         /// The Channel to use as a filter for the metrics returned. Only VOICE is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1)]
         public List<string> Channels
         {
             get { return this._channels; }
@@ -60,6 +61,7 @@ namespace Amazon.Connect.Model
         /// You can include both IDs and ARNs in a request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> Queues
         {
             get { return this._queues; }

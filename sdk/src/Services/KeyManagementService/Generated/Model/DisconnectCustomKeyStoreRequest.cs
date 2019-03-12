@@ -68,6 +68,7 @@ namespace Amazon.KeyManagementService.Model
         /// key store, use the <a>DescribeCustomKeyStores</a> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }

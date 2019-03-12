@@ -72,6 +72,7 @@ namespace Amazon.DataSync.Model
         /// a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=29)]
         public string ActivationKey
         {
             get { return this._activationKey; }
@@ -91,6 +92,7 @@ namespace Amazon.DataSync.Model
         /// to identify the agent in the console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AgentName
         {
             get { return this._agentName; }
@@ -117,6 +119,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

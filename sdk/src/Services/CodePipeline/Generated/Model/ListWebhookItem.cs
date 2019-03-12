@@ -65,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// filter rules.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WebhookDefinition Definition
         {
             get { return this._definition; }
@@ -140,6 +141,7 @@ namespace Amazon.CodePipeline.Model
         /// will make the old URL invalid and generate a new URL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Url
         {
             get { return this._url; }

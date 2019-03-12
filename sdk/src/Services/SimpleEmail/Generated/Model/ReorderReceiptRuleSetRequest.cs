@@ -59,6 +59,7 @@ namespace Amazon.SimpleEmail.Model
         /// to put them.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> RuleNames
         {
             get { return this._ruleNames; }
@@ -77,6 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the receipt rule set to reorder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

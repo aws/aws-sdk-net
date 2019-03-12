@@ -82,6 +82,7 @@ namespace Amazon.EC2.Model
         /// Required: Yes
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// belongs to someone else, Amazon EC2 returns an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Storage Storage
         {
             get { return this._storage; }

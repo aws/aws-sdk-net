@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TriggerNames
         {
             get { return this._triggerNames; }

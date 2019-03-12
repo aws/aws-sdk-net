@@ -60,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of a skill group to associate to a skill.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

@@ -179,6 +179,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -278,6 +279,7 @@ namespace Amazon.Neptune.Model
         /// Valid Values: <code>neptune</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

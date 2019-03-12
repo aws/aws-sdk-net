@@ -124,6 +124,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainId.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -139,6 +140,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -190,6 +192,7 @@ namespace Amazon.CloudSearch.Model
         /// True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool RequiresIndexDocuments
         {
             get { return this._requiresIndexDocuments.GetValueOrDefault(); }
@@ -208,6 +211,7 @@ namespace Amazon.CloudSearch.Model
         /// The number of search instances that are available to process search requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int SearchInstanceCount
         {
             get { return this._searchInstanceCount.GetValueOrDefault(); }
@@ -244,6 +248,7 @@ namespace Amazon.CloudSearch.Model
         /// The number of partitions across which the search index is spread.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int SearchPartitionCount
         {
             get { return this._searchPartitionCount.GetValueOrDefault(); }

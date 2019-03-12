@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the instance whose patch state information should be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }
@@ -61,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of instances to return (per page).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

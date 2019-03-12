@@ -111,6 +111,7 @@ namespace Amazon.Kinesis.Model
         /// a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -131,6 +132,7 @@ namespace Amazon.Kinesis.Model
         /// in the shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ShardIterator
         {
             get { return this._shardIterator; }

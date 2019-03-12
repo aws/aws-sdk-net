@@ -39,6 +39,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DatabaseUserName.
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DatabaseUserName
         {
             get { return this._databaseUserName; }
@@ -73,6 +74,7 @@ namespace Amazon.MachineLearning.Model
         /// only if <code>Verbose</code> is true in GetDataSourceInput. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16777216)]
         public string SelectSqlQuery
         {
             get { return this._selectSqlQuery; }

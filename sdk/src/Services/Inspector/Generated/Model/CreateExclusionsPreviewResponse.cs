@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PreviewToken
         {
             get { return this._previewToken; }

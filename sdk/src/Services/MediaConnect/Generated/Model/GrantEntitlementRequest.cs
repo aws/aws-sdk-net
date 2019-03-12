@@ -91,6 +91,7 @@ namespace Amazon.MediaConnect.Model
         /// your content with. The receiving accounts (subscribers) will be allowed to create
         /// their own flows using your content as the source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subscribers
         {
             get { return this._subscribers; }

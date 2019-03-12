@@ -43,6 +43,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON output of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32768)]
         public string Output
         {
             get { return this._output; }
@@ -62,6 +63,7 @@ namespace Amazon.StepFunctions.Model
         /// the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

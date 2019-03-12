@@ -51,6 +51,7 @@ namespace Amazon.ECR.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> AcceptedMediaTypes
         {
             get { return this._acceptedMediaTypes; }
@@ -70,6 +71,7 @@ namespace Amazon.ECR.Model
         /// the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<ImageIdentifier> ImageIds
         {
             get { return this._imageIds; }
@@ -107,6 +109,7 @@ namespace Amazon.ECR.Model
         /// The repository that contains the images to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

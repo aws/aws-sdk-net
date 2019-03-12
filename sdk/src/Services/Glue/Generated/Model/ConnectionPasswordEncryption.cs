@@ -69,6 +69,7 @@ namespace Amazon.Glue.Model
         /// according to your security requirements.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AwsKmsKeyId
         {
             get { return this._awsKmsKeyId; }
@@ -89,6 +90,7 @@ namespace Amazon.Glue.Model
         /// This encryption takes effect independently from catalog encryption. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ReturnConnectionPasswordEncrypted
         {
             get { return this._returnConnectionPasswordEncrypted.GetValueOrDefault(); }

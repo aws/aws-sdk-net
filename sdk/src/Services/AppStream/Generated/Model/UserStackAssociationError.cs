@@ -63,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// or disassociated from a stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

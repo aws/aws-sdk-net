@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The version identifier of the to-be-updated documentation version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DocumentationVersion
         {
             get { return this._documentationVersion; }
@@ -80,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>..
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

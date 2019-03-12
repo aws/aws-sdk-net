@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A pagination token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The resource servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ResourceServerType> ResourceServers
         {
             get { return this._resourceServers; }

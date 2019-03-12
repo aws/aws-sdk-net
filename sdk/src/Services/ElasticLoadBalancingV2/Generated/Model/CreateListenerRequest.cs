@@ -116,6 +116,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// drop specified client requests and return a custom HTTP response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Action> DefaultActions
         {
             get { return this._defaultActions; }
@@ -134,6 +135,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerArn
         {
             get { return this._loadBalancerArn; }
@@ -152,6 +154,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The port on which the load balancer is listening.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -172,6 +175,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the supported protocols are TCP and TLS.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProtocolEnum Protocol
         {
             get { return this._protocol; }

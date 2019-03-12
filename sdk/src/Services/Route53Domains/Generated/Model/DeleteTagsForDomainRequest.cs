@@ -48,6 +48,7 @@ namespace Amazon.Route53Domains.Model
         /// The domain for which you want to delete one or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53Domains.Model
         /// A list of tag keys to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagsToDelete
         {
             get { return this._tagsToDelete; }

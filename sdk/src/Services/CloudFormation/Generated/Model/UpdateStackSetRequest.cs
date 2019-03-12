@@ -111,6 +111,7 @@ namespace Amazon.CloudFormation.Model
         /// as you have permissions to perform operations on the stack set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string AdministrationRoleARN
         {
             get { return this._administrationRoleARN; }
@@ -245,6 +246,7 @@ namespace Amazon.CloudFormation.Model
         /// A brief description of updates that you are making.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -277,6 +279,7 @@ namespace Amazon.CloudFormation.Model
         /// as you have permissions to perform operations on the stack set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ExecutionRoleName
         {
             get { return this._executionRoleName; }
@@ -311,6 +314,7 @@ namespace Amazon.CloudFormation.Model
         /// whose status is <code>OUTDATED</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -399,6 +403,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack set that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }
@@ -452,6 +457,7 @@ namespace Amazon.CloudFormation.Model
         /// an <code>access denied</code> error, and the stack set is not updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -477,6 +483,7 @@ namespace Amazon.CloudFormation.Model
         /// or <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -503,6 +510,7 @@ namespace Amazon.CloudFormation.Model
         /// or <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

@@ -45,6 +45,7 @@ namespace Amazon.Route53.Model
         /// or delete it using Amazon Route 53. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string ServicePrincipal
         {
             get { return this._servicePrincipal; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53.Model
         /// you can't edit or delete it using Amazon Route 53. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }

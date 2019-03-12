@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// The name of the placement group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupName
         {
             get { return this._groupName; }

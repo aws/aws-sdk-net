@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// version that is associated with the specified traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrafficPolicy> TrafficPolicies
         {
             get { return this._trafficPolicies; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53.Model
         /// <code>NextMarker</code> in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -91,6 +93,7 @@ namespace Amazon.Route53.Model
         /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=4)]
         public string TrafficPolicyVersionMarker
         {
             get { return this._trafficPolicyVersionMarker; }
@@ -110,6 +113,7 @@ namespace Amazon.Route53.Model
         /// request that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

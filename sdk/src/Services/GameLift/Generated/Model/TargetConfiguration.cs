@@ -90,6 +90,7 @@ namespace Amazon.GameLift.Model
         /// game sessions).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double TargetValue
         {
             get { return this._targetValue.GetValueOrDefault(); }

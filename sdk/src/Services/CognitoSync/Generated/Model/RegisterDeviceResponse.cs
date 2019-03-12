@@ -40,6 +40,7 @@ namespace Amazon.CognitoSync.Model
         /// The unique ID generated for this device by Cognito.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string DeviceId
         {
             get { return this._deviceId; }

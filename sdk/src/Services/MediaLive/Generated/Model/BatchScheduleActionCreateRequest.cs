@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ScheduleActions. A list of schedule actions to create.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ScheduleAction> ScheduleActions
         {
             get { return this._scheduleActions; }

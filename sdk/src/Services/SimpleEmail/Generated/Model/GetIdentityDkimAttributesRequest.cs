@@ -73,6 +73,7 @@ namespace Amazon.SimpleEmail.Model
         /// A list of one or more verified identities - email addresses, domains, or both.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Identities
         {
             get { return this._identities; }

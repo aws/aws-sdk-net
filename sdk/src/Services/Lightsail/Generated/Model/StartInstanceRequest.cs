@@ -58,6 +58,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance (a virtual private server) to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }

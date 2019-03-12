@@ -89,6 +89,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// user pools.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProviderUserIdentifierType DestinationUser
         {
             get { return this._destinationUser; }
@@ -130,6 +131,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// identifier found in the subject from the SAML token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProviderUserIdentifierType SourceUser
         {
             get { return this._sourceUser; }
@@ -148,6 +150,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

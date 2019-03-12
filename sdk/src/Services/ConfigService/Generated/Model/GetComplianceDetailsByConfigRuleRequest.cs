@@ -50,6 +50,7 @@ namespace Amazon.ConfigService.Model
         /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> ComplianceTypes
         {
             get { return this._complianceTypes; }
@@ -68,6 +69,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule for which you want compliance information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -88,6 +90,7 @@ namespace Amazon.ConfigService.Model
         /// default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

@@ -64,6 +64,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Destination
         {
             get { return this._destination; }
@@ -103,6 +104,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// not exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long From
         {
             get { return this._from.GetValueOrDefault(); }
@@ -121,6 +123,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -140,6 +143,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// no prefix filter is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogStreamNamePrefix
         {
             get { return this._logStreamNamePrefix; }
@@ -158,6 +162,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the export task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string TaskName
         {
             get { return this._taskName; }
@@ -178,6 +183,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long To
         {
             get { return this._to.GetValueOrDefault(); }

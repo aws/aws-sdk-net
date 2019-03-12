@@ -50,6 +50,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property ChannelId. The ID of the Channel that the OriginEndpoint
         /// will be associated with.This cannot be changed after the OriginEndpoint is created.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ChannelId
         {
             get { return this._channelId; }
@@ -126,6 +127,7 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property Id. The ID of the OriginEndpoint.  The ID must be unique
         /// within the regionand it cannot be changed after the OriginEndpoint is created.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

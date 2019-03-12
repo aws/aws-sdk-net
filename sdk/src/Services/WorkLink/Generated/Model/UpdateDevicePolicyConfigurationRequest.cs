@@ -43,6 +43,7 @@ namespace Amazon.WorkLink.Model
         /// authority certificate used to issue device certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
         public string DeviceCaCertificate
         {
             get { return this._deviceCaCertificate; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }

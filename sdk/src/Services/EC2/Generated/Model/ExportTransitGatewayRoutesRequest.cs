@@ -108,6 +108,7 @@ namespace Amazon.EC2.Model
         /// The name of the S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -126,6 +127,7 @@ namespace Amazon.EC2.Model
         /// The ID of the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

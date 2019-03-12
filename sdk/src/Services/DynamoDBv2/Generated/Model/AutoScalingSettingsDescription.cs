@@ -81,6 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// scaled up to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long MaximumUnits
         {
             get { return this._maximumUnits.GetValueOrDefault(); }
@@ -100,6 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// scaled down to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long MinimumUnits
         {
             get { return this._minimumUnits.GetValueOrDefault(); }

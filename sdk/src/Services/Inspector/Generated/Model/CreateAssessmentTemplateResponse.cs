@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment template that is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTemplateArn
         {
             get { return this._assessmentTemplateArn; }

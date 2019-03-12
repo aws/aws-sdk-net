@@ -262,6 +262,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationInstanceClass
         {
             get { return this._replicationInstanceClass; }
@@ -300,6 +301,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <code>myrepinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationInstanceIdentifier
         {
             get { return this._replicationInstanceIdentifier; }

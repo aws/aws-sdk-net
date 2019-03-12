@@ -46,6 +46,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// in the AuthorizationResult map to establish the authorization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> AuthorizationResult
         {
             get { return this._authorizationResult; }
@@ -82,6 +83,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The unique identifier of a skill.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

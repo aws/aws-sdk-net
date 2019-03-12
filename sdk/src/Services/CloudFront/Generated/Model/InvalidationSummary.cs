@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// The time that an invalidation request was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.CloudFront.Model
         /// The unique ID for an invalidation request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -83,6 +85,7 @@ namespace Amazon.CloudFront.Model
         /// The status of an invalidation request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

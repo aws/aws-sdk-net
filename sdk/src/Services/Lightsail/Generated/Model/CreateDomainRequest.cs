@@ -57,6 +57,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

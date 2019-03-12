@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies the job that restores a recovery point.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestoreJobId
         {
             get { return this._restoreJobId; }

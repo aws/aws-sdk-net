@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// when there are no more results to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job summaries that meet the criteria of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<SimulationJobSummary> SimulationJobSummaries
         {
             get { return this._simulationJobSummaries; }

@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DeviceName
         {
             get { return this._deviceName; }
@@ -104,6 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the virtual device (for example, <code>ephemeral0</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string VirtualName
         {
             get { return this._virtualName; }

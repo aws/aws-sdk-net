@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// A description of the stack set that you specify when the stack set is created or updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

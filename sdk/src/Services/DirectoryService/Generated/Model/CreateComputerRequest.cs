@@ -65,6 +65,7 @@ namespace Amazon.DirectoryService.Model
         /// The name of the computer account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public string ComputerName
         {
             get { return this._computerName; }
@@ -83,6 +84,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory in which to create the computer account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -102,6 +104,7 @@ namespace Amazon.DirectoryService.Model
         /// account in.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string OrganizationalUnitDistinguishedName
         {
             get { return this._organizationalUnitDistinguishedName; }
@@ -121,6 +124,7 @@ namespace Amazon.DirectoryService.Model
         /// generate a random, strong password to use for this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=64)]
         public string Password
         {
             get { return this._password; }

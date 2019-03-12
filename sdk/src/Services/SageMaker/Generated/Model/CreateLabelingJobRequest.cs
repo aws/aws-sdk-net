@@ -93,6 +93,7 @@ namespace Amazon.SageMaker.Model
         /// Configures the information required for human workers to complete a labeling task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HumanTaskConfig HumanTaskConfig
         {
             get { return this._humanTaskConfig; }
@@ -112,6 +113,7 @@ namespace Amazon.SageMaker.Model
         /// and the location of the manifest file that describes the data objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelingJobInputConfig InputConfig
         {
             get { return this._inputConfig; }
@@ -134,6 +136,7 @@ namespace Amazon.SageMaker.Model
         /// labeling job, the attribute name must not end with "-ref".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=127)]
         public string LabelAttributeName
         {
             get { return this._labelAttributeName; }
@@ -216,6 +219,7 @@ namespace Amazon.SageMaker.Model
         ///  <code>}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string LabelCategoryConfigS3Uri
         {
             get { return this._labelCategoryConfigS3Uri; }
@@ -253,6 +257,7 @@ namespace Amazon.SageMaker.Model
         /// jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string LabelingJobName
         {
             get { return this._labelingJobName; }
@@ -272,6 +277,7 @@ namespace Amazon.SageMaker.Model
         /// key used to encrypt the output data, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelingJobOutputConfig OutputConfig
         {
             get { return this._outputConfig; }
@@ -292,6 +298,7 @@ namespace Amazon.SageMaker.Model
         /// so that Amazon SageMaker can successfully complete data labeling.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -331,6 +338,7 @@ namespace Amazon.SageMaker.Model
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

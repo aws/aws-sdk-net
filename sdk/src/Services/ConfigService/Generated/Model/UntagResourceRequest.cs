@@ -44,6 +44,7 @@ namespace Amazon.ConfigService.Model
         /// and <code>AggregatorAuthorization</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -62,6 +63,7 @@ namespace Amazon.ConfigService.Model
         /// The keys of the tags to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

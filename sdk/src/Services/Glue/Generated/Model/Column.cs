@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// Free-form text comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Comment
         {
             get { return this._comment; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// The name of the <code>Column</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.Glue.Model
         /// The datatype of data in the <code>Column</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
         public string Type
         {
             get { return this._type; }

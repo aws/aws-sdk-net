@@ -52,6 +52,7 @@ namespace Amazon.Redshift.Model
         /// snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountWithRestoreAccess
         {
             get { return this._accountWithRestoreAccess; }
@@ -90,6 +91,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the snapshot that the account can no longer access.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

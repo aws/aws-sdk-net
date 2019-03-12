@@ -46,6 +46,7 @@ namespace Amazon.AppStream.Model
         /// The application name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -82,6 +83,7 @@ namespace Amazon.AppStream.Model
         /// The URL for the application icon. This URL might be time-limited.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string IconURL
         {
             get { return this._iconURL; }
@@ -100,6 +102,7 @@ namespace Amazon.AppStream.Model
         /// The arguments that are passed to the application at launch.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string LaunchParameters
         {
             get { return this._launchParameters; }
@@ -118,6 +121,7 @@ namespace Amazon.AppStream.Model
         /// The path to the application executable in the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string LaunchPath
         {
             get { return this._launchPath; }
@@ -154,6 +158,7 @@ namespace Amazon.AppStream.Model
         /// The name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

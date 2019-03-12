@@ -39,6 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. AWS Account ID.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -54,6 +55,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Result. A reason why the account hasn't been processed.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Result
         {
             get { return this._result; }

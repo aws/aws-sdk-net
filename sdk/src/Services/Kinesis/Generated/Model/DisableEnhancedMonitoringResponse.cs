@@ -43,6 +43,7 @@ namespace Amazon.Kinesis.Model
         /// the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public List<string> CurrentShardLevelMetrics
         {
             get { return this._currentShardLevelMetrics; }
@@ -62,6 +63,7 @@ namespace Amazon.Kinesis.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public List<string> DesiredShardLevelMetrics
         {
             get { return this._desiredShardLevelMetrics; }
@@ -80,6 +82,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the Kinesis data stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

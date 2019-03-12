@@ -40,6 +40,7 @@ namespace Amazon.Shield.Model
         /// The status of the subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscriptionState SubscriptionState
         {
             get { return this._subscriptionState; }

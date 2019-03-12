@@ -42,6 +42,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The ID of the backup that will be copied to the destination region. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The AWS region that will contain your copied CloudHSM cluster backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationRegion
         {
             get { return this._destinationRegion; }

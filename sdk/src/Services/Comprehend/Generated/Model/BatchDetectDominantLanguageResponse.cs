@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         /// is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BatchItemError> ErrorList
         {
             get { return this._errorList; }
@@ -65,6 +66,7 @@ namespace Amazon.Comprehend.Model
         /// is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BatchDetectDominantLanguageItemResult> ResultList
         {
             get { return this._resultList; }

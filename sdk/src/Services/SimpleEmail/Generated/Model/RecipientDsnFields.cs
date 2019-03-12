@@ -55,6 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// 3464</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DsnAction Action
         {
             get { return this._action; }
@@ -180,6 +181,7 @@ namespace Amazon.SimpleEmail.Model
         /// 3464</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

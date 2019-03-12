@@ -67,6 +67,7 @@ namespace Amazon.SimpleEmail.Model
         /// To successfully call this API, you must own the identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }
@@ -87,6 +88,7 @@ namespace Amazon.SimpleEmail.Model
         /// to the identity, you can use <code>ListIdentityPolicies</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyNames
         {
             get { return this._policyNames; }

@@ -100,6 +100,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -124,6 +125,7 @@ namespace Amazon.KeyManagementService.Model
         /// If you do not include a value, it defaults to 30.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=365)]
         public int PendingWindowInDays
         {
             get { return this._pendingWindowInDays.GetValueOrDefault(); }

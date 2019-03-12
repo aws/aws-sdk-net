@@ -64,6 +64,7 @@ namespace Amazon.MachineLearning.Model
         /// predict.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string BatchPredictionDataSourceId
         {
             get { return this._batchPredictionDataSourceId; }
@@ -82,6 +83,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string BatchPredictionId
         {
             get { return this._batchPredictionId; }
@@ -101,6 +103,7 @@ namespace Amazon.MachineLearning.Model
         /// can only use the UTF-8 character set.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string BatchPredictionName
         {
             get { return this._batchPredictionName; }
@@ -120,6 +123,7 @@ namespace Amazon.MachineLearning.Model
         /// observations. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -147,6 +151,7 @@ namespace Amazon.MachineLearning.Model
         /// Machine Learning Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string OutputUri
         {
             get { return this._outputUri; }

@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The number of in-application streams to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }

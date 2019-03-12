@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }
@@ -69,6 +70,7 @@ namespace Amazon.SimpleEmail.Model
         /// Indicates whether to block or allow incoming mail from the specified IP addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReceiptFilterPolicy Policy
         {
             get { return this._policy; }

@@ -70,6 +70,7 @@ namespace Amazon.ResourceGroups.Model
         /// output. By default, this number is 50.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.WAFRegional.Model
         /// Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -63,6 +64,7 @@ namespace Amazon.WAFRegional.Model
         /// scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public XssMatchTuple XssMatchTuple
         {
             get { return this._xssMatchTuple; }

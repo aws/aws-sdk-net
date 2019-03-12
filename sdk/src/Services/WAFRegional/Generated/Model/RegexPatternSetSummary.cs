@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// after you create a <code>RegexPatternSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -69,6 +70,7 @@ namespace Amazon.WAFRegional.Model
         /// <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RegexPatternSetId
         {
             get { return this._regexPatternSetId; }

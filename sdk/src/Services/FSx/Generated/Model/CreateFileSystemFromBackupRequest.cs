@@ -85,6 +85,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property BackupId.
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=128)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -105,6 +106,7 @@ namespace Amazon.FSx.Model
         /// Command Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -125,6 +127,7 @@ namespace Amazon.FSx.Model
         /// This value isn't returned in later describe requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -145,6 +148,7 @@ namespace Amazon.FSx.Model
         /// Availability Zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -164,6 +168,7 @@ namespace Amazon.FSx.Model
         /// the <code>Name</code> tag appears in the console as the file system name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -84,6 +84,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// If the target type is <code>lambda</code>, specify the ARN of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -102,6 +103,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The port on which the target is listening.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

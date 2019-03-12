@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// You cannot start or finish with a dash, nor can you have two dashes in a row.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string AccountAlias
         {
             get { return this._accountAlias; }

@@ -57,6 +57,7 @@ namespace Amazon.StorageGateway.Model
         /// items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -76,6 +77,7 @@ namespace Amazon.StorageGateway.Model
         /// gateways.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }

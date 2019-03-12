@@ -71,6 +71,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -89,6 +90,7 @@ namespace Amazon.Lambda.Model
         /// Specify a version to delete. You can't delete a version that's referenced by an alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Qualifier
         {
             get { return this._qualifier; }

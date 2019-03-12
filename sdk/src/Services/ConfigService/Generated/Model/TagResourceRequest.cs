@@ -47,6 +47,7 @@ namespace Amazon.ConfigService.Model
         /// and <code>AggregatorAuthorization</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -65,6 +66,7 @@ namespace Amazon.ConfigService.Model
         /// An array of tag object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

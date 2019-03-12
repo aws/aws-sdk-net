@@ -47,6 +47,7 @@ namespace Amazon.TranscribeService.Model
         /// access to that location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string TranscriptFileUri
         {
             get { return this._transcriptFileUri; }

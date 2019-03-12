@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// list of resource tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=93)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// Array of resource tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

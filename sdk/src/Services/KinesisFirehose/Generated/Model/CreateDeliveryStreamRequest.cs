@@ -126,6 +126,7 @@ namespace Amazon.KinesisFirehose.Model
         /// you can have multiple delivery streams with the same name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -291,6 +292,7 @@ namespace Amazon.KinesisFirehose.Model
         /// You can specify up to 50 tags when creating a delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

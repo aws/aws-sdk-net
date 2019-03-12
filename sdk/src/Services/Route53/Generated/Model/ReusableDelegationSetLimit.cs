@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReusableDelegationSetLimitType Type
         {
             get { return this._type; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53.Model
         /// The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long Value
         {
             get { return this._value.GetValueOrDefault(); }

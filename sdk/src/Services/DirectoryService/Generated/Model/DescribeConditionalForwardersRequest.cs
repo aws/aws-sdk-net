@@ -48,6 +48,7 @@ namespace Amazon.DirectoryService.Model
         /// The directory ID for which to get the list of associated conditional forwarders.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

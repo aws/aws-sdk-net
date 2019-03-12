@@ -50,6 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// of the resource that given in the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogicalResourceId
         {
             get { return this._logicalResourceId; }
@@ -68,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// The stack name or unique stack ID that includes the resource that you want to signal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -87,6 +89,7 @@ namespace Amazon.CloudFormation.Model
         /// AWS CloudFormation to immediately fail the stack creation or update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceSignalStatus Status
         {
             get { return this._status; }
@@ -108,6 +111,7 @@ namespace Amazon.CloudFormation.Model
         /// a different unique ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UniqueId
         {
             get { return this._uniqueId; }

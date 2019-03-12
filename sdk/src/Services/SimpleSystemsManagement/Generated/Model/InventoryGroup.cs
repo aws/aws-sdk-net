@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// field displays the number of resources that don't match the criteria. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<InventoryFilter> Filters
         {
             get { return this._filters; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Name
         {
             get { return this._name; }

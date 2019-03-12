@@ -82,6 +82,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the client node. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NodeName
         {
             get { return this._nodeName; }
@@ -100,6 +101,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server from which to disassociate the node. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

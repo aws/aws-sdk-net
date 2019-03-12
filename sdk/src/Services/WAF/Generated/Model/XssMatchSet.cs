@@ -47,6 +47,7 @@ namespace Amazon.WAF.Model
         /// The name, if any, of the <code>XssMatchSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -73,6 +74,7 @@ namespace Amazon.WAF.Model
         ///  <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string XssMatchSetId
         {
             get { return this._xssMatchSetId; }
@@ -92,6 +94,7 @@ namespace Amazon.WAF.Model
         /// attacks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<XssMatchTuple> XssMatchTuples
         {
             get { return this._xssMatchTuples; }

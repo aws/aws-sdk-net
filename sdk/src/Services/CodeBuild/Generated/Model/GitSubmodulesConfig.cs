@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         ///  Set to true to fetch Git submodules for your AWS CodeBuild build project. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool FetchSubmodules
         {
             get { return this._fetchSubmodules.GetValueOrDefault(); }

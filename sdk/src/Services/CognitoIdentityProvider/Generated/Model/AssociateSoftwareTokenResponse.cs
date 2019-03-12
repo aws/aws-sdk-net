@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a one time code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16)]
         public string SecretCode
         {
             get { return this._secretCode; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// This allows authentication of the user as part of the MFA setup process.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

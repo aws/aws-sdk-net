@@ -49,6 +49,7 @@ namespace Amazon.Cloud9.Model
         /// has last been used.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20160)]
         public int AutomaticStopTimeMinutes
         {
             get { return this._automaticStopTimeMinutes.GetValueOrDefault(); }
@@ -91,6 +92,7 @@ namespace Amazon.Cloud9.Model
         /// The description of the environment to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -109,6 +111,7 @@ namespace Amazon.Cloud9.Model
         /// The type of instance to connect to the environment (for example, <code>t2.micro</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=20)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -131,6 +134,7 @@ namespace Amazon.Cloud9.Model
         /// This name is visible to other AWS IAM users in the same AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public string Name
         {
             get { return this._name; }
@@ -170,6 +174,7 @@ namespace Amazon.Cloud9.Model
         /// Amazon EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=30)]
         public string SubnetId
         {
             get { return this._subnetId; }

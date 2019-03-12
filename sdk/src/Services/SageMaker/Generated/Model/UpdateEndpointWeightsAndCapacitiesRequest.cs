@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// An object that provides new capacity and weight values for a variant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<DesiredWeightAndCapacity> DesiredWeightsAndCapacities
         {
             get { return this._desiredWeightsAndCapacities; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The name of an existing Amazon SageMaker endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the new algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AlgorithmArn
         {
             get { return this._algorithmArn; }

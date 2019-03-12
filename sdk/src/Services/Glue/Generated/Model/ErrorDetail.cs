@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The code associated with this error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -59,6 +60,7 @@ namespace Amazon.Glue.Model
         /// A message describing the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

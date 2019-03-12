@@ -81,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }
@@ -99,6 +100,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing type, if the thing has been associated with a type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingTypeName
         {
             get { return this._thingTypeName; }

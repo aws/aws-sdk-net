@@ -44,6 +44,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specify the <code>ARN</code> for which you want to add the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }
@@ -62,6 +63,7 @@ namespace Amazon.Elasticsearch.Model
         ///  List of <code>Tag</code> that need to be added for the Elasticsearch domain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> TagList
         {
             get { return this._tagList; }

@@ -74,6 +74,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a player that is associated with this player session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }

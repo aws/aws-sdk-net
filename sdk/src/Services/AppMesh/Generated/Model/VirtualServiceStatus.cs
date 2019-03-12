@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The current status of the virtual service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualServiceStatusCode Status
         {
             get { return this._status; }

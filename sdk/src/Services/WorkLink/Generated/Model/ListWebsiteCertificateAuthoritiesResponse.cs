@@ -42,6 +42,7 @@ namespace Amazon.WorkLink.Model
         /// If there are no more pages, this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

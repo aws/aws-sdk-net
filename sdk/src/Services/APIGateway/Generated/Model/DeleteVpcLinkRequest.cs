@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// to reference this <a>VpcLink</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcLinkId
         {
             get { return this._vpcLinkId; }

@@ -65,6 +65,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the creator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CreatorId
         {
             get { return this._creatorId; }
@@ -83,6 +84,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -101,6 +103,7 @@ namespace Amazon.WorkDocs.Model
         /// List of labels on the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> Labels
         {
             get { return this._labels; }
@@ -155,6 +158,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the parent folder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentFolderId
         {
             get { return this._parentFolderId; }

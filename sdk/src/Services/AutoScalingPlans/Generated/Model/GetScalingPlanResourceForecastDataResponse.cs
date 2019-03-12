@@ -40,6 +40,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The data points to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Datapoint> Datapoints
         {
             get { return this._datapoints; }

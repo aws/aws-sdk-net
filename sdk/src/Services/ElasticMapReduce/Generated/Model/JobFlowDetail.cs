@@ -74,6 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string AmiVersion
         {
             get { return this._amiVersion; }
@@ -94,6 +95,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// permissions it needs to launch and terminate EC2 instances in an instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string AutoScalingRole
         {
             get { return this._autoScalingRole; }
@@ -130,6 +132,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Describes the execution status of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobFlowExecutionStatusDetail ExecutionStatusDetail
         {
             get { return this._executionStatusDetail; }
@@ -148,6 +151,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Describes the Amazon EC2 instances of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobFlowInstancesDetail Instances
         {
             get { return this._instances; }
@@ -166,6 +170,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The job flow identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string JobFlowId
         {
             get { return this._jobFlowId; }
@@ -185,6 +190,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// of the job flow assume this role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string JobFlowRole
         {
             get { return this._jobFlowRole; }
@@ -203,6 +209,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The location in Amazon S3 where log files for the job are stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string LogUri
         {
             get { return this._logUri; }
@@ -221,6 +228,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -268,6 +276,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string ServiceRole
         {
             get { return this._serviceRole; }

@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The sample message payloads on which the pipeline activity is run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<MemoryStream> Payloads
         {
             get { return this._payloads; }
@@ -64,6 +65,7 @@ namespace Amazon.IoTAnalytics.Model
         /// 30 seconds or less) can be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PipelineActivity PipelineActivity
         {
             get { return this._pipelineActivity; }

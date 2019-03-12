@@ -53,6 +53,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -90,6 +91,7 @@ namespace Amazon.CloudFront.Model
         /// The value you provided for the <code>Marker</code> request parameter. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Marker
         {
             get { return this._marker; }
@@ -108,6 +110,7 @@ namespace Amazon.CloudFront.Model
         /// The value you provided for the <code>MaxItems</code> request parameter. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -147,6 +150,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

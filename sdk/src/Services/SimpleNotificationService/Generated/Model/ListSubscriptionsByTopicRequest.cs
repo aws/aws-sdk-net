@@ -93,6 +93,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic for which you wish to find subscriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

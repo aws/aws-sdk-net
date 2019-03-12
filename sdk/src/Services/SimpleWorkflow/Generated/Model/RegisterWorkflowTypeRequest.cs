@@ -158,6 +158,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the workflow execution to time out.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultExecutionStartToCloseTimeout
         {
             get { return this._defaultExecutionStartToCloseTimeout; }
@@ -184,6 +185,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string DefaultLambdaRole
         {
             get { return this._defaultLambdaRole; }
@@ -257,6 +259,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskStartToCloseTimeout
         {
             get { return this._defaultTaskStartToCloseTimeout; }
@@ -275,6 +278,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Textual description of the workflow type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -293,6 +297,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain in which to register the workflow type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -318,6 +323,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -349,6 +355,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

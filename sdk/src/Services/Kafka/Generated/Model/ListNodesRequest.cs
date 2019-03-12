@@ -43,6 +43,7 @@ namespace Amazon.Kafka.Model
         /// The Amazon Resource Name (ARN) that uniquely identifies the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -62,6 +63,7 @@ namespace Amazon.Kafka.Model
         /// the response includes a NextToken parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

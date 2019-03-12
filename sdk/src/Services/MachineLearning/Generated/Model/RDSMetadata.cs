@@ -60,6 +60,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DatabaseUserName.
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DatabaseUserName
         {
             get { return this._databaseUserName; }
@@ -80,6 +81,7 @@ namespace Amazon.MachineLearning.Model
         /// Pipeline console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DataPipelineId
         {
             get { return this._dataPipelineId; }
@@ -100,6 +102,7 @@ namespace Amazon.MachineLearning.Model
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResourceRole
         {
             get { return this._resourceRole; }
@@ -119,6 +122,7 @@ namespace Amazon.MachineLearning.Model
         /// if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16777216)]
         public string SelectSqlQuery
         {
             get { return this._selectSqlQuery; }
@@ -140,6 +144,7 @@ namespace Amazon.MachineLearning.Model
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ServiceRole
         {
             get { return this._serviceRole; }

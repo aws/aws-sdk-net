@@ -53,6 +53,7 @@ namespace Amazon.Redshift.Model
         /// To share a snapshot with AWS support, specify amazon-redshift-support.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountWithRestoreAccess
         {
             get { return this._accountWithRestoreAccess; }
@@ -91,6 +92,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the snapshot the account is authorized to restore.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

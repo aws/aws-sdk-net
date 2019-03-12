@@ -101,6 +101,7 @@ namespace Amazon.WorkSpaces.Model
         /// The name of the bundle.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

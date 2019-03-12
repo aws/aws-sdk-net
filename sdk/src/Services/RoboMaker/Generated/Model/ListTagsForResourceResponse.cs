@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker.Model
         /// The list of all tags added to the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

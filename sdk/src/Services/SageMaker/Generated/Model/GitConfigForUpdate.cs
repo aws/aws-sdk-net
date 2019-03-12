@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         ///  <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string SecretArn
         {
             get { return this._secretArn; }

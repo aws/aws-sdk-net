@@ -68,6 +68,7 @@ namespace Amazon.Rekognition.Model
         /// the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamProcessorInput Input
         {
             get { return this._input; }
@@ -89,6 +90,7 @@ namespace Amazon.Rekognition.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -108,6 +110,7 @@ namespace Amazon.Rekognition.Model
         /// If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamProcessorOutput Output
         {
             get { return this._output; }
@@ -126,6 +129,7 @@ namespace Amazon.Rekognition.Model
         /// ARN of the IAM role that allows access to the stream processor.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -145,6 +149,7 @@ namespace Amazon.Rekognition.Model
         /// collection to use for face recognition and the face attributes to detect.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamProcessorSettings Settings
         {
             get { return this._settings; }

@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         /// by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number
         /// (maximum of 4)
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public int CaptionChannel
         {
             get { return this._captionChannel.GetValueOrDefault(); }
@@ -58,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LanguageCode. Three character ISO 639-2 language code (see
         /// http://www.loc.gov/standards/iso639-2)
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=3)]
         public string LanguageCode
         {
             get { return this._languageCode; }
@@ -73,6 +75,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property LanguageDescription. Textual description of language
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string LanguageDescription
         {
             get { return this._languageDescription; }

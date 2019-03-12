@@ -78,6 +78,7 @@ namespace Amazon.Rekognition.Model
         /// Blob of image bytes up to 5 MBs.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5242880)]
         public MemoryStream Bytes
         {
             get { return this._bytes; }

@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// Information about the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<Finding> Findings
         {
             get { return this._findings; }

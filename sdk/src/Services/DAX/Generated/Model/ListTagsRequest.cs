@@ -63,6 +63,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX resource to which the tags belong.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

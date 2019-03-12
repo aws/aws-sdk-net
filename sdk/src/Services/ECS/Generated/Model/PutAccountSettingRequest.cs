@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SettingName Name
         {
             get { return this._name; }
@@ -96,6 +97,7 @@ namespace Amazon.ECS.Model
         /// and <code>disabled</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

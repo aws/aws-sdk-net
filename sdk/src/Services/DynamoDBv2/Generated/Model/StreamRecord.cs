@@ -120,6 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The sequence number of the stream record.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=21, Max=40)]
         public string SequenceNumber
         {
             get { return this._sequenceNumber; }
@@ -138,6 +139,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The size of the stream record, in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long SizeBytes
         {
             get { return this._sizeBytes.GetValueOrDefault(); }

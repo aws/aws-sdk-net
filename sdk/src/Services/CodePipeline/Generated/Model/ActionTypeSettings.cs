@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// deployment group. This link is provided as part of the action display within the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string EntityUrlTemplate
         {
             get { return this._entityUrlTemplate; }
@@ -66,6 +67,7 @@ namespace Amazon.CodePipeline.Model
         /// a link to the execution entity of the external action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ExecutionUrlTemplate
         {
             get { return this._executionUrlTemplate; }
@@ -85,6 +87,7 @@ namespace Amazon.CodePipeline.Model
         /// where customers can update or change the configuration of the external action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionUrlTemplate
         {
             get { return this._revisionUrlTemplate; }
@@ -104,6 +107,7 @@ namespace Amazon.CodePipeline.Model
         /// initial configuration of the action provided by that service.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ThirdPartyConfigurationUrl
         {
             get { return this._thirdPartyConfigurationUrl; }

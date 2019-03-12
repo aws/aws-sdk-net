@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property MaxResults. You can use this parameter to indicate the
         /// maximum number of detectors that you want in the response.
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

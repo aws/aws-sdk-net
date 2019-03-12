@@ -41,6 +41,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }

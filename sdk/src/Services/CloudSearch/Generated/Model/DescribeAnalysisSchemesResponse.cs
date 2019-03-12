@@ -41,6 +41,7 @@ namespace Amazon.CloudSearch.Model
         /// The analysis scheme descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AnalysisSchemeStatus> AnalysisSchemes
         {
             get { return this._analysisSchemes; }

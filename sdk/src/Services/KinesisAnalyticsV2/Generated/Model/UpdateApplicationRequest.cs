@@ -77,6 +77,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the application to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -116,6 +117,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -152,6 +154,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes updates to the service execution role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ServiceExecutionRoleUpdate
         {
             get { return this._serviceExecutionRoleUpdate; }

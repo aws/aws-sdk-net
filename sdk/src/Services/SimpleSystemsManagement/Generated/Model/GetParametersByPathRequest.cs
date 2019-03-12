@@ -65,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -127,6 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Path
         {
             get { return this._path; }

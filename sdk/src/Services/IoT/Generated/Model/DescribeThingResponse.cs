@@ -65,6 +65,7 @@ namespace Amazon.IoT.Model
         /// The name of the billing group the thing belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string BillingGroupName
         {
             get { return this._billingGroupName; }
@@ -137,6 +138,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }
@@ -155,6 +157,7 @@ namespace Amazon.IoT.Model
         /// The thing type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingTypeName
         {
             get { return this._thingTypeName; }

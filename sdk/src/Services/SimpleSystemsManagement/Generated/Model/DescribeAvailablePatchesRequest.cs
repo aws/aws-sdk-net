@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Filters used to scope down the returned patches.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<PatchOrchestratorFilter> Filters
         {
             get { return this._filters; }
@@ -61,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of patches to return (per page).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

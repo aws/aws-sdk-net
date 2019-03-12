@@ -44,6 +44,7 @@ namespace Amazon.S3Control.Model
         /// you want to set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -63,6 +64,7 @@ namespace Amazon.S3Control.Model
         /// account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PublicAccessBlockConfiguration PublicAccessBlockConfiguration
         {
             get { return this._publicAccessBlockConfiguration; }

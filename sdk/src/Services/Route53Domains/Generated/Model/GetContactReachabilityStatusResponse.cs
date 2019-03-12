@@ -41,6 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// The domain name for which you requested the reachability status.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -61,6 +61,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> ResourceARNList
         {
             get { return this._resourceARNList; }
@@ -79,6 +80,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// A list of the tag keys that you want to remove from the specified resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

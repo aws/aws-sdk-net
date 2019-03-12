@@ -196,6 +196,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }

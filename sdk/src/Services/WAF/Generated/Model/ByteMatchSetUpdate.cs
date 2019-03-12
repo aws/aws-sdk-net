@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// Specifies whether to insert or delete a <a>ByteMatchTuple</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -65,6 +66,7 @@ namespace Amazon.WAF.Model
         /// <code>ByteMatchSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ByteMatchTuple ByteMatchTuple
         {
             get { return this._byteMatchTuple; }

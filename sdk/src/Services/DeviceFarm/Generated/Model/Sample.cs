@@ -42,6 +42,7 @@ namespace Amazon.DeviceFarm.Model
         /// The sample's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -157,6 +158,7 @@ namespace Amazon.DeviceFarm.Model
         /// download the sample's file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Url
         {
             get { return this._url; }

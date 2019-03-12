@@ -85,6 +85,7 @@ namespace Amazon.IoT.Model
         /// required.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

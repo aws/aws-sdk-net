@@ -59,6 +59,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }

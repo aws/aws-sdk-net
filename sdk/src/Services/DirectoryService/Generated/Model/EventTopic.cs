@@ -117,6 +117,7 @@ namespace Amazon.DirectoryService.Model
         /// The name of an AWS SNS topic the receives status messages from the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string TopicName
         {
             get { return this._topicName; }

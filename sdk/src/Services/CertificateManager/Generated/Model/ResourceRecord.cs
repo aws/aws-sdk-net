@@ -43,6 +43,7 @@ namespace Amazon.CertificateManager.Model
         /// The name of the DNS record to create in your domain. This is supplied by ACM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -61,6 +62,7 @@ namespace Amazon.CertificateManager.Model
         /// The type of DNS record. Currently this can be <code>CNAME</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordType Type
         {
             get { return this._type; }
@@ -79,6 +81,7 @@ namespace Amazon.CertificateManager.Model
         /// The value of the CNAME record to add to your DNS database. This is supplied by ACM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

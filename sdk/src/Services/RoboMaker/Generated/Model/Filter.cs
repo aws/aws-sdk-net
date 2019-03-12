@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> Values
         {
             get { return this._values; }

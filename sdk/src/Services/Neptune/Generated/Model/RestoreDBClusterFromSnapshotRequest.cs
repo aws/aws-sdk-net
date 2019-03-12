@@ -123,6 +123,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -198,6 +199,7 @@ namespace Amazon.Neptune.Model
         /// Constraint: Must be compatible with the engine of the source
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }
@@ -335,6 +337,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

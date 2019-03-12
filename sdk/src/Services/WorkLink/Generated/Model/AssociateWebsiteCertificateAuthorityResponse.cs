@@ -40,6 +40,7 @@ namespace Amazon.WorkLink.Model
         /// A unique identifier for the CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string WebsiteCaId
         {
             get { return this._websiteCaId; }

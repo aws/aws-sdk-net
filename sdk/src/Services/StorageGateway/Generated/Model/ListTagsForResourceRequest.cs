@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// Specifies that the list of tags returned be limited to the specified number of items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }
@@ -81,6 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the resource for which you want to list tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

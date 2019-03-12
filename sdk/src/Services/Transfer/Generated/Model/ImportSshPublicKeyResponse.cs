@@ -44,6 +44,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -62,6 +63,7 @@ namespace Amazon.Transfer.Model
         /// This identifier is the name given to a public key by the system that was imported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SshPublicKeyId
         {
             get { return this._sshPublicKeyId; }
@@ -80,6 +82,7 @@ namespace Amazon.Transfer.Model
         /// A user name assigned to the <code>ServerID</code> value that you specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

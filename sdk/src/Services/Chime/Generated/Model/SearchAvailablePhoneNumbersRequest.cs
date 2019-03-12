@@ -100,6 +100,7 @@ namespace Amazon.Chime.Model
         /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

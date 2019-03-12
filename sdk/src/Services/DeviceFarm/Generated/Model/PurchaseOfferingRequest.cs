@@ -47,6 +47,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID of the offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string OfferingId
         {
             get { return this._offeringId; }
@@ -65,6 +66,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID of the offering promotion to be applied to the purchase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4)]
         public string OfferingPromotionId
         {
             get { return this._offeringPromotionId; }

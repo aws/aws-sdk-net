@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointArn
         {
             get { return this._endpointArn; }
@@ -60,6 +61,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the replication instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationInstanceArn
         {
             get { return this._replicationInstanceArn; }

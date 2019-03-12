@@ -47,6 +47,7 @@ namespace Amazon.DocDB.Model
         /// The name of the filter. Filter names are case sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -65,6 +66,7 @@ namespace Amazon.DocDB.Model
         /// One or more filter values. Filter values are case sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

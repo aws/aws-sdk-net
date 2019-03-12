@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack or layer's Amazon Resource Number (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.OpsWorks.Model
         /// A list of the keys of tags to be removed from a stack or layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

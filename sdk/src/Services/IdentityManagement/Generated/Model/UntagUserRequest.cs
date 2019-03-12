@@ -45,6 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// removed from the specified user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }
@@ -69,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

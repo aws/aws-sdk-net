@@ -47,6 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// The error code associated with the operation failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Code
         {
             get { return this._code; }
@@ -65,6 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// Detailed information about the reason that the operation failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Message
         {
             get { return this._message; }

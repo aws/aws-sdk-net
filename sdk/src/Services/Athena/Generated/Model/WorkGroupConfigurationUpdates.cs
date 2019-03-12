@@ -49,6 +49,7 @@ namespace Amazon.Athena.Model
         /// allowed to scan.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10000000)]
         public long BytesScannedCutoffPerQuery
         {
             get { return this._bytesScannedCutoffPerQuery.GetValueOrDefault(); }

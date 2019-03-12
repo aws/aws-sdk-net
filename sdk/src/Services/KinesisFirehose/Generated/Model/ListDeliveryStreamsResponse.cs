@@ -41,6 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The names of the delivery streams.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DeliveryStreamNames
         {
             get { return this._deliveryStreamNames; }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Indicates whether there are more delivery streams available to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreDeliveryStreams
         {
             get { return this._hasMoreDeliveryStreams.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.Shield.Model
         /// The unique identifier (ID) of the protection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.Shield.Model
         /// The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.Shield.Model
         /// The ARN (Amazon Resource Name) of the AWS resource that is protected.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

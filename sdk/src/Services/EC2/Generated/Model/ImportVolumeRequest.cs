@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The Availability Zone for the resulting EBS volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -88,6 +89,7 @@ namespace Amazon.EC2.Model
         /// The disk image.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DiskImageDetail Image
         {
             get { return this._image; }
@@ -106,6 +108,7 @@ namespace Amazon.EC2.Model
         /// The volume size.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VolumeDetail Volume
         {
             get { return this._volume; }

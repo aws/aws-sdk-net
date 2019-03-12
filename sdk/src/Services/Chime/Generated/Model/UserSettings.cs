@@ -41,6 +41,7 @@ namespace Amazon.Chime.Model
         /// The telephony settings associated with the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TelephonySettings Telephony
         {
             get { return this._telephony; }

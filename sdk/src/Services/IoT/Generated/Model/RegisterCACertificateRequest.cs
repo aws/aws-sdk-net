@@ -68,6 +68,7 @@ namespace Amazon.IoT.Model
         /// The CA certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string CaCertificate
         {
             get { return this._caCertificate; }
@@ -122,6 +123,7 @@ namespace Amazon.IoT.Model
         /// The private key verification certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string VerificationCertificate
         {
             get { return this._verificationCertificate; }

@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// The name of the log file to be downloaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogFileName
         {
             get { return this._logFileName; }

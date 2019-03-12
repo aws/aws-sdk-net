@@ -53,6 +53,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AudioFramesPerPes. The number of audio frames to insert
         /// for each PES packet.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int AudioFramesPerPes
         {
             get { return this._audioFramesPerPes.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property PatInterval. The number of milliseconds between instances
         /// of this table in the output transport stream.
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int PatInterval
         {
             get { return this._patInterval.GetValueOrDefault(); }
@@ -133,6 +135,7 @@ namespace Amazon.MediaConvert.Model
         /// (PCR) in the transport stream. When no value is given, the encoder will assign the
         /// same value as the Video PID.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int PcrPid
         {
             get { return this._pcrPid.GetValueOrDefault(); }
@@ -149,6 +152,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property PmtInterval. The number of milliseconds between instances
         /// of this table in the output transport stream.
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int PmtInterval
         {
             get { return this._pmtInterval.GetValueOrDefault(); }
@@ -165,6 +169,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property PmtPid. Packet Identifier (PID) for the Program Map Table
         /// (PMT) in the transport stream.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int PmtPid
         {
             get { return this._pmtPid.GetValueOrDefault(); }
@@ -181,6 +186,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property PrivateMetadataPid. Packet Identifier (PID) of the private
         /// metadata stream in the transport stream.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int PrivateMetadataPid
         {
             get { return this._privateMetadataPid.GetValueOrDefault(); }
@@ -197,6 +203,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ProgramNumber. The value of the program number field in
         /// the Program Map Table.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int ProgramNumber
         {
             get { return this._programNumber.GetValueOrDefault(); }
@@ -213,6 +220,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Scte35Pid. Packet Identifier (PID) of the SCTE-35 stream
         /// in the transport stream.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int Scte35Pid
         {
             get { return this._scte35Pid.GetValueOrDefault(); }
@@ -259,6 +267,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
         /// metadata stream in the transport stream.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int TimedMetadataPid
         {
             get { return this._timedMetadataPid.GetValueOrDefault(); }
@@ -275,6 +284,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TransportStreamId. The value of the transport stream ID
         /// field in the Program Map Table.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int TransportStreamId
         {
             get { return this._transportStreamId.GetValueOrDefault(); }
@@ -291,6 +301,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property VideoPid. Packet Identifier (PID) of the elementary video
         /// stream in the transport stream.
         /// </summary>
+        [AWSProperty(Min=32, Max=8182)]
         public int VideoPid
         {
             get { return this._videoPid.GetValueOrDefault(); }

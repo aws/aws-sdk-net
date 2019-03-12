@@ -79,6 +79,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of the vocabulary that was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string VocabularyName
         {
             get { return this._vocabularyName; }

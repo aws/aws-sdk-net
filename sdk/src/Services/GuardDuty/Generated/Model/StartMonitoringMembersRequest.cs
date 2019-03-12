@@ -42,6 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AccountIds. A list of account IDs of the GuardDuty member
         /// accounts whose findings you want the master account to monitor.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -58,6 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
         /// account whom you want to re-enable to monitor members' findings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }

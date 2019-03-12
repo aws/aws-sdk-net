@@ -47,6 +47,7 @@ namespace Amazon.MediaConnect.Model
         /// create the flow in. These options are limited to the Availability Zones within the
         /// current AWS.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -94,6 +95,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Entitlements. The entitlements in this flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Entitlement> Entitlements
         {
             get { return this._entitlements; }
@@ -110,6 +112,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN), a unique identifier
         /// for any AWS resource, of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -125,6 +128,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -140,6 +144,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Outputs. The outputs in this flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Output> Outputs
         {
             get { return this._outputs; }
@@ -155,6 +160,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Source Source
         {
             get { return this._source; }
@@ -170,6 +176,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Status. The current status of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Status Status
         {
             get { return this._status; }

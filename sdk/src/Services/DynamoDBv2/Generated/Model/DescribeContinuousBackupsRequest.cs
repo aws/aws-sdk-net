@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// point in time recovery settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

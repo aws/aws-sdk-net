@@ -42,6 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// An email address to be removed from the list of verified addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

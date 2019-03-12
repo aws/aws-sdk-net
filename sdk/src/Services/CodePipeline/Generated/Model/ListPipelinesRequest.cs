@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// used to return the next set of pipelines in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

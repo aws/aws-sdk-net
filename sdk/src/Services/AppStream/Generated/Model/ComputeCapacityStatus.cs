@@ -61,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// The desired number of streaming instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Desired
         {
             get { return this._desired.GetValueOrDefault(); }

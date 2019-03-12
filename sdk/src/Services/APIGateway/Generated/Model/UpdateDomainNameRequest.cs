@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the <a>DomainName</a> resource to be changed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -45,6 +45,7 @@ namespace Amazon.WorkMail.Model
         /// The display name for the user to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The name for the user to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -81,6 +83,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization for which the user is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -99,6 +102,7 @@ namespace Amazon.WorkMail.Model
         /// The password for the user to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string Password
         {
             get { return this._password; }

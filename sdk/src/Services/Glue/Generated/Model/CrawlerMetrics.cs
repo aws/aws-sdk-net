@@ -47,6 +47,7 @@ namespace Amazon.Glue.Model
         /// The name of the crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CrawlerName
         {
             get { return this._crawlerName; }
@@ -65,6 +66,7 @@ namespace Amazon.Glue.Model
         /// The duration of the crawler's most recent run, in seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double LastRuntimeSeconds
         {
             get { return this._lastRuntimeSeconds.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.Glue.Model
         /// The median duration of this crawler's runs, in seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double MedianRuntimeSeconds
         {
             get { return this._medianRuntimeSeconds.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.Glue.Model
         /// The number of tables created by this crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TablesCreated
         {
             get { return this._tablesCreated.GetValueOrDefault(); }
@@ -137,6 +141,7 @@ namespace Amazon.Glue.Model
         /// The number of tables deleted by this crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TablesDeleted
         {
             get { return this._tablesDeleted.GetValueOrDefault(); }
@@ -155,6 +160,7 @@ namespace Amazon.Glue.Model
         /// The number of tables updated by this crawler.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TablesUpdated
         {
             get { return this._tablesUpdated.GetValueOrDefault(); }
@@ -173,6 +179,7 @@ namespace Amazon.Glue.Model
         /// The estimated time left to complete a running crawl.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double TimeLeftSeconds
         {
             get { return this._timeLeftSeconds.GetValueOrDefault(); }

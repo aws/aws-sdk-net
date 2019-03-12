@@ -46,6 +46,7 @@ namespace Amazon.DocDB.Model
         /// Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -64,6 +65,7 @@ namespace Amazon.DocDB.Model
         /// The tags to be assigned to the Amazon DocumentDB resource. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

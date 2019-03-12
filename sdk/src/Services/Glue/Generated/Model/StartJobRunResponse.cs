@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         /// The ID assigned to this job run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string JobRunId
         {
             get { return this._jobRunId; }

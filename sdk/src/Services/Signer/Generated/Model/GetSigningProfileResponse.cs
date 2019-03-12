@@ -81,6 +81,7 @@ namespace Amazon.Signer.Model
         /// The name of the target signing profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string ProfileName
         {
             get { return this._profileName; }

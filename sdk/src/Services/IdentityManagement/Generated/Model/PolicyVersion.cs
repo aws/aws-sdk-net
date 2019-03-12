@@ -87,6 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// and SDKs provide similar functionality.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string Document
         {
             get { return this._document; }

@@ -83,6 +83,7 @@ namespace Amazon.Lambda.Model
         /// The maximum number of layers to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

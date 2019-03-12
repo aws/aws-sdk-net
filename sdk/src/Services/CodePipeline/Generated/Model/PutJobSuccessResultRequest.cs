@@ -49,6 +49,7 @@ namespace Amazon.CodePipeline.Model
         /// the action is complete, no continuation token should be supplied.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ContinuationToken
         {
             get { return this._continuationToken; }
@@ -105,6 +106,7 @@ namespace Amazon.CodePipeline.Model
         /// from PollForJobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }

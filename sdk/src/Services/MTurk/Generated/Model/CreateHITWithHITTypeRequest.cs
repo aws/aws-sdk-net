@@ -98,6 +98,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITLayoutId
         {
             get { return this._hitLayoutId; }
@@ -154,6 +155,7 @@ namespace Amazon.MTurk.Model
         /// The HIT type ID you want to create this HIT with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITTypeId
         {
             get { return this._hitTypeId; }
@@ -174,6 +176,7 @@ namespace Amazon.MTurk.Model
         /// searches, even if not all of the assignments for the HIT have been accepted. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long LifetimeInSeconds
         {
             get { return this._lifetimeInSeconds.GetValueOrDefault(); }
@@ -282,6 +285,7 @@ namespace Amazon.MTurk.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UniqueRequestToken
         {
             get { return this._uniqueRequestToken; }

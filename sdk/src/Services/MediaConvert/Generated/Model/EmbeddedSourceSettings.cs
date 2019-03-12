@@ -55,6 +55,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Source608ChannelNumber. Specifies the 608/708 channel number
         /// within the video track from which to extract captions. Unused for passthrough.
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public int Source608ChannelNumber
         {
             get { return this._source608ChannelNumber.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.MediaConvert.Model
         /// for extracting captions. The system only supports one input video track, so this should
         /// always be set to '1'.
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public int Source608TrackNumber
         {
             get { return this._source608TrackNumber.GetValueOrDefault(); }

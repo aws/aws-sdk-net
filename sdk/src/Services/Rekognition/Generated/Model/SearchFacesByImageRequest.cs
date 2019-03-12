@@ -85,6 +85,7 @@ namespace Amazon.Rekognition.Model
         /// ID of the collection to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -104,6 +105,7 @@ namespace Amazon.Rekognition.Model
         /// don't return any matches where confidence in matches is less than 70%.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float FaceMatchThreshold
         {
             get { return this._faceMatchThreshold.GetValueOrDefault(); }
@@ -130,6 +132,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image Image
         {
             get { return this._image; }
@@ -149,6 +152,7 @@ namespace Amazon.Rekognition.Model
         /// with the highest confidence in the match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public int MaxFaces
         {
             get { return this._maxFaces.GetValueOrDefault(); }

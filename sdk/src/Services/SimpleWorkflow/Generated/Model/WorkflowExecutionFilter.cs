@@ -40,6 +40,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflowId to pass of match the criteria of this filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

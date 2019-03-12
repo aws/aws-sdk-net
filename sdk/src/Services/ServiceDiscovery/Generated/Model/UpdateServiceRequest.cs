@@ -68,6 +68,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the service that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -86,6 +87,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// A complex type that contains the new settings for the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceChange Service
         {
             get { return this._service; }

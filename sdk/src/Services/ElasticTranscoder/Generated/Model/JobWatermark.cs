@@ -71,6 +71,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// returns an error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string InputKey
         {
             get { return this._inputKey; }
@@ -92,6 +93,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// which settings to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string PresetWatermarkId
         {
             get { return this._presetWatermarkId; }

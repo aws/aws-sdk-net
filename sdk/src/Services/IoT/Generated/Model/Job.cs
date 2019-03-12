@@ -74,6 +74,7 @@ namespace Amazon.IoT.Model
         /// If the job was updated, describes the reason for the update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Comment
         {
             get { return this._comment; }
@@ -128,6 +129,7 @@ namespace Amazon.IoT.Model
         /// A short text description of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -201,6 +203,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier you assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -273,6 +276,7 @@ namespace Amazon.IoT.Model
         /// If the job was updated, provides the reason code for the update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string ReasonCode
         {
             get { return this._reasonCode; }
@@ -310,6 +314,7 @@ namespace Amazon.IoT.Model
         /// A list of IoT things and thing groups to which the job should be sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> Targets
         {
             get { return this._targets; }

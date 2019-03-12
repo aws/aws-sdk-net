@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// A unique, user-specified identifier for this request that ensures idempotency. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The description for the skill group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name for the skill group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string SkillGroupName
         {
             get { return this._skillGroupName; }

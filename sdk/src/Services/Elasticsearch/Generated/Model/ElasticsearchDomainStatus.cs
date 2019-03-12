@@ -98,6 +98,7 @@ namespace Amazon.Elasticsearch.Model
         /// Management</i> for more information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }
@@ -176,6 +177,7 @@ namespace Amazon.Elasticsearch.Model
         /// The unique identifier for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DomainId
         {
             get { return this._domainId; }
@@ -196,6 +198,7 @@ namespace Amazon.Elasticsearch.Model
         /// can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -233,6 +236,7 @@ namespace Amazon.Elasticsearch.Model
         /// The type and number of instances in the domain cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ElasticsearchClusterConfig ElasticsearchClusterConfig
         {
             get { return this._elasticsearchClusterConfig; }

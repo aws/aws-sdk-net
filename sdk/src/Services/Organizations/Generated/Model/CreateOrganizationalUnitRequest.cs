@@ -56,6 +56,7 @@ namespace Amazon.Organizations.Model
         /// The friendly name to assign to the new OU.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -92,6 +93,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParentId
         {
             get { return this._parentId; }

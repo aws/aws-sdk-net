@@ -47,6 +47,7 @@ namespace Amazon.Comprehend.Model
         /// Comprehend generates one.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -66,6 +67,7 @@ namespace Amazon.Comprehend.Model
         /// grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -86,6 +88,7 @@ namespace Amazon.Comprehend.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EntityRecognizerInputDataConfig InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -105,6 +108,7 @@ namespace Amazon.Comprehend.Model
         /// Only English ("en") is currently supported. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -125,6 +129,7 @@ namespace Amazon.Comprehend.Model
         /// The name must be unique in the account/region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string RecognizerName
         {
             get { return this._recognizerName; }

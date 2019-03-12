@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         /// this parameter is set to null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -62,6 +63,7 @@ namespace Amazon.Inspector.Model
         /// Details of the returned event subscriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Subscription> Subscriptions
         {
             get { return this._subscriptions; }

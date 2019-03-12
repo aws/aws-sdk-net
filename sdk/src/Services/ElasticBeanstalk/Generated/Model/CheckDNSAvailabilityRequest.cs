@@ -55,6 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The prefix used when this CNAME is reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=63)]
         public string CNAMEPrefix
         {
             get { return this._cnamePrefix; }

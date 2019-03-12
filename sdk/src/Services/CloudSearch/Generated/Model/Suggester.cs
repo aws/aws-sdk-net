@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DocumentSuggesterOptions.
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentSuggesterOptions DocumentSuggesterOptions
         {
             get { return this._documentSuggesterOptions; }
@@ -55,6 +56,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property SuggesterName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string SuggesterName
         {
             get { return this._suggesterName; }

@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
         /// The AWS Region where the source snapshot is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegionName SourceRegion
         {
             get { return this._sourceRegion; }
@@ -61,6 +62,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the source instance or disk snapshot to be copied.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceSnapshotName
         {
             get { return this._sourceSnapshotName; }
@@ -79,6 +81,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the new instance or disk snapshot to be created as a copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetSnapshotName
         {
             get { return this._targetSnapshotName; }

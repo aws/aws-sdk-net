@@ -78,6 +78,7 @@ namespace Amazon.CloudFront.Model
         /// For more information, see <a>ActiveTrustedSigners</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -124,6 +125,7 @@ namespace Amazon.CloudFront.Model
         /// For more information, see <a>ActiveTrustedSigners</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

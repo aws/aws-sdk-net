@@ -75,6 +75,7 @@ namespace Amazon.ElastiCache.Model
         /// Example: <code>mysecuritygroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSecurityGroupName
         {
             get { return this._cacheSecurityGroupName; }
@@ -93,6 +94,7 @@ namespace Amazon.ElastiCache.Model
         /// A description for the cache security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

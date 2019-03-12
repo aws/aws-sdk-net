@@ -58,6 +58,7 @@ namespace Amazon.MigrationHub.Model
         /// Value to specify how many results are returned per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -96,6 +97,7 @@ namespace Amazon.MigrationHub.Model
         /// Filter migration tasks by discovered resource name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ResourceName
         {
             get { return this._resourceName; }

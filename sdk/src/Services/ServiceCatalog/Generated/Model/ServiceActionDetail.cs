@@ -41,6 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// A map that defines the self-service action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, string> Definition
         {
             get { return this._definition; }

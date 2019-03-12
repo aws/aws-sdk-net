@@ -59,6 +59,7 @@ namespace Amazon.CognitoSync.Model
         /// by Amazon Cognito.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

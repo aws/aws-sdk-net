@@ -198,6 +198,7 @@ namespace Amazon.EC2.Model
         /// The ID of the subnet to associate with the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

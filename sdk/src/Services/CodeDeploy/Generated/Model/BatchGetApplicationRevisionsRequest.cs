@@ -42,6 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// The name of an AWS CodeDeploy application about which to get revision information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// Information to get about the application revisions, including type and location.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RevisionLocation> Revisions
         {
             get { return this._revisions; }

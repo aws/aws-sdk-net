@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The association ID for which you want to view execution history details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -74,6 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<AssociationExecutionFilter> Filters
         {
             get { return this._filters; }
@@ -93,6 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

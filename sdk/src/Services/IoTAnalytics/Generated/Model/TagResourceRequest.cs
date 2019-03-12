@@ -43,6 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The ARN of the resource whose tags you want to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The new or modified tags for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

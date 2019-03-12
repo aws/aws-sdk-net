@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The HTML body.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string HtmlBody
         {
             get { return this._htmlBody; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The subject.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string Subject
         {
             get { return this._subject; }
@@ -78,6 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The text body.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string TextBody
         {
             get { return this._textBody; }

@@ -62,6 +62,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The index value of the fragment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string FragmentNumber
         {
             get { return this._fragmentNumber; }

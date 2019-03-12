@@ -43,6 +43,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX resource to which tags should be added.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -61,6 +62,7 @@ namespace Amazon.DAX.Model
         /// The tags to be assigned to the DAX resource. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

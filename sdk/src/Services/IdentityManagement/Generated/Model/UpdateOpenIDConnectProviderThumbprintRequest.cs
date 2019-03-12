@@ -70,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string OpenIDConnectProviderArn
         {
             get { return this._openIDConnectProviderArn; }
@@ -89,6 +90,7 @@ namespace Amazon.IdentityManagement.Model
         /// Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ThumbprintList
         {
             get { return this._thumbprintList; }

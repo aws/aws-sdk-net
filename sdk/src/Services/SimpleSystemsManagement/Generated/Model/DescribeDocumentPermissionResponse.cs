@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// AWS account or <i>All</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

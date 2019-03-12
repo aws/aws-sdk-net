@@ -45,6 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// The DNS name of the service running in your VPC that you want Device Farm to test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ServiceDnsName
         {
             get { return this._serviceDnsName; }
@@ -63,6 +64,7 @@ namespace Amazon.DeviceFarm.Model
         /// An optional description, providing more details about your VPC endpoint configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string VpceConfigurationDescription
         {
             get { return this._vpceConfigurationDescription; }
@@ -82,6 +84,7 @@ namespace Amazon.DeviceFarm.Model
         /// more easily.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string VpceConfigurationName
         {
             get { return this._vpceConfigurationName; }
@@ -101,6 +104,7 @@ namespace Amazon.DeviceFarm.Model
         /// Device Farm to test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string VpceServiceName
         {
             get { return this._vpceServiceName; }

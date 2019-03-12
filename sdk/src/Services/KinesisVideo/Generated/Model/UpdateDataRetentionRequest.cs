@@ -77,6 +77,7 @@ namespace Amazon.KinesisVideo.Model
         /// call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CurrentVersion
         {
             get { return this._currentVersion; }
@@ -96,6 +97,7 @@ namespace Amazon.KinesisVideo.Model
         /// The maximum value for this parameter is 87600 (ten years).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int DataRetentionChangeInHours
         {
             get { return this._dataRetentionChangeInHours.GetValueOrDefault(); }
@@ -114,6 +116,7 @@ namespace Amazon.KinesisVideo.Model
         /// Indicates whether you want to increase or decrease the retention period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UpdateDataRetentionOperation Operation
         {
             get { return this._operation; }
@@ -132,6 +135,7 @@ namespace Amazon.KinesisVideo.Model
         /// The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -150,6 +154,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the stream whose retention period you want to change.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

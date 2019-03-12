@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether the rule is an egress rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Egress
         {
             get { return this._egress.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network ACL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkAclId
         {
             get { return this._networkAclId; }
@@ -79,6 +81,7 @@ namespace Amazon.EC2.Model
         /// The rule number of the entry to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int RuleNumber
         {
             get { return this._ruleNumber.GetValueOrDefault(); }

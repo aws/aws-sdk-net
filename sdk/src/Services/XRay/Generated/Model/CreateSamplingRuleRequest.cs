@@ -47,6 +47,7 @@ namespace Amazon.XRay.Model
         /// The rule definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SamplingRule SamplingRule
         {
             get { return this._samplingRule; }

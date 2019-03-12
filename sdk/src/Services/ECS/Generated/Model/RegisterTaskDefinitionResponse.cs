@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         /// The list of tags associated with the task definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

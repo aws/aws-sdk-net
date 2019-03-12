@@ -41,6 +41,7 @@ namespace Amazon.Cloud9.Model
         /// The IDs of individual environments to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<string> EnvironmentIds
         {
             get { return this._environmentIds; }

@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A pagination token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A list of identity provider objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<ProviderDescription> Providers
         {
             get { return this._providers; }

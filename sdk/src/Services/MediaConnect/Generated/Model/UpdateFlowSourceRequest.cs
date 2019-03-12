@@ -98,6 +98,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property FlowArn. The flow that is associated with the source that
         /// you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }
@@ -176,6 +177,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SourceArn. The ARN of the source that you want to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceArn
         {
             get { return this._sourceArn; }

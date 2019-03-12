@@ -69,6 +69,7 @@ namespace Amazon.SageMaker.Model
         /// Number of instances to launch initially.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int InitialInstanceCount
         {
             get { return this._initialInstanceCount.GetValueOrDefault(); }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// values across all ProductionVariants. If unspecified, it defaults to 1.0. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public float InitialVariantWeight
         {
             get { return this._initialVariantWeight.GetValueOrDefault(); }
@@ -108,6 +110,7 @@ namespace Amazon.SageMaker.Model
         /// The ML compute instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProductionVariantInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -127,6 +130,7 @@ namespace Amazon.SageMaker.Model
         /// creating the model.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }
@@ -145,6 +149,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the production variant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

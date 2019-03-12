@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The route that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteData Route
         {
             get { return this._route; }

@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// you specified in a <a>GetQueryLoggingConfig</a> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public QueryLoggingConfig QueryLoggingConfig
         {
             get { return this._queryLoggingConfig; }

@@ -305,6 +305,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }

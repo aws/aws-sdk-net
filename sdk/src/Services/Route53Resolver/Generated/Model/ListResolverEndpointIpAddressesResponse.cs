@@ -61,6 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// The value that you specified for <code>MaxResults</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -43,6 +43,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Prompts for information from the user. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Prompt Prompt
         {
             get { return this._prompt; }
@@ -63,6 +64,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Statement RejectionStatement
         {
             get { return this._rejectionStatement; }

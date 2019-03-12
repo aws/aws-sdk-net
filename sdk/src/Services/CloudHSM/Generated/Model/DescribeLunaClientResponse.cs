@@ -44,6 +44,7 @@ namespace Amazon.CloudHSM.Model
         /// The certificate installed on the HSMs used by this client.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=600, Max=2400)]
         public string Certificate
         {
             get { return this._certificate; }

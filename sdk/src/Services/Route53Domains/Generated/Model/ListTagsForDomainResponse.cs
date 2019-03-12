@@ -40,6 +40,7 @@ namespace Amazon.Route53Domains.Model
         /// A list of the tags that are associated with the specified domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> TagList
         {
             get { return this._tagList; }

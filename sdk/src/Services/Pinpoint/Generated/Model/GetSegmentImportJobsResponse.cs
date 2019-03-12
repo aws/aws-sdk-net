@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ImportJobsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ImportJobsResponse ImportJobsResponse
         {
             get { return this._importJobsResponse; }

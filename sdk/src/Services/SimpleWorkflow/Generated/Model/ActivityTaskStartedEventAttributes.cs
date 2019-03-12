@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// arise. The form of this identity is user defined.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Identity
         {
             get { return this._identity; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }

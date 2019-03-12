@@ -64,6 +64,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=30)]
         public List<string> Access
         {
             get { return this._access; }
@@ -85,6 +86,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// of an AWS account, or a predefined Amazon S3 group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Grantee
         {
             get { return this._grantee; }

@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier of a key value pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string Key
         {
             get { return this._key; }
@@ -75,6 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The value part of the identified key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string Value
         {
             get { return this._value; }

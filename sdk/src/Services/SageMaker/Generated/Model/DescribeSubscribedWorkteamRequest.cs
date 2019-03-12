@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the subscribed work team to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

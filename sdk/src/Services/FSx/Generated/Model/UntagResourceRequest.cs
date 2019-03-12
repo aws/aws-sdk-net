@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// The ARN of the Amazon FSx resource to untag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=512)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -61,6 +62,7 @@ namespace Amazon.FSx.Model
         /// the call will still succeed to be idempotent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -71,6 +71,7 @@ namespace Amazon.Comprehend.Model
         /// grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -89,6 +90,7 @@ namespace Amazon.Comprehend.Model
         /// The Amazon Resource Name (ARN) that identifies the document classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }

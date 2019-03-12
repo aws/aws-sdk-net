@@ -103,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// table, their types must match the index key schema. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Item
         {
             get { return this._item; }
@@ -141,6 +142,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the table in which to write the item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

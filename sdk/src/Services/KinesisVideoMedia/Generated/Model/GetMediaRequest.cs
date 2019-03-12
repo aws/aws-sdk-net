@@ -74,6 +74,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// Identifies the starting chunk to get from the specified stream. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StartSelector StartSelector
         {
             get { return this._startSelector; }
@@ -93,6 +94,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// the <code>streamARN</code>, you must specify the <code>streamName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -112,6 +114,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

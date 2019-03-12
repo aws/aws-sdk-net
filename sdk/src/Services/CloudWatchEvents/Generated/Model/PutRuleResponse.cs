@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The Amazon Resource Name (ARN) of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string RuleArn
         {
             get { return this._ruleArn; }

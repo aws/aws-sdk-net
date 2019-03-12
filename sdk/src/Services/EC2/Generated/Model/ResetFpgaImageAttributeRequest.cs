@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The ID of the AFI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FpgaImageId
         {
             get { return this._fpgaImageId; }

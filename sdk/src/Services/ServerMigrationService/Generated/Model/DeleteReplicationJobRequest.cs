@@ -48,6 +48,7 @@ namespace Amazon.ServerMigrationService.Model
         /// The identifier of the replication job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationJobId
         {
             get { return this._replicationJobId; }

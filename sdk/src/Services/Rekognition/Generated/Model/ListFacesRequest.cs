@@ -52,6 +52,7 @@ namespace Amazon.Rekognition.Model
         /// ID of the collection from which to list the faces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -70,6 +71,7 @@ namespace Amazon.Rekognition.Model
         /// Maximum number of faces to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -90,6 +92,7 @@ namespace Amazon.Rekognition.Model
         /// token to retrieve the next set of faces.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

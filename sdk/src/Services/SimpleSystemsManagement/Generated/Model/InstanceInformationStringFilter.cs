@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Key"
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The filter values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Values
         {
             get { return this._values; }

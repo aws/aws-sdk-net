@@ -45,6 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// The description of your instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Description
         {
             get { return this._description; }
@@ -87,6 +88,7 @@ namespace Amazon.DeviceFarm.Model
         /// The name of your instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -77,6 +77,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a matchmaking ticket. You can include up to 10 ID values. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TicketIds
         {
             get { return this._ticketIds; }

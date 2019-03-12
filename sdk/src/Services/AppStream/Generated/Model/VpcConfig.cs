@@ -41,6 +41,7 @@ namespace Amazon.AppStream.Model
         /// The identifiers of the security groups for the fleet or image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }

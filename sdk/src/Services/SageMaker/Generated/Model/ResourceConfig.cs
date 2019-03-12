@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// greater than 1. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The ML compute instance type. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -101,6 +103,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }
@@ -136,6 +139,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int VolumeSizeInGB
         {
             get { return this._volumeSizeInGB.GetValueOrDefault(); }

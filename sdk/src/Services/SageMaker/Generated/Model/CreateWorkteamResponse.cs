@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

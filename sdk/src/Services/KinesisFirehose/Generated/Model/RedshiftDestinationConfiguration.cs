@@ -68,6 +68,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The database connection string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ClusterJDBCURL
         {
             get { return this._clusterJDBCURL; }
@@ -86,6 +87,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The <code>COPY</code> command.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CopyCommand CopyCommand
         {
             get { return this._copyCommand; }
@@ -104,6 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The user password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6)]
         public string Password
         {
             get { return this._password; }
@@ -161,6 +164,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -223,6 +227,7 @@ namespace Amazon.KinesisFirehose.Model
         /// these compression formats.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DestinationConfiguration S3Configuration
         {
             get { return this._s3Configuration; }
@@ -241,6 +246,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Username
         {
             get { return this._username; }

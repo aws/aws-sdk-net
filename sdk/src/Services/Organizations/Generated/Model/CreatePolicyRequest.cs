@@ -59,6 +59,7 @@ namespace Amazon.Organizations.Model
         /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000000)]
         public string Content
         {
             get { return this._content; }
@@ -77,6 +78,7 @@ namespace Amazon.Organizations.Model
         /// An optional description to assign to the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +102,7 @@ namespace Amazon.Organizations.Model
         /// this parameter is a string of any of the characters in the ASCII character range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -124,6 +127,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PolicyType Type
         {
             get { return this._type; }

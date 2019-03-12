@@ -63,6 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Role ARN used for configuring autoscaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string AutoScalingRoleArn
         {
             get { return this._autoScalingRoleArn; }
@@ -82,6 +83,7 @@ namespace Amazon.DynamoDBv2.Model
         /// scaled up to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long MaximumUnits
         {
             get { return this._maximumUnits.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// scaled down to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long MinimumUnits
         {
             get { return this._minimumUnits.GetValueOrDefault(); }

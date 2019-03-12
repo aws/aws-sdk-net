@@ -42,6 +42,7 @@ namespace Amazon.CodeCommit.Model
         /// The commit ID of the destination commit specifier that was used in the merge evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCommitId
         {
             get { return this._destinationCommitId; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// option.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Mergeable
         {
             get { return this._mergeable.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.CodeCommit.Model
         /// The commit ID of the source commit specifier that was used in the merge evaluation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceCommitId
         {
             get { return this._sourceCommitId; }

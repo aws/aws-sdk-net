@@ -62,6 +62,7 @@ namespace Amazon.DeviceFarm.Model
         /// The project's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

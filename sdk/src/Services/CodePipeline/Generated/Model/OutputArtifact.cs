@@ -52,6 +52,7 @@ namespace Amazon.CodePipeline.Model
         /// Output artifact names must be unique within a pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

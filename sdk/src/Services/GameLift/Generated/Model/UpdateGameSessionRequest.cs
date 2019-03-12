@@ -92,6 +92,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -110,6 +111,7 @@ namespace Amazon.GameLift.Model
         /// Maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaximumPlayerSessionCount
         {
             get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
@@ -129,6 +131,7 @@ namespace Amazon.GameLift.Model
         /// to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

@@ -79,6 +79,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain containing the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -97,6 +98,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow execution to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution Execution
         {
             get { return this._execution; }

@@ -61,6 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The email of the developer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Email
         {
             get { return this._email; }

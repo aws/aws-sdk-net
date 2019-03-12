@@ -47,6 +47,7 @@ namespace Amazon.MachineLearning.Model
         /// to the Amazon Redshift database.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RedshiftDatabaseCredentials DatabaseCredentials
         {
             get { return this._databaseCredentials; }
@@ -66,6 +67,7 @@ namespace Amazon.MachineLearning.Model
         /// Amazon Redshift <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RedshiftDatabase DatabaseInformation
         {
             get { return this._databaseInformation; }
@@ -270,6 +272,7 @@ namespace Amazon.MachineLearning.Model
         ///  "excludedVariableNames": [ "F6" ] } 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=131071)]
         public string DataSchema
         {
             get { return this._dataSchema; }
@@ -288,6 +291,7 @@ namespace Amazon.MachineLearning.Model
         /// Describes the schema location for an Amazon Redshift <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string DataSchemaUri
         {
             get { return this._dataSchemaUri; }
@@ -307,6 +311,7 @@ namespace Amazon.MachineLearning.Model
         /// query.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string S3StagingLocation
         {
             get { return this._s3StagingLocation; }
@@ -326,6 +331,7 @@ namespace Amazon.MachineLearning.Model
         /// <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16777216)]
         public string SelectSqlQuery
         {
             get { return this._selectSqlQuery; }

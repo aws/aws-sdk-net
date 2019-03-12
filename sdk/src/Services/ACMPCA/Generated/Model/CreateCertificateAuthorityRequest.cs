@@ -54,6 +54,7 @@ namespace Amazon.ACMPCA.Model
         /// and X.500 certificate subject information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CertificateAuthorityConfiguration CertificateAuthorityConfiguration
         {
             get { return this._certificateAuthorityConfiguration; }
@@ -72,6 +73,7 @@ namespace Amazon.ACMPCA.Model
         /// The type of the certificate authority. Currently, this must be <b>SUBORDINATE</b>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CertificateAuthorityType CertificateAuthorityType
         {
             get { return this._certificateAuthorityType; }
@@ -95,6 +97,7 @@ namespace Amazon.ACMPCA.Model
         /// that you are requesting multiple certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -136,6 +139,7 @@ namespace Amazon.ACMPCA.Model
         /// to 50 tags with a private CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

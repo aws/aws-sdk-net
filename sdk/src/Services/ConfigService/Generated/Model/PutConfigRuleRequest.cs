@@ -91,6 +91,7 @@ namespace Amazon.ConfigService.Model
         /// The rule that you want to add to your account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConfigRule ConfigRule
         {
             get { return this._configRule; }

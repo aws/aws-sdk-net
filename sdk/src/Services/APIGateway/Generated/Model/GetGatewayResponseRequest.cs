@@ -49,6 +49,7 @@ namespace Amazon.APIGateway.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GatewayResponseType ResponseType
         {
             get { return this._responseType; }
@@ -67,6 +68,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

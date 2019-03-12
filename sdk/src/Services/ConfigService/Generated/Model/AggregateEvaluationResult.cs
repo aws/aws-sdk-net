@@ -66,6 +66,7 @@ namespace Amazon.ConfigService.Model
         /// Supplementary information about how the agrregate evaluation determined the compliance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Annotation
         {
             get { return this._annotation; }
@@ -84,6 +85,7 @@ namespace Amazon.ConfigService.Model
         /// The source region from where the data is aggregated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AwsRegion
         {
             get { return this._awsRegion; }

@@ -48,6 +48,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application to which the specified source bundles belong.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -69,6 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Manifest (env.yaml)</a> for details.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=19)]
         public string GroupName
         {
             get { return this._groupName; }

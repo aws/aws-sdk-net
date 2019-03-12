@@ -53,6 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ID for this access key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -108,6 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the IAM user that the key is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

@@ -56,6 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// the configuration template or environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -74,6 +75,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the environment whose configuration options you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -146,6 +148,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the configuration template whose configuration options you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }

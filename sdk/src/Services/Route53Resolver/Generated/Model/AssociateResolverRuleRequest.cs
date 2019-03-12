@@ -46,6 +46,7 @@ namespace Amazon.Route53Resolver.Model
         /// A name for the association that you're creating between a resolver rule and a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -65,6 +66,7 @@ namespace Amazon.Route53Resolver.Model
         /// resolver rules, use <a>ListResolverRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverRuleId
         {
             get { return this._resolverRuleId; }
@@ -83,6 +85,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the VPC that you want to associate the resolver rule with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string VPCId
         {
             get { return this._vpcId; }

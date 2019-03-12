@@ -66,6 +66,7 @@ namespace Amazon.WAF.Model
         /// A complex type that contains detailed information about the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HTTPRequest Request
         {
             get { return this._request; }
@@ -87,6 +88,7 @@ namespace Amazon.WAF.Model
         /// in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string RuleWithinRuleGroup
         {
             get { return this._ruleWithinRuleGroup; }
@@ -126,6 +128,7 @@ namespace Amazon.WAF.Model
         /// twice as many CloudFront web requests as a result that has a weight of <code>1</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long Weight
         {
             get { return this._weight.GetValueOrDefault(); }

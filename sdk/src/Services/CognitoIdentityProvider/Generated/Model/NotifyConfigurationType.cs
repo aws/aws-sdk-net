@@ -138,6 +138,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in the <code>From</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string SourceArn
         {
             get { return this._sourceArn; }

@@ -81,6 +81,7 @@ namespace Amazon.WAF.Model
         /// of the <code>FieldToMatch</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -99,6 +100,7 @@ namespace Amazon.WAF.Model
         /// Specifies where in a web request to look for the size constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldToMatch FieldToMatch
         {
             get { return this._fieldToMatch; }
@@ -131,6 +133,7 @@ namespace Amazon.WAF.Model
         /// long.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=21474836480)]
         public long Size
         {
             get { return this._size.GetValueOrDefault(); }
@@ -288,6 +291,7 @@ namespace Amazon.WAF.Model
         /// Use this option to decode a URL-encoded value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TextTransformation TextTransformation
         {
             get { return this._textTransformation; }

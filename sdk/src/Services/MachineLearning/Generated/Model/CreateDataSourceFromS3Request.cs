@@ -104,6 +104,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied identifier that uniquely identifies the <code>DataSource</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }
@@ -122,6 +123,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>DataSource</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -164,6 +166,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DataSpec DataSpec
         {
             get { return this._dataSpec; }

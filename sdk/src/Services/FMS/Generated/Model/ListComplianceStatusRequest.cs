@@ -49,6 +49,7 @@ namespace Amazon.FMS.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -73,6 +74,7 @@ namespace Amazon.FMS.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -91,6 +93,7 @@ namespace Amazon.FMS.Model
         /// The ID of the AWS Firewall Manager policy that you want the details for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }

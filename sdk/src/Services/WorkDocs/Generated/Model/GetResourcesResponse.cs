@@ -79,6 +79,7 @@ namespace Amazon.WorkDocs.Model
         /// results, the string is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }

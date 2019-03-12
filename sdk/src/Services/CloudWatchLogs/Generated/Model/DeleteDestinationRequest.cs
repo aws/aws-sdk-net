@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string DestinationName
         {
             get { return this._destinationName; }

@@ -38,6 +38,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property NumberValidateRequest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public NumberValidateRequest NumberValidateRequest
         {
             get { return this._numberValidateRequest; }

@@ -45,6 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -63,6 +64,7 @@ namespace Amazon.StepFunctions.Model
         /// The name of the state machine associated with the execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }
@@ -82,6 +84,7 @@ namespace Amazon.StepFunctions.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -100,6 +103,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the state machine associated with the execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }
@@ -119,6 +123,7 @@ namespace Amazon.StepFunctions.Model
         /// a newly created state machine, this is the creation date.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateDate
         {
             get { return this._updateDate.GetValueOrDefault(); }

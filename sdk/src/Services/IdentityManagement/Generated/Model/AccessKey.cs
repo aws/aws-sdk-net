@@ -78,6 +78,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ID for this access key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -114,6 +115,7 @@ namespace Amazon.IdentityManagement.Model
         /// The secret key used to sign requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -133,6 +135,7 @@ namespace Amazon.IdentityManagement.Model
         /// API calls, while <code>Inactive</code> means it is not. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -151,6 +154,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the IAM user that the access key is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

@@ -60,6 +60,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the Worker who accepted the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

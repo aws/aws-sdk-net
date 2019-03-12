@@ -58,6 +58,7 @@ namespace Amazon.CloudHSM.Model
         /// The label of the new high-availability partition group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Label
         {
             get { return this._label; }

@@ -68,6 +68,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -110,6 +111,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }

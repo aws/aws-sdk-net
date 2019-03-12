@@ -61,6 +61,7 @@ namespace Amazon.CloudSearch.Model
         /// you select <code>m2.2xlarge</code> as the desired instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int DesiredPartitionCount
         {
             get { return this._desiredPartitionCount.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.CloudSearch.Model
         /// The number of replicas you want to preconfigure for each index partition.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int DesiredReplicationCount
         {
             get { return this._desiredReplicationCount.GetValueOrDefault(); }

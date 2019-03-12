@@ -60,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated device name. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=100)]
         public string DeviceName
         {
             get { return this._deviceName; }

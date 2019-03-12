@@ -42,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver rule association that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverRuleAssociationId
         {
             get { return this._resolverRuleAssociationId; }

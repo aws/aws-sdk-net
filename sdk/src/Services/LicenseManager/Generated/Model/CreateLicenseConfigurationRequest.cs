@@ -107,6 +107,7 @@ namespace Amazon.LicenseManager.Model
         /// Dimension to use to track the license inventory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LicenseCountingType LicenseCountingType
         {
             get { return this._licenseCountingType; }
@@ -143,6 +144,7 @@ namespace Amazon.LicenseManager.Model
         /// Name of the license configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

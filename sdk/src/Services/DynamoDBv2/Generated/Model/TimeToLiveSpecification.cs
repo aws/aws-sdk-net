@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -61,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

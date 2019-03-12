@@ -40,6 +40,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Specifies whether cross-zone load balancing is enabled for the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

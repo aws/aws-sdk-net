@@ -92,6 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the command should do.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string Comment
         {
             get { return this._comment; }
@@ -115,6 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DocumentHash
         {
             get { return this._documentHash; }
@@ -157,6 +159,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// document or a custom document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DocumentName
         {
             get { return this._documentName; }
@@ -212,6 +215,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }
@@ -234,6 +238,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -256,6 +261,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -292,6 +298,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the S3 bucket where command execution responses should be stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string OutputS3BucketName
         {
             get { return this._outputS3BucketName; }
@@ -310,6 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The directory structure within the S3 bucket where the responses should be stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string OutputS3KeyPrefix
         {
             get { return this._outputS3KeyPrefix; }
@@ -329,6 +337,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Systems Manager automatically determines the Amazon S3 bucket region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=20)]
         public string OutputS3Region
         {
             get { return this._outputS3Region; }
@@ -386,6 +395,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -405,6 +415,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// not run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=30, Max=2592000)]
         public int TimeoutSeconds
         {
             get { return this._timeoutSeconds.GetValueOrDefault(); }

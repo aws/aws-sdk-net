@@ -55,6 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <a>ListOpenIDConnectProviders</a> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string OpenIDConnectProviderArn
         {
             get { return this._openIDConnectProviderArn; }

@@ -162,6 +162,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }

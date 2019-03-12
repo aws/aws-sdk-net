@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -56,6 +57,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property AttributeType. Type of attribute. Can be endpoint-custom-attributes,
         /// endpoint-custom-metrics, endpoint-user-attributes.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeType
         {
             get { return this._attributeType; }
@@ -71,6 +73,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property UpdateAttributesRequest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public UpdateAttributesRequest UpdateAttributesRequest
         {
             get { return this._updateAttributesRequest; }

@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         /// The description of the vendor from the Amazon Marketplace.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string MarketplaceDescription
         {
             get { return this._marketplaceDescription; }
@@ -77,6 +78,7 @@ namespace Amazon.SageMaker.Model
         /// The title of the service provided by the vendor in the Amazon Marketplace.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string MarketplaceTitle
         {
             get { return this._marketplaceTitle; }
@@ -113,6 +115,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the vendor that you have subscribed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string WorkteamArn
         {
             get { return this._workteamArn; }

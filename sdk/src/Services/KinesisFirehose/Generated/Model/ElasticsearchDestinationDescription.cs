@@ -87,6 +87,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string DomainARN
         {
             get { return this._domainARN; }
@@ -105,6 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The Elasticsearch index name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=80)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -179,6 +181,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -233,6 +236,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The Elasticsearch type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

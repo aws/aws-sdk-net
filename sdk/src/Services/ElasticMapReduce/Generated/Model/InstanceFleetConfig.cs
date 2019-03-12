@@ -52,6 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The node type that the instance fleet hosts. Valid values are MASTER,CORE,and TASK.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceFleetType InstanceFleetType
         {
             get { return this._instanceFleetType; }
@@ -106,6 +107,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The friendly name of the instance fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -142,6 +144,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetOnDemandCapacity
         {
             get { return this._targetOnDemandCapacity.GetValueOrDefault(); }
@@ -177,6 +180,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int TargetSpotCapacity
         {
             get { return this._targetSpotCapacity.GetValueOrDefault(); }

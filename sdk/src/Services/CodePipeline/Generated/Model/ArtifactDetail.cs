@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The artifact object name for the action execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

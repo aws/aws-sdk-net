@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// that you want to view.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }

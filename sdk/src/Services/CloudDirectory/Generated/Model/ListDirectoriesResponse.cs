@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// Lists all directories that are associated with your account in pagination fashion.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Directory> Directories
         {
             get { return this._directories; }

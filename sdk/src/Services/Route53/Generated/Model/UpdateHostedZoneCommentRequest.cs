@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// The ID for the hosted zone that you want to update the comment for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53.Model
         /// any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Comment
         {
             get { return this._comment; }

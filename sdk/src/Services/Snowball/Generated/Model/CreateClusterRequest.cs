@@ -52,6 +52,7 @@ namespace Amazon.Snowball.Model
         /// The ID for the address that you want the cluster shipped to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -71,6 +72,7 @@ namespace Amazon.Snowball.Model
         /// Data Cluster-01</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -89,6 +91,7 @@ namespace Amazon.Snowball.Model
         /// The forwarding address ID for a cluster. This field is not supported in most regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string ForwardingAddressId
         {
             get { return this._forwardingAddressId; }
@@ -108,6 +111,7 @@ namespace Amazon.Snowball.Model
         /// is <code>LOCAL_USE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobType JobType
         {
             get { return this._jobType; }
@@ -128,6 +132,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Key Management Service (AWS KMS). 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string KmsKeyARN
         {
             get { return this._kmsKeyARN; }
@@ -166,6 +171,7 @@ namespace Amazon.Snowball.Model
         /// and optional AWS Lambda functions written in the Python language. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobResource Resources
         {
             get { return this._resources; }
@@ -186,6 +192,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -227,6 +234,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ShippingOption ShippingOption
         {
             get { return this._shippingOption; }

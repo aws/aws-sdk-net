@@ -41,6 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The TagOption identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

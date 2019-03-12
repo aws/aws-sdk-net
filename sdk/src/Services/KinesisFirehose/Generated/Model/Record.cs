@@ -41,6 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         /// of the data blob, before base64-encoding, is 1,000 KiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024000)]
         public MemoryStream Data
         {
             get { return this._data; }

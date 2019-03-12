@@ -40,6 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// Information about the specified pull request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PullRequest PullRequest
         {
             get { return this._pullRequest; }

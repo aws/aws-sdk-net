@@ -67,6 +67,7 @@ namespace Amazon.DynamoDBv2.Model
         /// modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<GlobalTableGlobalSecondaryIndexSettingsUpdate> GlobalTableGlobalSecondaryIndexSettingsUpdate
         {
             get { return this._globalTableGlobalSecondaryIndexSettingsUpdate; }
@@ -85,6 +86,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the global table
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string GlobalTableName
         {
             get { return this._globalTableName; }
@@ -123,6 +125,7 @@ namespace Amazon.DynamoDBv2.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long GlobalTableProvisionedWriteCapacityUnits
         {
             get { return this._globalTableProvisionedWriteCapacityUnits.GetValueOrDefault(); }
@@ -141,6 +144,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents the settings for a global table in a region that will be modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<ReplicaSettingsUpdate> ReplicaSettingsUpdate
         {
             get { return this._replicaSettingsUpdate; }

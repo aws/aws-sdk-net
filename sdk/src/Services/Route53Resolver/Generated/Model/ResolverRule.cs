@@ -54,6 +54,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -74,6 +75,7 @@ namespace Amazon.Route53Resolver.Model
         /// the operation twice. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -95,6 +97,7 @@ namespace Amazon.Route53Resolver.Model
         /// most specific domain name (www.example.com).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -113,6 +116,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID that Resolver assigned to the resolver rule when you created it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -132,6 +136,7 @@ namespace Amazon.Route53Resolver.Model
         /// rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -151,6 +156,7 @@ namespace Amazon.Route53Resolver.Model
         /// the rule is shared with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=32)]
         public string OwnerId
         {
             get { return this._ownerId; }
@@ -169,6 +175,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the endpoint that the rule is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }
@@ -243,6 +250,7 @@ namespace Amazon.Route53Resolver.Model
         /// A detailed description of the status of a resolver rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string StatusMessage
         {
             get { return this._statusMessage; }
@@ -261,6 +269,7 @@ namespace Amazon.Route53Resolver.Model
         /// An array that contains the IP addresses and ports that you want to forward 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<TargetAddress> TargetIps
         {
             get { return this._targetIps; }

@@ -42,6 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ClientToken. The idempotency token for the create request.
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -58,6 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Enable. A boolean value that specifies whether the detector
         /// is to be enabled.
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enable
         {
             get { return this._enable.GetValueOrDefault(); }

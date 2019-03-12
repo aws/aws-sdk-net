@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// The name of the snapshot copy grant to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotCopyGrantName
         {
             get { return this._snapshotCopyGrantName; }

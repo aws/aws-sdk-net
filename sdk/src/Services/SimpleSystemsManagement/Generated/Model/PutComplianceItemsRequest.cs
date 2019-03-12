@@ -120,6 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// association), Patch, or Custom:<code>string</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -140,6 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComplianceExecutionSummary ExecutionSummary
         {
             get { return this._executionSummary; }
@@ -160,6 +162,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// compliance information is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ItemContentHash
         {
             get { return this._itemContentHash; }
@@ -180,6 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Classification, etc.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public List<ComplianceItemEntry> Items
         {
             get { return this._items; }
@@ -198,6 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Specify an ID for this resource. For a managed instance, this is the instance ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -217,6 +222,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ResourceType
         {
             get { return this._resourceType; }

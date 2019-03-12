@@ -54,6 +54,7 @@ namespace Amazon.Organizations.Model
         /// to 32 additional lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationalUnitId
         {
             get { return this._organizationalUnitId; }

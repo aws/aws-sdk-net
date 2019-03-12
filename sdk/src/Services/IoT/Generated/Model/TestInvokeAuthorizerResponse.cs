@@ -98,6 +98,7 @@ namespace Amazon.IoT.Model
         /// The principal ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string PrincipalId
         {
             get { return this._principalId; }

@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The number of <code>whitelisted</code> query string parameters for this cache behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

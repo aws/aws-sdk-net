@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database that you are looking up.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

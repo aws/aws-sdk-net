@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         /// to use for batch transform. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3DataType S3DataType
         {
             get { return this._s3DataType; }
@@ -129,6 +130,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

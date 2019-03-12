@@ -109,6 +109,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }

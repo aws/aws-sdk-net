@@ -48,6 +48,7 @@ namespace Amazon.Route53Domains.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -70,6 +71,7 @@ namespace Amazon.Route53Domains.Model
         /// for each suggestion.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool OnlyAvailable
         {
             get { return this._onlyAvailable.GetValueOrDefault(); }
@@ -88,6 +90,7 @@ namespace Amazon.Route53Domains.Model
         /// The number of suggested domain names that you want Amazon Route 53 to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SuggestionCount
         {
             get { return this._suggestionCount.GetValueOrDefault(); }

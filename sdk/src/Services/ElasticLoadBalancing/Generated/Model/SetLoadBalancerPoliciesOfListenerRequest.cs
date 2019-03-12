@@ -74,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -92,6 +93,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The external port of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int LoadBalancerPort
         {
             get { return this._loadBalancerPort.GetValueOrDefault(); }
@@ -112,6 +114,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// current policies are disabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PolicyNames
         {
             get { return this._policyNames; }

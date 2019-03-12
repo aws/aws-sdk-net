@@ -85,6 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

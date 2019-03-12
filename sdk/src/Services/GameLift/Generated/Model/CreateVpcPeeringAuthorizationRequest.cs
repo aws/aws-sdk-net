@@ -103,6 +103,7 @@ namespace Amazon.GameLift.Model
         /// fleet. You can find your Account ID in the AWS Management Console under account settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string GameLiftAwsAccountId
         {
             get { return this._gameLiftAwsAccountId; }
@@ -125,6 +126,7 @@ namespace Amazon.GameLift.Model
         /// Peering with Amazon GameLift Fleets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PeerVpcId
         {
             get { return this._peerVpcId; }

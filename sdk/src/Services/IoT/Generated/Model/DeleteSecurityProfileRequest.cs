@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The name of the security profile to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }

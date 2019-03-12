@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ActionNames. A list of schedule actions to delete.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ActionNames
         {
             get { return this._actionNames; }

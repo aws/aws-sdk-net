@@ -43,6 +43,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// value in a subsequent request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

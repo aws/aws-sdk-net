@@ -84,6 +84,7 @@ namespace Amazon.WorkLink.Model
         /// The manufacturer of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Manufacturer
         {
             get { return this._manufacturer; }
@@ -102,6 +103,7 @@ namespace Amazon.WorkLink.Model
         /// The model of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Model
         {
             get { return this._model; }
@@ -120,6 +122,7 @@ namespace Amazon.WorkLink.Model
         /// The operating system of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OperatingSystem
         {
             get { return this._operatingSystem; }
@@ -138,6 +141,7 @@ namespace Amazon.WorkLink.Model
         /// The operating system version of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OperatingSystemVersion
         {
             get { return this._operatingSystemVersion; }
@@ -156,6 +160,7 @@ namespace Amazon.WorkLink.Model
         /// The operating system patch level of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string PatchLevel
         {
             get { return this._patchLevel; }
@@ -192,6 +197,7 @@ namespace Amazon.WorkLink.Model
         /// The user name associated with the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Username
         {
             get { return this._username; }

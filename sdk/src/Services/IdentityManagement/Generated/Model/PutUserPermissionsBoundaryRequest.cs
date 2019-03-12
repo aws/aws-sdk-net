@@ -55,6 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ARN of the policy that is used to set the permissions boundary for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PermissionsBoundary
         {
             get { return this._permissionsBoundary; }
@@ -74,6 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// boundary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

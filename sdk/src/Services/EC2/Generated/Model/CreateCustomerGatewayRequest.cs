@@ -97,6 +97,7 @@ namespace Amazon.EC2.Model
         /// Default: 65000
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int BgpAsn
         {
             get { return this._bgpAsn.GetValueOrDefault(); }
@@ -116,6 +117,7 @@ namespace Amazon.EC2.Model
         /// address must be static.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublicIp
         {
             get { return this._publicIp; }
@@ -134,6 +136,7 @@ namespace Amazon.EC2.Model
         /// The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GatewayType Type
         {
             get { return this._type; }

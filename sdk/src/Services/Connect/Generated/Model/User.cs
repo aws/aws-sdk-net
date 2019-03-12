@@ -176,6 +176,7 @@ namespace Amazon.Connect.Model
         /// The identifier(s) for the security profile assigned to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> SecurityProfileIds
         {
             get { return this._securityProfileIds; }
@@ -194,6 +195,7 @@ namespace Amazon.Connect.Model
         /// The user name assigned to the user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string Username
         {
             get { return this._username; }

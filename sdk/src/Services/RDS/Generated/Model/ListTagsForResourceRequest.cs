@@ -68,6 +68,7 @@ namespace Amazon.RDS.Model
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

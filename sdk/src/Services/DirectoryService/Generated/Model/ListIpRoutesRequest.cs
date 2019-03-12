@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory for which you want to retrieve the IP addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// is specified by the limitations of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

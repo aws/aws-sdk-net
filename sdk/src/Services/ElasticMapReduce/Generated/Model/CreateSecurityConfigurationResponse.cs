@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time the security configuration was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDateTime
         {
             get { return this._creationDateTime.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the security configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10280)]
         public string Name
         {
             get { return this._name; }

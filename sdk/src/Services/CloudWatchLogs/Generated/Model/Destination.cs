@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// against this destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string AccessPolicy
         {
             get { return this._accessPolicy; }
@@ -83,6 +84,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string DestinationName
         {
             get { return this._destinationName; }
@@ -119,6 +122,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// A role for impersonation, used when delivering log events to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -138,6 +142,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// delivered (for example, a Kinesis stream).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TargetArn
         {
             get { return this._targetArn; }

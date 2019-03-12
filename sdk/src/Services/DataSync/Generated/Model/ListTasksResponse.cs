@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// list of tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=93)]
         public string NextToken
         {
             get { return this._nextToken; }

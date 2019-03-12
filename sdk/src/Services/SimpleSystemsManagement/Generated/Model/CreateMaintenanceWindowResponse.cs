@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the created Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

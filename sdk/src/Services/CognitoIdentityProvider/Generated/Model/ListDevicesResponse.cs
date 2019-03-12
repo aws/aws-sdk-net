@@ -59,6 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The pagination token for the list device response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

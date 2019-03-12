@@ -63,6 +63,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -82,6 +83,7 @@ namespace Amazon.WAFRegional.Model
         /// is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebACLId
         {
             get { return this._webACLId; }

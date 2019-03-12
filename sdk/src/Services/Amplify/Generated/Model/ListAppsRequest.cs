@@ -42,6 +42,7 @@ namespace Amazon.Amplify.Model
         ///  Maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.Amplify.Model
         /// its value in another request to fetch more entries. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

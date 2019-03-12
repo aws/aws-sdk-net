@@ -63,6 +63,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -81,6 +82,7 @@ namespace Amazon.Chime.Model
         /// The request containing the user IDs to suspend.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<string> UserIdList
         {
             get { return this._userIdList; }

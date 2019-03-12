@@ -120,6 +120,7 @@ namespace Amazon.SimpleEmail.Model
         /// The type of email sending events to publish to the event destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> MatchingEventTypes
         {
             get { return this._matchingEventTypes; }
@@ -148,6 +149,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

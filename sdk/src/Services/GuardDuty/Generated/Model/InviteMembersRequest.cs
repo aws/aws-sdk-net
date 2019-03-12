@@ -44,6 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AccountIds. A list of account IDs of the accounts that
         /// you want to invite to GuardDuty as members.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -60,6 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
         /// account with which you want to invite members.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }

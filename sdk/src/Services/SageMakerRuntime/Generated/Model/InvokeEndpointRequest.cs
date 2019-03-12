@@ -72,6 +72,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// The desired MIME type of the inference in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Accept
         {
             get { return this._accept; }
@@ -96,6 +97,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=5242880)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -114,6 +116,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// The MIME type of the input data in the request body.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -129,6 +132,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property CustomAttributes.
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string CustomAttributes
         {
             get { return this._customAttributes; }
@@ -149,6 +153,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// API. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

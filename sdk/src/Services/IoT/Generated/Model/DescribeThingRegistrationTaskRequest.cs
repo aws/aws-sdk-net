@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The task ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

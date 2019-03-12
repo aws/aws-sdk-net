@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The full description of your virtual service following the create call.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualServiceData VirtualService
         {
             get { return this._virtualService; }

@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         ///  Execution steps for an execution job, for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Step> Steps
         {
             get { return this._steps; }
@@ -59,6 +60,7 @@ namespace Amazon.Amplify.Model
         ///  Summary for an execution job for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobSummary Summary
         {
             get { return this._summary; }

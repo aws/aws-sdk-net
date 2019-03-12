@@ -55,6 +55,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -73,6 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string CopyProductToken
         {
             get { return this._copyProductToken; }

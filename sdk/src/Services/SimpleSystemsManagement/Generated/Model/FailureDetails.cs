@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Detailed information about the Automation step failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Details
         {
             get { return this._details; }

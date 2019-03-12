@@ -53,6 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// that is used as your organization's IdP.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1000, Max=10000000)]
         public string SAMLMetadataDocument
         {
             get { return this._samlMetadataDocument; }
@@ -76,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string SAMLProviderArn
         {
             get { return this._samlProviderArn; }

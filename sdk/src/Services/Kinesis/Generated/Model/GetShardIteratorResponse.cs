@@ -42,6 +42,7 @@ namespace Amazon.Kinesis.Model
         /// in a shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string ShardIterator
         {
             get { return this._shardIterator; }

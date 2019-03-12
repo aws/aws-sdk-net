@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         /// The request to create a field-level encryption profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldLevelEncryptionProfileConfig FieldLevelEncryptionProfileConfig
         {
             get { return this._fieldLevelEncryptionProfileConfig; }

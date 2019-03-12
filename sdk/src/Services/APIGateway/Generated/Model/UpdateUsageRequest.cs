@@ -45,6 +45,7 @@ namespace Amazon.APIGateway.Model
         /// temporary extension is granted to the remaining quota.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -82,6 +83,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The Id of the usage plan associated with the usage data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

@@ -46,6 +46,7 @@ namespace Amazon.ConfigService.Model
         /// The ID of the AWS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=768)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -82,6 +83,7 @@ namespace Amazon.ConfigService.Model
         /// The type of the AWS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -100,6 +102,7 @@ namespace Amazon.ConfigService.Model
         /// The 12-digit account ID of the source account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceAccountId
         {
             get { return this._sourceAccountId; }
@@ -118,6 +121,7 @@ namespace Amazon.ConfigService.Model
         /// The source region where data is aggregated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string SourceRegion
         {
             get { return this._sourceRegion; }

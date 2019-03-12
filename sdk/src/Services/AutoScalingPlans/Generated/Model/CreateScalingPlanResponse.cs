@@ -44,6 +44,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// Currently, you cannot specify multiple scaling plan versions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScalingPlanVersion
         {
             get { return this._scalingPlanVersion.GetValueOrDefault(); }

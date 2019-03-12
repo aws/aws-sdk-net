@@ -42,6 +42,7 @@ namespace Amazon.ECR.Model
         /// The JSON repository policy that was deleted from the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string PolicyText
         {
             get { return this._policyText; }
@@ -78,6 +79,7 @@ namespace Amazon.ECR.Model
         /// The repository name associated with the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

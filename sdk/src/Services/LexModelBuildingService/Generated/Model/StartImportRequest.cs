@@ -58,6 +58,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MergeStrategy MergeStrategy
         {
             get { return this._mergeStrategy; }
@@ -78,6 +79,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// field.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Payload
         {
             get { return this._payload; }
@@ -106,6 +108,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType ResourceType
         {
             get { return this._resourceType; }

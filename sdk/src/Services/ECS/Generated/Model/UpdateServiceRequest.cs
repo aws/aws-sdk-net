@@ -323,6 +323,7 @@ namespace Amazon.ECS.Model
         /// The name of the service to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Service
         {
             get { return this._service; }

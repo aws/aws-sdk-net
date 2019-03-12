@@ -54,6 +54,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the snapshot to restore from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

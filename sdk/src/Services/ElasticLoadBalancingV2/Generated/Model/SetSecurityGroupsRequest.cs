@@ -48,6 +48,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerArn
         {
             get { return this._loadBalancerArn; }
@@ -66,6 +67,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The IDs of the security groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }

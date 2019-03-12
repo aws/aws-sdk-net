@@ -44,6 +44,7 @@ namespace Amazon.ConfigService.Model
         /// specify a number greater than 50. If you specify 0, AWS Config uses the default. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.ConfigService.Model
         /// and <code>AggregatorAuthorization</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

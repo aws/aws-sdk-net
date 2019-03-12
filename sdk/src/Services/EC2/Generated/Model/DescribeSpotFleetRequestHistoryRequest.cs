@@ -108,6 +108,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Spot Fleet request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SpotFleetRequestId
         {
             get { return this._spotFleetRequestId; }
@@ -126,6 +127,7 @@ namespace Amazon.EC2.Model
         /// The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimeUtc
         {
             get { return this._startTimeUtc.GetValueOrDefault(); }

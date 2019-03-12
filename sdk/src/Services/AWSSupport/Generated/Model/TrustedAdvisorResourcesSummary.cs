@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// The number of AWS resources that were flagged (listed) by the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ResourcesFlagged
         {
             get { return this._resourcesFlagged.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// The number of AWS resources ignored by Trusted Advisor because information was unavailable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ResourcesIgnored
         {
             get { return this._resourcesIgnored.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.AWSSupport.Model
         /// The number of AWS resources that were analyzed by the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ResourcesProcessed
         {
             get { return this._resourcesProcessed.GetValueOrDefault(); }
@@ -98,6 +101,7 @@ namespace Amazon.AWSSupport.Model
         /// suppressed by the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ResourcesSuppressed
         {
             get { return this._resourcesSuppressed.GetValueOrDefault(); }

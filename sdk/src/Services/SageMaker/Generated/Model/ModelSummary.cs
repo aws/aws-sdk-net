@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the model was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ModelArn
         {
             get { return this._modelArn; }
@@ -78,6 +80,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model that you want a summary for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string ModelName
         {
             get { return this._modelName; }

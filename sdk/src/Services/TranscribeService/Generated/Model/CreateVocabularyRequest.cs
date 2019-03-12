@@ -44,6 +44,7 @@ namespace Amazon.TranscribeService.Model
         /// The language code of the vocabulary entries.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -62,6 +63,7 @@ namespace Amazon.TranscribeService.Model
         /// An array of strings that contains the vocabulary entries. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Phrases
         {
             get { return this._phrases; }
@@ -81,6 +83,7 @@ namespace Amazon.TranscribeService.Model
         /// is case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string VocabularyName
         {
             get { return this._vocabularyName; }

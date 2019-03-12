@@ -83,6 +83,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a build to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BuildId
         {
             get { return this._buildId; }

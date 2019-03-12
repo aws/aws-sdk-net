@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB cluster parameter group to reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }

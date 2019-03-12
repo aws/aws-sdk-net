@@ -44,6 +44,7 @@ namespace Amazon.Batch.Model
         /// The AWS Batch job ID of the job to terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }
@@ -64,6 +65,7 @@ namespace Amazon.Batch.Model
         /// recorded in the AWS Batch activity logs. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Reason
         {
             get { return this._reason; }

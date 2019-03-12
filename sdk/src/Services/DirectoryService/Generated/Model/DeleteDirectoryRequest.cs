@@ -49,6 +49,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

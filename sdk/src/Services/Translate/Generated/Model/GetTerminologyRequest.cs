@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         /// The name of the custom terminology being retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -60,6 +61,7 @@ namespace Amazon.Translate.Model
         /// The data format of the custom terminology being retrieved, either CSV or TMX.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TerminologyDataFormat TerminologyDataFormat
         {
             get { return this._terminologyDataFormat; }

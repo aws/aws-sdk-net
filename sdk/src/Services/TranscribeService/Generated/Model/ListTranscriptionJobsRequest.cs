@@ -45,6 +45,7 @@ namespace Amazon.TranscribeService.Model
         /// the specified string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string JobNameContains
         {
             get { return this._jobNameContains; }
@@ -64,6 +65,7 @@ namespace Amazon.TranscribeService.Model
         /// the list, this response contains only the actual results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.TranscribeService.Model
         /// include the <code>NextToken</code> to fetch the next set of jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

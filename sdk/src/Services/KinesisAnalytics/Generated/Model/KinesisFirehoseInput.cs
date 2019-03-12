@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the input delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -63,6 +64,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// to access the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

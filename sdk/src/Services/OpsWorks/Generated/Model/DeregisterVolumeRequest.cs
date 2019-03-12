@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// volume ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VolumeId
         {
             get { return this._volumeId; }

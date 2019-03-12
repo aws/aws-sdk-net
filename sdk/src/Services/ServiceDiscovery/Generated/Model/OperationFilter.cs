@@ -105,6 +105,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OperationFilterName Name
         {
             get { return this._name; }
@@ -149,6 +150,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

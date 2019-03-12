@@ -40,6 +40,7 @@ namespace Amazon.SQS.Model
         /// Represents a message whose visibility timeout has been changed successfully.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

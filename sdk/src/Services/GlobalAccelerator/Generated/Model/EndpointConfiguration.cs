@@ -43,6 +43,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// is an Elastic IP address, this is the Elastic IP address allocation ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -67,6 +68,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int Weight
         {
             get { return this._weight.GetValueOrDefault(); }

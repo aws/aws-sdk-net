@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or Amazon Resource Name (ARN) of the change set that you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -64,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// the next page of information that you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -83,6 +85,7 @@ namespace Amazon.CloudFormation.Model
         /// change set you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StackName
         {
             get { return this._stackName; }

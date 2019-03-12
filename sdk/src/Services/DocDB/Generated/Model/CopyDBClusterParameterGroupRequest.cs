@@ -64,6 +64,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBClusterParameterGroupIdentifier
         {
             get { return this._sourceDBClusterParameterGroupIdentifier; }
@@ -100,6 +101,7 @@ namespace Amazon.DocDB.Model
         /// A description for the copied DB cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBClusterParameterGroupDescription
         {
             get { return this._targetDBClusterParameterGroupDescription; }
@@ -142,6 +144,7 @@ namespace Amazon.DocDB.Model
         /// Example: <code>my-cluster-param-group1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBClusterParameterGroupIdentifier
         {
             get { return this._targetDBClusterParameterGroupIdentifier; }

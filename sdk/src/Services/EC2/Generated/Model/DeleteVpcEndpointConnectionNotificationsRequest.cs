@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// One or more notification IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConnectionNotificationIds
         {
             get { return this._connectionNotificationIds; }

@@ -40,6 +40,7 @@ namespace Amazon.WorkMail.Model
         /// The ID of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=256)]
         public string GroupId
         {
             get { return this._groupId; }

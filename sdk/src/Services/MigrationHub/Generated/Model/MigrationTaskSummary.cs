@@ -47,6 +47,7 @@ namespace Amazon.MigrationHub.Model
         /// Unique identifier that references the migration task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string MigrationTaskName
         {
             get { return this._migrationTaskName; }
@@ -62,6 +63,7 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int ProgressPercent
         {
             get { return this._progressPercent.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.MigrationHub.Model
         /// tool as it is used for all updates made by the tool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ProgressUpdateStream
         {
             get { return this._progressUpdateStream; }
@@ -117,6 +120,7 @@ namespace Amazon.MigrationHub.Model
         /// Detail information of what is being done within the overall status state.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string StatusDetail
         {
             get { return this._statusDetail; }

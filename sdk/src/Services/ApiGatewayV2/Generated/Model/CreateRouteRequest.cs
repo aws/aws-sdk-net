@@ -52,6 +52,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -217,6 +218,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The route key for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RouteKey
         {
             get { return this._routeKey; }

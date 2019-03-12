@@ -90,6 +90,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product view identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -108,6 +109,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Name
         {
             get { return this._name; }
@@ -127,6 +129,7 @@ namespace Amazon.ServiceCatalog.Model
         /// this value.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Owner
         {
             get { return this._owner; }
@@ -145,6 +148,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -163,6 +167,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Short description of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string ShortDescription
         {
             get { return this._shortDescription; }
@@ -181,6 +186,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the support for this Product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string SupportDescription
         {
             get { return this._supportDescription; }
@@ -199,6 +205,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The email contact information to obtain support for this Product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=254)]
         public string SupportEmail
         {
             get { return this._supportEmail; }
@@ -217,6 +224,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The URL information to obtain support for this Product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2083)]
         public string SupportUrl
         {
             get { return this._supportUrl; }
@@ -236,6 +244,7 @@ namespace Amazon.ServiceCatalog.Model
         /// If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public ProductType Type
         {
             get { return this._type; }

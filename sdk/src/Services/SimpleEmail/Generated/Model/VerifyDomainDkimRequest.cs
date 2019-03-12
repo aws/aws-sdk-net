@@ -61,6 +61,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the domain to be verified for Easy DKIM signing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Domain
         {
             get { return this._domain; }

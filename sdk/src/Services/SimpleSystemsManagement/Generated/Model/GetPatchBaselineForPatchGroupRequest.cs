@@ -60,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch group whose patch baseline should be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PatchGroup
         {
             get { return this._patchGroup; }

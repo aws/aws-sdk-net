@@ -185,6 +185,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// 10) or 2e-360 to 2e360 (Base 2).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double TargetValue
         {
             get { return this._targetValue.GetValueOrDefault(); }

@@ -91,6 +91,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -115,6 +116,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4000)]
         public string ImportUrl
         {
             get { return this._importUrl; }
@@ -136,6 +138,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// import task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

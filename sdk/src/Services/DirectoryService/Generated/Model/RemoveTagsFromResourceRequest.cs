@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory from which to remove the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -60,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// The tag key (name) of the tag to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -169,6 +169,7 @@ namespace Amazon.ElastiCache.Model
         /// The cluster identifier. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheClusterId
         {
             get { return this._cacheClusterId; }

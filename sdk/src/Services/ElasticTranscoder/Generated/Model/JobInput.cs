@@ -297,6 +297,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// returns an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }

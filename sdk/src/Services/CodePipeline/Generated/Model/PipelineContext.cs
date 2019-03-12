@@ -61,6 +61,7 @@ namespace Amazon.CodePipeline.Model
         /// across all pipeline names under an Amazon Web Services account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }

@@ -40,6 +40,7 @@ namespace Amazon.Kinesis.Model
         /// A <a>StreamDescriptionSummary</a> containing information about the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamDescriptionSummary StreamDescriptionSummary
         {
             get { return this._streamDescriptionSummary; }

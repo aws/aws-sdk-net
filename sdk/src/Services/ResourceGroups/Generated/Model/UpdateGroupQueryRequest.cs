@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group for which you want to edit the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -61,6 +62,7 @@ namespace Amazon.ResourceGroups.Model
         /// group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceQuery ResourceQuery
         {
             get { return this._resourceQuery; }

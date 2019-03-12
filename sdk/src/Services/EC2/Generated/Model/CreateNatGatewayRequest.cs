@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AllocationId
         {
             get { return this._allocationId; }
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// The subnet in which to create the NAT gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

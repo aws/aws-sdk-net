@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Reserved Instance listing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedInstancesListingId
         {
             get { return this._reservedInstancesListingId; }

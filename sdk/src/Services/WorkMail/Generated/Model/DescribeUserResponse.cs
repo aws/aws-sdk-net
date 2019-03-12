@@ -66,6 +66,7 @@ namespace Amazon.WorkMail.Model
         /// The display name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -84,6 +85,7 @@ namespace Amazon.WorkMail.Model
         /// The email of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=254)]
         public string Email
         {
             get { return this._email; }
@@ -121,6 +123,7 @@ namespace Amazon.WorkMail.Model
         /// The name for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -158,6 +161,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the described user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=256)]
         public string UserId
         {
             get { return this._userId; }

@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the member (user, group) to be removed from the resource's delegates.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the resource exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the resource from which delegates' set members are removed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

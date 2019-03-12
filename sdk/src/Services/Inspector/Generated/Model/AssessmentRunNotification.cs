@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The date of the notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Date
         {
             get { return this._date.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The Boolean value that specifies whether the notification represents an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Error
         {
             get { return this._error.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// The event for which a notification is sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InspectorEvent Event
         {
             get { return this._event; }
@@ -99,6 +102,7 @@ namespace Amazon.Inspector.Model
         /// The message included in the notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public string Message
         {
             get { return this._message; }
@@ -135,6 +139,7 @@ namespace Amazon.Inspector.Model
         /// The SNS topic to which the SNS notification is sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

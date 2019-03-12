@@ -95,6 +95,7 @@ namespace Amazon.Route53Domains.Model
         /// In addition, many TLDs require <code>VAT_NUMBER</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExtraParamName Name
         {
             get { return this._name; }
@@ -114,6 +115,7 @@ namespace Amazon.Route53Domains.Model
         /// domains.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string Value
         {
             get { return this._value; }

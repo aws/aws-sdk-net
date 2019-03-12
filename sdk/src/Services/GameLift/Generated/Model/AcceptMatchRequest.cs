@@ -91,6 +91,7 @@ namespace Amazon.GameLift.Model
         /// Player response to the proposed match.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AcceptanceType AcceptanceType
         {
             get { return this._acceptanceType; }
@@ -110,6 +111,7 @@ namespace Amazon.GameLift.Model
         /// one or multiple player IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PlayerIds
         {
             get { return this._playerIds; }
@@ -129,6 +131,7 @@ namespace Amazon.GameLift.Model
         /// otherwise this request will fail.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

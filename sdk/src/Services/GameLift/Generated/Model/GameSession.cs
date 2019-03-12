@@ -128,6 +128,7 @@ namespace Amazon.GameLift.Model
         /// (if one exists), that limits the number of game sessions a player can create.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string CreatorId
         {
             get { return this._creatorId; }
@@ -146,6 +147,7 @@ namespace Amazon.GameLift.Model
         /// Number of players currently in the game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CurrentPlayerSessionCount
         {
             get { return this._currentPlayerSessionCount.GetValueOrDefault(); }
@@ -186,6 +188,7 @@ namespace Amazon.GameLift.Model
         /// data with <a>SearchGameSessions</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties
         {
             get { return this._gameProperties; }
@@ -207,6 +210,7 @@ namespace Amazon.GameLift.Model
         /// a Game Session</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
@@ -227,6 +231,7 @@ namespace Amazon.GameLift.Model
         /// string or idempotency token&gt;</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -270,6 +275,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=390000)]
         public string MatchmakerData
         {
             get { return this._matchmakerData; }
@@ -288,6 +294,7 @@ namespace Amazon.GameLift.Model
         /// Maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaximumPlayerSessionCount
         {
             get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
@@ -307,6 +314,7 @@ namespace Amazon.GameLift.Model
         /// to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -344,6 +352,7 @@ namespace Amazon.GameLift.Model
         /// app needs both the IP address and port number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60000)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

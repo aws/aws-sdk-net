@@ -106,6 +106,7 @@ namespace Amazon.CodePipeline.Model
         /// in order to continue the job asynchronously.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ContinuationToken
         {
             get { return this._continuationToken; }

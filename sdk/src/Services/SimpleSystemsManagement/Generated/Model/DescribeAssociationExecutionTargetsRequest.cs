@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The association ID that includes the execution for which you want to view details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The execution ID for which you want to view details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExecutionId
         {
             get { return this._executionId; }
@@ -93,6 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// ResourceType (EQUAL)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<AssociationExecutionTargetsFilter> Filters
         {
             get { return this._filters; }
@@ -112,6 +115,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

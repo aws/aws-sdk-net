@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// Information about the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<AssessmentRun> AssessmentRuns
         {
             get { return this._assessmentRuns; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }

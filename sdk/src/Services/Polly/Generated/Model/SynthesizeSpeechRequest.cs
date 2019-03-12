@@ -82,6 +82,7 @@ namespace Amazon.Polly.Model
         /// the language of the voice. For information about storing lexicons, see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> LexiconNames
         {
             get { return this._lexiconNames; }
@@ -106,6 +107,7 @@ namespace Amazon.Polly.Model
         /// (mono), little-endian format. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputFormat OutputFormat
         {
             get { return this._outputFormat; }
@@ -152,6 +154,7 @@ namespace Amazon.Polly.Model
         /// The type of speech marks returned for the input text.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4)]
         public List<string> SpeechMarkTypes
         {
             get { return this._speechMarkTypes; }
@@ -171,6 +174,7 @@ namespace Amazon.Polly.Model
         /// follow the SSML format for the input text. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }
@@ -211,6 +215,7 @@ namespace Amazon.Polly.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VoiceId VoiceId
         {
             get { return this._voiceId; }

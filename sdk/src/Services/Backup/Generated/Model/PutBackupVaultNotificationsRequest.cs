@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// vault.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> BackupVaultEvents
         {
             get { return this._backupVaultEvents; }
@@ -64,6 +65,7 @@ namespace Amazon.Backup.Model
         /// they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupVaultName
         {
             get { return this._backupVaultName; }
@@ -83,6 +85,7 @@ namespace Amazon.Backup.Model
         /// for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SNSTopicArn
         {
             get { return this._snsTopicArn; }

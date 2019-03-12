@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the pipeline to read.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

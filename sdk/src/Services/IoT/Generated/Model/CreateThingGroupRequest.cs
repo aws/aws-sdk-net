@@ -51,6 +51,7 @@ namespace Amazon.IoT.Model
         /// The name of the parent thing group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentGroupName
         {
             get { return this._parentGroupName; }
@@ -87,6 +88,7 @@ namespace Amazon.IoT.Model
         /// The thing group name to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }

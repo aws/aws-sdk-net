@@ -77,6 +77,7 @@ namespace Amazon.DirectoryService.Model
         /// the trust relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -96,6 +97,7 @@ namespace Amazon.DirectoryService.Model
         /// the trust relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }
@@ -132,6 +134,7 @@ namespace Amazon.DirectoryService.Model
         /// The direction of the trust relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustDirection TrustDirection
         {
             get { return this._trustDirection; }
@@ -151,6 +154,7 @@ namespace Amazon.DirectoryService.Model
         /// trust relationship on the external domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TrustPassword
         {
             get { return this._trustPassword; }

@@ -51,6 +51,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AppId
         {
             get { return this._appId; }
@@ -69,6 +70,7 @@ namespace Amazon.Amplify.Model
         ///  Basic Authorization credentials for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -87,6 +89,7 @@ namespace Amazon.Amplify.Model
         ///  BuildSpec for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -123,6 +126,7 @@ namespace Amazon.Amplify.Model
         ///  Description for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -195,6 +199,7 @@ namespace Amazon.Amplify.Model
         ///  IAM service role for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -213,6 +218,7 @@ namespace Amazon.Amplify.Model
         ///  Name for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

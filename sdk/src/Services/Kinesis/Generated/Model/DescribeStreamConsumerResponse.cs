@@ -40,6 +40,7 @@ namespace Amazon.Kinesis.Model
         /// An object that represents the details of the consumer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConsumerDescription ConsumerDescription
         {
             get { return this._consumerDescription; }

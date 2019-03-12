@@ -81,6 +81,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

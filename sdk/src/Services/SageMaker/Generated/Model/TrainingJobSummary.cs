@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the training job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }
@@ -119,6 +121,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the training job that you want a summary for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }
@@ -137,6 +140,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobStatus TrainingJobStatus
         {
             get { return this._trainingJobStatus; }

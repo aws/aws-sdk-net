@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of an existing application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -60,6 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The identifier of an application snapshot. You can retrieve this value using .
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

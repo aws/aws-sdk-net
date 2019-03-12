@@ -82,6 +82,7 @@ namespace Amazon.WAFRegional.Model
         /// the name of a <code>RuleGroup</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -108,6 +109,7 @@ namespace Amazon.WAFRegional.Model
         ///  <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleGroupId
         {
             get { return this._ruleGroupId; }

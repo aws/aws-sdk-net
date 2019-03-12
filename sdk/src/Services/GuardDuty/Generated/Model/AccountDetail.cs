@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. Member account ID.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -53,6 +54,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Email. Member account's email address.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Email
         {
             get { return this._email; }

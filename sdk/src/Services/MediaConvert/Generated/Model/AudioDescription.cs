@@ -87,6 +87,7 @@ namespace Amazon.MediaConvert.Model
         /// 0 = Undefined, 1 = Clean Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary,
         /// 4-255 = Reserved.
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public int AudioType
         {
             get { return this._audioType.GetValueOrDefault(); }
@@ -136,6 +137,7 @@ namespace Amazon.MediaConvert.Model
         /// Input Language Code' is selected but there is no ISO 639 language code specified by
         /// the input.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }

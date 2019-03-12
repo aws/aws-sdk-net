@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         /// The API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -60,6 +61,7 @@ namespace Amazon.AppSync.Model
         /// The type name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypeName
         {
             get { return this._typeName; }

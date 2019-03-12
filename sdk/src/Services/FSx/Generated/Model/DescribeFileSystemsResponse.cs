@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         /// An array of file system descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<FileSystem> FileSystems
         {
             get { return this._fileSystems; }
@@ -61,6 +62,7 @@ namespace Amazon.FSx.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

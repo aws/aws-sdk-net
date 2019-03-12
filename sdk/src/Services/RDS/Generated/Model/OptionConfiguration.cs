@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
         /// The configuration of options to include in a group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OptionName
         {
             get { return this._optionName; }

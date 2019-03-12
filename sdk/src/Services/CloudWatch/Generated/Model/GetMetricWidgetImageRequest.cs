@@ -78,6 +78,7 @@ namespace Amazon.CloudWatch.Model
         /// triangle with an exclamation point appears next to the graph legend.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricWidget
         {
             get { return this._metricWidget; }

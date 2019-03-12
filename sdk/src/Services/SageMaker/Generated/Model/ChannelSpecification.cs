@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// A brief description of the channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -117,6 +119,7 @@ namespace Amazon.SageMaker.Model
         /// The supported MIME types for the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SupportedContentTypes
         {
             get { return this._supportedContentTypes; }
@@ -146,6 +149,7 @@ namespace Amazon.SageMaker.Model
         /// algorithm without using the EBS volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> SupportedInputModes
         {
             get { return this._supportedInputModes; }

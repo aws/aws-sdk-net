@@ -234,6 +234,7 @@ namespace Amazon.WorkSpaces.Model
         /// The user for the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string UserName
         {
             get { return this._userName; }

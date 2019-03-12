@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch.Model
         /// The suggesters configured for the domain specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SuggesterStatus> Suggesters
         {
             get { return this._suggesters; }

@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The CIDR range for the route. This must match the CIDR for the route exactly.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -60,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

@@ -50,6 +50,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>DataSource</code> at creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }

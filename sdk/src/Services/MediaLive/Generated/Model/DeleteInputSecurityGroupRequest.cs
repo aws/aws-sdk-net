@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property InputSecurityGroupId. The Input Security Group to delete
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputSecurityGroupId
         {
             get { return this._inputSecurityGroupId; }

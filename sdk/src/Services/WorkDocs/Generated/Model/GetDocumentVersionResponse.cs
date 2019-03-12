@@ -41,6 +41,7 @@ namespace Amazon.WorkDocs.Model
         /// The custom metadata on the document version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8)]
         public Dictionary<string, string> CustomMetadata
         {
             get { return this._customMetadata; }

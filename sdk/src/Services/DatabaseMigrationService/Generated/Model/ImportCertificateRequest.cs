@@ -44,6 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The customer-assigned name of the certificate. Valid characters are A-z and 0-9.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateIdentifier
         {
             get { return this._certificateIdentifier; }

@@ -58,6 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// 200Mbps, 300Mbps, 400Mbps, and 500Mbps.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Bandwidth
         {
             get { return this._bandwidth; }
@@ -76,6 +77,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the interconnect or LAG.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -94,6 +96,7 @@ namespace Amazon.DirectConnect.Model
         /// The name of the hosted connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionName
         {
             get { return this._connectionName; }
@@ -112,6 +115,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the AWS account ID of the customer for the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OwnerAccount
         {
             get { return this._ownerAccount; }
@@ -130,6 +134,7 @@ namespace Amazon.DirectConnect.Model
         /// The dedicated VLAN provisioned to the hosted connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Vlan
         {
             get { return this._vlan.GetValueOrDefault(); }

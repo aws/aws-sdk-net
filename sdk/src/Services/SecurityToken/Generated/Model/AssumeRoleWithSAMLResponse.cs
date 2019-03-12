@@ -161,6 +161,7 @@ namespace Amazon.SecurityToken.Model
         /// exceeded the allowed space.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PackedPolicySize
         {
             get { return this._packedPolicySize.GetValueOrDefault(); }

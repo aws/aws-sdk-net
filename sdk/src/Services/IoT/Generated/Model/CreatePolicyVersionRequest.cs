@@ -54,6 +54,7 @@ namespace Amazon.IoT.Model
         /// 2048, excluding whitespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }
@@ -72,6 +73,7 @@ namespace Amazon.IoT.Model
         /// The policy name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

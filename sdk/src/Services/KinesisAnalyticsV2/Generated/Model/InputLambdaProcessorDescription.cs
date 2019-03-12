@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the AWS Lambda function that is used to preprocess the records in the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -68,6 +69,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

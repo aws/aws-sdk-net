@@ -102,6 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The environment's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }

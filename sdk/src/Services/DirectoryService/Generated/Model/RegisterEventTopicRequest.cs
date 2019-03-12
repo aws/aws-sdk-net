@@ -46,6 +46,7 @@ namespace Amazon.DirectoryService.Model
         /// The Directory ID that will publish status messages to the SNS topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -65,6 +66,7 @@ namespace Amazon.DirectoryService.Model
         /// must be in the same region as the specified Directory ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TopicName
         {
             get { return this._topicName; }

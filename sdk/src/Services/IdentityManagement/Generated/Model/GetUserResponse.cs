@@ -61,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public User User
         {
             get { return this._user; }

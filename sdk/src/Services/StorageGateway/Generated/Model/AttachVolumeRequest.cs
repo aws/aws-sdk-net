@@ -51,6 +51,7 @@ namespace Amazon.StorageGateway.Model
         /// volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DiskId
         {
             get { return this._diskId; }
@@ -69,6 +70,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -93,6 +95,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: A valid IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -119,6 +122,7 @@ namespace Amazon.StorageGateway.Model
         /// for this volume as the new target name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string TargetName
         {
             get { return this._targetName; }
@@ -137,6 +141,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

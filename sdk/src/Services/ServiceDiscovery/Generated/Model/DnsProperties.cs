@@ -41,6 +41,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }

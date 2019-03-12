@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// The Amazon Resource Name (ARN) of the SAML provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }

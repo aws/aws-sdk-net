@@ -47,6 +47,7 @@ namespace Amazon.Glue.Model
         /// Glue ARN string pattern</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10240)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -65,6 +66,7 @@ namespace Amazon.Glue.Model
         /// Tags to add to this resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> TagsToAdd
         {
             get { return this._tagsToAdd; }

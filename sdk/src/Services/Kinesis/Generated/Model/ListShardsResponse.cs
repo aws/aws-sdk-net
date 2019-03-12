@@ -55,6 +55,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=1, Max=1048576)]
         public string NextToken
         {
             get { return this._nextToken; }

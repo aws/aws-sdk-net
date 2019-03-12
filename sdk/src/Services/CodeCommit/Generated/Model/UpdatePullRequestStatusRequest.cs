@@ -42,6 +42,7 @@ namespace Amazon.CodeCommit.Model
         /// The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PullRequestId
         {
             get { return this._pullRequestId; }
@@ -62,6 +63,7 @@ namespace Amazon.CodeCommit.Model
         /// or from from <code>CLOSED</code> to <code>CLOSED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PullRequestStatusEnum PullRequestStatus
         {
             get { return this._pullRequestStatus; }

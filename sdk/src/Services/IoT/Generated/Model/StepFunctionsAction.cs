@@ -63,6 +63,7 @@ namespace Amazon.IoT.Model
         /// ("Action":"states:StartExecution").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -81,6 +82,7 @@ namespace Amazon.IoT.Model
         /// The name of the Step Functions state machine whose execution will be started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StateMachineName
         {
             get { return this._stateMachineName; }

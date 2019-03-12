@@ -62,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// The source region where the data is aggregated. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AwsRegion
         {
             get { return this._awsRegion; }
@@ -104,6 +105,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }

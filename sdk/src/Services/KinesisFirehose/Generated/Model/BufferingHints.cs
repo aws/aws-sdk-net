@@ -44,6 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         /// it to the destination. The default value is 300.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=60, Max=900)]
         public int IntervalInSeconds
         {
             get { return this._intervalInSeconds.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.KinesisFirehose.Model
         /// ingest data at 1 MB/sec, the value should be 10 MB or higher.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public int SizeInMBs
         {
             get { return this._sizeInMBs.GetValueOrDefault(); }

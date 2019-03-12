@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NetworkId. The numeric value placed in the Network Information
         /// Table (NIT).
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=65536)]
         public int NetworkId
         {
             get { return this._networkId.GetValueOrDefault(); }
@@ -56,6 +57,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NetworkName. The network name text placed in the networkNameDescriptor
         /// inside the Network Information Table. Maximum length is 256 characters.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string NetworkName
         {
             get { return this._networkName; }
@@ -72,6 +74,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RepInterval. The number of milliseconds between instances
         /// of this table in the output transport stream.
         /// </summary>
+        [AWSProperty(Min=25, Max=10000)]
         public int RepInterval
         {
             get { return this._repInterval.GetValueOrDefault(); }

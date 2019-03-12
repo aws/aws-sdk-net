@@ -41,6 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the deleted certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

@@ -45,6 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConferenceProviderArn
         {
             get { return this._conferenceProviderArn; }
@@ -63,6 +64,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The type of the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConferenceProviderType ConferenceProviderType
         {
             get { return this._conferenceProviderType; }
@@ -99,6 +101,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The meeting settings for the conference provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MeetingSetting MeetingSetting
         {
             get { return this._meetingSetting; }

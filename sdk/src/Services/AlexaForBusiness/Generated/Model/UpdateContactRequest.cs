@@ -45,6 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the contact to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContactArn
         {
             get { return this._contactArn; }
@@ -63,6 +64,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated display name of the contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -81,6 +83,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated first name of the contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -99,6 +102,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated last name of the contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string LastName
         {
             get { return this._lastName; }

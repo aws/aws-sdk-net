@@ -83,6 +83,7 @@ namespace Amazon.Rekognition.Model
         /// in the subsequent request to retrieve the next set of faces. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

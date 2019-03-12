@@ -55,6 +55,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property M3u8Settings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public M3u8Settings M3u8Settings
         {
             get { return this._m3u8Settings; }

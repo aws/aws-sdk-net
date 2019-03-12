@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// by running <a>ListStackSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

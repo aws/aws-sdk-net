@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Amazon S3 configuration details for the sync.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceDataSyncS3Destination S3Destination
         {
             get { return this._s3Destination; }
@@ -72,6 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A name for the configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string SyncName
         {
             get { return this._syncName; }

@@ -63,6 +63,7 @@ namespace Amazon.Connect.Model
         /// than 24 hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -93,6 +94,7 @@ namespace Amazon.Connect.Model
         /// The queue ID is also included in the URL, and is the string after 'queue/'.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Filters Filters
         {
             get { return this._filters; }
@@ -122,6 +124,7 @@ namespace Amazon.Connect.Model
         /// for all queues is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2)]
         public List<string> Groupings
         {
             get { return this._groupings; }
@@ -370,6 +373,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HistoricalMetric> HistoricalMetrics
         {
             get { return this._historicalMetrics; }
@@ -392,6 +396,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -411,6 +416,7 @@ namespace Amazon.Connect.Model
         /// 1-100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -455,6 +461,7 @@ namespace Amazon.Connect.Model
         /// Historical metrics are available in Amazon Connect only for 24 hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

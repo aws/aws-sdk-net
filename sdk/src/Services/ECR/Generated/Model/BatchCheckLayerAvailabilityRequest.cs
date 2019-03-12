@@ -51,6 +51,7 @@ namespace Amazon.ECR.Model
         /// The digests of the image layers to check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> LayerDigests
         {
             get { return this._layerDigests; }
@@ -88,6 +89,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository that is associated with the image layers to check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

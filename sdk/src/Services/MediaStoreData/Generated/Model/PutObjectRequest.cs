@@ -46,6 +46,7 @@ namespace Amazon.MediaStoreData.Model
         /// The bytes to be stored. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Stream Body
         {
             get { return this._body; }
@@ -139,6 +140,7 @@ namespace Amazon.MediaStoreData.Model
         /// the same name. The file name can include or omit an extension. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=900)]
         public string Path
         {
             get { return this._path; }
@@ -159,6 +161,7 @@ namespace Amazon.MediaStoreData.Model
         /// being received.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16)]
         public StorageClass StorageClass
         {
             get { return this._storageClass; }

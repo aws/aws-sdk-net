@@ -70,6 +70,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -89,6 +90,7 @@ namespace Amazon.ResourceGroups.Model
         /// in paginated output. By default, this number is 50.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

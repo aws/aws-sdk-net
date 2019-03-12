@@ -52,6 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public long TTL
         {
             get { return this._ttl.GetValueOrDefault(); }
@@ -200,6 +201,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// You can ignore these records.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordType Type
         {
             get { return this._type; }

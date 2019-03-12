@@ -51,6 +51,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string ARN
         {
             get { return this._arn; }
@@ -69,6 +70,7 @@ namespace Amazon.SecretsManager.Model
         /// The friendly name of the secret that you just created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -87,6 +89,7 @@ namespace Amazon.SecretsManager.Model
         /// The unique identifier that's associated with the version of the secret you just created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string VersionId
         {
             get { return this._versionId; }

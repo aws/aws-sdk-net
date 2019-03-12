@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the directory to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }

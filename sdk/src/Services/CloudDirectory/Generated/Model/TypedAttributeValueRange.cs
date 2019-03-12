@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// The inclusive or exclusive range end.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RangeMode EndMode
         {
             get { return this._endMode; }
@@ -80,6 +81,7 @@ namespace Amazon.CloudDirectory.Model
         /// The inclusive or exclusive range start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RangeMode StartMode
         {
             get { return this._startMode; }

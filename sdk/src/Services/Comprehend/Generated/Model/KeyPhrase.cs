@@ -103,6 +103,7 @@ namespace Amazon.Comprehend.Model
         /// The text of a key noun phrase.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Text
         {
             get { return this._text; }

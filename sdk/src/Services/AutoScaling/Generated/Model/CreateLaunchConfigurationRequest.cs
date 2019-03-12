@@ -127,6 +127,7 @@ namespace Amazon.AutoScaling.Model
         /// EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClassicLinkVPCId
         {
             get { return this._classicLinkVPCId; }
@@ -204,6 +205,7 @@ namespace Amazon.AutoScaling.Model
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string IamInstanceProfile
         {
             get { return this._iamInstanceProfile; }
@@ -231,6 +233,7 @@ namespace Amazon.AutoScaling.Model
         /// an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ImageId
         {
             get { return this._imageId; }
@@ -266,6 +269,7 @@ namespace Amazon.AutoScaling.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -312,6 +316,7 @@ namespace Amazon.AutoScaling.Model
         /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -330,6 +335,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the kernel associated with the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string KernelId
         {
             get { return this._kernelId; }
@@ -349,6 +355,7 @@ namespace Amazon.AutoScaling.Model
         /// EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string KeyName
         {
             get { return this._keyName; }
@@ -368,6 +375,7 @@ namespace Amazon.AutoScaling.Model
         /// your AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }
@@ -407,6 +415,7 @@ namespace Amazon.AutoScaling.Model
         /// Valid values: <code>default</code> | <code>dedicated</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string PlacementTenancy
         {
             get { return this._placementTenancy; }
@@ -425,6 +434,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the RAM disk associated with the AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string RamdiskId
         {
             get { return this._ramdiskId; }
@@ -477,6 +487,7 @@ namespace Amazon.AutoScaling.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SpotPrice
         {
             get { return this._spotPrice; }
@@ -497,6 +508,7 @@ namespace Amazon.AutoScaling.Model
         /// Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=21847)]
         public string UserData
         {
             get { return this._userData; }

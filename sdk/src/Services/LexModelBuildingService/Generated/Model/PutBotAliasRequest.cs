@@ -52,6 +52,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string BotName
         {
             get { return this._botName; }
@@ -70,6 +71,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string BotVersion
         {
             get { return this._botVersion; }
@@ -118,6 +120,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -136,6 +139,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the alias. The name is <i>not</i> case sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

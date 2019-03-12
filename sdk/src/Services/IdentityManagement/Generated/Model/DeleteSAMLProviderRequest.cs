@@ -54,6 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// The Amazon Resource Name (ARN) of the SAML provider to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string SAMLProviderArn
         {
             get { return this._samlProviderArn; }

@@ -70,6 +70,7 @@ namespace Amazon.Textract.Model
         /// accidentally started more than once. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -88,6 +89,7 @@ namespace Amazon.Textract.Model
         /// The location of the document to be processed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentLocation DocumentLocation
         {
             get { return this._documentLocation; }
@@ -107,6 +109,7 @@ namespace Amazon.Textract.Model
         /// published to the Amazon Simple Notification Service (Amazon SNS) topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobTag
         {
             get { return this._jobTag; }

@@ -40,6 +40,7 @@ namespace Amazon.ECR.Model
         /// The number of expiring images.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ExpiringImageTotalCount
         {
             get { return this._expiringImageTotalCount.GetValueOrDefault(); }

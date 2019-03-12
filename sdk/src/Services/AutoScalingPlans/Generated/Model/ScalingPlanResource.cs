@@ -78,6 +78,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -137,6 +138,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -155,6 +157,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScalingPlanName
         {
             get { return this._scalingPlanName; }
@@ -173,6 +176,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The version number of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScalingPlanVersion
         {
             get { return this._scalingPlanVersion.GetValueOrDefault(); }
@@ -226,6 +230,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingStatusCode ScalingStatusCode
         {
             get { return this._scalingStatusCode; }
@@ -262,6 +267,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The namespace of the AWS service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }

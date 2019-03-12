@@ -115,6 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A JSON string for selecting additional features.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string AdditionalInfo
         {
             get { return this._additionalInfo; }
@@ -134,6 +135,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string AmiVersion
         {
             get { return this._amiVersion; }
@@ -175,6 +177,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and terminate EC2 instances in an instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string AutoScalingRole
         {
             get { return this._autoScalingRole; }
@@ -242,6 +245,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// a Linux AMI</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string CustomAmiId
         {
             get { return this._customAmiId; }
@@ -279,6 +283,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A specification of the number and type of Amazon EC2 instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobFlowInstancesConfig Instances
         {
             get { return this._instances; }
@@ -300,6 +305,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// console.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string JobFlowRole
         {
             get { return this._jobFlowRole; }
@@ -339,6 +345,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// provided, logs are not created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string LogUri
         {
             get { return this._logUri; }
@@ -357,6 +364,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the job flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -441,6 +449,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// versions use <code>AmiVersion</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ReleaseLabel
         {
             get { return this._releaseLabel; }
@@ -509,6 +518,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of a security configuration to apply to the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }
@@ -528,6 +538,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string ServiceRole
         {
             get { return this._serviceRole; }

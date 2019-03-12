@@ -53,6 +53,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of results to return in a <code>SearchResponse</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -74,6 +75,7 @@ namespace Amazon.SageMaker.Model
         /// for the specified <code>SearchExpression</code> and <code>Sort</code> parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -93,6 +95,7 @@ namespace Amazon.SageMaker.Model
         /// <code>Resource</code> value is <code>TrainingJob</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType Resource
         {
             get { return this._resource; }
@@ -134,6 +137,7 @@ namespace Amazon.SageMaker.Model
         /// default is <code>LastModifiedTime</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SortBy
         {
             get { return this._sortBy; }

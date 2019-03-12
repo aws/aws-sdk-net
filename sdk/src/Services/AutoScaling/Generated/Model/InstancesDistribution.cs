@@ -184,6 +184,7 @@ namespace Amazon.AutoScaling.Model
         /// blank.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string SpotMaxPrice
         {
             get { return this._spotMaxPrice; }

@@ -72,6 +72,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// is, the uniqueness—of an accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -109,6 +110,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -70,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// The contents of the signing certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string CertificateBody
         {
             get { return this._certificateBody; }
@@ -88,6 +89,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ID for the signing certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=24, Max=128)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -107,6 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// for API calls, while <code>Inactive</code> means it is not.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -143,6 +146,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the user the signing certificate is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

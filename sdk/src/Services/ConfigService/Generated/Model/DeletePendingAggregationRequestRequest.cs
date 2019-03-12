@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// The 12-digit account ID of the account requesting to aggregate data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RequesterAccountId
         {
             get { return this._requesterAccountId; }
@@ -61,6 +62,7 @@ namespace Amazon.ConfigService.Model
         /// The region requesting to aggregate data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RequesterAwsRegion
         {
             get { return this._requesterAwsRegion; }

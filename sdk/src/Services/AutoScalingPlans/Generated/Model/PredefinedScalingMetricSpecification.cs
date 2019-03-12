@@ -43,6 +43,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// to Auto Scaling groups, Spot Fleet requests, and ECS services.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingMetricType PredefinedScalingMetricType
         {
             get { return this._predefinedScalingMetricType; }
@@ -80,6 +81,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1023)]
         public string ResourceLabel
         {
             get { return this._resourceLabel; }

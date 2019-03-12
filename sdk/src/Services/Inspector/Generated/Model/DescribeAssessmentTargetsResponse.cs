@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// Information about the assessment targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<AssessmentTarget> AssessmentTargets
         {
             get { return this._assessmentTargets; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// each failed item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, FailedItemDetails> FailedItems
         {
             get { return this._failedItems; }

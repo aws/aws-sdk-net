@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters to limit the type of sessions returned by the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<SessionFilter> Filters
         {
             get { return this._filters; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The session status to retrieve a list of sessions for. For example, "Active".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SessionState State
         {
             get { return this._state; }

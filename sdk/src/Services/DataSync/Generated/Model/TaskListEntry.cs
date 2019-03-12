@@ -45,6 +45,7 @@ namespace Amazon.DataSync.Model
         /// The name of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -81,6 +82,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TaskArn
         {
             get { return this._taskArn; }

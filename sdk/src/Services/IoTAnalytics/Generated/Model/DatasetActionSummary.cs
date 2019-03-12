@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the action which automatically creates the data set's contents.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ActionName
         {
             get { return this._actionName; }

@@ -96,6 +96,7 @@ namespace Amazon.EC2.Model
         /// The time period for the first schedule to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SlotDateTimeRangeRequest FirstSlotStartTimeRange
         {
             get { return this._firstSlotStartTimeRange; }
@@ -191,6 +192,7 @@ namespace Amazon.EC2.Model
         /// The schedule recurrence.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduledInstanceRecurrenceRequest Recurrence
         {
             get { return this._recurrence; }

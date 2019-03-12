@@ -86,6 +86,7 @@ namespace Amazon.Lambda.Model
         /// A description of the function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -141,6 +142,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -162,6 +164,7 @@ namespace Amazon.Lambda.Model
         /// Model</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string Handler
         {
             get { return this._handler; }
@@ -222,6 +225,7 @@ namespace Amazon.Lambda.Model
         /// a multiple of 64 MB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=128, Max=3008)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -296,6 +300,7 @@ namespace Amazon.Lambda.Model
         /// is 3 seconds. The maximum allowed value is 900 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }

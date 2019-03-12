@@ -69,6 +69,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard to start with.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartShardId
         {
             get { return this._exclusiveStartShardId; }
@@ -88,6 +89,7 @@ namespace Amazon.Kinesis.Model
         /// If you specify a value greater than 100, at most 100 shards are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -106,6 +108,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

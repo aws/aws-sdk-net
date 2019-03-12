@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool PointInTimeRecoveryEnabled
         {
             get { return this._pointInTimeRecoveryEnabled.GetValueOrDefault(); }

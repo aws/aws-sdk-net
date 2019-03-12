@@ -71,6 +71,7 @@ namespace Amazon.MediaConvert.Model
         /// (codecProfile), Bitrate control mode (codingMode), and Sample rate (sampleRate). Default
         /// values depend on Bitrate control mode and Profile.
         /// </summary>
+        [AWSProperty(Min=6000, Max=1024000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -147,6 +148,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SampleRate. Sample rate in Hz. Valid values depend on rate
         /// control mode and profile.
         /// </summary>
+        [AWSProperty(Min=8000, Max=96000)]
         public int SampleRate
         {
             get { return this._sampleRate.GetValueOrDefault(); }

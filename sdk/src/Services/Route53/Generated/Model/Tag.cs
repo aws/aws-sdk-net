@@ -63,6 +63,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -92,6 +93,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Value
         {
             get { return this._value; }

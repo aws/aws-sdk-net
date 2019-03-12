@@ -46,6 +46,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The default value is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

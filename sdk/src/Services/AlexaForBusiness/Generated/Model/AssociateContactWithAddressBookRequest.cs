@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the address book with which to associate the contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AddressBookArn
         {
             get { return this._addressBookArn; }
@@ -60,6 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the contact to associate with an address book.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContactArn
         {
             get { return this._contactArn; }

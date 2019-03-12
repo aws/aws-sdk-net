@@ -84,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// User defined context to add to workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string ExecutionContext
         {
             get { return this._executionContext; }
@@ -109,6 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

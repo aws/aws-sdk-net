@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2083)]
         public string CloudWatchOutputUrl
         {
             get { return this._cloudWatchOutputUrl; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2083)]
         public string S3OutputUrl
         {
             get { return this._s3OutputUrl; }

@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

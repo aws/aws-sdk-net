@@ -70,6 +70,7 @@ namespace Amazon.Neptune.Model
         /// a database engine and engine version compatible with that DB parameter group family.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }
@@ -109,6 +110,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupName
         {
             get { return this._dbParameterGroupName; }
@@ -127,6 +129,7 @@ namespace Amazon.Neptune.Model
         /// The description for the DB parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

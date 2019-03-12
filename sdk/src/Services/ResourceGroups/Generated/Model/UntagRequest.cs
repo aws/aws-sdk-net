@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of the resource from which to remove tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -60,6 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// The keys of the tags to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Keys
         {
             get { return this._keys; }

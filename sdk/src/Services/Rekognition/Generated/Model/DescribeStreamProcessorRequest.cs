@@ -43,6 +43,7 @@ namespace Amazon.Rekognition.Model
         /// Name of the stream processor for which you want information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

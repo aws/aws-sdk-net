@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -80,6 +81,7 @@ namespace Amazon.CloudFront.Model
         /// origin access identity read permission to an object in Amazon S3. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3CanonicalUserId
         {
             get { return this._s3CanonicalUserId; }

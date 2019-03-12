@@ -62,6 +62,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -81,6 +82,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -99,6 +101,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The configuration for the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProvisioningArtifactProperties Parameters
         {
             get { return this._parameters; }
@@ -117,6 +120,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }

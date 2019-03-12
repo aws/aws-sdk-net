@@ -66,6 +66,7 @@ namespace Amazon.SimpleEmail.Model
         /// A list of identities.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Identities
         {
             get { return this._identities; }

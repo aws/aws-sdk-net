@@ -49,6 +49,7 @@ namespace Amazon.IoT.Model
         /// for each <code>authInfo</code> object in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<AuthInfo> AuthInfos
         {
             get { return this._authInfos; }

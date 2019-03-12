@@ -50,6 +50,7 @@ namespace Amazon.Athena.Model
         /// must be encrypted, for all queries that run in this workgroup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionOption EncryptionOption
         {
             get { return this._encryptionOption; }

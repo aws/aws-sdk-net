@@ -63,6 +63,7 @@ namespace Amazon.Cloud9.Model
         /// The maximum number of environment members to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

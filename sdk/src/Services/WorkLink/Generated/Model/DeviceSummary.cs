@@ -41,6 +41,7 @@ namespace Amazon.WorkLink.Model
         /// The ID of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string DeviceId
         {
             get { return this._deviceId; }

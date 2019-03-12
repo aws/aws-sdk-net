@@ -88,6 +88,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AttributesToGet
         {
             get { return this._attributesToGet; }
@@ -203,6 +204,7 @@ namespace Amazon.DynamoDBv2.Model
         /// primary key, you must provide values for both the partition key and the sort key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }
@@ -266,6 +268,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table containing the requested item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

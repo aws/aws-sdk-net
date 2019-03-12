@@ -78,6 +78,7 @@ namespace Amazon.EC2.Model
         /// Constraints: Up to 255 ASCII characters
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyName
         {
             get { return this._keyName; }

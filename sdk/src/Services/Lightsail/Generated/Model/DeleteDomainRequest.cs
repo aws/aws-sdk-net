@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// The specific domain name to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

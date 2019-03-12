@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }

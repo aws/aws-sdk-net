@@ -44,6 +44,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -62,6 +63,7 @@ namespace Amazon.Chime.Model
         /// The request containing the user IDs and details to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=20)]
         public List<UpdateUserRequestItem> UpdateUserRequestItems
         {
             get { return this._updateUserRequestItems; }

@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// For the metric that the CloudWatch alarm is associated with, the name of one dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53.Model
         /// For the metric that the CloudWatch alarm is associated with, the value of one dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Value
         {
             get { return this._value; }

@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// and by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SizeConstraintSetId
         {
             get { return this._sizeConstraintSetId; }

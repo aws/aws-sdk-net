@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// A required parameter. Options available for the given engine name are described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EngineName
         {
             get { return this._engineName; }

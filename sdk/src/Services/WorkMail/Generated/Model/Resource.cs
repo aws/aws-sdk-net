@@ -64,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The email of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=254)]
         public string Email
         {
             get { return this._email; }
@@ -100,6 +101,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -118,6 +120,7 @@ namespace Amazon.WorkMail.Model
         /// The name of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string Name
         {
             get { return this._name; }

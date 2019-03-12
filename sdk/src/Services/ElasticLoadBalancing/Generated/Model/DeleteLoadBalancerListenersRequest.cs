@@ -58,6 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -76,6 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The client port numbers of the listeners.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<int> LoadBalancerPorts
         {
             get { return this._loadBalancerPorts; }

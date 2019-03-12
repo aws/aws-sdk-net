@@ -44,6 +44,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the facet to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudDirectory.Model
         /// information, see <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

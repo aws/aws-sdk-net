@@ -59,6 +59,7 @@ namespace Amazon.CloudHSM.Model
         /// The ARN of the high-availability partition group to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HapgArn
         {
             get { return this._hapgArn; }

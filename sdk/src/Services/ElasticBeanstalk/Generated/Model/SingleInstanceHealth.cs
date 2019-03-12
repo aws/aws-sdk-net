@@ -162,6 +162,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The ID of the Amazon EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string InstanceId
         {
             get { return this._instanceId; }

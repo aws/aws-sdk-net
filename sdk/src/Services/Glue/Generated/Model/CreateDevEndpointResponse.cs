@@ -55,6 +55,7 @@ namespace Amazon.Glue.Model
         /// The map of arguments used to configure this DevEndpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> Arguments
         {
             get { return this._arguments; }
@@ -218,6 +219,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure being used with this DevEndpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }

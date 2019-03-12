@@ -57,6 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -75,6 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The portfolio identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PortfolioId
         {
             get { return this._portfolioId; }
@@ -93,6 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -111,6 +114,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the source portfolio.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SourcePortfolioId
         {
             get { return this._sourcePortfolioId; }

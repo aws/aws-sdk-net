@@ -79,6 +79,7 @@ namespace Amazon.IoTAnalytics.Model
         /// key in the message object.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MessageId
         {
             get { return this._messageId; }

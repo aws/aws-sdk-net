@@ -59,6 +59,7 @@ namespace Amazon.CognitoSync.Model
         /// A role configured to allow Cognito to call SNS on behalf of the developer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

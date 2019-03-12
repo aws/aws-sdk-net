@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint to which the client is connected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }

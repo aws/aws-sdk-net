@@ -47,6 +47,7 @@ namespace Amazon.WorkSpaces.Model
         /// The description of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -119,6 +120,7 @@ namespace Amazon.WorkSpaces.Model
         /// The name of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

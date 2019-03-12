@@ -92,6 +92,7 @@ namespace Amazon.EC2.Model
         /// batches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }

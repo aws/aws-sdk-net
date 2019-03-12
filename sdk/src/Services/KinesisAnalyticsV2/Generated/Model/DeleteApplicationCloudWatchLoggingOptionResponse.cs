@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The application's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ApplicationARN
         {
             get { return this._applicationARN; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// each time you change the CloudWatch logging options.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999999999)]
         public long ApplicationVersionId
         {
             get { return this._applicationVersionId.GetValueOrDefault(); }

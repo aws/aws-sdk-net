@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// Reserved for future use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BlockerType Type
         {
             get { return this._type; }

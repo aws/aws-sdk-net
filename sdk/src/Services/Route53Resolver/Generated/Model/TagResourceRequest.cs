@@ -69,6 +69,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -87,6 +88,7 @@ namespace Amazon.Route53Resolver.Model
         /// The tags that you want to add to the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

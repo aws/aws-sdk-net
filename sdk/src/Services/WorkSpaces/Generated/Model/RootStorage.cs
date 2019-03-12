@@ -40,6 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// The size of the root volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Capacity
         {
             get { return this._capacity; }

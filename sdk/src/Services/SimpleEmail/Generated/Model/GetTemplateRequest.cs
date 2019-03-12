@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the template you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

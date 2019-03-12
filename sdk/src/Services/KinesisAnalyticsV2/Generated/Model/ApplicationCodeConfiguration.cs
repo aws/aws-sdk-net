@@ -59,6 +59,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Specifies whether the code content is in text or zip format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CodeContentType CodeContentType
         {
             get { return this._codeContentType; }

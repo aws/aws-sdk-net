@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing details about the new virtual MFA device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualMFADevice VirtualMFADevice
         {
             get { return this._virtualMFADevice; }

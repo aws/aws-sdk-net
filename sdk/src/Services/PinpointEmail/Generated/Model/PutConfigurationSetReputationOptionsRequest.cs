@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// tracking for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

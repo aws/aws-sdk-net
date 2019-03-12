@@ -49,6 +49,7 @@ namespace Amazon.CodePipeline.Model
         /// actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

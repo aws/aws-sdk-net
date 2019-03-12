@@ -155,6 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Resource Data Sync.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SyncName
         {
             get { return this._syncName; }

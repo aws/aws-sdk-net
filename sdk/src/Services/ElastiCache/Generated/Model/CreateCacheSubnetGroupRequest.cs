@@ -49,6 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// A description for the cache subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSubnetGroupDescription
         {
             get { return this._cacheSubnetGroupDescription; }
@@ -75,6 +76,7 @@ namespace Amazon.ElastiCache.Model
         /// Example: <code>mysubnetgroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSubnetGroupName
         {
             get { return this._cacheSubnetGroupName; }
@@ -93,6 +95,7 @@ namespace Amazon.ElastiCache.Model
         /// A list of VPC subnet IDs for the cache subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

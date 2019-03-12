@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// DISABLED
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContinuousBackupsStatus ContinuousBackupsStatus
         {
             get { return this._continuousBackupsStatus; }

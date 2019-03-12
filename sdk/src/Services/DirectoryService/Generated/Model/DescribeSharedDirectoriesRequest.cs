@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// The number of shared directories to return in the response object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -81,6 +82,7 @@ namespace Amazon.DirectoryService.Model
         /// Returns the identifier of the directory in the directory owner account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OwnerDirectoryId
         {
             get { return this._ownerDirectoryId; }

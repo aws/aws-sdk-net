@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the snapshot for which you are requesting information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceSnapshotName
         {
             get { return this._instanceSnapshotName; }

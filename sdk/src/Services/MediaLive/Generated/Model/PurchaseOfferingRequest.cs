@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Count. Number of resources
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OfferingId. Offering to purchase, e.g. '87654321'
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OfferingId
         {
             get { return this._offeringId; }

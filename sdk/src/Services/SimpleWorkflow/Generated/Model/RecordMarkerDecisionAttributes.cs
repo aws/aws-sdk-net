@@ -72,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The details of the marker.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Details
         {
             get { return this._details; }
@@ -90,6 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The name of the marker.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MarkerName
         {
             get { return this._markerName; }

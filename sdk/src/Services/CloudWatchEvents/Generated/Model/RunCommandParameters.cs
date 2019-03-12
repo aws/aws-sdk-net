@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// an array of InstanceIds or a tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<RunCommandTarget> RunCommandTargets
         {
             get { return this._runCommandTargets; }

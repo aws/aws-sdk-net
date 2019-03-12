@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         /// Valid characters are a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -69,6 +70,7 @@ namespace Amazon.SageMaker.Model
         /// Amazon SageMaker runs to validate your algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobDefinition TrainingJobDefinition
         {
             get { return this._trainingJobDefinition; }

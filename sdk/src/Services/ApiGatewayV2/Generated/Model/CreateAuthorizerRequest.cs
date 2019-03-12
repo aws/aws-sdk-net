@@ -49,6 +49,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -90,6 +91,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// value is 3600, or 1 hour.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int AuthorizerResultTtlInSeconds
         {
             get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }
@@ -109,6 +111,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// using incoming request parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthorizerType AuthorizerType
         {
             get { return this._authorizerType; }
@@ -132,6 +135,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizerUri
         {
             get { return this._authorizerUri; }
@@ -164,6 +168,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// authorization caching is not enabled, this property is optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> IdentitySource
         {
             get { return this._identitySource; }
@@ -200,6 +205,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the authorizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

@@ -52,6 +52,7 @@ namespace Amazon.KinesisFirehose.Model
         /// the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=67108864)]
         public int BlockSizeBytes
         {
             get { return this._blockSizeBytes.GetValueOrDefault(); }
@@ -90,6 +91,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public double BloomFilterFalsePositiveProbability
         {
             get { return this._bloomFilterFalsePositiveProbability.GetValueOrDefault(); }
@@ -128,6 +130,7 @@ namespace Amazon.KinesisFirehose.Model
         /// in a dictionary. To always use dictionary encoding, set this threshold to 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public double DictionaryKeyThreshold
         {
             get { return this._dictionaryKeyThreshold.GetValueOrDefault(); }
@@ -201,6 +204,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <code>false</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public double PaddingTolerance
         {
             get { return this._paddingTolerance.GetValueOrDefault(); }
@@ -220,6 +224,7 @@ namespace Amazon.KinesisFirehose.Model
         /// 1,000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1000)]
         public int RowIndexStride
         {
             get { return this._rowIndexStride.GetValueOrDefault(); }
@@ -238,6 +243,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8388608)]
         public int StripeSizeBytes
         {
             get { return this._stripeSizeBytes.GetValueOrDefault(); }

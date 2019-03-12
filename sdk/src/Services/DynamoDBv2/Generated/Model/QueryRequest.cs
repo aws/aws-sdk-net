@@ -137,6 +137,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AttributesToGet
         {
             get { return this._attributesToGet; }
@@ -382,6 +383,7 @@ namespace Amazon.DynamoDBv2.Model
         /// you must also provide <code>TableName.</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -558,6 +560,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -750,6 +753,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table containing the requested items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

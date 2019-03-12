@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// provider type for the action. Valid categories are limited to one of the values below.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionCategory Category
         {
             get { return this._category; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// The creator of the action being called.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionOwner Owner
         {
             get { return this._owner; }
@@ -84,6 +86,7 @@ namespace Amazon.CodePipeline.Model
         /// Action Types and Providers in CodePipeline</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public string Provider
         {
             get { return this._provider; }
@@ -102,6 +105,7 @@ namespace Amazon.CodePipeline.Model
         /// A string that describes the action version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=9)]
         public string Version
         {
             get { return this._version; }

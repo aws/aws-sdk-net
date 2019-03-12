@@ -78,6 +78,7 @@ namespace Amazon.FMS.Model
         /// policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ExcludeResourceTags
         {
             get { return this._excludeResourceTags.GetValueOrDefault(); }
@@ -122,6 +123,7 @@ namespace Amazon.FMS.Model
         /// The ID of the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -140,6 +142,7 @@ namespace Amazon.FMS.Model
         /// The friendly name of the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -161,6 +164,7 @@ namespace Amazon.FMS.Model
         /// policy version, use a <code>GetPolicy</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PolicyUpdateToken
         {
             get { return this._policyUpdateToken; }
@@ -179,6 +183,7 @@ namespace Amazon.FMS.Model
         /// Indicates if the policy should be automatically applied to new resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool RemediationEnabled
         {
             get { return this._remediationEnabled.GetValueOrDefault(); }
@@ -197,6 +202,7 @@ namespace Amazon.FMS.Model
         /// An array of <code>ResourceTag</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8)]
         public List<ResourceTag> ResourceTags
         {
             get { return this._resourceTags; }
@@ -218,6 +224,7 @@ namespace Amazon.FMS.Model
         /// or <code>AWS::CloudFront::Distribution</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -236,6 +243,7 @@ namespace Amazon.FMS.Model
         /// Details about the security service that is being used to protect the resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SecurityServicePolicyData SecurityServicePolicyData
         {
             get { return this._securityServicePolicyData; }

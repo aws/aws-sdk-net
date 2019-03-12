@@ -77,6 +77,7 @@ namespace Amazon.Connect.Model
         /// keys can include only alphanumeric, dash, and underscore characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -96,6 +97,7 @@ namespace Amazon.Connect.Model
         /// for the contact associated with the first interaction with the contact center.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InitialContactId
         {
             get { return this._initialContactId; }
@@ -118,6 +120,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }

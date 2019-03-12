@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         ///  A list of deployment IDs, separated by spaces. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DeploymentIds
         {
             get { return this._deploymentIds; }

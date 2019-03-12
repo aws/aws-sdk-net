@@ -52,6 +52,7 @@ namespace Amazon.DataPipeline.Model
         /// of an object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Document
         {
             get { return this._document; }
@@ -71,6 +72,7 @@ namespace Amazon.DataPipeline.Model
         /// provided in the instance identity document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Signature
         {
             get { return this._signature; }

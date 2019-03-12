@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the EBS options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EBSOptions Options
         {
             get { return this._options; }
@@ -59,6 +60,7 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies the status of the EBS options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

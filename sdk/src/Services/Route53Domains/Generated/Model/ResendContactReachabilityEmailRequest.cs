@@ -44,6 +44,7 @@ namespace Amazon.Route53Domains.Model
         /// email to the registrant contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

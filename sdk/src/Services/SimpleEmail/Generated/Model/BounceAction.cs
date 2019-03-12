@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// Human-readable text to include in the bounce message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Message
         {
             get { return this._message; }
@@ -72,6 +73,7 @@ namespace Amazon.SimpleEmail.Model
         /// the bounce message will be sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Sender
         {
             get { return this._sender; }
@@ -91,6 +93,7 @@ namespace Amazon.SimpleEmail.Model
         /// 5321</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SmtpReplyCode
         {
             get { return this._smtpReplyCode; }

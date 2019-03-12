@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// An optional number limit for the tapes in the list returned by this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -74,6 +75,7 @@ namespace Amazon.StorageGateway.Model
         /// A string that indicates the position at which to begin the returned list of tapes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }

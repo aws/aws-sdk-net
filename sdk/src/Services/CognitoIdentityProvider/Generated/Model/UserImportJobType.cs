@@ -54,6 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CloudWatchLogsRoleArn
         {
             get { return this._cloudWatchLogsRoleArn; }
@@ -90,6 +91,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The message returned when the user import job is completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string CompletionMessage
         {
             get { return this._completionMessage; }
@@ -162,6 +164,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The job ID for the user import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string JobId
         {
             get { return this._jobId; }
@@ -180,6 +183,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The job name for the user import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string JobName
         {
             get { return this._jobName; }
@@ -198,6 +202,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The pre-signed URL to be used to upload the <code>.csv</code> file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }
@@ -307,6 +312,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool that the users are being imported into.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

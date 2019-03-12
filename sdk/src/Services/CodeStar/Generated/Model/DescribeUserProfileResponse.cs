@@ -46,6 +46,7 @@ namespace Amazon.CodeStar.Model
         /// format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedTimestamp
         {
             get { return this._createdTimestamp.GetValueOrDefault(); }
@@ -71,6 +72,7 @@ namespace Amazon.CodeStar.Model
         /// first character and the first character after the space ("MJ", not "MM").
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -89,6 +91,7 @@ namespace Amazon.CodeStar.Model
         /// The email address for the user. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -107,6 +110,7 @@ namespace Amazon.CodeStar.Model
         /// The date and time when the user profile was last modified, in timestamp format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTimestamp
         {
             get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
@@ -128,6 +132,7 @@ namespace Amazon.CodeStar.Model
         /// remote access to those resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16384)]
         public string SshPublicKey
         {
             get { return this._sshPublicKey; }
@@ -146,6 +151,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

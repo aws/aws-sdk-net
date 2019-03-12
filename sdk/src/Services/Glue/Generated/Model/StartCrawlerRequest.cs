@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// Name of the crawler to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

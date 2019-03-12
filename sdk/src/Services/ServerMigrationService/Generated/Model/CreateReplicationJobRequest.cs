@@ -217,6 +217,7 @@ namespace Amazon.ServerMigrationService.Model
         /// The seed replication time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime SeedReplicationTime
         {
             get { return this._seedReplicationTime.GetValueOrDefault(); }
@@ -235,6 +236,7 @@ namespace Amazon.ServerMigrationService.Model
         /// The identifier of the server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }

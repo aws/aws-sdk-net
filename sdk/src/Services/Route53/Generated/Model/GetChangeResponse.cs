@@ -40,6 +40,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains information about the specified change batch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeInfo ChangeInfo
         {
             get { return this._changeInfo; }

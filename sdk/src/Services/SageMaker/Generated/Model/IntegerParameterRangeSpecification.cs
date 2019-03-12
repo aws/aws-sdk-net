@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum integer value allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string MaxValue
         {
             get { return this._maxValue; }
@@ -59,6 +60,7 @@ namespace Amazon.SageMaker.Model
         /// The minimum integer value allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string MinValue
         {
             get { return this._minValue; }

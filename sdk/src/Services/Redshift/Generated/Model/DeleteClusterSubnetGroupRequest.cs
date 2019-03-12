@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster subnet group name to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }

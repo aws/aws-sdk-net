@@ -48,6 +48,7 @@ namespace Amazon.RAM.Model
         /// results, make another call with the returned <code>nextToken</code> value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -120,6 +121,7 @@ namespace Amazon.RAM.Model
         /// The type of owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceOwner ResourceOwner
         {
             get { return this._resourceOwner; }

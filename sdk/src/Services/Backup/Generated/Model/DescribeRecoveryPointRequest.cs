@@ -45,6 +45,7 @@ namespace Amazon.Backup.Model
         /// they are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupVaultName
         {
             get { return this._backupVaultName; }
@@ -64,6 +65,7 @@ namespace Amazon.Backup.Model
         /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RecoveryPointArn
         {
             get { return this._recoveryPointArn; }

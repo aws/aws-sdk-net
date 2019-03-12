@@ -42,6 +42,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Use this value in a subsequent <code>ListTags</code> request to get more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudHSMV2.Model
         /// A list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> TagList
         {
             get { return this._tagList; }

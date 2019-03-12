@@ -64,6 +64,7 @@ namespace Amazon.GameLift.Model
         /// For single string values. Maximum string length is 100 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string S
         {
             get { return this._s; }

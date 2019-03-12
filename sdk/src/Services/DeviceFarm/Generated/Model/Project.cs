@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// The project's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -98,6 +99,7 @@ namespace Amazon.DeviceFarm.Model
         /// The project's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

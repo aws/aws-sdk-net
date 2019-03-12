@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ReservationId. Unique reservation ID, e.g. '1234567'
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservationId
         {
             get { return this._reservationId; }

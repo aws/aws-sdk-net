@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer. You can specify a maximum of one load balancer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> LoadBalancerNames
         {
             get { return this._loadBalancerNames; }
@@ -60,6 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The list of tag keys to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<TagKeyOnly> Tags
         {
             get { return this._tags; }

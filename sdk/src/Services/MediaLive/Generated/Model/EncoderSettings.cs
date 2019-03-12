@@ -45,6 +45,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property AudioDescriptions.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AudioDescription> AudioDescriptions
         {
             get { return this._audioDescriptions; }
@@ -137,6 +138,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property OutputGroups.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<OutputGroup> OutputGroups
         {
             get { return this._outputGroups; }
@@ -153,6 +155,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimecodeConfig. Contains settings used to acquire and adjust
         /// timecode information from inputs.
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimecodeConfig TimecodeConfig
         {
             get { return this._timecodeConfig; }
@@ -168,6 +171,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property VideoDescriptions.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<VideoDescription> VideoDescriptions
         {
             get { return this._videoDescriptions; }

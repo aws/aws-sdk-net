@@ -68,6 +68,7 @@ namespace Amazon.QuickSight.Model
         /// AWS account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -86,6 +87,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the group that you want to delete the user from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -104,6 +106,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the user that you want to delete from the group membership.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string MemberName
         {
             get { return this._memberName; }
@@ -122,6 +125,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }

@@ -64,6 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// only those associated with this application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -121,6 +122,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// with this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -140,6 +142,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// recent event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxRecords
         {
             get { return this._maxRecords.GetValueOrDefault(); }
@@ -252,6 +255,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// are associated with this environment configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }
@@ -271,6 +275,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// with this application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string VersionLabel
         {
             get { return this._versionLabel; }

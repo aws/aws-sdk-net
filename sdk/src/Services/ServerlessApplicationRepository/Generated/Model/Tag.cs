@@ -44,6 +44,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> Data Type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> Data Type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

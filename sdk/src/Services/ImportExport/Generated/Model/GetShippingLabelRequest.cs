@@ -110,6 +110,7 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property JobIds.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> JobIds
         {
             get { return this._jobIds; }

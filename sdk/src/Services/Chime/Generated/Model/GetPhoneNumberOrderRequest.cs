@@ -42,6 +42,7 @@ namespace Amazon.Chime.Model
         /// The ID for the phone number order.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PhoneNumberOrderId
         {
             get { return this._phoneNumberOrderId; }

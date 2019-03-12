@@ -64,6 +64,7 @@ namespace Amazon.Lightsail.Model
         /// available.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -82,6 +83,7 @@ namespace Amazon.Lightsail.Model
         /// The unique Lightsail disk name (e.g., <code>my-disk</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskName
         {
             get { return this._diskName; }
@@ -101,6 +103,7 @@ namespace Amazon.Lightsail.Model
         /// the new storage disk.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskSnapshotName
         {
             get { return this._diskSnapshotName; }
@@ -119,6 +122,7 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB (e.g., <code>32</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SizeInGb
         {
             get { return this._sizeInGb.GetValueOrDefault(); }

@@ -61,6 +61,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZoneLimitType Type
         {
             get { return this._type; }
@@ -79,6 +80,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that you want to get a limit for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }

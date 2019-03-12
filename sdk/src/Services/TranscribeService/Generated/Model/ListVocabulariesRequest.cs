@@ -46,6 +46,7 @@ namespace Amazon.TranscribeService.Model
         /// in the list, this response contains only the actual results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.TranscribeService.Model
         /// will return both "vocabularyname" and "VocabularyName" in the response list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -85,6 +87,7 @@ namespace Amazon.TranscribeService.Model
         /// include the <code>NextToken</code> to fetch the next set of jobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

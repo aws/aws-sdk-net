@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// A list of tags associated with the Amazon SageMaker resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

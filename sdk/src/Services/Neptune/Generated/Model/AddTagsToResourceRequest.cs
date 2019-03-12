@@ -46,6 +46,7 @@ namespace Amazon.Neptune.Model
         /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -64,6 +65,7 @@ namespace Amazon.Neptune.Model
         /// The tags to be assigned to the Amazon Neptune resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

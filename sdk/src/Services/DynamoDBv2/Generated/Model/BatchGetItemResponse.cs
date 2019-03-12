@@ -122,6 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// map.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, KeysAndAttributes> UnprocessedKeys
         {
             get { return this._unprocessedKeys; }

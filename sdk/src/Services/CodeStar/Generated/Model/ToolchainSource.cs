@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// is stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Location S3
         {
             get { return this._s3; }

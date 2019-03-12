@@ -97,6 +97,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The integration response key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IntegrationResponseKey
         {
             get { return this._integrationResponseKey; }

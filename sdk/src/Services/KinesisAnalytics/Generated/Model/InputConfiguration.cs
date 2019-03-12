@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Input source ID. You can get this ID by calling the <a>DescribeApplication</a> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string Id
         {
             get { return this._id; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputStartingPositionConfiguration InputStartingPositionConfiguration
         {
             get { return this._inputStartingPositionConfiguration; }

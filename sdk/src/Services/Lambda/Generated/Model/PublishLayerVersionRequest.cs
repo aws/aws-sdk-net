@@ -53,6 +53,7 @@ namespace Amazon.Lambda.Model
         /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> CompatibleRuntimes
         {
             get { return this._compatibleRuntimes; }
@@ -71,6 +72,7 @@ namespace Amazon.Lambda.Model
         /// The function layer archive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LayerVersionContentInput Content
         {
             get { return this._content; }
@@ -89,6 +91,7 @@ namespace Amazon.Lambda.Model
         /// The description of the version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -107,6 +110,7 @@ namespace Amazon.Lambda.Model
         /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string LayerName
         {
             get { return this._layerName; }
@@ -139,6 +143,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string LicenseInfo
         {
             get { return this._licenseInfo; }

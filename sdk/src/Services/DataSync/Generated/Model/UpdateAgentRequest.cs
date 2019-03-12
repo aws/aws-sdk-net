@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the agent to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string AgentArn
         {
             get { return this._agentArn; }
@@ -60,6 +61,7 @@ namespace Amazon.DataSync.Model
         /// The name that you want to use to configure the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

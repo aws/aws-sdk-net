@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model
         /// The group name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }

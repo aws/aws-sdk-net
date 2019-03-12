@@ -56,6 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -100,6 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string State
         {
             get { return this._state; }

@@ -109,6 +109,7 @@ namespace Amazon.IoT.Model
         /// The certificate signing request (CSR).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string CertificateSigningRequest
         {
             get { return this._certificateSigningRequest; }

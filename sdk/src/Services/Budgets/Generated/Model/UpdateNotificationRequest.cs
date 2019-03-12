@@ -45,6 +45,7 @@ namespace Amazon.Budgets.Model
         /// want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -63,6 +64,7 @@ namespace Amazon.Budgets.Model
         /// The name of the budget whose notification you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BudgetName
         {
             get { return this._budgetName; }
@@ -81,6 +83,7 @@ namespace Amazon.Budgets.Model
         /// The updated notification to be associated with a budget.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Notification NewNotification
         {
             get { return this._newNotification; }
@@ -99,6 +102,7 @@ namespace Amazon.Budgets.Model
         /// The previous notification that is associated with a budget.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Notification OldNotification
         {
             get { return this._oldNotification; }

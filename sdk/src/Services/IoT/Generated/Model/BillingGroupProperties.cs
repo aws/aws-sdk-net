@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The description of the billing group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string BillingGroupDescription
         {
             get { return this._billingGroupDescription; }

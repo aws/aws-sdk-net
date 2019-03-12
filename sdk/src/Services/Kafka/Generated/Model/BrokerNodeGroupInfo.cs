@@ -65,6 +65,7 @@ namespace Amazon.Kafka.Model
         /// us-east-1e.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ClientSubnets
         {
             get { return this._clientSubnets; }
@@ -85,6 +86,7 @@ namespace Amazon.Kafka.Model
         /// kafka.m5.12xlarge, and kafka.m5.24xlarge.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=32)]
         public string InstanceType
         {
             get { return this._instanceType; }

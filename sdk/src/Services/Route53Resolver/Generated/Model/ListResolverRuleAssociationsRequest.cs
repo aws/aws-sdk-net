@@ -72,6 +72,7 @@ namespace Amazon.Route53Resolver.Model
         /// for <code>MaxResults</code>, Resolver returns up to 100 rule associations. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

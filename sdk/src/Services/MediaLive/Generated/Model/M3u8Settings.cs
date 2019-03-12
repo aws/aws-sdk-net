@@ -53,6 +53,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property AudioFramesPerPes. The number of audio frames to insert
         /// for each PES packet.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int AudioFramesPerPes
         {
             get { return this._audioFramesPerPes.GetValueOrDefault(); }
@@ -102,6 +103,7 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream. A value of \"0\" writes out the PMT
         /// once per segment file.
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int PatInterval
         {
             get { return this._patInterval.GetValueOrDefault(); }
@@ -136,6 +138,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property PcrPeriod. Maximum time in milliseconds between Program
         /// Clock References (PCRs) inserted into the transport stream.
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public int PcrPeriod
         {
             get { return this._pcrPeriod.GetValueOrDefault(); }
@@ -170,6 +173,7 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream. A value of \"0\" writes out the PMT
         /// once per segment file.
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int PmtInterval
         {
             get { return this._pmtInterval.GetValueOrDefault(); }
@@ -202,6 +206,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ProgramNum. The value of the program number field in the
         /// Program Map Table.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int ProgramNum
         {
             get { return this._programNum.GetValueOrDefault(); }
@@ -283,6 +288,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TransportStreamId. The value of the transport stream ID
         /// field in the Program Map Table.
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public int TransportStreamId
         {
             get { return this._transportStreamId.GetValueOrDefault(); }

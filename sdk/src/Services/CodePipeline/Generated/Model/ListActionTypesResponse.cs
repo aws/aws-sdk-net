@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// Provides details of the action types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActionType> ActionTypes
         {
             get { return this._actionTypes; }
@@ -61,6 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// set of action types in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

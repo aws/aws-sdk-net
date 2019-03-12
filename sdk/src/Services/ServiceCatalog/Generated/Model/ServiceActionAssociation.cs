@@ -43,6 +43,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -61,6 +62,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -79,6 +81,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ServiceActionId
         {
             get { return this._serviceActionId; }

@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// criteria.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Tag
         {
             get { return this._tag; }

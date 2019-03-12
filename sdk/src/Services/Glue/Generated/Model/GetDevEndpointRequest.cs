@@ -50,6 +50,7 @@ namespace Amazon.Glue.Model
         /// Name of the DevEndpoint for which to retrieve information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointName
         {
             get { return this._endpointName; }

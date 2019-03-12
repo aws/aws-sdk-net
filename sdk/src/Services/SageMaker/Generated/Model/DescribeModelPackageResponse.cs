@@ -67,6 +67,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp specifying when the model package was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelPackageArn
         {
             get { return this._modelPackageArn; }
@@ -121,6 +123,7 @@ namespace Amazon.SageMaker.Model
         /// A brief summary of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ModelPackageDescription
         {
             get { return this._modelPackageDescription; }
@@ -139,6 +142,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model package being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }
@@ -157,6 +161,7 @@ namespace Amazon.SageMaker.Model
         /// The current status of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ModelPackageStatus ModelPackageStatus
         {
             get { return this._modelPackageStatus; }
@@ -175,6 +180,7 @@ namespace Amazon.SageMaker.Model
         /// Details about the current status of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ModelPackageStatusDetails ModelPackageStatusDetails
         {
             get { return this._modelPackageStatusDetails; }

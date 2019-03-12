@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// A list of DevEndpoints not found.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> DevEndpointsNotFound
         {
             get { return this._devEndpointsNotFound; }

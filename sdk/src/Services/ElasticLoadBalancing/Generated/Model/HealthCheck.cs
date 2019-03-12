@@ -67,6 +67,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// to the <code>Healthy</code> state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=10)]
         public int HealthyThreshold
         {
             get { return this._healthyThreshold.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The approximate interval, in seconds, between health checks of an individual instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=300)]
         public int Interval
         {
             get { return this._interval.GetValueOrDefault(); }
@@ -126,6 +128,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// less.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Target
         {
             get { return this._target; }
@@ -148,6 +151,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// This value must be less than the <code>Interval</code> value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=60)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }
@@ -167,6 +171,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// to the <code>Unhealthy</code> state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=10)]
         public int UnhealthyThreshold
         {
             get { return this._unhealthyThreshold.GetValueOrDefault(); }

@@ -174,6 +174,7 @@ namespace Amazon.IoT.Model
         /// The ID of the audit that generated this result (finding)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

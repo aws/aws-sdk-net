@@ -79,6 +79,7 @@ namespace Amazon.Comprehend.Model
         /// begins with the prefix, Amazon Comprehend uses all of them as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

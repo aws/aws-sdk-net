@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// Pinpoint or Amazon SES.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> BlacklistItemNames
         {
             get { return this._blacklistItemNames; }

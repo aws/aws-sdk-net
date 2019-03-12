@@ -61,6 +61,7 @@ namespace Amazon.ConfigService.Model
         /// The type of AWS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

@@ -61,6 +61,7 @@ namespace Amazon.WorkSpaces.Model
         /// The maximum number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.WorkSpaces.Model
         /// provide this token to receive the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NextToken
         {
             get { return this._nextToken; }

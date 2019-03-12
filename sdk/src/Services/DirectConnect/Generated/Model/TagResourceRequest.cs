@@ -49,6 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -67,6 +68,7 @@ namespace Amazon.DirectConnect.Model
         /// The tags to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<Tag> Tags
         {
             get { return this._tags; }

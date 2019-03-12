@@ -55,6 +55,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SourceFile. External caption file used for loading captions.
         /// Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
         /// </summary>
+        [AWSProperty(Min=14)]
         public string SourceFile
         {
             get { return this._sourceFile; }
@@ -71,6 +72,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TimeDelta. Specifies a time delta in seconds to offset
         /// the captions from the source file.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimeDelta
         {
             get { return this._timeDelta.GetValueOrDefault(); }

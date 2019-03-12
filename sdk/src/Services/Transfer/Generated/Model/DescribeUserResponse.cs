@@ -41,6 +41,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server that has this user assigned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -60,6 +61,7 @@ namespace Amazon.Transfer.Model
         /// value that you specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DescribedUser User
         {
             get { return this._user; }

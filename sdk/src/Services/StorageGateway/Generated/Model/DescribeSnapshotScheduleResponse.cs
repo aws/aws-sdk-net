@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// The snapshot description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -62,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         /// The number of hours between snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=24)]
         public int RecurrenceInHours
         {
             get { return this._recurrenceInHours.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.StorageGateway.Model
         /// the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=23)]
         public int StartAt
         {
             get { return this._startAt.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// A value that indicates the time zone of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=10)]
         public string Timezone
         {
             get { return this._timezone; }
@@ -118,6 +122,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the volume that was specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

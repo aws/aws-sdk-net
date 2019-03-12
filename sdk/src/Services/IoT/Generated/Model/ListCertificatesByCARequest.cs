@@ -64,6 +64,7 @@ namespace Amazon.IoT.Model
         /// that were signed by this CA certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=64, Max=64)]
         public string CaCertificateId
         {
             get { return this._caCertificateId; }
@@ -100,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The result page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }

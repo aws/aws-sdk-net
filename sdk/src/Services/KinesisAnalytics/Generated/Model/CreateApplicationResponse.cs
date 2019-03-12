@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Amazon Resource Name (ARN), name, and status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationSummary ApplicationSummary
         {
             get { return this._applicationSummary; }

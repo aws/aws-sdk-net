@@ -45,6 +45,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -63,6 +64,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API mapping identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiMappingId
         {
             get { return this._apiMappingId; }
@@ -99,6 +101,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The domain name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -80,6 +80,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID that corresponds to a device offering promotion.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4)]
         public string OfferingPromotionId
         {
             get { return this._offeringPromotionId; }
@@ -116,6 +117,7 @@ namespace Amazon.DeviceFarm.Model
         /// The transaction ID of the offering transaction.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string TransactionId
         {
             get { return this._transactionId; }

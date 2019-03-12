@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// stage to another.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -63,6 +64,7 @@ namespace Amazon.CodePipeline.Model
         /// into the stage (inbound) or from that stage to the next stage (outbound).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string StageName
         {
             get { return this._stageName; }
@@ -83,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// allowed to transition to the next stage (outbound).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StageTransitionType TransitionType
         {
             get { return this._transitionType; }

@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model compilation job to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CompilationJobName
         {
             get { return this._compilationJobName; }

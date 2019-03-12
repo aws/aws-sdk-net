@@ -62,6 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

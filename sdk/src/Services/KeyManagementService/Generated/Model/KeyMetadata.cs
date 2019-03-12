@@ -62,6 +62,7 @@ namespace Amazon.KeyManagementService.Model
         /// Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -102,6 +103,7 @@ namespace Amazon.KeyManagementService.Model
         /// store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=19, Max=24)]
         public string CloudHsmClusterId
         {
             get { return this._cloudHsmClusterId; }
@@ -140,6 +142,7 @@ namespace Amazon.KeyManagementService.Model
         /// in a custom key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -177,6 +180,7 @@ namespace Amazon.KeyManagementService.Model
         /// The description of the CMK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string Description
         {
             get { return this._description; }
@@ -233,6 +237,7 @@ namespace Amazon.KeyManagementService.Model
         /// The globally unique identifier for the CMK.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

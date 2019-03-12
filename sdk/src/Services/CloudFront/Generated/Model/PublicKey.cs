@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// A time you added a public key to CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedTime
         {
             get { return this._createdTime.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CloudFront.Model
         /// A unique ID assigned to a public key you've added to CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -80,6 +82,7 @@ namespace Amazon.CloudFront.Model
         /// field-level encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PublicKeyConfig PublicKeyConfig
         {
             get { return this._publicKeyConfig; }

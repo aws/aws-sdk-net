@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// The directory ID for which you are deleting the conditional forwarder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -61,6 +62,7 @@ namespace Amazon.DirectoryService.Model
         /// the conditional forwarder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }

@@ -61,6 +61,7 @@ namespace Amazon.ECS.Model
         /// --format '{{.Server.APIVersion}}'</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogDriver LogDriver
         {
             get { return this._logDriver; }

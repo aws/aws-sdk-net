@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// Hub.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProductArn
         {
             get { return this._productArn; }

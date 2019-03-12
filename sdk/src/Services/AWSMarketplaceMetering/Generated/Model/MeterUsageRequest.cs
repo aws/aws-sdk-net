@@ -73,6 +73,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// code should be the same as the one used during the publishing of a new product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }
@@ -92,6 +93,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// timestamp will be ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }
@@ -110,6 +112,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// It will be one of the fcp dimension name provided during the publishing of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string UsageDimension
         {
             get { return this._usageDimension; }
@@ -128,6 +131,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Consumption value for the hour. Defaults to <code>0</code> if not specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int UsageQuantity
         {
             get { return this._usageQuantity.GetValueOrDefault(); }

@@ -40,6 +40,7 @@ namespace Amazon.CodeCommit.Model
         /// The content of the blob, usually a file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Content
         {
             get { return this._content; }

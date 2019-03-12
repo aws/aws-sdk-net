@@ -85,6 +85,7 @@ namespace Amazon.IoT.Model
         /// The description of the OTA update.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -103,6 +104,7 @@ namespace Amazon.IoT.Model
         /// The files to be streamed by the OTA update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<OTAUpdateFile> Files
         {
             get { return this._files; }
@@ -121,6 +123,7 @@ namespace Amazon.IoT.Model
         /// The ID of the OTA update to be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string OtaUpdateId
         {
             get { return this._otaUpdateId; }
@@ -139,6 +142,7 @@ namespace Amazon.IoT.Model
         /// The IAM role that allows access to the AWS IoT Jobs service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -175,6 +179,7 @@ namespace Amazon.IoT.Model
         /// The targeted devices to receive OTA updates.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> Targets
         {
             get { return this._targets; }

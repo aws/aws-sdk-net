@@ -55,6 +55,7 @@ namespace Amazon.Kinesis.Model
         /// names don't have to be unique across data streams.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConsumerName
         {
             get { return this._consumerName; }
@@ -75,6 +76,7 @@ namespace Amazon.Kinesis.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string StreamARN
         {
             get { return this._streamARN; }

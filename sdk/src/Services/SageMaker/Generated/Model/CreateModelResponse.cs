@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The ARN of the model created in Amazon SageMaker.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ModelArn
         {
             get { return this._modelArn; }

@@ -92,6 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// as <code>iam:CreateUser</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ActionNames
         {
             get { return this._actionNames; }
@@ -133,6 +134,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string CallerArn
         {
             get { return this._callerArn; }
@@ -173,6 +175,7 @@ namespace Amazon.IdentityManagement.Model
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -201,6 +204,7 @@ namespace Amazon.IdentityManagement.Model
         /// the service where to continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -267,6 +271,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PolicySourceArn
         {
             get { return this._policySourceArn; }
@@ -382,6 +387,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResourceHandlingOption
         {
             get { return this._resourceHandlingOption; }
@@ -407,6 +413,7 @@ namespace Amazon.IdentityManagement.Model
         /// from the account that owns the simulated calling user <code>CallerArn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceOwner
         {
             get { return this._resourceOwner; }
@@ -447,6 +454,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

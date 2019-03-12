@@ -41,6 +41,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The first port in the range of ports, inclusive.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int FromPort
         {
             get { return this._fromPort.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The last port in the range of ports, inclusive.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int ToPort
         {
             get { return this._toPort.GetValueOrDefault(); }

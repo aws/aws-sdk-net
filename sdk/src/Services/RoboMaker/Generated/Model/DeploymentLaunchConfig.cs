@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// An array of key/value pairs specifying environment variables for the robot application
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16)]
         public Dictionary<string, string> EnvironmentVariables
         {
             get { return this._environmentVariables; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// The launch file name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LaunchFile
         {
             get { return this._launchFile; }
@@ -80,6 +82,7 @@ namespace Amazon.RoboMaker.Model
         /// The package name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PackageName
         {
             get { return this._packageName; }

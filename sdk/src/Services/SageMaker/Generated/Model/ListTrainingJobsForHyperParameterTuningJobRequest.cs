@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the tuning job whose training jobs you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HyperParameterTuningJobName
         {
             get { return this._hyperParameterTuningJobName; }
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of training jobs to return. The default value is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.SageMaker.Model
         /// the next set of training jobs, use the token in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

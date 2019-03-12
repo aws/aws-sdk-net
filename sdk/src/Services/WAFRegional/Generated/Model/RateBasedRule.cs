@@ -69,6 +69,7 @@ namespace Amazon.WAFRegional.Model
         /// you want to include in a <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Predicate> MatchPredicates
         {
             get { return this._matchPredicates; }
@@ -108,6 +109,7 @@ namespace Amazon.WAFRegional.Model
         /// the name of a <code>RateBasedRule</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -129,6 +131,7 @@ namespace Amazon.WAFRegional.Model
         /// IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RateKey RateKey
         {
             get { return this._rateKey; }
@@ -150,6 +153,7 @@ namespace Amazon.WAFRegional.Model
         /// are also met, AWS WAF triggers the action that is specified for this rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2000, Max=2000000000)]
         public long RateLimit
         {
             get { return this._rateLimit.GetValueOrDefault(); }
@@ -172,6 +176,7 @@ namespace Amazon.WAFRegional.Model
         /// or delete a <code>RateBasedRule</code> from AWS WAF (see <a>DeleteRateBasedRule</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

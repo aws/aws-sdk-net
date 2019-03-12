@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// functions like a password to validate the activation ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=250)]
         public string ActivationCode
         {
             get { return this._activationCode; }

@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// The ID of the existing IAM instance profile association.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -67,6 +68,7 @@ namespace Amazon.EC2.Model
         /// The IAM instance profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IamInstanceProfileSpecification IamInstanceProfile
         {
             get { return this._iamInstanceProfile; }

@@ -125,6 +125,7 @@ namespace Amazon.KeyManagementService.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=19, Max=24)]
         public string CloudHsmClusterId
         {
             get { return this._cloudHsmClusterId; }
@@ -145,6 +146,7 @@ namespace Amazon.KeyManagementService.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -170,6 +172,7 @@ namespace Amazon.KeyManagementService.Model
         /// cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }
@@ -189,6 +192,7 @@ namespace Amazon.KeyManagementService.Model
         /// custom key store name must be unique in the AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string NewCustomKeyStoreName
         {
             get { return this._newCustomKeyStoreName; }

@@ -41,6 +41,7 @@ namespace Amazon.AWSSupport.Model
         /// The refresh status of the specified Trusted Advisor checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrustedAdvisorCheckRefreshStatus> Statuses
         {
             get { return this._statuses; }

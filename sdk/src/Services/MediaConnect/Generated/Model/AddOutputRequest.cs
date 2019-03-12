@@ -63,6 +63,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Destination. The IP address from which video will be sent
         /// to output destinations.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Destination
         {
             get { return this._destination; }
@@ -127,6 +128,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Port. The port to use when content is distributed to this
         /// output.
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -142,6 +144,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Protocol. The protocol to use for the output.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Protocol Protocol
         {
             get { return this._protocol; }

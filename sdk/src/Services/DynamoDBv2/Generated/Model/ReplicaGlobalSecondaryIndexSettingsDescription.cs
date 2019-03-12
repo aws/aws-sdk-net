@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// on this table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -118,6 +119,7 @@ namespace Amazon.DynamoDBv2.Model
         /// returns a <code>ThrottlingException</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long ProvisionedReadCapacityUnits
         {
             get { return this._provisionedReadCapacityUnits.GetValueOrDefault(); }
@@ -154,6 +156,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long ProvisionedWriteCapacityUnits
         {
             get { return this._provisionedWriteCapacityUnits.GetValueOrDefault(); }

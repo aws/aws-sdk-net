@@ -67,6 +67,7 @@ namespace Amazon.CloudFormation.Model
         /// AWS CloudFormation returns the same template that was used when the stack was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }

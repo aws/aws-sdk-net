@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A description of the scope.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ScopeDescription
         {
             get { return this._scopeDescription; }
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name of the scope.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ScopeName
         {
             get { return this._scopeName; }

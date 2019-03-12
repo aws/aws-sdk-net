@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
         /// Specifies the DNS service discovery hostname for the virtual node. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Hostname
         {
             get { return this._hostname; }

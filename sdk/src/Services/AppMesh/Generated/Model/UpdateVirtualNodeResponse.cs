@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// A full description of the virtual node that was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualNodeData VirtualNode
         {
             get { return this._virtualNode; }

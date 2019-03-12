@@ -51,6 +51,7 @@ namespace Amazon.Snowball.Model
         /// The ID of the updated <a>Address</a> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -69,6 +70,7 @@ namespace Amazon.Snowball.Model
         /// The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=39, Max=39)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -87,6 +89,7 @@ namespace Amazon.Snowball.Model
         /// The updated description of this cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -106,6 +109,7 @@ namespace Amazon.Snowball.Model
         /// in most regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string ForwardingAddressId
         {
             get { return this._forwardingAddressId; }
@@ -163,6 +167,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

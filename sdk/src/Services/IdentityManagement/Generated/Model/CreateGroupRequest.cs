@@ -70,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// by case. For example, you cannot create groups named both "ADMINS" and "admins".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -101,6 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }

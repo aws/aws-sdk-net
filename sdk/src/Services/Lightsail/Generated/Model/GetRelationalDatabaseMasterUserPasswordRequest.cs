@@ -79,6 +79,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database for which to get the master user password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

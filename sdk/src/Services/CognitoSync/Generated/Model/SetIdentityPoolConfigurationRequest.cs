@@ -66,6 +66,7 @@ namespace Amazon.CognitoSync.Model
         /// by Amazon Cognito. This is the ID of the pool to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

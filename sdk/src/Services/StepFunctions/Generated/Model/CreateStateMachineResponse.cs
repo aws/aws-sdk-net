@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The date the state machine is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) that identifies the created state machine.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }

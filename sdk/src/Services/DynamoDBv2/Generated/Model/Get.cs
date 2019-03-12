@@ -63,6 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// primary key of the item to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }
@@ -102,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table from which to retrieve the specified item.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

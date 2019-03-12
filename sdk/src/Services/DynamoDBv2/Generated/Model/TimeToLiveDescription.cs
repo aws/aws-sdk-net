@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  The name of the Time to Live attribute for items in the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AttributeName
         {
             get { return this._attributeName; }

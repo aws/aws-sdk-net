@@ -185,6 +185,7 @@ namespace Amazon.Redshift.Model
         /// The name of the modified Amazon Redshift event notification subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

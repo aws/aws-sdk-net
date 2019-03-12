@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Amazon Resource Name (ARN) of the destination Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceARNUpdate
         {
             get { return this._resourceARNUpdate; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleARNUpdate
         {
             get { return this._roleARNUpdate; }

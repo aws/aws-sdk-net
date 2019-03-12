@@ -78,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Number of items in the table. Please note this is an approximate value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ItemCount
         {
             get { return this._itemCount.GetValueOrDefault(); }
@@ -96,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Schema of the table. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<KeySchemaElement> KeySchema
         {
             get { return this._keySchema; }
@@ -114,6 +116,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Read IOPs and Write IOPS on the table when the backup was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProvisionedThroughput ProvisionedThroughput
         {
             get { return this._provisionedThroughput; }
@@ -150,6 +153,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Time when the source table was created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime TableCreationDateTime
         {
             get { return this._tableCreationDateTime.GetValueOrDefault(); }
@@ -168,6 +172,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Unique identifier for the table for which the backup was created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TableId
         {
             get { return this._tableId; }
@@ -186,6 +191,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table for which the backup was created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// <code>Department</code> or <code>Cost Center</code> are common choices.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -74,6 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

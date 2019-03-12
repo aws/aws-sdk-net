@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A description of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The target name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -83,6 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// tasks for these targets in this Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -120,6 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -138,6 +142,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window ID where the target is registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }
@@ -156,6 +161,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowTargetId
         {
             get { return this._windowTargetId; }

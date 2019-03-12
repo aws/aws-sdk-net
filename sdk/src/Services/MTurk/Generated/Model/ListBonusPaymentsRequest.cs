@@ -47,6 +47,7 @@ namespace Amazon.MTurk.Model
         /// or the AssignmentId parameter must be specified
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }
@@ -67,6 +68,7 @@ namespace Amazon.MTurk.Model
         /// HITId parameter or the AssignmentId parameter must be specified
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -82,6 +84,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property MaxResults.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.MTurk.Model
         /// Pagination token
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

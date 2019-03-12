@@ -42,6 +42,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of the transcription job to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string TranscriptionJobName
         {
             get { return this._transcriptionJobName; }

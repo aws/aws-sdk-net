@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string VolumeKmsKeyId
         {
             get { return this._volumeKmsKeyId; }

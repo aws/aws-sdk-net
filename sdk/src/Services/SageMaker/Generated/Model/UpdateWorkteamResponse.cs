@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// A <code>Workteam</code> object that describes the updated work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Workteam Workteam
         {
             get { return this._workteam; }

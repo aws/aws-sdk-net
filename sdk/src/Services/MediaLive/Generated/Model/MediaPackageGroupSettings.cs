@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Destination. MediaPackage channel destination.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputLocationRef Destination
         {
             get { return this._destination; }

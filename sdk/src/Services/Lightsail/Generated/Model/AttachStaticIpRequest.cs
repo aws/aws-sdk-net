@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         /// The instance name to which you want to attach the static IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }
@@ -60,6 +61,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the static IP.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StaticIpName
         {
             get { return this._staticIpName; }

@@ -263,6 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Returned values from the execution of the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Outputs
         {
             get { return this._outputs; }
@@ -281,6 +282,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A user-specified list of parameters to override when executing a step.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> OverriddenParameters
         {
             get { return this._overriddenParameters; }
@@ -408,6 +410,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The targets for the step execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

@@ -50,6 +50,7 @@ namespace Amazon.ConfigService.Model
         /// The list of names of AWS Config rules that you want to run remediation execution for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -69,6 +70,7 @@ namespace Amazon.ConfigService.Model
         /// the list consists of the resource type and resource ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<ResourceKey> ResourceKeys
         {
             get { return this._resourceKeys; }

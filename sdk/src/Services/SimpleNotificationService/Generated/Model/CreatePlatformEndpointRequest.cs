@@ -99,6 +99,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// an endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformApplicationArn
         {
             get { return this._platformApplicationArn; }
@@ -121,6 +122,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// the registration ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Token
         {
             get { return this._token; }

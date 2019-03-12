@@ -84,6 +84,7 @@ namespace Amazon.OpsWorks.Model
         /// The volume mount point. For example "/dev/sdh".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MountPoint
         {
             get { return this._mountPoint; }
@@ -102,6 +103,7 @@ namespace Amazon.OpsWorks.Model
         /// The number of disks in the volume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumberOfDisks
         {
             get { return this._numberOfDisks.GetValueOrDefault(); }
@@ -138,6 +140,7 @@ namespace Amazon.OpsWorks.Model
         /// The volume size.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Size
         {
             get { return this._size.GetValueOrDefault(); }

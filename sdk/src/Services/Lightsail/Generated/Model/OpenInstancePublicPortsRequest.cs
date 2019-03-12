@@ -50,6 +50,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance for which you want to open the public ports.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }
@@ -68,6 +69,7 @@ namespace Amazon.Lightsail.Model
         /// An array of key-value pairs containing information about the port mappings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortInfo PortInfo
         {
             get { return this._portInfo; }

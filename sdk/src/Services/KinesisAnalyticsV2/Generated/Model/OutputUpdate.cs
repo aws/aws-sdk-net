@@ -119,6 +119,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// use this field to specify the new in-application stream name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string NameUpdate
         {
             get { return this._nameUpdate; }
@@ -137,6 +138,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Identifies the specific output configuration that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string OutputId
         {
             get { return this._outputId; }

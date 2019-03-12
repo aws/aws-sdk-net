@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// The name of the traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=512)]
         public string Name
         {
             get { return this._name; }
@@ -64,6 +65,7 @@ namespace Amazon.Route53.Model
         /// Policy Document Format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=102400)]
         public string Document
         {
             get { return this._document; }
@@ -82,6 +84,7 @@ namespace Amazon.Route53.Model
         /// (Optional) Any comments that you want to include about the traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Comment
         {
             get { return this._comment; }

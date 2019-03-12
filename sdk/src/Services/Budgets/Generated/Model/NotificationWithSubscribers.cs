@@ -42,6 +42,7 @@ namespace Amazon.Budgets.Model
         /// The notification that is associated with a budget.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Notification Notification
         {
             get { return this._notification; }
@@ -60,6 +61,7 @@ namespace Amazon.Budgets.Model
         /// A list of subscribers who are subscribed to this notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=11)]
         public List<Subscriber> Subscribers
         {
             get { return this._subscribers; }

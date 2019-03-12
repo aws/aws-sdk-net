@@ -50,6 +50,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the branch where the commit will be made deleting the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -108,6 +109,7 @@ namespace Amazon.CodeCommit.Model
         /// to a file named file.md in a folder named examples.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }
@@ -170,6 +172,7 @@ namespace Amazon.CodeCommit.Model
         /// that deletes the file will be created from this commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParentCommitId
         {
             get { return this._parentCommitId; }
@@ -188,6 +191,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository that contains the file to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

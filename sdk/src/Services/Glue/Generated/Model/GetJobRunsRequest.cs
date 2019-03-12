@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// The name of the job definition for which to retrieve all job runs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -61,6 +62,7 @@ namespace Amazon.Glue.Model
         /// The maximum size of the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

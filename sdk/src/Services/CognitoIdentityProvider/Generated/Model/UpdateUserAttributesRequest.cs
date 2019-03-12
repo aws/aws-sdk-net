@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token for the request to update user attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -66,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<AttributeType> UserAttributes
         {
             get { return this._userAttributes; }

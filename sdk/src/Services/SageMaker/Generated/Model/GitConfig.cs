@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The default branch for the Git repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Branch
         {
             get { return this._branch; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The URL where the Git repository is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RepositoryUrl
         {
             get { return this._repositoryUrl; }
@@ -84,6 +86,7 @@ namespace Amazon.SageMaker.Model
         ///  <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string SecretArn
         {
             get { return this._secretArn; }

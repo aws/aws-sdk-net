@@ -61,6 +61,7 @@ namespace Amazon.Organizations.Model
         /// <code> <i>servicename</i>.amazonaws.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ServicePrincipal
         {
             get { return this._servicePrincipal; }

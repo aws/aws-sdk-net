@@ -58,6 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// can filter on Amazon EC2 tag. Specify tags by using a key-value mapping.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public List<InstanceInformationStringFilter> Filters
         {
             get { return this._filters; }
@@ -85,6 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// an exception error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public List<InstanceInformationFilter> InstanceInformationFilterList
         {
             get { return this._instanceInformationFilterList; }
@@ -104,6 +106,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -43,6 +43,7 @@ namespace Amazon.Backup.Model
         /// The display name of a backup plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanName
         {
             get { return this._backupPlanName; }
@@ -62,6 +63,7 @@ namespace Amazon.Backup.Model
         /// that is used to back up a selection of resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BackupRuleInput> Rules
         {
             get { return this._rules; }

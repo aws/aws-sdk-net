@@ -49,6 +49,7 @@ namespace Amazon.Transfer.Model
         /// or role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -68,6 +69,7 @@ namespace Amazon.Transfer.Model
         /// by type. You can attach this metadata to user accounts for any purpose.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

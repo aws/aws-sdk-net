@@ -44,6 +44,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string AgentArn
         {
             get { return this._agentArn; }
@@ -98,6 +99,7 @@ namespace Amazon.DataSync.Model
         /// The name of the agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

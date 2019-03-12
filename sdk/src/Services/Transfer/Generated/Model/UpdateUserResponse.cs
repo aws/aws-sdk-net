@@ -43,6 +43,7 @@ namespace Amazon.Transfer.Model
         /// is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -62,6 +63,7 @@ namespace Amazon.Transfer.Model
         /// was specified in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack set whose description you want.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

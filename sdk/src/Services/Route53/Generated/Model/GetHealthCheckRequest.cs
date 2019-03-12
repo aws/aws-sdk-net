@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// health check to use. The value can be up to 64 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string HealthCheckId
         {
             get { return this._healthCheckId; }

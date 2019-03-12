@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model
         /// The Amazon Resource Name (ARN) of the target group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=511)]
         public string LoadBalancerTargetGroupARN
         {
             get { return this._loadBalancerTargetGroupARN; }
@@ -95,6 +96,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string State
         {
             get { return this._state; }

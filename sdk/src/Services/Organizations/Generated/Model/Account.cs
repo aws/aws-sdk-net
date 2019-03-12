@@ -74,6 +74,7 @@ namespace Amazon.Organizations.Model
         /// is a string of characters that represents a standard Internet email address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }
@@ -156,6 +157,7 @@ namespace Amazon.Organizations.Model
         /// this parameter is a string of any of the characters in the ASCII character range.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string Name
         {
             get { return this._name; }

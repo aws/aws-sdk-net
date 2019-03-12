@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The string that contains the JSON input data for the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=65536)]
         public string Input
         {
             get { return this._input; }
@@ -61,6 +62,7 @@ namespace Amazon.StepFunctions.Model
         /// in order to report the progress or completion of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

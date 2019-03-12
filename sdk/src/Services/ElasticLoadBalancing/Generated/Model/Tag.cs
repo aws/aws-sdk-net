@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The key of the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The value of the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

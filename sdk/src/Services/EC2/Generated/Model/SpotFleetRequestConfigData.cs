@@ -139,6 +139,7 @@ namespace Amazon.EC2.Model
         /// Fleet request expires, if you set <code>terminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamFleetRole
         {
             get { return this._iamFleetRole; }
@@ -361,6 +362,7 @@ namespace Amazon.EC2.Model
         /// you can specify a target capacity of 0 and add capacity later.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TargetCapacity
         {
             get { return this._targetCapacity.GetValueOrDefault(); }

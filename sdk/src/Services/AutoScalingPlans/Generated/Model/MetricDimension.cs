@@ -41,6 +41,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The value of the dimension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

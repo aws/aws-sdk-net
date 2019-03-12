@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

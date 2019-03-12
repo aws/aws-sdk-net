@@ -106,6 +106,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch (this is different than the Microsoft Knowledge Base ID).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

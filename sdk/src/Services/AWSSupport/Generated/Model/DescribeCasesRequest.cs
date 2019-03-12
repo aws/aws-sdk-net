@@ -112,6 +112,7 @@ namespace Amazon.AWSSupport.Model
         /// cases is 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> CaseIdList
         {
             get { return this._caseIdList; }
@@ -206,6 +207,7 @@ namespace Amazon.AWSSupport.Model
         /// The maximum number of results to return before paginating.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

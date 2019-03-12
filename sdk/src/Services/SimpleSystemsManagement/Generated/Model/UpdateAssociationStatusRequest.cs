@@ -61,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The association status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationStatus AssociationStatus
         {
             get { return this._associationStatus; }
@@ -79,6 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -97,6 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

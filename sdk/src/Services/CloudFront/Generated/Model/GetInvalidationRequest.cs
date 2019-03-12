@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// The distribution's ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DistributionId
         {
             get { return this._distributionId; }
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

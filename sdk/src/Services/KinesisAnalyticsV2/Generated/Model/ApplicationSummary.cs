@@ -45,6 +45,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ARN of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ApplicationARN
         {
             get { return this._applicationARN; }
@@ -63,6 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -81,6 +83,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The status of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationStatus ApplicationStatus
         {
             get { return this._applicationStatus; }
@@ -99,6 +102,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Provides the current application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long ApplicationVersionId
         {
             get { return this._applicationVersionId.GetValueOrDefault(); }
@@ -117,6 +121,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuntimeEnvironment RuntimeEnvironment
         {
             get { return this._runtimeEnvironment; }

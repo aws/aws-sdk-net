@@ -70,6 +70,7 @@ namespace Amazon.PinpointEmail.Model
         /// The verified email identity that you want to set up the custom MAIL FROM domain for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

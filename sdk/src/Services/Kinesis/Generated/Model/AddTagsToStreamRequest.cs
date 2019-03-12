@@ -55,6 +55,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -73,6 +74,7 @@ namespace Amazon.Kinesis.Model
         /// A set of up to 10 key-value pairs to use to create the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

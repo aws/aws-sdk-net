@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// The name for your new key pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyPairName
         {
             get { return this._keyPairName; }

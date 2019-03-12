@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// AWS DMS resources include a replication instance, endpoint, and a replication task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -64,6 +65,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The tag to be assigned to the DMS resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

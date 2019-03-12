@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// A <code>RenderableTask</code> object containing a representative task to render.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RenderableTask Task
         {
             get { return this._task; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// A <code>Template</code> object containing the worker UI template to render.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UiTemplate UiTemplate
         {
             get { return this._uiTemplate; }

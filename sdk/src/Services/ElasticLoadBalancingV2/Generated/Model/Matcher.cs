@@ -50,6 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// For Network Load Balancers, this is 200–399.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HttpCode
         {
             get { return this._httpCode; }

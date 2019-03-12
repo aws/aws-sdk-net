@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// This parameter is reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// This parameter is reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Value
         {
             get { return this._value; }

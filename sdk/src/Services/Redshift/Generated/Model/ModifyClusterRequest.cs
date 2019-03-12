@@ -136,6 +136,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>examplecluster</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

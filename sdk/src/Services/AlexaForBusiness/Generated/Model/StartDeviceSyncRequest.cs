@@ -62,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// Request structure to start the device sync. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Features
         {
             get { return this._features; }

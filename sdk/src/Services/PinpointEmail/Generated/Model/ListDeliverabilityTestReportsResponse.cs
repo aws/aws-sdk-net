@@ -42,6 +42,7 @@ namespace Amazon.PinpointEmail.Model
         /// An object that contains a lists of predictive inbox placement tests that you've performed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DeliverabilityTestReport> DeliverabilityTestReports
         {
             get { return this._deliverabilityTestReports; }

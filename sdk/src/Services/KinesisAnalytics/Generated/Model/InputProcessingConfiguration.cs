@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// before being processed by your application code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputLambdaProcessor InputLambdaProcessor
         {
             get { return this._inputLambdaProcessor; }

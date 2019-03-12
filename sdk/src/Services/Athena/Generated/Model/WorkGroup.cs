@@ -92,6 +92,7 @@ namespace Amazon.Athena.Model
         /// The workgroup description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -110,6 +111,7 @@ namespace Amazon.Athena.Model
         /// The workgroup name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

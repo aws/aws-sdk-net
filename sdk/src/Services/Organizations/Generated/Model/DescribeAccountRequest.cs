@@ -52,6 +52,7 @@ namespace Amazon.Organizations.Model
         /// string requires exactly 12 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }

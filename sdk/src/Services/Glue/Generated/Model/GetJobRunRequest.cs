@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// Name of the job definition being run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -79,6 +80,7 @@ namespace Amazon.Glue.Model
         /// The ID of the job run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string RunId
         {
             get { return this._runId; }

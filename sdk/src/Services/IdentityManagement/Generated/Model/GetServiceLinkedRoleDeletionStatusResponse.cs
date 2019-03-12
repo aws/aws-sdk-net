@@ -59,6 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// The status of the deletion.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeletionTaskStatusType Status
         {
             get { return this._status; }

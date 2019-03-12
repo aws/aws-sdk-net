@@ -55,6 +55,7 @@ namespace Amazon.AppStream.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string AppstreamAgentVersion
         {
             get { return this._appstreamAgentVersion; }
@@ -109,6 +110,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -127,6 +129,7 @@ namespace Amazon.AppStream.Model
         /// The image builder name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -218,6 +221,7 @@ namespace Amazon.AppStream.Model
         /// The instance type for the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -236,6 +240,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

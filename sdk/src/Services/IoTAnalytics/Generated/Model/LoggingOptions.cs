@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// If true, logging is enabled for AWS IoT Analytics.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The logging level. Currently, only "ERROR" is supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggingLevel Level
         {
             get { return this._level; }
@@ -78,6 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The ARN of the role that grants permission to AWS IoT Analytics to perform logging.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

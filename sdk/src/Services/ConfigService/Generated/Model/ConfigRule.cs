@@ -102,6 +102,7 @@ namespace Amazon.ConfigService.Model
         /// a new rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -164,6 +165,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CreatedBy
         {
             get { return this._createdBy; }
@@ -182,6 +184,7 @@ namespace Amazon.ConfigService.Model
         /// The description that you provide for the AWS Config rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -200,6 +203,7 @@ namespace Amazon.ConfigService.Model
         /// A string, in JSON format, that is passed to the AWS Config rule Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string InputParameters
         {
             get { return this._inputParameters; }
@@ -276,6 +280,7 @@ namespace Amazon.ConfigService.Model
         /// that cause the function to evaluate your AWS resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Source Source
         {
             get { return this._source; }

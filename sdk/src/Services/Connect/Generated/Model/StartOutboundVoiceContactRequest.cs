@@ -92,6 +92,7 @@ namespace Amazon.Connect.Model
         /// is started.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=500)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -117,6 +118,7 @@ namespace Amazon.Connect.Model
         /// at the end of the URL, after 'contact-flow/' such as <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=500)]
         public string ContactFlowId
         {
             get { return this._contactFlowId; }
@@ -135,6 +137,7 @@ namespace Amazon.Connect.Model
         /// The phone number of the customer in E.164 format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationPhoneNumber
         {
             get { return this._destinationPhoneNumber; }
@@ -157,6 +160,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }

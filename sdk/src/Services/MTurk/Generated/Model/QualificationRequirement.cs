@@ -85,6 +85,7 @@ namespace Amazon.MTurk.Model
         /// or DoesNotExist in the user's profile, regardless of its value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Comparator Comparator
         {
             get { return this._comparator; }
@@ -150,6 +151,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the Qualification type for the requirement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QualificationTypeId
         {
             get { return this._qualificationTypeId; }

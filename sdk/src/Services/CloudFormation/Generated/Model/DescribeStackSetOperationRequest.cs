@@ -42,6 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// The unique ID of the stack set operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or the unique stack ID of the stack set for the stack operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

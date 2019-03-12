@@ -51,6 +51,7 @@ namespace Amazon.MachineLearning.Model
         /// the Amazon RDS database.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RDSDatabaseCredentials DatabaseCredentials
         {
             get { return this._databaseCredentials; }
@@ -70,6 +71,7 @@ namespace Amazon.MachineLearning.Model
         /// Amazon RDS database.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RDSDatabase DatabaseInformation
         {
             get { return this._databaseInformation; }
@@ -274,6 +276,7 @@ namespace Amazon.MachineLearning.Model
         ///  "excludedVariableNames": [ "F6" ] } 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=131071)]
         public string DataSchema
         {
             get { return this._dataSchema; }
@@ -292,6 +295,7 @@ namespace Amazon.MachineLearning.Model
         /// The Amazon S3 location of the <code>DataSchema</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string DataSchemaUri
         {
             get { return this._dataSchemaUri; }
@@ -313,6 +317,7 @@ namespace Amazon.MachineLearning.Model
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResourceRole
         {
             get { return this._resourceRole; }
@@ -332,6 +337,7 @@ namespace Amazon.MachineLearning.Model
         /// RDS using <code>SelectSqlQuery</code> is stored in this location.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string S3StagingLocation
         {
             get { return this._s3StagingLocation; }
@@ -353,6 +359,7 @@ namespace Amazon.MachineLearning.Model
         /// RDS to an Amazon S3 task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -371,6 +378,7 @@ namespace Amazon.MachineLearning.Model
         /// The query that is used to retrieve the observation data for the <code>DataSource</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16777216)]
         public string SelectSqlQuery
         {
             get { return this._selectSqlQuery; }
@@ -392,6 +400,7 @@ namespace Amazon.MachineLearning.Model
         /// templates</a> for data pipelines.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ServiceRole
         {
             get { return this._serviceRole; }
@@ -411,6 +420,7 @@ namespace Amazon.MachineLearning.Model
         /// used by Data Pipeline to carry out the copy task from Amazon RDS to Amazon S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SubnetId
         {
             get { return this._subnetId; }

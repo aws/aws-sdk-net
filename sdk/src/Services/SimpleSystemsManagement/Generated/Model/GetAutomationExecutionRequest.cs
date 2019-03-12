@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// is initiated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }

@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// The robot software suite used by the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RobotSoftwareSuite RobotSoftwareSuite
         {
             get { return this._robotSoftwareSuite; }
@@ -80,6 +82,7 @@ namespace Amazon.RoboMaker.Model
         /// The sources of the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SourceConfig> Sources
         {
             get { return this._sources; }
@@ -98,6 +101,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -54,6 +54,7 @@ namespace Amazon.Route53.Model
         /// The ID of the traffic policy instance that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }

@@ -45,6 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -145,6 +146,7 @@ namespace Amazon.AutoScaling.Model
         /// The name or ARN of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string PolicyName
         {
             get { return this._policyName; }

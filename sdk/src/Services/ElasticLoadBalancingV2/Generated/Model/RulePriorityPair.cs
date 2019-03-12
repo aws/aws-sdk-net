@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The rule priority.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }

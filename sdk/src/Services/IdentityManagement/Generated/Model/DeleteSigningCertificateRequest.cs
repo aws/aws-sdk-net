@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// pattern, is a string of characters that can be upper- or lower-cased letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=24, Max=128)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -93,6 +94,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

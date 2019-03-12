@@ -55,6 +55,7 @@ namespace Amazon.CloudFront.Model
         /// The identity's ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

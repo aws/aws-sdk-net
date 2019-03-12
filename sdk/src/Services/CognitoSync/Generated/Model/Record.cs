@@ -58,6 +58,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Key. The key for the record.
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }
@@ -120,6 +121,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Value. The value for the record.
         /// </summary>
+        [AWSProperty(Max=1048575)]
         public string Value
         {
             get { return this._value; }

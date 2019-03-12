@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ConnectionRetryInterval. Number of seconds to wait before
         /// retrying connection to the CDN if the connection is lost.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ConnectionRetryInterval
         {
             get { return this._connectionRetryInterval.GetValueOrDefault(); }
@@ -57,6 +58,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FilecacheDuration. Size in seconds of file cache for streaming
         /// outputs.
         /// </summary>
+        [AWSProperty(Min=0, Max=600)]
         public int FilecacheDuration
         {
             get { return this._filecacheDuration.GetValueOrDefault(); }
@@ -73,6 +75,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NumRetries. Number of retry attempts that will be made
         /// before the Live Event is put into an error state.
         /// </summary>
+        [AWSProperty(Min=0)]
         public int NumRetries
         {
             get { return this._numRetries.GetValueOrDefault(); }
@@ -89,6 +92,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RestartDelay. If a streaming output fails, number of seconds
         /// to wait until a restart is initiated. A value of 0 means never restart.
         /// </summary>
+        [AWSProperty(Min=0, Max=15)]
         public int RestartDelay
         {
             get { return this._restartDelay.GetValueOrDefault(); }

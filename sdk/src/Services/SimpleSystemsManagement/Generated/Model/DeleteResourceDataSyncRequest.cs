@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the configuration to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string SyncName
         {
             get { return this._syncName; }

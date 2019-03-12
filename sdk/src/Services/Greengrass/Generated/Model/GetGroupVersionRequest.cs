@@ -39,6 +39,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property GroupId. The ID of the Greengrass group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -54,6 +55,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property GroupVersionId. The ID of the group version.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupVersionId
         {
             get { return this._groupVersionId; }

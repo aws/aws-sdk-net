@@ -42,6 +42,7 @@ namespace Amazon.Chime.Model
         /// The termination setting details to add.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Termination Termination
         {
             get { return this._termination; }
@@ -60,6 +61,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime Voice Connector ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

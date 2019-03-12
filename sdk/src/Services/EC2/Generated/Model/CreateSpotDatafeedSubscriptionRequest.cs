@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// The Amazon S3 bucket in which to store the Spot Instance data feed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Bucket
         {
             get { return this._bucket; }

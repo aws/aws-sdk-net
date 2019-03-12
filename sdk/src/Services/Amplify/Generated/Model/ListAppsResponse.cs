@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         ///  List of Amplify Apps. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<App> Apps
         {
             get { return this._apps; }
@@ -61,6 +62,7 @@ namespace Amazon.Amplify.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

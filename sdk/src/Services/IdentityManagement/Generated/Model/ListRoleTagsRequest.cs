@@ -47,6 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// element in the response to indicate where the next call should start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -74,6 +75,7 @@ namespace Amazon.IdentityManagement.Model
         /// to include in the subsequent call that tells the service where to continue from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -98,6 +100,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

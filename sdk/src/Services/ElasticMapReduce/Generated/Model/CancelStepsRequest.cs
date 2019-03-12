@@ -47,6 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and <a>ListClusters</a> to get ClusterIDs. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }

@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         /// The number of completed training jobs launched by the hyperparameter tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Completed
         {
             get { return this._completed.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SageMaker.Model
         /// The number of in-progress training jobs launched by a hyperparameter tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int InProgress
         {
             get { return this._inProgress.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.SageMaker.Model
         /// can't be retried if it failed because a client error occurred.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int NonRetryableError
         {
             get { return this._nonRetryableError.GetValueOrDefault(); }
@@ -101,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// can be retried only if it failed because an internal service error occurred.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int RetryableError
         {
             get { return this._retryableError.GetValueOrDefault(); }
@@ -120,6 +124,7 @@ namespace Amazon.SageMaker.Model
         /// stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Stopped
         {
             get { return this._stopped.GetValueOrDefault(); }

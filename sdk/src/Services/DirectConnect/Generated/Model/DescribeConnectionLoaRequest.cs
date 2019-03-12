@@ -56,6 +56,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }

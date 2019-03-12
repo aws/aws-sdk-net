@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ID of the export task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TaskId
         {
             get { return this._taskId; }

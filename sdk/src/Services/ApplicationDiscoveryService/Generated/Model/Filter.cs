@@ -52,6 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// or <i>ListConfigurations</i> returns attributes of matching configuration items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Condition
         {
             get { return this._condition; }
@@ -70,6 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -89,6 +91,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// filter name, you could specify <code>Ubuntu</code> for the value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

@@ -49,6 +49,7 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group index name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -67,6 +68,7 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group search query string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string QueryString
         {
             get { return this._queryString; }
@@ -139,6 +141,7 @@ namespace Amazon.IoT.Model
         /// The thing group ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupId
         {
             get { return this._thingGroupId; }
@@ -175,6 +178,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }

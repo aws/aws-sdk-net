@@ -59,6 +59,7 @@ namespace Amazon.WorkDocs.Model
         /// The marker for the next set of results. This marker was received from a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }

@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration aggregator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationAggregatorName
         {
             get { return this._configurationAggregatorName; }

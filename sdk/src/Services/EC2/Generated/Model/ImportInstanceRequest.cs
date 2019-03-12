@@ -107,6 +107,7 @@ namespace Amazon.EC2.Model
         /// The instance operating system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PlatformValues Platform
         {
             get { return this._platform; }

@@ -61,6 +61,7 @@ namespace Amazon.Route53Domains.Model
         /// in the value of <code>Marker</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string NextPageMarker
         {
             get { return this._nextPageMarker; }

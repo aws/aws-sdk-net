@@ -44,6 +44,7 @@ namespace Amazon.APIGateway.Model
         /// part.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentationPartLocation Location
         {
             get { return this._location; }
@@ -64,6 +65,7 @@ namespace Amazon.APIGateway.Model
         /// exported and, hence, published.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Properties
         {
             get { return this._properties; }
@@ -82,6 +84,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

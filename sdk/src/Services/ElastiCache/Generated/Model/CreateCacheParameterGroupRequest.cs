@@ -87,6 +87,7 @@ namespace Amazon.ElastiCache.Model
         /// | <code>redis3.2</code> | <code>redis4.0</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupFamily
         {
             get { return this._cacheParameterGroupFamily; }
@@ -105,6 +106,7 @@ namespace Amazon.ElastiCache.Model
         /// A user-specified name for the cache parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupName
         {
             get { return this._cacheParameterGroupName; }
@@ -123,6 +125,7 @@ namespace Amazon.ElastiCache.Model
         /// A user-specified description for the cache parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

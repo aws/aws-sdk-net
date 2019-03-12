@@ -41,6 +41,7 @@ namespace Amazon.DataPipeline.Model
         /// does not need to call <a>SetTaskStatus</a> for canceled tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Canceled
         {
             get { return this._canceled.GetValueOrDefault(); }

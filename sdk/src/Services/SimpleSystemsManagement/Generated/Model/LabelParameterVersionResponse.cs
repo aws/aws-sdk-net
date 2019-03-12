@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> InvalidLabels
         {
             get { return this._invalidLabels; }

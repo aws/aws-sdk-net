@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The old password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=256)]
         public string PreviousPassword
         {
             get { return this._previousPassword; }
@@ -80,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The new password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=6, Max=256)]
         public string ProposedPassword
         {
             get { return this._proposedPassword; }

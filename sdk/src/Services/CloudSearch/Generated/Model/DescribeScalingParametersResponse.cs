@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property ScalingParameters.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingParametersStatus ScalingParameters
         {
             get { return this._scalingParameters; }

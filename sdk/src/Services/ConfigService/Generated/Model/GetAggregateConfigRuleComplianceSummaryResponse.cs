@@ -60,6 +60,7 @@ namespace Amazon.ConfigService.Model
         /// Groups the result based on ACCOUNT_ID or AWS_REGION.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GroupByKey
         {
             get { return this._groupByKey; }

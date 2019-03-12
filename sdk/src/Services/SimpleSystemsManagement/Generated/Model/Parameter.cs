@@ -83,6 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }
@@ -110,6 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// parameter_name:label
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Selector
         {
             get { return this._selector; }
@@ -166,6 +168,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string Value
         {
             get { return this._value; }

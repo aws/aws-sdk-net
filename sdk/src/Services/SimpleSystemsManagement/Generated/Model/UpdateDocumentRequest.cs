@@ -47,6 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of key and value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public List<AttachmentsSource> Attachments
         {
             get { return this._attachments; }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A valid JSON or YAML string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -120,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the document that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -138,6 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Specify a new target type for the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string TargetType
         {
             get { return this._targetType; }

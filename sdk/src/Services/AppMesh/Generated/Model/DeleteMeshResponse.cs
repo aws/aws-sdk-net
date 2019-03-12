@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The service mesh that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MeshData Mesh
         {
             get { return this._mesh; }

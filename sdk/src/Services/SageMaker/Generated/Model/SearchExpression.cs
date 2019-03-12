@@ -72,6 +72,7 @@ namespace Amazon.SageMaker.Model
         /// A list of filter objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// A list of nested filter objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<NestedFilters> NestedFilters
         {
             get { return this._nestedFilters; }
@@ -130,6 +132,7 @@ namespace Amazon.SageMaker.Model
         /// A list of search expression objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public List<SearchExpression> SubExpressions
         {
             get { return this._subExpressions; }

@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// met along with other trigger parameters, scaling activity begins.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CloudWatchAlarmDefinition CloudWatchAlarmDefinition
         {
             get { return this._cloudWatchAlarmDefinition; }

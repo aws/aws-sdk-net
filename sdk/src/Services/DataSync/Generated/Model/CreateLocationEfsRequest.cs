@@ -44,6 +44,7 @@ namespace Amazon.DataSync.Model
         /// The subnet and security group that the Amazon EFS file system uses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Ec2Config Ec2Config
         {
             get { return this._ec2Config; }
@@ -62,6 +63,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) for the Amazon EFS file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string EfsFilesystemArn
         {
             get { return this._efsFilesystemArn; }
@@ -82,6 +84,7 @@ namespace Amazon.DataSync.Model
         /// By default, AWS DataSync uses the root directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=4096)]
         public string Subdirectory
         {
             get { return this._subdirectory; }
@@ -102,6 +105,7 @@ namespace Amazon.DataSync.Model
         /// your resources. We recommend that you create a name tag for your location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

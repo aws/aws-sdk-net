@@ -56,6 +56,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property ThingName. The thing name.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ThingName
         {
             get { return this._thingName; }

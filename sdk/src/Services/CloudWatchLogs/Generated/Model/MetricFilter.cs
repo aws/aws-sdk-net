@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the metric filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FilterName
         {
             get { return this._filterName; }
@@ -79,6 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern.
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -97,6 +100,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -115,6 +119,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The metric transformations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<MetricTransformation> MetricTransformations
         {
             get { return this._metricTransformations; }

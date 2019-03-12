@@ -44,6 +44,7 @@ namespace Amazon.Inspector.Model
         /// The event for which you want to stop receiving SNS notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InspectorEvent Event
         {
             get { return this._event; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// to stop receiving SNS notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the SNS topic to which SNS notifications are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string TopicArn
         {
             get { return this._topicArn; }

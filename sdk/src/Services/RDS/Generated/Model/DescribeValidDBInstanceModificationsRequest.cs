@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         /// The customer identifier or the ARN of your DB instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }

@@ -79,6 +79,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

@@ -143,6 +143,7 @@ namespace Amazon.SimpleEmail.Model
         /// the keys correspond to replacement tags in the email template.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=262144)]
         public string DefaultTemplateData
         {
             get { return this._defaultTemplateData; }
@@ -163,6 +164,7 @@ namespace Amazon.SimpleEmail.Model
         /// objects within a <code>Destinations</code> array.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<BulkEmailDestination> Destinations
         {
             get { return this._destinations; }
@@ -278,6 +280,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Source
         {
             get { return this._source; }
@@ -328,6 +331,7 @@ namespace Amazon.SimpleEmail.Model
         /// The template to use when sending this email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Template
         {
             get { return this._template; }

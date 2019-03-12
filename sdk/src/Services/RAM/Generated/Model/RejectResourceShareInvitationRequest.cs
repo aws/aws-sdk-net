@@ -61,6 +61,7 @@ namespace Amazon.RAM.Model
         /// The Amazon Resource Name (ARN) of the invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceShareInvitationArn
         {
             get { return this._resourceShareInvitationArn; }

@@ -102,6 +102,7 @@ namespace Amazon.ECS.Model
         /// The task ID or full ARN entry of the task to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Task
         {
             get { return this._task; }

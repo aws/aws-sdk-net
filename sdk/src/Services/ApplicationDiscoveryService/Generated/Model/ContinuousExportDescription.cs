@@ -239,6 +239,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string StatusDetail
         {
             get { return this._statusDetail; }

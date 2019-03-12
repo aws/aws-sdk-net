@@ -45,6 +45,7 @@ namespace Amazon.DataSync.Model
         /// that you want to mount and use as the root of the location.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string LocationArn
         {
             get { return this._locationArn; }

@@ -60,6 +60,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The percentage of log events queried that contained the field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Percent
         {
             get { return this._percent.GetValueOrDefault(); }

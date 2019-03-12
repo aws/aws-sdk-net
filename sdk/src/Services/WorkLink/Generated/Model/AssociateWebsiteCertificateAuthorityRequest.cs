@@ -44,6 +44,7 @@ namespace Amazon.WorkLink.Model
         /// The root certificate of the CA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8192)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkLink.Model
         /// The certificate name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }

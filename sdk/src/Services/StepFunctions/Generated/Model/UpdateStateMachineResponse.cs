@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions.Model
         /// The date and time the state machine was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateDate
         {
             get { return this._updateDate.GetValueOrDefault(); }

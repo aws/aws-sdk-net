@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// The ID of the file system being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

@@ -49,6 +49,7 @@ namespace Amazon.PinpointEmail.Model
         /// The domain that you want to use for tracking open and click events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CustomRedirectDomain
         {
             get { return this._customRedirectDomain; }

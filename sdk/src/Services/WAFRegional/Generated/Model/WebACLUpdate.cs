@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// from a <code>WebACL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -65,6 +66,7 @@ namespace Amazon.WAFRegional.Model
         /// <code>COUNT</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActivatedRule ActivatedRule
         {
             get { return this._activatedRule; }

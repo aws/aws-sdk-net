@@ -66,6 +66,7 @@ namespace Amazon.CodePipeline.Model
         /// artifacts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=63)]
         public string Location
         {
             get { return this._location; }
@@ -84,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// The type of the artifact store, such as S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactStoreType Type
         {
             get { return this._type; }

@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The endpoint of your Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier for the document you are storing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -80,6 +82,7 @@ namespace Amazon.IoT.Model
         /// The Elasticsearch index where you want to store your data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Index
         {
             get { return this._index; }
@@ -98,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The IAM role ARN that has access to Elasticsearch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -116,6 +120,7 @@ namespace Amazon.IoT.Model
         /// The type of document you are storing.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

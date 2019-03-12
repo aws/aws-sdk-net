@@ -77,6 +77,7 @@ namespace Amazon.CloudFormation.Model
         /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string AdministrationRoleARN
         {
             get { return this._administrationRoleARN; }
@@ -142,6 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// include in their stack sets. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ExecutionRoleName
         {
             get { return this._executionRoleName; }
@@ -160,6 +162,7 @@ namespace Amazon.CloudFormation.Model
         /// The unique ID of a stack set operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }

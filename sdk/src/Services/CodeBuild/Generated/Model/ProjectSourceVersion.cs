@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// An identifier for a source in the build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }
@@ -84,6 +85,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceVersion
         {
             get { return this._sourceVersion; }

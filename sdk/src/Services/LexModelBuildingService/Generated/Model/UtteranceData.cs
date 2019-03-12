@@ -116,6 +116,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The text that was entered by the user or the text representation of an audio clip.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string UtteranceString
         {
             get { return this._utteranceString; }

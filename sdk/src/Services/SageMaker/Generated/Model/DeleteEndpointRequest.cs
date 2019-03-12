@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the endpoint that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string EndpointName
         {
             get { return this._endpointName; }

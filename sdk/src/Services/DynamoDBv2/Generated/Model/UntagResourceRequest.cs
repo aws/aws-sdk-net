@@ -50,6 +50,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1283)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -69,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// will be removed from the Amazon DynamoDB resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

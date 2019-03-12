@@ -56,6 +56,7 @@ namespace Amazon.AppStream.Model
         /// The ARN for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -74,6 +75,7 @@ namespace Amazon.AppStream.Model
         /// The capacity status for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComputeCapacityStatus ComputeCapacityStatus
         {
             get { return this._computeCapacityStatus; }
@@ -110,6 +112,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -149,6 +152,7 @@ namespace Amazon.AppStream.Model
         /// The fleet name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -270,6 +274,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image used to create the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ImageName
         {
             get { return this._imageName; }
@@ -288,6 +293,7 @@ namespace Amazon.AppStream.Model
         /// The instance type to use when launching fleet instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -325,6 +331,7 @@ namespace Amazon.AppStream.Model
         /// The name of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -343,6 +350,7 @@ namespace Amazon.AppStream.Model
         /// The current state for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FleetState State
         {
             get { return this._state; }

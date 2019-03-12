@@ -72,6 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of explicitly approved patches for the baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> ApprovedPatches
         {
             get { return this._approvedPatches; }
@@ -129,6 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the retrieved patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }
@@ -165,6 +167,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A description of the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -219,6 +222,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -273,6 +277,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of explicitly rejected patches for the baseline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> RejectedPatches
         {
             get { return this._rejectedPatches; }
@@ -312,6 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// systems and source repositories. Applies to Linux instances only.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<PatchSource> Sources
         {
             get { return this._sources; }

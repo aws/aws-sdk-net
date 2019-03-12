@@ -77,6 +77,7 @@ namespace Amazon.EC2.Model
         /// Idempotency</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -97,6 +98,7 @@ namespace Amazon.EC2.Model
         /// the instance count associated with the Reserved Instance ID specified in this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// in the Reserved Instance term.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PriceScheduleSpecification> PriceSchedules
         {
             get { return this._priceSchedules; }
@@ -134,6 +137,7 @@ namespace Amazon.EC2.Model
         /// The ID of the active Standard Reserved Instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedInstancesId
         {
             get { return this._reservedInstancesId; }

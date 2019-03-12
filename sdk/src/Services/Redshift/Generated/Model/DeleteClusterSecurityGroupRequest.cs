@@ -53,6 +53,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster security group to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }

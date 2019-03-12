@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
         /// The After Call Work (ACW) timeout setting, in seconds, for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int AfterContactWorkTimeLimit
         {
             get { return this._afterContactWorkTimeLimit.GetValueOrDefault(); }
@@ -98,6 +99,7 @@ namespace Amazon.Connect.Model
         /// The phone type selected for the user, either Soft phone or Desk phone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PhoneType PhoneType
         {
             get { return this._phoneType; }

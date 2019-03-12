@@ -83,6 +83,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ThingIndexingMode ThingIndexingMode
         {
             get { return this._thingIndexingMode; }

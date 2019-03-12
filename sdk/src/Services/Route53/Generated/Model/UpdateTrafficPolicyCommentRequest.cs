@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -63,6 +64,7 @@ namespace Amazon.Route53.Model
         /// comment for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.Route53.Model
         /// The new comment for the specified traffic policy and version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Comment
         {
             get { return this._comment; }

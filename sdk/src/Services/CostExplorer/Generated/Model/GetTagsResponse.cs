@@ -62,6 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of query results that AWS returns at a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ReturnSize
         {
             get { return this._returnSize.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// The tags that match your request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Tags
         {
             get { return this._tags; }
@@ -98,6 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// The total number of query results.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TotalSize
         {
             get { return this._totalSize.GetValueOrDefault(); }

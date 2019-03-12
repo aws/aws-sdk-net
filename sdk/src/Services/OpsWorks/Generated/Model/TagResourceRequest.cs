@@ -44,6 +44,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack or layer's Amazon Resource Number (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -86,6 +87,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// specify this option multiple times to unassign more than one IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PrivateIpAddresses
         {
             get { return this._privateIpAddresses; }

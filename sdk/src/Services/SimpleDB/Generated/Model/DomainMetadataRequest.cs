@@ -55,6 +55,7 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property DomainName. The name of the domain for which to display
         /// the metadata of.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

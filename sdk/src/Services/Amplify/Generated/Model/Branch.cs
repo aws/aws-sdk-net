@@ -59,6 +59,7 @@ namespace Amazon.Amplify.Model
         ///  Id of the active job for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string ActiveJobId
         {
             get { return this._activeJobId; }
@@ -77,6 +78,7 @@ namespace Amazon.Amplify.Model
         ///  Basic Authorization credentials for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -95,6 +97,7 @@ namespace Amazon.Amplify.Model
         ///  ARN for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string BranchArn
         {
             get { return this._branchArn; }
@@ -113,6 +116,7 @@ namespace Amazon.Amplify.Model
         ///  Name for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -131,6 +135,7 @@ namespace Amazon.Amplify.Model
         ///  BuildSpec content for branch for Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -149,6 +154,7 @@ namespace Amazon.Amplify.Model
         ///  Creation date and time for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateTime
         {
             get { return this._createTime.GetValueOrDefault(); }
@@ -167,6 +173,7 @@ namespace Amazon.Amplify.Model
         ///  Custom domains for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public List<string> CustomDomains
         {
             get { return this._customDomains; }
@@ -185,6 +192,7 @@ namespace Amazon.Amplify.Model
         ///  Description for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -203,6 +211,7 @@ namespace Amazon.Amplify.Model
         ///  Display name for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -221,6 +230,7 @@ namespace Amazon.Amplify.Model
         ///  Enables auto-building on push for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableAutoBuild
         {
             get { return this._enableAutoBuild.GetValueOrDefault(); }
@@ -239,6 +249,7 @@ namespace Amazon.Amplify.Model
         ///  Enables Basic Authorization for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableBasicAuth
         {
             get { return this._enableBasicAuth.GetValueOrDefault(); }
@@ -257,6 +268,7 @@ namespace Amazon.Amplify.Model
         ///  Enables notifications for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableNotification
         {
             get { return this._enableNotification.GetValueOrDefault(); }
@@ -275,6 +287,7 @@ namespace Amazon.Amplify.Model
         ///  Environment Variables specific to a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> EnvironmentVariables
         {
             get { return this._environmentVariables; }
@@ -293,6 +306,7 @@ namespace Amazon.Amplify.Model
         ///  Framework for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Framework
         {
             get { return this._framework; }
@@ -311,6 +325,7 @@ namespace Amazon.Amplify.Model
         ///  Stage for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Stage Stage
         {
             get { return this._stage; }
@@ -347,6 +362,7 @@ namespace Amazon.Amplify.Model
         ///  Thumbnail Url for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string ThumbnailUrl
         {
             get { return this._thumbnailUrl; }
@@ -365,6 +381,7 @@ namespace Amazon.Amplify.Model
         ///  Total number of Jobs part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string TotalNumberOfJobs
         {
             get { return this._totalNumberOfJobs; }
@@ -383,6 +400,7 @@ namespace Amazon.Amplify.Model
         ///  The content TTL for the website in seconds. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ttl
         {
             get { return this._ttl; }
@@ -401,6 +419,7 @@ namespace Amazon.Amplify.Model
         ///  Last updated date and time for a branch, part of an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateTime
         {
             get { return this._updateTime.GetValueOrDefault(); }

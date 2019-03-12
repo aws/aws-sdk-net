@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The schema attributes for inventory. This contains data type and attribute name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<InventoryItemAttribute> Attributes
         {
             get { return this._attributes; }
@@ -83,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// and AWS:WindowsUpdate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

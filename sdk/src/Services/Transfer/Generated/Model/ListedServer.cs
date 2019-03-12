@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         /// The unique Amazon Resource Name (ARN) for the server to be listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }

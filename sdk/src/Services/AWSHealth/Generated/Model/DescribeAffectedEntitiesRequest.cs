@@ -54,6 +54,7 @@ namespace Amazon.AWSHealth.Model
         /// Values to narrow the results returned. At least one event ARN is required. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EntityFilter Filter
         {
             get { return this._filter; }
@@ -73,6 +74,7 @@ namespace Amazon.AWSHealth.Model
         /// only supported value at this time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=256)]
         public string Locale
         {
             get { return this._locale; }
@@ -91,6 +93,7 @@ namespace Amazon.AWSHealth.Model
         /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

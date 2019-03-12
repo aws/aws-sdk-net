@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] Specifies the method request's HTTP method type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HttpMethod
         {
             get { return this._httpMethod; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -79,6 +81,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

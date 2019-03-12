@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string PartitionKeyPath
         {
             get { return this._partitionKeyPath; }

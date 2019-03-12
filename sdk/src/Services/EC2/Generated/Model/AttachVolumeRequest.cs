@@ -103,6 +103,7 @@ namespace Amazon.EC2.Model
         /// The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Device
         {
             get { return this._device; }
@@ -121,6 +122,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -140,6 +142,7 @@ namespace Amazon.EC2.Model
         /// Zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VolumeId
         {
             get { return this._volumeId; }

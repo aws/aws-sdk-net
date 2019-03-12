@@ -62,6 +62,7 @@ namespace Amazon.FMS.Model
         /// <code>PutPolicy</code> and by <code>ListPolicies</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }

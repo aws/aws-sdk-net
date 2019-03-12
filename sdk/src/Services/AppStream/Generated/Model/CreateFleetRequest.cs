@@ -54,6 +54,7 @@ namespace Amazon.AppStream.Model
         /// The desired capacity for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComputeCapacity ComputeCapacity
         {
             get { return this._computeCapacity; }
@@ -72,6 +73,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -110,6 +112,7 @@ namespace Amazon.AppStream.Model
         /// The fleet name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -213,6 +216,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image used to create the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ImageName
         {
             get { return this._imageName; }
@@ -313,6 +317,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -350,6 +355,7 @@ namespace Amazon.AppStream.Model
         /// A unique name for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -379,6 +385,7 @@ namespace Amazon.AppStream.Model
         /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

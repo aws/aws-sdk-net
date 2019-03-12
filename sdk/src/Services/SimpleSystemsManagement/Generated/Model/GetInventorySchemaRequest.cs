@@ -68,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -123,6 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of inventory item to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

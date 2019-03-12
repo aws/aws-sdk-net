@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         /// Get the ID for the field-level encryption profile information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

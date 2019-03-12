@@ -57,6 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<TerminateRequest> TerminateWorkspaceRequests
         {
             get { return this._terminateWorkspaceRequests; }

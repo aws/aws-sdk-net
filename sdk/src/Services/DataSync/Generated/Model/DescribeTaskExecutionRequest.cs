@@ -41,6 +41,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the task that is being executed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string TaskExecutionArn
         {
             get { return this._taskExecutionArn; }

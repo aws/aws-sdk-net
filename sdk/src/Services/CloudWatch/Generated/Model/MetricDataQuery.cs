@@ -82,6 +82,7 @@ namespace Amazon.CloudWatch.Model
         /// or <code>MetricStat</code> but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Expression
         {
             get { return this._expression; }
@@ -104,6 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// and underscore. The first character must be a lowercase letter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Id
         {
             get { return this._id; }

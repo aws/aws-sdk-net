@@ -49,6 +49,7 @@ namespace Amazon.IoTAnalytics.Model
         /// A list of actions that create the data set contents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<DatasetAction> Actions
         {
             get { return this._actions; }
@@ -67,6 +68,7 @@ namespace Amazon.IoTAnalytics.Model
         /// When data set contents are created they are delivered to destinations specified here.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<DatasetContentDeliveryRule> ContentDeliveryRules
         {
             get { return this._contentDeliveryRules; }
@@ -85,6 +87,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }
@@ -123,6 +126,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Metadata which can be used to manage the data set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -143,6 +147,7 @@ namespace Amazon.IoTAnalytics.Model
         /// can be empty or contain up to five <b>DataSetTrigger</b> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<DatasetTrigger> Triggers
         {
             get { return this._triggers; }

@@ -67,6 +67,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// or import task ID to filter the results for your import task queries.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> Values
         {
             get { return this._values; }

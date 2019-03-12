@@ -42,6 +42,7 @@ namespace Amazon.Kinesis.Model
         /// The ending hash key of the hash key range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndingHashKey
         {
             get { return this._endingHashKey; }
@@ -60,6 +61,7 @@ namespace Amazon.Kinesis.Model
         /// The starting hash key of the hash key range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StartingHashKey
         {
             get { return this._startingHashKey; }

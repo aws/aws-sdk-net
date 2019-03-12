@@ -46,6 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// The 4-digit id for the node group these configuration values apply to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public string NodeGroupId
         {
             get { return this._nodeGroupId; }

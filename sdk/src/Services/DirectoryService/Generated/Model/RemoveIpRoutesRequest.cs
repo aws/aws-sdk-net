@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// IP address blocks that you want to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> CidrIps
         {
             get { return this._cidrIps; }
@@ -60,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier (ID) of the directory from which you want to remove the IP addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

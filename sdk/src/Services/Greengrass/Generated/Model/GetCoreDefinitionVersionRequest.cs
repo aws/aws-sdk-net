@@ -39,6 +39,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property CoreDefinitionId. The ID of the core definition.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CoreDefinitionId
         {
             get { return this._coreDefinitionId; }
@@ -55,6 +56,7 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property CoreDefinitionVersionId. The ID of the core definition
         /// version.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CoreDefinitionVersionId
         {
             get { return this._coreDefinitionVersionId; }

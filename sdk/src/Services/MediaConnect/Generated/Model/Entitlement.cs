@@ -72,6 +72,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property EntitlementArn. The ARN of the entitlement.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntitlementArn
         {
             get { return this._entitlementArn; }
@@ -87,6 +88,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the entitlement.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -104,6 +106,7 @@ namespace Amazon.MediaConnect.Model
         /// your content with. The receiving accounts (subscribers) will be allowed to create
         /// their own flow using your content as the source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Subscribers
         {
             get { return this._subscribers; }

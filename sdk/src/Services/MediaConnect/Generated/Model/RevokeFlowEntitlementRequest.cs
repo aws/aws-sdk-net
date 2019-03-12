@@ -41,6 +41,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property EntitlementArn. The ARN of the entitlement that you want
         /// to revoke.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntitlementArn
         {
             get { return this._entitlementArn; }
@@ -57,6 +58,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property FlowArn. The flow that you want to revoke an entitlement
         /// from.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }

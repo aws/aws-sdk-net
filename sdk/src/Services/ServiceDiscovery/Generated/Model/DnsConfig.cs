@@ -44,6 +44,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// that you want AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DnsRecord> DnsRecords
         {
             get { return this._dnsRecords; }
@@ -63,6 +64,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         /// </summary>
         [Obsolete("Top level attribute in request should be used to reference namespace-id")]
+        [AWSProperty(Max=64)]
         public string NamespaceId
         {
             get { return this._namespaceId; }

@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// The unique identifier for the rule to exclude from the rule group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

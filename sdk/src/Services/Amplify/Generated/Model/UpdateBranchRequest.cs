@@ -52,6 +52,7 @@ namespace Amazon.Amplify.Model
         ///  Unique Id for an Amplify App. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AppId
         {
             get { return this._appId; }
@@ -70,6 +71,7 @@ namespace Amazon.Amplify.Model
         ///  Basic Authorization credentials for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -88,6 +90,7 @@ namespace Amazon.Amplify.Model
         ///  Name for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -106,6 +109,7 @@ namespace Amazon.Amplify.Model
         ///  BuildSpec for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }
@@ -124,6 +128,7 @@ namespace Amazon.Amplify.Model
         ///  Description for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -214,6 +219,7 @@ namespace Amazon.Amplify.Model
         ///  Framework for the branch. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Framework
         {
             get { return this._framework; }

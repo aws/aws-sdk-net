@@ -108,6 +108,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> AttributesToGet
         {
             get { return this._attributesToGet; }
@@ -368,6 +369,7 @@ namespace Amazon.DynamoDBv2.Model
         /// you must also provide <code>TableName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -394,6 +396,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -500,6 +503,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=999999)]
         public int Segment
         {
             get { return this._segment.GetValueOrDefault(); }
@@ -594,6 +598,7 @@ namespace Amazon.DynamoDBv2.Model
         /// the name of the table to which that index belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }
@@ -627,6 +632,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000000)]
         public int TotalSegments
         {
             get { return this._totalSegments.GetValueOrDefault(); }

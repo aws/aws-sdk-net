@@ -53,6 +53,7 @@ namespace Amazon.StorageGateway.Model
         /// The iSCSI initiator that connects to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string InitiatorName
         {
             get { return this._initiatorName; }
@@ -77,6 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string SecretToAuthenticateInitiator
         {
             get { return this._secretToAuthenticateInitiator; }
@@ -105,6 +107,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SecretToAuthenticateTarget
         {
             get { return this._secretToAuthenticateTarget; }
@@ -124,6 +127,7 @@ namespace Amazon.StorageGateway.Model
         /// operation to return the TargetARN for specified VolumeARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

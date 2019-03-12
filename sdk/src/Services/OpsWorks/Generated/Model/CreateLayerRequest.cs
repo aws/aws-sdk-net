@@ -301,6 +301,7 @@ namespace Amazon.OpsWorks.Model
         /// The layer name, which is used by the console.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -347,6 +348,7 @@ namespace Amazon.OpsWorks.Model
         /// Reference</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Shortname
         {
             get { return this._shortname; }
@@ -365,6 +367,7 @@ namespace Amazon.OpsWorks.Model
         /// The layer stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -385,6 +388,7 @@ namespace Amazon.OpsWorks.Model
         /// 12 stacks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LayerType Type
         {
             get { return this._type; }

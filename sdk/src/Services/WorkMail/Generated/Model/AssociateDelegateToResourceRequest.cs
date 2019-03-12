@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The member (user or group) to associate to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The organization under which the resource exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The resource for which members are associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

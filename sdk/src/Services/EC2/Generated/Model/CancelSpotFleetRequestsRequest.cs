@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Spot Fleet requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SpotFleetRequestIds
         {
             get { return this._spotFleetRequestIds; }
@@ -71,6 +72,7 @@ namespace Amazon.EC2.Model
         /// successfully.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool TerminateInstances
         {
             get { return this._terminateInstances.GetValueOrDefault(); }

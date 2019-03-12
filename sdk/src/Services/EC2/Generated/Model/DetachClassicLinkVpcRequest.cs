@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance to unlink from the VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPC to which the instance is linked.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

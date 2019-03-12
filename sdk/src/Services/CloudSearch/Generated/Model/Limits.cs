@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property MaximumPartitionCount.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int MaximumPartitionCount
         {
             get { return this._maximumPartitionCount.GetValueOrDefault(); }
@@ -53,6 +54,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property MaximumReplicationCount.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int MaximumReplicationCount
         {
             get { return this._maximumReplicationCount.GetValueOrDefault(); }

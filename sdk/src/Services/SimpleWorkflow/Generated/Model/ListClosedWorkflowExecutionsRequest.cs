@@ -154,6 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain that contains the workflow executions to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -205,6 +206,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// fewer than the specified maximum.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaximumPageSize
         {
             get { return this._maximumPageSize.GetValueOrDefault(); }
@@ -230,6 +232,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

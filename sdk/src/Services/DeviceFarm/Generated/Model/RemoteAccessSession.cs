@@ -60,6 +60,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -99,6 +100,7 @@ namespace Amazon.DeviceFarm.Model
         /// debugging is enabled for the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -210,6 +212,7 @@ namespace Amazon.DeviceFarm.Model
         /// returned if remote debugging is enabled for the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string HostAddress
         {
             get { return this._hostAddress; }
@@ -228,6 +231,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string InstanceArn
         {
             get { return this._instanceArn; }
@@ -263,6 +267,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public InteractionMode InteractionMode
         {
             get { return this._interactionMode; }
@@ -281,6 +286,7 @@ namespace Amazon.DeviceFarm.Model
         /// A message about the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Message
         {
             get { return this._message; }
@@ -299,6 +305,7 @@ namespace Amazon.DeviceFarm.Model
         /// The name of the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -336,6 +343,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string RemoteRecordAppArn
         {
             get { return this._remoteRecordAppArn; }

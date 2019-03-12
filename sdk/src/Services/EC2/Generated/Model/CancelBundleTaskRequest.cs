@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// The ID of the bundle task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BundleId
         {
             get { return this._bundleId; }

@@ -67,6 +67,7 @@ namespace Amazon.SageMaker.Model
         /// configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string Content
         {
             get { return this._content; }

@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// The array of attributes that you want to assign to specified findings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }
@@ -61,6 +62,7 @@ namespace Amazon.Inspector.Model
         /// The ARNs that specify the findings that you want to assign attributes to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> FindingArns
         {
             get { return this._findingArns; }

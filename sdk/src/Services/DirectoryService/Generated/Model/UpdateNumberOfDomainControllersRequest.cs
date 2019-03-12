@@ -46,6 +46,7 @@ namespace Amazon.DirectoryService.Model
         /// The number of domain controllers desired in the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2)]
         public int DesiredNumber
         {
             get { return this._desiredNumber.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.DirectoryService.Model
         /// Identifier of the directory to which the domain controllers will be added or removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

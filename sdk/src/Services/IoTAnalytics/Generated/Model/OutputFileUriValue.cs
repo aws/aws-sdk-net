@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// in an S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileName
         {
             get { return this._fileName; }

@@ -87,6 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A name for the managed instance when it is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string DefaultInstanceName
         {
             get { return this._defaultInstanceName; }
@@ -105,6 +106,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A user defined description of the activation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -159,6 +161,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -177,6 +180,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of managed instances that can be registered using this activation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int RegistrationLimit
         {
             get { return this._registrationLimit.GetValueOrDefault(); }
@@ -195,6 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed instances already registered with this activation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int RegistrationsCount
         {
             get { return this._registrationsCount.GetValueOrDefault(); }
@@ -213,6 +218,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Tags assigned to the activation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }

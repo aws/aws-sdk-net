@@ -81,6 +81,7 @@ namespace Amazon.DirectoryService.Model
         /// The user name of the service account in the on-premises directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string CustomerUserName
         {
             get { return this._customerUserName; }

@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of resource you want to retrieve information about. For example, "INSTANCE".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MaintenanceWindowResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -101,6 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The instance ID or key/value pair to retrieve information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

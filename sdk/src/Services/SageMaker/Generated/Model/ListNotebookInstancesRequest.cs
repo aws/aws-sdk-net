@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
         /// repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string AdditionalCodeRepositoryEquals
         {
             get { return this._additionalCodeRepositoryEquals; }
@@ -113,6 +114,7 @@ namespace Amazon.SageMaker.Model
         /// a name that contains the specified string.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string DefaultCodeRepositoryContains
         {
             get { return this._defaultCodeRepositoryContains; }
@@ -169,6 +171,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of notebook instances to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -188,6 +191,7 @@ namespace Amazon.SageMaker.Model
         /// whose name contains the specified string.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string NameContains
         {
             get { return this._nameContains; }
@@ -215,6 +219,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -235,6 +240,7 @@ namespace Amazon.SageMaker.Model
         /// a lifecycle configuration with a name that contains the specified string.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string NotebookInstanceLifecycleConfigNameContains
         {
             get { return this._notebookInstanceLifecycleConfigNameContains; }

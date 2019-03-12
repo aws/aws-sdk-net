@@ -65,6 +65,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -83,6 +84,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Description
         {
             get { return this._description; }
@@ -101,6 +103,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The distributor of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string Distributor
         {
             get { return this._distributor; }
@@ -120,6 +123,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -138,6 +142,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=8191)]
         public string Name
         {
             get { return this._name; }
@@ -156,6 +161,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The owner of the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=8191)]
         public string Owner
         {
             get { return this._owner; }
@@ -174,6 +180,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The type of product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=8191)]
         public ProductType ProductType
         {
             get { return this._productType; }
@@ -192,6 +199,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The configuration of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProvisioningArtifactProperties ProvisioningArtifactParameters
         {
             get { return this._provisioningArtifactParameters; }
@@ -210,6 +218,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The support information about the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8191)]
         public string SupportDescription
         {
             get { return this._supportDescription; }
@@ -228,6 +237,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The contact email for product support.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=254)]
         public string SupportEmail
         {
             get { return this._supportEmail; }
@@ -246,6 +256,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The contact URL for product support.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2083)]
         public string SupportUrl
         {
             get { return this._supportUrl; }
@@ -264,6 +275,7 @@ namespace Amazon.ServiceCatalog.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<Tag> Tags
         {
             get { return this._tags; }

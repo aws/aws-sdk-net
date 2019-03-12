@@ -73,6 +73,7 @@ namespace Amazon.MTurk.Model
         /// Requester. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }

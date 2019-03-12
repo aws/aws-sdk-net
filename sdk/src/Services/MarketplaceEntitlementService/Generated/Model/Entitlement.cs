@@ -108,6 +108,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// by AWS Marketplace when the product listing is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

@@ -89,6 +89,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// value is 3600, or 1 hour.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int AuthorizerResultTtlInSeconds
         {
             get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }
@@ -199,6 +200,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the authorizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

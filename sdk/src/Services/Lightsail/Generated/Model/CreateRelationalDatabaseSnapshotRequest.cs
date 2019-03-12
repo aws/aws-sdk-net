@@ -51,6 +51,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database on which to base your new snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }
@@ -82,6 +83,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseSnapshotName
         {
             get { return this._relationalDatabaseSnapshotName; }

@@ -40,6 +40,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the specific task execution that was started.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TaskExecutionArn
         {
             get { return this._taskExecutionArn; }

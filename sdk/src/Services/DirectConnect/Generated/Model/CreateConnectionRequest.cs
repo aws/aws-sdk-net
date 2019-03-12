@@ -63,6 +63,7 @@ namespace Amazon.DirectConnect.Model
         /// The bandwidth of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Bandwidth
         {
             get { return this._bandwidth; }
@@ -81,6 +82,7 @@ namespace Amazon.DirectConnect.Model
         /// The name of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionName
         {
             get { return this._connectionName; }
@@ -117,6 +119,7 @@ namespace Amazon.DirectConnect.Model
         /// The location of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Location
         {
             get { return this._location; }

@@ -76,6 +76,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -106,6 +107,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SetSourceRequest Source
         {
             get { return this._source; }

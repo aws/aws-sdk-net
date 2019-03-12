@@ -59,6 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -77,6 +78,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the portfolio.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -95,6 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name to use for display purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -114,6 +117,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -132,6 +136,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name of the portfolio provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ProviderName
         {
             get { return this._providerName; }
@@ -150,6 +155,7 @@ namespace Amazon.ServiceCatalog.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=20)]
         public List<Tag> Tags
         {
             get { return this._tags; }

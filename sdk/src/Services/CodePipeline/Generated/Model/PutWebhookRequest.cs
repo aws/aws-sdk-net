@@ -50,6 +50,7 @@ namespace Amazon.CodePipeline.Model
         /// action it targets so that you can easily recognize what it's used for later.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WebhookDefinition Webhook
         {
             get { return this._webhook; }

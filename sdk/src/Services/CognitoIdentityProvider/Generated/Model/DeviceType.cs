@@ -80,6 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The device key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string DeviceKey
         {
             get { return this._deviceKey; }

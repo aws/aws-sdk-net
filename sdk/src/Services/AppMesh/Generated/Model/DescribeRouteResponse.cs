@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The full description of your route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteData Route
         {
             get { return this._route; }

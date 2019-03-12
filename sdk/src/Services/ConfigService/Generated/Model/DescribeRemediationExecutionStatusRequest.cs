@@ -47,6 +47,7 @@ namespace Amazon.ConfigService.Model
         /// A list of AWS Config rule names.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ConfigRuleName
         {
             get { return this._configRuleName; }
@@ -66,6 +67,7 @@ namespace Amazon.ConfigService.Model
         /// is maximum. If you specify 0, AWS Config uses the default. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.ConfigService.Model
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -104,6 +107,7 @@ namespace Amazon.ConfigService.Model
         /// the list consists of the resource type and resource ID. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<ResourceKey> ResourceKeys
         {
             get { return this._resourceKeys; }

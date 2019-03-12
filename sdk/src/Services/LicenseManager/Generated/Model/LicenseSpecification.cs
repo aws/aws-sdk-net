@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager.Model
         /// ARN of the <code>LicenseConfiguration</code> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LicenseConfigurationArn
         {
             get { return this._licenseConfigurationArn; }

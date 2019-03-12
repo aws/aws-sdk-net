@@ -45,6 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StateMachines.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<StateMachineListItem> StateMachines
         {
             get { return this._stateMachines; }

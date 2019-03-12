@@ -52,6 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The sequence number of a stream record in the shard from which to start reading.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=21, Max=40)]
         public string SequenceNumber
         {
             get { return this._sequenceNumber; }
@@ -70,6 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The identifier of the shard. The iterator will be returned for this shard ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=28, Max=65)]
         public string ShardId
         {
             get { return this._shardId; }
@@ -112,6 +114,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ShardIteratorType ShardIteratorType
         {
             get { return this._shardIteratorType; }
@@ -130,6 +133,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) for the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string StreamArn
         {
             get { return this._streamArn; }

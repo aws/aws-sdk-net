@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         /// is automatically cleaned up to remove actions with a start time of more than 1 hour
         /// ago (approximately) so at that point a name can be reused.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActionName
         {
             get { return this._actionName; }
@@ -58,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ScheduleActionSettings. Settings for this schedule action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduleActionSettings ScheduleActionSettings
         {
             get { return this._scheduleActionSettings; }
@@ -74,6 +76,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ScheduleActionStartSettings. The time for the action to
         /// start in the channel.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScheduleActionStartSettings ScheduleActionStartSettings
         {
             get { return this._scheduleActionStartSettings; }

@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -55,6 +56,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndpointId. The unique ID of the endpoint.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -70,6 +72,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndpointRequest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public EndpointRequest EndpointRequest
         {
             get { return this._endpointRequest; }

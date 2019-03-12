@@ -48,6 +48,7 @@ namespace Amazon.SimpleEmail.Model
         /// The email address to be verified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

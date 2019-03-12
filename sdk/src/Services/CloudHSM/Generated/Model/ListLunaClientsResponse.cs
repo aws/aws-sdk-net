@@ -41,6 +41,7 @@ namespace Amazon.CloudHSM.Model
         /// The list of clients.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ClientList
         {
             get { return this._clientList; }

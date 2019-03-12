@@ -88,6 +88,7 @@ namespace Amazon.CodeCommit.Model
         /// a topic in Amazon Simple Notification Service (SNS).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -112,6 +113,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Events
         {
             get { return this._events; }
@@ -130,6 +132,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

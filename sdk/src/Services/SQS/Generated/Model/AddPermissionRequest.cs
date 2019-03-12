@@ -122,6 +122,7 @@ namespace Amazon.SQS.Model
         /// and <code>ChangeMessageVisibilityBatch</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Actions
         {
             get { return this._actions; }
@@ -144,6 +145,7 @@ namespace Amazon.SQS.Model
         /// AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AWSAccountIds
         {
             get { return this._awsAccountIds; }
@@ -164,6 +166,7 @@ namespace Amazon.SQS.Model
         /// (<code>-</code>), and underscores (<code>_</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Label
         {
             get { return this._label; }
@@ -186,6 +189,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

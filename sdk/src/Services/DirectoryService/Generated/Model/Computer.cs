@@ -61,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the computer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ComputerId
         {
             get { return this._computerId; }
@@ -79,6 +80,7 @@ namespace Amazon.DirectoryService.Model
         /// The computer name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=15)]
         public string ComputerName
         {
             get { return this._computerName; }

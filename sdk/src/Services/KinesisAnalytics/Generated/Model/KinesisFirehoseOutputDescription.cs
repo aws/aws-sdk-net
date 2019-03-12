@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -60,6 +61,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

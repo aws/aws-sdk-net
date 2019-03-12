@@ -76,6 +76,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccountLimitType Type
         {
             get { return this._type; }

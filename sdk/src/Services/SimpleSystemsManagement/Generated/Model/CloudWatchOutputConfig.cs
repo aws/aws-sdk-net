@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// you. The log group uses the following naming format: aws/ssm/<i>SystemsManagerDocumentName</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string CloudWatchLogGroupName
         {
             get { return this._cloudWatchLogGroupName; }

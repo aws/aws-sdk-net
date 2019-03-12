@@ -49,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// The instance's AWS OpsWorks Stacks ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -70,6 +71,7 @@ namespace Amazon.OpsWorks.Model
         /// out.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=60, Max=1440)]
         public int ValidForInMinutes
         {
             get { return this._validForInMinutes.GetValueOrDefault(); }

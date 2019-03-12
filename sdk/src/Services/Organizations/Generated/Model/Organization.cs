@@ -168,6 +168,7 @@ namespace Amazon.Organizations.Model
         /// master account for the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=64)]
         public string MasterAccountEmail
         {
             get { return this._masterAccountEmail; }

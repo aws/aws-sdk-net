@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// and can be used to uniquely identify the workflow execution within a domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string RunId
         {
             get { return this._runId; }

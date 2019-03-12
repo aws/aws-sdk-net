@@ -59,6 +59,7 @@ namespace Amazon.XRay.Model
         /// Omit this key if you set <code>Type</code> to <code>NONE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3000)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -78,6 +79,7 @@ namespace Amazon.XRay.Model
         /// Set to <code>NONE</code> for default encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionType Type
         {
             get { return this._type; }

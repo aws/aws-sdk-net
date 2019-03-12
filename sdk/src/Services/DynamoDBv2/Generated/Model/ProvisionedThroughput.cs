@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long ReadCapacityUnits
         {
             get { return this._readCapacityUnits.GetValueOrDefault(); }
@@ -94,6 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long WriteCapacityUnits
         {
             get { return this._writeCapacityUnits.GetValueOrDefault(); }

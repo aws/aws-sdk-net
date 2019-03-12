@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// Route 53 health checker that is reporting a status about the health check endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HealthCheckObservation> HealthCheckObservations
         {
             get { return this._healthCheckObservations; }

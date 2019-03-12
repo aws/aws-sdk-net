@@ -59,6 +59,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// code should be the same as the one used during the publishing of a new product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }
@@ -78,6 +79,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public List<UsageRecord> UsageRecords
         {
             get { return this._usageRecords; }

@@ -84,6 +84,7 @@ namespace Amazon.ConfigService.Model
         /// default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -161,6 +162,7 @@ namespace Amazon.ConfigService.Model
         /// The type of resources that you want AWS Config to list in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType ResourceType
         {
             get { return this._resourceType; }

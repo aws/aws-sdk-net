@@ -41,6 +41,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string IntentName
         {
             get { return this._intentName; }
@@ -59,6 +60,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the intent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string IntentVersion
         {
             get { return this._intentVersion; }

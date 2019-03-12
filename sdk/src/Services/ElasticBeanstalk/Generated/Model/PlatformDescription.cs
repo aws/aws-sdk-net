@@ -111,6 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The description of the platform.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }

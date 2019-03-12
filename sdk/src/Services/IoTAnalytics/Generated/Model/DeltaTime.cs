@@ -48,6 +48,7 @@ namespace Amazon.IoTAnalytics.Model
         /// the previous time frame.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int OffsetSeconds
         {
             get { return this._offsetSeconds.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.IoTAnalytics.Model
         /// the message data was generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TimeExpression
         {
             get { return this._timeExpression; }

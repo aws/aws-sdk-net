@@ -56,6 +56,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the API action for which to get an endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public APIName APIName
         {
             get { return this._apiName; }
@@ -76,6 +77,7 @@ namespace Amazon.KinesisVideo.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -95,6 +97,7 @@ namespace Amazon.KinesisVideo.Model
         /// this parameter or a <code>StreamARN</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

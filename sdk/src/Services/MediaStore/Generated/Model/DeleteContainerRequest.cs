@@ -43,6 +43,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container to delete. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContainerName
         {
             get { return this._containerName; }

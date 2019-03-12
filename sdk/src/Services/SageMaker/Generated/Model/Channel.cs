@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the channel. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -84,6 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The MIME type of the data.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -102,6 +104,7 @@ namespace Amazon.SageMaker.Model
         /// The location of the channel data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DataSource DataSource
         {
             get { return this._dataSource; }

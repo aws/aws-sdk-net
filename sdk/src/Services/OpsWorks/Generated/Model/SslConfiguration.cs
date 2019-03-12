@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// The contents of the certificate's domain.crt file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -79,6 +80,7 @@ namespace Amazon.OpsWorks.Model
         /// The private key; the contents of the certificate's domain.kex file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PrivateKey
         {
             get { return this._privateKey; }

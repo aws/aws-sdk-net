@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the disk (e.g., <code>my-disk</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskName
         {
             get { return this._diskName; }

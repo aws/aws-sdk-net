@@ -53,6 +53,7 @@ namespace Amazon.CloudHSMV2.Model
         /// the number you specify, the response contains a <code>NextToken</code> value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -72,6 +73,7 @@ namespace Amazon.CloudHSMV2.Model
         /// value to get more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -91,6 +93,7 @@ namespace Amazon.CloudHSMV2.Model
         /// cluster ID, use <a>DescribeClusters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

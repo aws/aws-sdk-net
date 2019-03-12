@@ -874,6 +874,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// See <a>PatchFilter</a> for lists of valid keys for each operating system type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PatchFilterKey Key
         {
             get { return this._key; }
@@ -897,6 +898,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> Values
         {
             get { return this._values; }

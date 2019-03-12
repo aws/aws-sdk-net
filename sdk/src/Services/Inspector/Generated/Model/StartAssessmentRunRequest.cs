@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// template whose ARN is used to start the assessment run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string AssessmentRunName
         {
             get { return this._assessmentRunName; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment template of the assessment run that you want to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTemplateArn
         {
             get { return this._assessmentTemplateArn; }

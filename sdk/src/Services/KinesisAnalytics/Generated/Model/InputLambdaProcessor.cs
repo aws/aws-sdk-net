@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// function that operates on records in the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The ARN of the IAM role that is used to access the AWS Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

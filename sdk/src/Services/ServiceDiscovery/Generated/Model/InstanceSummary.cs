@@ -100,6 +100,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID for an instance that you created by using a specified service.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Id
         {
             get { return this._id; }

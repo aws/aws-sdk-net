@@ -79,6 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The identity provider name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string ProviderName
         {
             get { return this._providerName; }

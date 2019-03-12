@@ -62,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// optionally, ID token, based on scopes) directly.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> AllowedOAuthFlows
         {
             get { return this._allowedOAuthFlows; }
@@ -100,6 +101,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=25)]
         public List<string> AllowedOAuthScopes
         {
             get { return this._allowedOAuthScopes; }
@@ -166,6 +168,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> CallbackURLs
         {
             get { return this._callbackURLs; }
@@ -184,6 +187,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client name for the user pool client you would like to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientName
         {
             get { return this._clientName; }
@@ -232,6 +236,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DefaultRedirectURI
         {
             get { return this._defaultRedirectURI; }
@@ -287,6 +292,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A list of allowed logout URLs for the identity providers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> LogoutURLs
         {
             get { return this._logoutURLs; }
@@ -324,6 +330,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3650)]
         public int RefreshTokenValidity
         {
             get { return this._refreshTokenValidity.GetValueOrDefault(); }
@@ -360,6 +367,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to create a user pool client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

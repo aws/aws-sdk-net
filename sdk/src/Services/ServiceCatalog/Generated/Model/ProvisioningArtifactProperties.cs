@@ -68,6 +68,7 @@ namespace Amazon.ServiceCatalog.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public Dictionary<string, string> Info
         {
             get { return this._info; }

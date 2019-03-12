@@ -65,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// uses the MIME type with each http call to transfer data to the transform job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -84,6 +85,7 @@ namespace Amazon.SageMaker.Model
         /// data that the model can consume.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformDataSource DataSource
         {
             get { return this._dataSource; }

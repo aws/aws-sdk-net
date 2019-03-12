@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// all of your tables in this region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long AccountMaxReadCapacityUnits
         {
             get { return this._accountMaxReadCapacityUnits.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.DynamoDBv2.Model
         /// all of your tables in this region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long AccountMaxWriteCapacityUnits
         {
             get { return this._accountMaxWriteCapacityUnits.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long TableMaxReadCapacityUnits
         {
             get { return this._tableMaxReadCapacityUnits.GetValueOrDefault(); }
@@ -103,6 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long TableMaxWriteCapacityUnits
         {
             get { return this._tableMaxWriteCapacityUnits.GetValueOrDefault(); }

@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Information about all versions of the association for the specified association ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<AssociationVersionInfo> AssociationVersions
         {
             get { return this._associationVersions; }

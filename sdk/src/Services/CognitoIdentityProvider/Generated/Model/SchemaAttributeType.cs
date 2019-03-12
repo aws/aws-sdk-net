@@ -109,6 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A schema attribute of the name type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public string Name
         {
             get { return this._name; }

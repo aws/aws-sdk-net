@@ -79,6 +79,7 @@ namespace Amazon.AWSSupport.Model
         /// The unique identifier for the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CheckId
         {
             get { return this._checkId; }

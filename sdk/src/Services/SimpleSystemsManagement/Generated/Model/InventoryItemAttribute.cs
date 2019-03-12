@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The data type of the inventory item attribute. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InventoryAttributeDataType DataType
         {
             get { return this._dataType; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Name of the inventory item attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

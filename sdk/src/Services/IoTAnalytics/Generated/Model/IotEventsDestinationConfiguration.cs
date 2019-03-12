@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the AWS IoT Events input to which data set contents are delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string InputName
         {
             get { return this._inputName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// contents to an AWS IoT Events input.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

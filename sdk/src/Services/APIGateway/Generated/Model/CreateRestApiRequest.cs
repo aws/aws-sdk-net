@@ -166,6 +166,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

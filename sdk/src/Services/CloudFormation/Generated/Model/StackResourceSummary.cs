@@ -67,6 +67,7 @@ namespace Amazon.CloudFormation.Model
         /// Time the status was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastUpdatedTimestamp
         {
             get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// The logical name of the resource specified in the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LogicalResourceId
         {
             get { return this._logicalResourceId; }
@@ -121,6 +123,7 @@ namespace Amazon.CloudFormation.Model
         /// Current status of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceStatus ResourceStatus
         {
             get { return this._resourceStatus; }
@@ -158,6 +161,7 @@ namespace Amazon.CloudFormation.Model
         /// AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

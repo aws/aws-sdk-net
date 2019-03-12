@@ -50,6 +50,7 @@ namespace Amazon.Transfer.Model
         /// A system-assigned unique identifier for an SFTP server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -68,6 +69,7 @@ namespace Amazon.Transfer.Model
         /// The public key portion of an SSH key pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string SshPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }
@@ -86,6 +88,7 @@ namespace Amazon.Transfer.Model
         /// The name of the user account that is assigned to one or more servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

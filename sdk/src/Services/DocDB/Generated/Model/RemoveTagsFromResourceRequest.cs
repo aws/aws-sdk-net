@@ -43,6 +43,7 @@ namespace Amazon.DocDB.Model
         /// Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -61,6 +62,7 @@ namespace Amazon.DocDB.Model
         /// The tag key (name) of the tag to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

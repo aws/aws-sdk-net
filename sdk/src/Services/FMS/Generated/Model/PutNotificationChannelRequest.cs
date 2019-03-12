@@ -44,6 +44,7 @@ namespace Amazon.FMS.Model
         /// Firewall Manager activity. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string SnsRoleName
         {
             get { return this._snsRoleName; }
@@ -63,6 +64,7 @@ namespace Amazon.FMS.Model
         /// Firewall Manager.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

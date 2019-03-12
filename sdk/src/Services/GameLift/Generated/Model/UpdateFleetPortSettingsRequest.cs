@@ -139,6 +139,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to update port settings for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -157,6 +158,7 @@ namespace Amazon.GameLift.Model
         /// Collection of port settings to be added to the fleet record.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<IpPermission> InboundPermissionAuthorizations
         {
             get { return this._inboundPermissionAuthorizations; }
@@ -175,6 +177,7 @@ namespace Amazon.GameLift.Model
         /// Collection of port settings to be removed from the fleet record.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<IpPermission> InboundPermissionRevocations
         {
             get { return this._inboundPermissionRevocations; }

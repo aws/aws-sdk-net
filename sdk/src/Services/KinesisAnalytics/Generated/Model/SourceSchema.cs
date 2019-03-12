@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// A list of <code>RecordColumn</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public List<RecordColumn> RecordColumns
         {
             get { return this._recordColumns; }
@@ -79,6 +80,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Specifies the format of the records on the streaming source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordFormat RecordFormat
         {
             get { return this._recordFormat; }

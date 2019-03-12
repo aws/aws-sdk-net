@@ -95,6 +95,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultExecutionStartToCloseTimeout
         {
             get { return this._defaultExecutionStartToCloseTimeout; }
@@ -121,6 +122,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string DefaultLambdaRole
         {
             get { return this._defaultLambdaRole; }
@@ -202,6 +204,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// You can use <code>NONE</code> to specify unlimited duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string DefaultTaskStartToCloseTimeout
         {
             get { return this._defaultTaskStartToCloseTimeout; }

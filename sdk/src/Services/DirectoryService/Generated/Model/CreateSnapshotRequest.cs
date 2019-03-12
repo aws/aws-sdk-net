@@ -48,6 +48,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory of which to take a snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -66,6 +67,7 @@ namespace Amazon.DirectoryService.Model
         /// The descriptive name to apply to the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Name
         {
             get { return this._name; }

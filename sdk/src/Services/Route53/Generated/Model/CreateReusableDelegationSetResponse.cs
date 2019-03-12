@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains name server information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DelegationSet DelegationSet
         {
             get { return this._delegationSet; }
@@ -59,6 +60,7 @@ namespace Amazon.Route53.Model
         /// The unique URL representing the new reusable delegation set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Location
         {
             get { return this._location; }

@@ -72,6 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The specific digest path of the image hosted in this <code>ProductionVariant</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string ResolvedImage
         {
             get { return this._resolvedImage; }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// The image path you specified when you created the model.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string SpecifiedImage
         {
             get { return this._specifiedImage; }

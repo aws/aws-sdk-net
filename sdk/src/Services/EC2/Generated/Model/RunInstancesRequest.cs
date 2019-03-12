@@ -659,6 +659,7 @@ namespace Amazon.EC2.Model
         /// many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxCount
         {
             get { return this._maxCount.GetValueOrDefault(); }
@@ -686,6 +687,7 @@ namespace Amazon.EC2.Model
         /// many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinCount
         {
             get { return this._minCount.GetValueOrDefault(); }

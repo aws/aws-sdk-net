@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// for the job document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=60, Max=3600)]
         public long ExpiresInSec
         {
             get { return this._expiresInSec.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.IoT.Model
         /// for IoT to download the files.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

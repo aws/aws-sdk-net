@@ -41,6 +41,7 @@ namespace Amazon.WAF.Model
         /// Specifies whether to insert or delete an IP address with <a>UpdateIPSet</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -60,6 +61,7 @@ namespace Amazon.WAF.Model
         /// (in CIDR notation) that web requests originate from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IPSetDescriptor IPSetDescriptor
         {
             get { return this._ipSetDescriptor; }

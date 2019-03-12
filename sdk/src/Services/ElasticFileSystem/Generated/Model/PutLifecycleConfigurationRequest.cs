@@ -87,6 +87,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// object (String).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -108,6 +109,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// class.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<LifecyclePolicy> LifecyclePolicies
         {
             get { return this._lifecyclePolicies; }

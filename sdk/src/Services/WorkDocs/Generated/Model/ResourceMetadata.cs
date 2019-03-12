@@ -46,6 +46,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -64,6 +65,7 @@ namespace Amazon.WorkDocs.Model
         /// The name of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -82,6 +84,7 @@ namespace Amazon.WorkDocs.Model
         /// The original name of the resource before a rename operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string OriginalName
         {
             get { return this._originalName; }
@@ -118,6 +121,7 @@ namespace Amazon.WorkDocs.Model
         /// The parent ID of the resource before a rename operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentId
         {
             get { return this._parentId; }
@@ -155,6 +159,7 @@ namespace Amazon.WorkDocs.Model
         /// on document version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string VersionId
         {
             get { return this._versionId; }

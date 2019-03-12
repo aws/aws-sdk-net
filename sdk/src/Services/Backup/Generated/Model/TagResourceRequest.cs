@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// of the tagged resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -63,6 +64,7 @@ namespace Amazon.Backup.Model
         /// own metadata to the resources you create. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

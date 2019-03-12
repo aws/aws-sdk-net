@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// the value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The targets assigned to the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<Target> Targets
         {
             get { return this._targets; }

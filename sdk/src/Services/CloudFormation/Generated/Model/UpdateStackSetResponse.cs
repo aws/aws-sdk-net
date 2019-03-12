@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// The unique ID for this stack set operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }

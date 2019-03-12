@@ -42,6 +42,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the bot that processed the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string BotVersion
         {
             get { return this._botVersion; }

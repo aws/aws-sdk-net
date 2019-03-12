@@ -54,6 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -72,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name (friendly name, not ARN) identifying the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string GroupName
         {
             get { return this._groupName; }

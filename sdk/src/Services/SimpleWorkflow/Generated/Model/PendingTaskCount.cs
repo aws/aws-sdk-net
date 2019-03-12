@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The number of tasks in the task list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }

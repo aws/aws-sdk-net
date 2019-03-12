@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the notebook instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NotebookInstanceArn
         {
             get { return this._notebookInstanceArn; }

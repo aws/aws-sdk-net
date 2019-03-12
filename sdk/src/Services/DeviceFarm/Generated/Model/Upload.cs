@@ -49,6 +49,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -94,6 +95,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's content type (for example, "application/octet-stream").
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -130,6 +132,7 @@ namespace Amazon.DeviceFarm.Model
         /// A message about the upload's result.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Message
         {
             get { return this._message; }
@@ -150,6 +153,7 @@ namespace Amazon.DeviceFarm.Model
         /// associated app is uploaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -168,6 +172,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's file name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -380,6 +385,7 @@ namespace Amazon.DeviceFarm.Model
         /// PUT request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Url
         {
             get { return this._url; }

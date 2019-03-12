@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The unique identifier you assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -80,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing on which the job execution is running.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the daily snapshot options specified for the Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotOptions Options
         {
             get { return this._options; }
@@ -59,6 +60,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the status of a daily automated snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

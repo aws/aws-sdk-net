@@ -88,6 +88,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain containing the workflow execution to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -106,6 +107,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The runId of the workflow execution to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -124,6 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflowId of the workflow execution to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

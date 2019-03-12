@@ -76,6 +76,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// and guard against replay attacks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Nonce
         {
             get { return this._nonce; }
@@ -95,6 +96,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// code should be the same as the one used during the publishing of a new product.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }
@@ -113,6 +115,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Public Key Version provided by AWS Marketplace
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int PublicKeyVersion
         {
             get { return this._publicKeyVersion.GetValueOrDefault(); }

@@ -46,6 +46,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string ProjectId
         {
             get { return this._projectId; }
@@ -105,6 +106,7 @@ namespace Amazon.CodeStar.Model
         /// attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

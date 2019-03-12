@@ -350,6 +350,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactsType Type
         {
             get { return this._type; }

@@ -50,6 +50,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string HealthCheckId
         {
             get { return this._healthCheckId; }

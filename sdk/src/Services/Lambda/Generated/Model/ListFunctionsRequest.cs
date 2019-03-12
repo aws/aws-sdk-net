@@ -107,6 +107,7 @@ namespace Amazon.Lambda.Model
         /// Specify a value between 1 and 50 to limit the number of functions in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

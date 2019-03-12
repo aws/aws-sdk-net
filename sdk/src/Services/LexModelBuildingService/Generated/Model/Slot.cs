@@ -48,6 +48,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// A description of the slot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -66,6 +67,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the slot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -91,6 +93,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// arbitrary.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -110,6 +113,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// chooses an option from the response card, instead of using text to reply. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
         public string ResponseCard
         {
             get { return this._responseCard; }
@@ -130,6 +134,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// In most cases, Amazon Lex is capable of understanding user utterances. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> SampleUtterances
         {
             get { return this._sampleUtterances; }
@@ -148,6 +153,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Specifies whether the slot is required or optional. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SlotConstraint SlotConstraint
         {
             get { return this._slotConstraint; }
@@ -167,6 +173,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// slot types.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SlotType
         {
             get { return this._slotType; }
@@ -185,6 +192,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the slot type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SlotTypeVersion
         {
             get { return this._slotTypeVersion; }

@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// The name of the job in question.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobName
         {
             get { return this._jobName; }

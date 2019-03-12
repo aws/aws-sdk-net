@@ -57,6 +57,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Key. The key associated with the record patch.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }
@@ -72,6 +73,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Op. An operation, either replace or remove.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Operation Op
         {
             get { return this._op; }
@@ -88,6 +90,7 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property SyncCount. Last known server sync count for this record.
         /// Set to 0 if unknown.
         /// </summary>
+        [AWSProperty(Required=true)]
         public long SyncCount
         {
             get { return this._syncCount.GetValueOrDefault(); }
@@ -103,6 +106,7 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Value. The value associated with the record patch.
         /// </summary>
+        [AWSProperty(Max=1048575)]
         public string Value
         {
             get { return this._value; }

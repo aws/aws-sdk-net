@@ -171,6 +171,7 @@ namespace Amazon.MachineLearning.Model
         /// S3).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string InputDataLocationS3
         {
             get { return this._inputDataLocationS3; }
@@ -208,6 +209,7 @@ namespace Amazon.MachineLearning.Model
         /// A description of the most recent details about accessing the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Message
         {
             get { return this._message; }
@@ -226,6 +228,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID assigned to the <code>MLModel</code> at creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -267,6 +270,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -375,6 +379,7 @@ namespace Amazon.MachineLearning.Model
         /// uses the <code>TrainingDataSourceId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string TrainingDataSourceId
         {
             get { return this._trainingDataSourceId; }

@@ -43,6 +43,7 @@ namespace Amazon.CloudDirectory.Model
         /// The maximum number of results to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference to the object that has indices attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference TargetReference
         {
             get { return this._targetReference; }

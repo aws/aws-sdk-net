@@ -88,6 +88,7 @@ namespace Amazon.IoT.Model
         /// The result page size.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }
@@ -106,6 +107,7 @@ namespace Amazon.IoT.Model
         /// The principal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Principal
         {
             get { return this._principal; }

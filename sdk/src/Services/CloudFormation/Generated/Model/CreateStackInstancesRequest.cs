@@ -50,6 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// specified region(s) for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Accounts
         {
             get { return this._accounts; }
@@ -84,6 +85,7 @@ namespace Amazon.CloudFormation.Model
         /// whose status is <code>OUTDATED</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OperationId
         {
             get { return this._operationId; }
@@ -185,6 +187,7 @@ namespace Amazon.CloudFormation.Model
         /// specified AWS account(s). 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Regions
         {
             get { return this._regions; }
@@ -203,6 +206,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack set that you want to create stack instances from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }

@@ -55,6 +55,7 @@ namespace Amazon.AWSSupport.Model
         /// the size limit is 5 MB per attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Attachment> Attachments
         {
             get { return this._attachments; }

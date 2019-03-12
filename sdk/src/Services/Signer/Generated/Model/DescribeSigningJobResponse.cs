@@ -142,6 +142,7 @@ namespace Amazon.Signer.Model
         /// The name of the profile that initiated the signing operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string ProfileName
         {
             get { return this._profileName; }

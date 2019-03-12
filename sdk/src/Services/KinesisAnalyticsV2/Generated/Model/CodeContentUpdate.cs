@@ -60,6 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes an update to the text code for an application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string TextContentUpdate
         {
             get { return this._textContentUpdate; }
@@ -78,6 +79,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes an update to the zipped code for an application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=52428800)]
         public MemoryStream ZipFileContentUpdate
         {
             get { return this._zipFileContentUpdate; }

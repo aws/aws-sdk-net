@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum value of the hyperparameter to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string MaxValue
         {
             get { return this._maxValue; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The minimum value of the hyperparameter to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string MinValue
         {
             get { return this._minValue; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the hyperparameter to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string Name
         {
             get { return this._name; }

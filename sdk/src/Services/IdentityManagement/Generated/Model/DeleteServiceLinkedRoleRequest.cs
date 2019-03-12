@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the service-linked role to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

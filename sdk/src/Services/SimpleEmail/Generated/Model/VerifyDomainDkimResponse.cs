@@ -54,6 +54,7 @@ namespace Amazon.SimpleEmail.Model
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DkimTokens
         {
             get { return this._dkimTokens; }

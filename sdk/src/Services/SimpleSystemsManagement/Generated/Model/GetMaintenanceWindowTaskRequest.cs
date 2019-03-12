@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window ID that includes the task to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }
@@ -60,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window task ID to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string WindowTaskId
         {
             get { return this._windowTaskId; }

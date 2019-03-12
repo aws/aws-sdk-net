@@ -41,6 +41,7 @@ namespace Amazon.WorkDocs.Model
         /// The amount of storage allocated, in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long StorageAllocatedInBytes
         {
             get { return this._storageAllocatedInBytes.GetValueOrDefault(); }

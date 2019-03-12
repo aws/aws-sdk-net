@@ -69,6 +69,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=170)]
         public string FunctionName
         {
             get { return this._functionName; }

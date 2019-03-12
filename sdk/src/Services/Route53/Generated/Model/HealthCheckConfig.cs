@@ -111,6 +111,7 @@ namespace Amazon.Route53.Model
         /// omit <code>IPAddress</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=45)]
         public string IPAddress
         {
             get { return this._ipAddress; }
@@ -130,6 +131,7 @@ namespace Amazon.Route53.Model
         /// Specify a value for <code>Port</code> only when you specify a value for <code>IPAddress</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -212,6 +214,7 @@ namespace Amazon.Route53.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheckType Type
         {
             get { return this._type; }
@@ -234,6 +237,7 @@ namespace Amazon.Route53.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string ResourcePath
         {
             get { return this._resourcePath; }
@@ -334,6 +338,7 @@ namespace Amazon.Route53.Model
         /// header.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string FullyQualifiedDomainName
         {
             get { return this._fullyQualifiedDomainName; }
@@ -360,6 +365,7 @@ namespace Amazon.Route53.Model
         /// body. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string SearchString
         {
             get { return this._searchString; }
@@ -390,6 +396,7 @@ namespace Amazon.Route53.Model
         /// <code>30</code> seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=30)]
         public int RequestInterval
         {
             get { return this._requestInterval.GetValueOrDefault(); }
@@ -417,6 +424,7 @@ namespace Amazon.Route53.Model
         /// is three health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int FailureThreshold
         {
             get { return this._failureThreshold.GetValueOrDefault(); }
@@ -546,6 +554,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public int HealthThreshold
         {
             get { return this._healthThreshold.GetValueOrDefault(); }
@@ -566,6 +575,7 @@ namespace Amazon.Route53.Model
         /// health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public List<string> ChildHealthChecks
         {
             get { return this._childHealthChecks; }
@@ -638,6 +648,7 @@ namespace Amazon.Route53.Model
         /// regions with four different regions). 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=64)]
         public List<string> Regions
         {
             get { return this._regions; }

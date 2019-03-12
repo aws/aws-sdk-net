@@ -47,6 +47,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// This data isn't sent to the Lambda task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -67,6 +68,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// information to trace back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The unique ID of the Lambda task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -103,6 +106,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The input provided to the Lambda task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -121,6 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -139,6 +144,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The maximum amount of time a worker can take to process the Lambda task.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string StartToCloseTimeout
         {
             get { return this._startToCloseTimeout; }

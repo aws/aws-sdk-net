@@ -171,6 +171,7 @@ namespace Amazon.GameLift.Model
         /// a Game Session</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties
         {
             get { return this._gameProperties; }
@@ -192,6 +193,7 @@ namespace Amazon.GameLift.Model
         /// a Game Session</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
@@ -211,6 +213,7 @@ namespace Amazon.GameLift.Model
         /// to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string GameSessionName
         {
             get { return this._gameSessionName; }
@@ -229,6 +232,7 @@ namespace Amazon.GameLift.Model
         /// Name of the queue to use to place the new game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string GameSessionQueueName
         {
             get { return this._gameSessionQueueName; }
@@ -247,6 +251,7 @@ namespace Amazon.GameLift.Model
         /// Maximum number of players that can be connected simultaneously to the game session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int MaximumPlayerSessionCount
         {
             get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
@@ -267,6 +272,7 @@ namespace Amazon.GameLift.Model
         /// a canceled or timed-out placement request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string PlacementId
         {
             get { return this._placementId; }

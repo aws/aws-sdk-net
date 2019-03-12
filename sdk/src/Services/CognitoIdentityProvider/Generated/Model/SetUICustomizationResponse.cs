@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The UI customization information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UICustomizationType UICustomization
         {
             get { return this._uiCustomization; }

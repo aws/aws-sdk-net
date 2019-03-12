@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing details about the new role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Role Role
         {
             get { return this._role; }

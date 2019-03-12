@@ -72,6 +72,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string GrantId
         {
             get { return this._grantId; }
@@ -90,6 +91,7 @@ namespace Amazon.KeyManagementService.Model
         /// Token that identifies the grant to be retired.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8192)]
         public string GrantToken
         {
             get { return this._grantToken; }
@@ -113,6 +115,7 @@ namespace Amazon.KeyManagementService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

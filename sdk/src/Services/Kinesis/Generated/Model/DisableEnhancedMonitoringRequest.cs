@@ -85,6 +85,7 @@ namespace Amazon.Kinesis.Model
         /// Kinesis Data Streams Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=7)]
         public List<string> ShardLevelMetrics
         {
             get { return this._shardLevelMetrics; }
@@ -103,6 +104,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the Kinesis data stream for which to disable enhanced monitoring.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

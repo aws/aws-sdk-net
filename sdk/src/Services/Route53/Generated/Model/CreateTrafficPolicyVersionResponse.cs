@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains settings for the new version of the traffic policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrafficPolicy TrafficPolicy
         {
             get { return this._trafficPolicy; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53.Model
         /// A unique URL that represents a new traffic policy version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Location
         {
             get { return this._location; }

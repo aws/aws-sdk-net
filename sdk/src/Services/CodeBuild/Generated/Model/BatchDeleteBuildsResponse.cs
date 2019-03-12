@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The IDs of the builds that were successfully deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> BuildsDeleted
         {
             get { return this._buildsDeleted; }

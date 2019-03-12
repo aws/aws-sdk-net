@@ -53,6 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -127,6 +128,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -170,6 +172,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM Identities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -190,6 +193,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string UserId
         {
             get { return this._userId; }
@@ -208,6 +212,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name identifying the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

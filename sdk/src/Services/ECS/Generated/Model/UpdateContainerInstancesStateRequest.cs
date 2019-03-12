@@ -120,6 +120,7 @@ namespace Amazon.ECS.Model
         /// A list of container instance IDs or full ARN entries.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ContainerInstances
         {
             get { return this._containerInstances; }
@@ -138,6 +139,7 @@ namespace Amazon.ECS.Model
         /// The container instance state with which to update the container instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContainerInstanceStatus Status
         {
             get { return this._status; }

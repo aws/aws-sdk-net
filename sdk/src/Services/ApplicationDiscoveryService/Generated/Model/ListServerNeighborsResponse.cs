@@ -60,6 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// List of distinct servers that are one hop away from the given server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<NeighborConnectionDetail> Neighbors
         {
             get { return this._neighbors; }

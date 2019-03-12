@@ -102,6 +102,7 @@ namespace Amazon.EC2.Model
         /// The configuration for the EC2 Fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs
         {
             get { return this._launchTemplateConfigs; }
@@ -197,6 +198,7 @@ namespace Amazon.EC2.Model
         /// and <code>DefaultCapacityType</code> structure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetCapacitySpecificationRequest TargetCapacitySpecification
         {
             get { return this._targetCapacitySpecification; }

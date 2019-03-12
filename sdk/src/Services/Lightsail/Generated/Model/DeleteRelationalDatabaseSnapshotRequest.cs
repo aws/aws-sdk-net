@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database snapshot that you are deleting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseSnapshotName
         {
             get { return this._relationalDatabaseSnapshotName; }

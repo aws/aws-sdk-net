@@ -153,6 +153,7 @@ namespace Amazon.Rekognition.Model
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Image Image
         {
             get { return this._image; }
@@ -172,6 +173,7 @@ namespace Amazon.Rekognition.Model
         /// returns the specified number of highest confidence labels. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaxLabels
         {
             get { return this._maxLabels.GetValueOrDefault(); }
@@ -196,6 +198,7 @@ namespace Amazon.Rekognition.Model
         /// a confidence values greater than or equal to 55 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float MinConfidence
         {
             get { return this._minConfidence.GetValueOrDefault(); }

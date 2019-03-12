@@ -84,6 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// application can perform.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int CurrentParallelism
         {
             get { return this._currentParallelism.GetValueOrDefault(); }
@@ -103,6 +104,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// application can perform. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Parallelism
         {
             get { return this._parallelism.GetValueOrDefault(); }
@@ -122,6 +124,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// can perform per Kinesis Processing Unit (KPU) used by the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParallelismPerKPU
         {
             get { return this._parallelismPerKPU.GetValueOrDefault(); }

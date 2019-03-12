@@ -66,6 +66,7 @@ namespace Amazon.SimpleDB.Model
         /// can range between 3 and 255 characters and can contain the following characters: a-z,
         /// A-Z, 0-9, '_', '-', and '.'.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

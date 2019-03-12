@@ -82,6 +82,7 @@ namespace Amazon.ElastiCache.Model
         /// The cluster identifier. This parameter is stored as a lowercase string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheClusterId
         {
             get { return this._cacheClusterId; }
@@ -101,6 +102,7 @@ namespace Amazon.ElastiCache.Model
         /// etc.). To reboot an entire cluster, specify all of the cache node IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> CacheNodeIdsToReboot
         {
             get { return this._cacheNodeIdsToReboot; }

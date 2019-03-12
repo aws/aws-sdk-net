@@ -41,6 +41,7 @@ namespace Amazon.Textract.Model
         /// the job in a subsequent call to <code>GetDocumentAnalysis</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }

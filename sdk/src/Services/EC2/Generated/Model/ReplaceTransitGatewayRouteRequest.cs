@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// most specific match.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -99,6 +100,7 @@ namespace Amazon.EC2.Model
         /// The ID of the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

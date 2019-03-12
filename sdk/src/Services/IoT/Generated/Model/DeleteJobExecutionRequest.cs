@@ -50,6 +50,7 @@ namespace Amazon.IoT.Model
         /// reused by IoT, so be sure you get and use the correct value here.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ExecutionNumber
         {
             get { return this._executionNumber.GetValueOrDefault(); }
@@ -95,6 +96,7 @@ namespace Amazon.IoT.Model
         /// The ID of the job whose execution on a particular device will be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -113,6 +115,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing whose job execution will be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

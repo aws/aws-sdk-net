@@ -51,6 +51,7 @@ namespace Amazon.Route53Resolver.Model
         /// IPs in the specified subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IpAddressUpdate IpAddress
         {
             get { return this._ipAddress; }
@@ -69,6 +70,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint that you want to associate IP addresses with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }

@@ -46,6 +46,7 @@ namespace Amazon.APIGateway.Model
         /// file is 2MB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Body
         {
             get { return this._body; }

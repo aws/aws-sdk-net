@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager.Model
         /// Flag to activate AWS Organization integration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableIntegration
         {
             get { return this._enableIntegration.GetValueOrDefault(); }

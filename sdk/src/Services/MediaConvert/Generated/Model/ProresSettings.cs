@@ -93,6 +93,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FramerateDenominator. Frame rate denominator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FramerateDenominator
         {
             get { return this._framerateDenominator.GetValueOrDefault(); }
@@ -111,6 +112,7 @@ namespace Amazon.MediaConvert.Model
         ///  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
         /// fraction. In this example, use 24000 for the value of FramerateNumerator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FramerateNumerator
         {
             get { return this._framerateNumerator.GetValueOrDefault(); }
@@ -156,6 +158,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int ParDenominator
         {
             get { return this._parDenominator.GetValueOrDefault(); }
@@ -171,6 +174,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int ParNumerator
         {
             get { return this._parNumerator.GetValueOrDefault(); }

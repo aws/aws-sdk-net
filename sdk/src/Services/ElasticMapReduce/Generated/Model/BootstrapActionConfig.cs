@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the bootstrap action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -75,6 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The script run by the bootstrap action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScriptBootstrapActionConfig ScriptBootstrapAction
         {
             get { return this._scriptBootstrapAction; }

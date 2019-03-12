@@ -78,6 +78,7 @@ namespace Amazon.IoT.Model
         /// The name you have given to the behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

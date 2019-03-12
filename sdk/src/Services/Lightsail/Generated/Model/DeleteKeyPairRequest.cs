@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the key pair to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyPairName
         {
             get { return this._keyPairName; }

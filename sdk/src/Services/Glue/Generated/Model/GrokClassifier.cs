@@ -47,6 +47,7 @@ namespace Amazon.Glue.Model
         /// Omniture logs, and so on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Classification
         {
             get { return this._classification; }
@@ -85,6 +86,7 @@ namespace Amazon.Glue.Model
         /// Custom Classifers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16000)]
         public string CustomPatterns
         {
             get { return this._customPatterns; }
@@ -105,6 +107,7 @@ namespace Amazon.Glue.Model
         /// Custom Classifers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string GrokPattern
         {
             get { return this._grokPattern; }
@@ -141,6 +144,7 @@ namespace Amazon.Glue.Model
         /// The name of the classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

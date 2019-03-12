@@ -155,6 +155,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the HIT Group of this HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITGroupId
         {
             get { return this._hitGroupId; }
@@ -173,6 +174,7 @@ namespace Amazon.MTurk.Model
         ///  A unique identifier for the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -191,6 +193,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the HIT Layout of this HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITLayoutId
         {
             get { return this._hitLayoutId; }
@@ -247,6 +250,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the HIT type of this HIT
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string HITTypeId
         {
             get { return this._hitTypeId; }

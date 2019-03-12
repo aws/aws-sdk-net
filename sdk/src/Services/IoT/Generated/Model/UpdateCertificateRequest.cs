@@ -54,6 +54,7 @@ namespace Amazon.IoT.Model
         /// ID.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -82,6 +83,7 @@ namespace Amazon.IoT.Model
         ///  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CertificateStatus NewStatus
         {
             get { return this._newStatus; }

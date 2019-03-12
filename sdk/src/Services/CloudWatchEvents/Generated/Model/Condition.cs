@@ -52,6 +52,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -70,6 +71,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }
@@ -88,6 +90,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Specifies the value for the key. Currently, this must be the ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

@@ -64,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The execution ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }
@@ -244,6 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The MaxConcurrency value specified by the user when the execution started.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -262,6 +264,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The MaxErrors value specified by the user when the execution started.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -298,6 +301,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The list of execution outputs as defined in the automation document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Outputs
         {
             get { return this._outputs; }
@@ -316,6 +320,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }
@@ -334,6 +339,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The AutomationExecutionId of the parent automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string ParentAutomationExecutionId
         {
             get { return this._parentAutomationExecutionId; }
@@ -446,6 +452,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations
         {
             get { return this._targetLocations; }
@@ -464,6 +471,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The specified key-value mapping of document parameters to target resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
         {
             get { return this._targetMaps; }
@@ -482,6 +490,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=30)]
         public string TargetParameterName
         {
             get { return this._targetParameterName; }
@@ -500,6 +509,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The specified targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

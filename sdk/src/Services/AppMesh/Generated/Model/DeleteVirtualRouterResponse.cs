@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual router that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualRouterData VirtualRouter
         {
             get { return this._virtualRouter; }

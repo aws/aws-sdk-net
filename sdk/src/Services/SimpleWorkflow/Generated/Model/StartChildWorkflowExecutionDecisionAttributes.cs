@@ -147,6 +147,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks. This data isn't sent to the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -179,6 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ExecutionStartToCloseTimeout
         {
             get { return this._executionStartToCloseTimeout; }
@@ -197,6 +199,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The input to be provided to the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -215,6 +218,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The IAM role attached to the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string LambdaRole
         {
             get { return this._lambdaRole; }
@@ -236,6 +240,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// a <a>TagFilter</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> TagList
         {
             get { return this._tagList; }
@@ -327,6 +332,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string TaskStartToCloseTimeout
         {
             get { return this._taskStartToCloseTimeout; }
@@ -352,6 +358,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }
@@ -370,6 +377,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The type of the workflow execution to be started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

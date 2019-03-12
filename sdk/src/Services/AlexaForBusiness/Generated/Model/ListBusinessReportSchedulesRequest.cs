@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The maximum number of schedules listed in the call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The token used to list the remaining schedules from the previous API call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -67,6 +67,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Analytics service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConfigurationType ConfigurationType
         {
             get { return this._configurationType; }
@@ -87,6 +88,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// automatically if <a>ParallelismConfiguration$AutoScalingEnabled</a> is set to <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Parallelism
         {
             get { return this._parallelism.GetValueOrDefault(); }
@@ -108,6 +110,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Kinesis Data Analytics Pricing</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int ParallelismPerKPU
         {
             get { return this._parallelismPerKPU.GetValueOrDefault(); }

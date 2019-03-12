@@ -61,6 +61,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetName.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string BudgetName
         {
             get { return this._budgetName; }

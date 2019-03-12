@@ -41,6 +41,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

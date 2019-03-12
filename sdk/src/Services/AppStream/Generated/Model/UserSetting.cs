@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The action that is enabled or disabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Action Action
         {
             get { return this._action; }
@@ -60,6 +61,7 @@ namespace Amazon.AppStream.Model
         /// Indicates whether the action is enabled or disabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Permission Permission
         {
             get { return this._permission; }

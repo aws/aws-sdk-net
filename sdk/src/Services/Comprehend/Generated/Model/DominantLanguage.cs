@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         /// on the <i>IETF Tools</i> web site.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string LanguageCode
         {
             get { return this._languageCode; }

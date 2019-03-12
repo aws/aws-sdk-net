@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -60,6 +61,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The authorizer identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizerId
         {
             get { return this._authorizerId; }

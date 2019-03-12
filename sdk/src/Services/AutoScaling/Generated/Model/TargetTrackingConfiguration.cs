@@ -101,6 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// The target value for the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double TargetValue
         {
             get { return this._targetValue.GetValueOrDefault(); }

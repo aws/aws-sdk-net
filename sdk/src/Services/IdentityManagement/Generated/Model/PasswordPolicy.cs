@@ -111,6 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// The number of days that an IAM user password is valid.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1095)]
         public int MaxPasswordAge
         {
             get { return this._maxPasswordAge.GetValueOrDefault(); }
@@ -129,6 +130,7 @@ namespace Amazon.IdentityManagement.Model
         /// Minimum length to require for IAM user passwords.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=128)]
         public int MinimumPasswordLength
         {
             get { return this._minimumPasswordLength.GetValueOrDefault(); }
@@ -147,6 +149,7 @@ namespace Amazon.IdentityManagement.Model
         /// Specifies the number of previous passwords that IAM users are prevented from reusing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=24)]
         public int PasswordReusePrevention
         {
             get { return this._passwordReusePrevention.GetValueOrDefault(); }

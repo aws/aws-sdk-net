@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public List<string> ConfigRuleNames
         {
             get { return this._configRuleNames; }

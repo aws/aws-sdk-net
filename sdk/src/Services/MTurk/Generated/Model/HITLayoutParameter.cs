@@ -43,6 +43,7 @@ namespace Amazon.MTurk.Model
         ///  The name of the parameter in the HITLayout. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -61,6 +62,7 @@ namespace Amazon.MTurk.Model
         /// The value substituted for the parameter referenced in the HITLayout. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

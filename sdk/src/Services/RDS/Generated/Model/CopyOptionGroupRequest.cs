@@ -65,6 +65,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceOptionGroupIdentifier
         {
             get { return this._sourceOptionGroupIdentifier; }
@@ -98,6 +99,7 @@ namespace Amazon.RDS.Model
         /// The description for the copied option group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetOptionGroupDescription
         {
             get { return this._targetOptionGroupDescription; }
@@ -140,6 +142,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-option-group</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetOptionGroupIdentifier
         {
             get { return this._targetOptionGroupIdentifier; }

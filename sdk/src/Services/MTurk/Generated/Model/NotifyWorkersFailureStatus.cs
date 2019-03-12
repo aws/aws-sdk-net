@@ -79,6 +79,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the Worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

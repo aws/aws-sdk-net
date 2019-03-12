@@ -51,6 +51,7 @@ namespace Amazon.OpsWorksCM.Model
         /// IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=79)]
         public string BackupId
         {
             get { return this._backupId; }

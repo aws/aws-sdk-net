@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Provides update information for an <a>InputLambdaProcessor</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputLambdaProcessorUpdate InputLambdaProcessorUpdate
         {
             get { return this._inputLambdaProcessorUpdate; }

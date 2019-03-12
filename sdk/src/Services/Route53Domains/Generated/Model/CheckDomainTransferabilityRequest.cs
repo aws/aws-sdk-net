@@ -43,6 +43,7 @@ namespace Amazon.Route53Domains.Model
         /// transfer the domain, the code that you got from the current registrar for the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AuthCode
         {
             get { return this._authCode; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53Domains.Model
         /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

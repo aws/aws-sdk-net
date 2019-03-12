@@ -41,6 +41,7 @@ namespace Amazon.MachineLearning.Model
         /// should be identical to the value of the <code>DataSourceID</code> in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DataSourceId
         {
             get { return this._dataSourceId; }

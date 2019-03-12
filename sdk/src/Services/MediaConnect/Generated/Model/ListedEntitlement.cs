@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property EntitlementArn. The ARN of the entitlement.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntitlementArn
         {
             get { return this._entitlementArn; }
@@ -53,6 +54,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property EntitlementName. The name of the entitlement.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EntitlementName
         {
             get { return this._entitlementName; }

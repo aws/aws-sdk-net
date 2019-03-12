@@ -79,6 +79,7 @@ namespace Amazon.IoT.Model
         /// The hash key name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HashKeyField
         {
             get { return this._hashKeyField; }
@@ -115,6 +116,7 @@ namespace Amazon.IoT.Model
         /// The hash key value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HashKeyValue
         {
             get { return this._hashKeyValue; }
@@ -225,6 +227,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the IAM role that grants access to the DynamoDB table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -243,6 +246,7 @@ namespace Amazon.IoT.Model
         /// The name of the DynamoDB table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

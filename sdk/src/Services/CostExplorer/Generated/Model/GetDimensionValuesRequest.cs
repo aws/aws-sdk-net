@@ -184,6 +184,7 @@ namespace Amazon.CostExplorer.Model
         /// <code>Context</code>. For more information, see <code>Context</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dimension Dimension
         {
             get { return this._dimension; }
@@ -243,6 +244,7 @@ namespace Amazon.CostExplorer.Model
         /// <code>2017-05-01</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateInterval TimePeriod
         {
             get { return this._timePeriod; }

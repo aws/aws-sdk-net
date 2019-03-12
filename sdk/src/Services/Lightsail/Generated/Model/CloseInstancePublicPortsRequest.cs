@@ -50,6 +50,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the instance on which you're attempting to close the public ports.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }
@@ -68,6 +69,7 @@ namespace Amazon.Lightsail.Model
         /// Information about the public port you are trying to close.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortInfo PortInfo
         {
             get { return this._portInfo; }

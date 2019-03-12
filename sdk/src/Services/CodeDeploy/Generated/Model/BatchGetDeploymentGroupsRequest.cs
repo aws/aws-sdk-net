@@ -43,6 +43,7 @@ namespace Amazon.CodeDeploy.Model
         /// or AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeDeploy.Model
         /// The names of the deployment groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DeploymentGroupNames
         {
             get { return this._deploymentGroupNames; }

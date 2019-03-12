@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// The simulation job ARN to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Job
         {
             get { return this._job; }

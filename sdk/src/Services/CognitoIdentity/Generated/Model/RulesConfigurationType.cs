@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Rules are evaluated in order. The first one to match specifies the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<MappingRule> Rules
         {
             get { return this._rules; }

@@ -58,6 +58,7 @@ namespace Amazon.Transfer.Model
         /// SFTP client. An example is <code>/home/<i>username</i> </code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string HomeDirectory
         {
             get { return this._homeDirectory; }
@@ -101,6 +102,7 @@ namespace Amazon.Transfer.Model
         /// your resources when servicing your SFTP user’s transfer requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Role
         {
             get { return this._role; }
@@ -120,6 +122,7 @@ namespace Amazon.Transfer.Model
         /// SFTP server that you added your user to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -139,6 +142,7 @@ namespace Amazon.Transfer.Model
         /// the SFTP server.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string SshPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }
@@ -158,6 +162,7 @@ namespace Amazon.Transfer.Model
         /// attached to users for any purpose.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -177,6 +182,7 @@ namespace Amazon.Transfer.Model
         /// by the <code>ServerId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

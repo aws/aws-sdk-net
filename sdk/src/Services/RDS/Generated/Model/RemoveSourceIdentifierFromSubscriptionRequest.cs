@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         /// identifier</b> for a DB instance or the name of a security group. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }
@@ -62,6 +63,7 @@ namespace Amazon.RDS.Model
         /// from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

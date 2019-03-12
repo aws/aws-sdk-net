@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         /// The URL of the Amazon SQS queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }
@@ -60,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the IAM role that grants access.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

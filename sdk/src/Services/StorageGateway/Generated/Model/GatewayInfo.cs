@@ -45,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// to return a list of gateways for your account and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -64,6 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=30)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -104,6 +106,7 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: DISABLED or ACTIVE
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=25)]
         public string GatewayOperationalState
         {
             get { return this._gatewayOperationalState; }
@@ -122,6 +125,7 @@ namespace Amazon.StorageGateway.Model
         /// The type of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string GatewayType
         {
             get { return this._gatewayType; }

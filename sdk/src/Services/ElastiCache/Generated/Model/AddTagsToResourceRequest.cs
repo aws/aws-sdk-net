@@ -62,6 +62,7 @@ namespace Amazon.ElastiCache.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -81,6 +82,7 @@ namespace Amazon.ElastiCache.Model
         /// pair. A tag key must be accompanied by a tag value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

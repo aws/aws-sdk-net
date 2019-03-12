@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// tags in the email template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=262144)]
         public string TemplateData
         {
             get { return this._templateData; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the template that you want to render.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

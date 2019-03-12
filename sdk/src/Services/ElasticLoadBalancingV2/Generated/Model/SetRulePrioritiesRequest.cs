@@ -47,6 +47,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The rule priorities.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RulePriorityPair> RulePriorities
         {
             get { return this._rulePriorities; }

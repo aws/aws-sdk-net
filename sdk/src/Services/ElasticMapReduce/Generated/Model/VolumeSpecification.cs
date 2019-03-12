@@ -62,6 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// type is EBS-optimized, the minimum value is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SizeInGB
         {
             get { return this._sizeInGB.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The volume type. Volume types supported are gp2, io1, standard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VolumeType
         {
             get { return this._volumeType; }

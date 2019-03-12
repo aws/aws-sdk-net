@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier of the key phrases detection job to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RegexPatternSetId
         {
             get { return this._regexPatternSetId; }

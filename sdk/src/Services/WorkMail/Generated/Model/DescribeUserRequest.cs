@@ -42,6 +42,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the organization under which the user exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the user to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string UserId
         {
             get { return this._userId; }

@@ -45,6 +45,7 @@ namespace Amazon.WorkMail.Model
         /// The value of the email to be updated as primary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=254)]
         public string Email
         {
             get { return this._email; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The entity to update (user, group, or resource).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -81,6 +83,7 @@ namespace Amazon.WorkMail.Model
         /// The organization that contains the entity to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

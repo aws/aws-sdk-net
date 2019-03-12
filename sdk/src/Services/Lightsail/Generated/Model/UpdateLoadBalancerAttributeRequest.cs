@@ -52,6 +52,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the attribute you want to update. Valid values are below.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoadBalancerAttributeName AttributeName
         {
             get { return this._attributeName; }
@@ -70,6 +71,7 @@ namespace Amazon.Lightsail.Model
         /// The value that you want to specify for the attribute name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string AttributeValue
         {
             get { return this._attributeValue; }
@@ -88,6 +90,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

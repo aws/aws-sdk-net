@@ -43,6 +43,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkLink.Model
         /// The name of the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Username
         {
             get { return this._username; }

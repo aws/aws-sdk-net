@@ -55,6 +55,7 @@ namespace Amazon.Kinesis.Model
         /// period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=168)]
         public int RetentionPeriodHours
         {
             get { return this._retentionPeriodHours.GetValueOrDefault(); }
@@ -73,6 +74,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

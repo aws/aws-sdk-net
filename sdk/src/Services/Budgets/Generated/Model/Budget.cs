@@ -85,6 +85,7 @@ namespace Amazon.Budgets.Model
         /// and <code>\</code> characters aren't allowed in <code>BudgetName</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BudgetName
         {
             get { return this._budgetName; }
@@ -103,6 +104,7 @@ namespace Amazon.Budgets.Model
         /// Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public BudgetType BudgetType
         {
             get { return this._budgetType; }
@@ -263,6 +265,7 @@ namespace Amazon.Budgets.Model
         /// is available only for <code>RI_UTILIZATION</code> and <code>RI_COVERAGE</code> budgets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimeUnit TimeUnit
         {
             get { return this._timeUnit; }

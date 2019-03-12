@@ -46,6 +46,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The Kinesis Analytics application name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -66,6 +67,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// have the <code>PutLogEvents</code> policy action enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CloudWatchLoggingOption CloudWatchLoggingOption
         {
             get { return this._cloudWatchLoggingOption; }
@@ -84,6 +86,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The version ID of the Kinesis Analytics application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }

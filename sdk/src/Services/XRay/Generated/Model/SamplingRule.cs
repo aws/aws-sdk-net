@@ -54,6 +54,7 @@ namespace Amazon.XRay.Model
         /// Matches attributes derived from the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -72,6 +73,7 @@ namespace Amazon.XRay.Model
         /// The percentage of matching requests to instrument, after the reservoir is exhausted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public double FixedRate
         {
             get { return this._fixedRate.GetValueOrDefault(); }
@@ -90,6 +92,7 @@ namespace Amazon.XRay.Model
         /// Matches the hostname from a request URL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Host
         {
             get { return this._host; }
@@ -108,6 +111,7 @@ namespace Amazon.XRay.Model
         /// Matches the HTTP method of a request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10)]
         public string HTTPMethod
         {
             get { return this._httpMethod; }
@@ -126,6 +130,7 @@ namespace Amazon.XRay.Model
         /// The priority of the sampling rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=9999)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -146,6 +151,7 @@ namespace Amazon.XRay.Model
         /// using the rule collectively.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int ReservoirSize
         {
             get { return this._reservoirSize.GetValueOrDefault(); }
@@ -164,6 +170,7 @@ namespace Amazon.XRay.Model
         /// Matches the ARN of the AWS resource on which the service runs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -200,6 +207,7 @@ namespace Amazon.XRay.Model
         /// The name of the sampling rule. Specify a rule by either name or ARN, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string RuleName
         {
             get { return this._ruleName; }
@@ -218,6 +226,7 @@ namespace Amazon.XRay.Model
         /// Matches the <code>name</code> that the service uses to identify itself in segments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -236,6 +245,7 @@ namespace Amazon.XRay.Model
         /// Matches the <code>origin</code> that the service uses to identify its type in segments.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string ServiceType
         {
             get { return this._serviceType; }
@@ -254,6 +264,7 @@ namespace Amazon.XRay.Model
         /// Matches the path from a request URL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string URLPath
         {
             get { return this._urlPath; }
@@ -272,6 +283,7 @@ namespace Amazon.XRay.Model
         /// The version of the sampling rule format (<code>1</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

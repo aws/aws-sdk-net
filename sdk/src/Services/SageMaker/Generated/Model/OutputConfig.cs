@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// For example, s3://bucket-name/key-name-prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3OutputLocation
         {
             get { return this._s3OutputLocation; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// For example: ml_c5.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetDevice TargetDevice
         {
             get { return this._targetDevice; }

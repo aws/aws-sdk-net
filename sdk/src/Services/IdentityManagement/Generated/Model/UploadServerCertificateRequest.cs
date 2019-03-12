@@ -117,6 +117,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string CertificateBody
         {
             get { return this._certificateBody; }
@@ -156,6 +157,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }
@@ -192,6 +194,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -230,6 +233,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string PrivateKey
         {
             get { return this._privateKey; }
@@ -255,6 +259,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ServerCertificateName
         {
             get { return this._serverCertificateName; }

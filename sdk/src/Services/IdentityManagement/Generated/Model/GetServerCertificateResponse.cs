@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure containing details about the server certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServerCertificate ServerCertificate
         {
             get { return this._serverCertificate; }

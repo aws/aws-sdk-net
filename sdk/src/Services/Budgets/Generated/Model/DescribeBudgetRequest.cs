@@ -43,6 +43,7 @@ namespace Amazon.Budgets.Model
         /// of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -61,6 +62,7 @@ namespace Amazon.Budgets.Model
         /// The name of the budget that you want a description of.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BudgetName
         {
             get { return this._budgetName; }

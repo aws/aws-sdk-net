@@ -47,6 +47,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The maximum number of identities to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A pagination token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// The directory ID of the AWS directory for which to update the conditional forwarder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// forwarder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DnsIpAddrs
         {
             get { return this._dnsIpAddrs; }
@@ -81,6 +83,7 @@ namespace Amazon.DirectoryService.Model
         /// up a trust relationship.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }

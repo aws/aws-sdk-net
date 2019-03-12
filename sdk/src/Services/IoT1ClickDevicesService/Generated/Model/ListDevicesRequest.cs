@@ -62,6 +62,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// 100 is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -56,6 +56,7 @@ namespace Amazon.ConfigService.Model
         /// A list of AccountAggregationSource object. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public List<AccountAggregationSource> AccountAggregationSources
         {
             get { return this._accountAggregationSources; }
@@ -74,6 +75,7 @@ namespace Amazon.ConfigService.Model
         /// The name of the configuration aggregator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ConfigurationAggregatorName
         {
             get { return this._configurationAggregatorName; }

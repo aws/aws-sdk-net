@@ -52,6 +52,7 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain that you want to enable automatic renewal for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

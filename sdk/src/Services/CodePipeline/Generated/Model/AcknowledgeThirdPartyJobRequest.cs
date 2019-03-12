@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// calling entity is allowed access to the job and its details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// The unique system-generated ID of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string JobId
         {
             get { return this._jobId; }
@@ -82,6 +84,7 @@ namespace Amazon.CodePipeline.Model
         /// <a>GetThirdPartyJobDetails</a> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string Nonce
         {
             get { return this._nonce; }

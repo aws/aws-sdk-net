@@ -44,6 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// A timestamp for when this option was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }
@@ -87,6 +88,7 @@ namespace Amazon.CloudSearch.Model
         /// with the domain's data and cannot be used to index the data. You must either modify
         /// the option value or update or remove the incompatible documents.</li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionState State
         {
             get { return this._state; }
@@ -105,6 +107,7 @@ namespace Amazon.CloudSearch.Model
         /// A timestamp for when this option was last updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdateDate
         {
             get { return this._updateDate.GetValueOrDefault(); }
@@ -123,6 +126,7 @@ namespace Amazon.CloudSearch.Model
         /// A unique integer that indicates when this option was last updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int UpdateVersion
         {
             get { return this._updateVersion.GetValueOrDefault(); }

@@ -45,6 +45,7 @@ namespace Amazon.DLM.Model
         /// A description of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -104,6 +105,7 @@ namespace Amazon.DLM.Model
         /// The identifier of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyId
         {
             get { return this._policyId; }

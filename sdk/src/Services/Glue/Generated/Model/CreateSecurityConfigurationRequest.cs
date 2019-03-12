@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The encryption configuration for the new security configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionConfiguration EncryptionConfiguration
         {
             get { return this._encryptionConfiguration; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// The name for the new security configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

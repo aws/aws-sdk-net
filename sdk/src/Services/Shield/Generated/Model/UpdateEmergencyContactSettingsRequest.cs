@@ -42,6 +42,7 @@ namespace Amazon.Shield.Model
         /// A list of email addresses that the DRT can use to contact you during a suspected attack.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<EmergencyContact> EmergencyContactList
         {
             get { return this._emergencyContactList; }

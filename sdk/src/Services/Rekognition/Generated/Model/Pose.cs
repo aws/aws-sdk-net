@@ -42,6 +42,7 @@ namespace Amazon.Rekognition.Model
         /// Value representing the face rotation on the pitch axis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-180, Max=180)]
         public float Pitch
         {
             get { return this._pitch.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Rekognition.Model
         /// Value representing the face rotation on the roll axis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-180, Max=180)]
         public float Roll
         {
             get { return this._roll.GetValueOrDefault(); }
@@ -78,6 +80,7 @@ namespace Amazon.Rekognition.Model
         /// Value representing the face rotation on the yaw axis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-180, Max=180)]
         public float Yaw
         {
             get { return this._yaw.GetValueOrDefault(); }

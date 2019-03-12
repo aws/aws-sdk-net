@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

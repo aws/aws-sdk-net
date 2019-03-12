@@ -50,6 +50,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The ARN of the provisioned product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -105,6 +106,7 @@ namespace Amazon.ServiceCatalog.Model
         /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IdempotencyToken
         {
             get { return this._idempotencyToken; }
@@ -141,6 +143,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The user-friendly name of the provisioned product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Name
         {
             get { return this._name; }
@@ -159,6 +162,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -177,6 +181,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }

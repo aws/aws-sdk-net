@@ -82,6 +82,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the usage plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

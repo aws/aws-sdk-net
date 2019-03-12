@@ -61,6 +61,7 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyName
         {
             get { return this._policyName; }

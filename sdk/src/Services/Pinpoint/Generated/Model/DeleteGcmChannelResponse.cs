@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property GCMChannelResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public GCMChannelResponse GCMChannelResponse
         {
             get { return this._gcmChannelResponse; }

@@ -52,6 +52,7 @@ namespace Amazon.PinpointEmail.Model
         /// to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -70,6 +71,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the event destination that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventDestinationName
         {
             get { return this._eventDestinationName; }

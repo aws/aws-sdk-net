@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         /// The status of the updated Elasticsearch domain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ElasticsearchDomainConfig DomainConfig
         {
             get { return this._domainConfig; }

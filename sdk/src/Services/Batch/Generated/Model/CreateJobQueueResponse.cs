@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueueArn
         {
             get { return this._jobQueueArn; }
@@ -59,6 +60,7 @@ namespace Amazon.Batch.Model
         /// The name of the job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueueName
         {
             get { return this._jobQueueName; }

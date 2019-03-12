@@ -41,6 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// The updated note text.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }
@@ -59,6 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// The principal that updated the note.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdatedBy
         {
             get { return this._updatedBy; }

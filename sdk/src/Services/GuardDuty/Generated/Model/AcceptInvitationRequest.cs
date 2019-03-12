@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector of the GuardDuty
         /// member account.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -57,6 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property InvitationId. This value is used to validate the master
         /// account to the member account.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InvitationId
         {
             get { return this._invitationId; }
@@ -73,6 +75,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property MasterId. The account ID of the master GuardDuty account
         /// whose invitation you're accepting.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterId
         {
             get { return this._masterId; }

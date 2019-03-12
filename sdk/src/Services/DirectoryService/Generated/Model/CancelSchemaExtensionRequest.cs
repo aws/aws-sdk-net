@@ -45,6 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory whose schema extension will be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -63,6 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the schema extension that will be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaExtensionId
         {
             get { return this._schemaExtensionId; }

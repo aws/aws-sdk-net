@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// the form <code>df-297EG78HU43EEXAMPLE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.DataPipeline.Model
         /// The name of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

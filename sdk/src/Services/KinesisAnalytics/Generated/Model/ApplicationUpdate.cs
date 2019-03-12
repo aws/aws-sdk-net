@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Describes application code updates.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string ApplicationCodeUpdate
         {
             get { return this._applicationCodeUpdate; }

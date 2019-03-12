@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
         /// hyperparameters that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<CategoricalParameterRange> CategoricalParameterRanges
         {
             get { return this._categoricalParameterRanges; }
@@ -74,6 +75,7 @@ namespace Amazon.SageMaker.Model
         /// hyperparameters that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<ContinuousParameterRange> ContinuousParameterRanges
         {
             get { return this._continuousParameterRanges; }
@@ -93,6 +95,7 @@ namespace Amazon.SageMaker.Model
         /// that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public List<IntegerParameterRange> IntegerParameterRanges
         {
             get { return this._integerParameterRanges; }

@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// health checker that is reporting a last failure reason. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HealthCheckObservation> HealthCheckObservations
         {
             get { return this._healthCheckObservations; }

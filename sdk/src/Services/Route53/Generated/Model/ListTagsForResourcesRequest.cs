@@ -57,6 +57,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TagResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -76,6 +77,7 @@ namespace Amazon.Route53.Model
         /// want to get a list of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> ResourceIds
         {
             get { return this._resourceIds; }

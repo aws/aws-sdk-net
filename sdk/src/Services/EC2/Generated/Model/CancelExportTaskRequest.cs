@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportTaskId
         {
             get { return this._exportTaskId; }

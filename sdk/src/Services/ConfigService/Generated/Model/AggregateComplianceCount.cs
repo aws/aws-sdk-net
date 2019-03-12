@@ -60,6 +60,7 @@ namespace Amazon.ConfigService.Model
         /// The 12-digit account ID or region based on the GroupByKey value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string GroupName
         {
             get { return this._groupName; }

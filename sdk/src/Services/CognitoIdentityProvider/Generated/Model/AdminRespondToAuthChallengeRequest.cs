@@ -71,6 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The challenge name. For more information, see .
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChallengeNameType ChallengeName
         {
             get { return this._challengeName; }
@@ -137,6 +138,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -178,6 +180,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// API call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }
@@ -196,6 +199,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the Amazon Cognito user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

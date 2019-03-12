@@ -48,6 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// The unique identifier for the SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string SSHPublicKeyId
         {
             get { return this._sshPublicKeyId; }
@@ -68,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// that the key cannot be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -87,6 +89,7 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the SSH public key was uploaded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UploadDate
         {
             get { return this._uploadDate.GetValueOrDefault(); }
@@ -105,6 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the IAM user associated with the SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

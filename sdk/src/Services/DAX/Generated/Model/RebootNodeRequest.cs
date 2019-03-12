@@ -43,6 +43,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX cluster containing the node to be rebooted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -61,6 +62,7 @@ namespace Amazon.DAX.Model
         /// The system-assigned ID of the node to be rebooted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NodeId
         {
             get { return this._nodeId; }

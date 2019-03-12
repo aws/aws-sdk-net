@@ -51,6 +51,7 @@ namespace Amazon.IdentityManagement.Model
         /// The MD5 message digest of the SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=48, Max=48)]
         public string Fingerprint
         {
             get { return this._fingerprint; }
@@ -69,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// The SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string SSHPublicKeyBody
         {
             get { return this._sshPublicKeyBody; }
@@ -87,6 +89,7 @@ namespace Amazon.IdentityManagement.Model
         /// The unique identifier for the SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string SSHPublicKeyId
         {
             get { return this._sshPublicKeyId; }
@@ -107,6 +110,7 @@ namespace Amazon.IdentityManagement.Model
         /// that the key cannot be used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -144,6 +148,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the IAM user associated with the SSH public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

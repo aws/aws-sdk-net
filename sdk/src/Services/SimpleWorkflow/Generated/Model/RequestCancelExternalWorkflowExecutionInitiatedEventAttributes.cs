@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -66,6 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -84,6 +86,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>runId</code> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -102,6 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>workflowId</code> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

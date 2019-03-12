@@ -59,6 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -77,6 +78,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogStreamName
         {
             get { return this._logStreamName; }

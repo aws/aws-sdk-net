@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The parameter key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Key
         {
             get { return this._key; }
@@ -79,6 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string Value
         {
             get { return this._value; }

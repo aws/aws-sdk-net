@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The security profile that is attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the target (thing group) to which the security profile is attached.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecurityProfileTargetArn
         {
             get { return this._securityProfileTargetArn; }

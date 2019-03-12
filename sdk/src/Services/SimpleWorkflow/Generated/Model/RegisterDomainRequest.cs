@@ -74,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// A text description of the domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Also, it must not contain the literal string <code>arn</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -132,6 +134,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public string WorkflowExecutionRetentionPeriodInDays
         {
             get { return this._workflowExecutionRetentionPeriodInDays; }

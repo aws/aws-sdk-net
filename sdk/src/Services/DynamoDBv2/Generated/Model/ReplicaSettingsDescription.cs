@@ -47,6 +47,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The region name of the replica.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RegionName
         {
             get { return this._regionName; }
@@ -121,6 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ReplicaProvisionedReadCapacityUnits
         {
             get { return this._replicaProvisionedReadCapacityUnits.GetValueOrDefault(); }
@@ -159,6 +161,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long ReplicaProvisionedWriteCapacityUnits
         {
             get { return this._replicaProvisionedWriteCapacityUnits.GetValueOrDefault(); }

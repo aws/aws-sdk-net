@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure that contains details about the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Group Group
         {
             get { return this._group; }
@@ -86,6 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -104,6 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of users in the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<User> Users
         {
             get { return this._users; }

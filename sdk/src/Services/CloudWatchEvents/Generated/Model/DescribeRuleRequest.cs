@@ -47,6 +47,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

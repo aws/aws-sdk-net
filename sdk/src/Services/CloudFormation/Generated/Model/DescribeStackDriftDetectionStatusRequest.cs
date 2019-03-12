@@ -62,6 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// for any given stack, and for how long, may vary. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string StackDriftDetectionId
         {
             get { return this._stackDriftDetectionId; }

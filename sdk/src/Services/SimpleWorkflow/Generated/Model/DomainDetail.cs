@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The domain configuration. Currently, this includes only the domain's retention period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainConfiguration Configuration
         {
             get { return this._configuration; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The basic information about a domain, such as its name, status, and description.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainInfo DomainInfo
         {
             get { return this._domainInfo; }

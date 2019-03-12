@@ -65,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -113,6 +114,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -139,6 +141,7 @@ namespace Amazon.CloudFormation.Model
         /// <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

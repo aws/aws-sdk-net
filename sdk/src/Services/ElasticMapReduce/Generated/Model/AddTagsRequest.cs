@@ -71,6 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// a cluster identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -91,6 +92,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// of 128 characters, and an optional value string with a maximum of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

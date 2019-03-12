@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint from which the route is to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }
@@ -64,6 +65,7 @@ namespace Amazon.EC2.Model
         /// The IPv4 address range, in CIDR notation, of the route to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }

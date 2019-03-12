@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// The Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -81,6 +82,7 @@ namespace Amazon.IoT.Model
         /// The object key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -99,6 +101,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the IAM role that grants access.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }

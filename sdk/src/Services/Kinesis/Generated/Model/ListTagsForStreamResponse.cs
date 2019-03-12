@@ -42,6 +42,7 @@ namespace Amazon.Kinesis.Model
         /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool HasMoreTags
         {
             get { return this._hasMoreTags.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.Kinesis.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public List<Tag> Tags
         {
             get { return this._tags; }

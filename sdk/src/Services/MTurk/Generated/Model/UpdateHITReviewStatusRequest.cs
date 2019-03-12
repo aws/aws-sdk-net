@@ -44,6 +44,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the HIT to update. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }

@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// sent invitations to the current member account that you want to decline invitations
         /// from.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

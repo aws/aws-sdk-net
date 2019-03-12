@@ -42,6 +42,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AWSKMSKeyARN
         {
             get { return this._awskmsKeyARN; }

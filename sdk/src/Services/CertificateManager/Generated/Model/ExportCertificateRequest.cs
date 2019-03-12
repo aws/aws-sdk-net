@@ -57,6 +57,7 @@ namespace Amazon.CertificateManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -81,6 +82,7 @@ namespace Amazon.CertificateManager.Model
         ///  <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=128)]
         public MemoryStream Passphrase
         {
             get { return this._passphrase; }

@@ -43,6 +43,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The date when the placement was originally created, in UNIX epoch time format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedDate
         {
             get { return this._createdDate.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the placement being summarized.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PlacementName
         {
             get { return this._placementName; }
@@ -79,6 +81,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project containing the placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }
@@ -99,6 +102,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// same.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdatedDate
         {
             get { return this._updatedDate.GetValueOrDefault(); }

@@ -47,6 +47,7 @@ namespace Amazon.Lightsail.Model
         /// The end time of the period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -214,6 +216,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoadBalancerMetricName MetricName
         {
             get { return this._metricName; }
@@ -232,6 +235,7 @@ namespace Amazon.Lightsail.Model
         /// The granularity, in seconds, of the returned data points.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=86400)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -250,6 +254,7 @@ namespace Amazon.Lightsail.Model
         /// The start time of the period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -297,6 +302,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Statistics
         {
             get { return this._statistics; }
@@ -315,6 +321,7 @@ namespace Amazon.Lightsail.Model
         /// The unit for the time period request. Valid values are listed below.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricUnit Unit
         {
             get { return this._unit; }

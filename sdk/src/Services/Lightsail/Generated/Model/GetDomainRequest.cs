@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The domain name for which your want to return information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

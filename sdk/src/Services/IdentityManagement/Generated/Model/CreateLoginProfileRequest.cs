@@ -72,6 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// certain characters because they have special meaning within that tool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }
@@ -114,6 +115,7 @@ namespace Amazon.IdentityManagement.Model
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

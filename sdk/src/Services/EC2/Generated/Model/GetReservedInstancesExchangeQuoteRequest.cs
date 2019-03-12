@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Convertible Reserved Instances to exchange.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ReservedInstanceIds
         {
             get { return this._reservedInstanceIds; }

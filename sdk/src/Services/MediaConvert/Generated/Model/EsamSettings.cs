@@ -62,6 +62,7 @@ namespace Amazon.MediaConvert.Model
         /// message is less than this value, then the transcoder places the SCTE-35 marker at
         /// the beginning of the stream.
         /// </summary>
+        [AWSProperty(Min=0, Max=30000)]
         public int ResponseSignalPreroll
         {
             get { return this._responseSignalPreroll.GetValueOrDefault(); }

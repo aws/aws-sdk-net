@@ -48,6 +48,7 @@ namespace Amazon.MTurk.Model
         /// specification for a HIT type. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NotificationSpecification Notification
         {
             get { return this._notification; }
@@ -68,6 +69,7 @@ namespace Amazon.MTurk.Model
         /// type. The notification specification does not filter out the test event. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventType TestEventType
         {
             get { return this._testEventType; }

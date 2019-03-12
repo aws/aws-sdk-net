@@ -42,6 +42,7 @@ namespace Amazon.Comprehend.Model
         /// with the <code>DescribeTopicDetectionJob</code> operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

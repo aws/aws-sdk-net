@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -81,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The value of the objective metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public float Value
         {
             get { return this._value.GetValueOrDefault(); }

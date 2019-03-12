@@ -107,6 +107,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ModelPackageDescription
         {
             get { return this._modelPackageDescription; }
@@ -126,6 +127,7 @@ namespace Amazon.SageMaker.Model
         /// are a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

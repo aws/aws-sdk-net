@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the cluster that you want to cancel a resize operation for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

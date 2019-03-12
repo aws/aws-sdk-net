@@ -84,6 +84,7 @@ namespace Amazon.ECS.Model
         /// Remote API</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Command
         {
             get { return this._command; }

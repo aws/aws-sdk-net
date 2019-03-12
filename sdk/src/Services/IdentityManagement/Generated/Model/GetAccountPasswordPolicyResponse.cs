@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// A structure that contains details about the account's password policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PasswordPolicy PasswordPolicy
         {
             get { return this._passwordPolicy; }

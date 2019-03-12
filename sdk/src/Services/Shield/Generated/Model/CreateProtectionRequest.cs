@@ -53,6 +53,7 @@ namespace Amazon.Shield.Model
         /// Friendly name for the <code>Protection</code> you are creating.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -106,6 +107,7 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -48,6 +48,7 @@ namespace Amazon.Rekognition.Model
         /// The highest estimated age.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int High
         {
             get { return this._high.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.Rekognition.Model
         /// The lowest estimated age.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Low
         {
             get { return this._low.GetValueOrDefault(); }

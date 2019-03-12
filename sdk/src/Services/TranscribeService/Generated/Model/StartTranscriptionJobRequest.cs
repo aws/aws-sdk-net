@@ -47,6 +47,7 @@ namespace Amazon.TranscribeService.Model
         /// The language code for the language used in the input media file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -65,6 +66,7 @@ namespace Amazon.TranscribeService.Model
         /// An object that describes the input media for a transcription job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Media Media
         {
             get { return this._media; }
@@ -83,6 +85,7 @@ namespace Amazon.TranscribeService.Model
         /// The format of the input media file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MediaFormat MediaFormat
         {
             get { return this._mediaFormat; }
@@ -101,6 +104,7 @@ namespace Amazon.TranscribeService.Model
         /// The sample rate, in Hertz, of the audio track in the input media file. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8000, Max=48000)]
         public int MediaSampleRateHertz
         {
             get { return this._mediaSampleRateHertz.GetValueOrDefault(); }
@@ -173,6 +177,7 @@ namespace Amazon.TranscribeService.Model
         /// as the job name. The name must also be unique within an AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string TranscriptionJobName
         {
             get { return this._transcriptionJobName; }

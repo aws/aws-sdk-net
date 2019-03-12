@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The port on which the EC2 instance is listening.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
         public int InstancePort
         {
             get { return this._instancePort.GetValueOrDefault(); }

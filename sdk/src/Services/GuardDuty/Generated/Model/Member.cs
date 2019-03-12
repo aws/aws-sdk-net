@@ -43,6 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -73,6 +74,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Email. Member account's email address.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Email
         {
             get { return this._email; }
@@ -103,6 +105,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MasterId.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MasterId
         {
             get { return this._masterId; }
@@ -119,6 +122,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property RelationshipStatus. The status of the relationship between
         /// the member and the master.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationshipStatus
         {
             get { return this._relationshipStatus; }
@@ -134,6 +138,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdatedAt
         {
             get { return this._updatedAt; }

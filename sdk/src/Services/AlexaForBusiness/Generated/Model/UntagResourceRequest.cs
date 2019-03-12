@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the resource from which to remove metadata tags. Required. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

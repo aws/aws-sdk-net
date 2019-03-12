@@ -54,6 +54,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionCategory Category
         {
             get { return this._category; }
@@ -80,6 +81,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<ActionConfigurationProperty> ConfigurationProperties
         {
             get { return this._configurationProperties; }
@@ -98,6 +100,7 @@ namespace Amazon.CodePipeline.Model
         /// The details of the input artifact for the action, such as its commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactDetails InputArtifactDetails
         {
             get { return this._inputArtifactDetails; }
@@ -116,6 +119,7 @@ namespace Amazon.CodePipeline.Model
         /// The details of the output artifact of the action, such as its commit ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ArtifactDetails OutputArtifactDetails
         {
             get { return this._outputArtifactDetails; }
@@ -134,6 +138,7 @@ namespace Amazon.CodePipeline.Model
         /// The provider of the service used in the custom action, such as AWS CodeDeploy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public string Provider
         {
             get { return this._provider; }
@@ -170,6 +175,7 @@ namespace Amazon.CodePipeline.Model
         /// The version identifier of the custom action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=9)]
         public string Version
         {
             get { return this._version; }

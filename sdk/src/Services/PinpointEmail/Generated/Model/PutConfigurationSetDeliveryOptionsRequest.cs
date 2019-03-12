@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that you want to associate with a dedicated IP pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

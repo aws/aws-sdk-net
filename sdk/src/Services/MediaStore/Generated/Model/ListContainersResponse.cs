@@ -41,6 +41,7 @@ namespace Amazon.MediaStore.Model
         /// The names of the containers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Container> Containers
         {
             get { return this._containers; }
@@ -61,6 +62,7 @@ namespace Amazon.MediaStore.Model
         /// original command, and only if there are still containers to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

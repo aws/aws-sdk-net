@@ -46,6 +46,7 @@ namespace Amazon.CertificateManager.Model
         /// or <code>example.com</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -84,6 +85,7 @@ namespace Amazon.CertificateManager.Model
         /// The domain name that ACM used to send domain validation emails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=253)]
         public string ValidationDomain
         {
             get { return this._validationDomain; }

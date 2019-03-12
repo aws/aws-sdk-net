@@ -68,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more associations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<CreateAssociationBatchRequestEntry> Entries
         {
             get { return this._entries; }

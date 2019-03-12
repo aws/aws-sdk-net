@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// when there are no more results to return. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of robots that meet the criteria of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public List<Robot> Robots
         {
             get { return this._robots; }

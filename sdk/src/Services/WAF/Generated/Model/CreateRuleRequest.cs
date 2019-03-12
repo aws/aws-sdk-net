@@ -103,6 +103,7 @@ namespace Amazon.WAF.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -123,6 +124,7 @@ namespace Amazon.WAF.Model
         /// space. You can't change the name of the metric after you create the <code>Rule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -142,6 +144,7 @@ namespace Amazon.WAF.Model
         /// <code>Rule</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

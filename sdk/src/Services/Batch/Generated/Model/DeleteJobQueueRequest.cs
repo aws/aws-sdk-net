@@ -49,6 +49,7 @@ namespace Amazon.Batch.Model
         /// The short name or full Amazon Resource Name (ARN) of the queue to delete. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueue
         {
             get { return this._jobQueue; }

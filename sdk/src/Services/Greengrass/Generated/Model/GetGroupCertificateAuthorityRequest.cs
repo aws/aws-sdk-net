@@ -39,6 +39,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityId. The ID of the certificate authority.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateAuthorityId
         {
             get { return this._certificateAuthorityId; }
@@ -54,6 +55,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property GroupId. The ID of the Greengrass group.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }

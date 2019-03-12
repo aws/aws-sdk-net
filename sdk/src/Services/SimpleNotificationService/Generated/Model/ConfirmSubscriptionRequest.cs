@@ -97,6 +97,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Token
         {
             get { return this._token; }
@@ -115,6 +116,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic for which you wish to confirm a subscription.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

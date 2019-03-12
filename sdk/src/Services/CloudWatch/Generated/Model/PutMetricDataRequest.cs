@@ -97,6 +97,7 @@ namespace Amazon.CloudWatch.Model
         /// The data for the metric. The array can include no more than 20 metrics per call.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<MetricDatum> MetricData
         {
             get { return this._metricData; }
@@ -120,6 +121,7 @@ namespace Amazon.CloudWatch.Model
         /// "AWS/" are reserved for use by Amazon Web Services products.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }

@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// disabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DisabledReason
         {
             get { return this._disabledReason; }

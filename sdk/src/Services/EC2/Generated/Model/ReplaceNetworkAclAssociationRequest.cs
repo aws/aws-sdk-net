@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// The ID of the current association between the original network ACL and the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -68,6 +69,7 @@ namespace Amazon.EC2.Model
         /// The ID of the new network ACL to associate with the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkAclId
         {
             get { return this._networkAclId; }

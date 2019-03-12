@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         /// Message describing the failures that occurred during file system creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Message
         {
             get { return this._message; }

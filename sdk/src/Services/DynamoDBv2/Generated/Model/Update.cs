@@ -101,6 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and a value for that attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }
@@ -139,6 +140,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the table for the <code>UpdateItem</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }
@@ -158,6 +160,7 @@ namespace Amazon.DynamoDBv2.Model
         /// performed on them, and new value(s) for them.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UpdateExpression
         {
             get { return this._updateExpression; }

@@ -41,6 +41,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -59,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// The field value, expressed as a String.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10240)]
         public string StringValue
         {
             get { return this._stringValue; }

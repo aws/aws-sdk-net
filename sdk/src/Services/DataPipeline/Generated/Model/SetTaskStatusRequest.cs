@@ -51,6 +51,7 @@ namespace Amazon.DataPipeline.Model
         /// the user. It should not start with string "Service_" which is reserved by the system.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ErrorId
         {
             get { return this._errorId; }
@@ -91,6 +92,7 @@ namespace Amazon.DataPipeline.Model
         /// error information to the user. The web service does not parse this value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ErrorStackTrace
         {
             get { return this._errorStackTrace; }
@@ -110,6 +112,7 @@ namespace Amazon.DataPipeline.Model
         /// for <a>PollForTask</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TaskId
         {
             get { return this._taskId; }
@@ -129,6 +132,7 @@ namespace Amazon.DataPipeline.Model
         /// the task ended unsuccessfully. Preconditions use false.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskStatus TaskStatus
         {
             get { return this._taskStatus; }

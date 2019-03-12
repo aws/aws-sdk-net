@@ -43,6 +43,7 @@ namespace Amazon.KinesisVideo.Model
         /// set of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisVideo.Model
         /// A map of tag keys and values associated with the specified stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -95,6 +95,7 @@ namespace Amazon.CodePipeline.Model
         /// The AWS Region for the action, such as us-east-1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=30)]
         public string Region
         {
             get { return this._region; }
@@ -114,6 +115,7 @@ namespace Amazon.CodePipeline.Model
         /// through the roleArn for the pipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string RoleArn
         {
             get { return this._roleArn; }

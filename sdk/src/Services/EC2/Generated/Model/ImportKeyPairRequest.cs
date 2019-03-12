@@ -68,6 +68,7 @@ namespace Amazon.EC2.Model
         /// A unique name for the key pair.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyName
         {
             get { return this._keyName; }
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// base64 encoding is performed for you.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublicKeyMaterial
         {
             get { return this._publicKeyMaterial; }

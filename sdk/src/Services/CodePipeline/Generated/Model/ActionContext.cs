@@ -40,6 +40,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action within the context of a job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

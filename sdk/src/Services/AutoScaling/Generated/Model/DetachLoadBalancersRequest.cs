@@ -55,6 +55,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -73,6 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// The names of the load balancers. You can specify up to 10 load balancers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> LoadBalancerNames
         {
             get { return this._loadBalancerNames; }

@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the Amazon S3 bucket created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }

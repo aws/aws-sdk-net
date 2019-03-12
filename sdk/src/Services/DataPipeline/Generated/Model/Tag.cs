@@ -45,6 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -65,6 +66,7 @@ namespace Amazon.DataPipeline.Model
         /// User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -151,6 +151,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to update run-time configuration for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -173,6 +174,7 @@ namespace Amazon.GameLift.Model
         /// of concurrent processes with that configuration to maintain on each instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuntimeConfiguration RuntimeConfiguration
         {
             get { return this._runtimeConfiguration; }

@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The association IDs that you want to execute immediately and only one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> AssociationIds
         {
             get { return this._associationIds; }

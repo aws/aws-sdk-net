@@ -73,6 +73,7 @@ namespace Amazon.Textract.Model
         /// of bytes is 5 MB.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5242880)]
         public MemoryStream Bytes
         {
             get { return this._bytes; }

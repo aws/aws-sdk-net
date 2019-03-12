@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The device key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string DeviceKey
         {
             get { return this._deviceKey; }

@@ -252,6 +252,7 @@ namespace Amazon.EC2.Model
         /// or underscores(_)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

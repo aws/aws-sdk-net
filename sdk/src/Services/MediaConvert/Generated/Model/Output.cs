@@ -119,6 +119,7 @@ namespace Amazon.MediaConvert.Model
         /// or $Time$ in one output, you must use them in the same way in all outputs of the output
         /// group.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NameModifier
         {
             get { return this._nameModifier; }
@@ -151,6 +152,7 @@ namespace Amazon.MediaConvert.Model
         /// transcoding settings. Provide the system or custom preset name. You can specify either
         /// Preset (Preset) or Container settings (ContainerSettings), but not both.
         /// </summary>
+        [AWSProperty(Min=0)]
         public string Preset
         {
             get { return this._preset; }

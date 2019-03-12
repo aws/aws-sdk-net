@@ -52,6 +52,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the assignment for which this bonus is paid.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }
@@ -72,6 +73,7 @@ namespace Amazon.MTurk.Model
         /// symbols or currency codes. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BonusAmount
         {
             get { return this._bonusAmount; }
@@ -91,6 +93,7 @@ namespace Amazon.MTurk.Model
         /// bonus can see this message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Reason
         {
             get { return this._reason; }
@@ -113,6 +116,7 @@ namespace Amazon.MTurk.Model
         /// subsequent calls will return an error with a message containing the request ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UniqueRequestToken
         {
             get { return this._uniqueRequestToken; }
@@ -131,6 +135,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Worker being paid the bonus.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

@@ -86,6 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application associated with this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -104,6 +105,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The URL to the CNAME for this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CNAME
         {
             get { return this._cname; }
@@ -158,6 +160,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Describes this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -250,6 +253,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -426,6 +430,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the configuration template used to originally launch this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }
@@ -462,6 +467,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The application version deployed in this environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string VersionLabel
         {
             get { return this._versionLabel; }

@@ -107,6 +107,7 @@ namespace Amazon.AppStream.Model
         /// The description to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -125,6 +126,7 @@ namespace Amazon.AppStream.Model
         /// The stack name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -144,6 +146,7 @@ namespace Amazon.AppStream.Model
         /// no URL is specified, no Send Feedback link is displayed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string FeedbackURL
         {
             get { return this._feedbackURL; }
@@ -162,6 +165,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -180,6 +184,7 @@ namespace Amazon.AppStream.Model
         /// The URL that users are redirected to after their streaming session ends.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string RedirectURL
         {
             get { return this._redirectURL; }
@@ -217,6 +222,7 @@ namespace Amazon.AppStream.Model
         /// By default, these actions are enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<UserSetting> UserSettings
         {
             get { return this._userSettings; }

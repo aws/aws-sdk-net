@@ -42,6 +42,7 @@ namespace Amazon.Rekognition.Model
         /// Level of confidence in the determination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }

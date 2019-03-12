@@ -70,6 +70,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackDriftDetectionStatus DetectionStatus
         {
             get { return this._detectionStatus; }
@@ -132,6 +133,7 @@ namespace Amazon.CloudFormation.Model
         /// any given stack, and for how long, may vary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string StackDriftDetectionId
         {
             get { return this._stackDriftDetectionId; }
@@ -189,6 +191,7 @@ namespace Amazon.CloudFormation.Model
         /// The ID of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }
@@ -207,6 +210,7 @@ namespace Amazon.CloudFormation.Model
         /// Time at which the stack drift detection operation was initiated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

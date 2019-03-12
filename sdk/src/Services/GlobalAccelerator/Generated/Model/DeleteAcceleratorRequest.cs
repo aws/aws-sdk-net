@@ -42,6 +42,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of an accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }

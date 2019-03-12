@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the destination Amazon Kinesis stream to write to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// stream on your behalf. You need to grant the necessary permissions to this role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }

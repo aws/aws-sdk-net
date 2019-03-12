@@ -132,6 +132,7 @@ namespace Amazon.AutoScaling.Model
         /// adds to the current capacity while a negative number removes from the current capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ScalingAdjustment
         {
             get { return this._scalingAdjustment.GetValueOrDefault(); }

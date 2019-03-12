@@ -145,6 +145,7 @@ namespace Amazon.GameLift.Model
         /// List of actions to suspend on the fleet. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Actions
         {
             get { return this._actions; }
@@ -163,6 +164,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }

@@ -82,6 +82,7 @@ namespace Amazon.ECS.Model
         /// A list of up to 100 task IDs or full ARN entries.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Tasks
         {
             get { return this._tasks; }

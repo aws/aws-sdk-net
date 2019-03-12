@@ -136,6 +136,7 @@ namespace Amazon.EC2.Model
         /// The name of the launch template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string LaunchTemplateName
         {
             get { return this._launchTemplateName; }

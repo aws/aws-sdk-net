@@ -104,6 +104,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The Amazon Resource Name (ARN) for the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -165,6 +166,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Your Own Domain for the Hosted UI</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string CustomDomain
         {
             get { return this._customDomain; }
@@ -201,6 +203,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Holds the domain prefix if the user pool has a domain associated with it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string Domain
         {
             get { return this._domain; }
@@ -255,6 +258,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The contents of the email verification message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=20000)]
         public string EmailVerificationMessage
         {
             get { return this._emailVerificationMessage; }
@@ -273,6 +277,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The subject of the email verification message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string EmailVerificationSubject
         {
             get { return this._emailVerificationSubject; }
@@ -309,6 +314,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The ID of the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=55)]
         public string Id
         {
             get { return this._id; }
@@ -396,6 +402,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The name of the user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -432,6 +439,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A container with the schema attributes of a user pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<SchemaAttributeType> SchemaAttributes
         {
             get { return this._schemaAttributes; }
@@ -450,6 +458,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The contents of the SMS authentication message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=140)]
         public string SmsAuthenticationMessage
         {
             get { return this._smsAuthenticationMessage; }
@@ -504,6 +513,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The contents of the SMS verification message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=140)]
         public string SmsVerificationMessage
         {
             get { return this._smsVerificationMessage; }

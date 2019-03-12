@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the notification target to which alerts are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AlertTargetArn
         {
             get { return this._alertTargetArn; }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the role that grants permission to send alerts to the notification target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

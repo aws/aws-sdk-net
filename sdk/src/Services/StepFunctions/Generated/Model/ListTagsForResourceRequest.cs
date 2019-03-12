@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

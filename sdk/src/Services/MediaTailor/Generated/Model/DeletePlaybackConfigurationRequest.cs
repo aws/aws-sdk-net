@@ -41,6 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// The identifier for the playback configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

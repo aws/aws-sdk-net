@@ -101,6 +101,7 @@ namespace Amazon.Polly.Model
         /// the language of the voice. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> LexiconNames
         {
             get { return this._lexiconNames; }
@@ -220,6 +221,7 @@ namespace Amazon.Polly.Model
         /// The type of speech marks returned for the input text.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4)]
         public List<string> SpeechMarkTypes
         {
             get { return this._speechMarkTypes; }
@@ -238,6 +240,7 @@ namespace Amazon.Polly.Model
         /// The Amazon Polly generated identifier for a speech synthesis task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TaskId
         {
             get { return this._taskId; }

@@ -41,6 +41,7 @@ namespace Amazon.CertificateManager.Model
         /// Resource Name (ARN)</a> of the imported certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

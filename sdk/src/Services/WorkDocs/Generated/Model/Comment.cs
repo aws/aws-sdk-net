@@ -48,6 +48,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string CommentId
         {
             get { return this._commentId; }
@@ -102,6 +103,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the parent comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentId
         {
             get { return this._parentId; }
@@ -121,6 +123,7 @@ namespace Amazon.WorkDocs.Model
         /// ID of the user being replied to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string RecipientId
         {
             get { return this._recipientId; }
@@ -157,6 +160,7 @@ namespace Amazon.WorkDocs.Model
         /// The text of the comment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Text
         {
             get { return this._text; }
@@ -175,6 +179,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the root comment in the thread.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThreadId
         {
             get { return this._threadId; }

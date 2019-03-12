@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement.Model
         /// Information about the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SigningCertificate Certificate
         {
             get { return this._certificate; }

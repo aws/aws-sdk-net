@@ -44,6 +44,7 @@ namespace Amazon.DeviceFarm.Model
         /// The upload's content type (for example, "application/octet-stream").
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -65,6 +66,7 @@ namespace Amazon.DeviceFarm.Model
         /// all others, the file name must end with the <code>.zip</code> file extension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -83,6 +85,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the project for the upload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string ProjectArn
         {
             get { return this._projectArn; }
@@ -241,6 +244,7 @@ namespace Amazon.DeviceFarm.Model
         /// AWS Device Farm throws an <code>ArgumentException</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UploadType Type
         {
             get { return this._type; }

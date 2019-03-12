@@ -59,6 +59,7 @@ namespace Amazon.WAF.Model
         /// returns information about all of them. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public long MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }
@@ -110,6 +112,7 @@ namespace Amazon.WAF.Model
         /// time range in the previous three hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TimeWindow TimeWindow
         {
             get { return this._timeWindow; }
@@ -129,6 +132,7 @@ namespace Amazon.WAF.Model
         /// to return a sample of requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebAclId
         {
             get { return this._webAclId; }

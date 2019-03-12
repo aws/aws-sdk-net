@@ -70,6 +70,7 @@ namespace Amazon.CloudFormation.Model
         /// If both are passed, only <code>TemplateBody</code> is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -95,6 +96,7 @@ namespace Amazon.CloudFormation.Model
         /// If both are passed, only <code>TemplateBody</code> is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

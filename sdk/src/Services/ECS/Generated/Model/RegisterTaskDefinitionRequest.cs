@@ -79,6 +79,7 @@ namespace Amazon.ECS.Model
         /// that make up your task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ContainerDefinition> ContainerDefinitions
         {
             get { return this._containerDefinitions; }
@@ -183,6 +184,7 @@ namespace Amazon.ECS.Model
         /// hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Family
         {
             get { return this._family; }
@@ -477,6 +479,7 @@ namespace Amazon.ECS.Model
         /// have a maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -71,6 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the context variable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8000)]
         public string ClientContext
         {
             get { return this._clientContext; }
@@ -89,6 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// JSON to provide to your Lambda function as input.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public MemoryStream Payload
         {
             get { return this._payload; }
@@ -110,6 +112,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// version to which the alias points.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Qualifier
         {
             get { return this._qualifier; }

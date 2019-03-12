@@ -54,6 +54,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -73,6 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <code>fields</code> command, only the specified fields and their values are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -91,6 +93,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The log group on which to perform the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -110,6 +113,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Logs Insights Query Syntax</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string QueryString
         {
             get { return this._queryString; }
@@ -130,6 +134,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// since January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public long StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

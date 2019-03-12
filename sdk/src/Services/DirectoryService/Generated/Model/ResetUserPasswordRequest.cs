@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// The new password that will be reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=127)]
         public string NewPassword
         {
             get { return this._newPassword; }
@@ -80,6 +82,7 @@ namespace Amazon.DirectoryService.Model
         /// The user name of the user whose password will be reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

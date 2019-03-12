@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         /// to learn about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -64,6 +65,7 @@ namespace Amazon.Transfer.Model
         /// S3 bucket for the user you specify by their ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string HomeDirectory
         {
             get { return this._homeDirectory; }

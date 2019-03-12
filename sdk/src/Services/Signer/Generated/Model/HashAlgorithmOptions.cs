@@ -41,6 +41,7 @@ namespace Amazon.Signer.Model
         /// The set of accepted hash algorithms allowed in an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AllowedValues
         {
             get { return this._allowedValues; }
@@ -59,6 +60,7 @@ namespace Amazon.Signer.Model
         /// The default hash algorithm that is used in an AWS Signer job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HashAlgorithm DefaultValue
         {
             get { return this._defaultValue; }

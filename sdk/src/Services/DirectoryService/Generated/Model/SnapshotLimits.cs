@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// The current number of manual snapshots of the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ManualSnapshotsCurrentCount
         {
             get { return this._manualSnapshotsCurrentCount.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of manual snapshots allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ManualSnapshotsLimit
         {
             get { return this._manualSnapshotsLimit.GetValueOrDefault(); }

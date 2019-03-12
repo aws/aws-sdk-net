@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property BaiduChannelResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public BaiduChannelResponse BaiduChannelResponse
         {
             get { return this._baiduChannelResponse; }

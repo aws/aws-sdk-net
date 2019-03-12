@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The private skill ID you want to make available to enrolled users.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CampaignsResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public CampaignsResponse CampaignsResponse
         {
             get { return this._campaignsResponse; }

@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ARN of the CloudWatch Events rule for which you want to view tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

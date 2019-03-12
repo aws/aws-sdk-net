@@ -82,6 +82,7 @@ namespace Amazon.Rekognition.Model
         /// is the celebrity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float MatchConfidence
         {
             get { return this._matchConfidence.GetValueOrDefault(); }

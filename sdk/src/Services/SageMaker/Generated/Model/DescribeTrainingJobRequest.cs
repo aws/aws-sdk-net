@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }

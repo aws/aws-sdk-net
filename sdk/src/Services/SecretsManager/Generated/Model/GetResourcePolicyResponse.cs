@@ -42,6 +42,7 @@ namespace Amazon.SecretsManager.Model
         /// The ARN of the secret that the resource-based policy was retrieved for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string ARN
         {
             get { return this._arn; }
@@ -60,6 +61,7 @@ namespace Amazon.SecretsManager.Model
         /// The friendly name of the secret that the resource-based policy was retrieved for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Name
         {
             get { return this._name; }
@@ -84,6 +86,7 @@ namespace Amazon.SecretsManager.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string ResourcePolicy
         {
             get { return this._resourcePolicy; }

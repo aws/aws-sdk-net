@@ -41,6 +41,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Algorithm. The type of algorithm that is used for the encryption
         /// (such as aes128, aes192, or aes256).
         /// </summary>
+        [AWSProperty(Required=true)]
         public Algorithm Algorithm
         {
             get { return this._algorithm; }
@@ -73,6 +74,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property RoleArn. The ARN of the role that you created during setup
         /// (when you set up AWS Elemental MediaConnect as a trusted entity).
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -89,6 +91,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property SecretArn. The ARN that was assigned to the secret that
         /// you created in AWS Secrets Manager to store the encryption key.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SecretArn
         {
             get { return this._secretArn; }

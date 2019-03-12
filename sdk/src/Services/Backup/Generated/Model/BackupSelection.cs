@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -101,6 +102,7 @@ namespace Amazon.Backup.Model
         /// The display name of a resource selection document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SelectionName
         {
             get { return this._selectionName; }

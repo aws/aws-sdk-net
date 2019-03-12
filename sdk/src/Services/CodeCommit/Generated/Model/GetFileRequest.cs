@@ -65,6 +65,7 @@ namespace Amazon.CodeCommit.Model
         /// in a folder named examples.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }
@@ -83,6 +84,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository that contains the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZone HostedZone
         {
             get { return this._hostedZone; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains information about the <code>CreateHostedZone</code> request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeInfo ChangeInfo
         {
             get { return this._changeInfo; }
@@ -80,6 +82,7 @@ namespace Amazon.Route53.Model
         /// A complex type that describes the name servers for this hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DelegationSet DelegationSet
         {
             get { return this._delegationSet; }
@@ -117,6 +120,7 @@ namespace Amazon.Route53.Model
         /// The unique URL representing the new hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Location
         {
             get { return this._location; }

@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The room skill parameter key for which to remove details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ParameterKey
         {
             get { return this._parameterKey; }
@@ -79,6 +80,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ID of the skill from which to remove the room skill parameter details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

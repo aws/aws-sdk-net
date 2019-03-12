@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// string; strings ending in -FF are invalid. If you are passing through the entire set
         /// of Teletext data, do not use this field.
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string PageNumber
         {
             get { return this._pageNumber; }

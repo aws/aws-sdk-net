@@ -47,6 +47,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CustomLanguageCode. Selects a specific language code from
         /// within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
         /// </summary>
+        [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
         {
             get { return this._customLanguageCode; }
@@ -110,6 +111,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Offset. Specifies a time delta in milliseconds to offset
         /// the audio from the input video.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int Offset
         {
             get { return this._offset.GetValueOrDefault(); }
@@ -148,6 +150,7 @@ namespace Amazon.MediaConvert.Model
         /// has incorrect metadata, you can choose All channels instead of a program number to
         /// have the service ignore the program IDs and include all the programs in the track.
         /// </summary>
+        [AWSProperty(Min=0, Max=8)]
         public int ProgramSelection
         {
             get { return this._programSelection.GetValueOrDefault(); }

@@ -58,6 +58,7 @@ namespace Amazon.Batch.Model
         /// compute environments with a job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder
         {
             get { return this._computeEnvironmentOrder; }
@@ -76,6 +77,7 @@ namespace Amazon.Batch.Model
         /// The name of the job queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueueName
         {
             get { return this._jobQueueName; }
@@ -98,6 +100,7 @@ namespace Amazon.Batch.Model
         /// preference over a job queue with a priority value of <code>1</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }

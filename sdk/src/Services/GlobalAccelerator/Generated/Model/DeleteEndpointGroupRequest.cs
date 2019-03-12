@@ -41,6 +41,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of the endpoint group to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string EndpointGroupArn
         {
             get { return this._endpointGroupArn; }

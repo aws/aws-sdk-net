@@ -42,6 +42,7 @@ namespace Amazon.DeviceFarm.Model
         /// of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

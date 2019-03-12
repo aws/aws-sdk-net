@@ -49,6 +49,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

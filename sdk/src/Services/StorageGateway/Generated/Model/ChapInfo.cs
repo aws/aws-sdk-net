@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// The iSCSI initiator that connects to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string InitiatorName
         {
             get { return this._initiatorName; }
@@ -63,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// participate in mutual CHAP with the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SecretToAuthenticateInitiator
         {
             get { return this._secretToAuthenticateInitiator; }
@@ -82,6 +84,7 @@ namespace Amazon.StorageGateway.Model
         /// initiator (e.g. Windows client).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SecretToAuthenticateTarget
         {
             get { return this._secretToAuthenticateTarget; }
@@ -104,6 +107,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

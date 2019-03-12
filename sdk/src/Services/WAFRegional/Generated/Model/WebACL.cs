@@ -54,6 +54,7 @@ namespace Amazon.WAFRegional.Model
         /// match. The action is specified by the <a>WafAction</a> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WafAction DefaultAction
         {
             get { return this._defaultAction; }
@@ -93,6 +94,7 @@ namespace Amazon.WAFRegional.Model
         /// of a <code>WebACL</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -112,6 +114,7 @@ namespace Amazon.WAFRegional.Model
         /// the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActivatedRule> Rules
         {
             get { return this._rules; }
@@ -130,6 +133,7 @@ namespace Amazon.WAFRegional.Model
         /// Tha Amazon Resource Name (ARN) of the web ACL.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string WebACLArn
         {
             get { return this._webACLArn; }
@@ -154,6 +158,7 @@ namespace Amazon.WAFRegional.Model
         ///  <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string WebACLId
         {
             get { return this._webACLId; }

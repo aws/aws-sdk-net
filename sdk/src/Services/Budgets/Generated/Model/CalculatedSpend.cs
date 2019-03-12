@@ -50,6 +50,7 @@ namespace Amazon.Budgets.Model
         /// The amount of cost, usage, or RI units that you have used.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Spend ActualSpend
         {
             get { return this._actualSpend; }

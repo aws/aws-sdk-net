@@ -61,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the product path.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -97,6 +98,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The tags associated with this product path.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

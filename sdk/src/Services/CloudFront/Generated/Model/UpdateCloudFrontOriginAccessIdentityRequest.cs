@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The identity's configuration information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
             get { return this._cloudFrontOriginAccessIdentityConfig; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudFront.Model
         /// The identity's id.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

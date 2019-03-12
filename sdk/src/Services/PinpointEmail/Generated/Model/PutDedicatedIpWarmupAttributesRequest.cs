@@ -42,6 +42,7 @@ namespace Amazon.PinpointEmail.Model
         /// The dedicated IP address that you want to update the warm-up attributes for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ip
         {
             get { return this._ip; }
@@ -60,6 +61,7 @@ namespace Amazon.PinpointEmail.Model
         /// The warm-up percentage that you want to associate with the dedicated IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int WarmupPercentage
         {
             get { return this._warmupPercentage.GetValueOrDefault(); }

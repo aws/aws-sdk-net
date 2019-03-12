@@ -64,6 +64,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// start returning the fragments. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AfterFragmentNumber
         {
             get { return this._afterFragmentNumber; }
@@ -84,6 +85,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// continuation token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ContinuationToken
         {
             get { return this._continuationToken; }
@@ -132,6 +134,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StartSelectorType StartSelectorType
         {
             get { return this._startSelectorType; }

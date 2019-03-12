@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ChannelId. Unique ID of the channel.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ChannelId
         {
             get { return this._channelId; }

@@ -44,6 +44,7 @@ namespace Amazon.CloudHSMV2.Model
         /// use <a>DescribeClusters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }

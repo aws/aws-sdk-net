@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Elastic Transcoder returns an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4)]
         public List<CaptionFormat> CaptionFormats
         {
             get { return this._captionFormats; }
@@ -63,6 +64,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
+        [AWSProperty(Max=20)]
         public List<CaptionSource> CaptionSources
         {
             get { return this._captionSources; }

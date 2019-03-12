@@ -40,6 +40,7 @@ namespace Amazon.WorkMail.Model
         /// The information regarding the newly created user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=256)]
         public string UserId
         {
             get { return this._userId; }

@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// The category for sorting the snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotAttributeToSortBy Attribute
         {
             get { return this._attribute; }

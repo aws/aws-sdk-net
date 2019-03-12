@@ -56,6 +56,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Describes a single backup. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=79)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -74,6 +75,7 @@ namespace Amazon.OpsWorksCM.Model
         /// This is not currently implemented for <code>DescribeBackups</code> requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -110,6 +112,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Returns backups for the server with the specified ServerName. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

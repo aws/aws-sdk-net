@@ -124,6 +124,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Listener> Listeners
         {
             get { return this._listeners; }
@@ -148,6 +149,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// and cannot begin or end with a hyphen.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }
@@ -238,6 +240,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<Tag> Tags
         {
             get { return this._tags; }

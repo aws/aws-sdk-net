@@ -60,6 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// the tasks are assigned to a worker (see <a>GetActivityTaskOutput$taskToken</a>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }

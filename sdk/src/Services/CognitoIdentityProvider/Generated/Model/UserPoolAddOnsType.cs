@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The advanced security mode.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AdvancedSecurityModeType AdvancedSecurityMode
         {
             get { return this._advancedSecurityMode; }

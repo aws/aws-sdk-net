@@ -117,6 +117,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MatchFieldType Type
         {
             get { return this._type; }

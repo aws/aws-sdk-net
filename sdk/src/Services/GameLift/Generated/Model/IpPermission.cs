@@ -46,6 +46,7 @@ namespace Amazon.GameLift.Model
         /// Starting value for a range of allowed port numbers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60000)]
         public int FromPort
         {
             get { return this._fromPort.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.GameLift.Model
         /// mask]</code>".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpRange
         {
             get { return this._ipRange; }
@@ -84,6 +86,7 @@ namespace Amazon.GameLift.Model
         /// Network communication protocol used by the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IpProtocol Protocol
         {
             get { return this._protocol; }
@@ -103,6 +106,7 @@ namespace Amazon.GameLift.Model
         /// This value must be higher than <code>FromPort</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60000)]
         public int ToPort
         {
             get { return this._toPort.GetValueOrDefault(); }

@@ -54,6 +54,7 @@ namespace Amazon.AppSync.Model
         /// The ID for the GraphQL API for which the resolver is being created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -90,6 +91,7 @@ namespace Amazon.AppSync.Model
         /// The name of the field to attach the resolver to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FieldName
         {
             get { return this._fieldName; }
@@ -162,6 +164,7 @@ namespace Amazon.AppSync.Model
         /// Velocity Template Language (VTL).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }
@@ -180,6 +183,7 @@ namespace Amazon.AppSync.Model
         /// The mapping template to be used for responses from the data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string ResponseMappingTemplate
         {
             get { return this._responseMappingTemplate; }
@@ -198,6 +202,7 @@ namespace Amazon.AppSync.Model
         /// The name of the <code>Type</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TypeName
         {
             get { return this._typeName; }

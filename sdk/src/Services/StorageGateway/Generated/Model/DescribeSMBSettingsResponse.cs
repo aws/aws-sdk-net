@@ -42,6 +42,7 @@ namespace Amazon.StorageGateway.Model
         /// The name of the domain that the gateway is joined to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -57,6 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }

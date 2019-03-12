@@ -102,6 +102,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string ContinentCode
         {
             get { return this._continentCode; }
@@ -121,6 +122,7 @@ namespace Amazon.Route53.Model
         /// standard 3166-1 alpha-2</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public string CountryCode
         {
             get { return this._countryCode; }
@@ -143,6 +145,7 @@ namespace Amazon.Route53.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public string SubdivisionCode
         {
             get { return this._subdivisionCode; }

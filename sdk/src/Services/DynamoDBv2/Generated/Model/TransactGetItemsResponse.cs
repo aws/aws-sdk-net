@@ -72,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <code>ItemResponse</code> object is an empty Map. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<ItemResponse> Responses
         {
             get { return this._responses; }

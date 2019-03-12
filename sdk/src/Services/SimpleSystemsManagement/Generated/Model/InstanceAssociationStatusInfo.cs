@@ -141,6 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An error code returned by the request to create the association.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -177,6 +178,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Summary information about association execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string ExecutionSummary
         {
             get { return this._executionSummary; }

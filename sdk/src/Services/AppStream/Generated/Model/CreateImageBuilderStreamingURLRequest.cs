@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image builder.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }

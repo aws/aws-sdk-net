@@ -759,6 +759,19 @@ namespace ServiceClientGenerator
             }
             return timestampFormat;
         }
-        
+
+        public bool IsFieldRequired(string fieldName)
+        {
+            var requiredList = data[RequiredKey];
+            if (requiredList != null && requiredList.IsArray)
+            {
+                foreach (var name in requiredList)
+                {
+                    if (string.Equals(name.ToString(), fieldName))
+                        return true;
+                }
+            }
+            return false;
+        }
     }
 }

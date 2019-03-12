@@ -87,6 +87,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// drop specified client requests and return a custom HTTP response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Action> Actions
         {
             get { return this._actions; }
@@ -155,6 +156,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RuleCondition> Conditions
         {
             get { return this._conditions; }
@@ -173,6 +175,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ListenerArn
         {
             get { return this._listenerArn; }
@@ -191,6 +194,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The rule priority. A listener can't have multiple rules with the same priority.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50000)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }

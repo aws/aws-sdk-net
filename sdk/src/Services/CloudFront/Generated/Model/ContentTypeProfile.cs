@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// The content type for a field-level encryption content type-profile mapping. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The format for a field-level encryption content type-profile mapping. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Format Format
         {
             get { return this._format; }

@@ -44,6 +44,7 @@ namespace Amazon.Snowball.Model
         /// The number of <code>ADDRESS</code> objects to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.Snowball.Model
         /// starting point for your list of returned addresses.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -54,6 +54,7 @@ namespace Amazon.DeviceFarm.Model
         /// This is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -91,6 +92,7 @@ namespace Amazon.DeviceFarm.Model
         /// access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string DeviceArn
         {
             get { return this._deviceArn; }
@@ -110,6 +112,7 @@ namespace Amazon.DeviceFarm.Model
         /// a remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string InstanceArn
         {
             get { return this._instanceArn; }
@@ -145,6 +148,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public InteractionMode InteractionMode
         {
             get { return this._interactionMode; }
@@ -163,6 +167,7 @@ namespace Amazon.DeviceFarm.Model
         /// The name of the remote access session that you wish to create.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -182,6 +187,7 @@ namespace Amazon.DeviceFarm.Model
         /// access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string ProjectArn
         {
             get { return this._projectArn; }
@@ -219,6 +225,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string RemoteRecordAppArn
         {
             get { return this._remoteRecordAppArn; }
@@ -282,6 +289,7 @@ namespace Amazon.DeviceFarm.Model
         /// is set to <code>true</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string SshPublicKey
         {
             get { return this._sshPublicKey; }

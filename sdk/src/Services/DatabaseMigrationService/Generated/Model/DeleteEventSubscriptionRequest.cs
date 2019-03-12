@@ -41,6 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The name of the DMS event notification subscription to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

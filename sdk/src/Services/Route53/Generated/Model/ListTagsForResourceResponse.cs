@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// A <code>ResourceTagSet</code> containing tags associated with the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceTagSet ResourceTagSet
         {
             get { return this._resourceTagSet; }

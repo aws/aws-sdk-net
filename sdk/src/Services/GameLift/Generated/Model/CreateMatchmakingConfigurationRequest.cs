@@ -118,6 +118,7 @@ namespace Amazon.GameLift.Model
         /// must be accepted by the matched players. To require acceptance, set to TRUE.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool AcceptanceRequired
         {
             get { return this._acceptanceRequired.GetValueOrDefault(); }
@@ -138,6 +139,7 @@ namespace Amazon.GameLift.Model
         /// to look for an acceptable match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=600)]
         public int AcceptanceTimeoutSeconds
         {
             get { return this._acceptanceTimeoutSeconds.GetValueOrDefault(); }
@@ -158,6 +160,7 @@ namespace Amazon.GameLift.Model
         /// additional player count is set to 2, only 10 players are selected for the match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int AdditionalPlayerCount
         {
             get { return this._additionalPlayerCount.GetValueOrDefault(); }
@@ -176,6 +179,7 @@ namespace Amazon.GameLift.Model
         /// Information to attached to all events related to the matchmaking configuration. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string CustomEventData
         {
             get { return this._customEventData; }
@@ -194,6 +198,7 @@ namespace Amazon.GameLift.Model
         /// Meaningful description of the matchmaking configuration. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -216,6 +221,7 @@ namespace Amazon.GameLift.Model
         /// that is created for a successful match. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties
         {
             get { return this._gameProperties; }
@@ -238,6 +244,7 @@ namespace Amazon.GameLift.Model
         /// that is created for a successful match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
@@ -259,6 +266,7 @@ namespace Amazon.GameLift.Model
         /// this matchmaking configuration. Queues can be located in any region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> GameSessionQueueArns
         {
             get { return this._gameSessionQueueArns; }
@@ -278,6 +286,7 @@ namespace Amazon.GameLift.Model
         /// configuration associated with a matchmaking request or ticket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -296,6 +305,7 @@ namespace Amazon.GameLift.Model
         /// SNS topic ARN that is set up to receive matchmaking notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public string NotificationTarget
         {
             get { return this._notificationTarget; }
@@ -315,6 +325,7 @@ namespace Amazon.GameLift.Model
         /// timing out. Requests that time out can be resubmitted as needed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=43200)]
         public int RequestTimeoutSeconds
         {
             get { return this._requestTimeoutSeconds.GetValueOrDefault(); }
@@ -334,6 +345,7 @@ namespace Amazon.GameLift.Model
         /// configuration can only use rule sets that are defined in the same region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

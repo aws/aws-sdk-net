@@ -62,6 +62,7 @@ namespace Amazon.MachineLearning.Model
         /// predict.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string BatchPredictionDataSourceId
         {
             get { return this._batchPredictionDataSourceId; }
@@ -81,6 +82,7 @@ namespace Amazon.MachineLearning.Model
         /// be identical to the value of the <code>BatchPredictionID</code> in the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string BatchPredictionId
         {
             get { return this._batchPredictionId; }
@@ -169,6 +171,7 @@ namespace Amazon.MachineLearning.Model
         /// S3).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string InputDataLocationS3
         {
             get { return this._inputDataLocationS3; }
@@ -221,6 +224,7 @@ namespace Amazon.MachineLearning.Model
         /// A description of the most recent details about processing the batch prediction request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10240)]
         public string Message
         {
             get { return this._message; }
@@ -240,6 +244,7 @@ namespace Amazon.MachineLearning.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }
@@ -258,6 +263,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>BatchPrediction</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -278,6 +284,7 @@ namespace Amazon.MachineLearning.Model
         /// <code>outputURI</code> field: ':', '//', '/./', '/../'.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string OutputUri
         {
             get { return this._outputUri; }

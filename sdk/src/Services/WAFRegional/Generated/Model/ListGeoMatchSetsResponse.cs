@@ -63,6 +63,7 @@ namespace Amazon.WAFRegional.Model
         /// value in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextMarker
         {
             get { return this._nextMarker; }

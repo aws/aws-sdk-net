@@ -61,6 +61,7 @@ namespace Amazon.ConfigService.Model
         /// to an Amazon S3 bucket and to an Amazon SNS topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeliveryChannel DeliveryChannel
         {
             get { return this._deliveryChannel; }

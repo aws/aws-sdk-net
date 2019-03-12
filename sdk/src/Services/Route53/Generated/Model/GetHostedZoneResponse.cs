@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains general information about the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZone HostedZone
         {
             get { return this._hostedZone; }
@@ -80,6 +81,7 @@ namespace Amazon.Route53.Model
         /// specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<VPC> VPCs
         {
             get { return this._vpCs; }

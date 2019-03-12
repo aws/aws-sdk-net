@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// The Amazon Resource Name (ARN) of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Id
         {
             get { return this._id; }

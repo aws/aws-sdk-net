@@ -65,6 +65,7 @@ namespace Amazon.DirectoryService.Model
         /// directory identifier, such as <code>d-XXXXXXXXXX</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AccessUrl
         {
             get { return this._accessUrl; }
@@ -84,6 +85,7 @@ namespace Amazon.DirectoryService.Model
         /// is the directory identifier, such as <code>d-XXXXXXXXXX</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=62)]
         public string Alias
         {
             get { return this._alias; }
@@ -122,6 +124,7 @@ namespace Amazon.DirectoryService.Model
         /// The textual description for the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -141,6 +144,7 @@ namespace Amazon.DirectoryService.Model
         /// AD.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2)]
         public int DesiredNumberOfDomainControllers
         {
             get { return this._desiredNumberOfDomainControllers.GetValueOrDefault(); }
@@ -329,6 +333,7 @@ namespace Amazon.DirectoryService.Model
         /// determine whether to approve or reject the share invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ShareNotes
         {
             get { return this._shareNotes; }

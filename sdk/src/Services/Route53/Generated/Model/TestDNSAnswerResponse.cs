@@ -45,6 +45,7 @@ namespace Amazon.Route53.Model
         /// The Amazon Route 53 name server used to respond to the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string Nameserver
         {
             get { return this._nameserver; }
@@ -63,6 +64,7 @@ namespace Amazon.Route53.Model
         /// The name of the resource record set that you submitted a request for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string RecordName
         {
             get { return this._recordName; }
@@ -81,6 +83,7 @@ namespace Amazon.Route53.Model
         /// The type of the resource record set that you submitted a request for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RRType RecordType
         {
             get { return this._recordType; }
@@ -100,6 +103,7 @@ namespace Amazon.Route53.Model
         /// set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> RecordData
         {
             get { return this._recordData; }
@@ -122,6 +126,7 @@ namespace Amazon.Route53.Model
         /// RCODES</a> on the IANA website. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResponseCode
         {
             get { return this._responseCode; }
@@ -141,6 +146,7 @@ namespace Amazon.Route53.Model
         /// or <code>TCP</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Protocol
         {
             get { return this._protocol; }

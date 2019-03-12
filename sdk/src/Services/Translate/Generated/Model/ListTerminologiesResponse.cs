@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         /// next group of custom terminologies. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

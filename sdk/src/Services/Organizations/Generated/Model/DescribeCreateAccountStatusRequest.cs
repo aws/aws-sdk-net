@@ -53,6 +53,7 @@ namespace Amazon.Organizations.Model
         /// request ID string requires "car-" followed by from 8 to 32 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CreateAccountRequestId
         {
             get { return this._createAccountRequestId; }

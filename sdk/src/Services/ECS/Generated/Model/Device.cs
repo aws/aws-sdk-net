@@ -60,6 +60,7 @@ namespace Amazon.ECS.Model
         /// The path for the device on the host container instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string HostPath
         {
             get { return this._hostPath; }

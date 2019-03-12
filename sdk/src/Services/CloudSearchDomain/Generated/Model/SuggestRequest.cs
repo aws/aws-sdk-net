@@ -63,6 +63,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Specifies the string for which you want to get suggestions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Query
         {
             get { return this._query; }
@@ -99,6 +100,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Specifies the name of the suggester to use to find suggested matches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Suggester
         {
             get { return this._suggester; }

@@ -42,6 +42,7 @@ namespace Amazon.Transfer.Model
         /// This value is the ARN you specified to list the tags of.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,6 +64,7 @@ namespace Amazon.Transfer.Model
         /// tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -83,6 +85,7 @@ namespace Amazon.Transfer.Model
         /// purpose.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

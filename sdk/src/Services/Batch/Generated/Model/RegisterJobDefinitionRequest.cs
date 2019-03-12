@@ -68,6 +68,7 @@ namespace Amazon.Batch.Model
         /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinitionName
         {
             get { return this._jobDefinitionName; }
@@ -173,6 +174,7 @@ namespace Amazon.Batch.Model
         /// The type of job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobDefinitionType Type
         {
             get { return this._type; }

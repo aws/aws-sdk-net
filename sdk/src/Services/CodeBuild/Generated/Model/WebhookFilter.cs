@@ -74,6 +74,7 @@ namespace Amazon.CodeBuild.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Pattern
         {
             get { return this._pattern; }
@@ -142,6 +143,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note> </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WebhookFilterType Type
         {
             get { return this._type; }

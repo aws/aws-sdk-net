@@ -40,6 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the deleted directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }

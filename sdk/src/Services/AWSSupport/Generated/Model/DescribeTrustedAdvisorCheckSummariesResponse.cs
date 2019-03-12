@@ -41,6 +41,7 @@ namespace Amazon.AWSSupport.Model
         /// The summary information for the requested Trusted Advisor checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrustedAdvisorCheckSummary> Summaries
         {
             get { return this._summaries; }

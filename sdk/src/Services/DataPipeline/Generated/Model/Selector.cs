@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// fails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FieldName
         {
             get { return this._fieldName; }

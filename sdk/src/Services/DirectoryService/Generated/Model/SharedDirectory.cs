@@ -182,6 +182,7 @@ namespace Amazon.DirectoryService.Model
         /// determine whether to approve or reject the share invitation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ShareNotes
         {
             get { return this._shareNotes; }

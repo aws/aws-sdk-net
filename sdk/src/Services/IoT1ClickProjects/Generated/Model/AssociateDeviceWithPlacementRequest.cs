@@ -46,6 +46,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -64,6 +65,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The device template name to associate with the device ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DeviceTemplateName
         {
             get { return this._deviceTemplateName; }
@@ -82,6 +84,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the placement in which to associate the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PlacementName
         {
             get { return this._placementName; }
@@ -100,6 +103,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project containing the placement in which to associate the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }

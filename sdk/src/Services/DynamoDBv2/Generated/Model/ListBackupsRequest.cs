@@ -97,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// operation in order to fetch the next page of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string ExclusiveStartBackupArn
         {
             get { return this._exclusiveStartBackupArn; }
@@ -115,6 +116,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Maximum number of backups to return at once.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -133,6 +135,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The backups from the table specified by <code>TableName</code> are listed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

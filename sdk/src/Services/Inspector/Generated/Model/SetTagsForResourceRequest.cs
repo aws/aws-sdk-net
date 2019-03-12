@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment template that you want to set tags to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.Inspector.Model
         /// A collection of key and value pairs that you want to set to the assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Tag> Tags
         {
             get { return this._tags; }

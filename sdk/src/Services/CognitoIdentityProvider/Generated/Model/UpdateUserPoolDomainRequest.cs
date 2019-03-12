@@ -87,6 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// ACM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CustomDomainConfigType CustomDomainConfig
         {
             get { return this._customDomainConfig; }
@@ -111,6 +112,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// hyphen for the first or last character. Use periods to separate subdomain names.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string Domain
         {
             get { return this._domain; }
@@ -130,6 +132,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// the certificate for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

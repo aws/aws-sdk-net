@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the channel from which the messages are processed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -60,6 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the 'channel' activity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The next activity in the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Next
         {
             get { return this._next; }

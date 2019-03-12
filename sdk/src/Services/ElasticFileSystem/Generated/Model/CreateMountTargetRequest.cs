@@ -191,6 +191,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the file system for which to create the mount target.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -228,6 +229,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// be for the same VPC as subnet specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> SecurityGroups
         {
             get { return this._securityGroups; }
@@ -246,6 +248,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the subnet to add the mount target in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

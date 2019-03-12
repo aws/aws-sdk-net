@@ -75,6 +75,7 @@ namespace Amazon.ECS.Model
         /// you would like to update the Amazon ECS container agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContainerInstance
         {
             get { return this._containerInstance; }

@@ -43,6 +43,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Lambda function. For more information, see <a>using-lambda</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string MessageVersion
         {
             get { return this._messageVersion; }
@@ -61,6 +62,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The Amazon Resource Name (ARN) of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Uri
         {
             get { return this._uri; }

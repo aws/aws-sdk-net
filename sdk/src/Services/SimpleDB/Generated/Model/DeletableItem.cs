@@ -69,6 +69,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

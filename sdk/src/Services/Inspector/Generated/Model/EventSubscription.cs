@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The event for which Amazon Simple Notification Service (SNS) notifications are sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InspectorEvent Event
         {
             get { return this._event; }
@@ -59,6 +60,7 @@ namespace Amazon.Inspector.Model
         /// The time at which <a>SubscribeToEvent</a> is called.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime SubscribedAt
         {
             get { return this._subscribedAt.GetValueOrDefault(); }

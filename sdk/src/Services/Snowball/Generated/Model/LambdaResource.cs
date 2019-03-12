@@ -61,6 +61,7 @@ namespace Amazon.Snowball.Model
         /// by PUT object actions on the associated local Amazon S3 resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string LambdaArn
         {
             get { return this._lambdaArn; }

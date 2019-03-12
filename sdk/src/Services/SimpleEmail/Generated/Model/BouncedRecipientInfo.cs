@@ -68,6 +68,7 @@ namespace Amazon.SimpleEmail.Model
         /// The email address of the recipient of the bounced email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Recipient
         {
             get { return this._recipient; }

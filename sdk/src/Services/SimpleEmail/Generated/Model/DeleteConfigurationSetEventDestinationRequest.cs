@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the configuration set from which to delete the event destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the event destination to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventDestinationName
         {
             get { return this._eventDestinationName; }

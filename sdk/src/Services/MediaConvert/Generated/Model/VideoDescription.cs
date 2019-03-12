@@ -149,6 +149,7 @@ namespace Amazon.MediaConvert.Model
         /// to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service
         /// will write on all  frames of this video output.
         /// </summary>
+        [AWSProperty(Min=0, Max=15)]
         public int FixedAfd
         {
             get { return this._fixedAfd.GetValueOrDefault(); }
@@ -166,6 +167,7 @@ namespace Amazon.MediaConvert.Model
         /// resolution height for this output. Specify in pixels. If you don't provide a value
         /// here, the service will use the input height.
         /// </summary>
+        [AWSProperty(Min=32, Max=2160)]
         public int Height
         {
             get { return this._height.GetValueOrDefault(); }
@@ -231,6 +233,7 @@ namespace Amazon.MediaConvert.Model
         /// from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended
         /// for most content.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Sharpness
         {
             get { return this._sharpness.GetValueOrDefault(); }
@@ -280,6 +283,7 @@ namespace Amazon.MediaConvert.Model
         /// width, in pixels, for this output. If you don't provide a value here, the service
         /// will use the input width.
         /// </summary>
+        [AWSProperty(Min=32, Max=4096)]
         public int Width
         {
             get { return this._width.GetValueOrDefault(); }

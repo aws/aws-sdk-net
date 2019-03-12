@@ -59,6 +59,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupName
         {
             get { return this._dbParameterGroupName; }

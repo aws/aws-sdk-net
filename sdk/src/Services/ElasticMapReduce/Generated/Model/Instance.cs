@@ -141,6 +141,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type, for example <code>m3.xlarge</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }

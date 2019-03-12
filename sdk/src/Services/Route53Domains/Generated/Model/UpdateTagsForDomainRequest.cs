@@ -48,6 +48,7 @@ namespace Amazon.Route53Domains.Model
         /// The domain for which you want to add or update tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string DomainName
         {
             get { return this._domainName; }

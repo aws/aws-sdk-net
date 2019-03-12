@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in a shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ShardIterator
         {
             get { return this._shardIterator; }

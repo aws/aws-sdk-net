@@ -47,6 +47,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// after Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The Amazon Resource Name (ARN) of the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string DestinationArn
         {
             get { return this._destinationArn; }
@@ -98,6 +100,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the subscription filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FilterName
         {
             get { return this._filterName; }
@@ -113,6 +116,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern.
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -131,6 +135,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -146,6 +151,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RoleArn.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string RoleArn
         {
             get { return this._roleArn; }

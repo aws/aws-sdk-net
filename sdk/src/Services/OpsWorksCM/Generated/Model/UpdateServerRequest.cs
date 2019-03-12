@@ -117,6 +117,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server to update. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

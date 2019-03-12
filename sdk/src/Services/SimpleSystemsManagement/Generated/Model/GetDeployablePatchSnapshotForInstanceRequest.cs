@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the instance for which the appropriate patch snapshot should be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -61,6 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The user-defined snapshot ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

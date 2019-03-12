@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Errors. A list of errors that might have been generated
         /// from processes on this flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Errors
         {
             get { return this._errors; }

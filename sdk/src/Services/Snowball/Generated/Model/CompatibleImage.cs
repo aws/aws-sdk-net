@@ -43,6 +43,7 @@ namespace Amazon.Snowball.Model
         /// The unique identifier for an individual Snowball Edge AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string AmiId
         {
             get { return this._amiId; }
@@ -61,6 +62,7 @@ namespace Amazon.Snowball.Model
         /// The optional name of a compatible image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

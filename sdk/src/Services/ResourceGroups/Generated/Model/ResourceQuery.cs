@@ -41,6 +41,7 @@ namespace Amazon.ResourceGroups.Model
         /// The query that defines a group or a search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string Query
         {
             get { return this._query; }
@@ -107,6 +108,7 @@ namespace Amazon.ResourceGroups.Model
         /// a CloudFormation stack ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public QueryType Type
         {
             get { return this._type; }

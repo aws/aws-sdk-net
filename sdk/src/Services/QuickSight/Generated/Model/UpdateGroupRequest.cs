@@ -64,6 +64,7 @@ namespace Amazon.QuickSight.Model
         /// AWS account that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -82,6 +83,7 @@ namespace Amazon.QuickSight.Model
         /// The description for the group that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the group that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string GroupName
         {
             get { return this._groupName; }
@@ -118,6 +121,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }

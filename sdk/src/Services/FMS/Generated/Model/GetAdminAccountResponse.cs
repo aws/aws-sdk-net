@@ -41,6 +41,7 @@ namespace Amazon.FMS.Model
         /// The AWS account that is set as the AWS Firewall Manager administrator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string AdminAccount
         {
             get { return this._adminAccount; }

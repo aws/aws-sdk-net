@@ -49,6 +49,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -67,6 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// The number of EC2 instances that should be running in the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int DesiredCapacity
         {
             get { return this._desiredCapacity.GetValueOrDefault(); }

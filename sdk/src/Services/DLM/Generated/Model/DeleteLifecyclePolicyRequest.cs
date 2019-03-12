@@ -42,6 +42,7 @@ namespace Amazon.DLM.Model
         /// The identifier of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyId
         {
             get { return this._policyId; }

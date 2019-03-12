@@ -49,6 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// The ID of the tagged ML object. For example, <code>exampleModelId</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -67,6 +68,7 @@ namespace Amazon.MachineLearning.Model
         /// The type of the tagged ML object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaggableResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -85,6 +87,7 @@ namespace Amazon.MachineLearning.Model
         /// One or more tags to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

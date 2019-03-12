@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// User-provided idempotency token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -72,6 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional description for the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -118,6 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of targets this task can be run for in parallel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -136,6 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before this task stops being scheduled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -154,6 +158,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional name for the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -174,6 +179,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that have the same priority scheduled in parallel.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -241,6 +247,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -259,6 +266,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ARN of the task to execute 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string TaskArn
         {
             get { return this._taskArn; }
@@ -322,6 +330,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of task being registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MaintenanceWindowTaskType TaskType
         {
             get { return this._taskType; }
@@ -340,6 +349,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window the task should be added to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

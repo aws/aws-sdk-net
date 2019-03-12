@@ -65,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// The date when the MFA device was enabled for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EnableDate
         {
             get { return this._enableDate.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// the serial number is the device ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=9, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -102,6 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// The user with whom the MFA device is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

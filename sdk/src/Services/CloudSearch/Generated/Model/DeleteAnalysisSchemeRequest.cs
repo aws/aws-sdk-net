@@ -44,6 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// The name of the analysis scheme you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AnalysisSchemeName
         {
             get { return this._analysisSchemeName; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }

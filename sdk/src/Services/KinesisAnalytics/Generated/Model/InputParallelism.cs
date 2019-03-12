@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }

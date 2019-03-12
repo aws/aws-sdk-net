@@ -60,6 +60,7 @@ namespace Amazon.XRay.Model
         /// Trace IDs of requests for which to generate a service graph.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TraceIds
         {
             get { return this._traceIds; }

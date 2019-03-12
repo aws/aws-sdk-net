@@ -70,6 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of key and value pairs that describe attachments to a version of a document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public List<AttachmentsSource> Attachments
         {
             get { return this._attachments; }
@@ -88,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A valid JSON or YAML string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -162,6 +164,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -196,6 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -219,6 +223,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string TargetType
         {
             get { return this._targetType; }

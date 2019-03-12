@@ -43,6 +43,7 @@ namespace Amazon.StepFunctions.Model
         /// A more detailed explanation of the cause of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
         public string Cause
         {
             get { return this._cause; }
@@ -61,6 +62,7 @@ namespace Amazon.StepFunctions.Model
         /// The error code of the failure.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Error
         {
             get { return this._error; }
@@ -79,6 +81,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the execution to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ExecutionArn
         {
             get { return this._executionArn; }

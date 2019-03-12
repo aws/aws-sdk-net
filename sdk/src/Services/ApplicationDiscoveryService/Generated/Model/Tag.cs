@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The type of tag on which to filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A value for a tag key on which to filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

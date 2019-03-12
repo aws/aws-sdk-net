@@ -40,6 +40,7 @@ namespace Amazon.Comprehend.Model
         /// Entity type of an item on an entity type list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Type
         {
             get { return this._type; }

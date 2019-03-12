@@ -61,6 +61,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChildPolicy ChildPolicy
         {
             get { return this._childPolicy; }
@@ -79,6 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of timeout that caused this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecutionTimeoutType TimeoutType
         {
             get { return this._timeoutType; }

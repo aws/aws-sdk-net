@@ -49,6 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// permissions boundary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

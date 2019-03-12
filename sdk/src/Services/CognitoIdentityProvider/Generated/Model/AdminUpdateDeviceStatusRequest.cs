@@ -49,6 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The device key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string DeviceKey
         {
             get { return this._deviceKey; }
@@ -85,6 +86,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -103,6 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

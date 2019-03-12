@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory snapshot to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

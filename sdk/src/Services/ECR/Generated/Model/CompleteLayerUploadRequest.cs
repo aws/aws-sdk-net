@@ -54,6 +54,7 @@ namespace Amazon.ECR.Model
         /// The <code>sha256</code> digest of the image layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> LayerDigests
         {
             get { return this._layerDigests; }
@@ -91,6 +92,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository to associate with the image layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }
@@ -110,6 +112,7 @@ namespace Amazon.ECR.Model
         /// the image layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UploadId
         {
             get { return this._uploadId; }

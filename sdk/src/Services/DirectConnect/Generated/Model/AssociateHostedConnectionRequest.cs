@@ -52,6 +52,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the hosted connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -70,6 +71,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the interconnect or the LAG.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParentConnectionId
         {
             get { return this._parentConnectionId; }

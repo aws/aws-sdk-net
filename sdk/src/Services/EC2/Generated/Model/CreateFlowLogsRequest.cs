@@ -188,6 +188,7 @@ namespace Amazon.EC2.Model
         /// Constraints: Maximum of 1000 resources
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ResourceIds
         {
             get { return this._resourceIds; }
@@ -206,6 +207,7 @@ namespace Amazon.EC2.Model
         /// The type of resource on which to create the flow log.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FlowLogsResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -224,6 +226,7 @@ namespace Amazon.EC2.Model
         /// The type of traffic to log.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrafficType TrafficType
         {
             get { return this._trafficType; }

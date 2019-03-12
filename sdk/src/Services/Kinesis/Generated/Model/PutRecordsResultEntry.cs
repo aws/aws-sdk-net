@@ -104,6 +104,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID for an individual record result.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ShardId
         {
             get { return this._shardId; }

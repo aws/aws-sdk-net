@@ -69,6 +69,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Valid values: any Amazon SNS action name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ActionName
         {
             get { return this._actionName; }
@@ -89,6 +90,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AWSAccountId
         {
             get { return this._awsAccountId; }
@@ -107,6 +109,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// A unique identifier for the new policy statement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Label
         {
             get { return this._label; }
@@ -125,6 +128,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic whose access control policy you wish to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

@@ -80,6 +80,7 @@ namespace Amazon.Redshift.Model
         /// A string representing the node identifier for the DC1 Reserved Node to be exchanged.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReservedNodeId
         {
             get { return this._reservedNodeId; }

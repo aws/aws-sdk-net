@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkSpaces.Model
         /// The rules to remove from the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> UserRules
         {
             get { return this._userRules; }

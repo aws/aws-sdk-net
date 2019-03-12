@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterEndpointIdentifier
         {
             get { return this._dbClusterEndpointIdentifier; }

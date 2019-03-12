@@ -56,6 +56,7 @@ namespace Amazon.ECR.Model
         /// <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<ImageIdentifier> ImageIds
         {
             get { return this._imageIds; }
@@ -93,6 +94,7 @@ namespace Amazon.ECR.Model
         /// The repository that contains the image to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

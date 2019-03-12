@@ -45,6 +45,7 @@ namespace Amazon.ECR.Model
         /// The JSON repository policy text to apply to the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=100, Max=30720)]
         public string LifecyclePolicyText
         {
             get { return this._lifecyclePolicyText; }
@@ -82,6 +83,7 @@ namespace Amazon.ECR.Model
         /// The name of the repository to receive the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

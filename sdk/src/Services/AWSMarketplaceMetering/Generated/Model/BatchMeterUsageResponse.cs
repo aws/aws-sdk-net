@@ -63,6 +63,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// call with this list as input in the BatchMeterUsageRequest.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public List<UsageRecord> UnprocessedRecords
         {
             get { return this._unprocessedRecords; }

@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the Amazon Redshift cluster to restore the table to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -80,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// The name of the table to create as a result of the current request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NewTableName
         {
             get { return this._newTableName; }
@@ -100,6 +102,7 @@ namespace Amazon.Redshift.Model
         /// parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }
@@ -118,6 +121,7 @@ namespace Amazon.Redshift.Model
         /// The name of the source database that contains the table to restore from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDatabaseName
         {
             get { return this._sourceDatabaseName; }
@@ -155,6 +159,7 @@ namespace Amazon.Redshift.Model
         /// The name of the source table to restore from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceTableName
         {
             get { return this._sourceTableName; }

@@ -56,6 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4)]
         public List<InstancePatchStateFilter> Filters
         {
             get { return this._filters; }
@@ -74,6 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of patches to return (per page).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -111,6 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch group for which the patch state information should be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PatchGroup
         {
             get { return this._patchGroup; }

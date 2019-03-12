@@ -51,6 +51,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyArn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PolicyArn
         {
             get { return this._policyArn; }
@@ -69,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name of the attached policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

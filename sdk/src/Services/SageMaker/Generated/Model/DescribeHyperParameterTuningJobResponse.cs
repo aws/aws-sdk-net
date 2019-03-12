@@ -72,6 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the tuning job started.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -90,6 +91,7 @@ namespace Amazon.SageMaker.Model
         /// If the tuning job failed, the reason it failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -126,6 +128,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string HyperParameterTuningJobArn
         {
             get { return this._hyperParameterTuningJobArn; }
@@ -145,6 +148,7 @@ namespace Amazon.SageMaker.Model
         /// the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobConfig HyperParameterTuningJobConfig
         {
             get { return this._hyperParameterTuningJobConfig; }
@@ -163,6 +167,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the tuning job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HyperParameterTuningJobName
         {
             get { return this._hyperParameterTuningJobName; }
@@ -181,6 +186,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTuningJobStatus HyperParameterTuningJobStatus
         {
             get { return this._hyperParameterTuningJobStatus; }
@@ -218,6 +224,7 @@ namespace Amazon.SageMaker.Model
         /// categorized by the status of their final objective metric, that this tuning job launched.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectiveStatusCounters ObjectiveStatusCounters
         {
             get { return this._objectiveStatusCounters; }
@@ -258,6 +265,7 @@ namespace Amazon.SageMaker.Model
         /// of the training jobs that this tuning job launches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HyperParameterTrainingJobDefinition TrainingJobDefinition
         {
             get { return this._trainingJobDefinition; }
@@ -277,6 +285,7 @@ namespace Amazon.SageMaker.Model
         /// jobs, categorized by status, that this tuning job launched.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobStatusCounters TrainingJobStatusCounters
         {
             get { return this._trainingJobStatusCounters; }

@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// is different for each directory owner account. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SharedDirectoryId
         {
             get { return this._sharedDirectoryId; }

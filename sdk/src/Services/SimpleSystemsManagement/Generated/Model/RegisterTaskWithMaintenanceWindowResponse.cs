@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the task in the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowTaskId
         {
             get { return this._windowTaskId; }

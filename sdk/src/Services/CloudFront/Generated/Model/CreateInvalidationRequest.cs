@@ -58,6 +58,7 @@ namespace Amazon.CloudFront.Model
         /// The distribution's id.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DistributionId
         {
             get { return this._distributionId; }
@@ -76,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// The batch information for the invalidation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InvalidationBatch InvalidationBatch
         {
             get { return this._invalidationBatch; }

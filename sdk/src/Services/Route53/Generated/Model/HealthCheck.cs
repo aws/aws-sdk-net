@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model
         /// health check to use. The value can be up to 64 characters long. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53.Model
         /// A unique string that you specified when you created the health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -104,6 +106,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains detailed information about one health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheckConfig HealthCheckConfig
         {
             get { return this._healthCheckConfig; }
@@ -123,6 +126,7 @@ namespace Amazon.Route53.Model
         /// to prevent overwriting another change to the health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long HealthCheckVersion
         {
             get { return this._healthCheckVersion.GetValueOrDefault(); }

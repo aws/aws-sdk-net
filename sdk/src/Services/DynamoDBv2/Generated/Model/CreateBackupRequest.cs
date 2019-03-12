@@ -91,6 +91,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Specified name for the backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string BackupName
         {
             get { return this._backupName; }
@@ -109,6 +110,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

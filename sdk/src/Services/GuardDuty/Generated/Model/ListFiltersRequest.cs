@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The ID of the detector that specifies the GuardDuty
         /// service where you want to list filters.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -57,6 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property MaxResults. Indicates the maximum number of items that
         /// you want in the response. The maximum value is 50.
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -71,6 +71,7 @@ namespace Amazon.WAF.Model
         /// monitor.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggingConfiguration LoggingConfiguration
         {
             get { return this._loggingConfiguration; }

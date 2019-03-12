@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name for which you want to confirm user registration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -66,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for which you want to confirm user registration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

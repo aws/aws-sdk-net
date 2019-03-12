@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         /// container instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -67,6 +68,7 @@ namespace Amazon.ECS.Model
         /// length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

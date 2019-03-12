@@ -42,6 +42,7 @@ namespace Amazon.Amplify.Model
         ///  DNS record for the Subdomain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1000)]
         public string DnsRecord
         {
             get { return this._dnsRecord; }
@@ -60,6 +61,7 @@ namespace Amazon.Amplify.Model
         ///  Setting structure for the Subdomain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubDomainSetting SubDomainSetting
         {
             get { return this._subDomainSetting; }
@@ -78,6 +80,7 @@ namespace Amazon.Amplify.Model
         ///  Verified status of the Subdomain 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Verified
         {
             get { return this._verified.GetValueOrDefault(); }

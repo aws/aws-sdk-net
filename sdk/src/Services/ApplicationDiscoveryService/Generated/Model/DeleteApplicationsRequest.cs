@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of an application to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConfigurationIds
         {
             get { return this._configurationIds; }

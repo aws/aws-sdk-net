@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         /// The name of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

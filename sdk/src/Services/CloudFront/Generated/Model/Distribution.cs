@@ -72,6 +72,7 @@ namespace Amazon.CloudFront.Model
         /// URLs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActiveTrustedSigners ActiveTrustedSigners
         {
             get { return this._activeTrustedSigners; }
@@ -91,6 +92,7 @@ namespace Amazon.CloudFront.Model
         /// where <code>123456789012</code> is your AWS account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }
@@ -111,6 +113,7 @@ namespace Amazon.CloudFront.Model
         /// resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DistributionConfig DistributionConfig
         {
             get { return this._distributionConfig; }
@@ -130,6 +133,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -148,6 +152,7 @@ namespace Amazon.CloudFront.Model
         /// The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -166,6 +171,7 @@ namespace Amazon.CloudFront.Model
         /// The number of invalidation batches currently in progress. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InProgressInvalidationBatches
         {
             get { return this._inProgressInvalidationBatches.GetValueOrDefault(); }
@@ -184,6 +190,7 @@ namespace Amazon.CloudFront.Model
         /// The date and time the distribution was last modified. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }
@@ -204,6 +211,7 @@ namespace Amazon.CloudFront.Model
         /// CloudFront edge locations. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

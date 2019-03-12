@@ -104,6 +104,7 @@ namespace Amazon.FMS.Model
         /// The AWS account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string MemberAccount
         {
             get { return this._memberAccount; }
@@ -122,6 +123,7 @@ namespace Amazon.FMS.Model
         /// The ID of the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -140,6 +142,7 @@ namespace Amazon.FMS.Model
         /// The AWS account that created the AWS Firewall Manager policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PolicyOwner
         {
             get { return this._policyOwner; }

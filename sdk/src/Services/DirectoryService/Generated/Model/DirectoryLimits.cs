@@ -48,6 +48,7 @@ namespace Amazon.DirectoryService.Model
         /// The current number of cloud directories in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CloudOnlyDirectoriesCurrentCount
         {
             get { return this._cloudOnlyDirectoriesCurrentCount.GetValueOrDefault(); }
@@ -66,6 +67,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of cloud directories allowed in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CloudOnlyDirectoriesLimit
         {
             get { return this._cloudOnlyDirectoriesLimit.GetValueOrDefault(); }
@@ -102,6 +104,7 @@ namespace Amazon.DirectoryService.Model
         /// The current number of AWS Managed Microsoft AD directories in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CloudOnlyMicrosoftADCurrentCount
         {
             get { return this._cloudOnlyMicrosoftADCurrentCount.GetValueOrDefault(); }
@@ -120,6 +123,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of AWS Managed Microsoft AD directories allowed in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int CloudOnlyMicrosoftADLimit
         {
             get { return this._cloudOnlyMicrosoftADLimit.GetValueOrDefault(); }
@@ -156,6 +160,7 @@ namespace Amazon.DirectoryService.Model
         /// The current number of connected directories in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ConnectedDirectoriesCurrentCount
         {
             get { return this._connectedDirectoriesCurrentCount.GetValueOrDefault(); }
@@ -174,6 +179,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of connected directories allowed in the region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ConnectedDirectoriesLimit
         {
             get { return this._connectedDirectoriesLimit.GetValueOrDefault(); }

@@ -59,6 +59,7 @@ namespace Amazon.AppStream.Model
         /// The URL to start the AppStream 2.0 streaming session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StreamingURL
         {
             get { return this._streamingURL; }

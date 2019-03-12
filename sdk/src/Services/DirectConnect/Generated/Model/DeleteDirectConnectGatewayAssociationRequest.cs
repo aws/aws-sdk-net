@@ -43,6 +43,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the Direct Connect gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectConnectGatewayId
         {
             get { return this._directConnectGatewayId; }
@@ -61,6 +62,7 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VirtualGatewayId
         {
             get { return this._virtualGatewayId; }

@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.Model
         /// the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string LastEvaluatedStreamArn
         {
             get { return this._lastEvaluatedStreamArn; }

@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// MissingCount and NotApplicableCount.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// or GreaterThan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstancePatchStateOperatorType Type
         {
             get { return this._type; }
@@ -81,6 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The value for the filter, must be an integer greater than or equal to 0.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Values
         {
             get { return this._values; }

@@ -40,6 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// Metadata about the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Directory Directory
         {
             get { return this._directory; }

@@ -45,6 +45,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon S3 bucket of the layer archive.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -63,6 +64,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon S3 key of the layer archive.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string S3Key
         {
             get { return this._s3Key; }
@@ -81,6 +83,7 @@ namespace Amazon.Lambda.Model
         /// For versioned objects, the version of the layer archive object to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string S3ObjectVersion
         {
             get { return this._s3ObjectVersion; }

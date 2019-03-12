@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// One or more instance IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }

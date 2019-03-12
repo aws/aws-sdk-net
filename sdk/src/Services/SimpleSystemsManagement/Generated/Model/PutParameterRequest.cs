@@ -50,6 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string AllowedPattern
         {
             get { return this._allowedPattern; }
@@ -73,6 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -111,6 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -172,6 +175,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }
@@ -230,6 +234,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -260,6 +265,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ParameterType Type
         {
             get { return this._type; }
@@ -278,6 +284,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter value that you want to add to the system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4096)]
         public string Value
         {
             get { return this._value; }

@@ -52,6 +52,7 @@ namespace Amazon.MediaStore.Model
         /// This element can contain only one wildcard character (*).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> AllowedHeaders
         {
             get { return this._allowedHeaders; }
@@ -76,6 +77,7 @@ namespace Amazon.MediaStore.Model
         /// element.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public List<string> AllowedMethods
         {
             get { return this._allowedMethods; }
@@ -102,6 +104,7 @@ namespace Amazon.MediaStore.Model
         /// for all origins.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> AllowedOrigins
         {
             get { return this._allowedOrigins; }
@@ -125,6 +128,7 @@ namespace Amazon.MediaStore.Model
         /// This element is optional for each rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> ExposeHeaders
         {
             get { return this._exposeHeaders; }
@@ -148,6 +152,7 @@ namespace Amazon.MediaStore.Model
         /// A CORS rule can have only one <code>MaxAgeSeconds</code> element.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int MaxAgeSeconds
         {
             get { return this._maxAgeSeconds.GetValueOrDefault(); }

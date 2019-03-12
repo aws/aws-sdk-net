@@ -43,6 +43,7 @@ namespace Amazon.CloudDirectory.Model
         /// References</a> for more information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=230)]
         public string TargetAttributeName
         {
             get { return this._targetAttributeName; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudDirectory.Model
         /// References</a> for more information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string TargetFacetName
         {
             get { return this._targetFacetName; }

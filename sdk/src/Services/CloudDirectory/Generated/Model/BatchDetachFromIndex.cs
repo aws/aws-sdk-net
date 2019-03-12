@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference to the index object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference IndexReference
         {
             get { return this._indexReference; }
@@ -60,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference to the object being detached from the index.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference TargetReference
         {
             get { return this._targetReference; }

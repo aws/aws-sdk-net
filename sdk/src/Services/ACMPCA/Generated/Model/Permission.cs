@@ -50,6 +50,7 @@ namespace Amazon.ACMPCA.Model
         /// The private CA operations that can be performed by the designated AWS service.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public List<string> Actions
         {
             get { return this._actions; }
@@ -68,6 +69,7 @@ namespace Amazon.ACMPCA.Model
         /// The Amazon Resource Number (ARN) of the private CA from which the permission was issued.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }

@@ -159,6 +159,7 @@ namespace Amazon.ComprehendMedical.Model
         ///  The segment of input text extracted as this entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Text
         {
             get { return this._text; }

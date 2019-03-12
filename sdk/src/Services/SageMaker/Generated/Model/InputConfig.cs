@@ -153,6 +153,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string DataInputConfig
         {
             get { return this._dataInputConfig; }
@@ -171,6 +172,7 @@ namespace Amazon.SageMaker.Model
         /// Identifies the framework in which the model was trained. For example: TENSORFLOW.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Framework Framework
         {
             get { return this._framework; }
@@ -190,6 +192,7 @@ namespace Amazon.SageMaker.Model
         /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

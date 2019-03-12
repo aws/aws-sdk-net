@@ -88,6 +88,7 @@ namespace Amazon.SimpleEmail.Model
         /// The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReportingMta
         {
             get { return this._reportingMta; }

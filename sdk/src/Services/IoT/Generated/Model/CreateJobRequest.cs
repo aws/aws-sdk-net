@@ -69,6 +69,7 @@ namespace Amazon.IoT.Model
         /// A short text description of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2028)]
         public string Description
         {
             get { return this._description; }
@@ -107,6 +108,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Document
         {
             get { return this._document; }
@@ -125,6 +127,7 @@ namespace Amazon.IoT.Model
         /// An S3 link to the job document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1350)]
         public string DocumentSource
         {
             get { return this._documentSource; }
@@ -162,6 +165,7 @@ namespace Amazon.IoT.Model
         /// Alpha-numeric characters, "-" and "_" are valid for use here.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -216,6 +220,7 @@ namespace Amazon.IoT.Model
         /// A list of things and thing groups to which the job should be sent.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> Targets
         {
             get { return this._targets; }

@@ -44,6 +44,7 @@ namespace Amazon.DeviceFarm.Model
         /// A string describing the offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Description
         {
             get { return this._description; }
@@ -62,6 +63,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ID that corresponds to a device offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Id
         {
             get { return this._id; }

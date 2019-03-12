@@ -98,6 +98,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Information about the tags associated with the product.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

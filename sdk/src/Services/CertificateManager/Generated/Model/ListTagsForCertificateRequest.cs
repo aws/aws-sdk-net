@@ -55,6 +55,7 @@ namespace Amazon.CertificateManager.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

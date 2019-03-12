@@ -44,6 +44,7 @@ namespace Amazon.DirectoryService.Model
         /// If true, creates a snapshot of the directory before applying the schema extension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool CreateSnapshotBeforeSchemaExtension
         {
             get { return this._createSnapshotBeforeSchemaExtension.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// A description of the schema extension.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -80,6 +82,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory for which the schema extension will be applied to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -100,6 +103,7 @@ namespace Amazon.DirectoryService.Model
         /// below for more details. The file size can be no larger than 1MB.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500000)]
         public string LdifContent
         {
             get { return this._ldifContent; }

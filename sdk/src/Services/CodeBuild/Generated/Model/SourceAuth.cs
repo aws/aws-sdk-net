@@ -71,6 +71,7 @@ namespace Amazon.CodeBuild.Model
         /// the OAuth authorization type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SourceAuthType Type
         {
             get { return this._type; }

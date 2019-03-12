@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }
@@ -63,6 +64,7 @@ namespace Amazon.EC2.Model
         /// The ID of the subnet to associate with the Client VPN endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

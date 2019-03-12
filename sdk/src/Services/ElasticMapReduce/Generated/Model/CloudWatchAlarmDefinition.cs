@@ -51,6 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// value specified by <code>Threshold</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -107,6 +108,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The name of the CloudWatch metric that is watched to determine an alarm condition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -145,6 +147,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// specify <code>300</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Period
         {
             get { return this._period.GetValueOrDefault(); }
@@ -181,6 +184,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The value against which the specified statistic is compared.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }

@@ -44,6 +44,7 @@ namespace Amazon.Chime.Model
         /// The name of the Amazon Chime account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

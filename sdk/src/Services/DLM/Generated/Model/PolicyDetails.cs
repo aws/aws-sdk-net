@@ -42,6 +42,7 @@ namespace Amazon.DLM.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }
@@ -60,6 +61,7 @@ namespace Amazon.DLM.Model
         /// The schedule of policy-defined actions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<Schedule> Schedules
         {
             get { return this._schedules; }
@@ -78,6 +80,7 @@ namespace Amazon.DLM.Model
         /// The single tag that identifies targeted resources for this policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> TargetTags
         {
             get { return this._targetTags; }

@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the service-specific credential were created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreateDate
         {
             get { return this._createDate.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the service associated with the service-specific credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -82,6 +84,7 @@ namespace Amazon.IdentityManagement.Model
         /// The unique identifier for the service-specific credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string ServiceSpecificCredentialId
         {
             get { return this._serviceSpecificCredentialId; }
@@ -100,6 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// The generated user name for the service-specific credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=17, Max=200)]
         public string ServiceUserName
         {
             get { return this._serviceUserName; }
@@ -119,6 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// key is valid for API calls, while <code>Inactive</code> means it is not.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StatusType Status
         {
             get { return this._status; }
@@ -137,6 +142,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the IAM user associated with the service-specific credential.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

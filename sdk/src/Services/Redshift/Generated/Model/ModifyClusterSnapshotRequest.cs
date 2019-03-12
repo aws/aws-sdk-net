@@ -89,6 +89,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the snapshot whose setting you want to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

@@ -68,6 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application the environment is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -86,6 +87,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the environment to delete the draft configuration from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }

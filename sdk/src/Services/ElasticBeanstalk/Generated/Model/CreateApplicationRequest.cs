@@ -64,6 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// exists, the action returns an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -82,6 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Describes the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }

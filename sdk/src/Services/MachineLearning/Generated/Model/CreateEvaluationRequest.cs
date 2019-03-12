@@ -66,6 +66,7 @@ namespace Amazon.MachineLearning.Model
         /// must match the schema used to create the <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EvaluationDataSourceId
         {
             get { return this._evaluationDataSourceId; }
@@ -84,6 +85,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied ID that uniquely identifies the <code>Evaluation</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }
@@ -102,6 +104,7 @@ namespace Amazon.MachineLearning.Model
         /// A user-supplied name or description of the <code>Evaluation</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string EvaluationName
         {
             get { return this._evaluationName; }
@@ -125,6 +128,7 @@ namespace Amazon.MachineLearning.Model
         /// <code>DataSource</code> used in the <code>Evaluation</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string MLModelId
         {
             get { return this._mlModelId; }

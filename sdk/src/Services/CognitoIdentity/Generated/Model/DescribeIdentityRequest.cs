@@ -47,6 +47,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }

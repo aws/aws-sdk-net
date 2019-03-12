@@ -64,6 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// HttpHeaders received on your server in same order.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HttpHeader> HttpHeaders
         {
             get { return this._httpHeaders; }
@@ -82,6 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Source IP address of your user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -100,6 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Your server endpoint where this API is invoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerName
         {
             get { return this._serverName; }
@@ -118,6 +121,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Your server path where this API is invoked. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerPath
         {
             get { return this._serverPath; }

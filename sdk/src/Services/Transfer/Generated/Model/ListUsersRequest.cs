@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.Transfer.Model
         /// <code>NextToken</code> parameter to continue listing additional users.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -84,6 +86,7 @@ namespace Amazon.Transfer.Model
         /// that has users are assigned to it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }

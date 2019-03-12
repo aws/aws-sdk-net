@@ -56,6 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string DefaultInstanceName
         {
             get { return this._defaultInstanceName; }
@@ -80,6 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -117,6 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// managed instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -136,6 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// value is 1 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int RegistrationLimit
         {
             get { return this._registrationLimit.GetValueOrDefault(); }
@@ -181,6 +185,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }

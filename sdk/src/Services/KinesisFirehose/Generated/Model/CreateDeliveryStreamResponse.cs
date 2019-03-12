@@ -40,6 +40,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The ARN of the delivery stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string DeliveryStreamARN
         {
             get { return this._deliveryStreamARN; }

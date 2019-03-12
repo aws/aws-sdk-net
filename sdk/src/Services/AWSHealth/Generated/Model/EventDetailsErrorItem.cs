@@ -81,6 +81,7 @@ namespace Amazon.AWSHealth.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1600)]
         public string EventArn
         {
             get { return this._eventArn; }

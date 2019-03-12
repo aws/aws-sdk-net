@@ -106,6 +106,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeploymentId
         {
             get { return this._deploymentId; }
@@ -160,6 +161,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }
@@ -178,6 +180,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name for the <a>Stage</a> resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StageName
         {
             get { return this._stageName; }

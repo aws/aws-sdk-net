@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// The two-letter code for the continent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string ContinentCode
         {
             get { return this._continentCode; }
@@ -64,6 +65,7 @@ namespace Amazon.Route53.Model
         /// The full name of the continent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string ContinentName
         {
             get { return this._continentName; }
@@ -82,6 +84,7 @@ namespace Amazon.Route53.Model
         /// The two-letter code for the country.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public string CountryCode
         {
             get { return this._countryCode; }
@@ -100,6 +103,7 @@ namespace Amazon.Route53.Model
         /// The name of the country.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CountryName
         {
             get { return this._countryName; }
@@ -119,6 +123,7 @@ namespace Amazon.Route53.Model
         /// States.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public string SubdivisionCode
         {
             get { return this._subdivisionCode; }
@@ -138,6 +143,7 @@ namespace Amazon.Route53.Model
         /// States.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string SubdivisionName
         {
             get { return this._subdivisionName; }

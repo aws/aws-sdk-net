@@ -48,6 +48,7 @@ namespace Amazon.Glue.Model
         /// The actions initiated by this trigger when it fires.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Action> Actions
         {
             get { return this._actions; }
@@ -66,6 +67,7 @@ namespace Amazon.Glue.Model
         /// A description of the new trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -84,6 +86,7 @@ namespace Amazon.Glue.Model
         /// The name of the trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -169,6 +172,7 @@ namespace Amazon.Glue.Model
         /// Tags in AWS Glue</a> in the developer guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -187,6 +191,7 @@ namespace Amazon.Glue.Model
         /// The type of the new trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TriggerType Type
         {
             get { return this._type; }

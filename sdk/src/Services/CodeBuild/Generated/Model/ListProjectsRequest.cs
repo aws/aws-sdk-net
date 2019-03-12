@@ -48,6 +48,7 @@ namespace Amazon.CodeBuild.Model
         /// with each subsequent next token that is returned, until no more next tokens are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -45,6 +45,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the entity (user or group) for which to update mailbox permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the entity (user or group) to which to grant the permissions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string GranteeId
         {
             get { return this._granteeId; }
@@ -81,6 +83,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization under which the entity (user or group) exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -104,6 +107,7 @@ namespace Amazon.WorkMail.Model
         /// the mailbox.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PermissionValues
         {
             get { return this._permissionValues; }

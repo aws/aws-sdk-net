@@ -89,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the task invocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string InvocationId
         {
             get { return this._invocationId; }
@@ -108,6 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Window. This was also included in any CloudWatch events raised during the task invocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -181,6 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Status values. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=250)]
         public string StatusDetails
         {
             get { return this._statusDetails; }
@@ -199,6 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the specific task execution in the Maintenance Window execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string TaskExecutionId
         {
             get { return this._taskExecutionId; }
@@ -235,6 +239,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window execution that ran the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }
@@ -254,6 +259,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=36)]
         public string WindowTargetId
         {
             get { return this._windowTargetId; }

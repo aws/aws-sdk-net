@@ -61,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action description.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -79,6 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -97,6 +99,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The self-service action name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

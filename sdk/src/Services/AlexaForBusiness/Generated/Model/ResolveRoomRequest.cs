@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the skill that was requested. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the user. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserId
         {
             get { return this._userId; }

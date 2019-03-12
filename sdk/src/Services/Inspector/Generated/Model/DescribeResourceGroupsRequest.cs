@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the resource group that you want to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> ResourceGroupArns
         {
             get { return this._resourceGroupArns; }

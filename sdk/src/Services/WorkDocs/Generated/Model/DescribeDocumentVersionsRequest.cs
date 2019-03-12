@@ -52,6 +52,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -70,6 +71,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DocumentId
         {
             get { return this._documentId; }
@@ -88,6 +90,7 @@ namespace Amazon.WorkDocs.Model
         /// Specify "SOURCE" to include initialized versions and a URL for the source document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Fields
         {
             get { return this._fields; }
@@ -106,6 +109,7 @@ namespace Amazon.WorkDocs.Model
         /// A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Include
         {
             get { return this._include; }
@@ -124,6 +128,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of versions to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -143,6 +148,7 @@ namespace Amazon.WorkDocs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }

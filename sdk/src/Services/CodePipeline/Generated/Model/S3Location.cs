@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The Amazon S3 artifact bucket for an action's artifacts.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=63)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -59,6 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// The artifact name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Key
         {
             get { return this._key; }

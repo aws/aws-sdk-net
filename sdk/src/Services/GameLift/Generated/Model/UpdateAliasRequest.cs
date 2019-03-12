@@ -73,6 +73,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet alias. Specify the alias you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AliasId
         {
             get { return this._aliasId; }
@@ -91,6 +92,7 @@ namespace Amazon.GameLift.Model
         /// Human-readable description of an alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -110,6 +112,7 @@ namespace Amazon.GameLift.Model
         /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

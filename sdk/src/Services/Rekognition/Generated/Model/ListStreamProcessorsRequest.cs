@@ -43,6 +43,7 @@ namespace Amazon.Rekognition.Model
         /// the response. The default is 1000. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.Rekognition.Model
         /// You can use this pagination token to retrieve the next set of stream processors. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

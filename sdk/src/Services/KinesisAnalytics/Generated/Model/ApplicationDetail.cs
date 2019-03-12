@@ -52,6 +52,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// ARN of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ApplicationARN
         {
             get { return this._applicationARN; }
@@ -71,6 +72,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// the in-application streams in your application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
         public string ApplicationCode
         {
             get { return this._applicationCode; }
@@ -89,6 +91,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Description of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ApplicationDescription
         {
             get { return this._applicationDescription; }
@@ -107,6 +110,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -125,6 +129,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Status of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationStatus ApplicationStatus
         {
             get { return this._applicationStatus; }
@@ -143,6 +148,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Provides the current application version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long ApplicationVersionId
         {
             get { return this._applicationVersionId.GetValueOrDefault(); }

@@ -67,6 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CodeBuildServiceRole
         {
             get { return this._codeBuildServiceRole; }
@@ -118,6 +119,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The ID of the Docker image to use for this build project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Image
         {
             get { return this._image; }

@@ -80,6 +80,7 @@ namespace Amazon.IoT.Model
         /// The group name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }
@@ -98,6 +99,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing to remove from the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

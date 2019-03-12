@@ -59,6 +59,7 @@ namespace Amazon.Chime.Model
         /// The user ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserId
         {
             get { return this._userId; }

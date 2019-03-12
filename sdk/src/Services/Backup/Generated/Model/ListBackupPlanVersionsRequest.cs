@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies a backup plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupPlanId
         {
             get { return this._backupPlanId; }
@@ -62,6 +63,7 @@ namespace Amazon.Backup.Model
         /// The maximum number of items to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

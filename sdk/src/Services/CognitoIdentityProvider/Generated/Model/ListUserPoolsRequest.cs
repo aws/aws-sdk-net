@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// pools.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

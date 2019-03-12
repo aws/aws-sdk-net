@@ -46,6 +46,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container to query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ContainerName
         {
             get { return this._containerName; }

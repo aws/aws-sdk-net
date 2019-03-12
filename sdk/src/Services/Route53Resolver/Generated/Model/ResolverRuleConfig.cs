@@ -44,6 +44,7 @@ namespace Amazon.Route53Resolver.Model
         /// dashboard in the Route 53 console. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -63,6 +64,7 @@ namespace Amazon.Route53Resolver.Model
         /// to the IP addresses that you specify in <code>TargetIps</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }
@@ -82,6 +84,7 @@ namespace Amazon.Route53Resolver.Model
         /// route outbound DNS queries to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<TargetAddress> TargetIps
         {
             get { return this._targetIps; }

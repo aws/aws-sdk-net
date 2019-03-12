@@ -91,6 +91,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// The ID of the mount target to delete (String).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MountTargetId
         {
             get { return this._mountTargetId; }

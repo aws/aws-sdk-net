@@ -63,6 +63,7 @@ namespace Amazon.KinesisVideo.Model
         /// A value to compare.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ComparisonValue
         {
             get { return this._comparisonValue; }

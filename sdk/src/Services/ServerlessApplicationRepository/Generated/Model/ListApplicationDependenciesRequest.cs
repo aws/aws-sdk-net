@@ -44,6 +44,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -62,6 +63,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The total number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }

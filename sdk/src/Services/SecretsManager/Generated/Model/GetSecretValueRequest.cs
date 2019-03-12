@@ -91,6 +91,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SecretId
         {
             get { return this._secretId; }
@@ -118,6 +119,7 @@ namespace Amazon.SecretsManager.Model
         /// value with 32 hexadecimal digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string VersionId
         {
             get { return this._versionId; }
@@ -145,6 +147,7 @@ namespace Amazon.SecretsManager.Model
         /// of <code>AWSCURRENT</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string VersionStage
         {
             get { return this._versionStage; }

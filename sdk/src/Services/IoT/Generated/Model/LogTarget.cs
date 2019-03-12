@@ -59,6 +59,7 @@ namespace Amazon.IoT.Model
         /// The target type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LogTargetType TargetType
         {
             get { return this._targetType; }

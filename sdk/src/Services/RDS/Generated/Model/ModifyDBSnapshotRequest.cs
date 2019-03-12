@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// The identifier of the DB snapshot to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }

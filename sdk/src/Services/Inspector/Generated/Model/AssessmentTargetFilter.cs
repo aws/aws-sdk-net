@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// property of the <a>AssessmentTarget</a> data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string AssessmentTargetNamePattern
         {
             get { return this._assessmentTargetNamePattern; }

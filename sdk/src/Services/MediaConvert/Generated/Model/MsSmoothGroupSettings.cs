@@ -92,6 +92,7 @@ namespace Amazon.MediaConvert.Model
         /// specify the mp4 fragment sizes in seconds. Fragment length must be compatible with
         /// GOP size and frame rate.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int FragmentLength
         {
             get { return this._fragmentLength.GetValueOrDefault(); }

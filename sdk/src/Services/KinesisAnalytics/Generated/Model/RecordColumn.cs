@@ -66,6 +66,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the column created in the in-application input stream or reference table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -84,6 +85,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Type of column created in the in-application input stream or reference table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string SqlType
         {
             get { return this._sqlType; }

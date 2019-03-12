@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         /// A list of <code>Database</code> objects from the specified catalog.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Database> DatabaseList
         {
             get { return this._databaseList; }

@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Strength. Relative strength of noise reducing filter. Higher
         /// values produce stronger filtering.
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public int Strength
         {
             get { return this._strength.GetValueOrDefault(); }

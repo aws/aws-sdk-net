@@ -45,6 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string Arn
         {
             get { return this._arn; }
@@ -81,6 +82,7 @@ namespace Amazon.RoboMaker.Model
         /// The name of the simulation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -99,6 +101,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job robot application names.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> RobotApplicationNames
         {
             get { return this._robotApplicationNames; }
@@ -117,6 +120,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of simulation job simulation application names.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> SimulationApplicationNames
         {
             get { return this._simulationApplicationNames; }

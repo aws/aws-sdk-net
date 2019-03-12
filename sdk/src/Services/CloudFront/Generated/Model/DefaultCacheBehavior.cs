@@ -133,6 +133,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that specifies how CloudFront handles query strings and cookies.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ForwardedValues ForwardedValues
         {
             get { return this._forwardedValues; }
@@ -195,6 +196,7 @@ namespace Amazon.CloudFront.Model
         /// <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long MinTTL
         {
             get { return this._minTTL.GetValueOrDefault(); }
@@ -237,6 +239,7 @@ namespace Amazon.CloudFront.Model
         /// default cache behavior in your distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetOriginId
         {
             get { return this._targetOriginId; }
@@ -278,6 +281,7 @@ namespace Amazon.CloudFront.Model
         /// the updated distribution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrustedSigners TrustedSigners
         {
             get { return this._trustedSigners; }
@@ -331,6 +335,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ViewerProtocolPolicy ViewerProtocolPolicy
         {
             get { return this._viewerProtocolPolicy; }

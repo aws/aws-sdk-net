@@ -38,6 +38,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -53,6 +54,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DatabaseName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }

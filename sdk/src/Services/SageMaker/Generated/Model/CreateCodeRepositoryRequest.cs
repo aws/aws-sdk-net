@@ -53,6 +53,7 @@ namespace Amazon.SageMaker.Model
         /// are a-z, A-Z, 0-9, and - (hyphen).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CodeRepositoryName
         {
             get { return this._codeRepositoryName; }
@@ -72,6 +73,7 @@ namespace Amazon.SageMaker.Model
         /// located, the default branch, and credentials to use to access the repository.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GitConfig GitConfig
         {
             get { return this._gitConfig; }

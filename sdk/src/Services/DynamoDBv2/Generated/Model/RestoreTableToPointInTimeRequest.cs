@@ -131,6 +131,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the source table that is being restored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string SourceTableName
         {
             get { return this._sourceTableName; }
@@ -149,6 +150,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the new table to which it must be restored to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TargetTableName
         {
             get { return this._targetTableName; }

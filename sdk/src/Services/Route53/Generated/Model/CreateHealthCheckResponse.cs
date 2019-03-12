@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// A complex type that contains identifying information about the health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheck HealthCheck
         {
             get { return this._healthCheck; }
@@ -59,6 +60,7 @@ namespace Amazon.Route53.Model
         /// The unique URL representing the new health check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Location
         {
             get { return this._location; }

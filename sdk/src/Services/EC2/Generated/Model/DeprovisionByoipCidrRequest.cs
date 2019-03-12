@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// that you specified when you provisioned the address range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }

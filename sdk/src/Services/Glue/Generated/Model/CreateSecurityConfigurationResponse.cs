@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// The name assigned to the new security configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

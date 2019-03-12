@@ -40,6 +40,7 @@ namespace Amazon.DataPipeline.Model
         /// Indicates whether the calling task runner should terminate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Terminate
         {
             get { return this._terminate.GetValueOrDefault(); }

@@ -78,6 +78,7 @@ namespace Amazon.IdentityManagement.Model
         /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Path
         {
             get { return this._path; }
@@ -96,6 +97,7 @@ namespace Amazon.IdentityManagement.Model
         /// The ARN of the policy that is used to set the permissions boundary for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string PermissionsBoundary
         {
             get { return this._permissionsBoundary; }
@@ -123,6 +125,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -149,6 +152,7 @@ namespace Amazon.IdentityManagement.Model
         /// both "TESTUSER" and "testuser".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

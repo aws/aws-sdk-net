@@ -125,6 +125,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Name. The name of the output. This value must be unique
         /// within the current flow.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -140,6 +141,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property OutputArn. The ARN of the output.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutputArn
         {
             get { return this._outputArn; }

@@ -50,6 +50,7 @@ namespace Amazon.Lightsail.Model
         /// An array of key-value pairs containing information about the domain entry.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DomainEntry DomainEntry
         {
             get { return this._domainEntry; }
@@ -68,6 +69,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the domain recordset to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

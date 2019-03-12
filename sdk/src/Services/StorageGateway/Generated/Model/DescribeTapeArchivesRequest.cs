@@ -50,6 +50,7 @@ namespace Amazon.StorageGateway.Model
         /// Specifies that the number of virtual tapes descried be limited to the specified number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.StorageGateway.Model
         /// tapes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }

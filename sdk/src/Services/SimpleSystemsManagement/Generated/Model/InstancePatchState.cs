@@ -56,6 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the patch baseline used to patch the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=128)]
         public string BaselineId
         {
             get { return this._baselineId; }
@@ -165,6 +166,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstallOverrideList
         {
             get { return this._installOverrideList; }
@@ -184,6 +186,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -241,6 +244,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// or INSTALL (install missing patches).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PatchOperationType Operation
         {
             get { return this._operation; }
@@ -259,6 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the most recent patching operation completed on the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime OperationEndTime
         {
             get { return this._operationEndTime.GetValueOrDefault(); }
@@ -277,6 +282,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the most recent patching operation was started on the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime OperationStartTime
         {
             get { return this._operationStartTime.GetValueOrDefault(); }
@@ -296,6 +302,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -314,6 +321,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the patch group the managed instance belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PatchGroup
         {
             get { return this._patchGroup; }
@@ -333,6 +341,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// compliance data was collected.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

@@ -79,6 +79,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ID of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string TargetId
         {
             get { return this._targetId; }

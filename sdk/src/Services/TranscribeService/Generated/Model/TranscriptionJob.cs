@@ -160,6 +160,7 @@ namespace Amazon.TranscribeService.Model
         /// The sample rate, in Hertz, of the audio track in the input media file. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8000, Max=48000)]
         public int MediaSampleRateHertz
         {
             get { return this._mediaSampleRateHertz.GetValueOrDefault(); }
@@ -216,6 +217,7 @@ namespace Amazon.TranscribeService.Model
         /// The name of the transcription job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string TranscriptionJobName
         {
             get { return this._transcriptionJobName; }

@@ -82,6 +82,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }
@@ -100,6 +101,7 @@ namespace Amazon.DocDB.Model
         /// The DB cluster parameter group family name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }
@@ -118,6 +120,7 @@ namespace Amazon.DocDB.Model
         /// The description for the DB cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

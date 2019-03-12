@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -59,6 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents a target tracking scaling policy configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AutoScalingTargetTrackingScalingPolicyConfigurationUpdate TargetTrackingScalingPolicyConfiguration
         {
             get { return this._targetTrackingScalingPolicyConfiguration; }

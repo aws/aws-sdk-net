@@ -54,6 +54,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }

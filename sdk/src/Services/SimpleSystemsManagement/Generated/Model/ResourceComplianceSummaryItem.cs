@@ -47,6 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The compliance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ComplianceType
         {
             get { return this._complianceType; }
@@ -138,6 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The resource ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -156,6 +158,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ResourceType
         {
             get { return this._resourceType; }

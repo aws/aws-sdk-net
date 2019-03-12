@@ -230,6 +230,7 @@ namespace Amazon.DataSync.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string TaskExecutionArn
         {
             get { return this._taskExecutionArn; }

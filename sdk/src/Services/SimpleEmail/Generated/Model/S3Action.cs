@@ -64,6 +64,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the Amazon S3 bucket that incoming email will be saved to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

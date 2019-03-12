@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         ///  An ARN of a CloudFront resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Resource
         {
             get { return this._resource; }

@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The ARNs of the assessment runs that generate the findings that you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> AssessmentRunArns
         {
             get { return this._assessmentRunArns; }
@@ -109,6 +110,7 @@ namespace Amazon.Inspector.Model
         /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }

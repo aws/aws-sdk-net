@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentity.Model
         /// TRUE if the identity pool supports unauthenticated logins.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool AllowUnauthenticatedIdentities
         {
             get { return this._allowUnauthenticatedIdentities.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The "domain" by which Cognito will refer to your users.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string DeveloperProviderName
         {
             get { return this._developerProviderName; }
@@ -102,6 +104,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }
@@ -120,6 +123,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A string that you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IdentityPoolName
         {
             get { return this._identityPoolName; }
@@ -194,6 +198,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Optional key:value pairs mapping provider names to provider app IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, string> SupportedLoginProviders
         {
             get { return this._supportedLoginProviders; }

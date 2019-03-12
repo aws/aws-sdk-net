@@ -157,6 +157,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The resource ID, for example, the instance ID where the association ran.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -175,6 +176,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The resource type, for example, instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ResourceType
         {
             get { return this._resourceType; }

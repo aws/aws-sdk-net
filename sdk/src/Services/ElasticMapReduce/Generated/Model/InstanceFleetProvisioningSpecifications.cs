@@ -49,6 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// duration and provisioning timeout behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SpotProvisioningSpecification SpotSpecification
         {
             get { return this._spotSpecification; }

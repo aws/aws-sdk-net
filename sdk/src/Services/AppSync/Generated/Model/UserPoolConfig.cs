@@ -62,6 +62,7 @@ namespace Amazon.AppSync.Model
         /// The AWS Region in which the user pool was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AwsRegion
         {
             get { return this._awsRegion; }
@@ -81,6 +82,7 @@ namespace Amazon.AppSync.Model
         /// Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DefaultAction DefaultAction
         {
             get { return this._defaultAction; }
@@ -99,6 +101,7 @@ namespace Amazon.AppSync.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

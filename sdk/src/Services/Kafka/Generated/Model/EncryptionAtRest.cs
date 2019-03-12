@@ -40,6 +40,7 @@ namespace Amazon.Kafka.Model
         /// The AWS KMS key used for data encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DataVolumeKMSKeyId
         {
             get { return this._dataVolumeKMSKeyId; }

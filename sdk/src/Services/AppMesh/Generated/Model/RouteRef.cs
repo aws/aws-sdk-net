@@ -43,6 +43,7 @@ namespace Amazon.AppMesh.Model
         /// The full Amazon Resource Name (ARN) for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -61,6 +62,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh that the route resides in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -79,6 +81,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string RouteName
         {
             get { return this._routeName; }
@@ -97,6 +100,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual router that the route is associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

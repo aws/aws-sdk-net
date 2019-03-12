@@ -57,6 +57,7 @@ namespace Amazon.CloudFront.Model
         /// The distribution's ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DistributionId
         {
             get { return this._distributionId; }

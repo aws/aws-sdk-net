@@ -86,6 +86,7 @@ namespace Amazon.IoT.Model
         /// Specifies the behaviors that, when violated by a device (thing), cause an alert.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<Behavior> Behaviors
         {
             get { return this._behaviors; }
@@ -158,6 +159,7 @@ namespace Amazon.IoT.Model
         /// The description of the security profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string SecurityProfileDescription
         {
             get { return this._securityProfileDescription; }
@@ -176,6 +178,7 @@ namespace Amazon.IoT.Model
         /// The name of the security profile that was updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SecurityProfileName
         {
             get { return this._securityProfileName; }

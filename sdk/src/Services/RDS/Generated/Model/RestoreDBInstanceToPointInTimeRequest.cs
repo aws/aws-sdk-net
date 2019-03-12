@@ -796,6 +796,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBInstanceIdentifier
         {
             get { return this._targetDBInstanceIdentifier; }

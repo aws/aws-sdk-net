@@ -62,6 +62,7 @@ namespace Amazon.Route53.Model
         /// The ID of the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string Id
         {
             get { return this._id; }
@@ -81,6 +82,7 @@ namespace Amazon.Route53.Model
         /// has not yet been applied to all Amazon Route 53 DNS servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeStatus Status
         {
             get { return this._status; }
@@ -101,6 +103,7 @@ namespace Amazon.Route53.Model
         /// represents March 27, 2017 at 17:48:16.751 UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime SubmittedAt
         {
             get { return this._submittedAt.GetValueOrDefault(); }
@@ -125,6 +128,7 @@ namespace Amazon.Route53.Model
         /// to get detailed information about the change.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Comment
         {
             get { return this._comment; }

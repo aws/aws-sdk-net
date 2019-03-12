@@ -93,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// value of <code>IN_PROGRESS</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime JobCompletionDate
         {
             get { return this._jobCompletionDate.GetValueOrDefault(); }
@@ -112,6 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the report job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime JobCreationDate
         {
             get { return this._jobCreationDate.GetValueOrDefault(); }
@@ -130,6 +132,7 @@ namespace Amazon.IdentityManagement.Model
         /// The status of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatusType JobStatus
         {
             get { return this._jobStatus; }
@@ -150,6 +153,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -169,6 +173,7 @@ namespace Amazon.IdentityManagement.Model
         /// attempt to access the service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ServiceLastAccessed> ServicesLastAccessed
         {
             get { return this._servicesLastAccessed; }

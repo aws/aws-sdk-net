@@ -59,6 +59,7 @@ namespace Amazon.WAF.Model
         /// CloudFront access logs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<IPSetDescriptor> IPSetDescriptors
         {
             get { return this._ipSetDescriptors; }
@@ -85,6 +86,7 @@ namespace Amazon.WAF.Model
         ///  <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IPSetId
         {
             get { return this._ipSetId; }
@@ -104,6 +106,7 @@ namespace Amazon.WAF.Model
         /// <code>IPSet</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

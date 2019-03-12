@@ -50,6 +50,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Qualification type of the Qualification to be revoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string QualificationTypeId
         {
             get { return this._qualificationTypeId; }
@@ -87,6 +88,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Worker who possesses the Qualification to be revoked.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public string StackPolicyBody
         {
             get { return this._stackPolicyBody; }

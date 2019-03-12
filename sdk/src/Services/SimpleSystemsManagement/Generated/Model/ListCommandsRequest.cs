@@ -59,6 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) If provided, lists only the specified command.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string CommandId
         {
             get { return this._commandId; }
@@ -78,6 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<CommandFilter> Filters
         {
             get { return this._filters; }
@@ -115,6 +117,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// a token that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

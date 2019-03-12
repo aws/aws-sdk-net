@@ -87,6 +87,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// up to 50 items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -105,6 +106,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -127,6 +129,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogStreamNamePrefix
         {
             get { return this._logStreamNamePrefix; }
@@ -146,6 +149,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

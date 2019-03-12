@@ -45,6 +45,7 @@ namespace Amazon.MobileAnalytics.Model
         /// The client context including the client ID, app title, app version and package name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientContext
         {
             get { return this._clientContext; }
@@ -81,6 +82,7 @@ namespace Amazon.MobileAnalytics.Model
         /// An array of Event JSON objects
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Event> Events
         {
             get { return this._events; }

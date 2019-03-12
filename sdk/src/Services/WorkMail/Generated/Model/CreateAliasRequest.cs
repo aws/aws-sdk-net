@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The alias to add to the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=254)]
         public string Alias
         {
             get { return this._alias; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The alias is added to this Amazon WorkMail entity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string EntityId
         {
             get { return this._entityId; }
@@ -79,6 +81,7 @@ namespace Amazon.WorkMail.Model
         /// The organization under which the member exists.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }

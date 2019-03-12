@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property APNSSandboxChannelRequest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public APNSSandboxChannelRequest APNSSandboxChannelRequest
         {
             get { return this._apnsSandboxChannelRequest; }
@@ -54,6 +55,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }

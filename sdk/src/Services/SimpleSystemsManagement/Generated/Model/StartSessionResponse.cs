@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the session.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=96)]
         public string SessionId
         {
             get { return this._sessionId; }
@@ -92,6 +93,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the connection to the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public string TokenValue
         {
             get { return this._tokenValue; }

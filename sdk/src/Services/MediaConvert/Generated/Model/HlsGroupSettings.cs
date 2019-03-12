@@ -259,6 +259,7 @@ namespace Amazon.MediaConvert.Model
         /// by looking ahead and back within the specified range for a nearby avail and extending
         /// the segment size if needed.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int MinSegmentLength
         {
             get { return this._minSegmentLength.GetValueOrDefault(); }
@@ -305,6 +306,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ProgramDateTimePeriod. Period of insertion of EXT-X-PROGRAM-DATE-TIME
         /// entry, in seconds.
         /// </summary>
+        [AWSProperty(Min=0, Max=3600)]
         public int ProgramDateTimePeriod
         {
             get { return this._programDateTimePeriod.GetValueOrDefault(); }
@@ -337,6 +339,7 @@ namespace Amazon.MediaConvert.Model
         /// to create (in seconds). Note that segments will end on the next keyframe after this
         /// number of seconds, so actual segment length may be longer.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentLength
         {
             get { return this._segmentLength.GetValueOrDefault(); }
@@ -354,6 +357,7 @@ namespace Amazon.MediaConvert.Model
         /// a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY
         /// for this setting to have an effect.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int SegmentsPerSubdirectory
         {
             get { return this._segmentsPerSubdirectory.GetValueOrDefault(); }
@@ -399,6 +403,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimedMetadataId3Period
         {
             get { return this._timedMetadataId3Period.GetValueOrDefault(); }
@@ -415,6 +420,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property TimestampDeltaMilliseconds. Provides an extra millisecond
         /// delta offset to fine tune the timestamps.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimestampDeltaMilliseconds
         {
             get { return this._timestampDeltaMilliseconds.GetValueOrDefault(); }

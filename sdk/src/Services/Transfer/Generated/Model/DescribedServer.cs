@@ -49,6 +49,7 @@ namespace Amazon.Transfer.Model
         /// Specifies the unique Amazon Resource Name (ARN) for the server to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -175,6 +176,7 @@ namespace Amazon.Transfer.Model
         /// servers that were assigned to the server that was described.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Automation execution ID for which you want step execution descriptions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more filters to limit the number of step executions returned by the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6)]
         public List<StepExecutionFilter> Filters
         {
             get { return this._filters; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// that you can specify in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

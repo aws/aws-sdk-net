@@ -43,6 +43,7 @@ namespace Amazon.DAX.Model
         /// The name of the parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }
@@ -62,6 +63,7 @@ namespace Amazon.DAX.Model
         /// array represents a single parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ParameterNameValue> ParameterNameValues
         {
             get { return this._parameterNameValues; }

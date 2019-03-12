@@ -67,6 +67,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A unique identifier used to query an export.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportId
         {
             get { return this._exportId; }
@@ -85,6 +86,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The time that the data export was initiated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime ExportRequestTime
         {
             get { return this._exportRequestTime.GetValueOrDefault(); }
@@ -103,6 +105,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The status of the data export job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportStatus ExportStatus
         {
             get { return this._exportStatus; }
@@ -180,6 +183,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A status message provided for API callers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

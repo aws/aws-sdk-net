@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         /// value is <code>TrainingJob</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceType Resource
         {
             get { return this._resource; }

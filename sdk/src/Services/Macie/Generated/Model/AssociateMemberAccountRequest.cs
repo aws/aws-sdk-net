@@ -42,6 +42,7 @@ namespace Amazon.Macie.Model
         /// account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MemberAccountId
         {
             get { return this._memberAccountId; }

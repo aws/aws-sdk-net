@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the assessment target that is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTargetArn
         {
             get { return this._assessmentTargetArn; }

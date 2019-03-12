@@ -45,6 +45,7 @@ namespace Amazon.Neptune.Model
         /// The description for the DB subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSubnetGroupDescription
         {
             get { return this._dbSubnetGroupDescription; }
@@ -72,6 +73,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSubnetGroupName
         {
             get { return this._dbSubnetGroupName; }
@@ -90,6 +92,7 @@ namespace Amazon.Neptune.Model
         /// The EC2 Subnet IDs for the DB subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

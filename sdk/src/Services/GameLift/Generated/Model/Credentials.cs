@@ -44,6 +44,7 @@ namespace Amazon.GameLift.Model
         /// Temporary key allowing access to the Amazon GameLift S3 account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }
@@ -62,6 +63,7 @@ namespace Amazon.GameLift.Model
         /// Temporary secret key allowing access to the Amazon GameLift S3 account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -80,6 +82,7 @@ namespace Amazon.GameLift.Model
         /// Token used to associate a specific build ID with the files uploaded using these credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string SessionToken
         {
             get { return this._sessionToken; }

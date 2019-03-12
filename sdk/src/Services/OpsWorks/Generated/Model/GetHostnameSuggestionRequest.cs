@@ -50,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// The layer ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LayerId
         {
             get { return this._layerId; }

@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The resource server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceServerType ResourceServer
         {
             get { return this._resourceServer; }

@@ -42,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// The unique identifier for the Trusted Advisor check.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CheckId
         {
             get { return this._checkId; }
@@ -61,6 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// refresh.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long MillisUntilNextRefreshable
         {
             get { return this._millisUntilNextRefreshable.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.AWSSupport.Model
         /// "enqueued", "processing", "success", or "abandoned".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

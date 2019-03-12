@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }

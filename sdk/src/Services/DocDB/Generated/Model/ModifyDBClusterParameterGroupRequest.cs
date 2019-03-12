@@ -62,6 +62,7 @@ namespace Amazon.DocDB.Model
         /// The name of the DB cluster parameter group to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }
@@ -80,6 +81,7 @@ namespace Amazon.DocDB.Model
         /// A list of parameters in the DB cluster parameter group to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Parameter> Parameters
         {
             get { return this._parameters; }

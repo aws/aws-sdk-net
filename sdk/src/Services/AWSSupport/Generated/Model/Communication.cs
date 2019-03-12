@@ -64,6 +64,7 @@ namespace Amazon.AWSSupport.Model
         /// The text of the communication between the customer and AWS Support.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8000)]
         public string Body
         {
             get { return this._body; }

@@ -113,6 +113,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -137,6 +138,7 @@ namespace Amazon.EC2.Model
         /// or underscores(_)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

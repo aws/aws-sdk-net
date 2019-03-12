@@ -59,6 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -82,6 +83,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// If not provided, all the events are matched.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string FilterPattern
         {
             get { return this._filterPattern; }
@@ -121,6 +123,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The maximum number of events to return. The default is 10,000 events.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -139,6 +142,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the log group to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -165,6 +169,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string LogStreamNamePrefix
         {
             get { return this._logStreamNamePrefix; }
@@ -188,6 +193,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// the action returns an <code>InvalidParameterException</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public List<string> LogStreamNames
         {
             get { return this._logStreamNames; }
@@ -207,6 +213,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -226,6 +233,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

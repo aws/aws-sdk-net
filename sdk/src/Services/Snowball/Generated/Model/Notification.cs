@@ -97,6 +97,7 @@ namespace Amazon.Snowball.Model
         /// AWS Simple Notification Service (SNS) API action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string SnsTopicARN
         {
             get { return this._snsTopicARN; }

@@ -59,6 +59,7 @@ namespace Amazon.CodePipeline.Model
         /// The text of the error message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
         public string Message
         {
             get { return this._message; }

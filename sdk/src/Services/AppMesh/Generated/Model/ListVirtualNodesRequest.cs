@@ -50,6 +50,7 @@ namespace Amazon.AppMesh.Model
         /// results and a            <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh to list virtual nodes in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }

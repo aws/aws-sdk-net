@@ -143,6 +143,7 @@ namespace Amazon.GameLift.Model
         /// must exist in the same region as this request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationName
         {
             get { return this._configurationName; }
@@ -164,6 +165,7 @@ namespace Amazon.GameLift.Model
         /// the player is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Player> Players
         {
             get { return this._players; }
@@ -184,6 +186,7 @@ namespace Amazon.GameLift.Model
         /// matchmaking ticket status and retrieve match results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string TicketId
         {
             get { return this._ticketId; }

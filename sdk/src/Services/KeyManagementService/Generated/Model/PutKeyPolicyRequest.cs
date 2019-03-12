@@ -109,6 +109,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -154,6 +155,7 @@ namespace Amazon.KeyManagementService.Model
         /// The key policy size limit is 32 kilobytes (32768 bytes).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=131072)]
         public string Policy
         {
             get { return this._policy; }
@@ -172,6 +174,7 @@ namespace Amazon.KeyManagementService.Model
         /// The name of the key policy. The only valid value is <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action that processed the revision to the source artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ActionName
         {
             get { return this._actionName; }
@@ -62,6 +63,7 @@ namespace Amazon.CodePipeline.Model
         /// The system-generated unique ID that identifies the revision number of the artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1500)]
         public string RevisionId
         {
             get { return this._revisionId; }
@@ -83,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// key specified in the object metadata.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionSummary
         {
             get { return this._revisionSummary; }
@@ -102,6 +105,7 @@ namespace Amazon.CodePipeline.Model
         /// repositories, the commit ID is linked to a commit details page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionUrl
         {
             get { return this._revisionUrl; }

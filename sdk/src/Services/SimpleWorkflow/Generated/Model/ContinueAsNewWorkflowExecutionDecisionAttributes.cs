@@ -154,6 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string ExecutionStartToCloseTimeout
         {
             get { return this._executionStartToCloseTimeout; }
@@ -172,6 +173,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The input provided to the new workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -190,6 +192,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The IAM role to attach to the new (continued) execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string LambdaRole
         {
             get { return this._lambdaRole; }
@@ -211,6 +214,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// a <a>TagFilter</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> TagList
         {
             get { return this._tagList; }
@@ -289,6 +293,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=8)]
         public string TaskStartToCloseTimeout
         {
             get { return this._taskStartToCloseTimeout; }
@@ -307,6 +312,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The version of the workflow to start.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkflowTypeVersion
         {
             get { return this._workflowTypeVersion; }

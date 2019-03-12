@@ -41,6 +41,7 @@ namespace Amazon.FSx.Model
         /// Any array of backups.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Backup> Backups
         {
             get { return this._backups; }
@@ -61,6 +62,7 @@ namespace Amazon.FSx.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

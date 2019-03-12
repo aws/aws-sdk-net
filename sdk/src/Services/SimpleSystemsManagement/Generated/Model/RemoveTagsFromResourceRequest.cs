@@ -67,6 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -92,6 +93,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceTypeForTagging ResourceType
         {
             get { return this._resourceType; }
@@ -110,6 +112,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Tag keys that you want to remove from the specified resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

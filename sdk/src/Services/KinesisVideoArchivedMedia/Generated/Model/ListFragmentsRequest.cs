@@ -80,6 +80,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// is provided in the output that you can use to resume pagination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public long MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// from a previously truncated response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -117,6 +119,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The name of the stream from which to retrieve a fragment list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

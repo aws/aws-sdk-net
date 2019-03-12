@@ -44,6 +44,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The HSM hardware certificate issued (signed) by AWS CloudHSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5000)]
         public string AwsHardwareCertificate
         {
             get { return this._awsHardwareCertificate; }
@@ -63,6 +64,7 @@ namespace Amazon.CloudHSMV2.Model
         /// of the cluster's owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5000)]
         public string ClusterCertificate
         {
             get { return this._clusterCertificate; }
@@ -82,6 +84,7 @@ namespace Amazon.CloudHSMV2.Model
         /// state is <code>UNINITIALIZED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5000)]
         public string ClusterCsr
         {
             get { return this._clusterCsr; }
@@ -100,6 +103,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The HSM certificate issued (signed) by the HSM hardware.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5000)]
         public string HsmCertificate
         {
             get { return this._hsmCertificate; }
@@ -118,6 +122,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The HSM hardware certificate issued (signed) by the hardware manufacturer.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5000)]
         public string ManufacturerHardwareCertificate
         {
             get { return this._manufacturerHardwareCertificate; }

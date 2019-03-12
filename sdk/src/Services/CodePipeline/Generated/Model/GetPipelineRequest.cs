@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// be unique under an Amazon Web Services (AWS) user account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -64,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// most current version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Version
         {
             get { return this._version.GetValueOrDefault(); }

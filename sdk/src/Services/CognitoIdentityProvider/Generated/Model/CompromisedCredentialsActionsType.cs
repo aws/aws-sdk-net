@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The event action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompromisedCredentialsEventActionType EventAction
         {
             get { return this._eventAction; }

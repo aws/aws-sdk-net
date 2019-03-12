@@ -49,6 +49,7 @@ namespace Amazon.Comprehend.Model
         /// data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -104,6 +105,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier assigned to the dominant language detection job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }
@@ -122,6 +124,7 @@ namespace Amazon.Comprehend.Model
         /// The name that you assigned to the dominant language detection job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

@@ -82,6 +82,7 @@ namespace Amazon.Signer.Model
         /// token return the same response as the first call.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -101,6 +102,7 @@ namespace Amazon.Signer.Model
         /// of your bucket and an optional prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }
@@ -119,6 +121,7 @@ namespace Amazon.Signer.Model
         /// The name of the signing profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -137,6 +140,7 @@ namespace Amazon.Signer.Model
         /// The S3 bucket that contains the object to sign or a BLOB that contains your raw code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Source Source
         {
             get { return this._source; }

@@ -51,6 +51,7 @@ namespace Amazon.WorkDocs.Model
         /// all activity types are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ActivityTypes
         {
             get { return this._activityTypes; }
@@ -70,6 +71,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -128,6 +130,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -146,6 +149,7 @@ namespace Amazon.WorkDocs.Model
         /// The marker for the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -165,6 +169,7 @@ namespace Amazon.WorkDocs.Model
         /// API (SigV4) requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -183,6 +188,7 @@ namespace Amazon.WorkDocs.Model
         /// The document or folder ID for which to describe activity types.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -222,6 +228,7 @@ namespace Amazon.WorkDocs.Model
         /// API (SigV4) requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string UserId
         {
             get { return this._userId; }

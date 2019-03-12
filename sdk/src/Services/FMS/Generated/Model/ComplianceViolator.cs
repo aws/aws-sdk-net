@@ -42,6 +42,7 @@ namespace Amazon.FMS.Model
         /// The resource ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -62,6 +63,7 @@ namespace Amazon.FMS.Model
         /// or <code>AWS::CloudFront::Distribution</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ResourceType
         {
             get { return this._resourceType; }

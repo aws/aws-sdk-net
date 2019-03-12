@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -83,6 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The unique ID of the timer that was canceled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string TimerId
         {
             get { return this._timerId; }

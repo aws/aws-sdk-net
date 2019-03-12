@@ -47,6 +47,7 @@ namespace Amazon.CodeBuild.Model
         /// the AWS CodeBuild console. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthType AuthType
         {
             get { return this._authType; }
@@ -65,6 +66,7 @@ namespace Amazon.CodeBuild.Model
         ///  The source provider used for this project. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServerType ServerType
         {
             get { return this._serverType; }
@@ -84,6 +86,7 @@ namespace Amazon.CodeBuild.Model
         /// this is the app password. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Token
         {
             get { return this._token; }
@@ -103,6 +106,7 @@ namespace Amazon.CodeBuild.Model
         /// is not valid for other types of source providers or connections. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Username
         {
             get { return this._username; }

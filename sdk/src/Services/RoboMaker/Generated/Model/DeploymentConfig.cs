@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// The percentage of robots receiving the deployment at the same time.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int ConcurrentDeploymentPercentage
         {
             get { return this._concurrentDeploymentPercentage.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.RoboMaker.Model
         /// The percentage of deployments that need to fail before stopping deployment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int FailureThresholdPercentage
         {
             get { return this._failureThresholdPercentage.GetValueOrDefault(); }

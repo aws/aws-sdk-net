@@ -76,6 +76,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string DestinationEnvironmentName
         {
             get { return this._destinationEnvironmentName; }
@@ -126,6 +127,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string SourceEnvironmentName
         {
             get { return this._sourceEnvironmentName; }

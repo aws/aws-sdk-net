@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// returned by the GetInsightResults operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupByAttribute
         {
             get { return this._groupByAttribute; }
@@ -61,6 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the insight whose results are returned by the GetInsightResults operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InsightArn
         {
             get { return this._insightArn; }
@@ -79,6 +81,7 @@ namespace Amazon.SecurityHub.Model
         /// The list of insight result values returned by the GetInsightResults operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InsightResultValue> ResultValues
         {
             get { return this._resultValues; }

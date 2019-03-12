@@ -44,6 +44,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The date when this type was registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDate
         {
             get { return this._creationDate.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The description of the type registered through <a>RegisterWorkflowType</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -98,6 +100,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The current status of the workflow type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegistrationStatus Status
         {
             get { return this._status; }
@@ -116,6 +119,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow type this information is about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

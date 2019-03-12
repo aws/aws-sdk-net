@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property BitDepth. Specify Bit depth (BitDepth), in bits per sample,
         /// to choose the encoding quality for this audio track.
         /// </summary>
+        [AWSProperty(Min=16, Max=24)]
         public int BitDepth
         {
             get { return this._bitDepth.GetValueOrDefault(); }
@@ -58,6 +59,7 @@ namespace Amazon.MediaConvert.Model
         /// in this output audio track. Choosing Mono in the console will give you 1 output channel;
         /// choosing Stereo will give you 2. In the API, valid values are 1 and 2.
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public int Channels
         {
             get { return this._channels.GetValueOrDefault(); }
@@ -73,6 +75,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SampleRate. Sample rate in hz.
         /// </summary>
+        [AWSProperty(Min=8000, Max=192000)]
         public int SampleRate
         {
             get { return this._sampleRate.GetValueOrDefault(); }

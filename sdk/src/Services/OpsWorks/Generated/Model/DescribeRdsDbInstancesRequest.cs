@@ -73,6 +73,7 @@ namespace Amazon.OpsWorks.Model
         /// descriptions of all registered Amazon RDS instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

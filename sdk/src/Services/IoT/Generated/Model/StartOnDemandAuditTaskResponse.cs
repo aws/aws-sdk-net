@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The ID of the on-demand audit you started.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string TaskId
         {
             get { return this._taskId; }

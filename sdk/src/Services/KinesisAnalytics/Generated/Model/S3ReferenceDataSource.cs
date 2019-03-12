@@ -50,6 +50,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Amazon Resource Name (ARN) of the S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string BucketARN
         {
             get { return this._bucketARN; }
@@ -68,6 +69,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Object key name containing reference data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string FileKey
         {
             get { return this._fileKey; }
@@ -89,6 +91,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ReferenceRoleARN
         {
             get { return this._referenceRoleARN; }

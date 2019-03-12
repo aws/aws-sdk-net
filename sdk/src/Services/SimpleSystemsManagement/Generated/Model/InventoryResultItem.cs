@@ -63,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// and values. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public List<Dictionary<string, string>> Content
         {
             get { return this._content; }
@@ -83,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// inventory item type contents if the MD5 hash has not changed since last update. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ContentHash
         {
             get { return this._contentHash; }
@@ -101,6 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The schema version for the inventory result item/
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaVersion
         {
             get { return this._schemaVersion; }
@@ -119,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the inventory result item type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

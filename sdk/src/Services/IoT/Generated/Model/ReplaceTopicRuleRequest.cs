@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         /// The name of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleName
         {
             get { return this._ruleName; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// The rule payload.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TopicRulePayload TopicRulePayload
         {
             get { return this._topicRulePayload; }

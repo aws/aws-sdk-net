@@ -101,6 +101,7 @@ namespace Amazon.EC2.Model
         /// The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TotalTargetCapacity
         {
             get { return this._totalTargetCapacity.GetValueOrDefault(); }

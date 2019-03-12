@@ -47,6 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// User-provided idempotency token.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -65,6 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional description for the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -83,6 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An optional name for the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -102,6 +105,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// tasks for these targets in this Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -120,6 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of target being registered with the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MaintenanceWindowResourceType ResourceType
         {
             get { return this._resourceType; }
@@ -159,6 +164,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -177,6 +183,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window the target should be registered with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

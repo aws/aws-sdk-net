@@ -52,6 +52,7 @@ namespace Amazon.WorkDocs.Model
         /// is a URL that begins with <code>https</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -70,6 +71,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -89,6 +91,7 @@ namespace Amazon.WorkDocs.Model
         /// using HTTPS POST.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscriptionProtocolType Protocol
         {
             get { return this._protocol; }
@@ -107,6 +110,7 @@ namespace Amazon.WorkDocs.Model
         /// The notification type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscriptionType SubscriptionType
         {
             get { return this._subscriptionType; }

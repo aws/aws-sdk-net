@@ -59,6 +59,7 @@ namespace Amazon.CloudFront.Model
         /// The number of origin groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

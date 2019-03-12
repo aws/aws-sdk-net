@@ -42,6 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID for an operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Id
         {
             get { return this._id; }

@@ -86,6 +86,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// to determine how to process the signal.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -105,6 +106,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// determine how to the process the signal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SignalName
         {
             get { return this._signalName; }

@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         /// List of endpoints.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Endpoint> Endpoints
         {
             get { return this._endpoints; }

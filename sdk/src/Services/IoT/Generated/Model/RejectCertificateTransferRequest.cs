@@ -55,6 +55,7 @@ namespace Amazon.IoT.Model
         /// ID.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=64, Max=64)]
         public string CertificateId
         {
             get { return this._certificateId; }
@@ -73,6 +74,7 @@ namespace Amazon.IoT.Model
         /// The reason the certificate transfer was rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=128)]
         public string RejectReason
         {
             get { return this._rejectReason; }

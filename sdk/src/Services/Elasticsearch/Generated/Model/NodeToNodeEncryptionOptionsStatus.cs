@@ -41,6 +41,7 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the node-to-node encryption options for the specified Elasticsearch domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NodeToNodeEncryptionOptions Options
         {
             get { return this._options; }
@@ -60,6 +61,7 @@ namespace Amazon.Elasticsearch.Model
         /// domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

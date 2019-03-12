@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         /// The ID for a configuration for DNS query logging.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that CloudWatch Logs is logging queries for. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -79,6 +81,7 @@ namespace Amazon.Route53.Model
         /// 53 is publishing logs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CloudWatchLogsLogGroupArn
         {
             get { return this._cloudWatchLogsLogGroupArn; }

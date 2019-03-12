@@ -40,6 +40,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// An object describing the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProjectDescription Project
         {
             get { return this._project; }

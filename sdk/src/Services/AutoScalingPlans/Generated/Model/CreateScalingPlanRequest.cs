@@ -44,6 +44,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationSource ApplicationSource
         {
             get { return this._applicationSource; }
@@ -62,6 +63,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The scaling instructions.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ScalingInstruction> ScalingInstructions
         {
             get { return this._scalingInstructions; }
@@ -81,6 +83,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// slashes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScalingPlanName
         {
             get { return this._scalingPlanName; }

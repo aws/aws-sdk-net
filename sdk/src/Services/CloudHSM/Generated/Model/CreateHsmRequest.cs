@@ -139,6 +139,7 @@ namespace Amazon.CloudHSM.Model
         /// behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -157,6 +158,7 @@ namespace Amazon.CloudHSM.Model
         /// The SSH public key to install on the HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SshKey
         {
             get { return this._sshKey; }
@@ -175,6 +177,7 @@ namespace Amazon.CloudHSM.Model
         /// The identifier of the subnet in your VPC in which to place the HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }
@@ -190,6 +193,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SubscriptionType.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SubscriptionType SubscriptionType
         {
             get { return this._subscriptionType; }

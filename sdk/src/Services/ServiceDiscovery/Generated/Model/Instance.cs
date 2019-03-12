@@ -188,6 +188,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -233,6 +234,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Max=64)]
         public string Id
         {
             get { return this._id; }

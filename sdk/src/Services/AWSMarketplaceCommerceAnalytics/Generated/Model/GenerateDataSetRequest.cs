@@ -55,6 +55,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// set metadata file. These key-value pairs can be used to correlated responses with
         /// tracking information from other systems.
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public Dictionary<string, string> CustomerDefinedValues
         {
             get { return this._customerDefinedValues; }
@@ -74,6 +75,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// week (the day value will be ignored). For monthly data sets, provide a date with month-level
         /// granularity for the desired month (the day value will be ignored).
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime DataSetPublicationDate
         {
             get { return this._dataSetPublicationDate.GetValueOrDefault(); }
@@ -219,6 +221,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         ///  </li> </ul> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public DataSetType DataSetType
         {
             get { return this._dataSetType; }
@@ -235,6 +238,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property DestinationS3BucketName. The name (friendly name, not ARN)
         /// of the destination S3 bucket.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string DestinationS3BucketName
         {
             get { return this._destinations3BucketName; }
@@ -271,6 +275,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property RoleNameArn. The Amazon Resource Name (ARN) of the Role
         /// with an attached permissions policy to interact with the provided AWS services.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string RoleNameArn
         {
             get { return this._roleNameArn; }
@@ -287,6 +292,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// Gets and sets the property SnsTopicArn. Amazon Resource Name (ARN) for the SNS Topic
         /// that will be notified when the data set has been published or if an error has occurred.
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }

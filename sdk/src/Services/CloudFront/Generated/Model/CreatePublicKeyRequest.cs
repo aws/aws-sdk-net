@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// The request to add a public key to CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PublicKeyConfig PublicKeyConfig
         {
             get { return this._publicKeyConfig; }

@@ -42,6 +42,7 @@ namespace Amazon.Signer.Model
         /// Name of the S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -60,6 +61,7 @@ namespace Amazon.Signer.Model
         /// Key name of the bucket object that contains your unsigned code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Key
         {
             get { return this._key; }
@@ -78,6 +80,7 @@ namespace Amazon.Signer.Model
         /// Version of your source image in your version enabled S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Version
         {
             get { return this._version; }

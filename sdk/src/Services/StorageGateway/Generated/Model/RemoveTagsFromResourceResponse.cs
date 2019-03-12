@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the resource that the tags were removed from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

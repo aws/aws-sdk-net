@@ -42,6 +42,7 @@ namespace Amazon.AppStream.Model
         /// The list of UserStackAssociation objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<UserStackAssociation> UserStackAssociations
         {
             get { return this._userStackAssociations; }

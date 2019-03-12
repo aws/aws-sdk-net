@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ImageX. Set the distance, in pixels, between the overlay
         /// and the left edge of the video frame.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int ImageX
         {
             get { return this._imageX.GetValueOrDefault(); }
@@ -56,6 +57,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ImageY. Set the distance, in pixels, between the overlay
         /// and the top edge of the video frame.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public int ImageY
         {
             get { return this._imageY.GetValueOrDefault(); }

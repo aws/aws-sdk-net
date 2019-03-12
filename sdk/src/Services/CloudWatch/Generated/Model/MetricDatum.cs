@@ -75,6 +75,7 @@ namespace Amazon.CloudWatch.Model
         /// The dimensions associated with the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
@@ -93,6 +94,7 @@ namespace Amazon.CloudWatch.Model
         /// The name of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -139,6 +141,7 @@ namespace Amazon.CloudWatch.Model
         /// This field is optional, if you do not specify it the default of 60 is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int StorageResolution
         {
             get { return this._storageResolution.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the filter. Filter names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public GroupFilterName Name
         {
             get { return this._name; }
@@ -61,6 +62,7 @@ namespace Amazon.ResourceGroups.Model
         /// case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> Values
         {
             get { return this._values; }

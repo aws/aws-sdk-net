@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The name of the facet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string FacetName
         {
             get { return this._facetName; }

@@ -51,6 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -69,6 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier of the instance fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceFleetModifyConfig InstanceFleet
         {
             get { return this._instanceFleet; }

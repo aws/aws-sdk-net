@@ -51,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// The IP address for which you want to update the name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticIp
         {
             get { return this._elasticIp; }

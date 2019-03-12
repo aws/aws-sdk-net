@@ -47,6 +47,7 @@ namespace Amazon.DAX.Model
         /// The name of the subnet group to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetGroupName
         {
             get { return this._subnetGroupName; }

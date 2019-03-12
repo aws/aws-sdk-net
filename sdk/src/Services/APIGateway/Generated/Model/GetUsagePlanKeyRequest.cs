@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// a plan customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -62,6 +63,7 @@ namespace Amazon.APIGateway.Model
         /// the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

@@ -57,6 +57,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

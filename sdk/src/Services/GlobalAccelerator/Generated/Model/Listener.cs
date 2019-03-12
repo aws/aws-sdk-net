@@ -85,6 +85,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of the listener.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string ListenerArn
         {
             get { return this._listenerArn; }
@@ -103,6 +104,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The list of port ranges for the connections from clients to the accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<PortRange> PortRanges
         {
             get { return this._portRanges; }

@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the security profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

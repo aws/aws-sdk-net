@@ -50,6 +50,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the assignment that contains the question with a FileUploadAnswer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AssignmentId
         {
             get { return this._assignmentId; }
@@ -69,6 +70,7 @@ namespace Amazon.MTurk.Model
         /// of the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QuestionIdentifier
         {
             get { return this._questionIdentifier; }

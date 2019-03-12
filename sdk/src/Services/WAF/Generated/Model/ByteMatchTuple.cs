@@ -46,6 +46,7 @@ namespace Amazon.WAF.Model
         /// or a query string. For more information, see <a>FieldToMatch</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldToMatch FieldToMatch
         {
             get { return this._fieldToMatch; }
@@ -136,6 +137,7 @@ namespace Amazon.WAF.Model
         /// of the web request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PositionalConstraint PositionalConstraint
         {
             get { return this._positionalConstraint; }
@@ -386,6 +388,7 @@ namespace Amazon.WAF.Model
         /// Specify <code>NONE</code> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TextTransformation TextTransformation
         {
             get { return this._textTransformation; }

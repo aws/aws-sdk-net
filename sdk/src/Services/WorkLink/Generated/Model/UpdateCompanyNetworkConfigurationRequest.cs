@@ -44,6 +44,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -62,6 +63,7 @@ namespace Amazon.WorkLink.Model
         /// The security groups associated with access to the provided subnets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkLink.Model
         /// The subnets used for X-ENI connections from Amazon WorkLink rendering containers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -98,6 +101,7 @@ namespace Amazon.WorkLink.Model
         /// The VPC with connectivity to associated websites.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcId
         {
             get { return this._vpcId; }

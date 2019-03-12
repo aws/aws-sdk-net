@@ -47,6 +47,7 @@ namespace Amazon.Athena.Model
         /// The SQL query statements which the query execution ran.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=262144)]
         public string Query
         {
             get { return this._query; }

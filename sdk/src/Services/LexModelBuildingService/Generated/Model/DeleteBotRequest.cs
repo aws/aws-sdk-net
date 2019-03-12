@@ -55,6 +55,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot. The name is case sensitive. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }

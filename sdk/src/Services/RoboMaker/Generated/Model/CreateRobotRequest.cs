@@ -44,6 +44,7 @@ namespace Amazon.RoboMaker.Model
         /// The target architecture of the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Architecture Architecture
         {
             get { return this._architecture; }
@@ -62,6 +63,7 @@ namespace Amazon.RoboMaker.Model
         /// The Greengrass group id.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string GreengrassGroupId
         {
             get { return this._greengrassGroupId; }
@@ -80,6 +82,7 @@ namespace Amazon.RoboMaker.Model
         /// The name for the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -98,6 +101,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that are attached to the robot.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

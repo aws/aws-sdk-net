@@ -61,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The execution ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }
@@ -283,6 +284,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The MaxConcurrency value specified by the user when starting the Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -301,6 +303,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The MaxErrors value specified by the user when starting the Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -337,6 +340,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The list of execution outputs as defined in the Automation document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Outputs
         {
             get { return this._outputs; }
@@ -355,6 +359,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ExecutionId of the parent Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string ParentAutomationExecutionId
         {
             get { return this._parentAutomationExecutionId; }
@@ -409,6 +414,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The specified key-value mapping of document parameters to target resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public List<Dictionary<string, List<string>>> TargetMaps
         {
             get { return this._targetMaps; }
@@ -427,6 +433,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The list of execution outputs as defined in the Automation document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=30)]
         public string TargetParameterName
         {
             get { return this._targetParameterName; }
@@ -445,6 +452,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The targets defined by the user when starting the Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }

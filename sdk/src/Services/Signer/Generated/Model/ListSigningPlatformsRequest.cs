@@ -68,6 +68,7 @@ namespace Amazon.Signer.Model
         /// The maximum number of results to be returned by this operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

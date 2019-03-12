@@ -65,6 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -116,6 +117,7 @@ namespace Amazon.CloudFormation.Model
         /// session that is generated from your user credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -134,6 +136,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or the unique stack ID that is associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }

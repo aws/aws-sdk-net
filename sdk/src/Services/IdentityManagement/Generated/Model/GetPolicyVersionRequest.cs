@@ -77,6 +77,7 @@ namespace Amazon.IdentityManagement.Model
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PolicyArn
         {
             get { return this._policyArn; }
@@ -102,6 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// and digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VersionId
         {
             get { return this._versionId; }

@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The domain name of a <a>BasePathMapping</a> resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DomainName
         {
             get { return this._domainName; }

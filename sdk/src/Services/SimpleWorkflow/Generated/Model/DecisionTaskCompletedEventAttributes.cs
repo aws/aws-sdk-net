@@ -42,6 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// User defined context for the workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string ExecutionContext
         {
             get { return this._executionContext; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScheduledEventId
         {
             get { return this._scheduledEventId.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the chain of events leading up to this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }

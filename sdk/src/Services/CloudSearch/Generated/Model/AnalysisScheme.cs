@@ -57,6 +57,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property AnalysisSchemeLanguage.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AnalysisSchemeLanguage AnalysisSchemeLanguage
         {
             get { return this._analysisSchemeLanguage; }
@@ -72,6 +73,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property AnalysisSchemeName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AnalysisSchemeName
         {
             get { return this._analysisSchemeName; }

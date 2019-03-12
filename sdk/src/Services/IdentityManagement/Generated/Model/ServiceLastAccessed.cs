@@ -83,6 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string LastAuthenticatedEntity
         {
             get { return this._lastAuthenticatedEntity; }
@@ -101,6 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name of the service in which access was attempted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -128,6 +130,7 @@ namespace Amazon.IdentityManagement.Model
         /// Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ServiceNamespace
         {
             get { return this._serviceNamespace; }

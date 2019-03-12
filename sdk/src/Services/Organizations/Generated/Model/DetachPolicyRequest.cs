@@ -67,6 +67,7 @@ namespace Amazon.Organizations.Model
         /// requires "p-" followed by from 8 to 128 lower-case letters or digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -108,6 +109,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetId
         {
             get { return this._targetId; }

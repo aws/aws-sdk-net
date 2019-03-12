@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientCertificateId
         {
             get { return this._clientCertificateId; }

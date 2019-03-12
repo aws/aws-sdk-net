@@ -77,6 +77,7 @@ namespace Amazon.Lightsail.Model
         /// The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateDomainName
         {
             get { return this._certificateDomainName; }
@@ -102,6 +103,7 @@ namespace Amazon.Lightsail.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CertificateName
         {
             get { return this._certificateName; }
@@ -120,6 +122,7 @@ namespace Amazon.Lightsail.Model
         /// The load balancer name where you want to create the SSL/TLS certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

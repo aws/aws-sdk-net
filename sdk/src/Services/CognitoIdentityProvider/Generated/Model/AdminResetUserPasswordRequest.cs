@@ -58,6 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user whose password you wish to reset.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -76,6 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to reset the user's password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

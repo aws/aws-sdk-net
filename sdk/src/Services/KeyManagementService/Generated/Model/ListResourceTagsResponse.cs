@@ -47,6 +47,7 @@ namespace Amazon.KeyManagementService.Model
         /// Do not assume or infer any information from this value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextMarker
         {
             get { return this._nextMarker; }

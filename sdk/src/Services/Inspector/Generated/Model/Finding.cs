@@ -58,6 +58,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -112,6 +113,7 @@ namespace Amazon.Inspector.Model
         /// The system-defined attributes for the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }
@@ -130,6 +132,7 @@ namespace Amazon.Inspector.Model
         /// This data element is currently not used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public int Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }
@@ -148,6 +151,7 @@ namespace Amazon.Inspector.Model
         /// The time when the finding was generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -166,6 +170,7 @@ namespace Amazon.Inspector.Model
         /// The description of the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string Description
         {
             get { return this._description; }
@@ -184,6 +189,7 @@ namespace Amazon.Inspector.Model
         /// The ID of the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Id
         {
             get { return this._id; }
@@ -220,6 +226,7 @@ namespace Amazon.Inspector.Model
         /// The numeric value of the finding severity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public double NumericSeverity
         {
             get { return this._numericSeverity.GetValueOrDefault(); }
@@ -238,6 +245,7 @@ namespace Amazon.Inspector.Model
         /// The recommendation for the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string Recommendation
         {
             get { return this._recommendation; }
@@ -256,6 +264,7 @@ namespace Amazon.Inspector.Model
         /// The schema version of this data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int SchemaVersion
         {
             get { return this._schemaVersion.GetValueOrDefault(); }
@@ -274,6 +283,7 @@ namespace Amazon.Inspector.Model
         /// The data element is set to "Inspector".
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Service
         {
             get { return this._service; }
@@ -328,6 +338,7 @@ namespace Amazon.Inspector.Model
         /// The name of the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string Title
         {
             get { return this._title; }
@@ -346,6 +357,7 @@ namespace Amazon.Inspector.Model
         /// The time when <a>AddAttributesToFindings</a> is called.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime UpdatedAt
         {
             get { return this._updatedAt.GetValueOrDefault(); }
@@ -364,6 +376,7 @@ namespace Amazon.Inspector.Model
         /// The user-defined attributes that are assigned to the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Attribute> UserAttributes
         {
             get { return this._userAttributes; }

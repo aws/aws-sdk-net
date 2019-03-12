@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Field
         {
             get { return this._field; }

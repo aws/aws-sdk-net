@@ -60,6 +60,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -78,6 +79,7 @@ namespace Amazon.EC2.Model
         /// The product code. This must be a product code that you own.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ProductCode
         {
             get { return this._productCode; }

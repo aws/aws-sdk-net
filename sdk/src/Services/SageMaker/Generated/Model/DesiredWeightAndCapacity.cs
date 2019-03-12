@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The variant's capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int DesiredInstanceCount
         {
             get { return this._desiredInstanceCount.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The variant's weight.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public float DesiredWeight
         {
             get { return this._desiredWeight.GetValueOrDefault(); }
@@ -78,6 +80,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the variant to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

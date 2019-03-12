@@ -45,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// hex value represented by a 32-character text string. If this parameter is not set
         /// then the Initialization Vector will follow the segment number by default.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string ConstantInitializationVector
         {
             get { return this._constantInitializationVector; }

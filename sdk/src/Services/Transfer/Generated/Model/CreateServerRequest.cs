@@ -113,6 +113,7 @@ namespace Amazon.Transfer.Model
         /// Key-value pairs that can be used to group and search for servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

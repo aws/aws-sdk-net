@@ -114,6 +114,7 @@ namespace Amazon.Kinesis.Model
         /// the other child shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NewStartingHashKey
         {
             get { return this._newStartingHashKey; }
@@ -132,6 +133,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard to split.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardToSplit
         {
             get { return this._shardToSplit; }
@@ -150,6 +152,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream for the shard split.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

@@ -59,6 +59,7 @@ namespace Amazon.SecurityToken.Model
         /// Identifiers</a> in <i>Using IAM</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -78,6 +79,7 @@ namespace Amazon.SecurityToken.Model
         /// to the unique ID of an IAM user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=193)]
         public string FederatedUserId
         {
             get { return this._federatedUserId; }

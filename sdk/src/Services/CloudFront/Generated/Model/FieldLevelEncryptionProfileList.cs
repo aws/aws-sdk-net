@@ -62,6 +62,7 @@ namespace Amazon.CloudFront.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -100,6 +101,7 @@ namespace Amazon.CloudFront.Model
         /// The number of field-level encryption profiles.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

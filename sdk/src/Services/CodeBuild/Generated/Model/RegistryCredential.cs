@@ -63,6 +63,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Credential
         {
             get { return this._credential; }
@@ -82,6 +83,7 @@ namespace Amazon.CodeBuild.Model
         /// valid value, SECRETS_MANAGER, is for AWS Secrets Manager. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CredentialProviderType CredentialProvider
         {
             get { return this._credentialProvider; }

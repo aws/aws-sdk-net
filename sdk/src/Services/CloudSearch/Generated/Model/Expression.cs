@@ -39,6 +39,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property ExpressionName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ExpressionName
         {
             get { return this._expressionName; }
@@ -54,6 +55,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property ExpressionValue.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10240)]
         public string ExpressionValue
         {
             get { return this._expressionValue; }

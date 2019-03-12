@@ -80,6 +80,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Qualification type to use for the assigned Qualification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string QualificationTypeId
         {
             get { return this._qualificationTypeId; }
@@ -118,6 +119,7 @@ namespace Amazon.MTurk.Model
         /// included with submitted HIT assignments and Qualification requests. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

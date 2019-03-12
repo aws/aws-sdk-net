@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         /// The location of the input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LabelingJobDataSource DataSource
         {
             get { return this._dataSource; }

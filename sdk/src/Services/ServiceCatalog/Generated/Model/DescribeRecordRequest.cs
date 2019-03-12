@@ -63,6 +63,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string AcceptLanguage
         {
             get { return this._acceptLanguage; }
@@ -82,6 +83,7 @@ namespace Amazon.ServiceCatalog.Model
         /// request operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -100,6 +102,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20)]
         public int PageSize
         {
             get { return this._pageSize.GetValueOrDefault(); }
@@ -119,6 +122,7 @@ namespace Amazon.ServiceCatalog.Model
         /// use null.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2024)]
         public string PageToken
         {
             get { return this._pageToken; }

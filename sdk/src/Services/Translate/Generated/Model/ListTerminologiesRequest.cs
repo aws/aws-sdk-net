@@ -42,6 +42,7 @@ namespace Amazon.Translate.Model
         /// The maximum number of custom terminologies returned per list request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.Translate.Model
         /// to fetch the next group of custom terminologies. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

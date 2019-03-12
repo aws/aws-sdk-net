@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// A map of Identity to IdentityNotificationAttributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, IdentityNotificationAttributes> NotificationAttributes
         {
             get { return this._notificationAttributes; }

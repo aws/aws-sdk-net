@@ -46,6 +46,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// and ConnectionStatus (ONLINE and OFFLINE).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=25)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -66,6 +67,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// that the remaining results can be retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -86,6 +88,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -105,6 +108,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=25)]
         public List<Sort> SortCriteria
         {
             get { return this._sortCriteria; }

@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DeviceType Device
         {
             get { return this._device; }

@@ -43,6 +43,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.WorkDocs.Model
         /// call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -80,6 +82,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the organization.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string OrganizationId
         {
             get { return this._organizationId; }

@@ -44,6 +44,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> Data Type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -64,6 +65,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> Data Type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

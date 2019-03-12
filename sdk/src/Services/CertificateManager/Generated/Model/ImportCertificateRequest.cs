@@ -120,6 +120,7 @@ namespace Amazon.CertificateManager.Model
         /// The certificate to import.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public MemoryStream Certificate
         {
             get { return this._certificate; }
@@ -140,6 +141,7 @@ namespace Amazon.CertificateManager.Model
         /// omit this field. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
@@ -158,6 +160,7 @@ namespace Amazon.CertificateManager.Model
         /// The PEM encoded certificate chain.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2097152)]
         public MemoryStream CertificateChain
         {
             get { return this._certificateChain; }
@@ -176,6 +179,7 @@ namespace Amazon.CertificateManager.Model
         /// The private key that matches the public key in the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=524288)]
         public MemoryStream PrivateKey
         {
             get { return this._privateKey; }

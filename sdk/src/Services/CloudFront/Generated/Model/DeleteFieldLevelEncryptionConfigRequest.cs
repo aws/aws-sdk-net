@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// The ID of the configuration you want to delete from CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

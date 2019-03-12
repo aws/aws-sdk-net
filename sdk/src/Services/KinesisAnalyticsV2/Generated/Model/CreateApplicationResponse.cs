@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// returns a response with details of the application it created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationDetail ApplicationDetail
         {
             get { return this._applicationDetail; }

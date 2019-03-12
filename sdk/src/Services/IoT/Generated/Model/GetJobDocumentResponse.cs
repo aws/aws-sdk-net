@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The job document content.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Document
         {
             get { return this._document; }

@@ -101,6 +101,7 @@ namespace Amazon.SecretsManager.Model
         /// you must also specify the <code>RemoveFromVersionId</code> parameter. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string MoveToVersionId
         {
             get { return this._moveToVersionId; }
@@ -123,6 +124,7 @@ namespace Amazon.SecretsManager.Model
         /// specify this parameter, or the version ID does not match, then the operation fails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string RemoveFromVersionId
         {
             get { return this._removeFromVersionId; }
@@ -157,6 +159,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SecretId
         {
             get { return this._secretId; }
@@ -175,6 +178,7 @@ namespace Amazon.SecretsManager.Model
         /// The staging label to add to this version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string VersionStage
         {
             get { return this._versionStage; }

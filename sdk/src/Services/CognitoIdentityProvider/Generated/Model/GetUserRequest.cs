@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The access token returned by the server response to get information about the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

@@ -99,6 +99,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The name of the model. Must be alphanumeric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

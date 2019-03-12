@@ -96,6 +96,7 @@ namespace Amazon.AutoScaling.Model
         /// volumes.) 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=100, Max=20000)]
         public int Iops
         {
             get { return this._iops.GetValueOrDefault(); }
@@ -114,6 +115,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the snapshot. This parameter is optional if you specify a volume size. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SnapshotId
         {
             get { return this._snapshotId; }
@@ -149,6 +151,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=16384)]
         public int VolumeSize
         {
             get { return this._volumeSize.GetValueOrDefault(); }
@@ -176,6 +179,7 @@ namespace Amazon.AutoScaling.Model
         /// | <code>sc1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string VolumeType
         {
             get { return this._volumeType; }

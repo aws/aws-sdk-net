@@ -81,6 +81,7 @@ namespace Amazon.SimpleEmail.Model
         /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

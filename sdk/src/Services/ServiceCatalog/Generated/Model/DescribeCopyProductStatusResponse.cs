@@ -78,6 +78,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the copied product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TargetProductId
         {
             get { return this._targetProductId; }

@@ -64,6 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// The Amazon Resource Name (ARN) of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string AutoScalingGroupARN
         {
             get { return this._autoScalingGroupARN; }
@@ -82,6 +83,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -100,6 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -118,6 +121,7 @@ namespace Amazon.AutoScaling.Model
         /// The date and time the group was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedTime
         {
             get { return this._createdTime.GetValueOrDefault(); }
@@ -137,6 +141,7 @@ namespace Amazon.AutoScaling.Model
         /// scaling activity can start.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int DefaultCooldown
         {
             get { return this._defaultCooldown.GetValueOrDefault(); }
@@ -155,6 +160,7 @@ namespace Amazon.AutoScaling.Model
         /// The desired size of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int DesiredCapacity
         {
             get { return this._desiredCapacity.GetValueOrDefault(); }
@@ -213,6 +219,7 @@ namespace Amazon.AutoScaling.Model
         /// load balancer health checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string HealthCheckType
         {
             get { return this._healthCheckType; }
@@ -249,6 +256,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the associated launch configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }
@@ -303,6 +311,7 @@ namespace Amazon.AutoScaling.Model
         /// The maximum size of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxSize
         {
             get { return this._maxSize.GetValueOrDefault(); }
@@ -321,6 +330,7 @@ namespace Amazon.AutoScaling.Model
         /// The minimum size of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinSize
         {
             get { return this._minSize.GetValueOrDefault(); }
@@ -376,6 +386,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the placement group into which to launch your instances, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup
         {
             get { return this._placementGroup; }
@@ -395,6 +406,7 @@ namespace Amazon.AutoScaling.Model
         /// uses to call other AWS services on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string ServiceLinkedRoleARN
         {
             get { return this._serviceLinkedRoleARN; }
@@ -413,6 +425,7 @@ namespace Amazon.AutoScaling.Model
         /// The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Status
         {
             get { return this._status; }
@@ -503,6 +516,7 @@ namespace Amazon.AutoScaling.Model
         /// One or more subnet IDs, if applicable, separated by commas.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2047)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }

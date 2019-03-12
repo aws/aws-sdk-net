@@ -63,6 +63,7 @@ namespace Amazon.Kafka.Model
         /// the response includes a NextToken parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

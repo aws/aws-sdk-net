@@ -61,6 +61,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN of the directory being retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference to the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

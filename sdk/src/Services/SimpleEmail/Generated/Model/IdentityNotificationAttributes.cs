@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// bounce notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BounceTopic
         {
             get { return this._bounceTopic; }
@@ -69,6 +70,7 @@ namespace Amazon.SimpleEmail.Model
         /// complaint notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComplaintTopic
         {
             get { return this._complaintTopic; }
@@ -88,6 +90,7 @@ namespace Amazon.SimpleEmail.Model
         /// delivery notifications.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeliveryTopic
         {
             get { return this._deliveryTopic; }
@@ -109,6 +112,7 @@ namespace Amazon.SimpleEmail.Model
         /// will be published only to the specified bounce and complaint Amazon SNS topics.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ForwardingEnabled
         {
             get { return this._forwardingEnabled.GetValueOrDefault(); }

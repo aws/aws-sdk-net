@@ -72,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

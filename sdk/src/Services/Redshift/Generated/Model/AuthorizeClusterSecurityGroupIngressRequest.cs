@@ -86,6 +86,7 @@ namespace Amazon.Redshift.Model
         /// The name of the security group to which the ingress rule is added.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }

@@ -44,6 +44,7 @@ namespace Amazon.Elasticsearch.Model
         /// target="_blank"> Configuring Access Policies</a>for more information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Options
         {
             get { return this._options; }
@@ -63,6 +64,7 @@ namespace Amazon.Elasticsearch.Model
         /// for the status information that's included. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OptionStatus Status
         {
             get { return this._status; }

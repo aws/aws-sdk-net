@@ -45,6 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// resolver endpoints, specify <code>Direction</code> for the value of <code>Name</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

@@ -63,6 +63,7 @@ namespace Amazon.DAX.Model
         /// The name of the DAX cluster that will receive additional nodes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -81,6 +82,7 @@ namespace Amazon.DAX.Model
         /// The new number of nodes for the DAX cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NewReplicationFactor
         {
             get { return this._newReplicationFactor.GetValueOrDefault(); }

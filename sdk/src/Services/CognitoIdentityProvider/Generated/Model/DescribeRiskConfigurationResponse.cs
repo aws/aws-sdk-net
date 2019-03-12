@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The risk configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RiskConfigurationType RiskConfiguration
         {
             get { return this._riskConfiguration; }

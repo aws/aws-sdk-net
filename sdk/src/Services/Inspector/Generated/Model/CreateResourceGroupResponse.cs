@@ -40,6 +40,7 @@ namespace Amazon.Inspector.Model
         /// The ARN that specifies the resource group that is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string ResourceGroupArn
         {
             get { return this._resourceGroupArn; }

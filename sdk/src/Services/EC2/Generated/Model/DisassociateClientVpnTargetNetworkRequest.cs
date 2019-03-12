@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// The ID of the target network association.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// The ID of the Client VPN endpoint from which to disassociate the target network.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientVpnEndpointId
         {
             get { return this._clientVpnEndpointId; }

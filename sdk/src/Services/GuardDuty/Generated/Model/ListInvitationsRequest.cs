@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// maximum number of invitations you want in the response. The default value is 50. The
         /// maximum value is 50.
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

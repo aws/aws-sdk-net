@@ -82,6 +82,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The unique identifier assigned to this job when it was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }
@@ -100,6 +101,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The thing name associated with the device the job execution is running on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

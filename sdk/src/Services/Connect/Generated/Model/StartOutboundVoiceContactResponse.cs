@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         /// The unique identifier of this contact within your Amazon Connect instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ContactId
         {
             get { return this._contactId; }

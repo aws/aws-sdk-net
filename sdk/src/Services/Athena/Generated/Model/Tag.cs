@@ -51,6 +51,7 @@ namespace Amazon.Athena.Model
         /// = . _ : / @. Tag keys are case-sensitive and must be unique per resource. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -71,6 +72,7 @@ namespace Amazon.Athena.Model
         /// + - = . _ : / @. Tag values are case-sensitive. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

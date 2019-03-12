@@ -84,6 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// price.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string BidPrice
         {
             get { return this._bidPrice; }
@@ -102,6 +103,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date/time the instance group was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationDateTime
         {
             get { return this._creationDateTime.GetValueOrDefault(); }
@@ -138,6 +140,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Unique identifier for the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string InstanceGroupId
         {
             get { return this._instanceGroupId; }
@@ -156,6 +159,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Target number of instances to run in the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceRequestCount
         {
             get { return this._instanceRequestCount.GetValueOrDefault(); }
@@ -174,6 +178,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instance group role in the cluster
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceRoleType InstanceRole
         {
             get { return this._instanceRole; }
@@ -192,6 +197,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Actual count of running instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceRunningCount
         {
             get { return this._instanceRunningCount.GetValueOrDefault(); }
@@ -210,6 +216,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// EC2 instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -228,6 +235,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Details regarding the state of the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string LastStateChangeReason
         {
             get { return this._lastStateChangeReason; }
@@ -246,6 +254,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Market type of the EC2 instances used to create a cluster node.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MarketType Market
         {
             get { return this._market; }
@@ -264,6 +273,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Friendly name for the instance group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -319,6 +329,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// and FAILED.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InstanceGroupState State
         {
             get { return this._state; }

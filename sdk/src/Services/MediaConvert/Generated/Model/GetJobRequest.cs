@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Id. the job ID of the job.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

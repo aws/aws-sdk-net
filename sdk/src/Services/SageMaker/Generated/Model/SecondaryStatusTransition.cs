@@ -69,6 +69,7 @@ namespace Amazon.SageMaker.Model
         /// status state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
@@ -149,6 +150,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SecondaryStatus Status
         {
             get { return this._status; }

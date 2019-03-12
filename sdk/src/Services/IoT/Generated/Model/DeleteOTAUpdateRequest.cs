@@ -81,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The OTA update ID to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string OtaUpdateId
         {
             get { return this._otaUpdateId; }

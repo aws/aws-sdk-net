@@ -68,6 +68,7 @@ namespace Amazon.DLM.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }
@@ -112,6 +113,7 @@ namespace Amazon.DLM.Model
         /// These user-defined tags are added in addition to the AWS-added lifecycle tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> TagsToAdd
         {
             get { return this._tagsToAdd; }
@@ -134,6 +136,7 @@ namespace Amazon.DLM.Model
         /// Tags are strings in the format <code>key=value</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<string> TargetTags
         {
             get { return this._targetTags; }

@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ipv6CidrBlock
         {
             get { return this._ipv6CidrBlock; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of your subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

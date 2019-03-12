@@ -74,6 +74,7 @@ namespace Amazon.KinesisVideo.Model
         /// stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CurrentVersion
         {
             get { return this._currentVersion; }
@@ -92,6 +93,7 @@ namespace Amazon.KinesisVideo.Model
         /// The Amazon Resource Name (ARN) of the stream that you want to delete. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }

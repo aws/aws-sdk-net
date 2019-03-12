@@ -44,6 +44,7 @@ namespace Amazon.CodeStar.Model
         /// provisioning.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1224)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -63,6 +64,7 @@ namespace Amazon.CodeStar.Model
         /// request is stored. AWS CodeStar retrieves the file during project creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ToolchainSource Source
         {
             get { return this._source; }
@@ -82,6 +84,7 @@ namespace Amazon.CodeStar.Model
         /// provisioning, if any.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=25)]
         public Dictionary<string, string> StackParameters
         {
             get { return this._stackParameters; }

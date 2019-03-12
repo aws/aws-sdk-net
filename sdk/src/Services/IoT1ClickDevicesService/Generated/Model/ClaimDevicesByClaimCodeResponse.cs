@@ -41,6 +41,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// The claim code provided by the device manufacturer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=40)]
         public string ClaimCode
         {
             get { return this._claimCode; }

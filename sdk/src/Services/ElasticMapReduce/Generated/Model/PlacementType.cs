@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// used for instance fleets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }

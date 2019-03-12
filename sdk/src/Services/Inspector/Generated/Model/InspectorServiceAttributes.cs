@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment run during which the finding is generated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the rules package that is used to generate the finding.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string RulesPackageArn
         {
             get { return this._rulesPackageArn; }
@@ -78,6 +80,7 @@ namespace Amazon.Inspector.Model
         /// The schema version of this data type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int SchemaVersion
         {
             get { return this._schemaVersion.GetValueOrDefault(); }

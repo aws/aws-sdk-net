@@ -47,6 +47,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API operation using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -83,6 +84,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of resources to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.WorkDocs.Model
         /// The marker for the next set of results. This marker was received from a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -120,6 +123,7 @@ namespace Amazon.WorkDocs.Model
         /// API operation using IAM credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string UserId
         {
             get { return this._userId; }

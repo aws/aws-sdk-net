@@ -62,6 +62,7 @@ namespace Amazon.AppStream.Model
         /// If there are no more pages, this value is null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The job ID for the user import job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string JobId
         {
             get { return this._jobId; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool that the users are being imported into.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

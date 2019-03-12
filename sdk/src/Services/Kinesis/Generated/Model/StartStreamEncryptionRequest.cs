@@ -67,6 +67,7 @@ namespace Amazon.Kinesis.Model
         /// The encryption type to use. The only valid value is <code>KMS</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionType EncryptionType
         {
             get { return this._encryptionType; }
@@ -112,6 +113,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -130,6 +132,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream for which to start encrypting records.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The description of an error found in the behaviors.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

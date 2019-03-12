@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The list of workflow information structures.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<WorkflowExecutionInfo> ExecutionInfos
         {
             get { return this._executionInfos; }
@@ -66,6 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

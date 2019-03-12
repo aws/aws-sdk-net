@@ -114,6 +114,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The name of the bot being exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -170,6 +171,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The version of the bot being exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string Version
         {
             get { return this._version; }

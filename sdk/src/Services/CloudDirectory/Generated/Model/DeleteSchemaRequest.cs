@@ -42,6 +42,7 @@ namespace Amazon.CloudDirectory.Model
         /// <a>arns</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SchemaArn
         {
             get { return this._schemaArn; }

@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the training job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -68,6 +69,7 @@ namespace Amazon.SageMaker.Model
         /// The reason that the training job failed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -162,6 +164,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string TrainingJobArn
         {
             get { return this._trainingJobArn; }
@@ -180,6 +183,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string TrainingJobName
         {
             get { return this._trainingJobName; }
@@ -198,6 +202,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingJobStatus TrainingJobStatus
         {
             get { return this._trainingJobStatus; }
@@ -234,6 +239,7 @@ namespace Amazon.SageMaker.Model
         /// A list of the hyperparameters for which you specified ranges to search.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public Dictionary<string, string> TunedHyperParameters
         {
             get { return this._tunedHyperParameters; }
@@ -252,6 +258,7 @@ namespace Amazon.SageMaker.Model
         /// The HyperParameter tuning job that launched the training job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string TuningJobName
         {
             get { return this._tuningJobName; }

@@ -49,6 +49,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify an application name to show only application versions for that application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -73,6 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// retrieved in a single response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxRecords
         {
             get { return this._maxRecords.GetValueOrDefault(); }

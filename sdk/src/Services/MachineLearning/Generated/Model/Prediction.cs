@@ -81,6 +81,7 @@ namespace Amazon.MachineLearning.Model
         /// The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PredictedLabel
         {
             get { return this._predictedLabel; }

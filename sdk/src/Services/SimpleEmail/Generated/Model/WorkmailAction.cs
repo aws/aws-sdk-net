@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// WorkMail Administrator Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationArn
         {
             get { return this._organizationArn; }

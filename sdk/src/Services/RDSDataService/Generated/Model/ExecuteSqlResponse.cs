@@ -38,6 +38,7 @@ namespace Amazon.RDSDataService.Model
         /// Gets and sets the property SqlStatementResults. Results returned by executing the
         /// sql statement(s)
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SqlStatementResult> SqlStatementResults
         {
             get { return this._sqlStatementResults; }

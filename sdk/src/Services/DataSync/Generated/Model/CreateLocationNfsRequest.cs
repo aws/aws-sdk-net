@@ -45,6 +45,7 @@ namespace Amazon.DataSync.Model
         /// to an NFS server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OnPremConfig OnPremConfig
         {
             get { return this._onPremConfig; }
@@ -70,6 +71,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string ServerHostname
         {
             get { return this._serverHostname; }
@@ -108,6 +110,7 @@ namespace Amazon.DataSync.Model
         /// The /etc/exports Configuration File</a> in the Centos documentation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=4096)]
         public string Subdirectory
         {
             get { return this._subdirectory; }
@@ -127,6 +130,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. We recommend using tags to name your resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

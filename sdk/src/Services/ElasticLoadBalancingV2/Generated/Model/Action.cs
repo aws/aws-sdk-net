@@ -105,6 +105,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// be performed must be a <code>forward</code> or a <code>fixed-response</code> action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
         public int Order
         {
             get { return this._order.GetValueOrDefault(); }
@@ -162,6 +163,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ActionTypeEnum Type
         {
             get { return this._type; }

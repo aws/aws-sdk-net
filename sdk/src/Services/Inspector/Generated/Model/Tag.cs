@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// A tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -60,6 +61,7 @@ namespace Amazon.Inspector.Model
         /// A value assigned to a tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

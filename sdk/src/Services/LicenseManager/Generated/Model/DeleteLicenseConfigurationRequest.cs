@@ -42,6 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// Unique ID of the configuration object to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LicenseConfigurationArn
         {
             get { return this._licenseConfigurationArn; }

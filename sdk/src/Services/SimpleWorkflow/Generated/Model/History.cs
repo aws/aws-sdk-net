@@ -43,6 +43,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The list of history events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HistoryEvent> Events
         {
             get { return this._events; }
@@ -68,6 +69,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }

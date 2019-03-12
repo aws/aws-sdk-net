@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The raw event data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string EventMessage
         {
             get { return this._eventMessage; }

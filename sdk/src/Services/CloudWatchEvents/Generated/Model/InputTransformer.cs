@@ -54,6 +54,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The keys cannot start with "AWS." 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public Dictionary<string, string> InputPathsMap
         {
             get { return this._inputPathsMap; }
@@ -139,6 +140,7 @@ namespace Amazon.CloudWatchEvents.Model
         ///  <code>}</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8192)]
         public string InputTemplate
         {
             get { return this._inputTemplate; }

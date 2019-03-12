@@ -58,6 +58,7 @@ namespace Amazon.WorkSpaces.Model
         /// The WorkSpace to rebuild. You can specify a single WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<RebuildRequest> RebuildWorkspaceRequests
         {
             get { return this._rebuildWorkspaceRequests; }

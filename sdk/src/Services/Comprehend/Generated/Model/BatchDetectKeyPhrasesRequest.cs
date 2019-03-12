@@ -43,6 +43,7 @@ namespace Amazon.Comprehend.Model
         /// All documents must be in the same language.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -63,6 +64,7 @@ namespace Amazon.Comprehend.Model
         /// characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TextList
         {
             get { return this._textList; }

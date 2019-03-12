@@ -67,6 +67,7 @@ namespace Amazon.DataPipeline.Model
         /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }
@@ -85,6 +86,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -125,6 +127,7 @@ namespace Amazon.DataPipeline.Model
         /// are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Sphere
         {
             get { return this._sphere; }

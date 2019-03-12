@@ -55,6 +55,7 @@ namespace Amazon.KeyManagementService.Model
         /// New description for the CMK.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=8192)]
         public string Description
         {
             get { return this._description; }
@@ -94,6 +95,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KeyId
         {
             get { return this._keyId; }

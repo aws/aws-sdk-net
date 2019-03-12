@@ -199,6 +199,7 @@ namespace Amazon.WAFRegional.Model
         /// to a <code>WebACL</code>, the values don't need to be consecutive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Priority
         {
             get { return this._priority.GetValueOrDefault(); }
@@ -225,6 +226,7 @@ namespace Amazon.WAFRegional.Model
         ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

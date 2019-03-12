@@ -40,6 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The list of message samples. Each sample message is returned as a base64-encoded string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<MemoryStream> Payloads
         {
             get { return this._payloads; }

@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// can use this token in your subsequent request to fetch next set of tokens. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// An array of <code>Tag</code> objects, each with a tag key and a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

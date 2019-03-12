@@ -50,6 +50,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -68,6 +69,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A set of optional name-value pairs that map provider names to provider tokens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=10)]
         public Dictionary<string, string> Logins
         {
             get { return this._logins; }
@@ -86,6 +88,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Provider names to unlink from this identity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> LoginsToRemove
         {
             get { return this._loginsToRemove; }

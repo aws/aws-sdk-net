@@ -60,6 +60,7 @@ namespace Amazon.Rekognition.Model
         /// The confidence that Amazon Rekognition has in the accuracy of the bounding box.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }

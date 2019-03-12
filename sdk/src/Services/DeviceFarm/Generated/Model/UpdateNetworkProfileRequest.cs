@@ -53,6 +53,7 @@ namespace Amazon.DeviceFarm.Model
         /// profile settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -71,6 +72,7 @@ namespace Amazon.DeviceFarm.Model
         /// The descriptoin of the network profile about which you are returning information.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Description
         {
             get { return this._description; }
@@ -145,6 +147,7 @@ namespace Amazon.DeviceFarm.Model
         /// Proportion of received packets that fail to arrive from 0 to 100 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int DownlinkLossPercent
         {
             get { return this._downlinkLossPercent.GetValueOrDefault(); }
@@ -163,6 +166,7 @@ namespace Amazon.DeviceFarm.Model
         /// The name of the network profile about which you are returning information.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -256,6 +260,7 @@ namespace Amazon.DeviceFarm.Model
         /// Proportion of transmitted packets that fail to arrive from 0 to 100 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int UplinkLossPercent
         {
             get { return this._uplinkLossPercent.GetValueOrDefault(); }

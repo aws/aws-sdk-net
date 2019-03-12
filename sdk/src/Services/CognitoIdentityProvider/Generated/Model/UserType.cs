@@ -136,6 +136,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user name of the user you wish to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

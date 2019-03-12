@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         /// One or more target groups.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<TargetGroup> TargetGroups
         {
             get { return this._targetGroups; }

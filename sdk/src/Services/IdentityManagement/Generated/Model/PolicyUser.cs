@@ -54,6 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string UserId
         {
             get { return this._userId; }
@@ -72,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name (friendly name, not ARN) identifying the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string UserName
         {
             get { return this._userName; }

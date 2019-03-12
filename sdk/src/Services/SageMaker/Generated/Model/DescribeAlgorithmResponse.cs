@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AlgorithmArn
         {
             get { return this._algorithmArn; }
@@ -68,6 +69,7 @@ namespace Amazon.SageMaker.Model
         /// A brief summary about the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AlgorithmDescription
         {
             get { return this._algorithmDescription; }
@@ -86,6 +88,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the algorithm being described.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }
@@ -104,6 +107,7 @@ namespace Amazon.SageMaker.Model
         /// The current status of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmStatus AlgorithmStatus
         {
             get { return this._algorithmStatus; }
@@ -122,6 +126,7 @@ namespace Amazon.SageMaker.Model
         /// Details about the current status of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmStatusDetails AlgorithmStatusDetails
         {
             get { return this._algorithmStatusDetails; }
@@ -158,6 +163,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp specifying when the algorithm was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -194,6 +200,7 @@ namespace Amazon.SageMaker.Model
         /// The product identifier of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ProductId
         {
             get { return this._productId; }
@@ -212,6 +219,7 @@ namespace Amazon.SageMaker.Model
         /// Details about training jobs run by this algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TrainingSpecification TrainingSpecification
         {
             get { return this._trainingSpecification; }

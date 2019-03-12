@@ -73,6 +73,7 @@ namespace Amazon.SageMaker.Model
         /// the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string CompilationJobArn
         {
             get { return this._compilationJobArn; }
@@ -91,6 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string CompilationJobName
         {
             get { return this._compilationJobName; }
@@ -109,6 +111,7 @@ namespace Amazon.SageMaker.Model
         /// The status of the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CompilationJobStatus CompilationJobStatus
         {
             get { return this._compilationJobStatus; }
@@ -153,6 +156,7 @@ namespace Amazon.SageMaker.Model
         /// The time that the model compilation job was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -171,6 +175,7 @@ namespace Amazon.SageMaker.Model
         /// If a model compilation job failed, the reason it failed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -190,6 +195,7 @@ namespace Amazon.SageMaker.Model
         /// and shape of the expected data inputs, and the framework in which the model was trained.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InputConfig InputConfig
         {
             get { return this._inputConfig; }
@@ -208,6 +214,7 @@ namespace Amazon.SageMaker.Model
         /// The time that the status of the model compilation job was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastModifiedTime
         {
             get { return this._lastModifiedTime.GetValueOrDefault(); }
@@ -227,6 +234,7 @@ namespace Amazon.SageMaker.Model
         /// model artifacts used in the compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ModelArtifacts ModelArtifacts
         {
             get { return this._modelArtifacts; }
@@ -246,6 +254,7 @@ namespace Amazon.SageMaker.Model
         /// that the model runs on.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputConfig OutputConfig
         {
             get { return this._outputConfig; }
@@ -264,6 +273,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the model compilation job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -282,6 +292,7 @@ namespace Amazon.SageMaker.Model
         /// The duration allowed for model compilation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }

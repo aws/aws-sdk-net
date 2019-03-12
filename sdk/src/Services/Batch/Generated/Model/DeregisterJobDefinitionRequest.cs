@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         /// of the job definition to deregister. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinition
         {
             get { return this._jobDefinition; }

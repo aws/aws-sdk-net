@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SourceAncillaryChannelNumber. Specifies the 608 channel
         /// number in the ancillary data track from which to extract captions. Unused for passthrough.
         /// </summary>
+        [AWSProperty(Min=1, Max=4)]
         public int SourceAncillaryChannelNumber
         {
             get { return this._sourceAncillaryChannelNumber.GetValueOrDefault(); }

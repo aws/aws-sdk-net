@@ -102,6 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// see <a>CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Url
         {
             get { return this._url; }

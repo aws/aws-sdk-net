@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The number of crawlers to return on each call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

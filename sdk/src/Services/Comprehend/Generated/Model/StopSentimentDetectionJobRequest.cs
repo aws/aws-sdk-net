@@ -59,6 +59,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier of the sentiment detection job to stop.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

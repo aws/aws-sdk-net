@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the business report schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ScheduleArn
         {
             get { return this._scheduleArn; }

@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// A list of application names separated by spaces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ApplicationNames
         {
             get { return this._applicationNames; }

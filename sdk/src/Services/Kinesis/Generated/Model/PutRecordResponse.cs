@@ -73,6 +73,7 @@ namespace Amazon.Kinesis.Model
         /// is the identifier associated with every record put into the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SequenceNumber
         {
             get { return this._sequenceNumber; }
@@ -91,6 +92,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard where the data record was placed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardId
         {
             get { return this._shardId; }

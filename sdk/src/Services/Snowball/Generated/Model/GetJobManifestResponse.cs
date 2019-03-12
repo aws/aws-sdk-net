@@ -41,6 +41,7 @@ namespace Amazon.Snowball.Model
         /// value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ManifestURI
         {
             get { return this._manifestURI; }

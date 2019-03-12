@@ -56,6 +56,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionDefinitionId
         {
             get { return this._subscriptionDefinitionId; }

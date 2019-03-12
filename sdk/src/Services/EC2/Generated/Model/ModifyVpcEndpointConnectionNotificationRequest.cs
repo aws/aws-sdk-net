@@ -81,6 +81,7 @@ namespace Amazon.EC2.Model
         /// The ID of the notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionNotificationId
         {
             get { return this._connectionNotificationId; }

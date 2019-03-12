@@ -48,6 +48,7 @@ namespace Amazon.CloudDirectory.Model
         /// The ARN for the directory to which the upgraded schema will be applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryArn
         {
             get { return this._directoryArn; }
@@ -86,6 +87,7 @@ namespace Amazon.CloudDirectory.Model
         /// The revision of the published schema to upgrade the directory to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PublishedSchemaArn
         {
             get { return this._publishedSchemaArn; }

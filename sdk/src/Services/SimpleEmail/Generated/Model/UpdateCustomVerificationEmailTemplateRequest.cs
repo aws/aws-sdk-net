@@ -133,6 +133,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the custom verification email template that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateName
         {
             get { return this._templateName; }

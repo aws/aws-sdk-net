@@ -71,6 +71,7 @@ namespace Amazon.CostExplorer.Model
         /// granularities.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Granularity Granularity
         {
             get { return this._granularity; }
@@ -116,6 +117,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Metric Metric
         {
             get { return this._metric; }
@@ -137,6 +139,7 @@ namespace Amazon.CostExplorer.Model
         /// in the prediction interval. Higher confidence levels result in wider prediction intervals.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=51, Max=99)]
         public int PredictionIntervalLevel
         {
             get { return this._predictionIntervalLevel.GetValueOrDefault(); }
@@ -155,6 +158,7 @@ namespace Amazon.CostExplorer.Model
         /// The period of time that you want the forecast to cover.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateInterval TimePeriod
         {
             get { return this._timePeriod; }

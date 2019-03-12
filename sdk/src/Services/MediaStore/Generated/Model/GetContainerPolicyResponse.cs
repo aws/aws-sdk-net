@@ -40,6 +40,7 @@ namespace Amazon.MediaStore.Model
         /// The contents of the access policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=8192)]
         public string Policy
         {
             get { return this._policy; }

@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// Tag key (String). The key can't start with aws:. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// Value of the tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string Value
         {
             get { return this._value; }

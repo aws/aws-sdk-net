@@ -76,6 +76,7 @@ namespace Amazon.Textract.Model
         /// must be an image in JPG or PNG format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Document Document
         {
             get { return this._document; }
@@ -97,6 +98,7 @@ namespace Amazon.Textract.Model
         /// <code>FeatureTypes</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> FeatureTypes
         {
             get { return this._featureTypes; }

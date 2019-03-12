@@ -43,6 +43,7 @@ namespace Amazon.Elasticsearch.Model
         /// delete the specified tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ARN
         {
             get { return this._arn; }
@@ -62,6 +63,7 @@ namespace Amazon.Elasticsearch.Model
         /// domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

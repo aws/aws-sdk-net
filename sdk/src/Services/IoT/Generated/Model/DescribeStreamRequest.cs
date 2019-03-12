@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The stream ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamId
         {
             get { return this._streamId; }

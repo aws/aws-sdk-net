@@ -74,6 +74,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// One or more configuration IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ConfigurationIds
         {
             get { return this._configurationIds; }

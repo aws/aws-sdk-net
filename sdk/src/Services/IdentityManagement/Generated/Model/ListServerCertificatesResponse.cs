@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -85,6 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// A list of server certificates.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ServerCertificateMetadata> ServerCertificateMetadataList
         {
             get { return this._serverCertificateMetadataList; }

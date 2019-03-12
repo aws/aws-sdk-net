@@ -42,6 +42,7 @@ namespace Amazon.MigrationHub.Model
         /// Indication of the percentage completion of the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int ProgressPercent
         {
             get { return this._progressPercent.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.MigrationHub.Model
         /// Status of the task - Not Started, In-Progress, Complete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Status Status
         {
             get { return this._status; }
@@ -80,6 +82,7 @@ namespace Amazon.MigrationHub.Model
         /// that explains an error state.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string StatusDetail
         {
             get { return this._statusDetail; }

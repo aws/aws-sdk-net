@@ -62,6 +62,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string DestinationArn
         {
             get { return this._destinationArn; }

@@ -132,6 +132,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxCapacity
         {
             get { return this._maxCapacity.GetValueOrDefault(); }
@@ -150,6 +151,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The minimum capacity of the resource. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinCapacity
         {
             get { return this._minCapacity.GetValueOrDefault(); }
@@ -314,6 +316,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -373,6 +376,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -441,6 +445,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// Only valid when configuring predictive scaling. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ScheduledActionBufferTime
         {
             get { return this._scheduledActionBufferTime.GetValueOrDefault(); }
@@ -459,6 +464,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The namespace of the AWS service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }
@@ -489,6 +495,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// Condition: The scaling metric must be unique across target tracking configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TargetTrackingConfiguration> TargetTrackingConfigurations
         {
             get { return this._targetTrackingConfigurations; }

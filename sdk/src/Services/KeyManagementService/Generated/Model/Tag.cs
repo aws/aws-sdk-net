@@ -48,6 +48,7 @@ namespace Amazon.KeyManagementService.Model
         /// The key of the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string TagKey
         {
             get { return this._tagKey; }
@@ -66,6 +67,7 @@ namespace Amazon.KeyManagementService.Model
         /// The value of the tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string TagValue
         {
             get { return this._tagValue; }

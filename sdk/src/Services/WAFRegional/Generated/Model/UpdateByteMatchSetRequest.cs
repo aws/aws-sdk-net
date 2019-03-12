@@ -103,6 +103,7 @@ namespace Amazon.WAFRegional.Model
         /// <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ByteMatchSetId
         {
             get { return this._byteMatchSetId; }
@@ -121,6 +122,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -155,6 +157,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<ByteMatchSetUpdate> Updates
         {
             get { return this._updates; }

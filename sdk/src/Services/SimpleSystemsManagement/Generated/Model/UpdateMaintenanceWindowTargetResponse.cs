@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -81,6 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -99,6 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated targets.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
@@ -117,6 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window ID specified in the update request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }
@@ -135,6 +140,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The target ID specified in the update request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowTargetId
         {
             get { return this._windowTargetId; }

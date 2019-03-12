@@ -71,6 +71,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>examplesecuritygroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -89,6 +90,7 @@ namespace Amazon.Redshift.Model
         /// A description for the security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

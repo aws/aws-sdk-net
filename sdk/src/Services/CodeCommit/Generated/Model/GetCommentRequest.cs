@@ -42,6 +42,7 @@ namespace Amazon.CodeCommit.Model
         /// or <a>GetCommentsForPullRequest</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CommentId
         {
             get { return this._commentId; }

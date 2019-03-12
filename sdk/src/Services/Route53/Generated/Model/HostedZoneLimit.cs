@@ -53,6 +53,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HostedZoneLimitType Type
         {
             get { return this._type; }
@@ -71,6 +72,7 @@ namespace Amazon.Route53.Model
         /// The current value for the limit that is specified by <code>Type</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public long Value
         {
             get { return this._value.GetValueOrDefault(); }

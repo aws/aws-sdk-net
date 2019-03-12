@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// Specifies whether to insert or delete a <code>RegexPatternString</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -62,6 +63,7 @@ namespace Amazon.WAF.Model
         /// such as <code>B[a@]dB[o0]t</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string RegexPatternString
         {
             get { return this._regexPatternString; }

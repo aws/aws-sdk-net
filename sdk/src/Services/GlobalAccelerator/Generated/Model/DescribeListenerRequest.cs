@@ -41,6 +41,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of the listener to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string ListenerArn
         {
             get { return this._listenerArn; }

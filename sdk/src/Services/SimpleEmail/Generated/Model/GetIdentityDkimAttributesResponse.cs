@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// The DKIM attributes for an email address or a domain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, IdentityDkimAttributes> DkimAttributes
         {
             get { return this._dkimAttributes; }

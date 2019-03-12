@@ -54,6 +54,7 @@ namespace Amazon.Glue.Model
         /// job will be returned, and if there is no such trigger, all triggers will be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string DependentJobName
         {
             get { return this._dependentJobName; }
@@ -72,6 +73,7 @@ namespace Amazon.Glue.Model
         /// The maximum size of a list to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -108,6 +110,7 @@ namespace Amazon.Glue.Model
         /// Specifies to return only these tagged resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// job. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CompilationJobSummary> CompilationJobSummaries
         {
             get { return this._compilationJobSummaries; }
@@ -61,6 +62,7 @@ namespace Amazon.SageMaker.Model
         /// To retrieve the next set of model compilation jobs, use this token in the next request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

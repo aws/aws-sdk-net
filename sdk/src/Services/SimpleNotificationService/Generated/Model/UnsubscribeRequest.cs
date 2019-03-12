@@ -65,6 +65,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the subscription to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionArn
         {
             get { return this._subscriptionArn; }

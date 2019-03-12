@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The first global table name that this operation will evaluate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string ExclusiveStartGlobalTableName
         {
             get { return this._exclusiveStartGlobalTableName; }
@@ -61,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of table names to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

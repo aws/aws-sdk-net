@@ -64,6 +64,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Kinesis Data Streams ARN Format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string KinesisStreamARN
         {
             get { return this._kinesisStreamARN; }
@@ -84,6 +85,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Identity and Access Management (IAM) ARN Format</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string RoleARN
         {
             get { return this._roleARN; }

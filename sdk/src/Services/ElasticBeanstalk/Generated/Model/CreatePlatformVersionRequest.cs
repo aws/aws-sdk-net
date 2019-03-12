@@ -46,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the builder environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -82,6 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The location of the platform definition archive in Amazon S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Location PlatformDefinitionBundle
         {
             get { return this._platformDefinitionBundle; }
@@ -100,6 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of your custom platform.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformName
         {
             get { return this._platformName; }
@@ -118,6 +121,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The number, such as 1.0.2, for the new platform version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PlatformVersion
         {
             get { return this._platformVersion; }

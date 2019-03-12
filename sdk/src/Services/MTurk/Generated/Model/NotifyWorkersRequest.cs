@@ -47,6 +47,7 @@ namespace Amazon.MTurk.Model
         /// The text of the email message to send. Can include up to 4,096 characters
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MessageText
         {
             get { return this._messageText; }
@@ -65,6 +66,7 @@ namespace Amazon.MTurk.Model
         /// The subject line of the email message to send. Can include up to 200 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Subject
         {
             get { return this._subject; }
@@ -83,6 +85,7 @@ namespace Amazon.MTurk.Model
         /// A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> WorkerIds
         {
             get { return this._workerIds; }

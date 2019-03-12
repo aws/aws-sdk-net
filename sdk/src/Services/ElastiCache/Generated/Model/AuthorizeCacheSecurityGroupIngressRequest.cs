@@ -52,6 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// The cache security group that allows network ingress.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheSecurityGroupName
         {
             get { return this._cacheSecurityGroupName; }
@@ -70,6 +71,7 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon EC2 security group to be authorized for ingress to the cache security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EC2SecurityGroupName
         {
             get { return this._ec2SecurityGroupName; }
@@ -90,6 +92,7 @@ namespace Amazon.ElastiCache.Model
         /// for this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EC2SecurityGroupOwnerId
         {
             get { return this._ec2SecurityGroupOwnerId; }

@@ -45,6 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// for your account and region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -63,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the virtual tape to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string TapeARN
         {
             get { return this._tapeARN; }

@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
         /// The port used for the port mapping.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.AppMesh.Model
         /// The protocol used for the port mapping.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PortProtocol Protocol
         {
             get { return this._protocol; }

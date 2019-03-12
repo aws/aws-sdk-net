@@ -62,6 +62,7 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Min=32, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -98,6 +99,7 @@ namespace Amazon.Athena.Model
         /// The SQL query statements to be executed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

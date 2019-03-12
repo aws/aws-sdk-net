@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
         /// update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string InitialContactId
         {
             get { return this._initialContactId; }
@@ -61,6 +62,7 @@ namespace Amazon.Connect.Model
         /// The instance ID for the instance from which to retrieve contact attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }

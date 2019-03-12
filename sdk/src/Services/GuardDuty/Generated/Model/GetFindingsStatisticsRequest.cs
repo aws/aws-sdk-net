@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The ID of the detector that specifies the GuardDuty
         /// service whose findings' statistics you want to retrieve.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -72,6 +73,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingStatisticTypes. Types of finding statistics to retrieve.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> FindingStatisticTypes
         {
             get { return this._findingStatisticTypes; }

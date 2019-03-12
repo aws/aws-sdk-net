@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// A collection of attributes that specify what findings you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AwsSecurityFindingFilters Filters
         {
             get { return this._filters; }

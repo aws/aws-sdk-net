@@ -110,6 +110,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FilterStrength. Adjusts the magnitude of filtering from
         /// 1 (minimal) to 5 (strongest).
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public int FilterStrength
         {
             get { return this._filterStrength.GetValueOrDefault(); }

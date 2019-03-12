@@ -45,6 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// to the default event bus.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string StatementId
         {
             get { return this._statementId; }

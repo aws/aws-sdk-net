@@ -71,6 +71,7 @@ namespace Amazon.Rekognition.Model
         /// accidently started more than once. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -90,6 +91,7 @@ namespace Amazon.Rekognition.Model
         /// to the Amazon Simple Notification Service topic. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobTag
         {
             get { return this._jobTag; }
@@ -114,6 +116,7 @@ namespace Amazon.Rekognition.Model
         /// confidence values greater than or equal to 50 percent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float MinConfidence
         {
             get { return this._minConfidence.GetValueOrDefault(); }
@@ -152,6 +155,7 @@ namespace Amazon.Rekognition.Model
         /// S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Video Video
         {
             get { return this._video; }

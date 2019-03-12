@@ -63,6 +63,7 @@ namespace Amazon.QuickSight.Model
         /// The group description.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The name of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string GroupName
         {
             get { return this._groupName; }

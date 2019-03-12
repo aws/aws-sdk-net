@@ -48,6 +48,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// operation to get this value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ReferenceId
         {
             get { return this._referenceId; }
@@ -105,6 +106,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// In-application table name that is created by this update.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string TableNameUpdate
         {
             get { return this._tableNameUpdate; }

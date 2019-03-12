@@ -45,6 +45,7 @@ namespace Amazon.IoTAnalytics.Model
         /// the data set contents which are the input to the containerized application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -64,6 +65,7 @@ namespace Amazon.IoTAnalytics.Model
         /// an application and needed support libraries and is used to generate data set contents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -82,6 +84,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Configuration of the resource which executes the "containerAction".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceConfiguration ResourceConfiguration
         {
             get { return this._resourceConfiguration; }
@@ -103,6 +106,7 @@ namespace Amazon.IoTAnalytics.Model
         /// or "outputFileUriValue".
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Variable> Variables
         {
             get { return this._variables; }

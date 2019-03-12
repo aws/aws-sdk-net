@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         /// the CPL. To include more than one captions track in your job outputs, create multiple
         /// input captions selectors. Specify one track per selector.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int TrackNumber
         {
             get { return this._trackNumber.GetValueOrDefault(); }

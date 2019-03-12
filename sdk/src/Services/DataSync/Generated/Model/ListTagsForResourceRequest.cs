@@ -43,6 +43,7 @@ namespace Amazon.DataSync.Model
         /// The maximum number of locations to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.DataSync.Model
         /// An opaque string that indicates the position at which to begin the next list of locations.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=93)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -79,6 +81,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the resource whose tags to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

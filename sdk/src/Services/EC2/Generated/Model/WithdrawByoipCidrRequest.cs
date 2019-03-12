@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// The public IPv4 address range, in CIDR notation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }

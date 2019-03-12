@@ -49,6 +49,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -68,6 +69,7 @@ namespace Amazon.Inspector.Model
         /// value can be zero or a positive integer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int AssessmentRunCount
         {
             get { return this._assessmentRunCount.GetValueOrDefault(); }
@@ -86,6 +88,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the assessment target that corresponds to this assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTargetArn
         {
             get { return this._assessmentTargetArn; }
@@ -104,6 +107,7 @@ namespace Amazon.Inspector.Model
         /// The time at which the assessment template is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -123,6 +127,7 @@ namespace Amazon.Inspector.Model
         /// is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=180, Max=86400)]
         public int DurationInSeconds
         {
             get { return this._durationInSeconds.GetValueOrDefault(); }
@@ -143,6 +148,7 @@ namespace Amazon.Inspector.Model
         /// greaterpa than zero.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string LastAssessmentRunArn
         {
             get { return this._lastAssessmentRunArn; }
@@ -161,6 +167,7 @@ namespace Amazon.Inspector.Model
         /// The name of the assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string Name
         {
             get { return this._name; }
@@ -179,6 +186,7 @@ namespace Amazon.Inspector.Model
         /// The rules packages that are specified for this assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> RulesPackageArns
         {
             get { return this._rulesPackageArns; }
@@ -198,6 +206,7 @@ namespace Amazon.Inspector.Model
         /// assessment run that uses this assessment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<Attribute> UserAttributesForFindings
         {
             get { return this._userAttributesForFindings; }

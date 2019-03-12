@@ -103,6 +103,7 @@ namespace Amazon.Kinesis.Model
         /// DefaultShardLimit;
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100000)]
         public int ShardCount
         {
             get { return this._shardCount.GetValueOrDefault(); }
@@ -124,6 +125,7 @@ namespace Amazon.Kinesis.Model
         /// same AWS account but in two different Regions can also have the same name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

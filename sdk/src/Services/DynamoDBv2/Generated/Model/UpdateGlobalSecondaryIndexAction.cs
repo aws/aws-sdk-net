@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the global secondary index to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string IndexName
         {
             get { return this._indexName; }
@@ -66,6 +67,7 @@ namespace Amazon.DynamoDBv2.Model
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ProvisionedThroughput ProvisionedThroughput
         {
             get { return this._provisionedThroughput; }

@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// The maximum number of items to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.Backup.Model
         /// type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

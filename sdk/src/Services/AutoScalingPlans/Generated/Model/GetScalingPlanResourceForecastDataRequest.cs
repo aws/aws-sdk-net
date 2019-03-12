@@ -62,6 +62,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// forecasts for periods of two days in advance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -101,6 +102,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ForecastDataType ForecastDataType
         {
             get { return this._forecastDataType; }
@@ -151,6 +153,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -169,6 +172,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The scalable dimension for the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalableDimension ScalableDimension
         {
             get { return this._scalableDimension; }
@@ -187,6 +191,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The name of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScalingPlanName
         {
             get { return this._scalingPlanName; }
@@ -205,6 +210,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The version number of the scaling plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long ScalingPlanVersion
         {
             get { return this._scalingPlanVersion.GetValueOrDefault(); }
@@ -223,6 +229,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// The namespace of the AWS service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceNamespace ServiceNamespace
         {
             get { return this._serviceNamespace; }
@@ -242,6 +249,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// and time can be at most 56 days before the current date and time. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

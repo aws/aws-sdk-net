@@ -40,6 +40,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name of an HTTP namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string HttpName
         {
             get { return this._httpName; }

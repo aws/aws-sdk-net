@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The AWS accounts targeted by the current Automation execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<string> Accounts
         {
             get { return this._accounts; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Automation execution role used by the currently executing Automation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ExecutionRoleName
         {
             get { return this._executionRoleName; }
@@ -80,6 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The AWS Regions targeted by the current Automation execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public List<string> Regions
         {
             get { return this._regions; }
@@ -99,6 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string TargetLocationMaxConcurrency
         {
             get { return this._targetLocationMaxConcurrency; }
@@ -118,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// executions for the currently executing Automation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=7)]
         public string TargetLocationMaxErrors
         {
             get { return this._targetLocationMaxErrors; }

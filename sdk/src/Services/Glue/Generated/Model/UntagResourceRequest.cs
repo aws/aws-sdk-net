@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The ARN of the resource from which to remove the tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10240)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// Tags to remove from this resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> TagsToRemove
         {
             get { return this._tagsToRemove; }

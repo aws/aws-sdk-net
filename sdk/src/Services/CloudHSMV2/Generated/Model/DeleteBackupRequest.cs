@@ -43,6 +43,7 @@ namespace Amazon.CloudHSMV2.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupId
         {
             get { return this._backupId; }

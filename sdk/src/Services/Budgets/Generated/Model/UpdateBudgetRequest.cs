@@ -44,6 +44,7 @@ namespace Amazon.Budgets.Model
         /// The <code>accountId</code> that is associated with the budget that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -62,6 +63,7 @@ namespace Amazon.Budgets.Model
         /// The budget that you want to update your budget to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Budget NewBudget
         {
             get { return this._newBudget; }

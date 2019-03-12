@@ -41,6 +41,7 @@ namespace Amazon.CodeCommit.Model
         /// The full path to the file, including the name of the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }

@@ -43,6 +43,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the file share to be deleted. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string FileShareARN
         {
             get { return this._fileShareARN; }

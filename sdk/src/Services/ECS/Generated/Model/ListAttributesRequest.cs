@@ -158,6 +158,7 @@ namespace Amazon.ECS.Model
         /// The type of the target with which to list attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetType TargetType
         {
             get { return this._targetType; }

@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property AnalysisScheme.
         /// </summary>
+        [AWSProperty(Required=true)]
         public AnalysisSchemeStatus AnalysisScheme
         {
             get { return this._analysisScheme; }

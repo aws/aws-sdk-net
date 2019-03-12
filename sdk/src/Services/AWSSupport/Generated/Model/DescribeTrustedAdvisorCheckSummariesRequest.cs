@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// The IDs of the Trusted Advisor checks.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> CheckIds
         {
             get { return this._checkIds; }

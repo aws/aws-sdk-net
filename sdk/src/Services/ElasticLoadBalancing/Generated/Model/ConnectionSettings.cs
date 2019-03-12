@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// sent over the connection) before it is closed by the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=3600)]
         public int IdleTimeout
         {
             get { return this._idleTimeout.GetValueOrDefault(); }

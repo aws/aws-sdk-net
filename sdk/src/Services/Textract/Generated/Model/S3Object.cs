@@ -53,6 +53,7 @@ namespace Amazon.Textract.Model
         /// The name of the S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -72,6 +73,7 @@ namespace Amazon.Textract.Model
         /// Asynchronous operations also support PDF files.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -90,6 +92,7 @@ namespace Amazon.Textract.Model
         /// If the bucket has versioning enabled, you can specify the object version. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Version
         {
             get { return this._version; }

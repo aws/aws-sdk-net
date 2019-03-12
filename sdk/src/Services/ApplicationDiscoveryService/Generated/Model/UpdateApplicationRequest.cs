@@ -43,6 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of the application to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationId
         {
             get { return this._configurationId; }

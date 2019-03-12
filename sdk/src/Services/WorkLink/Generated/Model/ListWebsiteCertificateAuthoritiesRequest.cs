@@ -43,6 +43,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkLink.Model
         /// The maximum number of results to be included in the next page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.WorkLink.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

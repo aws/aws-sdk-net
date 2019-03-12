@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InputAttachmentNameReference. The name of the input attachment
         /// that should be switched to by this action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputAttachmentNameReference
         {
             get { return this._inputAttachmentNameReference; }

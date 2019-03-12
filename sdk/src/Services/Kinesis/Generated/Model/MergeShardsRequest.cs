@@ -95,6 +95,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the adjacent shard for the merge.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string AdjacentShardToMerge
         {
             get { return this._adjacentShardToMerge; }
@@ -113,6 +114,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard to combine with the adjacent shard for the merge.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardToMerge
         {
             get { return this._shardToMerge; }
@@ -131,6 +133,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream for the merge.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }

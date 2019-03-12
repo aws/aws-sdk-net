@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of a standard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StandardsArn
         {
             get { return this._standardsArn; }
@@ -58,6 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsInput.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> StandardsInput
         {
             get { return this._standardsInput; }
@@ -76,6 +78,7 @@ namespace Amazon.SecurityHub.Model
         /// The standard's status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StandardsStatus StandardsStatus
         {
             get { return this._standardsStatus; }
@@ -94,6 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of a resource that represents your subscription to a supported standard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StandardsSubscriptionArn
         {
             get { return this._standardsSubscriptionArn; }

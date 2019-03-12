@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Arn. The Amazon Resource Name (ARN) of the resource that
         /// you want to list tags for. To get the ARN, send a GET request with the resource name.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }

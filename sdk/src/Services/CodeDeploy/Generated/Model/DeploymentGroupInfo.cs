@@ -78,6 +78,7 @@ namespace Amazon.CodeDeploy.Model
         /// The application name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -169,6 +170,7 @@ namespace Amazon.CodeDeploy.Model
         /// The deployment configuration name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DeploymentConfigName
         {
             get { return this._deploymentConfigName; }
@@ -205,6 +207,7 @@ namespace Amazon.CodeDeploy.Model
         /// The deployment group name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DeploymentGroupName
         {
             get { return this._deploymentGroupName; }

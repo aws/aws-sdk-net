@@ -66,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// to list disk IDs for a gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string DiskId
         {
             get { return this._diskId; }
@@ -81,6 +82,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -119,6 +121,7 @@ namespace Amazon.StorageGateway.Model
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=2048)]
         public string KMSKey
         {
             get { return this._kmsKey; }
@@ -143,6 +146,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: A valid IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }
@@ -166,6 +170,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: true, false
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool PreserveExistingData
         {
             get { return this._preserveExistingData.GetValueOrDefault(); }
@@ -213,6 +218,7 @@ namespace Amazon.StorageGateway.Model
         /// for this volume as the new target name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string TargetName
         {
             get { return this._targetName; }

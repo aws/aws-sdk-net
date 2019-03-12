@@ -78,6 +78,7 @@ namespace Amazon.IoT.Model
         /// The name of the new thing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

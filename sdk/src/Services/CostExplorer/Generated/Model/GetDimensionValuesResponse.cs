@@ -158,6 +158,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DimensionValuesWithAttributes> DimensionValues
         {
             get { return this._dimensionValues; }
@@ -195,6 +196,7 @@ namespace Amazon.CostExplorer.Model
         /// The number of results that AWS returned at one time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ReturnSize
         {
             get { return this._returnSize.GetValueOrDefault(); }
@@ -213,6 +215,7 @@ namespace Amazon.CostExplorer.Model
         /// The total number of search results.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TotalSize
         {
             get { return this._totalSize.GetValueOrDefault(); }

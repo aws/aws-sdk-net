@@ -42,6 +42,7 @@ namespace Amazon.Inspector.Model
         /// to obtain.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentRunArn
         {
             get { return this._assessmentRunArn; }

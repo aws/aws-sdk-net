@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the lifecycle configuration to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string NotebookInstanceLifecycleConfigName
         {
             get { return this._notebookInstanceLifecycleConfigName; }

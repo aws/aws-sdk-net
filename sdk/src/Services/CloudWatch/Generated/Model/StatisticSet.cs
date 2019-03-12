@@ -43,6 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// The maximum value of the sample set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Maximum
         {
             get { return this._maximum.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatch.Model
         /// The minimum value of the sample set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Minimum
         {
             get { return this._minimum.GetValueOrDefault(); }
@@ -79,6 +81,7 @@ namespace Amazon.CloudWatch.Model
         /// The number of samples used for the statistic set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double SampleCount
         {
             get { return this._sampleCount.GetValueOrDefault(); }
@@ -97,6 +100,7 @@ namespace Amazon.CloudWatch.Model
         /// The sum of values for the sample set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public double Sum
         {
             get { return this._sum.GetValueOrDefault(); }

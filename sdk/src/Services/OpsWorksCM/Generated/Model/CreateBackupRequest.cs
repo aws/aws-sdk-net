@@ -80,6 +80,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server that you want to back up. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

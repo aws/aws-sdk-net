@@ -41,6 +41,7 @@ namespace Amazon.XRay.Model
         /// The rule and fields to change.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SamplingRuleUpdate SamplingRuleUpdate
         {
             get { return this._samplingRuleUpdate; }

@@ -61,6 +61,7 @@ namespace Amazon.SimpleEmail.Model
         /// with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -80,6 +81,7 @@ namespace Amazon.SimpleEmail.Model
         /// be published to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventDestination EventDestination
         {
             get { return this._eventDestination; }

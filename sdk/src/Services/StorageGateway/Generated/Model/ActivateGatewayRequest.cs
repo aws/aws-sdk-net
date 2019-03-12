@@ -68,6 +68,7 @@ namespace Amazon.StorageGateway.Model
         /// in the Storage Gateway User Guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ActivationKey
         {
             get { return this._activationKey; }
@@ -86,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// The name you configured for your gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=255)]
         public string GatewayName
         {
             get { return this._gatewayName; }
@@ -113,6 +115,7 @@ namespace Amazon.StorageGateway.Model
         /// Storage Gateway Regions and Endpoints</a> in the AWS General Reference. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public string GatewayRegion
         {
             get { return this._gatewayRegion; }
@@ -135,6 +138,7 @@ namespace Amazon.StorageGateway.Model
         /// schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=10)]
         public string GatewayTimezone
         {
             get { return this._gatewayTimezone; }
@@ -159,6 +163,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=20)]
         public string GatewayType
         {
             get { return this._gatewayType; }
@@ -182,6 +187,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string MediumChangerType
         {
             get { return this._mediumChangerType; }
@@ -232,6 +238,7 @@ namespace Amazon.StorageGateway.Model
         ///  Valid Values: "IBM-ULT3580-TD5" 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=50)]
         public string TapeDriveType
         {
             get { return this._tapeDriveType; }

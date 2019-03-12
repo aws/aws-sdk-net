@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         /// reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum
         /// strength.
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public int PostFilterSharpenStrength
         {
             get { return this._postFilterSharpenStrength.GetValueOrDefault(); }
@@ -57,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Speed. The speed of the filter, from -2 (lower speed) to
         /// 3 (higher speed), with 0 being the nominal value.
         /// </summary>
+        [AWSProperty(Min=-2, Max=3)]
         public int Speed
         {
             get { return this._speed.GetValueOrDefault(); }
@@ -73,6 +75,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Strength. Relative strength of noise reducing filter. Higher
         /// values produce stronger filtering.
         /// </summary>
+        [AWSProperty(Min=0, Max=16)]
         public int Strength
         {
             get { return this._strength.GetValueOrDefault(); }

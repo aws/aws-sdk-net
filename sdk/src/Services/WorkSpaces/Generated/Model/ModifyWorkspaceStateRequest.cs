@@ -50,6 +50,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the WorkSpace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WorkspaceId
         {
             get { return this._workspaceId; }
@@ -68,6 +69,7 @@ namespace Amazon.WorkSpaces.Model
         /// The WorkSpace state.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TargetWorkspaceState WorkspaceState
         {
             get { return this._workspaceState; }

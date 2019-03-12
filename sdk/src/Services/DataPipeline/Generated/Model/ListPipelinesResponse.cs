@@ -62,6 +62,7 @@ namespace Amazon.DataPipeline.Model
         /// null, there are no more results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }
@@ -81,6 +82,7 @@ namespace Amazon.DataPipeline.Model
         /// you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PipelineIdName> PipelineIdList
         {
             get { return this._pipelineIdList; }

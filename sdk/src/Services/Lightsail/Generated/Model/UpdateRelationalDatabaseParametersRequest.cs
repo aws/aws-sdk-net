@@ -59,6 +59,7 @@ namespace Amazon.Lightsail.Model
         /// The database parameters to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<RelationalDatabaseParameter> Parameters
         {
             get { return this._parameters; }
@@ -77,6 +78,7 @@ namespace Amazon.Lightsail.Model
         /// The name of your database for which to update parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

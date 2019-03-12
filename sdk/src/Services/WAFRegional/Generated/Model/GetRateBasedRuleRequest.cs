@@ -43,6 +43,7 @@ namespace Amazon.WAFRegional.Model
         /// is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

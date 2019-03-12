@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// waits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }

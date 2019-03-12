@@ -72,6 +72,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The maximum number of slot types to return in the response. The default is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// contains an empty list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

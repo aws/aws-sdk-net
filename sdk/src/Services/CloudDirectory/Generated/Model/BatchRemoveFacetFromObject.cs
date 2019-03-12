@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// A reference to the object whose facet will be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// The facet to remove from the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SchemaFacet SchemaFacet
         {
             get { return this._schemaFacet; }

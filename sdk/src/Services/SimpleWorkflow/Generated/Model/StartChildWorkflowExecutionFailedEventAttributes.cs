@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StartChildWorkflowExecutionFailedCause Cause
         {
             get { return this._cause; }
@@ -74,6 +75,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// This data isn't sent to the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -95,6 +97,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// problems by tracing back the chain of events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long DecisionTaskCompletedEventId
         {
             get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
@@ -123,6 +126,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// event doesn't exist.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long InitiatedEventId
         {
             get { return this._initiatedEventId.GetValueOrDefault(); }
@@ -141,6 +145,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>workflowId</code> of the child workflow execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }
@@ -160,6 +165,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// that failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The CA certificate registration code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=64, Max=64)]
         public string RegistrationCode
         {
             get { return this._registrationCode; }

@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SMSChannelResponse.
         /// </summary>
+        [AWSProperty(Required=true)]
         public SMSChannelResponse SMSChannelResponse
         {
             get { return this._smsChannelResponse; }

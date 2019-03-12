@@ -42,6 +42,7 @@ namespace Amazon.CloudWatch.Model
         /// The dashboards to be deleted. This parameter is required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> DashboardNames
         {
             get { return this._dashboardNames; }

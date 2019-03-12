@@ -43,6 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// The blob ID removed from the tree as part of deleting the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BlobId
         {
             get { return this._blobId; }
@@ -61,6 +62,7 @@ namespace Amazon.CodeCommit.Model
         /// The full commit ID of the commit that contains the change that deletes the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CommitId
         {
             get { return this._commitId; }
@@ -80,6 +82,7 @@ namespace Amazon.CodeCommit.Model
         /// and extension of that file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }
@@ -99,6 +102,7 @@ namespace Amazon.CodeCommit.Model
         /// file change.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TreeId
         {
             get { return this._treeId; }

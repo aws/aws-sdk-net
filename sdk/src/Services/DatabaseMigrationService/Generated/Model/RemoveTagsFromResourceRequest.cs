@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -61,6 +62,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The tag key (name) of the tag to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

@@ -47,6 +47,7 @@ namespace Amazon.CloudFormation.Model
         /// The actual property value of the resource property.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ActualValue
         {
             get { return this._actualValue; }
@@ -80,6 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DifferenceType DifferenceType
         {
             get { return this._differenceType; }
@@ -99,6 +101,7 @@ namespace Amazon.CloudFormation.Model
         /// and any values specified as template parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExpectedValue
         {
             get { return this._expectedValue; }
@@ -117,6 +120,7 @@ namespace Amazon.CloudFormation.Model
         /// The fully-qualified path to the resource property.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PropertyPath
         {
             get { return this._propertyPath; }

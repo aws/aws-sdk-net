@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentity.Model
         /// IdentityId.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=60)]
         public List<UnprocessedIdentityId> UnprocessedIdentityIds
         {
             get { return this._unprocessedIdentityIds; }

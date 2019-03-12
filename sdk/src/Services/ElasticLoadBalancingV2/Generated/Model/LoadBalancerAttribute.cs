@@ -93,6 +93,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Key
         {
             get { return this._key; }
@@ -111,6 +112,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The value of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Value
         {
             get { return this._value; }

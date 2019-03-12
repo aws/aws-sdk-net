@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// region as the destination Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string AWSKMSKeyARN
         {
             get { return this._awskmsKeyARN; }
@@ -63,6 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Amazon S3 bucket where the aggregated data is stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -81,6 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An Amazon S3 prefix for the bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Prefix
         {
             get { return this._prefix; }
@@ -99,6 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Region
         {
             get { return this._region; }
@@ -117,6 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A supported sync format. The following format is currently supported: JsonSerDe
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceDataSyncS3Format SyncFormat
         {
             get { return this._syncFormat; }

@@ -62,6 +62,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The type of record format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordFormatType RecordFormatType
         {
             get { return this._recordFormatType; }

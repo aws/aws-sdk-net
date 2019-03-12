@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Get Get
         {
             get { return this._get; }

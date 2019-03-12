@@ -42,6 +42,7 @@ namespace Amazon.CostAndUsageReport.Model
         /// the detailed metadata and data file information. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReportDefinition ReportDefinition
         {
             get { return this._reportDefinition; }

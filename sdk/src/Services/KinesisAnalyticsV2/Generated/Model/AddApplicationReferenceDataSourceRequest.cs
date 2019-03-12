@@ -53,6 +53,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of an existing application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -74,6 +75,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// is returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }
@@ -95,6 +97,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// table that is created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReferenceDataSource ReferenceDataSource
         {
             get { return this._referenceDataSource; }

@@ -45,6 +45,7 @@ namespace Amazon.WAF.Model
         /// that you can use to get another batch of <code>IPSet</code> objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -67,6 +68,7 @@ namespace Amazon.WAF.Model
         /// from the previous response to get information about another batch of <code>IPSets</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextMarker
         {
             get { return this._nextMarker; }

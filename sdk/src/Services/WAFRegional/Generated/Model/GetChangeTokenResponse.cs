@@ -41,6 +41,7 @@ namespace Amazon.WAFRegional.Model
         /// request to get the current status of the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }

@@ -42,6 +42,7 @@ namespace Amazon.ConfigService.Model
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

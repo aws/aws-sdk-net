@@ -64,6 +64,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// the output file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }
@@ -83,6 +84,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// that you put the caption language name here, in the language of the captions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string Label
         {
             get { return this._label; }
@@ -116,6 +118,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// 639-1 codes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Language
         {
             get { return this._language; }

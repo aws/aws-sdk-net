@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the job for which you want to get detailed information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

@@ -49,6 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }

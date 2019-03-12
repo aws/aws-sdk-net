@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleArn
         {
             get { return this._ruleArn; }

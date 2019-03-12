@@ -90,6 +90,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Egress
         {
             get { return this._egress.GetValueOrDefault(); }
@@ -145,6 +146,7 @@ namespace Amazon.EC2.Model
         /// The ID of the network ACL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkAclId
         {
             get { return this._networkAclId; }
@@ -187,6 +189,7 @@ namespace Amazon.EC2.Model
         /// "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Protocol
         {
             get { return this._protocol; }
@@ -205,6 +208,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether to allow or deny the traffic that matches the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RuleAction RuleAction
         {
             get { return this._ruleAction; }
@@ -229,6 +233,7 @@ namespace Amazon.EC2.Model
         /// for internal use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int RuleNumber
         {
             get { return this._ruleNumber.GetValueOrDefault(); }

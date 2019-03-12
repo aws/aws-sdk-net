@@ -90,6 +90,7 @@ namespace Amazon.DAX.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -127,6 +128,7 @@ namespace Amazon.DAX.Model
         /// assume this role and use the role's permissions to access DynamoDB on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -145,6 +147,7 @@ namespace Amazon.DAX.Model
         /// The compute and memory capacity of the nodes in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -273,6 +276,7 @@ namespace Amazon.DAX.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ReplicationFactor
         {
             get { return this._replicationFactor.GetValueOrDefault(); }

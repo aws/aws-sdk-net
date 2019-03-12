@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// An IP address that is reserved for use by your Amazon Pinpoint account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ip
         {
             get { return this._ip; }
@@ -81,6 +82,7 @@ namespace Amazon.PinpointEmail.Model
         /// 1, the address has completed the warm-up process and is ready for use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int WarmupPercentage
         {
             get { return this._warmupPercentage.GetValueOrDefault(); }
@@ -111,6 +113,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WarmupStatus WarmupStatus
         {
             get { return this._warmupStatus; }

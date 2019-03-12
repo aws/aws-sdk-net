@@ -42,6 +42,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh that the virtual node resides in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -60,6 +61,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual node to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualNodeName
         {
             get { return this._virtualNodeName; }

@@ -49,6 +49,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the pipeline for which you want to change notification settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -99,6 +100,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Notifications Notifications
         {
             get { return this._notifications; }

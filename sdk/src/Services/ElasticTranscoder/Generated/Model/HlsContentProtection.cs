@@ -53,6 +53,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// being base64-encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string InitializationVector
         {
             get { return this._initializationVector; }
@@ -147,6 +148,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// tag in the playlist file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string LicenseAcquisitionUrl
         {
             get { return this._licenseAcquisitionUrl; }

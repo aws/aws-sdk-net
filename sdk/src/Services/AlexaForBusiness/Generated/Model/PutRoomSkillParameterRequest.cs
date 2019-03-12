@@ -62,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The updated room skill parameter. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RoomSkillParameter RoomSkillParameter
         {
             get { return this._roomSkillParameter; }
@@ -80,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the skill associated with the room skill parameter. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

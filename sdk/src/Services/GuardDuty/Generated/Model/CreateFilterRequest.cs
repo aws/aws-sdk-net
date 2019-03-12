@@ -60,6 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ClientToken. The idempotency token for the create request.
         /// </summary>
+        [AWSProperty(Min=0, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -91,6 +92,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The unique ID of the detector that you want
         /// to update.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -107,6 +109,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property FindingCriteria. Represents the criteria to be used in
         /// the filter for querying findings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public FindingCriteria FindingCriteria
         {
             get { return this._findingCriteria; }
@@ -122,6 +125,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the filter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

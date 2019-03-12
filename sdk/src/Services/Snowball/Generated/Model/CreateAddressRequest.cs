@@ -44,6 +44,7 @@ namespace Amazon.Snowball.Model
         /// The address that you want the Snowball shipped to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Address Address
         {
             get { return this._address; }

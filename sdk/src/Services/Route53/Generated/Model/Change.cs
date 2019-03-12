@@ -81,6 +81,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -99,6 +100,7 @@ namespace Amazon.Route53.Model
         /// Information about the resource record set to create, delete, or update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ResourceRecordSet ResourceRecordSet
         {
             get { return this._resourceRecordSet; }

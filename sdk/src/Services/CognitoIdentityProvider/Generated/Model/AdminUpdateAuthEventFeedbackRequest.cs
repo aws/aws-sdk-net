@@ -46,6 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The authentication event ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string EventId
         {
             get { return this._eventId; }
@@ -64,6 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The authentication event feedback value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FeedbackValueType FeedbackValue
         {
             get { return this._feedbackValue; }
@@ -82,6 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool username.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }
@@ -100,6 +103,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

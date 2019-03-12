@@ -57,6 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AssociationFilterKey Key
         {
             get { return this._key; }
@@ -75,6 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The filter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Value
         {
             get { return this._value; }

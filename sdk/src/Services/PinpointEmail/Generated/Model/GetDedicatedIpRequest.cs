@@ -44,6 +44,7 @@ namespace Amazon.PinpointEmail.Model
         /// has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ip
         {
             get { return this._ip; }

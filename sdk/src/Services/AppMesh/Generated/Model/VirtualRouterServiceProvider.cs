@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual router that is acting as a service provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

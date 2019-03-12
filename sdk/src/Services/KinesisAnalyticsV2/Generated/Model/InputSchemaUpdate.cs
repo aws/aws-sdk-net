@@ -44,6 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the streaming source element to the corresponding column in the in-application stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public List<RecordColumn> RecordColumnUpdates
         {
             get { return this._recordColumnUpdates; }

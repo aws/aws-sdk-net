@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The maximum number of artifacts allowed for the action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5)]
         public int MaximumCount
         {
             get { return this._maximumCount.GetValueOrDefault(); }
@@ -59,6 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// The minimum number of artifacts allowed for the action type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=5)]
         public int MinimumCount
         {
             get { return this._minimumCount.GetValueOrDefault(); }

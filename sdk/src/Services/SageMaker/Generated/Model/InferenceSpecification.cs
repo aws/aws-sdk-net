@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon ECR registry path of the Docker image that contains the inference code.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<ModelPackageContainerDefinition> Containers
         {
             get { return this._containers; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The supported MIME types for the input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SupportedContentTypes
         {
             get { return this._supportedContentTypes; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// A list of the instance types that are used to generate inferences in real-time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SupportedRealtimeInferenceInstanceTypes
         {
             get { return this._supportedRealtimeInferenceInstanceTypes; }
@@ -98,6 +101,7 @@ namespace Amazon.SageMaker.Model
         /// The supported MIME types for the output data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> SupportedResponseMIMETypes
         {
             get { return this._supportedResponseMIMETypes; }
@@ -117,6 +121,7 @@ namespace Amazon.SageMaker.Model
         /// an endpoint can be deployed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<string> SupportedTransformInstanceTypes
         {
             get { return this._supportedTransformInstanceTypes; }

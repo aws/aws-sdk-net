@@ -50,6 +50,7 @@ namespace Amazon.Comprehend.Model
         /// that grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -68,6 +69,7 @@ namespace Amazon.Comprehend.Model
         /// The Amazon Resource Name (ARN) that identifies the document classifier. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }
@@ -123,6 +125,7 @@ namespace Amazon.Comprehend.Model
         /// The identifier assigned to the document classification job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }
@@ -141,6 +144,7 @@ namespace Amazon.Comprehend.Model
         /// The name that you assigned to the document classification job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

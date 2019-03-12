@@ -51,6 +51,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The identifier of the pipeline to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -78,6 +79,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Status
         {
             get { return this._status; }

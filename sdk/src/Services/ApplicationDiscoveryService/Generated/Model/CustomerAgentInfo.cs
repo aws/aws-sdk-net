@@ -46,6 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of active discovery agents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ActiveAgents
         {
             get { return this._activeAgents.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of blacklisted discovery agents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int BlackListedAgents
         {
             get { return this._blackListedAgents.GetValueOrDefault(); }
@@ -82,6 +84,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of healthy discovery agents
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HealthyAgents
         {
             get { return this._healthyAgents.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of discovery agents with status SHUTDOWN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ShutdownAgents
         {
             get { return this._shutdownAgents.GetValueOrDefault(); }
@@ -118,6 +122,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Total number of discovery agents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int TotalAgents
         {
             get { return this._totalAgents.GetValueOrDefault(); }
@@ -136,6 +141,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of unhealthy discovery agents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int UnhealthyAgents
         {
             get { return this._unhealthyAgents.GetValueOrDefault(); }
@@ -154,6 +160,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Number of unknown discovery agents.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int UnknownAgents
         {
             get { return this._unknownAgents.GetValueOrDefault(); }

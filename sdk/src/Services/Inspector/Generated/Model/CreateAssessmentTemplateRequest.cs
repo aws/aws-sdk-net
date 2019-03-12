@@ -49,6 +49,7 @@ namespace Amazon.Inspector.Model
         /// template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string AssessmentTargetArn
         {
             get { return this._assessmentTargetArn; }
@@ -70,6 +71,7 @@ namespace Amazon.Inspector.Model
         /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string AssessmentTemplateName
         {
             get { return this._assessmentTemplateName; }
@@ -88,6 +90,7 @@ namespace Amazon.Inspector.Model
         /// The duration of the assessment run in seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=180, Max=86400)]
         public int DurationInSeconds
         {
             get { return this._durationInSeconds.GetValueOrDefault(); }
@@ -107,6 +110,7 @@ namespace Amazon.Inspector.Model
         /// template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<string> RulesPackageArns
         {
             get { return this._rulesPackageArns; }
@@ -128,6 +132,7 @@ namespace Amazon.Inspector.Model
         /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Attribute> UserAttributesForFindings
         {
             get { return this._userAttributesForFindings; }

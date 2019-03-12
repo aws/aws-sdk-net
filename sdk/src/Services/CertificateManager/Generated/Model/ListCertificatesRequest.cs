@@ -85,6 +85,7 @@ namespace Amazon.CertificateManager.Model
         /// value in a subsequent request to retrieve additional items.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
@@ -105,6 +106,7 @@ namespace Amazon.CertificateManager.Model
         /// from the response you just received.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -90,6 +90,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the HIT.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITId
         {
             get { return this._hitId; }
@@ -105,6 +106,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property MaxResults.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -123,6 +125,7 @@ namespace Amazon.MTurk.Model
         /// Pagination token
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -72,6 +72,7 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream Data
         {
             get { return this._data; }

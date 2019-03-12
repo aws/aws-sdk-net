@@ -54,6 +54,7 @@ namespace Amazon.DeviceFarm.Model
         /// The job's ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -144,6 +145,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32)]
         public string InstanceArn
         {
             get { return this._instanceArn; }
@@ -162,6 +164,7 @@ namespace Amazon.DeviceFarm.Model
         /// A message about the job's result.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=16384)]
         public string Message
         {
             get { return this._message; }
@@ -180,6 +183,7 @@ namespace Amazon.DeviceFarm.Model
         /// The job's name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

@@ -49,6 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// or digit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=16, Max=128)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }

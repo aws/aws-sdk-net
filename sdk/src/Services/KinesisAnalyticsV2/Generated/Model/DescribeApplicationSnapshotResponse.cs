@@ -40,6 +40,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// An object containing information about the application snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotDetails SnapshotDetails
         {
             get { return this._snapshotDetails; }

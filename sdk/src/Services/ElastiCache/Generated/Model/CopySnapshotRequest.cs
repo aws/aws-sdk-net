@@ -147,6 +147,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of an existing snapshot from which to make a copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceSnapshotName
         {
             get { return this._sourceSnapshotName; }
@@ -198,6 +199,7 @@ namespace Amazon.ElastiCache.Model
         /// bucket if exporting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetSnapshotName
         {
             get { return this._targetSnapshotName; }

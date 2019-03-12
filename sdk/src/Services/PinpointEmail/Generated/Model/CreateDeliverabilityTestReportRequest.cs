@@ -51,6 +51,7 @@ namespace Amazon.PinpointEmail.Model
         /// placement test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EmailContent Content
         {
             get { return this._content; }
@@ -69,6 +70,7 @@ namespace Amazon.PinpointEmail.Model
         /// The email address that the predictive inbox placement test email was sent from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FromEmailAddress
         {
             get { return this._fromEmailAddress; }

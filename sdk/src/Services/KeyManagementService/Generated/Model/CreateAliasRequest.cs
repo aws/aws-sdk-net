@@ -82,6 +82,7 @@ namespace Amazon.KeyManagementService.Model
         /// by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string AliasName
         {
             get { return this._aliasName; }
@@ -121,6 +122,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TargetKeyId
         {
             get { return this._targetKeyId; }

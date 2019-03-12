@@ -44,6 +44,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard adjacent to the shard's parent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string AdjacentParentShardId
         {
             get { return this._adjacentParentShardId; }
@@ -63,6 +64,7 @@ namespace Amazon.Kinesis.Model
         /// positive integers.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HashKeyRange HashKeyRange
         {
             get { return this._hashKeyRange; }
@@ -81,6 +83,7 @@ namespace Amazon.Kinesis.Model
         /// The shard ID of the shard's parent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ParentShardId
         {
             get { return this._parentShardId; }
@@ -99,6 +102,7 @@ namespace Amazon.Kinesis.Model
         /// The range of possible sequence numbers for the shard.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SequenceNumberRange SequenceNumberRange
         {
             get { return this._sequenceNumberRange; }
@@ -117,6 +121,7 @@ namespace Amazon.Kinesis.Model
         /// The unique identifier of the shard within the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardId
         {
             get { return this._shardId; }

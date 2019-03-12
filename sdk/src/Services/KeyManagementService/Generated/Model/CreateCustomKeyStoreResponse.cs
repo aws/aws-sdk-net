@@ -40,6 +40,7 @@ namespace Amazon.KeyManagementService.Model
         /// A unique identifier for the new custom key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }

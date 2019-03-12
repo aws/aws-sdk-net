@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ID of the skill store category.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public long CategoryId
         {
             get { return this._categoryId.GetValueOrDefault(); }

@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The ID of the build that could not be successfully deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Id
         {
             get { return this._id; }

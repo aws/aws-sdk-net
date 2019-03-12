@@ -54,6 +54,7 @@ namespace Amazon.Lightsail.Model
         /// parameter error if you pass more than one instance entry in this array.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<InstanceEntry> Instances
         {
             get { return this._instances; }

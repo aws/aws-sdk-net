@@ -80,6 +80,7 @@ namespace Amazon.EC2.Model
         /// The Availability Zone in which to create the Capacity Reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -227,6 +228,7 @@ namespace Amazon.EC2.Model
         /// The number of instances for which to reserve capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -282,6 +284,7 @@ namespace Amazon.EC2.Model
         /// The type of operating system for which to reserve capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CapacityReservationInstancePlatform InstancePlatform
         {
             get { return this._instancePlatform; }
@@ -301,6 +304,7 @@ namespace Amazon.EC2.Model
         /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }

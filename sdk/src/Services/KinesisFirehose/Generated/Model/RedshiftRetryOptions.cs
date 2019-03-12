@@ -45,6 +45,7 @@ namespace Amazon.KinesisFirehose.Model
         /// longer than the current value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=7200)]
         public int DurationInSeconds
         {
             get { return this._durationInSeconds.GetValueOrDefault(); }

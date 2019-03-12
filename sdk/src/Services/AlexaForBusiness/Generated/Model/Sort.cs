@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The sort key of a sort object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public string Key
         {
             get { return this._key; }
@@ -59,6 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The sort value of a sort object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SortValue Value
         {
             get { return this._value; }

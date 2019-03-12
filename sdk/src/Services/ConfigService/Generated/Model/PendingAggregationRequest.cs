@@ -60,6 +60,7 @@ namespace Amazon.ConfigService.Model
         /// The region requesting to aggregate data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string RequesterAwsRegion
         {
             get { return this._requesterAwsRegion; }

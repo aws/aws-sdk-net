@@ -52,6 +52,7 @@ namespace Amazon.CloudFormation.Model
         /// Whether to enable termination protection on the specified stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool EnableTerminationProtection
         {
             get { return this._enableTerminationProtection.GetValueOrDefault(); }
@@ -70,6 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or unique ID of the stack for which you want to set termination protection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }

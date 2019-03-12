@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         /// per resource. You can specify up to 10 attributes in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }

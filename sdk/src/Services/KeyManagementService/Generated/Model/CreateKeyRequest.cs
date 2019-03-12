@@ -140,6 +140,7 @@ namespace Amazon.KeyManagementService.Model
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -162,6 +163,7 @@ namespace Amazon.KeyManagementService.Model
         /// Use a description that helps you decide whether the CMK is appropriate for a task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string Description
         {
             get { return this._description; }
@@ -273,6 +275,7 @@ namespace Amazon.KeyManagementService.Model
         /// The key policy size limit is 32 kilobytes (32768 bytes).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=131072)]
         public string Policy
         {
             get { return this._policy; }

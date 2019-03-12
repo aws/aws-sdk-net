@@ -65,6 +65,7 @@ namespace Amazon.QuickSight.Model
         /// that contains your Amazon QuickSight account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AwsAccountId
         {
             get { return this._awsAccountId; }
@@ -83,6 +84,7 @@ namespace Amazon.QuickSight.Model
         /// The maximum number of results to return from this request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.QuickSight.Model
         /// The namespace. Currently, you should set this to <code>default</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -137,6 +140,7 @@ namespace Amazon.QuickSight.Model
         /// The Amazon QuickSight user name that you want to list group memberships for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string UserName
         {
             get { return this._userName; }

@@ -88,6 +88,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// The ID of the pipeline for which you want to get job information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PipelineId
         {
             get { return this._pipelineId; }

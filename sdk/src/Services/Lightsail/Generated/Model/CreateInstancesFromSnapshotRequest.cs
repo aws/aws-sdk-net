@@ -79,6 +79,7 @@ namespace Amazon.Lightsail.Model
         /// parameter to your request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -98,6 +99,7 @@ namespace Amazon.Lightsail.Model
         /// including the pricing plan (e.g., <code>micro_1_0</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BundleId
         {
             get { return this._bundleId; }
@@ -116,6 +118,7 @@ namespace Amazon.Lightsail.Model
         /// The names for your new instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceNames
         {
             get { return this._instanceNames; }
@@ -135,6 +138,7 @@ namespace Amazon.Lightsail.Model
         /// the get instance snapshots operation to return information about your existing snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceSnapshotName
         {
             get { return this._instanceSnapshotName; }

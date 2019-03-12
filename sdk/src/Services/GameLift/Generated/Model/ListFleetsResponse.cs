@@ -43,6 +43,7 @@ namespace Amazon.GameLift.Model
         /// <a>DescribeFleetCapacity</a>, or <a>DescribeFleetUtilization</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> FleetIds
         {
             get { return this._fleetIds; }
@@ -62,6 +63,7 @@ namespace Amazon.GameLift.Model
         /// If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -61,6 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string AdministrationRoleARN
         {
             get { return this._administrationRoleARN; }
@@ -101,6 +102,7 @@ namespace Amazon.CloudFormation.Model
         /// A description of the stack set that you specify when the stack set is created or updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -124,6 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// include in their stack sets. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ExecutionRoleName
         {
             get { return this._executionRoleName; }
@@ -233,6 +236,7 @@ namespace Amazon.CloudFormation.Model
         /// tags can be specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -252,6 +256,7 @@ namespace Amazon.CloudFormation.Model
         /// the stack set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }

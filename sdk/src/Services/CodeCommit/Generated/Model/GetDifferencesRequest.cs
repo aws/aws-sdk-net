@@ -49,6 +49,7 @@ namespace Amazon.CodeCommit.Model
         /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AfterCommitSpecifier
         {
             get { return this._afterCommitSpecifier; }
@@ -165,6 +166,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the repository where you want to get differences.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

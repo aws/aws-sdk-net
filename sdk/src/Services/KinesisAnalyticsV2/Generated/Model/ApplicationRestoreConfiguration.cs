@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Specifies how the application should be restored.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationRestoreType ApplicationRestoreType
         {
             get { return this._applicationRestoreType; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// for the <code>ApplicationRestoreType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

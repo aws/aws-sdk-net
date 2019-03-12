@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the profile for the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string ProfileName
         {
             get { return this._profileName; }
@@ -67,6 +68,7 @@ namespace Amazon.SageMaker.Model
         /// for the validation of the model package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TransformJobDefinition TransformJobDefinition
         {
             get { return this._transformJobDefinition; }

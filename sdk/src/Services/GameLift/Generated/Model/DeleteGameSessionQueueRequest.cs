@@ -62,6 +62,7 @@ namespace Amazon.GameLift.Model
         /// unique within each region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

@@ -169,6 +169,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=900, Max=43200)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -214,6 +215,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Policy
         {
             get { return this._policy; }
@@ -232,6 +234,7 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string PrincipalArn
         {
             get { return this._principalArn; }
@@ -250,6 +253,7 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -273,6 +277,7 @@ namespace Amazon.SecurityToken.Model
         /// a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=4, Max=100000)]
         public string SAMLAssertion
         {
             get { return this._samlAssertion; }

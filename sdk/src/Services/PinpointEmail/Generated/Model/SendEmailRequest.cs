@@ -82,6 +82,7 @@ namespace Amazon.PinpointEmail.Model
         /// or a Raw message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EmailContent Content
         {
             get { return this._content; }
@@ -100,6 +101,7 @@ namespace Amazon.PinpointEmail.Model
         /// An object that contains the recipients of the email message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }

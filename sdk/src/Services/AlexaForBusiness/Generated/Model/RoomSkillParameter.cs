@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// only takes “DEFAULT” or “SCOPE” as valid values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ParameterKey
         {
             get { return this._parameterKey; }
@@ -60,6 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The parameter value of a room skill parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ParameterValue
         {
             get { return this._parameterValue; }

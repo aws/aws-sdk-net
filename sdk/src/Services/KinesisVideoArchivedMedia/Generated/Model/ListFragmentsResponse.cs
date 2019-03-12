@@ -62,6 +62,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }

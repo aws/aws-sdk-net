@@ -791,6 +791,7 @@ namespace Amazon.ElastiCache.Model
         /// A user-created description for the replication group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupDescription
         {
             get { return this._replicationGroupDescription; }
@@ -826,6 +827,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationGroupId
         {
             get { return this._replicationGroupId; }

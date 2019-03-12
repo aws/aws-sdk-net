@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
         /// Specifies whether to insert or delete a <a>RegexMatchTuple</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeAction Action
         {
             get { return this._action; }
@@ -65,6 +66,7 @@ namespace Amazon.WAF.Model
         /// that you want to delete from the <code>RegexMatchSet</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegexMatchTuple RegexMatchTuple
         {
             get { return this._regexMatchTuple; }

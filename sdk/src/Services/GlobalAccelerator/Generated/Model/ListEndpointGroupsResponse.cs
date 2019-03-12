@@ -59,6 +59,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The token for the next set of results. You receive this token from a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

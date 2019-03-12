@@ -76,6 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// in Amazon S3 or on a local file system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10280)]
         public string Path
         {
             get { return this._path; }

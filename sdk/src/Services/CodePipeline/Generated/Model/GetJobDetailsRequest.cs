@@ -50,6 +50,7 @@ namespace Amazon.CodePipeline.Model
         /// The unique system-generated ID for the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }

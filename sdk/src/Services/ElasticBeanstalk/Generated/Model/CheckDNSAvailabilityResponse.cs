@@ -69,6 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// the provided prefix.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string FullyQualifiedCNAME
         {
             get { return this._fullyQualifiedCNAME; }

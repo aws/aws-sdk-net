@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// The customer-specified identifier used to track this reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=64)]
         public string ReservationName
         {
             get { return this._reservationName; }

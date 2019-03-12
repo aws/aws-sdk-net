@@ -51,6 +51,7 @@ namespace Amazon.WAFRegional.Model
         /// The user making the request must be the owner of the RuleGroup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         /// The end of the time period.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTimeUtc
         {
             get { return this._endTimeUtc.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.IoT.Model
         /// The maximum number of results to return at one time. The default is 25.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -101,6 +103,7 @@ namespace Amazon.IoT.Model
         /// time (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTimeUtc
         {
             get { return this._startTimeUtc.GetValueOrDefault(); }

@@ -43,6 +43,7 @@ namespace Amazon.ConfigService.Model
         /// when creating the configuration recorder. You cannot change the assigned name.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

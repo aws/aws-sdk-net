@@ -45,6 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Optional list of filters to limit results. The only valid filter name is <code>name</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -96,6 +97,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

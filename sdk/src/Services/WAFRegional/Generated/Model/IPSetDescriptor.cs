@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// Specify <code>IPV4</code> or <code>IPV6</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public IPSetDescriptorType Type
         {
             get { return this._type; }
@@ -91,6 +92,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

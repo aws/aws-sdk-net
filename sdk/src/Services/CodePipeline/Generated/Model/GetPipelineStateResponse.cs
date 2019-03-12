@@ -62,6 +62,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline for which you want to get the state.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -85,6 +86,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int PipelineVersion
         {
             get { return this._pipelineVersion.GetValueOrDefault(); }

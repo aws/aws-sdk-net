@@ -50,6 +50,7 @@ namespace Amazon.KinesisVideo.Model
         /// The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -68,6 +69,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the stream that you want to remove tags from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -86,6 +88,7 @@ namespace Amazon.KinesisVideo.Model
         /// A list of the keys of the tags that you want to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> TagKeyList
         {
             get { return this._tagKeyList; }

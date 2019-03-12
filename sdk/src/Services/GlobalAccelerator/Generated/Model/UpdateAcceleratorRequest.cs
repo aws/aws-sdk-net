@@ -44,6 +44,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The Amazon Resource Name (ARN) of the accelerator to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }
@@ -105,6 +106,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Name
         {
             get { return this._name; }

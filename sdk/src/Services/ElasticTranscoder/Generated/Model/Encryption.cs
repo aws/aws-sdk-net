@@ -49,6 +49,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// and it must be exactly 16 bytes long before being base64-encoded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string InitializationVector
         {
             get { return this._initializationVector; }

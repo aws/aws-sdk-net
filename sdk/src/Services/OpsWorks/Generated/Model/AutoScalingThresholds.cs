@@ -100,6 +100,7 @@ namespace Amazon.OpsWorks.Model
         /// suppress scaling events long enough to get the new instances online.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int IgnoreMetricsTime
         {
             get { return this._ignoreMetricsTime.GetValueOrDefault(); }
@@ -176,6 +177,7 @@ namespace Amazon.OpsWorks.Model
         /// instances are added or removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int ThresholdsWaitTime
         {
             get { return this._thresholdsWaitTime.GetValueOrDefault(); }

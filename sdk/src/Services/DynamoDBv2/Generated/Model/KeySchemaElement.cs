@@ -72,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of a key attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -111,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public KeyType KeyType
         {
             get { return this._keyType; }

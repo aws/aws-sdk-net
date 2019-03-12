@@ -55,6 +55,7 @@ namespace Amazon.EKS.Model
         /// The name of the cluster to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

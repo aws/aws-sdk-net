@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// The association ID for the CIDR block.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssociationId
         {
             get { return this._associationId; }

@@ -71,6 +71,7 @@ namespace Amazon.Pricing.Model
         /// The maximum number of results that you want returned in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

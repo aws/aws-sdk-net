@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The application ID for an Amazon Pinpoint application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -61,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The external ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExternalId
         {
             get { return this._externalId; }
@@ -80,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Pinpoint analytics.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

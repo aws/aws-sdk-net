@@ -45,6 +45,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The number of times to prompt the user for information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public int MaxAttempts
         {
             get { return this._maxAttempts.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// specify the message string in plain text or in Speech Synthesis Markup Language (SSML).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public List<Message> Messages
         {
             get { return this._messages; }
@@ -84,6 +86,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// the response card. For more information, see <a>ex-resp-card</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50000)]
         public string ResponseCard
         {
             get { return this._responseCard; }

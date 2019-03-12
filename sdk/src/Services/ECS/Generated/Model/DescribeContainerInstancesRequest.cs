@@ -63,6 +63,7 @@ namespace Amazon.ECS.Model
         /// A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ContainerInstances
         {
             get { return this._containerInstances; }

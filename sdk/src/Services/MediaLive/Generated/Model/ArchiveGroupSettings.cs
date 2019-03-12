@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Destination. A directory and base filename where archive
         /// files should be written.
         /// </summary>
+        [AWSProperty(Required=true)]
         public OutputLocationRef Destination
         {
             get { return this._destination; }
@@ -55,6 +56,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RolloverInterval. Number of seconds to write to archive
         /// file before closing and starting a new one.
         /// </summary>
+        [AWSProperty(Min=1)]
         public int RolloverInterval
         {
             get { return this._rolloverInterval.GetValueOrDefault(); }

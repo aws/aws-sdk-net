@@ -65,6 +65,7 @@ namespace Amazon.DirectoryService.Model
         /// Not currently used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DisplayLabel
         {
             get { return this._displayLabel; }
@@ -84,6 +85,7 @@ namespace Amazon.DirectoryService.Model
         /// must allow inbound traffic over this port from the AWS Directory Service servers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1025, Max=65535)]
         public int RadiusPort
         {
             get { return this._radiusPort.GetValueOrDefault(); }
@@ -102,6 +104,7 @@ namespace Amazon.DirectoryService.Model
         /// The maximum number of times that communication with the RADIUS server is attempted.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public int RadiusRetries
         {
             get { return this._radiusRetries.GetValueOrDefault(); }
@@ -139,6 +142,7 @@ namespace Amazon.DirectoryService.Model
         /// The amount of time, in seconds, to wait for the RADIUS server to respond.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=20)]
         public int RadiusTimeout
         {
             get { return this._radiusTimeout.GetValueOrDefault(); }
@@ -157,6 +161,7 @@ namespace Amazon.DirectoryService.Model
         /// Required for enabling RADIUS on the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=512)]
         public string SharedSecret
         {
             get { return this._sharedSecret; }

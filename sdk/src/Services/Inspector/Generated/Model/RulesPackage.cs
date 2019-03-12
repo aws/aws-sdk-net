@@ -45,6 +45,7 @@ namespace Amazon.Inspector.Model
         /// The ARN of the rules package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,6 +64,7 @@ namespace Amazon.Inspector.Model
         /// The description of the rules package.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=20000)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +83,7 @@ namespace Amazon.Inspector.Model
         /// The name of the rules package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000)]
         public string Name
         {
             get { return this._name; }
@@ -99,6 +102,7 @@ namespace Amazon.Inspector.Model
         /// The provider of the rules package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000)]
         public string Provider
         {
             get { return this._provider; }
@@ -117,6 +121,7 @@ namespace Amazon.Inspector.Model
         /// The version ID of the rules package.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000)]
         public string Version
         {
             get { return this._version; }

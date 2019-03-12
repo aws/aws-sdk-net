@@ -45,6 +45,7 @@ namespace Amazon.AppStream.Model
         /// The description that the image will have when it is copied to the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string DestinationImageDescription
         {
             get { return this._destinationImageDescription; }
@@ -63,6 +64,7 @@ namespace Amazon.AppStream.Model
         /// The name that the image will have when it is copied to the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DestinationImageName
         {
             get { return this._destinationImageName; }
@@ -82,6 +84,7 @@ namespace Amazon.AppStream.Model
         /// even if you are copying an image within the same region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string DestinationRegion
         {
             get { return this._destinationRegion; }
@@ -100,6 +103,7 @@ namespace Amazon.AppStream.Model
         /// The name of the image to copy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceImageName
         {
             get { return this._sourceImageName; }

@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// A map of identities to custom MAIL FROM attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, IdentityMailFromDomainAttributes> MailFromDomainAttributes
         {
             get { return this._mailFromDomainAttributes; }

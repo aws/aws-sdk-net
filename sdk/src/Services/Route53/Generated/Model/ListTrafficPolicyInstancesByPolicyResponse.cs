@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         /// policy instance that matches the elements in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TrafficPolicyInstance> TrafficPolicyInstances
         {
             get { return this._trafficPolicyInstances; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53.Model
         /// of traffic policy instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32)]
         public string HostedZoneIdMarker
         {
             get { return this._hostedZoneIdMarker; }
@@ -86,6 +88,7 @@ namespace Amazon.Route53.Model
         /// traffic policy instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string TrafficPolicyInstanceNameMarker
         {
             get { return this._trafficPolicyInstanceNameMarker; }
@@ -129,6 +132,7 @@ namespace Amazon.Route53.Model
         /// parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool IsTruncated
         {
             get { return this._isTruncated.GetValueOrDefault(); }
@@ -148,6 +152,7 @@ namespace Amazon.Route53.Model
         /// <code>ListTrafficPolicyInstancesByPolicy</code> that produced the current response.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MaxItems
         {
             get { return this._maxItems; }

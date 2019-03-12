@@ -49,6 +49,7 @@ namespace Amazon.RoboMaker.Model
         /// The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -67,6 +68,7 @@ namespace Amazon.RoboMaker.Model
         /// A map that contains tag keys and tag values that will be unattached from the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

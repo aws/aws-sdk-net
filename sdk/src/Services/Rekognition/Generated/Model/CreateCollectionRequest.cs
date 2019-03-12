@@ -64,6 +64,7 @@ namespace Amazon.Rekognition.Model
         /// ID for the collection that you are creating.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }

@@ -189,6 +189,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The tags, or metadata, that have been applied to the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -209,6 +210,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string TargetType
         {
             get { return this._targetType; }

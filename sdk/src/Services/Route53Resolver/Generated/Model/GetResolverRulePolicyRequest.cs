@@ -43,6 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver rule policy that you want to get information about.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Arn
         {
             get { return this._arn; }

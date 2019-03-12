@@ -433,6 +433,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// and integers between <code>0</code> and <code>100</code>, inclusive.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public Dictionary<string, string> CodecOptions
         {
             get { return this._codecOptions; }

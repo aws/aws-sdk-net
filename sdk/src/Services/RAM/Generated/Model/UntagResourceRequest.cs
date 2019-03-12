@@ -42,6 +42,7 @@ namespace Amazon.RAM.Model
         /// The Amazon Resource Name (ARN) of the resource share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceShareArn
         {
             get { return this._resourceShareArn; }
@@ -60,6 +61,7 @@ namespace Amazon.RAM.Model
         /// The tag keys of the tags to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

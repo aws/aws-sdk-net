@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// An updated description for the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// members.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<MemberDefinition> MemberDefinitions
         {
             get { return this._memberDefinitions; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the work team to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string WorkteamName
         {
             get { return this._workteamName; }

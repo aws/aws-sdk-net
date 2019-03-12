@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Bitrate. Average bitrate in bits/second.
         /// </summary>
+        [AWSProperty(Min=32000, Max=384000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -57,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         /// in this output audio track. Choosing Mono in the console will give you 1 output channel;
         /// choosing Stereo will give you 2. In the API, valid values are 1 and 2.
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public int Channels
         {
             get { return this._channels.GetValueOrDefault(); }
@@ -72,6 +74,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SampleRate. Sample rate in hz.
         /// </summary>
+        [AWSProperty(Min=32000, Max=48000)]
         public int SampleRate
         {
             get { return this._sampleRate.GetValueOrDefault(); }

@@ -42,6 +42,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -64,6 +65,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateId
         {
             get { return this._templateId; }

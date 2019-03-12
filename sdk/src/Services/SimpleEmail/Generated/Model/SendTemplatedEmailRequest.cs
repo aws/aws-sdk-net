@@ -127,6 +127,7 @@ namespace Amazon.SimpleEmail.Model
         /// can include up to 50 recipients across these three fields.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Destination Destination
         {
             get { return this._destination; }
@@ -242,6 +243,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Source
         {
             get { return this._source; }
@@ -312,6 +314,7 @@ namespace Amazon.SimpleEmail.Model
         /// The template to use when sending this email.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Template
         {
             get { return this._template; }
@@ -350,6 +353,7 @@ namespace Amazon.SimpleEmail.Model
         /// tags in the email template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=262144)]
         public string TemplateData
         {
             get { return this._templateData; }

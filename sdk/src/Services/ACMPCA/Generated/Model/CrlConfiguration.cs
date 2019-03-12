@@ -137,6 +137,7 @@ namespace Amazon.ACMPCA.Model
         /// the name of your S3 bucket to be public.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=253)]
         public string CustomCname
         {
             get { return this._customCname; }
@@ -158,6 +159,7 @@ namespace Amazon.ACMPCA.Model
         /// the <a>UpdateCertificateAuthority</a> operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -176,6 +178,7 @@ namespace Amazon.ACMPCA.Model
         /// Number of days until a certificate expires.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
         public int ExpirationInDays
         {
             get { return this._expirationInDays.GetValueOrDefault(); }
@@ -198,6 +201,7 @@ namespace Amazon.ACMPCA.Model
         /// specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }

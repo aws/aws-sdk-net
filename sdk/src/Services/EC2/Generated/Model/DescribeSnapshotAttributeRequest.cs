@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         /// The snapshot attribute you would like to view.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SnapshotAttributeName Attribute
         {
             get { return this._attribute; }
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// The ID of the EBS snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SnapshotId
         {
             get { return this._snapshotId; }

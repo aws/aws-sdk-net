@@ -90,6 +90,7 @@ namespace Amazon.CloudFront.Model
         /// duration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ErrorCode
         {
             get { return this._errorCode.GetValueOrDefault(); }

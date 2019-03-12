@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Maximum number of tags to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.SageMaker.Model
         /// request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -81,6 +83,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

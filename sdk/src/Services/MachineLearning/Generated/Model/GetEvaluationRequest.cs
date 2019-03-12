@@ -43,6 +43,7 @@ namespace Amazon.MachineLearning.Model
         /// is recorded and cataloged. The ID provides the means to access the information. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EvaluationId
         {
             get { return this._evaluationId; }

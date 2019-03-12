@@ -41,6 +41,7 @@ namespace Amazon.AppSync.Model
         /// The AWS Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AwsRegion
         {
             get { return this._awsRegion; }
@@ -59,6 +60,7 @@ namespace Amazon.AppSync.Model
         /// The endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Endpoint
         {
             get { return this._endpoint; }

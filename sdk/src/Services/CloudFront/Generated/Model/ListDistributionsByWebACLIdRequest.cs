@@ -87,6 +87,7 @@ namespace Amazon.CloudFront.Model
         /// that aren't associated with a web ACL. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WebACLId
         {
             get { return this._webACLId; }

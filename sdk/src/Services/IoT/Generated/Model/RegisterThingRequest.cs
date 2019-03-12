@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// Provisioning</a> for more information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TemplateBody
         {
             get { return this._templateBody; }

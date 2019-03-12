@@ -73,6 +73,7 @@ namespace Amazon.SimpleEmail.Model
         /// enabled status, scan status, and TLS policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReceiptRule Rule
         {
             get { return this._rule; }
@@ -91,6 +92,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the rule set that the receipt rule will be added to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

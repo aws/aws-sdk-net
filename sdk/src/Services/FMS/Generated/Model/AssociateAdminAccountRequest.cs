@@ -55,6 +55,7 @@ namespace Amazon.FMS.Model
         /// the AWS Accounts in Your Organization</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string AdminAccount
         {
             get { return this._adminAccount; }

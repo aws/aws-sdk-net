@@ -42,6 +42,7 @@ namespace Amazon.RoboMaker.Model
         /// The application information for the robot application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1224)]
         public string Application
         {
             get { return this._application; }
@@ -61,6 +62,7 @@ namespace Amazon.RoboMaker.Model
         /// the latest revision ID, a new version will be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string CurrentRevisionId
         {
             get { return this._currentRevisionId; }

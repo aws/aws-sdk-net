@@ -277,6 +277,7 @@ namespace Amazon.OpsWorks.Model
         /// are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -295,6 +296,7 @@ namespace Amazon.OpsWorks.Model
         /// An array that contains the instance's layer IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> LayerIds
         {
             get { return this._layerIds; }
@@ -415,6 +417,7 @@ namespace Amazon.OpsWorks.Model
         /// The stack ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackId
         {
             get { return this._stackId; }

@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         /// The ID of the customer gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CustomerGatewayId
         {
             get { return this._customerGatewayId; }

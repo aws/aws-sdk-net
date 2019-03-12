@@ -89,6 +89,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -107,6 +108,7 @@ namespace Amazon.EC2.Model
         /// The maximum number of routes to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -125,6 +127,7 @@ namespace Amazon.EC2.Model
         /// The ID of the transit gateway route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TransitGatewayRouteTableId
         {
             get { return this._transitGatewayRouteTableId; }

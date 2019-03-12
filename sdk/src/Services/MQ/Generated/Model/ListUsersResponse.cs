@@ -58,6 +58,7 @@ namespace Amazon.MQ.Model
         /// that can be returned per page (20 by default). This value must be an integer from
         /// 5 to 100.
         /// </summary>
+        [AWSProperty(Min=5, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

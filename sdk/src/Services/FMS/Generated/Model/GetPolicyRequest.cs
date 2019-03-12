@@ -41,6 +41,7 @@ namespace Amazon.FMS.Model
         /// The ID of the AWS Firewall Manager policy that you want the details for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string PolicyId
         {
             get { return this._policyId; }

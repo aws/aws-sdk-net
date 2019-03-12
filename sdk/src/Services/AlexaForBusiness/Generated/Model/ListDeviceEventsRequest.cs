@@ -44,6 +44,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of a device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DeviceArn
         {
             get { return this._deviceArn; }
@@ -85,6 +86,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// the response so that the remaining results can be retrieved. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -106,6 +108,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// results is reached, the response has a value of null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

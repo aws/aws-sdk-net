@@ -42,6 +42,7 @@ namespace Amazon.MachineLearning.Model
         /// white space, _, ., /, =, +, -, %, and @.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.MachineLearning.Model
         /// include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

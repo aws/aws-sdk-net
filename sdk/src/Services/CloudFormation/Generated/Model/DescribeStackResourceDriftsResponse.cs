@@ -44,6 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// If the request returns all results, <code>NextToken</code> is set to <code>null</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -73,6 +74,7 @@ namespace Amazon.CloudFormation.Model
         /// that Support Drift Detection</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<StackResourceDrift> StackResourceDrifts
         {
             get { return this._stackResourceDrifts; }

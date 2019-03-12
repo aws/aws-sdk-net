@@ -190,6 +190,7 @@ namespace Amazon.Lex.Model
         /// Alias of the Amazon Lex bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BotAlias
         {
             get { return this._botAlias; }
@@ -208,6 +209,7 @@ namespace Amazon.Lex.Model
         /// Name of the Amazon Lex bot.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BotName
         {
             get { return this._botName; }
@@ -265,6 +267,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -290,6 +293,7 @@ namespace Amazon.Lex.Model
         /// stream audio data rather than buffering the data locally.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Stream InputStream
         {
             get { return this._inputStream; }
@@ -403,6 +407,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string UserId
         {
             get { return this._userId; }

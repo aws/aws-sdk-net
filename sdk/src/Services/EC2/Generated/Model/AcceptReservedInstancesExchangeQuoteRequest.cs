@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// Reserved Instance of the same or higher value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ReservedInstanceIds
         {
             get { return this._reservedInstanceIds; }

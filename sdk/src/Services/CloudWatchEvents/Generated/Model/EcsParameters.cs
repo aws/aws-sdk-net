@@ -139,6 +139,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int TaskCount
         {
             get { return this._taskCount.GetValueOrDefault(); }
@@ -157,6 +158,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// The ARN of the task definition to use if the event target is an Amazon ECS task. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string TaskDefinitionArn
         {
             get { return this._taskDefinitionArn; }

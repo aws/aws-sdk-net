@@ -62,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// This allows authentication of the user as part of the MFA setup process.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Session
         {
             get { return this._session; }

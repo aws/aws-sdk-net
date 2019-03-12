@@ -43,6 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// The Amazon Resource Name (ARN) of the account that you want to grant permissions to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -62,6 +63,7 @@ namespace Amazon.Route53Resolver.Model
         /// that you want to grant to another AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=5000)]
         public string ResolverRulePolicy
         {
             get { return this._resolverRulePolicy; }

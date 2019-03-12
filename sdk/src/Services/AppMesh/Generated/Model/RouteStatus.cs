@@ -40,6 +40,7 @@ namespace Amazon.AppMesh.Model
         /// The current status for the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RouteStatusCode Status
         {
             get { return this._status; }

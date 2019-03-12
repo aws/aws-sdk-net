@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// The comment for this origin access identity, as originally specified when created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -65,6 +66,7 @@ namespace Amazon.CloudFront.Model
         /// The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -84,6 +86,7 @@ namespace Amazon.CloudFront.Model
         /// giving the origin access identity read permission to an object in Amazon S3.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3CanonicalUserId
         {
             get { return this._s3CanonicalUserId; }

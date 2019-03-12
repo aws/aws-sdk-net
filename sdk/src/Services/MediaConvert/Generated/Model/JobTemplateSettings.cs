@@ -47,6 +47,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AdAvailOffset. When specified, this offset (in milliseconds)
         /// is added to the input Ad Avail PTS time.
         /// </summary>
+        [AWSProperty(Min=-1000, Max=1000)]
         public int AdAvailOffset
         {
             get { return this._adAvailOffset.GetValueOrDefault(); }

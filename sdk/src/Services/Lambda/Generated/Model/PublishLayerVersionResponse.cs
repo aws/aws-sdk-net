@@ -47,6 +47,7 @@ namespace Amazon.Lambda.Model
         /// The layer's compatible runtimes.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> CompatibleRuntimes
         {
             get { return this._compatibleRuntimes; }
@@ -102,6 +103,7 @@ namespace Amazon.Lambda.Model
         /// The description of the version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -120,6 +122,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the layer.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string LayerArn
         {
             get { return this._layerArn; }
@@ -138,6 +141,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the layer version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=140)]
         public string LayerVersionArn
         {
             get { return this._layerVersionArn; }
@@ -156,6 +160,7 @@ namespace Amazon.Lambda.Model
         /// The layer's software license.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=512)]
         public string LicenseInfo
         {
             get { return this._licenseInfo; }

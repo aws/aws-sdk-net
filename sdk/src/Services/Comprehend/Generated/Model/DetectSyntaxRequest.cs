@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         /// ("es").
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SyntaxLanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -62,6 +63,7 @@ namespace Amazon.Comprehend.Model
         /// A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Text
         {
             get { return this._text; }

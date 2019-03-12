@@ -84,6 +84,7 @@ namespace Amazon.SQS.Model
         /// The URL of the queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

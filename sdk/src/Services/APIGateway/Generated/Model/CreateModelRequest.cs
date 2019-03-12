@@ -45,6 +45,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The content-type for the model.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContentType
         {
             get { return this._contentType; }
@@ -81,6 +82,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The name of the model. Must be alphanumeric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -99,6 +101,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RestApiId
         {
             get { return this._restApiId; }

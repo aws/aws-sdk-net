@@ -56,6 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// a two-minute warning before it terminates. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int BlockDurationMinutes
         {
             get { return this._blockDurationMinutes.GetValueOrDefault(); }
@@ -79,6 +80,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// remaining Spot capacity.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SpotProvisioningTimeoutAction TimeoutAction
         {
             get { return this._timeoutAction; }
@@ -100,6 +102,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// when the cluster is first created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int TimeoutDurationMinutes
         {
             get { return this._timeoutDurationMinutes.GetValueOrDefault(); }

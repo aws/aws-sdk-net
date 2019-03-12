@@ -46,6 +46,7 @@ namespace Amazon.ACMPCA.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AuditReportId
         {
             get { return this._auditReportId; }
@@ -69,6 +70,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }

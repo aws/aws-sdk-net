@@ -74,6 +74,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Max=4000)]
         public string Value
         {
             get { return this._value; }

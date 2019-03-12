@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// Constraints: Must be the name of valid cluster that has encryption enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

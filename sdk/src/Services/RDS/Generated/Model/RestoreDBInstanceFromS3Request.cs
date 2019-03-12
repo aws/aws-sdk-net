@@ -220,6 +220,7 @@ namespace Amazon.RDS.Model
         /// Importing from Amazon S3 is not supported on the db.t2.micro DB instance class. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceClass
         {
             get { return this._dbInstanceClass; }
@@ -258,6 +259,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>mydbinstance</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBInstanceIdentifier
         {
             get { return this._dbInstanceIdentifier; }
@@ -447,6 +449,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>mysql</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }
@@ -906,6 +909,7 @@ namespace Amazon.RDS.Model
         /// The name of your Amazon S3 bucket that contains your database backup file. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3BucketName
         {
             get { return this._s3BucketName; }
@@ -925,6 +929,7 @@ namespace Amazon.RDS.Model
         /// Amazon S3 bucket. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string S3IngestionRoleArn
         {
             get { return this._s3IngestionRoleArn; }
@@ -965,6 +970,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>mysql</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceEngine
         {
             get { return this._sourceEngine; }
@@ -987,6 +993,7 @@ namespace Amazon.RDS.Model
         /// Valid Values: <code>5.6</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceEngineVersion
         {
             get { return this._sourceEngineVersion; }

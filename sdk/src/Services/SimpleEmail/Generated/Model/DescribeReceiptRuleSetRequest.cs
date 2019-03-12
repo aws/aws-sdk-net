@@ -51,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the receipt rule set to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

@@ -172,6 +172,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DeviceFilter> Filters
         {
             get { return this._filters; }
@@ -190,6 +191,7 @@ namespace Amazon.DeviceFarm.Model
         /// The maximum number of devices to be included in a test run.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxDevices
         {
             get { return this._maxDevices.GetValueOrDefault(); }

@@ -104,6 +104,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// returns an error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string InputKey
         {
             get { return this._inputKey; }

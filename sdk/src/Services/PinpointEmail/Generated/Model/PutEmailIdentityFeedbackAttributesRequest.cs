@@ -93,6 +93,7 @@ namespace Amazon.PinpointEmail.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EmailIdentity
         {
             get { return this._emailIdentity; }

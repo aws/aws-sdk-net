@@ -46,6 +46,7 @@ namespace Amazon.MediaConnect.Model
         /// If MaxResults is not included in the request, the service defaults to pagination with
         /// a maximum of 10 results per page.
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

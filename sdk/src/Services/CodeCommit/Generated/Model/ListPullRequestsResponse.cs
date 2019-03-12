@@ -60,6 +60,7 @@ namespace Amazon.CodeCommit.Model
         /// The system-generated IDs of the pull requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PullRequestIds
         {
             get { return this._pullRequestIds; }

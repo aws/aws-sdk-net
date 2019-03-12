@@ -42,6 +42,7 @@ namespace Amazon.WorkLink.Model
         /// A unique identifier for a registered user's device.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -60,6 +61,7 @@ namespace Amazon.WorkLink.Model
         /// The ARN of the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string FleetArn
         {
             get { return this._fleetArn; }

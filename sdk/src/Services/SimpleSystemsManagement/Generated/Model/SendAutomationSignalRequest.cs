@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// signal to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }
@@ -64,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// in the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, List<string>> Payload
         {
             get { return this._payload; }
@@ -82,6 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of signal. Valid signal types include the following: Approve and Reject 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SignalType SignalType
         {
             get { return this._signalType; }

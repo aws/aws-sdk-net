@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the insight that was deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InsightArn
         {
             get { return this._insightArn; }

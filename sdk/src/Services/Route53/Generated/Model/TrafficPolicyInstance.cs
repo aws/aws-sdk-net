@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model
         /// The ID that Amazon Route 53 assigned to the new traffic policy instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -66,6 +67,7 @@ namespace Amazon.Route53.Model
         /// The ID of the hosted zone that Amazon Route 53 created resource record sets in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=32)]
         public string HostedZoneId
         {
             get { return this._hostedZoneId; }
@@ -86,6 +88,7 @@ namespace Amazon.Route53.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -105,6 +108,7 @@ namespace Amazon.Route53.Model
         /// in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=2147483647)]
         public long TTL
         {
             get { return this._ttl.GetValueOrDefault(); }
@@ -140,6 +144,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </dd> </dl>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string State
         {
             get { return this._state; }
@@ -159,6 +164,7 @@ namespace Amazon.Route53.Model
         /// failure. If <code>State</code> is another value, <code>Message</code> is empty.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string Message
         {
             get { return this._message; }
@@ -178,6 +184,7 @@ namespace Amazon.Route53.Model
         /// in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string TrafficPolicyId
         {
             get { return this._trafficPolicyId; }
@@ -197,6 +204,7 @@ namespace Amazon.Route53.Model
         /// sets in the specified hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int TrafficPolicyVersion
         {
             get { return this._trafficPolicyVersion.GetValueOrDefault(); }
@@ -216,6 +224,7 @@ namespace Amazon.Route53.Model
         /// it created for this traffic policy instance. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RRType TrafficPolicyType
         {
             get { return this._trafficPolicyType; }

@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// expressions, for example, "cron(30 12 *)" or "rate(12 hours)".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ScheduleDefinitions
         {
             get { return this._scheduleDefinitions; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// A unique alphanumeric identifier of the schedule to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

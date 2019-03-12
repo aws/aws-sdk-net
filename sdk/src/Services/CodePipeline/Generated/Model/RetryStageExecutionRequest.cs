@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// action to retrieve the current pipelineExecutionId of the failed stage
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PipelineExecutionId
         {
             get { return this._pipelineExecutionId; }
@@ -63,6 +64,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline that contains the failed stage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -81,6 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StageRetryMode RetryMode
         {
             get { return this._retryMode; }
@@ -99,6 +102,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the failed stage to be retried.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string StageName
         {
             get { return this._stageName; }

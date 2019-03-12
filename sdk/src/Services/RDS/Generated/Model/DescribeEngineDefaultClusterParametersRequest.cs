@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }

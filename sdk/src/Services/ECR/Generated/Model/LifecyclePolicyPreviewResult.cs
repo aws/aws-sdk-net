@@ -62,6 +62,7 @@ namespace Amazon.ECR.Model
         /// The priority of the applied rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int AppliedRulePriority
         {
             get { return this._appliedRulePriority.GetValueOrDefault(); }

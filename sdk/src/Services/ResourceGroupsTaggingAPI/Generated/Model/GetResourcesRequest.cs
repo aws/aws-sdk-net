@@ -51,6 +51,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// use that string for this value to request an additional page of data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string PaginationToken
         {
             get { return this._paginationToken; }
@@ -146,6 +147,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// of the specified filters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<TagFilter> TagFilters
         {
             get { return this._tagFilters; }

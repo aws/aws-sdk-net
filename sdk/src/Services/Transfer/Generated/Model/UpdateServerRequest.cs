@@ -88,6 +88,7 @@ namespace Amazon.Transfer.Model
         /// is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }

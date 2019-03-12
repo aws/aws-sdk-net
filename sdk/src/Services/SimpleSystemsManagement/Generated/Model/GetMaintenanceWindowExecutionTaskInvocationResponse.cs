@@ -87,6 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The invocation ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string InvocationId
         {
             get { return this._invocationId; }
@@ -106,6 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// for these targets in this Maintenance Window. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -178,6 +180,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The details explaining the status. Details are only available for certain status values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=250)]
         public string StatusDetails
         {
             get { return this._statusDetails; }
@@ -196,6 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The task execution ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string TaskExecutionId
         {
             get { return this._taskExecutionId; }
@@ -233,6 +237,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window execution ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string WindowExecutionId
         {
             get { return this._windowExecutionId; }
@@ -251,6 +256,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Maintenance Window target ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=36)]
         public string WindowTargetId
         {
             get { return this._windowTargetId; }

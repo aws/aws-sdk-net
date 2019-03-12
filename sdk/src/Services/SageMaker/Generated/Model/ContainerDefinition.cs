@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// This parameter is ignored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=63)]
         public string ContainerHostname
         {
             get { return this._containerHostname; }
@@ -64,6 +65,7 @@ namespace Amazon.SageMaker.Model
         /// up to 16 entries in the map. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -87,6 +89,7 @@ namespace Amazon.SageMaker.Model
         /// Your Own Algorithms with Amazon SageMaker</a> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Image
         {
             get { return this._image; }
@@ -115,6 +118,7 @@ namespace Amazon.SageMaker.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string ModelDataUrl
         {
             get { return this._modelDataUrl; }
@@ -133,6 +137,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model package to use to create the model.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=170)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

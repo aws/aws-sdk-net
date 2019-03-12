@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Account takeover risk configuration actions
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccountTakeoverActionsType Actions
         {
             get { return this._actions; }

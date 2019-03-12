@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         /// The private key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PrivateKey
         {
             get { return this._privateKey; }
@@ -59,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The public key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PublicKey
         {
             get { return this._publicKey; }

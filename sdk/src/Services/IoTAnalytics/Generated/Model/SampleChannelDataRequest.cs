@@ -45,6 +45,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the channel whose message samples are retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -82,6 +83,7 @@ namespace Amazon.IoTAnalytics.Model
         /// 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public int MaxMessages
         {
             get { return this._maxMessages.GetValueOrDefault(); }

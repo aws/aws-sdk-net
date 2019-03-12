@@ -78,6 +78,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }

@@ -51,6 +51,7 @@ namespace Amazon.SageMaker.Model
         /// A description of the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -77,6 +78,7 @@ namespace Amazon.SageMaker.Model
         /// must have the same <code>ClientId</code> and <code>UserPool</code> values.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<MemberDefinition> MemberDefinitions
         {
             get { return this._memberDefinitions; }
@@ -92,6 +94,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags.
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -110,6 +113,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the work team. Use this name to identify the work team.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string WorkteamName
         {
             get { return this._workteamName; }

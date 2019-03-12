@@ -73,6 +73,7 @@ namespace Amazon.Budgets.Model
         /// The comparison that is used for this notification.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -111,6 +112,7 @@ namespace Amazon.Budgets.Model
         /// how much you're forecasted to spend (<code>FORECASTED</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public NotificationType NotificationType
         {
             get { return this._notificationType; }
@@ -129,6 +131,7 @@ namespace Amazon.Budgets.Model
         /// The threshold that is associated with a notification. Thresholds are always a percentage.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000000)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }

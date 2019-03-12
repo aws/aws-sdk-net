@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         /// The name or Amazon Resource Name (ARN) of the compute environment to delete. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ComputeEnvironment
         {
             get { return this._computeEnvironment; }

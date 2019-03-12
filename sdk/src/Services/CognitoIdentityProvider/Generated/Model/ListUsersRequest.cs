@@ -140,6 +140,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Filter
         {
             get { return this._filter; }
@@ -158,6 +159,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Maximum number of users to be returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=60)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -177,6 +179,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }
@@ -195,6 +198,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool on which the search should be performed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

@@ -79,6 +79,7 @@ namespace Amazon.FSx.Model
         /// internal maximum number of items per page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.FSx.Model
         /// returning call left off.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -117,6 +119,7 @@ namespace Amazon.FSx.Model
         /// The ARN of the Amazon FSx resource that will have its tags listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=512)]
         public string ResourceARN
         {
             get { return this._resourceARN; }

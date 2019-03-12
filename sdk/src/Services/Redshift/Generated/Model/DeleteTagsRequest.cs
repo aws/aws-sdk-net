@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -62,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// The tag key that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

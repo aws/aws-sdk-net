@@ -42,6 +42,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The text of the message.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Content
         {
             get { return this._content; }
@@ -60,6 +61,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// The content type of the message string.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ContentType ContentType
         {
             get { return this._contentType; }
@@ -79,6 +81,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// to a message, Amazon Lex returns one message from each group in the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public int GroupNumber
         {
             get { return this._groupNumber.GetValueOrDefault(); }

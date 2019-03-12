@@ -63,6 +63,7 @@ namespace Amazon.CodeStar.Model
         /// The name that is displayed as the friendly name for the user in AWS CodeStar.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -81,6 +82,7 @@ namespace Amazon.CodeStar.Model
         /// The email address that is displayed as part of the user's profile in AWS CodeStar.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string EmailAddress
         {
             get { return this._emailAddress; }
@@ -119,6 +121,7 @@ namespace Amazon.CodeStar.Model
         /// owner allows the user remote access to those resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=16384)]
         public string SshPublicKey
         {
             get { return this._sshPublicKey; }
@@ -137,6 +140,7 @@ namespace Amazon.CodeStar.Model
         /// The Amazon Resource Name (ARN) of the user in IAM.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32, Max=95)]
         public string UserArn
         {
             get { return this._userArn; }

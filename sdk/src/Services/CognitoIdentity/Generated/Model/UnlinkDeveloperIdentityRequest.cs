@@ -52,6 +52,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The "domain" by which Cognito will refer to your users.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DeveloperProviderName
         {
             get { return this._developerProviderName; }
@@ -70,6 +71,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique ID used by your backend authentication process to identify a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string DeveloperUserIdentifier
         {
             get { return this._developerUserIdentifier; }
@@ -88,6 +90,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A unique identifier in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -106,6 +109,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An identity pool ID in the format REGION:GUID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

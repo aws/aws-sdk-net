@@ -46,6 +46,7 @@ namespace Amazon.CloudDirectory.Model
         /// link from others of the same type between the same objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TypedLinkAttributeDefinition> Attributes
         {
             get { return this._attributes; }
@@ -67,6 +68,7 @@ namespace Amazon.CloudDirectory.Model
         /// details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> IdentityAttributeOrder
         {
             get { return this._identityAttributeOrder; }
@@ -85,6 +87,7 @@ namespace Amazon.CloudDirectory.Model
         /// The unique name of the typed link facet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

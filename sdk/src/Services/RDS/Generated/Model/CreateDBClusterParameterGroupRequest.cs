@@ -96,6 +96,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterParameterGroupName
         {
             get { return this._dbClusterParameterGroupName; }
@@ -133,6 +134,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>aurora-postgresql9.6</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBParameterGroupFamily
         {
             get { return this._dbParameterGroupFamily; }
@@ -151,6 +153,7 @@ namespace Amazon.RDS.Model
         /// The description for the DB cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

@@ -129,6 +129,7 @@ namespace Amazon.WAFRegional.Model
         /// The value returned by the most recent call to <a>GetChangeToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string ChangeToken
         {
             get { return this._changeToken; }
@@ -148,6 +149,7 @@ namespace Amazon.WAFRegional.Model
         /// is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string IPSetId
         {
             get { return this._ipSetId; }
@@ -180,6 +182,7 @@ namespace Amazon.WAFRegional.Model
         /// You can insert a maximum of 1000 addresses in a single request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<IPSetUpdate> Updates
         {
             get { return this._updates; }

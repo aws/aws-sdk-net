@@ -43,6 +43,7 @@ namespace Amazon.DataSync.Model
         /// The key for an AWS resource tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Key
         {
             get { return this._key; }
@@ -61,6 +62,7 @@ namespace Amazon.DataSync.Model
         /// The value for an AWS resource tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

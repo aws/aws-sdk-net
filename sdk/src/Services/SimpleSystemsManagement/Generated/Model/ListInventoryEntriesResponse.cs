@@ -63,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of inventory items on the instance(s).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public List<Dictionary<string, string>> Entries
         {
             get { return this._entries; }
@@ -136,6 +137,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of inventory item returned by the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TypeName
         {
             get { return this._typeName; }

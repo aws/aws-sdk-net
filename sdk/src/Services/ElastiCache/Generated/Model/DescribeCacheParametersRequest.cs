@@ -58,6 +58,7 @@ namespace Amazon.ElastiCache.Model
         /// The name of a specific cache parameter group to return details for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CacheParameterGroupName
         {
             get { return this._cacheParameterGroupName; }

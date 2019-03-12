@@ -121,6 +121,7 @@ namespace Amazon.MTurk.Model
         /// the long description is displayed when a Worker examines a Qualification type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -160,6 +161,7 @@ namespace Amazon.MTurk.Model
         /// It must be unique across all of your Qualification types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -182,6 +184,7 @@ namespace Amazon.MTurk.Model
         /// Constraints: Valid values are: Active | Inactive
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public QualificationTypeStatus QualificationTypeStatus
         {
             get { return this._qualificationTypeStatus; }

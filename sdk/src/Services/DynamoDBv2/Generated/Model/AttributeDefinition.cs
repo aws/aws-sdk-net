@@ -57,6 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A name for the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -88,6 +89,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalarAttributeType AttributeType
         {
             get { return this._attributeType; }

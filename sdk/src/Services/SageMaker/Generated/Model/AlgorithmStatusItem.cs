@@ -60,6 +60,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the algorithm for which the overall status is being reported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +79,7 @@ namespace Amazon.SageMaker.Model
         /// The current status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DetailedAlgorithmStatus Status
         {
             get { return this._status; }

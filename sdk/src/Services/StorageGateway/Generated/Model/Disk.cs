@@ -64,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DiskAllocationType.
         /// </summary>
+        [AWSProperty(Min=3, Max=100)]
         public string DiskAllocationType
         {
             get { return this._diskAllocationType; }
@@ -79,6 +80,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DiskAttributeList.
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> DiskAttributeList
         {
             get { return this._diskAttributeList; }
@@ -97,6 +99,7 @@ namespace Amazon.StorageGateway.Model
         /// The unique device ID or other distinguishing data that identifies a local disk.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DiskId
         {
             get { return this._diskId; }

@@ -44,6 +44,7 @@ namespace Amazon.Kinesis.Model
         /// key size, the total size must not exceed the maximum record size (1 MB).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1048576)]
         public MemoryStream Data
         {
             get { return this._data; }
@@ -87,6 +88,7 @@ namespace Amazon.Kinesis.Model
         /// the same partition key map to the same shard within the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string PartitionKey
         {
             get { return this._partitionKey; }

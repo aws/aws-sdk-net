@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -77,6 +78,7 @@ namespace Amazon.Redshift.Model
         /// "Key"="version","Value"="1.0"</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -44,6 +44,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Medical has in its detection. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Entity> Entities
         {
             get { return this._entities; }
@@ -63,6 +64,7 @@ namespace Amazon.ComprehendMedical.Model
         /// to fetch the next page of PHI entities. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }

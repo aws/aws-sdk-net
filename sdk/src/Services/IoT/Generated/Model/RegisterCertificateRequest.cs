@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         /// The CA certificate used to sign the device certificate being registered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string CaCertificatePem
         {
             get { return this._caCertificatePem; }
@@ -64,6 +65,7 @@ namespace Amazon.IoT.Model
         /// The certificate data, in PEM format.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string CertificatePem
         {
             get { return this._certificatePem; }

@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         /// to return a list of gateway volumes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

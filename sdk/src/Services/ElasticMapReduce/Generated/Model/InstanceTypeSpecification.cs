@@ -54,6 +54,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Expressed in USD.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string BidPrice
         {
             get { return this._bidPrice; }
@@ -73,6 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public double BidPriceAsPercentageOfOnDemandPrice
         {
             get { return this._bidPriceAsPercentageOfOnDemandPrice.GetValueOrDefault(); }
@@ -147,6 +149,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The EC2 instance type, for example <code>m3.xlarge</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceType
         {
             get { return this._instanceType; }
@@ -168,6 +171,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// value is 1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int WeightedCapacity
         {
             get { return this._weightedCapacity.GetValueOrDefault(); }

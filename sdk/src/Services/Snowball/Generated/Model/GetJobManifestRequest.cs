@@ -65,6 +65,7 @@ namespace Amazon.Snowball.Model
         /// The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=39, Max=39)]
         public string JobId
         {
             get { return this._jobId; }

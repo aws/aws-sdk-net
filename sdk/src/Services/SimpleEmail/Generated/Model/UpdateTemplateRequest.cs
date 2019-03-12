@@ -46,6 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Template.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Template Template
         {
             get { return this._template; }

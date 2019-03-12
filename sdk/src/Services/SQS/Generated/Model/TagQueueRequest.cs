@@ -85,6 +85,7 @@ namespace Amazon.SQS.Model
         /// The URL of the queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }
@@ -103,6 +104,7 @@ namespace Amazon.SQS.Model
         /// The list of tags to be added to the specified queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

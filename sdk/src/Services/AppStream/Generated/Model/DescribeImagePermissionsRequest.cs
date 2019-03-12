@@ -45,6 +45,7 @@ namespace Amazon.AppStream.Model
         /// The maximum size of each page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.AppStream.Model
         /// one that you own. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -83,6 +85,7 @@ namespace Amazon.AppStream.Model
         /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -101,6 +104,7 @@ namespace Amazon.AppStream.Model
         /// The 12-digit identifier of one or more AWS accounts with which the image is shared.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public List<string> SharedAwsAccountIds
         {
             get { return this._sharedAwsAccountIds; }

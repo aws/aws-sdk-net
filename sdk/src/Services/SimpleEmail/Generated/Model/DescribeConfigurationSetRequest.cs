@@ -67,6 +67,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the configuration set to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

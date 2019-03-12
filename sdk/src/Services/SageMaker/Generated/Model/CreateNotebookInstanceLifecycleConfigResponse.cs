@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the lifecycle configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NotebookInstanceLifecycleConfigArn
         {
             get { return this._notebookInstanceLifecycleConfigArn; }

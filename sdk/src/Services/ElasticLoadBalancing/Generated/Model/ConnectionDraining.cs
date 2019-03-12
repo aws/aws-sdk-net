@@ -41,6 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Specifies whether connection draining is enabled for the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }

@@ -65,6 +65,7 @@ namespace Amazon.Macie.Model
         /// The S3 resources whose classification types you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<S3ResourceClassificationUpdate> S3ResourcesUpdate
         {
             get { return this._s3ResourcesUpdate; }

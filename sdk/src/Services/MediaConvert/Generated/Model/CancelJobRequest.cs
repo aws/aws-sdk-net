@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Id. The Job ID of the job to be cancelled.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

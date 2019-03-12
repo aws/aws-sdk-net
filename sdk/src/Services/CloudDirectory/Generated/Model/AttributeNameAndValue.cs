@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// The attribute name of the typed link.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=230)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// The value for the typed link.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TypedAttributeValue Value
         {
             get { return this._value; }

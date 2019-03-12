@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         ///  Result structure for list job result request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<JobSummary> JobSummaries
         {
             get { return this._jobSummaries; }
@@ -60,6 +61,7 @@ namespace Amazon.Amplify.Model
         /// its value in another request to fetch more entries. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

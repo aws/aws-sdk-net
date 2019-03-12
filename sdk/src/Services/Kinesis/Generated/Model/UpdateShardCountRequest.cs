@@ -96,6 +96,7 @@ namespace Amazon.Kinesis.Model
         /// The scaling type. Uniform scaling creates shards of equal size.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingType ScalingType
         {
             get { return this._scalingType; }
@@ -114,6 +115,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -132,6 +134,7 @@ namespace Amazon.Kinesis.Model
         /// The new number of shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100000)]
         public int TargetShardCount
         {
             get { return this._targetShardCount.GetValueOrDefault(); }

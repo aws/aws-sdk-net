@@ -70,6 +70,7 @@ namespace Amazon.OpsWorks.Model
         /// The instance ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

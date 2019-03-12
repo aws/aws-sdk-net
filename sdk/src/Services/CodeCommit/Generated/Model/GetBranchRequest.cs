@@ -43,6 +43,7 @@ namespace Amazon.CodeCommit.Model
         /// The name of the branch for which you want to retrieve information.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string BranchName
         {
             get { return this._branchName; }
@@ -62,6 +63,7 @@ namespace Amazon.CodeCommit.Model
         /// information.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string RepositoryName
         {
             get { return this._repositoryName; }

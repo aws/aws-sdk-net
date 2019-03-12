@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the pipeline to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

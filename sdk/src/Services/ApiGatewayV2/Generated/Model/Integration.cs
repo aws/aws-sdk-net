@@ -383,6 +383,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// or 29 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimeoutInMillis
         {
             get { return this._timeoutInMillis.GetValueOrDefault(); }

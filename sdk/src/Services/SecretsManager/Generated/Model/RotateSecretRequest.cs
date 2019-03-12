@@ -149,6 +149,7 @@ namespace Amazon.SecretsManager.Model
         /// the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=32, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -167,6 +168,7 @@ namespace Amazon.SecretsManager.Model
         /// (Optional) Specifies the ARN of the Lambda function that can rotate the secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string RotationLambdaARN
         {
             get { return this._rotationLambdaARN; }
@@ -218,6 +220,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string SecretId
         {
             get { return this._secretId; }

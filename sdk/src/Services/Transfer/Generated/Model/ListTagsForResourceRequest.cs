@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         /// is an identifier for a specific AWS resource, such as a server, user, or role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -64,6 +65,7 @@ namespace Amazon.Transfer.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.Transfer.Model
         /// tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
         public string NextToken
         {
             get { return this._nextToken; }

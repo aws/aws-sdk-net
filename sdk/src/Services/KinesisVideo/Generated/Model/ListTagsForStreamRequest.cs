@@ -51,6 +51,7 @@ namespace Amazon.KinesisVideo.Model
         /// fetch the next batch of tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=512)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -69,6 +70,7 @@ namespace Amazon.KinesisVideo.Model
         /// The Amazon Resource Name (ARN) of the stream that you want to list tags for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string StreamARN
         {
             get { return this._streamARN; }
@@ -87,6 +89,7 @@ namespace Amazon.KinesisVideo.Model
         /// The name of the stream that you want to list tags for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

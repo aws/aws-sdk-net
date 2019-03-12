@@ -50,6 +50,7 @@ namespace Amazon.Comprehend.Model
         /// that contains the ouput of the operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }

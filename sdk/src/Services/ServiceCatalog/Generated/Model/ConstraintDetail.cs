@@ -43,6 +43,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ConstraintId
         {
             get { return this._constraintId; }
@@ -61,6 +62,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -114,6 +116,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Type
         {
             get { return this._type; }

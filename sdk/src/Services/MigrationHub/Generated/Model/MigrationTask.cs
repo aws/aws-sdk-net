@@ -44,6 +44,7 @@ namespace Amazon.MigrationHub.Model
         /// Unique identifier that references the migration task.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string MigrationTaskName
         {
             get { return this._migrationTaskName; }
@@ -62,6 +63,7 @@ namespace Amazon.MigrationHub.Model
         /// A name that identifies the vendor of the migration tool being used.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ProgressUpdateStream
         {
             get { return this._progressUpdateStream; }
@@ -77,6 +79,7 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property ResourceAttributeList.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<ResourceAttribute> ResourceAttributeList
         {
             get { return this._resourceAttributeList; }

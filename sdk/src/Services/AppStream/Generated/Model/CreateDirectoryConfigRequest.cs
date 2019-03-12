@@ -44,6 +44,7 @@ namespace Amazon.AppStream.Model
         /// The fully qualified name of the directory (for example, corp.example.com).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryName
         {
             get { return this._directoryName; }
@@ -62,6 +63,7 @@ namespace Amazon.AppStream.Model
         /// The distinguished names of the organizational units for computer accounts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> OrganizationalUnitDistinguishedNames
         {
             get { return this._organizationalUnitDistinguishedNames; }
@@ -81,6 +83,7 @@ namespace Amazon.AppStream.Model
         /// to the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServiceAccountCredentials ServiceAccountCredentials
         {
             get { return this._serviceAccountCredentials; }

@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The TagOption key.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -60,6 +61,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The TagOption value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

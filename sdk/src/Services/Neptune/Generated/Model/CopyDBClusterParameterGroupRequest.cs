@@ -66,6 +66,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBClusterParameterGroupIdentifier
         {
             get { return this._sourceDBClusterParameterGroupIdentifier; }
@@ -99,6 +100,7 @@ namespace Amazon.Neptune.Model
         /// A description for the copied DB cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBClusterParameterGroupDescription
         {
             get { return this._targetDBClusterParameterGroupDescription; }
@@ -141,6 +143,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>my-cluster-param-group1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBClusterParameterGroupIdentifier
         {
             get { return this._targetDBClusterParameterGroupIdentifier; }

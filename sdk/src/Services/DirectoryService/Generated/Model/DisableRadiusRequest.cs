@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
         /// The identifier of the directory for which to disable MFA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DirectoryId
         {
             get { return this._directoryId; }

@@ -38,6 +38,7 @@ namespace Amazon.PinpointSMSVoice.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. ConfigurationSetName
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }

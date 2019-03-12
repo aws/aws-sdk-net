@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }
@@ -85,6 +86,7 @@ namespace Amazon.RDS.Model
         /// to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

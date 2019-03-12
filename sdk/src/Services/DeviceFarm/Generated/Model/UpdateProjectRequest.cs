@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the project whose name you wish to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }
@@ -79,6 +80,7 @@ namespace Amazon.DeviceFarm.Model
         /// A string representing the new name of the project that you are updating.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

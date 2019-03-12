@@ -49,6 +49,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the state machine to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }

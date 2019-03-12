@@ -194,6 +194,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public Dictionary<string, List<WriteRequest>> RequestItems
         {
             get { return this._requestItems; }

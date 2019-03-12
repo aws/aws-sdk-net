@@ -65,6 +65,7 @@ namespace Amazon.CloudFront.Model
         /// for this cache behavior.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

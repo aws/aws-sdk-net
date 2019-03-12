@@ -50,6 +50,7 @@ namespace Amazon.SimpleEmail.Model
         /// events to Amazon CloudWatch.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CloudWatchDimensionConfiguration> DimensionConfigurations
         {
             get { return this._dimensionConfigurations; }

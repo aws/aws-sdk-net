@@ -55,6 +55,7 @@ namespace Amazon.DirectoryService.Model
         /// A textual description for the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -73,6 +74,7 @@ namespace Amazon.DirectoryService.Model
         /// The fully qualified name for the directory, such as <code>corp.example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -93,6 +95,7 @@ namespace Amazon.DirectoryService.Model
         /// this password.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Password
         {
             get { return this._password; }
@@ -129,6 +132,7 @@ namespace Amazon.DirectoryService.Model
         /// The size of the directory.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DirectorySize Size
         {
             get { return this._size; }

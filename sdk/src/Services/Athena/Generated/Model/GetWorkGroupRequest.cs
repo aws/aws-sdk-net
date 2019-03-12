@@ -41,6 +41,7 @@ namespace Amazon.Athena.Model
         /// The name of the workgroup.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string WorkGroup
         {
             get { return this._workGroup; }

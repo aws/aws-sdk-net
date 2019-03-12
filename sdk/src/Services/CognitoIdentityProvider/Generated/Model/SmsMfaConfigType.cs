@@ -41,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The SMS authentication message.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=6, Max=140)]
         public string SmsAuthenticationMessage
         {
             get { return this._smsAuthenticationMessage; }

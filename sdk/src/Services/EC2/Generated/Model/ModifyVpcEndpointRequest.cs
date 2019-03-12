@@ -221,6 +221,7 @@ namespace Amazon.EC2.Model
         /// The ID of the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpcEndpointId
         {
             get { return this._vpcEndpointId; }

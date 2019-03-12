@@ -46,6 +46,7 @@ namespace Amazon.Elasticsearch.Model
         /// when modifying existing domain. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -65,6 +66,7 @@ namespace Amazon.Elasticsearch.Model
         /// are needed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ElasticsearchVersion
         {
             get { return this._elasticsearchVersion; }
@@ -84,6 +86,7 @@ namespace Amazon.Elasticsearch.Model
         /// than 30 else it wont be honored. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=32)]
         public string Arn
         {
             get { return this._arn; }

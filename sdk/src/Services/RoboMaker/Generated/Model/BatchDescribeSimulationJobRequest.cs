@@ -41,6 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// A list of Amazon Resource Names (ARNs) of simulation jobs to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Jobs
         {
             get { return this._jobs; }

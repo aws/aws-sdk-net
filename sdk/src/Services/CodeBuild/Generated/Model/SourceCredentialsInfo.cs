@@ -42,6 +42,7 @@ namespace Amazon.CodeBuild.Model
         ///  The Amazon Resource Name (ARN) of the token. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Arn
         {
             get { return this._arn; }

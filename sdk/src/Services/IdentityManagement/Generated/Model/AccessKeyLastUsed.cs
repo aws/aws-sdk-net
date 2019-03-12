@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime LastUsedDate
         {
             get { return this._lastUsedDate.GetValueOrDefault(); }
@@ -99,6 +100,7 @@ namespace Amazon.IdentityManagement.Model
         /// and Endpoints</a> in the Amazon Web Services General Reference.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Region
         {
             get { return this._region; }
@@ -131,6 +133,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }

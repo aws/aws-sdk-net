@@ -45,6 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// stage to another.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string PipelineName
         {
             get { return this._pipelineName; }
@@ -64,6 +65,7 @@ namespace Amazon.CodePipeline.Model
         /// or manual tests. This message is displayed in the pipeline console UI.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Reason
         {
             get { return this._reason; }
@@ -83,6 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// of artifacts.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string StageName
         {
             get { return this._stageName; }
@@ -103,6 +106,7 @@ namespace Amazon.CodePipeline.Model
         /// from the stage after they have been processed by the actions in that stage (outbound).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StageTransitionType TransitionType
         {
             get { return this._transitionType; }

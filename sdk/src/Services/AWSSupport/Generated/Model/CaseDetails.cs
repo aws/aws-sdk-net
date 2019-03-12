@@ -149,6 +149,7 @@ namespace Amazon.AWSSupport.Model
         /// The email addresses that receive copies of communication about the case.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> CcEmailAddresses
         {
             get { return this._ccEmailAddresses; }

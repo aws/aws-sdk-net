@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The endpoint for the ElasticSearch cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EndpointUri
         {
             get { return this._endpointUri; }
@@ -99,6 +100,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) used by service to access the IAM role.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceAccessRoleArn
         {
             get { return this._serviceAccessRoleArn; }

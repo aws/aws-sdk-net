@@ -109,6 +109,7 @@ namespace Amazon.SQS.Model
         /// A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<SendMessageBatchRequestEntry> Entries
         {
             get { return this._entries; }
@@ -131,6 +132,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

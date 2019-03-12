@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         /// A space-separated list of up to 100 job IDs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Jobs
         {
             get { return this._jobs; }

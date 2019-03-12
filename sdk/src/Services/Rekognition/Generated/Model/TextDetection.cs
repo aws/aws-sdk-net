@@ -63,6 +63,7 @@ namespace Amazon.Rekognition.Model
         /// the accuracy of the geometry points around the detected text.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public float Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }
@@ -119,6 +120,7 @@ namespace Amazon.Rekognition.Model
         /// to <code>DetectText</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Id
         {
             get { return this._id.GetValueOrDefault(); }
@@ -139,6 +141,7 @@ namespace Amazon.Rekognition.Model
         /// is <code>Null</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int ParentId
         {
             get { return this._parentId.GetValueOrDefault(); }

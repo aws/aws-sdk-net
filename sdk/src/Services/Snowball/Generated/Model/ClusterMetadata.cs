@@ -52,6 +52,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a specific address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string AddressId
         {
             get { return this._addressId; }
@@ -70,6 +71,7 @@ namespace Amazon.Snowball.Model
         /// The automatically generated ID for a cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -124,6 +126,7 @@ namespace Amazon.Snowball.Model
         /// The optional description of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Description
         {
             get { return this._description; }
@@ -143,6 +146,7 @@ namespace Amazon.Snowball.Model
         /// to its primary address. This field is not supported in most regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=40, Max=40)]
         public string ForwardingAddressId
         {
             get { return this._forwardingAddressId; }
@@ -182,6 +186,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Key Management Service (AWS KMS).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string KmsKeyARN
         {
             get { return this._kmsKeyARN; }
@@ -239,6 +244,7 @@ namespace Amazon.Snowball.Model
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

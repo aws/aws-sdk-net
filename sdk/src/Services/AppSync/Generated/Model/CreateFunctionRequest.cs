@@ -53,6 +53,7 @@ namespace Amazon.AppSync.Model
         /// The GraphQL API ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -71,6 +72,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> <code>DataSource</code> name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DataSourceName
         {
             get { return this._dataSourceName; }
@@ -108,6 +110,7 @@ namespace Amazon.AppSync.Model
         /// value is 2018-05-29. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionVersion
         {
             get { return this._functionVersion; }
@@ -126,6 +129,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> name. The function name does not have to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -145,6 +149,7 @@ namespace Amazon.AppSync.Model
         /// version of the request mapping template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=65536)]
         public string RequestMappingTemplate
         {
             get { return this._requestMappingTemplate; }
@@ -163,6 +168,7 @@ namespace Amazon.AppSync.Model
         /// The <code>Function</code> response mapping template. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=65536)]
         public string ResponseMappingTemplate
         {
             get { return this._responseMappingTemplate; }

@@ -75,6 +75,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh to create the virtual router in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -93,6 +94,7 @@ namespace Amazon.AppMesh.Model
         /// The virtual router specification to apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public VirtualRouterSpec Spec
         {
             get { return this._spec; }
@@ -111,6 +113,7 @@ namespace Amazon.AppMesh.Model
         /// The name to use for the virtual router.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualRouterName
         {
             get { return this._virtualRouterName; }

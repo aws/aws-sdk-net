@@ -82,6 +82,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON data output by the lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Output
         {
             get { return this._output; }

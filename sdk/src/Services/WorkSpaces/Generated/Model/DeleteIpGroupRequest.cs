@@ -46,6 +46,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifier of the IP access control group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }

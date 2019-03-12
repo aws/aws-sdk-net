@@ -56,6 +56,7 @@ namespace Amazon.DocDB.Model
         /// Example: <code>my-cluster</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -95,6 +96,7 @@ namespace Amazon.DocDB.Model
         /// Example: <code>my-cluster-snapshot1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterSnapshotIdentifier
         {
             get { return this._dbClusterSnapshotIdentifier; }

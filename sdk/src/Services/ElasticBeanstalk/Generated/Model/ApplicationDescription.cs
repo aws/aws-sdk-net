@@ -70,6 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -142,6 +143,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// User-defined description of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string Description
         {
             get { return this._description; }

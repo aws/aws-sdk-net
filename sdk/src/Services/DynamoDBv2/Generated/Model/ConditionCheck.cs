@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A condition that must be satisfied in order for a conditional update to succeed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConditionExpression
         {
             get { return this._conditionExpression; }
@@ -101,6 +102,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and a value for that attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, AttributeValue> Key
         {
             get { return this._key; }
@@ -139,6 +141,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the table for the check item request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

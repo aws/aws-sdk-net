@@ -80,6 +80,7 @@ namespace Amazon.SimpleEmail.Model
         /// The textual data of the content.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Data
         {
             get { return this._data; }

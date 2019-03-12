@@ -45,6 +45,7 @@ namespace Amazon.CodeCommit.Model
         /// The blob ID of the object that represents the file content.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BlobId
         {
             get { return this._blobId; }
@@ -63,6 +64,7 @@ namespace Amazon.CodeCommit.Model
         /// The full commit ID of the commit that contains the content returned by GetFile.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CommitId
         {
             get { return this._commitId; }
@@ -81,6 +83,7 @@ namespace Amazon.CodeCommit.Model
         /// The base-64 encoded binary data object that represents the content of the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=6291456)]
         public MemoryStream FileContent
         {
             get { return this._fileContent; }
@@ -107,6 +110,7 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FileModeTypeEnum FileMode
         {
             get { return this._fileMode; }
@@ -126,6 +130,7 @@ namespace Amazon.CodeCommit.Model
         /// of the file.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FilePath
         {
             get { return this._filePath; }
@@ -144,6 +149,7 @@ namespace Amazon.CodeCommit.Model
         /// The size of the contents of the file, in bytes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long FileSize
         {
             get { return this._fileSize.GetValueOrDefault(); }

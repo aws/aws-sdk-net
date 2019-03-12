@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         /// labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2048)]
         public string LabelingJobArn
         {
             get { return this._labelingJobArn; }

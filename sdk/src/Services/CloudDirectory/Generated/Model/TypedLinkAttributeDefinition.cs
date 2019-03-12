@@ -81,6 +81,7 @@ namespace Amazon.CloudDirectory.Model
         /// The unique name of the typed link attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=230)]
         public string Name
         {
             get { return this._name; }
@@ -99,6 +100,7 @@ namespace Amazon.CloudDirectory.Model
         /// The required behavior of the <code>TypedLinkAttributeDefinition</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RequiredAttributeBehavior RequiredBehavior
         {
             get { return this._requiredBehavior; }
@@ -135,6 +137,7 @@ namespace Amazon.CloudDirectory.Model
         /// The type of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FacetAttributeType Type
         {
             get { return this._type; }

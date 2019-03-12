@@ -62,6 +62,7 @@ namespace Amazon.Neptune.Model
         /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

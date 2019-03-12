@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string AdministrationRoleARN
         {
             get { return this._administrationRoleARN; }
@@ -200,6 +201,7 @@ namespace Amazon.CloudFormation.Model
         /// If you don't specify an operation ID, the SDK generates one automatically. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -219,6 +221,7 @@ namespace Amazon.CloudFormation.Model
         /// set's purpose or other important information.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -244,6 +247,7 @@ namespace Amazon.CloudFormation.Model
         /// stack resources users and groups can include in their stack sets. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ExecutionRoleName
         {
             get { return this._executionRoleName; }
@@ -287,6 +291,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackSetName
         {
             get { return this._stackSetName; }
@@ -314,6 +319,7 @@ namespace Amazon.CloudFormation.Model
         /// error, and the stack set is not created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -339,6 +345,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TemplateBody
         {
             get { return this._templateBody; }
@@ -365,6 +372,7 @@ namespace Amazon.CloudFormation.Model
         /// but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TemplateURL
         {
             get { return this._templateURL; }

@@ -74,6 +74,7 @@ namespace Amazon.DataSync.Model
         /// Your Task</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=562)]
         public string CloudWatchLogGroupArn
         {
             get { return this._cloudWatchLogGroupArn; }
@@ -92,6 +93,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of an AWS storage resource's location. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string DestinationLocationArn
         {
             get { return this._destinationLocationArn; }
@@ -111,6 +113,7 @@ namespace Amazon.DataSync.Model
         /// in the console. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -156,6 +159,7 @@ namespace Amazon.DataSync.Model
         /// The Amazon Resource Name (ARN) of the source location for the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=128)]
         public string SourceLocationArn
         {
             get { return this._sourceLocationArn; }
@@ -175,6 +179,7 @@ namespace Amazon.DataSync.Model
         /// value can be an empty string. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=55)]
         public List<TagListEntry> Tags
         {
             get { return this._tags; }

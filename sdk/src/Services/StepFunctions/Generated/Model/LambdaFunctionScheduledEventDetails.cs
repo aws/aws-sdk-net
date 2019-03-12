@@ -42,6 +42,7 @@ namespace Amazon.StepFunctions.Model
         /// The JSON data input to the lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -60,6 +61,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the scheduled lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Resource
         {
             get { return this._resource; }

@@ -102,6 +102,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

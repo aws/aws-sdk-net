@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// and tag key names that begin with the specified text in the <code>PropertyNameHint</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public string PropertyNameHint
         {
             get { return this._propertyNameHint; }

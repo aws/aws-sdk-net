@@ -48,6 +48,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// during the processing of the decision task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<HistoryEvent> Events
         {
             get { return this._events; }
@@ -73,6 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// in a single call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string NextPageToken
         {
             get { return this._nextPageToken; }
@@ -111,6 +113,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The ID of the <code>DecisionTaskStarted</code> event recorded in the history.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedEventId
         {
             get { return this._startedEventId.GetValueOrDefault(); }
@@ -130,6 +133,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// progress and response information back to the system about the task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskToken
         {
             get { return this._taskToken; }
@@ -148,6 +152,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The workflow execution for which this decision task was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowExecution WorkflowExecution
         {
             get { return this._workflowExecution; }
@@ -166,6 +171,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The type of the workflow execution for which this decision task was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WorkflowType WorkflowType
         {
             get { return this._workflowType; }

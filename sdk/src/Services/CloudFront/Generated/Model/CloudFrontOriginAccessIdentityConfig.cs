@@ -77,6 +77,7 @@ namespace Amazon.CloudFront.Model
         /// error. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -95,6 +96,7 @@ namespace Amazon.CloudFront.Model
         /// Any comments you want to include about the origin access identity. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Comment
         {
             get { return this._comment; }

@@ -65,6 +65,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -83,6 +84,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name of the namespace that you specified when you registered the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string NamespaceName
         {
             get { return this._namespaceName; }
@@ -121,6 +123,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name of the service that you specified when you registered the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }

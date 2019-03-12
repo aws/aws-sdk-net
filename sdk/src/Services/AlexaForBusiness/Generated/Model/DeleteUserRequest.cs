@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the user's enrollment in the organization. Required.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string EnrollmentId
         {
             get { return this._enrollmentId; }

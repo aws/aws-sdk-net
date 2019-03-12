@@ -55,6 +55,7 @@ namespace Amazon.Redshift.Model
         /// copy enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -123,6 +124,7 @@ namespace Amazon.Redshift.Model
         /// for manual snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }

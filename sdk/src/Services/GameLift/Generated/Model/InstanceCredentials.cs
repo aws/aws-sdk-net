@@ -45,6 +45,7 @@ namespace Amazon.GameLift.Model
         /// <code>.pem</code> file) for use with SSH.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Secret
         {
             get { return this._secret; }
@@ -63,6 +64,7 @@ namespace Amazon.GameLift.Model
         /// User login string.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string UserName
         {
             get { return this._userName; }

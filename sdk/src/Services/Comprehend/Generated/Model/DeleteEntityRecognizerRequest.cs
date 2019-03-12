@@ -54,6 +54,7 @@ namespace Amazon.Comprehend.Model
         /// The Amazon Resource Name (ARN) that identifies the entity recognizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=256)]
         public string EntityRecognizerArn
         {
             get { return this._entityRecognizerArn; }

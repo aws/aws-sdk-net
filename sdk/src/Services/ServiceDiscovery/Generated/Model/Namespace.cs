@@ -49,6 +49,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -89,6 +90,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// retried without the risk of executing an operation twice. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string CreatorRequestId
         {
             get { return this._creatorRequestId; }
@@ -107,6 +109,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The description that you specify for the namespace when you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -125,6 +128,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of a namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -143,6 +147,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The name of the namespace, such as <code>example.com</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }

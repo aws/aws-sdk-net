@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// The CloudWatch alarm name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AlarmName
         {
             get { return this._alarmName; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The IAM role that allows access to the CloudWatch alarm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -79,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The reason for the alarm change.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StateReason
         {
             get { return this._stateReason; }
@@ -97,6 +100,7 @@ namespace Amazon.IoT.Model
         /// The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StateValue
         {
             get { return this._stateValue; }

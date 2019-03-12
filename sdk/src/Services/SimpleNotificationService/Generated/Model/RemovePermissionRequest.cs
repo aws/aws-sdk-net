@@ -58,6 +58,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The unique label of the statement you want to remove.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Label
         {
             get { return this._label; }
@@ -76,6 +77,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The ARN of the topic whose access control policy you wish to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicArn
         {
             get { return this._topicArn; }

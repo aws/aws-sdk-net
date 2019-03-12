@@ -65,6 +65,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a player associated with the latency data.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string PlayerId
         {
             get { return this._playerId; }
@@ -83,6 +84,7 @@ namespace Amazon.GameLift.Model
         /// Name of the region that is associated with the latency value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string RegionIdentifier
         {
             get { return this._regionIdentifier; }

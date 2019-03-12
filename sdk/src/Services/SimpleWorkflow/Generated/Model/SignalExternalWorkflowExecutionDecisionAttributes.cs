@@ -76,6 +76,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// tasks.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Control
         {
             get { return this._control; }
@@ -95,6 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// the signal name and input data to process the signal.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=32768)]
         public string Input
         {
             get { return this._input; }
@@ -113,6 +115,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The <code>runId</code> of the workflow execution to be signaled.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string RunId
         {
             get { return this._runId; }
@@ -132,6 +135,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// to process the signal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SignalName
         {
             get { return this._signalName; }
@@ -150,6 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The <code>workflowId</code> of the workflow execution to be signaled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string WorkflowId
         {
             get { return this._workflowId; }

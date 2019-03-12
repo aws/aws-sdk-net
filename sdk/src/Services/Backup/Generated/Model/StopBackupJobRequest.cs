@@ -41,6 +41,7 @@ namespace Amazon.Backup.Model
         /// Uniquely identifies a request to AWS Backup to back up a resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupJobId
         {
             get { return this._backupJobId; }

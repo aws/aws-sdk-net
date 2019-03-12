@@ -45,6 +45,7 @@ namespace Amazon.WorkMail.Model
         /// The number of maximum results in a page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.WorkMail.Model
         /// The token used to paginate through the delegates associated with a resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -82,6 +84,7 @@ namespace Amazon.WorkMail.Model
         /// are listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OrganizationId
         {
             get { return this._organizationId; }
@@ -100,6 +103,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier for the resource whose delegates are listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }

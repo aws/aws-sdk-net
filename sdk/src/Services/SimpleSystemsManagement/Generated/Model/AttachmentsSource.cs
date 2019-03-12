@@ -61,6 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1)]
         public List<string> Values
         {
             get { return this._values; }

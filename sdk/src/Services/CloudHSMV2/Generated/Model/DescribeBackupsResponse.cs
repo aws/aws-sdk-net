@@ -60,6 +60,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string NextToken
         {
             get { return this._nextToken; }

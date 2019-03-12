@@ -41,6 +41,7 @@ namespace Amazon.CloudWatch.Model
         /// The names of the alarms.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=100)]
         public List<string> AlarmNames
         {
             get { return this._alarmNames; }

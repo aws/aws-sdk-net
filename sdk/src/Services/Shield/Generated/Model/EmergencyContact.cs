@@ -40,6 +40,7 @@ namespace Amazon.Shield.Model
         /// An email address that the DRT can use to contact you during a suspected attack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

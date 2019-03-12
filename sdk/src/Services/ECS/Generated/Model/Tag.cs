@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         /// that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -64,6 +65,7 @@ namespace Amazon.ECS.Model
         /// as a descriptor within a tag category (key).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// JsonPath Custom Classifiers</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JsonPath
         {
             get { return this._jsonPath; }
@@ -61,6 +62,7 @@ namespace Amazon.Glue.Model
         /// The name of the classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

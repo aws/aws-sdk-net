@@ -44,6 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the document for which you are the owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -62,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The permission type for the document. The permission type can be <i>Share</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentPermissionType PermissionType
         {
             get { return this._permissionType; }

@@ -55,6 +55,7 @@ namespace Amazon.AutoScaling.Model
         /// <code>PercentChangeInCapacity</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AdjustmentType
         {
             get { return this._adjustmentType; }
@@ -91,6 +92,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -148,6 +150,7 @@ namespace Amazon.AutoScaling.Model
         /// <code>Maximum</code>, and <code>Average</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string MetricAggregationType
         {
             get { return this._metricAggregationType; }
@@ -205,6 +208,7 @@ namespace Amazon.AutoScaling.Model
         /// The Amazon Resource Name (ARN) of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string PolicyARN
         {
             get { return this._policyARN; }
@@ -223,6 +227,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string PolicyName
         {
             get { return this._policyName; }
@@ -241,6 +246,7 @@ namespace Amazon.AutoScaling.Model
         /// The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string PolicyType
         {
             get { return this._policyType; }

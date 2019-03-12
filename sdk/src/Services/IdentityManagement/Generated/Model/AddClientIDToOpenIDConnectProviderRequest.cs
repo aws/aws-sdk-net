@@ -49,6 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ClientID
         {
             get { return this._clientID; }
@@ -69,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string OpenIDConnectProviderArn
         {
             get { return this._openIDConnectProviderArn; }

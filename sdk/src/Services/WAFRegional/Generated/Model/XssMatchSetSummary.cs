@@ -41,6 +41,7 @@ namespace Amazon.WAFRegional.Model
         /// The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -67,6 +68,7 @@ namespace Amazon.WAFRegional.Model
         ///  <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string XssMatchSetId
         {
             get { return this._xssMatchSetId; }

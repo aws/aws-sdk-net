@@ -46,6 +46,7 @@ namespace Amazon.StorageGateway.Model
         /// If this field is not present, all file shares under your account are listed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -65,6 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// integer with a value greater than zero. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -85,6 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// to ListFileShares. Optional.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }

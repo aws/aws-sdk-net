@@ -41,6 +41,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceId.
         /// </summary>
+        [AWSProperty(Max=20)]
         public string EC2InstanceId
         {
             get { return this._ec2InstanceId; }
@@ -56,6 +57,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Hostname.
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -71,6 +73,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ResourceARN.
         /// </summary>
+        [AWSProperty(Max=500)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -86,6 +89,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TelemetryRecords.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<TelemetryRecord> TelemetryRecords
         {
             get { return this._telemetryRecords; }

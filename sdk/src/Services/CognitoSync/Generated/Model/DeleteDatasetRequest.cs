@@ -49,6 +49,7 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property DatasetName. A string of up to 128 characters. Allowed
         /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }
@@ -65,6 +66,7 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property IdentityId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
         /// created by Amazon Cognito. GUID generation is unique within a region.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityId
         {
             get { return this._identityId; }
@@ -81,6 +83,7 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property IdentityPoolId. A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
         /// created by Amazon Cognito. GUID generation is unique within a region.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string IdentityPoolId
         {
             get { return this._identityPoolId; }

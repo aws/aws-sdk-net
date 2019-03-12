@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Path to the top-level parent that contains the records.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string RecordRowPath
         {
             get { return this._recordRowPath; }

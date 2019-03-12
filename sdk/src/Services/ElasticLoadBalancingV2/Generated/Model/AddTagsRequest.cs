@@ -54,6 +54,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ResourceArns
         {
             get { return this._resourceArns; }
@@ -72,6 +73,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The tags. Each resource can have a maximum of 10 tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public List<Tag> Tags
         {
             get { return this._tags; }

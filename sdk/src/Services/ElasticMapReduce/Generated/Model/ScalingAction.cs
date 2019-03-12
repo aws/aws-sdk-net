@@ -62,6 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// periodicity of the adjustment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SimpleScalingPolicyConfiguration SimpleScalingPolicyConfiguration
         {
             get { return this._simpleScalingPolicyConfiguration; }

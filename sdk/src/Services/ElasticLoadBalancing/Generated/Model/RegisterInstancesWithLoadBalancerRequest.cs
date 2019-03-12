@@ -89,6 +89,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The IDs of the instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Instance> Instances
         {
             get { return this._instances; }
@@ -107,6 +108,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

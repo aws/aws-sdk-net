@@ -44,6 +44,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string AcceleratorArn
         {
             get { return this._acceleratorArn; }
@@ -63,6 +64,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// value is 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -81,6 +83,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// The token for the next set of results. You receive this token from a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

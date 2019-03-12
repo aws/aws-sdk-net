@@ -86,6 +86,7 @@ namespace Amazon.MTurk.Model
         /// operation. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string QualificationTypeId
         {
             get { return this._qualificationTypeId; }
@@ -144,6 +145,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the Worker requesting the Qualification.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

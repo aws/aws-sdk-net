@@ -50,6 +50,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The API identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApiId
         {
             get { return this._apiId; }
@@ -88,6 +89,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// The authorizer identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AuthorizerId
         {
             get { return this._authorizerId; }
@@ -109,6 +111,7 @@ namespace Amazon.ApiGatewayV2.Model
         /// 3600, or 1 hour.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int AuthorizerResultTtlInSeconds
         {
             get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }

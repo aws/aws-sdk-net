@@ -41,6 +41,7 @@ namespace Amazon.Inspector.Model
         /// A list of exclusions' ARNs returned by the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<string> ExclusionArns
         {
             get { return this._exclusionArns; }
@@ -62,6 +63,7 @@ namespace Amazon.Inspector.Model
         /// is set to null.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string NextToken
         {
             get { return this._nextToken; }

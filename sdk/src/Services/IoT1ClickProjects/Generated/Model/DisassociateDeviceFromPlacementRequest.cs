@@ -43,6 +43,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The device ID that should be removed from the placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DeviceTemplateName
         {
             get { return this._deviceTemplateName; }
@@ -61,6 +62,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the placement that the device should be removed from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PlacementName
         {
             get { return this._placementName; }
@@ -79,6 +81,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// The name of the project that contains the placement.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProjectName
         {
             get { return this._projectName; }

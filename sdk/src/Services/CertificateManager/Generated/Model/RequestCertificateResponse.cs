@@ -45,6 +45,7 @@ namespace Amazon.CertificateManager.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }

@@ -76,6 +76,7 @@ namespace Amazon.Textract.Model
         /// from <code>StartDocumentTextDetection</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string JobId
         {
             get { return this._jobId; }
@@ -96,6 +97,7 @@ namespace Amazon.Textract.Model
         /// results is returned. The default value is 1,000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -116,6 +118,7 @@ namespace Amazon.Textract.Model
         /// token to retrieve the next set of blocks.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NextToken
         {
             get { return this._nextToken; }

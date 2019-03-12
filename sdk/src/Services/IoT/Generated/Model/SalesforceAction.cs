@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         /// Stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=40)]
         public string Token
         {
             get { return this._token; }
@@ -62,6 +63,7 @@ namespace Amazon.IoT.Model
         /// the Salesforce IoT Cloud platform after creation of the Input Stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=2000)]
         public string Url
         {
             get { return this._url; }

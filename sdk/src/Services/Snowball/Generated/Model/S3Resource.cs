@@ -45,6 +45,7 @@ namespace Amazon.Snowball.Model
         /// The Amazon Resource Name (ARN) of an Amazon S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string BucketArn
         {
             get { return this._bucketArn; }

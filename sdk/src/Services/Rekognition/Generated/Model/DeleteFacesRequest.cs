@@ -49,6 +49,7 @@ namespace Amazon.Rekognition.Model
         /// Collection from which to remove the specific faces.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string CollectionId
         {
             get { return this._collectionId; }
@@ -67,6 +68,7 @@ namespace Amazon.Rekognition.Model
         /// An array of face IDs to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4096)]
         public List<string> FaceIds
         {
             get { return this._faceIds; }

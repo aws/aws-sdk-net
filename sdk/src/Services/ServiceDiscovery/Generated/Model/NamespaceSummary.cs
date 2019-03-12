@@ -48,6 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string Arn
         {
             get { return this._arn; }
@@ -84,6 +85,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// A description for the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -102,6 +104,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string Id
         {
             get { return this._id; }
@@ -121,6 +124,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// creates a Route 53 hosted zone that has the same name as the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Name
         {
             get { return this._name; }

@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The name of an existing application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -62,6 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// value using or .
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime SnapshotCreationTimestamp
         {
             get { return this._snapshotCreationTimestamp.GetValueOrDefault(); }
@@ -80,6 +82,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The identifier for the snapshot delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string SnapshotName
         {
             get { return this._snapshotName; }

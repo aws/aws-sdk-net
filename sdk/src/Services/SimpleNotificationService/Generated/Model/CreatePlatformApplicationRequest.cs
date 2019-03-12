@@ -71,6 +71,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Attributes
         {
             get { return this._attributes; }
@@ -90,6 +91,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// underscores, hyphens, and periods, and must be between 1 and 256 characters long.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -109,6 +111,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Platform
         {
             get { return this._platform; }

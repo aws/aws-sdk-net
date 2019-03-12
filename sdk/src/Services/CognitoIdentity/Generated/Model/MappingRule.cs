@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The claim name that must be present in the token, for example, "isAdmin" or "paid".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Claim
         {
             get { return this._claim; }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentity.Model
         /// match <code>Value</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MappingRuleMatchType MatchType
         {
             get { return this._matchType; }
@@ -80,6 +82,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The role ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -98,6 +101,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A brief string that the claim must match, for example, "paid" or "yes".
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Value
         {
             get { return this._value; }

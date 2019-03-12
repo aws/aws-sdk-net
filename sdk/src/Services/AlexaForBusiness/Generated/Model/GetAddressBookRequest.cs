@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the address book for which to request details.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AddressBookArn
         {
             get { return this._addressBookArn; }

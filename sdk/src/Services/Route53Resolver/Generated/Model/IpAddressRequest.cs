@@ -42,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// The IP address that you want to use for DNS queries.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=36)]
         public string Ip
         {
             get { return this._ip; }
@@ -60,6 +61,7 @@ namespace Amazon.Route53Resolver.Model
         /// The subnet that contains the IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string SubnetId
         {
             get { return this._subnetId; }

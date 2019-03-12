@@ -49,6 +49,7 @@ namespace Amazon.Comprehend.Model
         /// Comprehend generates one.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -68,6 +69,7 @@ namespace Amazon.Comprehend.Model
         /// grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string DataAccessRoleArn
         {
             get { return this._dataAccessRoleArn; }
@@ -86,6 +88,7 @@ namespace Amazon.Comprehend.Model
         /// The name of the document classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=63)]
         public string DocumentClassifierName
         {
             get { return this._documentClassifierName; }
@@ -104,6 +107,7 @@ namespace Amazon.Comprehend.Model
         /// Specifies the format and location of the input data for the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DocumentClassifierInputDataConfig InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -123,6 +127,7 @@ namespace Amazon.Comprehend.Model
         /// All documents must be in the same language.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }

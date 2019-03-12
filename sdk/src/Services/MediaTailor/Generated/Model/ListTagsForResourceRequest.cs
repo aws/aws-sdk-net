@@ -42,6 +42,7 @@ namespace Amazon.MediaTailor.Model
         /// the response to any playback configuration request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

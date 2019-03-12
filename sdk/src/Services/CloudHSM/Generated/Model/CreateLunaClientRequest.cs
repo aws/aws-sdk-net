@@ -59,6 +59,7 @@ namespace Amazon.CloudHSM.Model
         /// used by this client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=600, Max=2400)]
         public string Certificate
         {
             get { return this._certificate; }

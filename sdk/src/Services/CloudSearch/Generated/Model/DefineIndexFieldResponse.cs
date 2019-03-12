@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property IndexField.
         /// </summary>
+        [AWSProperty(Required=true)]
         public IndexFieldStatus IndexField
         {
             get { return this._indexField; }

@@ -91,6 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// One or more labels to attach to the specified parameter version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> Labels
         {
             get { return this._labels; }
@@ -109,6 +110,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter name on which you want to attach one or more labels.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Name
         {
             get { return this._name; }

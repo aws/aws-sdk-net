@@ -53,6 +53,7 @@ namespace Amazon.PinpointEmail.Model
         /// The name of the configuration set that you want to add an event destination to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConfigurationSetName
         {
             get { return this._configurationSetName; }
@@ -71,6 +72,7 @@ namespace Amazon.PinpointEmail.Model
         /// An object that defines the event destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EventDestinationDefinition EventDestination
         {
             get { return this._eventDestination; }
@@ -89,6 +91,7 @@ namespace Amazon.PinpointEmail.Model
         /// A name that identifies the event destination within the configuration set.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EventDestinationName
         {
             get { return this._eventDestinationName; }

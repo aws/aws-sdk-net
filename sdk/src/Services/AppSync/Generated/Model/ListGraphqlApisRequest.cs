@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         /// The maximum number of results you want the request to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

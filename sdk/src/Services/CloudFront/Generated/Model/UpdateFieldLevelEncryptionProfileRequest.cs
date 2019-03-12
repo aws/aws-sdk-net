@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         /// Request to update a field-level encryption profile. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public FieldLevelEncryptionProfileConfig FieldLevelEncryptionProfileConfig
         {
             get { return this._fieldLevelEncryptionProfileConfig; }
@@ -61,6 +62,7 @@ namespace Amazon.CloudFront.Model
         /// The ID of the field-level encryption profile request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

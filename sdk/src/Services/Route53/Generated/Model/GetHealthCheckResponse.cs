@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// with the current AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HealthCheck HealthCheck
         {
             get { return this._healthCheck; }

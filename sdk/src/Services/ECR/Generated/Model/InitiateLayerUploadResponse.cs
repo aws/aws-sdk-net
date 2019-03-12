@@ -41,6 +41,7 @@ namespace Amazon.ECR.Model
         /// The size, in bytes, that Amazon ECR expects future layer part uploads to be.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long PartSize
         {
             get { return this._partSize.GetValueOrDefault(); }

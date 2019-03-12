@@ -76,6 +76,7 @@ namespace Amazon.KeyManagementService.Model
         /// are reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string AliasName
         {
             get { return this._aliasName; }
@@ -119,6 +120,7 @@ namespace Amazon.KeyManagementService.Model
         /// To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TargetKeyId
         {
             get { return this._targetKeyId; }

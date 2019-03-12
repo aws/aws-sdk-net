@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Expression.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExpressionStatus Expression
         {
             get { return this._expression; }

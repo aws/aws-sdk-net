@@ -48,6 +48,7 @@ namespace Amazon.WorkSpaces.Model
         /// The identifiers of the bundles. You cannot combine this parameter with any other filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> BundleIds
         {
             get { return this._bundleIds; }
@@ -66,6 +67,7 @@ namespace Amazon.WorkSpaces.Model
         /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the snapshot to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceSnapshotName
         {
             get { return this._instanceSnapshotName; }

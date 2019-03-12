@@ -45,6 +45,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The email of a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Email
         {
             get { return this._email; }
@@ -63,6 +64,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The enrollment ARN of a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string EnrollmentId
         {
             get { return this._enrollmentId; }
@@ -99,6 +101,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The first name of a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -117,6 +120,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The last name of a user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=30)]
         public string LastName
         {
             get { return this._lastName; }

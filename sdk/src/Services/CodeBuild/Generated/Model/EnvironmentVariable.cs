@@ -42,6 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// The name or key of the environment variable.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -96,6 +97,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </important>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

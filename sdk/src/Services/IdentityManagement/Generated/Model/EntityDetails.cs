@@ -49,6 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// role).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EntityInfo EntityInfo
         {
             get { return this._entityInfo; }

@@ -64,6 +64,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Author
         {
             get { return this._author; }
@@ -86,6 +87,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Minimum length=1. Maximum length=256
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -211,6 +213,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Pattern: "[a-zA-Z0-9\\-]+";
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

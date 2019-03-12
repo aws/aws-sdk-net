@@ -42,6 +42,7 @@ namespace Amazon.FSx.Model
         /// The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=8, Max=512)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -61,6 +62,7 @@ namespace Amazon.FSx.Model
         /// is replaced by the one specified in this parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

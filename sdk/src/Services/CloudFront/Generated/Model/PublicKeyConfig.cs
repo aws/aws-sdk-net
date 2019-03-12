@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         /// A unique number that ensures that the request can't be replayed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CallerReference
         {
             get { return this._callerReference; }
@@ -81,6 +82,7 @@ namespace Amazon.CloudFront.Model
         /// field-level encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EncodedKey
         {
             get { return this._encodedKey; }
@@ -100,6 +102,7 @@ namespace Amazon.CloudFront.Model
         /// encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

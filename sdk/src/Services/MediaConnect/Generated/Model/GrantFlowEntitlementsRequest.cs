@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Entitlements. The list of entitlements that you want to
         /// grant.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<GrantEntitlementRequest> Entitlements
         {
             get { return this._entitlements; }
@@ -55,6 +56,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to grant entitlements on.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FlowArn
         {
             get { return this._flowArn; }

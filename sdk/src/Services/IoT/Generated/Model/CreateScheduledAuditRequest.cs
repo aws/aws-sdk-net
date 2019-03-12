@@ -88,6 +88,7 @@ namespace Amazon.IoT.Model
         /// or "MONTHLY". The actual start time of each audit is determined by the system.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuditFrequency Frequency
         {
             get { return this._frequency; }
@@ -106,6 +107,7 @@ namespace Amazon.IoT.Model
         /// The name you want to give to the scheduled audit. (Max. 128 chars)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ScheduledAuditName
         {
             get { return this._scheduledAuditName; }
@@ -145,6 +147,7 @@ namespace Amazon.IoT.Model
         /// to select which checks are enabled.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TargetCheckNames
         {
             get { return this._targetCheckNames; }

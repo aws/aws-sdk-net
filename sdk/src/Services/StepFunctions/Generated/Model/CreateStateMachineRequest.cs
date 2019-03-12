@@ -55,6 +55,7 @@ namespace Amazon.StepFunctions.Model
         /// States Language</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1048576)]
         public string Definition
         {
             get { return this._definition; }
@@ -98,6 +99,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }
@@ -116,6 +118,7 @@ namespace Amazon.StepFunctions.Model
         /// The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }

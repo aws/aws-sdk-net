@@ -71,6 +71,7 @@ namespace Amazon.KeyManagementService.Model
         /// Ciphertext of the data to reencrypt.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -139,6 +140,7 @@ namespace Amazon.KeyManagementService.Model
         /// To get the alias name and alias ARN, use <a>ListAliases</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string DestinationKeyId
         {
             get { return this._destinationKeyId; }
@@ -162,6 +164,7 @@ namespace Amazon.KeyManagementService.Model
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> GrantTokens
         {
             get { return this._grantTokens; }

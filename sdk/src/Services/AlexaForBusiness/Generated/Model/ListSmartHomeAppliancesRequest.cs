@@ -43,6 +43,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The maximum number of appliances to be returned, per paginated calls.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The tokens used for pagination.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -79,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The room that the appliances are associated with.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoomArn
         {
             get { return this._roomArn; }

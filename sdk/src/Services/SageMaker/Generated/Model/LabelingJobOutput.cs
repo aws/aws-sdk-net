@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// as part of automated data labeling. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string FinalActiveLearningModelArn
         {
             get { return this._finalActiveLearningModelArn; }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 bucket location of the manifest file for labeled data. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=1024)]
         public string OutputDatasetS3Uri
         {
             get { return this._outputDatasetS3Uri; }

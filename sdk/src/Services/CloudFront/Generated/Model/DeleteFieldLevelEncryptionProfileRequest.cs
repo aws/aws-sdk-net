@@ -42,6 +42,7 @@ namespace Amazon.CloudFront.Model
         /// Request the ID of the profile you want to delete from CloudFront.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

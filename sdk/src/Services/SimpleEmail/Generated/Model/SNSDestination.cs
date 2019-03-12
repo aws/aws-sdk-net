@@ -52,6 +52,7 @@ namespace Amazon.SimpleEmail.Model
         /// SNS Developer Guide</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TopicARN
         {
             get { return this._topicARN; }

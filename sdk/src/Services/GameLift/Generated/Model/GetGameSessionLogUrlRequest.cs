@@ -91,6 +91,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the game session to get logs for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }

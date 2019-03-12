@@ -58,6 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// The name or ARN of the change set that you want use to update the specified stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string ChangeSetName
         {
             get { return this._changeSetName; }
@@ -79,6 +80,7 @@ namespace Amazon.CloudFormation.Model
         /// requests to ensure that AWS CloudFormation successfully received them.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -98,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// is associated with the change set you want to execute.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string StackName
         {
             get { return this._stackName; }

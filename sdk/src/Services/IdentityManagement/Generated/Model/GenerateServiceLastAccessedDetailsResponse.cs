@@ -41,6 +41,7 @@ namespace Amazon.IdentityManagement.Model
         /// operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string JobId
         {
             get { return this._jobId; }

@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayManagementApi.Model
         /// The identifier of the connection that a specific client is using.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -60,6 +61,7 @@ namespace Amazon.ApiGatewayManagementApi.Model
         /// The data to be sent to the client specified by its connection id.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=131072)]
         public MemoryStream Data
         {
             get { return this._data; }

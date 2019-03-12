@@ -60,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the IAM role that grants access to the Amazon Kinesis stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -78,6 +79,7 @@ namespace Amazon.IoT.Model
         /// The name of the Amazon Kinesis stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StreamName
         {
             get { return this._streamName; }

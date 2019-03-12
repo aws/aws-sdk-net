@@ -42,6 +42,7 @@ namespace Amazon.KeyManagementService.Model
         /// String that contains the key ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string AliasArn
         {
             get { return this._aliasArn; }
@@ -60,6 +61,7 @@ namespace Amazon.KeyManagementService.Model
         /// String that contains the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string AliasName
         {
             get { return this._aliasName; }
@@ -78,6 +80,7 @@ namespace Amazon.KeyManagementService.Model
         /// String that contains the key identifier referred to by the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string TargetKeyId
         {
             get { return this._targetKeyId; }

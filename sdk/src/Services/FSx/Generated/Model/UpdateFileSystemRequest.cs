@@ -46,6 +46,7 @@ namespace Amazon.FSx.Model
         /// Line Interface (AWS CLI) or an AWS SDK.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -61,6 +62,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemId.
         /// </summary>
+        [AWSProperty(Required=true, Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }

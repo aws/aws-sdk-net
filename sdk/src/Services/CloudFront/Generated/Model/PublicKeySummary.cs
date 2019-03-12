@@ -62,6 +62,7 @@ namespace Amazon.CloudFront.Model
         ///  Creation time for public key information summary. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreatedTime
         {
             get { return this._createdTime.GetValueOrDefault(); }
@@ -80,6 +81,7 @@ namespace Amazon.CloudFront.Model
         ///  Encoded key for public key information summary. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string EncodedKey
         {
             get { return this._encodedKey; }
@@ -98,6 +100,7 @@ namespace Amazon.CloudFront.Model
         ///  ID for public key information summary. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -116,6 +119,7 @@ namespace Amazon.CloudFront.Model
         ///  Name for public key information summary. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

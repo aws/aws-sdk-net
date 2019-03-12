@@ -42,6 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// An array of custom attributes, such as Mutable and Name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<SchemaAttributeType> CustomAttributes
         {
             get { return this._customAttributes; }
@@ -60,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool where you want to add custom attributes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

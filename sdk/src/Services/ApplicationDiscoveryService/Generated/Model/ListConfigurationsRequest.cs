@@ -47,6 +47,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A valid configuration identified by Application Discovery Service. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConfigurationItemType ConfigurationType
         {
             get { return this._configurationType; }

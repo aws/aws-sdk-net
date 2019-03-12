@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         /// The distribution's configuration information. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DistributionConfigWithTags DistributionConfigWithTags
         {
             get { return this._distributionConfigWithTags; }

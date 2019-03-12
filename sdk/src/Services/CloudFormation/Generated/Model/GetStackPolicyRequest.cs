@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// to get.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }

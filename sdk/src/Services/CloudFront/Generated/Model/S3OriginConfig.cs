@@ -72,6 +72,7 @@ namespace Amazon.CloudFront.Model
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OriginAccessIdentity
         {
             get { return this._originAccessIdentity; }

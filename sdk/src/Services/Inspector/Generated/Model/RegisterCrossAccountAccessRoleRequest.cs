@@ -43,6 +43,7 @@ namespace Amazon.Inspector.Model
         /// to perform security assessments. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string RoleArn
         {
             get { return this._roleArn; }

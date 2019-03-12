@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Specifies the format of the records on the output stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RecordFormatType RecordFormatType
         {
             get { return this._recordFormatType; }

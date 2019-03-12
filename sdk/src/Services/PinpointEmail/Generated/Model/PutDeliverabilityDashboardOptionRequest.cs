@@ -53,6 +53,7 @@ namespace Amazon.PinpointEmail.Model
         /// then the dashboard is enabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool DashboardEnabled
         {
             get { return this._dashboardEnabled.GetValueOrDefault(); }

@@ -76,6 +76,7 @@ namespace Amazon.EC2.Model
         /// The configuration for the Spot Fleet request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SpotFleetRequestConfigData SpotFleetRequestConfig
         {
             get { return this._spotFleetRequestConfig; }

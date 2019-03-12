@@ -61,6 +61,7 @@ namespace Amazon.CloudFront.Model
         /// The streaming distribution's id.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -98,6 +99,7 @@ namespace Amazon.CloudFront.Model
         /// The streaming distribution's configuration information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamingDistributionConfig StreamingDistributionConfig
         {
             get { return this._streamingDistributionConfig; }

@@ -41,6 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// status, use GetOperationDetail.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=255)]
         public string OperationId
         {
             get { return this._operationId; }

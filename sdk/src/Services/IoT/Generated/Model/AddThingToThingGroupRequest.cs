@@ -102,6 +102,7 @@ namespace Amazon.IoT.Model
         /// The name of the group to which you are adding a thing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }
@@ -120,6 +121,7 @@ namespace Amazon.IoT.Model
         /// The name of the thing to add to a group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

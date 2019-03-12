@@ -40,6 +40,7 @@ namespace Amazon.DataPipeline.Model
         /// An array of descriptions for the specified pipelines.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PipelineDescription> PipelineDescriptionList
         {
             get { return this._pipelineDescriptionList; }

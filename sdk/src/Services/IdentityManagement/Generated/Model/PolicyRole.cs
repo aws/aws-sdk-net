@@ -54,6 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string RoleId
         {
             get { return this._roleId; }
@@ -72,6 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// The name (friendly name, not ARN) identifying the role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string RoleName
         {
             get { return this._roleName; }

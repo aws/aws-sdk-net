@@ -41,6 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The Amazon S3 bucket where the data is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -59,6 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The Amazon S3 key where the data is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string S3Key
         {
             get { return this._s3Key; }

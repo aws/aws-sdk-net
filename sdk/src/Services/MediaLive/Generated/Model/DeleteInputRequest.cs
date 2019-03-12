@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property InputId. Unique ID of the input
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputId
         {
             get { return this._inputId; }

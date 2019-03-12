@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The application associated with the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -71,6 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the environment associated with this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=40)]
         public string EnvironmentName
         {
             get { return this._environmentName; }
@@ -179,6 +181,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the configuration associated with this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string TemplateName
         {
             get { return this._templateName; }
@@ -197,6 +200,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The release label for the application version associated with this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string VersionLabel
         {
             get { return this._versionLabel; }

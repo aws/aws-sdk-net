@@ -60,6 +60,7 @@ namespace Amazon.Kinesis.Model
         /// The starting sequence number for the range.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StartingSequenceNumber
         {
             get { return this._startingSequenceNumber; }

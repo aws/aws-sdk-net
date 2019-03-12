@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the service mesh to delete the virtual node in.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string MeshName
         {
             get { return this._meshName; }
@@ -66,6 +67,7 @@ namespace Amazon.AppMesh.Model
         /// The name of the virtual node to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string VirtualNodeName
         {
             get { return this._virtualNodeName; }

@@ -45,6 +45,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// operation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string ReferenceId
         {
             get { return this._referenceId; }
@@ -85,6 +86,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// reference table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3ReferenceDataSourceDescription S3ReferenceDataSourceDescription
         {
             get { return this._s3ReferenceDataSourceDescription; }
@@ -103,6 +105,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// The in-application table name created by the specific reference data source configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string TableName
         {
             get { return this._tableName; }

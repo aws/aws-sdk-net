@@ -42,6 +42,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the data set whose contents are retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DatasetName
         {
             get { return this._datasetName; }
@@ -62,6 +63,7 @@ namespace Amazon.IoTAnalytics.Model
         /// successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=36)]
         public string VersionId
         {
             get { return this._versionId; }

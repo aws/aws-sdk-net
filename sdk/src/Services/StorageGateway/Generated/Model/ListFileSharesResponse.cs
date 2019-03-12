@@ -61,6 +61,7 @@ namespace Amazon.StorageGateway.Model
         /// field. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string Marker
         {
             get { return this._marker; }
@@ -81,6 +82,7 @@ namespace Amazon.StorageGateway.Model
         /// set of file shares. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string NextMarker
         {
             get { return this._nextMarker; }

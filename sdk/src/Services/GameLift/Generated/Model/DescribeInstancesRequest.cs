@@ -54,6 +54,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for a fleet to retrieve instance information for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -92,6 +93,7 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -112,6 +114,7 @@ namespace Amazon.GameLift.Model
         /// the result set, do not specify a value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -46,6 +46,7 @@ namespace Amazon.DataPipeline.Model
         /// The public DNS name of the task runner.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Hostname
         {
             get { return this._hostname; }
@@ -68,6 +69,7 @@ namespace Amazon.DataPipeline.Model
         /// the task runner.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TaskrunnerId
         {
             get { return this._taskrunnerId; }
@@ -89,6 +91,7 @@ namespace Amazon.DataPipeline.Model
         /// in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string WorkerGroup
         {
             get { return this._workerGroup; }

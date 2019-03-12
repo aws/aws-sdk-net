@@ -64,6 +64,7 @@ namespace Amazon.GameLift.Model
         /// must have a value set for this property.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int MaximumIndividualPlayerLatencyMilliseconds
         {
             get { return this._maximumIndividualPlayerLatencyMilliseconds.GetValueOrDefault(); }
@@ -84,6 +85,7 @@ namespace Amazon.GameLift.Model
         /// queue times out.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PolicyDurationSeconds
         {
             get { return this._policyDurationSeconds.GetValueOrDefault(); }

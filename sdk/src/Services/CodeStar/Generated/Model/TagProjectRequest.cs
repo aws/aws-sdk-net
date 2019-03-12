@@ -42,6 +42,7 @@ namespace Amazon.CodeStar.Model
         /// The ID of the project you want to add a tag to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=15)]
         public string Id
         {
             get { return this._id; }
@@ -60,6 +61,7 @@ namespace Amazon.CodeStar.Model
         /// The tags you want to add to the project.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

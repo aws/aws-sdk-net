@@ -43,6 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// ending on the <code>EndDate</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DailyVolume> DailyVolumes
         {
             get { return this._dailyVolumes; }
@@ -63,6 +64,7 @@ namespace Amazon.PinpointEmail.Model
         /// <code>StartDate</code> to the <code>EndDate</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OverallVolume OverallVolume
         {
             get { return this._overallVolume; }

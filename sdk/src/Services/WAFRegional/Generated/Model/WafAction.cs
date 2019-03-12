@@ -61,6 +61,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WafActionType Type
         {
             get { return this._type; }

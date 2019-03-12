@@ -45,6 +45,7 @@ namespace Amazon.WorkLink.Model
         /// The fleet name to display.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -63,6 +64,7 @@ namespace Amazon.WorkLink.Model
         /// A unique name for the fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string FleetName
         {
             get { return this._fleetName; }

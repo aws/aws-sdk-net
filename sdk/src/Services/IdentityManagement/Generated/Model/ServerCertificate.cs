@@ -64,6 +64,7 @@ namespace Amazon.IdentityManagement.Model
         /// The contents of the public key certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=16384)]
         public string CertificateBody
         {
             get { return this._certificateBody; }
@@ -82,6 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// The contents of the public key certificate chain.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }
@@ -100,6 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// The meta information of the server certificate, such as its name, path, ID, and ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServerCertificateMetadata ServerCertificateMetadata
         {
             get { return this._serverCertificateMetadata; }

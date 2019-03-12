@@ -43,6 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Kinesis Data Analytics application name.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -61,6 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CloudWatchLoggingOption CloudWatchLoggingOption
         {
             get { return this._cloudWatchLoggingOption; }
@@ -80,6 +82,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// version ID using <a>DescribeApplication</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long CurrentApplicationVersionId
         {
             get { return this._currentApplicationVersionId.GetValueOrDefault(); }

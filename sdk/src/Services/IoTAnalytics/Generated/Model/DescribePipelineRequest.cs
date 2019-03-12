@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The name of the pipeline whose information is retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string PipelineName
         {
             get { return this._pipelineName; }

@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -55,6 +56,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CampaignId. The unique ID of the campaign.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CampaignId
         {
             get { return this._campaignId; }
@@ -70,6 +72,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property WriteCampaignRequest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public WriteCampaignRequest WriteCampaignRequest
         {
             get { return this._writeCampaignRequest; }

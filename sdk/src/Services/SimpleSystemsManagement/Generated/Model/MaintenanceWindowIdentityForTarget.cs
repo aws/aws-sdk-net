@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the Maintenance Window.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=20)]
         public string WindowId
         {
             get { return this._windowId; }

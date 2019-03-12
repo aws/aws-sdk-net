@@ -74,6 +74,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Attribute Data Types</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DataType
         {
             get { return this._dataType; }

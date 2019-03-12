@@ -40,6 +40,7 @@ namespace Amazon.DLM.Model
         /// The number of snapshots to keep for each volume, up to a maximum of 1000.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }

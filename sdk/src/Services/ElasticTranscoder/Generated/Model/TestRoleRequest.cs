@@ -55,6 +55,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// to read from this bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InputBucket
         {
             get { return this._inputBucket; }
@@ -74,6 +75,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// action attempts to read from this bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OutputBucket
         {
             get { return this._outputBucket; }
@@ -93,6 +95,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// test.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Role
         {
             get { return this._role; }
@@ -112,6 +115,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// you want the action to send a test notification to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=30)]
         public List<string> Topics
         {
             get { return this._topics; }

@@ -238,6 +238,7 @@ namespace Amazon.StepFunctions.Model
         /// The id of the event. Events are numbered sequentially, starting at one.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Id
         {
             get { return this._id.GetValueOrDefault(); }
@@ -544,6 +545,7 @@ namespace Amazon.StepFunctions.Model
         /// The date and time the event occurred.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }
@@ -562,6 +564,7 @@ namespace Amazon.StepFunctions.Model
         /// The type of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HistoryEventType Type
         {
             get { return this._type; }

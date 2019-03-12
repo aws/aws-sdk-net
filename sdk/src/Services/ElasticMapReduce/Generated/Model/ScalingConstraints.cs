@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// are not allowed to grow. Scale-out activities will not add instances beyond this boundary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MaxCapacity
         {
             get { return this._maxCapacity.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// this boundary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MinCapacity
         {
             get { return this._minCapacity.GetValueOrDefault(); }

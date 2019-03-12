@@ -81,6 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -99,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -119,6 +121,7 @@ namespace Amazon.AutoScaling.Model
         /// when you created the lifecycle hook.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string LifecycleActionToken
         {
             get { return this._lifecycleActionToken; }
@@ -137,6 +140,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the lifecycle hook.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string LifecycleHookName
         {
             get { return this._lifecycleHookName; }

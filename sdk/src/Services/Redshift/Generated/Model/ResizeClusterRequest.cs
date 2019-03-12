@@ -98,6 +98,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the cluster to resize.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -152,6 +153,7 @@ namespace Amazon.Redshift.Model
         /// The new number of nodes for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int NumberOfNodes
         {
             get { return this._numberOfNodes.GetValueOrDefault(); }

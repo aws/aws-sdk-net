@@ -92,6 +92,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Name. The name of the job template you are modifying
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -142,6 +143,7 @@ namespace Amazon.MediaConvert.Model
         /// the service begins processing your job to the time it completes the transcode or encounters
         /// an error.
         /// </summary>
+        [AWSProperty(Min=10, Max=600)]
         public long StatusUpdateIntervalInSecs
         {
             get { return this._statusUpdateIntervalInSecs.GetValueOrDefault(); }

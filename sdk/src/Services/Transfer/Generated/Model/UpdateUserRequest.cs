@@ -55,6 +55,7 @@ namespace Amazon.Transfer.Model
         /// </code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string HomeDirectory
         {
             get { return this._homeDirectory; }
@@ -119,6 +120,7 @@ namespace Amazon.Transfer.Model
         /// is assigned to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServerId
         {
             get { return this._serverId; }
@@ -139,6 +141,7 @@ namespace Amazon.Transfer.Model
         /// to your SFTP server.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UserName
         {
             get { return this._userName; }

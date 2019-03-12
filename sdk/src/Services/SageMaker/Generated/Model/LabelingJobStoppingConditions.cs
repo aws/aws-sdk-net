@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of objects that can be labeled by human workers.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxHumanLabeledObjectCount
         {
             get { return this._maxHumanLabeledObjectCount.GetValueOrDefault(); }
@@ -61,6 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of input data objects that should be labeled.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxPercentageOfInputDatasetLabeled
         {
             get { return this._maxPercentageOfInputDatasetLabeled.GetValueOrDefault(); }

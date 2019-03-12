@@ -41,6 +41,7 @@ namespace Amazon.DataPipeline.Model
         /// The attributes of the parameter object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ParameterAttribute> Attributes
         {
             get { return this._attributes; }
@@ -59,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the parameter object. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }

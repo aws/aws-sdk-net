@@ -60,6 +60,7 @@ namespace Amazon.CodeCommit.Model
         /// Information about the pull request events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<PullRequestEvent> PullRequestEvents
         {
             get { return this._pullRequestEvents; }

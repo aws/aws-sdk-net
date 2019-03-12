@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model
         /// group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OriginGroupFailoverCriteria FailoverCriteria
         {
             get { return this._failoverCriteria; }
@@ -65,6 +66,7 @@ namespace Amazon.CloudFront.Model
         /// The origin group's ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -83,6 +85,7 @@ namespace Amazon.CloudFront.Model
         /// A complex type that contains information about the origins in an origin group.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OriginGroupMembers Members
         {
             get { return this._members; }

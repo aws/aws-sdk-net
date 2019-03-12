@@ -46,6 +46,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// A unique, user-specified identifier for this request that ensures idempotency. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=150)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -64,6 +65,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The description for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -100,6 +102,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The calendar ARN for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string ProviderCalendarId
         {
             get { return this._providerCalendarId; }
@@ -118,6 +121,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name for the room.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string RoomName
         {
             get { return this._roomName; }

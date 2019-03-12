@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) for the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=37, Max=1024)]
         public string StreamArn
         {
             get { return this._streamArn; }
@@ -97,6 +98,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The DynamoDB table with which the stream is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

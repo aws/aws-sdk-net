@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }
@@ -86,6 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// value that was passed in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<VirtualMFADevice> VirtualMFADevices
         {
             get { return this._virtualMFADevices; }

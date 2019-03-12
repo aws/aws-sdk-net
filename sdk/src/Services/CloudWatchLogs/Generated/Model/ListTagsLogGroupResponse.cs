@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The tags for the log group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

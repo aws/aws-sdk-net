@@ -46,6 +46,7 @@ namespace Amazon.WorkDocs.Model
         /// API actions, as in accessing the API using AWS credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8199)]
         public string AuthenticationToken
         {
             get { return this._authenticationToken; }
@@ -64,6 +65,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the document.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string DocumentId
         {
             get { return this._documentId; }
@@ -82,6 +84,7 @@ namespace Amazon.WorkDocs.Model
         /// The maximum number of items to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=999)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }
@@ -100,6 +103,7 @@ namespace Amazon.WorkDocs.Model
         /// The marker for the next set of results. This marker was received from a previous call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Marker
         {
             get { return this._marker; }
@@ -118,6 +122,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the document version.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string VersionId
         {
             get { return this._versionId; }

@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         /// Name of the SerDe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -79,6 +80,7 @@ namespace Amazon.Glue.Model
         /// Usually the class that implements the SerDe. An example is: <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SerializationLibrary
         {
             get { return this._serializationLibrary; }

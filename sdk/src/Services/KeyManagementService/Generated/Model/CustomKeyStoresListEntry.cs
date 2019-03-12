@@ -47,6 +47,7 @@ namespace Amazon.KeyManagementService.Model
         /// key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=19, Max=24)]
         public string CloudHsmClusterId
         {
             get { return this._cloudHsmClusterId; }
@@ -172,6 +173,7 @@ namespace Amazon.KeyManagementService.Model
         /// A unique identifier for the custom key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string CustomKeyStoreId
         {
             get { return this._customKeyStoreId; }
@@ -190,6 +192,7 @@ namespace Amazon.KeyManagementService.Model
         /// The user-specified friendly name for the custom key store.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string CustomKeyStoreName
         {
             get { return this._customKeyStoreName; }
@@ -210,6 +213,7 @@ namespace Amazon.KeyManagementService.Model
         /// file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
         public string TrustAnchorCertificate
         {
             get { return this._trustAnchorCertificate; }

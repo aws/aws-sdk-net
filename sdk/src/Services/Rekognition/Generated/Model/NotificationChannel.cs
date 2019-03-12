@@ -43,6 +43,7 @@ namespace Amazon.Rekognition.Model
         /// Amazon SNS topic. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -61,6 +62,7 @@ namespace Amazon.Rekognition.Model
         /// The Amazon SNS topic to which Amazon Rekognition to posts the completion status.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SNSTopicArn
         {
             get { return this._snsTopicArn; }

@@ -71,6 +71,7 @@ namespace Amazon.MTurk.Model
         ///  The ID of the HIT type whose notification specification is being updated. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string HITTypeId
         {
             get { return this._hitTypeId; }

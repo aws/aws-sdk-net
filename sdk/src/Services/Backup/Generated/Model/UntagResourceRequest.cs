@@ -44,6 +44,7 @@ namespace Amazon.Backup.Model
         /// of the tagged resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -62,6 +63,7 @@ namespace Amazon.Backup.Model
         /// A list of keys to identify which key-value tags to remove from a resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> TagKeyList
         {
             get { return this._tagKeyList; }

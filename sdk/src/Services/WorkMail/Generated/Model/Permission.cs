@@ -43,6 +43,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the entity (user or group) to which the permissions are granted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=256)]
         public string GranteeId
         {
             get { return this._granteeId; }
@@ -61,6 +62,7 @@ namespace Amazon.WorkMail.Model
         /// The type of entity (user, group) of the entity referred to in GranteeId.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemberType GranteeType
         {
             get { return this._granteeType; }
@@ -84,6 +86,7 @@ namespace Amazon.WorkMail.Model
         /// the mailbox.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> PermissionValues
         {
             get { return this._permissionValues; }

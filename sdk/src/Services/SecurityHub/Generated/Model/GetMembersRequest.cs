@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// the details. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

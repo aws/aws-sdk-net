@@ -59,6 +59,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The Amazon Resource Name (ARN) of the resulting scaling policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1600)]
         public string PolicyARN
         {
             get { return this._policyARN; }

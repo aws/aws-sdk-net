@@ -43,6 +43,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId.
         /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -58,6 +59,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetName.
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string BudgetName
         {
             get { return this._budgetName; }
@@ -73,6 +75,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property MaxResults.
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -88,6 +91,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NextToken.
         /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
         public string NextToken
         {
             get { return this._nextToken; }

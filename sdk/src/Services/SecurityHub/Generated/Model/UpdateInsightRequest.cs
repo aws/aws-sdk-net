@@ -80,6 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// The ARN of the insight that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InsightArn
         {
             get { return this._insightArn; }

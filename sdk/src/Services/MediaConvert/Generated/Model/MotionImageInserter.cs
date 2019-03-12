@@ -71,6 +71,7 @@ namespace Amazon.MediaConvert.Model
         /// there can be only 10 images in the sequence, with the last image being overlay_9.png.
         /// But if the first image is overlay_00.png, there can be 100 images in the sequence.
         /// </summary>
+        [AWSProperty(Min=14, Max=1285)]
         public string Input
         {
             get { return this._input; }
@@ -146,6 +147,7 @@ namespace Amazon.MediaConvert.Model
         /// Find job-wide and input timecode configuration settings in your JSON job settings
         /// specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
         /// </summary>
+        [AWSProperty(Min=11, Max=11)]
         public string StartTime
         {
             get { return this._startTime; }

@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         /// The hard limit for the <code>ulimit</code> type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int HardLimit
         {
             get { return this._hardLimit.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Batch.Model
         /// The <code>type</code> of the <code>ulimit</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -78,6 +80,7 @@ namespace Amazon.Batch.Model
         /// The soft limit for the <code>ulimit</code> type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int SoftLimit
         {
             get { return this._softLimit.GetValueOrDefault(); }

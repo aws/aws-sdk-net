@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. The detectorID that specifies the GuardDuty
         /// service whose ThreatIntelSets you want to list.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DetectorId
         {
             get { return this._detectorId; }
@@ -58,6 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// maximum number of items that you want in the response. The default value is 7. The
         /// maximum value is 7.
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

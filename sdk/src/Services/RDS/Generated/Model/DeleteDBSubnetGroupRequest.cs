@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBSubnetGroupName
         {
             get { return this._dbSubnetGroupName; }

@@ -71,6 +71,7 @@ namespace Amazon.ACMPCA.Model
         /// </code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=200)]
         public string CertificateAuthorityArn
         {
             get { return this._certificateAuthorityArn; }
@@ -90,6 +91,7 @@ namespace Amazon.ACMPCA.Model
         /// anywhere from 7 to 30 days, with 30 being the default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=30)]
         public int PermanentDeletionTimeInDays
         {
             get { return this._permanentDeletionTimeInDays.GetValueOrDefault(); }

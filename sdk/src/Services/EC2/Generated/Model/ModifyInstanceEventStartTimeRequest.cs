@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         /// The ID of the event whose date and time you are modifying.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceEventId
         {
             get { return this._instanceEventId; }
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// The ID of the instance with the scheduled event.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -79,6 +81,7 @@ namespace Amazon.EC2.Model
         /// The new date and time when the event will take place.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime NotBefore
         {
             get { return this._notBefore.GetValueOrDefault(); }

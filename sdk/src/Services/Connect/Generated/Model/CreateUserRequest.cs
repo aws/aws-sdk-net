@@ -119,6 +119,7 @@ namespace Amazon.Connect.Model
         /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -158,6 +159,7 @@ namespace Amazon.Connect.Model
         /// <code>AutoAccept</code>, <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public UserPhoneConfig PhoneConfig
         {
             get { return this._phoneConfig; }
@@ -176,6 +178,7 @@ namespace Amazon.Connect.Model
         /// The unique identifier for the routing profile to assign to the user created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RoutingProfileId
         {
             get { return this._routingProfileId; }
@@ -194,6 +197,7 @@ namespace Amazon.Connect.Model
         /// The unique identifier of the security profile to assign to the user created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SecurityProfileIds
         {
             get { return this._securityProfileIds; }
@@ -214,6 +218,7 @@ namespace Amazon.Connect.Model
         /// include up to 64 characters from [a-zA-Z0-9_-.\@]+.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string Username
         {
             get { return this._username; }

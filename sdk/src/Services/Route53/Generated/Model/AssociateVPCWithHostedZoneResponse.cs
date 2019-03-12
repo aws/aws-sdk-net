@@ -41,6 +41,7 @@ namespace Amazon.Route53.Model
         /// A complex type that describes the changes made to your hosted zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChangeInfo ChangeInfo
         {
             get { return this._changeInfo; }

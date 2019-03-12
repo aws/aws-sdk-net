@@ -45,6 +45,7 @@ namespace Amazon.GameLift.Model
         /// Amazon S3 bucket identifier. This is the name of your S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -63,6 +64,7 @@ namespace Amazon.GameLift.Model
         /// Name of the zip file containing your build files. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Key
         {
             get { return this._key; }
@@ -82,6 +84,7 @@ namespace Amazon.GameLift.Model
         /// for the access role that allows Amazon GameLift to access your S3 bucket.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string RoleArn
         {
             get { return this._roleArn; }

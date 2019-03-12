@@ -41,6 +41,7 @@ namespace Amazon.Neptune.Model
         /// This parameter is not currently supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -59,6 +60,7 @@ namespace Amazon.Neptune.Model
         /// This parameter is not currently supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Values
         {
             get { return this._values; }

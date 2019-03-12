@@ -54,6 +54,7 @@ namespace Amazon.Neptune.Model
         /// Example: <code>my-cluster-replica1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }

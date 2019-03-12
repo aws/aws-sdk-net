@@ -91,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The ID of the customer gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CustomerGatewayId
         {
             get { return this._customerGatewayId; }
@@ -146,6 +147,7 @@ namespace Amazon.EC2.Model
         /// The type of VPN connection (<code>ipsec.1</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

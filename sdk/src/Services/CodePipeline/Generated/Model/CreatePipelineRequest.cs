@@ -41,6 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// Represents the structure of actions and stages to be performed in the pipeline. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PipelineDeclaration Pipeline
         {
             get { return this._pipeline; }

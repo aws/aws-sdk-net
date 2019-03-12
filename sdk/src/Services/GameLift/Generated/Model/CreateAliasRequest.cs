@@ -89,6 +89,7 @@ namespace Amazon.GameLift.Model
         /// Human-readable description of an alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -108,6 +109,7 @@ namespace Amazon.GameLift.Model
         /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -126,6 +128,7 @@ namespace Amazon.GameLift.Model
         /// Object that specifies the fleet and routing type to use for the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RoutingStrategy RoutingStrategy
         {
             get { return this._routingStrategy; }

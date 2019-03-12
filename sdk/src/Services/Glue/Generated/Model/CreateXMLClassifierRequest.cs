@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// An identifier of the data format that the classifier matches.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Classification
         {
             get { return this._classification; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// The name of the classifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory.Model
         /// Attributes update structure.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ObjectAttributeUpdate> AttributeUpdates
         {
             get { return this._attributeUpdates; }
@@ -59,6 +60,7 @@ namespace Amazon.CloudDirectory.Model
         /// Reference that identifies the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ObjectReference ObjectReference
         {
             get { return this._objectReference; }

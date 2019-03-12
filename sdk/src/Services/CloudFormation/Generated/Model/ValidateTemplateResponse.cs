@@ -107,6 +107,7 @@ namespace Amazon.CloudFormation.Model
         /// The description found within the template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }

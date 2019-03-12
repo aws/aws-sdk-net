@@ -66,6 +66,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the interval in milliseconds between checkpoint operations. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long CheckpointInterval
         {
             get { return this._checkpointInterval.GetValueOrDefault(); }
@@ -85,6 +86,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// behavior. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ConfigurationType ConfigurationType
         {
             get { return this._configurationType; }
@@ -108,6 +110,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Flink Documentation</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public long MinPauseBetweenCheckpoints
         {
             get { return this._minPauseBetweenCheckpoints.GetValueOrDefault(); }

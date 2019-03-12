@@ -65,6 +65,7 @@ namespace Amazon.MTurk.Model
         /// The ID of the Worker to unblock.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string WorkerId
         {
             get { return this._workerId; }

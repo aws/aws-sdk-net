@@ -58,6 +58,7 @@ namespace Amazon.SageMaker.Model
         /// specified, default value is 1 day. Maximum value is 28 days.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxRuntimeInSeconds
         {
             get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }

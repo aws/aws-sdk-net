@@ -42,6 +42,7 @@ namespace Amazon.WAFRegional.Model
         /// <code>Rule</code> after you create it.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -68,6 +69,7 @@ namespace Amazon.WAFRegional.Model
         ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string RuleId
         {
             get { return this._ruleId; }

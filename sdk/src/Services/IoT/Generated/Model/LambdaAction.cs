@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionArn
         {
             get { return this._functionArn; }

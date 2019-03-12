@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         /// specify the target type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Attribute> Attributes
         {
             get { return this._attributes; }

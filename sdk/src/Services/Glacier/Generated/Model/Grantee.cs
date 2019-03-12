@@ -98,6 +98,7 @@ namespace Amazon.Glacier.Model
         /// Type of grantee
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Type Type
         {
             get { return this._type; }

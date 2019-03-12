@@ -82,6 +82,7 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=79)]
         public string BackupId
         {
             get { return this._backupId; }
@@ -380,6 +381,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  The name of the server from which the backup was made. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

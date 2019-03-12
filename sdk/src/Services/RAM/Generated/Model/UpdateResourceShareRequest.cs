@@ -100,6 +100,7 @@ namespace Amazon.RAM.Model
         /// The Amazon Resource Name (ARN) of the resource share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceShareArn
         {
             get { return this._resourceShareArn; }

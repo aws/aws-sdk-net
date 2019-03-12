@@ -68,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the command you want to cancel.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string CommandId
         {
             get { return this._commandId; }
@@ -87,6 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// provided, the command is canceled on every instance on which it was requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<string> InstanceIds
         {
             get { return this._instanceIds; }

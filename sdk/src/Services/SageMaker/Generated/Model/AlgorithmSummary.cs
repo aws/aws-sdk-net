@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon Resource Name (ARN) of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AlgorithmArn
         {
             get { return this._algorithmArn; }
@@ -62,6 +63,7 @@ namespace Amazon.SageMaker.Model
         /// A brief description of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string AlgorithmDescription
         {
             get { return this._algorithmDescription; }
@@ -80,6 +82,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the algorithm that is described by the summary.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string AlgorithmName
         {
             get { return this._algorithmName; }
@@ -98,6 +101,7 @@ namespace Amazon.SageMaker.Model
         /// The overall status of the algorithm.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AlgorithmStatus AlgorithmStatus
         {
             get { return this._algorithmStatus; }
@@ -116,6 +120,7 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the algorithm was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }

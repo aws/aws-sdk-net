@@ -43,6 +43,7 @@ namespace Amazon.Backup.Model
         /// are created. They consist of lowercase letters, numbers, and hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BackupVaultName
         {
             get { return this._backupVaultName; }

@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FollowPoint. Identifies whether this action starts relative
         /// to the start or relative to the end of the reference action.
         /// </summary>
+        [AWSProperty(Required=true)]
         public FollowPoint FollowPoint
         {
             get { return this._followPoint; }
@@ -55,6 +56,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ReferenceActionName. The action name of another action
         /// that this one refers to.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReferenceActionName
         {
             get { return this._referenceActionName; }

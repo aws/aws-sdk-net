@@ -72,6 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationArns
         {
             get { return this._notificationArns; }
@@ -92,6 +93,7 @@ namespace Amazon.ServiceCatalog.Model
         /// product, use <a>ListLaunchPaths</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PathId
         {
             get { return this._pathId; }
@@ -110,6 +112,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The plan identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PlanId
         {
             get { return this._planId; }
@@ -164,6 +167,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProductId
         {
             get { return this._productId; }
@@ -182,6 +186,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }
@@ -218,6 +223,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisionProductId
         {
             get { return this._provisionProductId; }
@@ -236,6 +242,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The user-friendly name of the provisioned product.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ProvisionProductName
         {
             get { return this._provisionProductName; }
@@ -290,6 +297,7 @@ namespace Amazon.ServiceCatalog.Model
         /// One or more tags.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }

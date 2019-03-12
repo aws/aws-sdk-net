@@ -67,6 +67,7 @@ namespace Amazon.GameLift.Model
         /// Unique identifier for the alias you want to resolve.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AliasId
         {
             get { return this._aliasId; }

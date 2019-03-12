@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// The URI for accessing the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Uri
         {
             get { return this._uri; }

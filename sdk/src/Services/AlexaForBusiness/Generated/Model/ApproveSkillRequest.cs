@@ -42,6 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The unique identifier of the skill.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SkillId
         {
             get { return this._skillId; }

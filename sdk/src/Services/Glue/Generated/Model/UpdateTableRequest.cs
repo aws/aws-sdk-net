@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         /// ID is used by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string CatalogId
         {
             get { return this._catalogId; }
@@ -64,6 +65,7 @@ namespace Amazon.Glue.Model
         /// this name is entirely lowercase.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -102,6 +104,7 @@ namespace Amazon.Glue.Model
         /// An updated <code>TableInput</code> object to define the metadata table in the catalog.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TableInput TableInput
         {
             get { return this._tableInput; }

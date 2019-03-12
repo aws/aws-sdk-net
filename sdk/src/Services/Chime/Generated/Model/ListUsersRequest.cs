@@ -45,6 +45,7 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -63,6 +64,7 @@ namespace Amazon.Chime.Model
         /// The maximum number of results to return in a single call. Defaults to 100.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

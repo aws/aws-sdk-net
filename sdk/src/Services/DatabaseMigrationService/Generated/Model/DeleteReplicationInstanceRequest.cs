@@ -48,6 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The Amazon Resource Name (ARN) of the replication instance to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReplicationInstanceArn
         {
             get { return this._replicationInstanceArn; }

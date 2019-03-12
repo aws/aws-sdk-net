@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         /// IP address of the endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Address
         {
             get { return this._address; }
@@ -59,6 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Endpoint cache time to live (TTL) value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long CachePeriodInMinutes
         {
             get { return this._cachePeriodInMinutes.GetValueOrDefault(); }

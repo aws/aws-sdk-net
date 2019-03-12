@@ -41,6 +41,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The Amazon Resource Name (ARN) of the nested application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -59,6 +60,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The semantic version of the nested application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SemanticVersion
         {
             get { return this._semanticVersion; }

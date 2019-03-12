@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DomainName.
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName
         {
             get { return this._domainName; }
@@ -58,6 +59,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Expression.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Expression Expression
         {
             get { return this._expression; }

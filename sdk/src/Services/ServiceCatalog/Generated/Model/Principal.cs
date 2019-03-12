@@ -41,6 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The ARN of the principal (IAM user, role, or group).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
         public string PrincipalARN
         {
             get { return this._principalARN; }

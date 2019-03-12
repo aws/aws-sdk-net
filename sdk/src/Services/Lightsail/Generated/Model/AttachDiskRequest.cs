@@ -52,6 +52,7 @@ namespace Amazon.Lightsail.Model
         /// The unique Lightsail disk name (e.g., <code>my-disk</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskName
         {
             get { return this._diskName; }
@@ -70,6 +71,7 @@ namespace Amazon.Lightsail.Model
         /// The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DiskPath
         {
             get { return this._diskPath; }
@@ -88,6 +90,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the Lightsail instance where you want to utilize the storage disk.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceName
         {
             get { return this._instanceName; }

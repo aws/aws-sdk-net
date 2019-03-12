@@ -54,6 +54,7 @@ namespace Amazon.SimpleEmail.Model
         /// The name of the rule set to clone.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string OriginalRuleSetName
         {
             get { return this._originalRuleSetName; }
@@ -86,6 +87,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RuleSetName
         {
             get { return this._ruleSetName; }

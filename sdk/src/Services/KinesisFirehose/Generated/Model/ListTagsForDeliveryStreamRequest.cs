@@ -44,6 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the delivery stream whose tags you want to list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string DeliveryStreamName
         {
             get { return this._deliveryStreamName; }
@@ -63,6 +64,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartTagKey
         {
             get { return this._exclusiveStartTagKey; }
@@ -84,6 +86,7 @@ namespace Amazon.KinesisFirehose.Model
         /// the last key in the response. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

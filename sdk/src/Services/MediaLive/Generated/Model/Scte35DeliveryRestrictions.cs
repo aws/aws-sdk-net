@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ArchiveAllowedFlag. Corresponds to SCTE-35 archive_allowed_flag.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35ArchiveAllowedFlag ArchiveAllowedFlag
         {
             get { return this._archiveAllowedFlag; }
@@ -58,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DeviceRestrictions. Corresponds to SCTE-35 device_restrictions
         /// parameter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35DeviceRestrictions DeviceRestrictions
         {
             get { return this._deviceRestrictions; }
@@ -74,6 +76,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NoRegionalBlackoutFlag. Corresponds to SCTE-35 no_regional_blackout_flag
         /// parameter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35NoRegionalBlackoutFlag NoRegionalBlackoutFlag
         {
             get { return this._noRegionalBlackoutFlag; }
@@ -90,6 +93,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property WebDeliveryAllowedFlag. Corresponds to SCTE-35 web_delivery_allowed_flag
         /// parameter.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35WebDeliveryAllowedFlag WebDeliveryAllowedFlag
         {
             get { return this._webDeliveryAllowedFlag; }

@@ -60,6 +60,7 @@ namespace Amazon.IoT.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

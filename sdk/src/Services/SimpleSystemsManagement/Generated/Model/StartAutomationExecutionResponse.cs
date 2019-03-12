@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The unique ID of a newly scheduled automation execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string AutomationExecutionId
         {
             get { return this._automationExecutionId; }

@@ -54,6 +54,7 @@ namespace Amazon.Lambda.Model
         /// A description of the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -91,6 +92,7 @@ namespace Amazon.Lambda.Model
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=140)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -109,6 +111,7 @@ namespace Amazon.Lambda.Model
         /// The function version that the alias invokes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string FunctionVersion
         {
             get { return this._functionVersion; }
@@ -127,6 +130,7 @@ namespace Amazon.Lambda.Model
         /// The name of the alias.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

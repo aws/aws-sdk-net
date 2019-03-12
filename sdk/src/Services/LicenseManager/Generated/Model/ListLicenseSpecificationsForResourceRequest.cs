@@ -80,6 +80,7 @@ namespace Amazon.LicenseManager.Model
         /// ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

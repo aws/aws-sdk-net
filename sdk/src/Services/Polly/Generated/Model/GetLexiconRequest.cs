@@ -43,6 +43,7 @@ namespace Amazon.Polly.Model
         /// Name of the lexicon.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

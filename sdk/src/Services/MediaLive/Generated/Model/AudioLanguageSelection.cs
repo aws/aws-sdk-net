@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LanguageCode. Selects a specific three-letter language
         /// code from within an audio source.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LanguageCode
         {
             get { return this._languageCode; }

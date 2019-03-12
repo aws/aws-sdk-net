@@ -66,6 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A list of job flows to be shutdown.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> JobFlowIds
         {
             get { return this._jobFlowIds; }

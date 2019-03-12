@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of data objects labeled by a human worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int HumanLabeled
         {
             get { return this._humanLabeled.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of data objects that need to be labeled by a human worker.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int PendingHuman
         {
             get { return this._pendingHuman.GetValueOrDefault(); }
@@ -78,6 +80,7 @@ namespace Amazon.SageMaker.Model
         /// The total number of tasks in the labeling job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int Total
         {
             get { return this._total.GetValueOrDefault(); }

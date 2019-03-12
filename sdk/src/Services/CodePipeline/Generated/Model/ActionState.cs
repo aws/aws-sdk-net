@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         /// The name of the action.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ActionName
         {
             get { return this._actionName; }
@@ -81,6 +82,7 @@ namespace Amazon.CodePipeline.Model
         /// group details page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string EntityUrl
         {
             get { return this._entityUrl; }
@@ -117,6 +119,7 @@ namespace Amazon.CodePipeline.Model
         /// A URL link for more information about the revision, such as a commit details page.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string RevisionUrl
         {
             get { return this._revisionUrl; }

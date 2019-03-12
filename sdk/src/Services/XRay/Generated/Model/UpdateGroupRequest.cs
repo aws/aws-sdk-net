@@ -43,6 +43,7 @@ namespace Amazon.XRay.Model
         /// The updated filter expression defining criteria by which to group traces.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string FilterExpression
         {
             get { return this._filterExpression; }
@@ -61,6 +62,7 @@ namespace Amazon.XRay.Model
         /// The ARN that was generated upon creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=400)]
         public string GroupARN
         {
             get { return this._groupARN; }
@@ -79,6 +81,7 @@ namespace Amazon.XRay.Model
         /// The case-sensitive name of the group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string GroupName
         {
             get { return this._groupName; }

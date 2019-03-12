@@ -68,6 +68,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// values with <a>ListFragments</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1000)]
         public List<string> Fragments
         {
             get { return this._fragments; }
@@ -86,6 +87,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The name of the stream from which to retrieve fragment media.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string StreamName
         {
             get { return this._streamName; }

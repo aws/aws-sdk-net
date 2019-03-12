@@ -41,6 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The ARN of the address book to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AddressBookArn
         {
             get { return this._addressBookArn; }

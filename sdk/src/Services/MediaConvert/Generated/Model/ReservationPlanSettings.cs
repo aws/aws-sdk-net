@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Commitment. The length of the term of your reserved queue
         /// pricing plan commitment.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Commitment Commitment
         {
             get { return this._commitment; }
@@ -59,6 +60,7 @@ namespace Amazon.MediaConvert.Model
         /// end of the term. When your term is auto renewed, you extend your commitment by 12
         /// months from the auto renew date. You can cancel this commitment.
         /// </summary>
+        [AWSProperty(Required=true)]
         public RenewalType RenewalType
         {
             get { return this._renewalType; }
@@ -80,6 +82,7 @@ namespace Amazon.MediaConvert.Model
         /// new commitment begins when you purchase the additional capacity. You can't cancel
         /// your commitment or revert to your original commitment after you increase the capacity.
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ReservedSlots
         {
             get { return this._reservedSlots.GetValueOrDefault(); }

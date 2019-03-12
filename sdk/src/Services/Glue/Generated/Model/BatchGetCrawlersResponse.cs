@@ -59,6 +59,7 @@ namespace Amazon.Glue.Model
         /// A list of crawlers not found.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> CrawlersNotFound
         {
             get { return this._crawlersNotFound; }

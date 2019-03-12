@@ -41,6 +41,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the static IP to detach from the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StaticIpName
         {
             get { return this._staticIpName; }

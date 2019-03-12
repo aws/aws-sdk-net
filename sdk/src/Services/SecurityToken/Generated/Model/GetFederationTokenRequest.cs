@@ -164,6 +164,7 @@ namespace Amazon.SecurityToken.Model
         /// defaults to one hour.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=900, Max=129600)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -190,6 +191,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=32)]
         public string Name
         {
             get { return this._name; }
@@ -241,6 +243,7 @@ namespace Amazon.SecurityToken.Model
         /// for GetFederationToken</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string Policy
         {
             get { return this._policy; }

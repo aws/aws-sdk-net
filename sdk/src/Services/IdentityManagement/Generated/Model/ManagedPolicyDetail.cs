@@ -61,6 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Arn.
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -141,6 +142,7 @@ namespace Amazon.IdentityManagement.Model
         /// A friendly description of the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -229,6 +231,7 @@ namespace Amazon.IdentityManagement.Model
         /// Identifiers</a> in the <i>Using IAM</i> guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=16, Max=128)]
         public string PolicyId
         {
             get { return this._policyId; }
@@ -247,6 +250,7 @@ namespace Amazon.IdentityManagement.Model
         /// The friendly name (not ARN) identifying the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

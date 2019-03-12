@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Scte35DescriptorSettings. SCTE-35 Descriptor Settings.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scte35DescriptorSettings Scte35DescriptorSettings
         {
             get { return this._scte35DescriptorSettings; }

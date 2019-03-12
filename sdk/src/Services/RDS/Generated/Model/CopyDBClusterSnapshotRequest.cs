@@ -285,6 +285,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster-snapshot1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SourceDBClusterSnapshotIdentifier
         {
             get { return this._sourceDBClusterSnapshotIdentifier; }
@@ -339,6 +340,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster-snapshot2</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string TargetDBClusterSnapshotIdentifier
         {
             get { return this._targetDBClusterSnapshotIdentifier; }

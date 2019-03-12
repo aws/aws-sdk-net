@@ -90,6 +90,7 @@ namespace Amazon.MediaConvert.Model
         /// to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier,
         /// is an identifier for a set of data in an MPEG-2 transport stream container.
         /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
         public int Pid
         {
             get { return this._pid.GetValueOrDefault(); }
@@ -106,6 +107,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ProgramNumber. Selects a specific program from within a
         /// multi-program transport stream. Note that Quad 4K is not currently supported.
         /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int ProgramNumber
         {
             get { return this._programNumber.GetValueOrDefault(); }

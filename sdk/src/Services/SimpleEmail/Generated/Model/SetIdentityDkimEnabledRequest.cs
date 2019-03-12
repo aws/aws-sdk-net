@@ -71,6 +71,7 @@ namespace Amazon.SimpleEmail.Model
         /// enable DKIM signing for this identity; <code>false</code> to disable it. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool DkimEnabled
         {
             get { return this._dkimEnabled.GetValueOrDefault(); }
@@ -89,6 +90,7 @@ namespace Amazon.SimpleEmail.Model
         /// The identity for which DKIM signing should be enabled or disabled.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Identity
         {
             get { return this._identity; }

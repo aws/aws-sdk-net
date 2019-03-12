@@ -120,6 +120,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Name of the in-application stream configured as output.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string Name
         {
             get { return this._name; }
@@ -138,6 +139,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// A unique identifier for the output configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string OutputId
         {
             get { return this._outputId; }

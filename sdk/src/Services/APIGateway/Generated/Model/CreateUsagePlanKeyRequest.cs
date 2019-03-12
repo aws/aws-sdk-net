@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyId
         {
             get { return this._keyId; }
@@ -61,6 +62,7 @@ namespace Amazon.APIGateway.Model
         /// [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string KeyType
         {
             get { return this._keyType; }
@@ -80,6 +82,7 @@ namespace Amazon.APIGateway.Model
         /// the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string UsagePlanId
         {
             get { return this._usagePlanId; }

@@ -45,6 +45,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The ARN assigned to the portfolio.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=150)]
         public string ARN
         {
             get { return this._arn; }
@@ -81,6 +82,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The description of the portfolio.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -99,6 +101,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name to use for display purposes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -117,6 +120,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The portfolio identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }
@@ -135,6 +139,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The name of the portfolio provider.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ProviderName
         {
             get { return this._providerName; }

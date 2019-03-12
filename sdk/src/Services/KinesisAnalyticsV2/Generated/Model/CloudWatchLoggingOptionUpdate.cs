@@ -41,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The ID of the CloudWatch logging option to update
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public string CloudWatchLoggingOptionId
         {
             get { return this._cloudWatchLoggingOptionId; }
@@ -59,6 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string LogStreamARNUpdate
         {
             get { return this._logStreamARNUpdate; }

@@ -90,6 +90,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string EndpointUrl
         {
             get { return this._endpointUrl; }

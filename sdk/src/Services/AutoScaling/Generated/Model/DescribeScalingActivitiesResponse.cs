@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// are described first.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Activity> Activities
         {
             get { return this._activities; }

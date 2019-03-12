@@ -49,6 +49,7 @@ namespace Amazon.StepFunctions.Model
         /// for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ExecutionArn
         {
             get { return this._executionArn; }

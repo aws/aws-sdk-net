@@ -102,6 +102,7 @@ namespace Amazon.Comprehend.Model
         /// The word that was recognized in the source text.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Text
         {
             get { return this._text; }

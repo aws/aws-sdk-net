@@ -42,6 +42,7 @@ namespace Amazon.DLM.Model
         /// The description of the lifecycle policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }

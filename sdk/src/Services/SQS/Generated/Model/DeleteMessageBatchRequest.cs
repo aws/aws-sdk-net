@@ -81,6 +81,7 @@ namespace Amazon.SQS.Model
         /// A list of receipt handles for the messages to be deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DeleteMessageBatchRequestEntry> Entries
         {
             get { return this._entries; }
@@ -103,6 +104,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }

@@ -52,6 +52,7 @@ namespace Amazon.Route53.Model
         /// or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=2)]
         public string ContinentCode
         {
             get { return this._continentCode; }
@@ -70,6 +71,7 @@ namespace Amazon.Route53.Model
         /// The two-letter code for the country.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2)]
         public string CountryCode
         {
             get { return this._countryCode; }
@@ -89,6 +91,7 @@ namespace Amazon.Route53.Model
         /// States.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=3)]
         public string SubdivisionCode
         {
             get { return this._subdivisionCode; }

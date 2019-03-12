@@ -48,6 +48,7 @@ namespace Amazon.DataPipeline.Model
         /// but not a mix of both types.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ObjectIds
         {
             get { return this._objectIds; }
@@ -66,6 +67,7 @@ namespace Amazon.DataPipeline.Model
         /// The ID of the pipeline that contains the objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PipelineId
         {
             get { return this._pipelineId; }
@@ -86,6 +88,7 @@ namespace Amazon.DataPipeline.Model
         /// <code>RERUN</code>, or <code>MARK_FINISHED</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string Status
         {
             get { return this._status; }

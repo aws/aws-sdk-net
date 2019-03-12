@@ -107,6 +107,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Key
         {
             get { return this._key; }

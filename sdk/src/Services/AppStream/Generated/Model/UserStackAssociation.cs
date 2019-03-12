@@ -43,6 +43,7 @@ namespace Amazon.AppStream.Model
         /// The authentication type for the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }
@@ -80,6 +81,7 @@ namespace Amazon.AppStream.Model
         /// The name of the stack that is associated with the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string StackName
         {
             get { return this._stackName; }
@@ -98,6 +100,7 @@ namespace Amazon.AppStream.Model
         /// The email address of the user who is associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }

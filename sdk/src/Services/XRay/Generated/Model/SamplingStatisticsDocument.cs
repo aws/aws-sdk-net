@@ -47,6 +47,7 @@ namespace Amazon.XRay.Model
         /// The number of requests recorded with borrowed reservoir quota.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0)]
         public int BorrowCount
         {
             get { return this._borrowCount.GetValueOrDefault(); }
@@ -65,6 +66,7 @@ namespace Amazon.XRay.Model
         /// A unique identifier for the service in hexadecimal.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=24, Max=24)]
         public string ClientID
         {
             get { return this._clientID; }
@@ -83,6 +85,7 @@ namespace Amazon.XRay.Model
         /// The number of requests that matched the rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int RequestCount
         {
             get { return this._requestCount.GetValueOrDefault(); }
@@ -101,6 +104,7 @@ namespace Amazon.XRay.Model
         /// The name of the sampling rule.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string RuleName
         {
             get { return this._ruleName; }
@@ -119,6 +123,7 @@ namespace Amazon.XRay.Model
         /// The number of requests recorded.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0)]
         public int SampledCount
         {
             get { return this._sampledCount.GetValueOrDefault(); }
@@ -137,6 +142,7 @@ namespace Amazon.XRay.Model
         /// The current time.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

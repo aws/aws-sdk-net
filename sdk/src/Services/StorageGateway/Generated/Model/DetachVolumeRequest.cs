@@ -67,6 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the volume to detach from the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string VolumeARN
         {
             get { return this._volumeARN; }

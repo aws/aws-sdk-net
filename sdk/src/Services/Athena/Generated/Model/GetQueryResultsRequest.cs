@@ -45,6 +45,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of results (rows) to return in this request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -63,6 +64,7 @@ namespace Amazon.Athena.Model
         /// The token that specifies where to start pagination if a previous request was truncated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -81,6 +83,7 @@ namespace Amazon.Athena.Model
         /// The unique ID of the query execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueryExecutionId
         {
             get { return this._queryExecutionId; }

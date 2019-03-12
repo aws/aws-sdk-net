@@ -59,6 +59,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <code>InputAttributes</code> list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExportAttributeName
         {
             get { return this._exportAttributeName; }
@@ -120,6 +121,7 @@ namespace Amazon.OpsWorksCM.Model
         /// The name of the server from which you are exporting the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string ServerName
         {
             get { return this._serverName; }

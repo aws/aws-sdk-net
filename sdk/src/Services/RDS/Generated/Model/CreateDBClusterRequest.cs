@@ -248,6 +248,7 @@ namespace Amazon.RDS.Model
         /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -388,6 +389,7 @@ namespace Amazon.RDS.Model
         /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Engine
         {
             get { return this._engine; }

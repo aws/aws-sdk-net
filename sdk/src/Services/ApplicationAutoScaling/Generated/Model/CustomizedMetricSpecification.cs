@@ -91,6 +91,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The name of the metric. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -109,6 +110,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The namespace of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -127,6 +129,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The statistic of the metric.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricStatistic Statistic
         {
             get { return this._statistic; }

@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents the settings used to enable point in time recovery.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PointInTimeRecoverySpecification PointInTimeRecoverySpecification
         {
             get { return this._pointInTimeRecoverySpecification; }
@@ -76,6 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }

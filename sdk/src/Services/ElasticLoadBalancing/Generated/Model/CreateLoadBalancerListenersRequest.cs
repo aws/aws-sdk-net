@@ -66,6 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The listeners.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Listener> Listeners
         {
             get { return this._listeners; }
@@ -84,6 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// The name of the load balancer.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LoadBalancerName
         {
             get { return this._loadBalancerName; }

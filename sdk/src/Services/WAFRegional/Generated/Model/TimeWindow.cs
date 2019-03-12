@@ -57,6 +57,7 @@ namespace Amazon.WAFRegional.Model
         /// range in the previous three hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
@@ -78,6 +79,7 @@ namespace Amazon.WAFRegional.Model
         /// any time range in the previous three hours.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }

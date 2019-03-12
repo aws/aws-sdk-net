@@ -134,6 +134,7 @@ namespace Amazon.CloudTrail.Model
         /// The number of events to return. Possible values are 1 through 50. The default is 50.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

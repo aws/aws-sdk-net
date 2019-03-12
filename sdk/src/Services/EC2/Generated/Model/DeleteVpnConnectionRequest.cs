@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// The ID of the VPN connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VpnConnectionId
         {
             get { return this._vpnConnectionId; }

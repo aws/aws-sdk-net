@@ -77,6 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A path to a JAR file run during the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=10280)]
         public string Jar
         {
             get { return this._jar; }
@@ -96,6 +97,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// should specify a Main-Class in its manifest file.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
         public string MainClass
         {
             get { return this._mainClass; }

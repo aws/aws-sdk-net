@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// The list of activities.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ActivityListItem> Activities
         {
             get { return this._activities; }
@@ -63,6 +64,7 @@ namespace Amazon.StepFunctions.Model
         /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

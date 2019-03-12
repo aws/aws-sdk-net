@@ -42,6 +42,7 @@ namespace Amazon.Kinesis.Model
         /// The current number of shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
         public int CurrentShardCount
         {
             get { return this._currentShardCount.GetValueOrDefault(); }
@@ -60,6 +61,7 @@ namespace Amazon.Kinesis.Model
         /// The name of the stream.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string StreamName
         {
             get { return this._streamName; }
@@ -78,6 +80,7 @@ namespace Amazon.Kinesis.Model
         /// The updated number of shards.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
         public int TargetShardCount
         {
             get { return this._targetShardCount.GetValueOrDefault(); }

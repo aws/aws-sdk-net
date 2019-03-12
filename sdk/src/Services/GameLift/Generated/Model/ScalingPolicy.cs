@@ -112,6 +112,7 @@ namespace Amazon.GameLift.Model
         /// scaling event is triggered.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int EvaluationPeriods
         {
             get { return this._evaluationPeriods.GetValueOrDefault(); }
@@ -225,6 +226,7 @@ namespace Amazon.GameLift.Model
         /// to be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }

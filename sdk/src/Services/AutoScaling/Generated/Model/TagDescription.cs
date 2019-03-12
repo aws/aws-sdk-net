@@ -44,6 +44,7 @@ namespace Amazon.AutoScaling.Model
         /// The tag key.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -116,6 +117,7 @@ namespace Amazon.AutoScaling.Model
         /// The tag value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

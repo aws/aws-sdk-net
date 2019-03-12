@@ -63,6 +63,7 @@ namespace Amazon.CloudHSM.Model
         /// The new certificate for the client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=600, Max=2400)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -81,6 +82,7 @@ namespace Amazon.CloudHSM.Model
         /// The ARN of the client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClientArn
         {
             get { return this._clientArn; }

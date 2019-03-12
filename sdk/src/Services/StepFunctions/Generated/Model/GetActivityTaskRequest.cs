@@ -61,6 +61,7 @@ namespace Amazon.StepFunctions.Model
         /// you create the task using <a>CreateActivity</a>.)
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ActivityArn
         {
             get { return this._activityArn; }
@@ -80,6 +81,7 @@ namespace Amazon.StepFunctions.Model
         /// assigned to. This name is used when it is logged in the execution history.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=80)]
         public string WorkerName
         {
             get { return this._workerName; }

@@ -77,6 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the domain that contains the task list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Domain
         {
             get { return this._domain; }
@@ -95,6 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// The name of the task list.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public TaskList TaskList
         {
             get { return this._taskList; }

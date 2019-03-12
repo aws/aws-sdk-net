@@ -61,6 +61,7 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property JobType.
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobType JobType
         {
             get { return this._jobType; }
@@ -76,6 +77,7 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property Manifest.
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Manifest
         {
             get { return this._manifest; }
@@ -106,6 +108,7 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property ValidateOnly.
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool ValidateOnly
         {
             get { return this._validateOnly.GetValueOrDefault(); }

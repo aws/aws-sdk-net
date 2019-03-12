@@ -150,6 +150,7 @@ namespace Amazon.Batch.Model
         /// The job definition that is used by this job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobDefinition
         {
             get { return this._jobDefinition; }
@@ -168,6 +169,7 @@ namespace Amazon.Batch.Model
         /// The ID for the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobId
         {
             get { return this._jobId; }
@@ -186,6 +188,7 @@ namespace Amazon.Batch.Model
         /// The name of the job.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobName
         {
             get { return this._jobName; }
@@ -204,6 +207,7 @@ namespace Amazon.Batch.Model
         /// The Amazon Resource Name (ARN) of the job queue with which the job is associated.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string JobQueue
         {
             get { return this._jobQueue; }
@@ -298,6 +302,7 @@ namespace Amazon.Batch.Model
         /// state).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long StartedAt
         {
             get { return this._startedAt.GetValueOrDefault(); }
@@ -323,6 +328,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public JobStatus Status
         {
             get { return this._status; }

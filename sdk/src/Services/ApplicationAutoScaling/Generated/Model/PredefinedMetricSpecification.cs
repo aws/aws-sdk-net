@@ -43,6 +43,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// to Spot fleet requests and ECS services.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetricType PredefinedMetricType
         {
             get { return this._predefinedMetricType; }
@@ -79,6 +80,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=1023)]
         public string ResourceLabel
         {
             get { return this._resourceLabel; }

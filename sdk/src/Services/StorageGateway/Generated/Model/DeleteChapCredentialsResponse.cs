@@ -41,6 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// The iSCSI initiator that connects to the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string InitiatorName
         {
             get { return this._initiatorName; }
@@ -59,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

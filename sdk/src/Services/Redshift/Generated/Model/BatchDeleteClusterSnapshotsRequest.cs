@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// A list of identifiers for the snapshots that you want to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<DeleteClusterSnapshotMessage> Identifiers
         {
             get { return this._identifiers; }

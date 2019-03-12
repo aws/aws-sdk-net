@@ -50,6 +50,7 @@ namespace Amazon.ConfigService.Model
         /// The SQL query <code>SELECT</code> command.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=4096)]
         public string Expression
         {
             get { return this._expression; }
@@ -68,6 +69,7 @@ namespace Amazon.ConfigService.Model
         /// The maximum number of query results returned on each page. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

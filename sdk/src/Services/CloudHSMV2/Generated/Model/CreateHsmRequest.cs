@@ -44,6 +44,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Zones, use <a>DescribeClusters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudHSMV2.Model
         /// The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterId
         {
             get { return this._clusterId; }

@@ -66,6 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// . 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> JobFlowIds
         {
             get { return this._jobFlowIds; }
@@ -86,6 +87,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// job-flow error.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public bool TerminationProtected
         {
             get { return this._terminationProtected.GetValueOrDefault(); }

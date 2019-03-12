@@ -111,6 +111,7 @@ namespace Amazon.Glue.Model
         /// The name of the job definition to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -129,6 +130,7 @@ namespace Amazon.Glue.Model
         /// The ID of a previous JobRun to retry.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string JobRunId
         {
             get { return this._jobRunId; }
@@ -203,6 +205,7 @@ namespace Amazon.Glue.Model
         /// The name of the SecurityConfiguration structure to be used with this job run.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string SecurityConfiguration
         {
             get { return this._securityConfiguration; }
@@ -223,6 +226,7 @@ namespace Amazon.Glue.Model
         /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int Timeout
         {
             get { return this._timeout.GetValueOrDefault(); }

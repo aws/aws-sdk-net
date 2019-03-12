@@ -90,6 +90,7 @@ namespace Amazon.ConfigService.Model
         /// The list of names of AWS Config rules that you want to run evaluations for.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public List<string> ConfigRuleNames
         {
             get { return this._configRuleNames; }

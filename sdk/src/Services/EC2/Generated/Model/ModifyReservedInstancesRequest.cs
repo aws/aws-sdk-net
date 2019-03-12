@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// The IDs of the Reserved Instances to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> ReservedInstancesIds
         {
             get { return this._reservedInstancesIds; }
@@ -90,6 +91,7 @@ namespace Amazon.EC2.Model
         /// The configuration settings for the Reserved Instances to modify.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<ReservedInstancesConfiguration> TargetConfigurations
         {
             get { return this._targetConfigurations; }

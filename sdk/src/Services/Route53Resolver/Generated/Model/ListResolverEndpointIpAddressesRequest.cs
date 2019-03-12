@@ -45,6 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// up to 100 IP addresses. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -88,6 +89,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the resolver endpoint that you want to get IP addresses for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ResolverEndpointId
         {
             get { return this._resolverEndpointId; }

@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         /// The ID of the build.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1)]
         public string Id
         {
             get { return this._id; }

@@ -70,6 +70,7 @@ namespace Amazon.Neptune.Model
         /// snapshot, set this value to <code>restore</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -88,6 +89,7 @@ namespace Amazon.Neptune.Model
         /// The identifier for the DB cluster snapshot to modify the attributes for.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterSnapshotIdentifier
         {
             get { return this._dbClusterSnapshotIdentifier; }

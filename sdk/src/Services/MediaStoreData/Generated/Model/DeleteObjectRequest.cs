@@ -42,6 +42,7 @@ namespace Amazon.MediaStoreData.Model
         /// &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=900)]
         public string Path
         {
             get { return this._path; }

@@ -75,6 +75,7 @@ namespace Amazon.KeyManagementService.Model
         /// Ciphertext to be decrypted. The blob includes metadata.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -119,6 +120,7 @@ namespace Amazon.KeyManagementService.Model
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<string> GrantTokens
         {
             get { return this._grantTokens; }

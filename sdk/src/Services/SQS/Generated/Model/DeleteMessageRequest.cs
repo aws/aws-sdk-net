@@ -86,6 +86,7 @@ namespace Amazon.SQS.Model
         /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueueUrl
         {
             get { return this._queueUrl; }
@@ -104,6 +105,7 @@ namespace Amazon.SQS.Model
         /// The receipt handle associated with the message to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ReceiptHandle
         {
             get { return this._receiptHandle; }

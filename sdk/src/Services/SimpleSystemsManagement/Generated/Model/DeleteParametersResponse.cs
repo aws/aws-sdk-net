@@ -41,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The names of the deleted parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> DeletedParameters
         {
             get { return this._deletedParameters; }
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The names of parameters that weren't deleted because the parameters are not valid.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> InvalidParameters
         {
             get { return this._invalidParameters; }

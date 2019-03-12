@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         /// A list of job summaries that match the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<JobSummary> JobSummaryList
         {
             get { return this._jobSummaryList; }

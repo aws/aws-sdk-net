@@ -43,6 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The maximum number of import jobs you want the request to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// which can be used to return the next set of import jobs in the list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string PaginationToken
         {
             get { return this._paginationToken; }
@@ -80,6 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool ID for the user pool that the users are being imported into.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=55)]
         public string UserPoolId
         {
             get { return this._userPoolId; }

@@ -89,6 +89,7 @@ namespace Amazon.Lightsail.Model
         /// The name of the database from which to get events.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string RelationalDatabaseName
         {
             get { return this._relationalDatabaseName; }

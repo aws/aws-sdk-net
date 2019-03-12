@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string Marker
         {
             get { return this._marker; }

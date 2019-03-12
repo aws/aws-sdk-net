@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The thing group to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ThingGroupName
         {
             get { return this._thingGroupName; }
@@ -80,6 +81,7 @@ namespace Amazon.IoT.Model
         /// The thing group properties.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ThingGroupProperties ThingGroupProperties
         {
             get { return this._thingGroupProperties; }

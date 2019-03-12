@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string ApplicationName
         {
             get { return this._applicationName; }
@@ -60,6 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The lifecycle configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ApplicationResourceLifecycleConfig ResourceLifecycleConfig
         {
             get { return this._resourceLifecycleConfig; }

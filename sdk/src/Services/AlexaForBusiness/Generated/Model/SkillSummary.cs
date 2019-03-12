@@ -81,6 +81,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The name of the skill.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string SkillName
         {
             get { return this._skillName; }
@@ -99,6 +100,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether the skill is publicly available or is a private skill.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public SkillType SkillType
         {
             get { return this._skillType; }

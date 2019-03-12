@@ -67,6 +67,7 @@ namespace Amazon.Organizations.Model
         /// account owner.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Notes
         {
             get { return this._notes; }
@@ -110,6 +111,7 @@ namespace Amazon.Organizations.Model
         ///  <code>--target Id=diego@example.com,Type=EMAIL</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public HandshakeParty Target
         {
             get { return this._target; }

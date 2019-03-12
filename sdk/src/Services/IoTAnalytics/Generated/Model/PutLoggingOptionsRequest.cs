@@ -49,6 +49,7 @@ namespace Amazon.IoTAnalytics.Model
         /// The new values of the AWS IoT Analytics logging options.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public LoggingOptions LoggingOptions
         {
             get { return this._loggingOptions; }

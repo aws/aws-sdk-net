@@ -48,6 +48,7 @@ namespace Amazon.FMS.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string ManagedServiceData
         {
             get { return this._managedServiceData; }
@@ -66,6 +67,7 @@ namespace Amazon.FMS.Model
         /// The service that the policy is using to protect the resources. This value is <code>WAF</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SecurityServiceType Type
         {
             get { return this._type; }

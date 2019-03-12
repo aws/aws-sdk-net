@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Branch.
         /// </summary>
+        [AWSProperty(Required=true)]
         public Branch Branch
         {
             get { return this._branch; }

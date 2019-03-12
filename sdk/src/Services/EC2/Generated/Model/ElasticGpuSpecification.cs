@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         /// The type of Elastic Graphics accelerator.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Type
         {
             get { return this._type; }

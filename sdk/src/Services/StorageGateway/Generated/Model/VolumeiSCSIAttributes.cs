@@ -62,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// The logical disk number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int LunNumber
         {
             get { return this._lunNumber.GetValueOrDefault(); }
@@ -116,6 +117,7 @@ namespace Amazon.StorageGateway.Model
         /// The Amazon Resource Name (ARN) of the volume target.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=50, Max=800)]
         public string TargetARN
         {
             get { return this._targetARN; }

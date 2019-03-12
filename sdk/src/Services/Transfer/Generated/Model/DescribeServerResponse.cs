@@ -41,6 +41,7 @@ namespace Amazon.Transfer.Model
         /// specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DescribedServer Server
         {
             get { return this._server; }

@@ -50,6 +50,7 @@ namespace Amazon.MediaStore.Model
         /// The name of the container that you want to assign the object lifecycle policy to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContainerName
         {
             get { return this._containerName; }
@@ -68,6 +69,7 @@ namespace Amazon.MediaStore.Model
         /// The object lifecycle policy to apply to the container.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=8192)]
         public string LifecyclePolicy
         {
             get { return this._lifecyclePolicy; }

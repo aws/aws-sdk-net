@@ -79,6 +79,7 @@ namespace Amazon.CloudFormation.Model
         /// The unique ID of the change set.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ChangeSetId
         {
             get { return this._changeSetId; }
@@ -97,6 +98,7 @@ namespace Amazon.CloudFormation.Model
         /// The time at which the stack was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime CreationTime
         {
             get { return this._creationTime.GetValueOrDefault(); }
@@ -133,6 +135,7 @@ namespace Amazon.CloudFormation.Model
         /// A user-defined description associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -243,6 +246,7 @@ namespace Amazon.CloudFormation.Model
         /// SNS topic ARNs to which stack related events are published.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=5)]
         public List<string> NotificationARNs
         {
             get { return this._notificationARNs; }
@@ -324,6 +328,7 @@ namespace Amazon.CloudFormation.Model
         /// this role's credentials to make calls on your behalf.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleARN
         {
             get { return this._roleARN; }
@@ -403,6 +408,7 @@ namespace Amazon.CloudFormation.Model
         /// The name associated with the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string StackName
         {
             get { return this._stackName; }
@@ -421,6 +427,7 @@ namespace Amazon.CloudFormation.Model
         /// Current status of the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StackStatus StackStatus
         {
             get { return this._stackStatus; }
@@ -457,6 +464,7 @@ namespace Amazon.CloudFormation.Model
         /// A list of <code>Tag</code>s that specify information about the stack.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<Tag> Tags
         {
             get { return this._tags; }
@@ -475,6 +483,7 @@ namespace Amazon.CloudFormation.Model
         /// The amount of time within which stack creation should complete.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public int TimeoutInMinutes
         {
             get { return this._timeoutInMinutes.GetValueOrDefault(); }

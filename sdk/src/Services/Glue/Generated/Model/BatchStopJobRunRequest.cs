@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         /// The name of the job definition for which to stop job runs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string JobName
         {
             get { return this._jobName; }
@@ -60,6 +61,7 @@ namespace Amazon.Glue.Model
         /// A list of the JobRunIds that should be stopped for that job definition.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<string> JobRunIds
         {
             get { return this._jobRunIds; }

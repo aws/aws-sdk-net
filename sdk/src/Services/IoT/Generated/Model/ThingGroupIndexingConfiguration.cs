@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         /// Thing group indexing mode.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ThingGroupIndexingMode ThingGroupIndexingMode
         {
             get { return this._thingGroupIndexingMode; }

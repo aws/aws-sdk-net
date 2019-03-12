@@ -41,6 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// the self-service action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<FailedServiceActionAssociation> FailedServiceActionAssociations
         {
             get { return this._failedServiceActionAssociations; }
