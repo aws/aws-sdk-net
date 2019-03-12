@@ -123,7 +123,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Possible values: PREPARING | ACTIVE | EXPIRED
+        /// Possible values: PREPARING | ACTIVE | EXPIRED 
         /// </para>
         /// </summary>
         public Status Status

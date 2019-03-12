@@ -38,6 +38,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private List<string> _requiredCapabilities = new List<string>();
         private bool? _resourcesSupported;
         private string _semanticVersion;
+        private string _sourceCodeArchiveUrl;
         private string _sourceCodeUrl;
         private string _templateUrl;
 
@@ -106,7 +107,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+        /// The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY,
+        /// and CAPABILITY_AUTO_EXPAND.
         /// </para>
         /// 
         /// <para>
@@ -130,14 +132,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
+        /// Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.
+        /// </para>
+        /// 
+        /// <para>
         /// If your application template contains any of the above resources, we recommend that
         /// you review all permissions associated with the application before deploying. If you
         /// don't specify this parameter for an application that requires capabilities, the call
         /// will fail.
-        /// </para>
-        /// 
-        /// <para>
-        /// Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY 
         /// </para>
         /// </summary>
         public List<string> RequiredCapabilities
@@ -194,9 +196,33 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceCodeArchiveUrl. 
+        /// <para>
+        /// A link to the S3 object that contains the ZIP archive of the source code for this
+        /// version of your application.
+        /// </para>
+        /// 
+        /// <para>
+        /// Maximum size 50 MB
+        /// </para>
+        /// </summary>
+        public string SourceCodeArchiveUrl
+        {
+            get { return this._sourceCodeArchiveUrl; }
+            set { this._sourceCodeArchiveUrl = value; }
+        }
+
+        // Check to see if SourceCodeArchiveUrl property is set
+        internal bool IsSetSourceCodeArchiveUrl()
+        {
+            return this._sourceCodeArchiveUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceCodeUrl. 
         /// <para>
-        /// A link to a public repository for the source code of your application.
+        /// A link to a public repository for the source code of your application, for example
+        /// the URL of a specific GitHub commit.
         /// </para>
         /// </summary>
         public string SourceCodeUrl

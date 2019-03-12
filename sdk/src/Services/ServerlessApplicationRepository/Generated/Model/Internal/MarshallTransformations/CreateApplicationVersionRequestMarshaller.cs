@@ -72,6 +72,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSourceCodeArchiveUrl())
+                {
+                    context.Writer.WritePropertyName("sourceCodeArchiveUrl");
+                    context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
+                }
+
                 if(publicRequest.IsSetSourceCodeUrl())
                 {
                     context.Writer.WritePropertyName("sourceCodeUrl");

@@ -58,7 +58,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// An AWS account ID, or * to make the application public.
+        /// An array of AWS account IDs, or * to make the application public.
         /// </para>
         /// </summary>
         public List<string> Principals

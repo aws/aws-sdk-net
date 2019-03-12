@@ -98,7 +98,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property SourceCodeUrl. 
         /// <para>
-        /// A link to a public repository for the source code of your application.
+        /// A link to a public repository for the source code of your application, for example
+        /// the URL of a specific GitHub commit.
         /// </para>
         /// </summary>
         public string SourceCodeUrl

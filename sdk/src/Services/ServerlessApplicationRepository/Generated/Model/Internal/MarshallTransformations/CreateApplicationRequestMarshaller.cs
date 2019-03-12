@@ -131,6 +131,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.SemanticVersion);
                 }
 
+                if(publicRequest.IsSetSourceCodeArchiveUrl())
+                {
+                    context.Writer.WritePropertyName("sourceCodeArchiveUrl");
+                    context.Writer.Write(publicRequest.SourceCodeArchiveUrl);
+                }
+
                 if(publicRequest.IsSetSourceCodeUrl())
                 {
                     context.Writer.WritePropertyName("sourceCodeUrl");

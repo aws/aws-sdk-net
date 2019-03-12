@@ -87,6 +87,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     response.SemanticVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceCodeArchiveUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceCodeArchiveUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceCodeUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
