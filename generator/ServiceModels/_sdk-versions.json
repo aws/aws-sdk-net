@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.473.0",
+    "ProductVersion" : "3.3.474.0",
     "CoreVersion"    : "3.3.32.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1009,7 +1009,7 @@
             "InPreview"               : false
         },
         "ServerlessApplicationRepository" : {
-            "Version" : "3.3.4.24",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"

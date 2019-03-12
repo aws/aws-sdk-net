@@ -1,3 +1,7 @@
+### 3.3.474.0 (2019-03-12 18:09 UTC)
+* ServerlessApplicationRepository (3.3.5.0)
+	* The AWS Serverless Application Repository now supports associating a ZIP source code archive with versions of an application.
+
 ### 3.3.473.0 (2019-03-11 18:07 UTC)
 * CostExplorer (3.3.11.0)
 	* The only change in this release is to make TimePeriod a required parameter in GetCostAndUsageRequest.
