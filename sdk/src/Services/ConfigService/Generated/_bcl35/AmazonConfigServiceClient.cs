@@ -43,7 +43,7 @@ namespace Amazon.ConfigService
     /// between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
     /// instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI),
     /// or a security group. For a complete list of resources currently supported by AWS Config,
-    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+    /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
     /// AWS Resources</a>.
     /// </para>
     ///  
@@ -53,10 +53,10 @@ namespace Amazon.ConfigService
     /// reference guide contains documentation for the AWS Config API and the AWS CLI commands
     /// that you can use to manage AWS Config. The AWS Config API uses the Signature Version
     /// 4 protocol for signing requests. For more information about how to sign a request
-    /// with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// with this protocol, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a>. For detailed information about AWS Config features
     /// and their associated actions or commands, as well as how to work with AWS Management
-    /// Console, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
+    /// Console, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
     /// Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -886,6 +886,63 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteRemediationConfiguration
+
+        /// <summary>
+        /// Deletes the remediation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemediationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRemediationConfiguration service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
+        /// You have specified AWS config rule without a remediation configuration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
+        public virtual DeleteRemediationConfigurationResponse DeleteRemediationConfiguration(DeleteRemediationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRemediationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRemediationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRemediationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRemediationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemediationConfiguration operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRemediationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRemediationConfiguration(DeleteRemediationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRemediationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRemediationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRemediationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRemediationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteRemediationConfigurationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
+        public virtual DeleteRemediationConfigurationResponse EndDeleteRemediationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRemediationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRetentionConfiguration
 
         /// <summary>
@@ -1604,9 +1661,10 @@ namespace Amazon.ConfigService
         #region  DescribeConfigurationAggregatorSourcesStatus
 
         /// <summary>
-        /// Returns status information for sources within an aggregator. The status includes information
-        /// about the last time AWS Config aggregated data from source accounts or AWS Config
-        /// failed to aggregate data from source accounts with the related error code or message.
+        /// Returns status information for sources within an aggregator. The status includes
+        /// information about the last time AWS Config verified authorization between the source
+        /// account and an aggregator account. In case of a failure, the status contains the related
+        /// error code or message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
         /// 
@@ -2080,6 +2138,120 @@ namespace Amazon.ConfigService
         public virtual DescribePendingAggregationRequestsResponse EndDescribePendingAggregationRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePendingAggregationRequestsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeRemediationConfigurations
+
+        /// <summary>
+        /// Returns the details of one or more remediation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRemediationConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRemediationConfigurations service method, as returned by ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations">REST API Reference for DescribeRemediationConfigurations Operation</seealso>
+        public virtual DescribeRemediationConfigurationsResponse DescribeRemediationConfigurations(DescribeRemediationConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRemediationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRemediationConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRemediationConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRemediationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRemediationConfigurations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRemediationConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations">REST API Reference for DescribeRemediationConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRemediationConfigurations(DescribeRemediationConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRemediationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRemediationConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRemediationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRemediationConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeRemediationConfigurationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations">REST API Reference for DescribeRemediationConfigurations Operation</seealso>
+        public virtual DescribeRemediationConfigurationsResponse EndDescribeRemediationConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRemediationConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeRemediationExecutionStatus
+
+        /// <summary>
+        /// Provides a detailed view of a Remediation Execution for a set of resources including
+        /// state, timestamps for when steps for the remediation execution happen, and any error
+        /// messages for steps that have failed. When you specify the limit and the next token,
+        /// you receive a paginated response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRemediationExecutionStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRemediationExecutionStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
+        /// You have specified AWS config rule without a remediation configuration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
+        public virtual DescribeRemediationExecutionStatusResponse DescribeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRemediationExecutionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRemediationExecutionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRemediationExecutionStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRemediationExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRemediationExecutionStatus operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRemediationExecutionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRemediationExecutionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRemediationExecutionStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRemediationExecutionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRemediationExecutionStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeRemediationExecutionStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
+        public virtual DescribeRemediationExecutionStatusResponse EndDescribeRemediationExecutionStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRemediationExecutionStatusResponse>(asyncResult);
         }
 
         #endregion
@@ -3157,7 +3329,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
         /// <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
-        /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
         /// AWS Managed Config Rules</a>.
         /// </para>
         ///  
@@ -3174,7 +3346,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that AWS Config supports is 50.
+        /// The maximum number of rules that AWS Config supports is 150.
         /// </para>
         ///  
         /// <para>
@@ -3183,7 +3355,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+        /// For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
         /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3607,6 +3779,83 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutRemediationConfigurations
+
+        /// <summary>
+        /// Adds or updates the remediation configuration with a specific AWS Config rule with
+        /// the selected target or action. The API creates the <code>RemediationConfiguration</code>
+        /// object for the AWS Config rule. AWS Config rule must already exist for you to add
+        /// a remeduation configuration. The target (SSM document) must exist and have permissions
+        /// to use the target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the PutRemediationConfigurations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
+        public virtual PutRemediationConfigurationsResponse PutRemediationConfigurations(PutRemediationConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRemediationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRemediationConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<PutRemediationConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRemediationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRemediationConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginPutRemediationConfigurations(PutRemediationConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRemediationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRemediationConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRemediationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRemediationConfigurations.</param>
+        /// 
+        /// <returns>Returns a  PutRemediationConfigurationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
+        public virtual PutRemediationConfigurationsResponse EndPutRemediationConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutRemediationConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutRetentionConfiguration
 
         /// <summary>
@@ -3897,6 +4146,86 @@ namespace Amazon.ConfigService
         public virtual StartConfigurationRecorderResponse EndStartConfigurationRecorder(IAsyncResult asyncResult)
         {
             return EndInvoke<StartConfigurationRecorderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartRemediationExecution
+
+        /// <summary>
+        /// Runs an on-demand remediation for the specified AWS Config rules against the last
+        /// known remediation configuration. It runs an execution against the current state of
+        /// your resources. Remediation execution is asynchronous.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify up to 100 resource keys per request. An existing StartRemediationExecution
+        /// call for the specified resource keys must complete before you can call the API again.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRemediationExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartRemediationExecution service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRemediationConfigurationException">
+        /// You have specified AWS config rule without a remediation configuration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
+        public virtual StartRemediationExecutionResponse StartRemediationExecution(StartRemediationExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRemediationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRemediationExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartRemediationExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRemediationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRemediationExecution operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartRemediationExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartRemediationExecution(StartRemediationExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRemediationExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRemediationExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartRemediationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartRemediationExecution.</param>
+        /// 
+        /// <returns>Returns a  StartRemediationExecutionResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
+        public virtual StartRemediationExecutionResponse EndStartRemediationExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartRemediationExecutionResponse>(asyncResult);
         }
 
         #endregion

@@ -51,7 +51,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
     /// <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
-    /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
+    /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
     /// AWS Managed Config Rules</a>.
     /// </para>
     ///  
@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// The maximum number of rules that AWS Config supports is 50.
+    /// The maximum number of rules that AWS Config supports is 150.
     /// </para>
     ///  
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+    /// For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
     /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
     /// </para>
     /// </summary>

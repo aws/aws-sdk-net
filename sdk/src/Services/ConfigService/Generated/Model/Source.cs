@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
         /// For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
-        /// is a managed rule. To reference a managed rule, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
         /// AWS Managed Config Rules</a>.
         /// </para>
         ///  

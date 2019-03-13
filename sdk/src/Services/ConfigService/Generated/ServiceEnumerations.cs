@@ -731,6 +731,164 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type RemediationExecutionState.
+    /// </summary>
+    public class RemediationExecutionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RemediationExecutionState
+        /// </summary>
+        public static readonly RemediationExecutionState FAILED = new RemediationExecutionState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RemediationExecutionState
+        /// </summary>
+        public static readonly RemediationExecutionState IN_PROGRESS = new RemediationExecutionState("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for RemediationExecutionState
+        /// </summary>
+        public static readonly RemediationExecutionState QUEUED = new RemediationExecutionState("QUEUED");
+        /// <summary>
+        /// Constant SUCCEEDED for RemediationExecutionState
+        /// </summary>
+        public static readonly RemediationExecutionState SUCCEEDED = new RemediationExecutionState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemediationExecutionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationExecutionState FindValue(string value)
+        {
+            return FindValue<RemediationExecutionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationExecutionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RemediationExecutionStepState.
+    /// </summary>
+    public class RemediationExecutionStepState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState FAILED = new RemediationExecutionStepState("FAILED");
+        /// <summary>
+        /// Constant PENDING for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState PENDING = new RemediationExecutionStepState("PENDING");
+        /// <summary>
+        /// Constant SUCCEEDED for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState SUCCEEDED = new RemediationExecutionStepState("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemediationExecutionStepState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationExecutionStepState FindValue(string value)
+        {
+            return FindValue<RemediationExecutionStepState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationExecutionStepState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RemediationTargetType.
+    /// </summary>
+    public class RemediationTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSM_DOCUMENT for RemediationTargetType
+        /// </summary>
+        public static readonly RemediationTargetType SSM_DOCUMENT = new RemediationTargetType("SSM_DOCUMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RemediationTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationTargetType FindValue(string value)
+        {
+            return FindValue<RemediationTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceCountGroupKey.
     /// </summary>
     public class ResourceCountGroupKey : ConstantClass
@@ -1076,6 +1234,52 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceValueType.
+    /// </summary>
+    public class ResourceValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE_ID for ResourceValueType
+        /// </summary>
+        public static readonly ResourceValueType RESOURCE_ID = new ResourceValueType("RESOURCE_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceValueType FindValue(string value)
+        {
+            return FindValue<ResourceValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceValueType(string value)
         {
             return FindValue(value);
         }

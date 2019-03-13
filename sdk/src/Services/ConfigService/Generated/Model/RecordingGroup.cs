@@ -65,12 +65,12 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// For a list of supported resource types, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+    /// For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
     /// Resource Types</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+    /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
     /// Which Resources AWS Config Records</a>.
     /// </para>
     /// </summary>
@@ -163,7 +163,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b>
-        /// column in <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+        /// column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
         /// AWS Resource Types</a>.
         /// </para>
         /// </summary>
