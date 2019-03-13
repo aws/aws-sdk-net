@@ -1,3 +1,9 @@
+### 3.3.475.0 (2019-03-13 18:06 UTC)
+* CloudWatchLogs (3.3.7.25)
+	* Documentation updates for logs
+* ConfigService (3.3.23.0)
+	* Config released Remediation APIs allowing Remediation of Config Rules
+
 ### 3.3.474.0 (2019-03-12 18:09 UTC)
 * ServerlessApplicationRepository (3.3.5.0)
 	* The AWS Serverless Application Repository now supports associating a ZIP source code archive with versions of an application.
