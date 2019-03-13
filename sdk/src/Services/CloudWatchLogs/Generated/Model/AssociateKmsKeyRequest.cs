@@ -60,7 +60,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more
-        /// information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
         /// Resource Names - AWS Key Management Service (AWS KMS)</a>.
         /// </para>
         /// </summary>

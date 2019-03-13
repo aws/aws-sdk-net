@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
     /// Logs Insights Query Syntax</a>.
     /// </para>
     /// </summary>
@@ -49,8 +49,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range to query. Specified as epoch time, the number of seconds
-        /// since January 1, 1970, 00:00:00 UTC.
+        /// The end of the time range to query. The range is inclusive, so the specified end time
+        /// is included in the query. Specified as epoch time, the number of seconds since January
+        /// 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
         public long EndTime
@@ -105,7 +106,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The query string to use. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+        /// The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
         /// Logs Insights Query Syntax</a>.
         /// </para>
         /// </summary>
@@ -124,7 +125,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The beginning of the time range to query. Specified as epoch time, the number of seconds
+        /// The beginning of the time range to query. The range is inclusive, so the specified
+        /// start time is included in the query. Specified as epoch time, the number of seconds
         /// since January 1, 1970, 00:00:00 UTC.
         /// </para>
         /// </summary>
