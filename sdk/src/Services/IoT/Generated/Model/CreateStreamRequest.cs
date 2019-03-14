@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         private List<StreamFile> _files = new List<StreamFile>();
         private string _roleArn;
         private string _streamId;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -114,6 +115,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetStreamId()
         {
             return this._streamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage streams.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

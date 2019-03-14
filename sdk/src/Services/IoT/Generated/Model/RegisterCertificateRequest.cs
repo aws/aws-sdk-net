@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property SetAsActive. 
         /// <para>
-        /// A boolean value that specifies if the certificate is set to active.
+        /// A boolean value that specifies if the CA certificate is set to active.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]

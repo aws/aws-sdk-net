@@ -39,6 +39,7 @@ namespace Amazon.IoT.Model
         private List<OTAUpdateFile> _files = new List<OTAUpdateFile>();
         private string _otaUpdateId;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
 
@@ -148,6 +149,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage updates.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
