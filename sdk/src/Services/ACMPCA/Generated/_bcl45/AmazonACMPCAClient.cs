@@ -76,7 +76,7 @@ namespace Amazon.ACMPCA
     ///  <note> 
     /// <para>
     /// Each ACM PCA API operation has a throttling limit which determines the number of times
-    /// the operation can be called per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
+    /// the operation can be called per second. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
     /// Rate Limits in ACM PCA</a> in the ACM PCA user guide.
     /// </para>
     ///  </note>
@@ -346,8 +346,8 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Creates an audit report that lists every time that the your CA private key is used.
-        /// The report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
+        /// Creates an audit report that lists every time that your CA private key is used. The
+        /// report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
         /// and <a>RevokeCertificate</a> operations use the private key. You can generate a new
         /// report every 30 minutes.
         /// </summary>
@@ -404,6 +404,78 @@ namespace Amazon.ACMPCA
 
         #endregion
         
+        #region  CreatePermission
+
+
+        /// <summary>
+        /// Assigns permissions from a private CA to a designated AWS service. Services are specified
+        /// by their service principals and can be given permission to create and retrieve certificates
+        /// on a private CA. Services can also be given permission to list the active permissions
+        /// that the private CA has granted. For ACM to automatically renew your private CA's
+        /// certificates, you must assign all possible permissions from the CA to the ACM service
+        /// principal.
+        /// 
+        ///  
+        /// <para>
+        /// At this time, you can only assign permissions to ACM (<code>acm.amazonaws.com</code>).
+        /// Permissions can be revoked with the <a>DeletePermission</a> operation and listed with
+        /// the <a>ListPermissions</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermission service method.</param>
+        /// 
+        /// <returns>The response from the CreatePermission service method, as returned by ACMPCA.</returns>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
+        /// The private CA is in a state during which a report or certificate cannot be generated.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
+        /// An ACM PCA limit has been exceeded. See the exception message returned to determine
+        /// the limit that was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.PermissionAlreadyExistsException">
+        /// The designated permission has already been given to the user.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
+        /// The request has failed for an unspecified reason.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
+        /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
+        /// found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual CreatePermissionResponse CreatePermission(CreatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual Task<CreatePermissionResponse> CreatePermissionAsync(CreatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePermissionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCertificateAuthority
 
 
@@ -423,13 +495,13 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  
         /// <para>
-        /// If the CA is in one of the aforementioned states and you call <a>DeleteCertificateAuthority</a>,
-        /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permentantly
+        /// If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>,
+        /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
         /// deleted until the restoration period has passed. By default, if you do not set the
         /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
         /// 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
         /// operation returns the time remaining in the restoration window of a Private CA in
-        /// the <code>DELETED</code> state. To restore an eligable CA, call the <a>RestoreCertificateAuthority</a>
+        /// the <code>DELETED</code> state. To restore an eligible CA, call the <a>RestoreCertificateAuthority</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -476,6 +548,61 @@ namespace Amazon.ACMPCA
             options.ResponseUnmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteCertificateAuthorityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePermission
+
+
+        /// <summary>
+        /// Revokes permissions that a private CA assigned to a designated AWS service. Permissions
+        /// can be created with the <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermission service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermission service method, as returned by ACMPCA.</returns>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
+        /// The private CA is in a state during which a report or certificate cannot be generated.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
+        /// The request has failed for an unspecified reason.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
+        /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
+        /// found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual DeletePermissionResponse DeletePermission(DeletePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual Task<DeletePermissionResponse> DeletePermissionAsync(DeletePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -992,6 +1119,65 @@ namespace Amazon.ACMPCA
             options.ResponseUnmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCertificateAuthoritiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPermissions
+
+
+        /// <summary>
+        /// Lists all the permissions, if any, that have been assigned by a private CA. Permissions
+        /// can be granted with the <a>CreatePermission</a> operation and revoked with the <a>DeletePermission</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissions service method, as returned by ACMPCA.</returns>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidNextTokenException">
+        /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
+        /// returned from your previous call to <a>ListCertificateAuthorities</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
+        /// The private CA is in a state during which a report or certificate cannot be generated.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
+        /// The request has failed for an unspecified reason.
+        /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
+        /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
+        /// found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual Task<ListPermissionsResponse> ListPermissionsAsync(ListPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

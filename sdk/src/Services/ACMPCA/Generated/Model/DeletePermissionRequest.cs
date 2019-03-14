@@ -28,45 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateCertificateAuthorityAuditReport operation.
-    /// Creates an audit report that lists every time that your CA private key is used. The
-    /// report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
-    /// and <a>RevokeCertificate</a> operations use the private key. You can generate a new
-    /// report every 30 minutes.
+    /// Container for the parameters to the DeletePermission operation.
+    /// Revokes permissions that a private CA assigned to a designated AWS service. Permissions
+    /// can be created with the <a>CreatePermission</a> operation and listed with the <a>ListPermissions</a>
+    /// operation.
     /// </summary>
-    public partial class CreateCertificateAuthorityAuditReportRequest : AmazonACMPCARequest
+    public partial class DeletePermissionRequest : AmazonACMPCARequest
     {
-        private AuditReportResponseFormat _auditReportResponseFormat;
         private string _certificateAuthorityArn;
-        private string _s3BucketName;
-
-        /// <summary>
-        /// Gets and sets the property AuditReportResponseFormat. 
-        /// <para>
-        /// The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
-        /// </para>
-        /// </summary>
-        public AuditReportResponseFormat AuditReportResponseFormat
-        {
-            get { return this._auditReportResponseFormat; }
-            set { this._auditReportResponseFormat = value; }
-        }
-
-        // Check to see if AuditReportResponseFormat property is set
-        internal bool IsSetAuditReportResponseFormat()
-        {
-            return this._auditReportResponseFormat != null;
-        }
+        private string _principal;
+        private string _sourceAccount;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
+        /// The Amazon Resource Number (ARN) of the private CA that issued the permissions. You
+        /// can find the CA's ARN by calling the <a>ListCertificateAuthorities</a> operation.
+        /// This must have the following form: 
         /// </para>
         ///  
         /// <para>
         ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
+        /// </code>. 
         /// </para>
         /// </summary>
         public string CertificateAuthorityArn
@@ -82,21 +65,40 @@ namespace Amazon.ACMPCA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3BucketName. 
+        /// Gets and sets the property Principal. 
         /// <para>
-        /// The name of the S3 bucket that will contain the audit report.
+        /// The AWS service or identity that will have its CA permissions revoked. At this time,
+        /// the only valid service principal is <code>acm.amazonaws.com</code> 
         /// </para>
         /// </summary>
-        public string S3BucketName
+        public string Principal
         {
-            get { return this._s3BucketName; }
-            set { this._s3BucketName = value; }
+            get { return this._principal; }
+            set { this._principal = value; }
         }
 
-        // Check to see if S3BucketName property is set
-        internal bool IsSetS3BucketName()
+        // Check to see if Principal property is set
+        internal bool IsSetPrincipal()
         {
-            return this._s3BucketName != null;
+            return this._principal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccount. 
+        /// <para>
+        /// The AWS account that calls this operation.
+        /// </para>
+        /// </summary>
+        public string SourceAccount
+        {
+            get { return this._sourceAccount; }
+            set { this._sourceAccount = value; }
+        }
+
+        // Check to see if SourceAccount property is set
+        internal bool IsSetSourceAccount()
+        {
+            return this._sourceAccount != null;
         }
 
     }

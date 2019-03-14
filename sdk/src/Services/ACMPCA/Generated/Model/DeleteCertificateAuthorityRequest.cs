@@ -44,13 +44,13 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    /// If the CA is in one of the aforementioned states and you call <a>DeleteCertificateAuthority</a>,
-    /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permentantly
+    /// If the CA is in one of the previously mentioned states and you call <a>DeleteCertificateAuthority</a>,
+    /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
     /// deleted until the restoration period has passed. By default, if you do not set the
     /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
     /// 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
     /// operation returns the time remaining in the restoration window of a Private CA in
-    /// the <code>DELETED</code> state. To restore an eligable CA, call the <a>RestoreCertificateAuthority</a>
+    /// the <code>DELETED</code> state. To restore an eligible CA, call the <a>RestoreCertificateAuthority</a>
     /// operation.
     /// </para>
     /// </summary>

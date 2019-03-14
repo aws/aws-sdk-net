@@ -30,9 +30,10 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Contains configuration information for your private certificate authority (CA). This
     /// includes information about the class of public key algorithm and the key pair that
-    /// your private CA creates when it issues a certificate, the signature algorithm it uses
-    /// used when issuing certificates, and its X.500 distinguished name. You must specify
-    /// this information when you call the <a>CreateCertificateAuthority</a> operation.
+    /// your private CA creates when it issues a certificate. It also includes the signature
+    /// algorithm that it uses when issuing certificates, and its X.500 distinguished name.
+    /// You must specify this information when you call the <a>CreateCertificateAuthority</a>
+    /// operation.
     /// </summary>
     public partial class CertificateAuthorityConfiguration
     {

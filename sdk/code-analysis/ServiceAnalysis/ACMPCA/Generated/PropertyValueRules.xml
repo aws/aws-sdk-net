@@ -25,6 +25,24 @@
     <pattern>[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ACMPCA.Model.CreatePermissionRequest.CertificateAuthorityArn</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.CreatePermissionRequest.Principal</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[^*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.CreatePermissionRequest.SourceAccount</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ACMPCA.Model.DeleteCertificateAuthorityRequest.CertificateAuthorityArn</property>
     <min>5</min>
     <max>200</max>
@@ -34,6 +52,24 @@
     <property>Amazon.ACMPCA.Model.DeleteCertificateAuthorityRequest.PermanentDeletionTimeInDays</property>
     <min>7</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.DeletePermissionRequest.CertificateAuthorityArn</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.DeletePermissionRequest.Principal</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[^*]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.DeletePermissionRequest.SourceAccount</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.DescribeCertificateAuthorityRequest.CertificateAuthorityArn</property>
@@ -128,6 +164,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.ListCertificateAuthoritiesResponse.NextToken</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.ListPermissionsRequest.CertificateAuthorityArn</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.ListPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.ListPermissionsRequest.NextToken</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.ListPermissionsResponse.NextToken</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
@@ -277,6 +334,12 @@
     <property>Amazon.ACMPCA.Model.CrlConfiguration.S3BucketName</property>
     <min>3</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ACMPCA.Model.Permission.CertificateAuthorityArn</property>
+    <min>5</min>
+    <max>200</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Tag.Key</property>

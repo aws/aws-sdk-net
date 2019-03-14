@@ -76,7 +76,7 @@ namespace Amazon.ACMPCA
     ///  <note> 
     /// <para>
     /// Each ACM PCA API operation has a throttling limit which determines the number of times
-    /// the operation can be called per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
+    /// the operation can be called per second. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
     /// Rate Limits in ACM PCA</a> in the ACM PCA user guide.
     /// </para>
     ///  </note>
@@ -350,6 +350,39 @@ namespace Amazon.ACMPCA
 
         #endregion
         
+        #region  CreatePermission
+
+        internal virtual CreatePermissionResponse CreatePermission(CreatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePermissionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual Task<CreatePermissionResponse> CreatePermissionAsync(CreatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePermissionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCertificateAuthority
 
         internal virtual DeleteCertificateAuthorityResponse DeleteCertificateAuthority(DeleteCertificateAuthorityRequest request)
@@ -379,6 +412,39 @@ namespace Amazon.ACMPCA
             options.ResponseUnmarshaller = DeleteCertificateAuthorityResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateAuthorityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePermission
+
+        internal virtual DeletePermissionResponse DeletePermission(DeletePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual Task<DeletePermissionResponse> DeletePermissionAsync(DeletePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -643,6 +709,39 @@ namespace Amazon.ACMPCA
             options.ResponseUnmarshaller = ListCertificateAuthoritiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCertificateAuthoritiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPermissions
+
+        internal virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        public virtual Task<ListPermissionsResponse> ListPermissionsAsync(ListPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPermissionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
