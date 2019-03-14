@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+    /// Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
     /// renewal</a> for the certificate. This structure exists only when the certificate type
     /// is <code>AMAZON_ISSUED</code>.
     /// </summary>
@@ -36,12 +36,14 @@ namespace Amazon.CertificateManager.Model
     {
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
         private RenewalStatus _renewalStatus;
+        private FailureReason _renewalStatusReason;
+        private DateTime? _updatedAt;
 
         /// <summary>
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
         /// Contains information about the validation of each domain name in the certificate,
-        /// as it pertains to ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a>. This is different from the initial validation that occurs as a result
         /// of the <a>RequestCertificate</a> request. This field exists only when the certificate
         /// type is <code>AMAZON_ISSUED</code>.
@@ -62,7 +64,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property RenewalStatus. 
         /// <para>
-        /// The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> of the certificate.
         /// </para>
         /// </summary>
@@ -76,6 +78,42 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetRenewalStatus()
         {
             return this._renewalStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenewalStatusReason. 
+        /// <para>
+        /// The reason that a renewal request was unsuccessful.
+        /// </para>
+        /// </summary>
+        public FailureReason RenewalStatusReason
+        {
+            get { return this._renewalStatusReason; }
+            set { this._renewalStatusReason = value; }
+        }
+
+        // Check to see if RenewalStatusReason property is set
+        internal bool IsSetRenewalStatusReason()
+        {
+            return this._renewalStatusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the renewal summary was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

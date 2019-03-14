@@ -76,7 +76,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property PrivateKey. 
         /// <para>
-        /// The PEM-encoded private key associated with the public key in the certificate.
+        /// The encrypted private key associated with the public key in the certificate. The key
+        /// is output in PKCS #8 format and is base64 PEM-encoded. 
         /// </para>
         /// </summary>
         public string PrivateKey

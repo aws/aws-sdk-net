@@ -361,6 +361,10 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly FailureReason DOMAIN_NOT_ALLOWED = new FailureReason("DOMAIN_NOT_ALLOWED");
         /// <summary>
+        /// Constant DOMAIN_VALIDATION_DENIED for FailureReason
+        /// </summary>
+        public static readonly FailureReason DOMAIN_VALIDATION_DENIED = new FailureReason("DOMAIN_VALIDATION_DENIED");
+        /// <summary>
         /// Constant INVALID_PUBLIC_DOMAIN for FailureReason
         /// </summary>
         public static readonly FailureReason INVALID_PUBLIC_DOMAIN = new FailureReason("INVALID_PUBLIC_DOMAIN");
@@ -373,6 +377,10 @@ namespace Amazon.CertificateManager
         /// </summary>
         public static readonly FailureReason OTHER = new FailureReason("OTHER");
         /// <summary>
+        /// Constant PCA_ACCESS_DENIED for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_ACCESS_DENIED = new FailureReason("PCA_ACCESS_DENIED");
+        /// <summary>
         /// Constant PCA_INVALID_ARGS for FailureReason
         /// </summary>
         public static readonly FailureReason PCA_INVALID_ARGS = new FailureReason("PCA_INVALID_ARGS");
@@ -380,6 +388,10 @@ namespace Amazon.CertificateManager
         /// Constant PCA_INVALID_ARN for FailureReason
         /// </summary>
         public static readonly FailureReason PCA_INVALID_ARN = new FailureReason("PCA_INVALID_ARN");
+        /// <summary>
+        /// Constant PCA_INVALID_DURATION for FailureReason
+        /// </summary>
+        public static readonly FailureReason PCA_INVALID_DURATION = new FailureReason("PCA_INVALID_DURATION");
         /// <summary>
         /// Constant PCA_INVALID_STATE for FailureReason
         /// </summary>

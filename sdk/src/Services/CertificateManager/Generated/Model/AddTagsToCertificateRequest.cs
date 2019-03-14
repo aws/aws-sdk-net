@@ -42,7 +42,7 @@ namespace Amazon.CertificateManager.Model
     /// can apply the same tag to multiple resources if you want to specify a relationship
     /// among those resources. For example, you can add the same tag to an ACM certificate
     /// and an Elastic Load Balancing load balancer to indicate that they are both used by
-    /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+    /// the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
     /// ACM certificates</a>. 
     /// </para>
     ///  
@@ -70,7 +70,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
         /// </para>
         /// </summary>

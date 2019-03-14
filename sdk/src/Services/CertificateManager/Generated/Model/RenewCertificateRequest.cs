@@ -28,41 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCertificate operation.
-    /// Deletes a certificate and its associated private key. If this action succeeds, the
-    /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
-    /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
-    /// will not be available for use by AWS services integrated with ACM. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete an ACM certificate that is being used by another AWS service. To
-    /// delete a certificate that is in use, the certificate association must first be removed.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the RenewCertificate operation.
+    /// Renews an eligable ACM certificate. At this time, only exported private certificates
+    /// can be renewed with this operation. In order to renew your ACM PCA certificates with
+    /// ACM, you must first <a href="acm-pca/latest/userguide/PcaPermissions.html">grant the
+    /// ACM service principal permission to do so</a>. For more information, see <a href="acm/latest/userguide/manuel-renewal.html">Testing
+    /// Managed Renewal</a> in the ACM User Guide.
     /// </summary>
-    public partial class DeleteCertificateRequest : AmazonCertificateManagerRequest
+    public partial class RenewCertificateRequest : AmazonCertificateManagerRequest
     {
         private string _certificateArn;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public DeleteCertificateRequest() { }
-
-        /// <summary>
-        /// Instantiates DeleteCertificateRequest with the parameterized properties
-        /// </summary>
-        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
-        public DeleteCertificateRequest(string certificateArn)
-        {
-            _certificateArn = certificateArn;
-        }
-
-        /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM certificate to be deleted. This must be of
+        /// String that contains the ARN of the ACM certificate to be renewed. This must be of
         /// the form:
         /// </para>
         ///  

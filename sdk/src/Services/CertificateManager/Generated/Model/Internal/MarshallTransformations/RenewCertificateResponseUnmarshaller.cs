@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListCertificates operation
+    /// Response Unmarshaller for RenewCertificate operation
     /// </summary>  
-    public class ListCertificatesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RenewCertificateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListCertificatesResponse response = new ListCertificatesResponse();
+            RenewCertificateResponse response = new RenewCertificateResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CertificateSummaryList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CertificateSummary, CertificateSummaryUnmarshaller>(CertificateSummaryUnmarshaller.Instance);
-                    response.CertificateSummaryList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -78,16 +61,20 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
             {
-                return new InvalidArgsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCertificateManagerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListCertificatesResponseUnmarshaller _instance = new ListCertificatesResponseUnmarshaller();        
+        private static RenewCertificateResponseUnmarshaller _instance = new RenewCertificateResponseUnmarshaller();        
 
-        internal static ListCertificatesResponseUnmarshaller GetInstance()
+        internal static RenewCertificateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -95,7 +82,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListCertificatesResponseUnmarshaller Instance
+        public static RenewCertificateResponseUnmarshaller Instance
         {
             get
             {

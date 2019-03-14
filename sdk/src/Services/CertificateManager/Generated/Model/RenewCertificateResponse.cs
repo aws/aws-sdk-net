@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// This is the response object from the ImportCertificate operation.
+    /// This is the response object from the RenewCertificate operation.
     /// </summary>
-    public partial class ImportCertificateResponse : AmazonWebServiceResponse
+    public partial class RenewCertificateResponse : AmazonWebServiceResponse
     {
-        private string _certificateArn;
-
-        /// <summary>
-        /// Gets and sets the property CertificateArn. 
-        /// <para>
-        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of the imported certificate.
-        /// </para>
-        /// </summary>
-        public string CertificateArn
-        {
-            get { return this._certificateArn; }
-            set { this._certificateArn = value; }
-        }
-
-        // Check to see if CertificateArn property is set
-        internal bool IsSetCertificateArn()
-        {
-            return this._certificateArn != null;
-        }
 
     }
 }

@@ -45,7 +45,7 @@ namespace Amazon.CertificateManager
     ///  
     /// <para>
     /// You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications.
-    /// For general information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">
+    /// For general information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">
     /// <i>AWS Certificate Manager User Guide</i> </a>.
     /// </para>
     /// </summary>
@@ -264,7 +264,7 @@ namespace Amazon.CertificateManager
         /// can apply the same tag to multiple resources if you want to specify a relationship
         /// among those resources. For example, you can add the same tag to an ACM certificate
         /// and an Elastic Load Balancing load balancer to indicate that they are both used by
-        /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+        /// the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
         /// ACM certificates</a>. 
         /// </para>
         ///  
@@ -338,7 +338,7 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -412,7 +412,7 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -464,7 +464,7 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
         /// </summary>
-        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -510,7 +510,7 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Returns detailed metadata about the specified ACM certificate.
         /// </summary>
-        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -623,7 +623,7 @@ namespace Amazon.CertificateManager
         /// and certificate chain are base64 encoded. If you want to decode the certificate to
         /// see the individual fields, you can use OpenSSL.
         /// </summary>
-        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the GetCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -685,7 +685,7 @@ namespace Amazon.CertificateManager
         /// and certificate chain are base64 encoded. If you want to decode the certificate to
         /// see the individual fields, you can use OpenSSL.
         /// </summary>
-        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -736,16 +736,16 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Imports a certificate into AWS Certificate Manager (ACM) to use with services that
-        /// are integrated with ACM. Note that <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+        /// are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
         /// services</a> allow only certificate types and keys they support to be associated with
         /// their resources. Further, their support differs depending on whether the certificate
         /// is imported into IAM or into ACM. For more information, see the documentation for
-        /// each service. For more information about importing certificates into ACM, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
         /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
-        /// ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for certificates that you import.
         /// </para>
         ///  </note> 
@@ -809,7 +809,7 @@ namespace Amazon.CertificateManager
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This operation returns the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of the imported certificate.
         /// </para>
         /// </summary>
@@ -864,6 +864,9 @@ namespace Amazon.CertificateManager
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates()
         {
@@ -879,6 +882,9 @@ namespace Amazon.CertificateManager
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
@@ -900,6 +906,9 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1037,6 +1046,57 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  RenewCertificate
+
+
+        /// <summary>
+        /// Renews an eligable ACM certificate. At this time, only exported private certificates
+        /// can be renewed with this operation. In order to renew your ACM PCA certificates with
+        /// ACM, you must first <a href="acm-pca/latest/userguide/PcaPermissions.html">grant the
+        /// ACM service principal permission to do so</a>. For more information, see <a href="acm/latest/userguide/manuel-renewal.html">Testing
+        /// Managed Renewal</a> in the ACM User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenewCertificate service method.</param>
+        /// 
+        /// <returns>The response from the RenewCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewCertificate">REST API Reference for RenewCertificate Operation</seealso>
+        public virtual RenewCertificateResponse RenewCertificate(RenewCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenewCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenewCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<RenewCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewCertificate">REST API Reference for RenewCertificate Operation</seealso>
+        public virtual Task<RenewCertificateResponse> RenewCertificateAsync(RenewCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenewCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenewCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RenewCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RequestCertificate
 
 
@@ -1050,8 +1110,8 @@ namespace Amazon.CertificateManager
         /// <para>
         /// If you are requesting a private certificate, domain validation is not required. If
         /// you are requesting a public certificate, each domain name that you specify must be
-        /// validated to verify that you own or control the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
-        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
         /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
         /// after receiving approval from the domain owner. 
         /// </para>
@@ -1087,8 +1147,8 @@ namespace Amazon.CertificateManager
         /// <para>
         /// If you are requesting a private certificate, domain validation is not required. If
         /// you are requesting a public certificate, each domain name that you specify must be
-        /// validated to verify that you own or control the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
-        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
         /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
         /// after receiving approval from the domain owner. 
         /// </para>
@@ -1126,8 +1186,8 @@ namespace Amazon.CertificateManager
         /// <para>
         /// If you are requesting a private certificate, domain validation is not required. If
         /// you are requesting a public certificate, each domain name that you specify must be
-        /// validated to verify that you own or control the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
-        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
         /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
         /// after receiving approval from the domain owner. 
         /// </para>
@@ -1188,7 +1248,7 @@ namespace Amazon.CertificateManager
         /// the original mail, you can request that the mail be resent within 72 hours of requesting
         /// the ACM certificate. If more than 72 hours have elapsed since your original request
         /// or since your last attempt to resend validation mail, you must request a new certificate.
-        /// For more information about setting up your contact email addresses, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
+        /// For more information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure
         /// Email for your Domain</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResendValidationEmail service method.</param>
@@ -1244,7 +1304,7 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Updates a certificate. Currently, you can use this function to specify whether to
         /// opt in to or out of recording your certificate in a certificate transparency log.
-        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
         /// Opting Out of Certificate Transparency Logging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateOptions service method.</param>

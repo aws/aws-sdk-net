@@ -265,6 +265,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CertificateManager")]
+        public void RenewCertificateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RenewCertificateRequest>();
+            var marshaller = new RenewCertificateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RenewCertificateRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CertificateManager")]
         public void RequestCertificateMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RequestCertificateRequest>();
