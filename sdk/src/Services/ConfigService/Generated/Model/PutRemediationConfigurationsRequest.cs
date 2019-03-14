@@ -31,8 +31,8 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the PutRemediationConfigurations operation.
     /// Adds or updates the remediation configuration with a specific AWS Config rule with
     /// the selected target or action. The API creates the <code>RemediationConfiguration</code>
-    /// object for the AWS Config rule. AWS Config rule must already exist for you to add
-    /// a remeduation configuration. The target (SSM document) must exist and have permissions
+    /// object for the AWS Config rule. The AWS Config rule must already exist for you to
+    /// add a remediation configuration. The target (SSM document) must exist and have permissions
     /// to use the target.
     /// </summary>
     public partial class PutRemediationConfigurationsRequest : AmazonConfigServiceRequest

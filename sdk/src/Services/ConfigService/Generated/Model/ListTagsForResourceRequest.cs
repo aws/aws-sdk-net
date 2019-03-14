@@ -28,42 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRemediationExecutionStatus operation.
-    /// Provides a detailed view of a Remediation Execution for a set of resources including
-    /// state, timestamps for when steps for the remediation execution occur, and any error
-    /// messages for steps that have failed. When you specify the limit and the next token,
-    /// you receive a paginated response.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// List the tags for AWS Config resource.
     /// </summary>
-    public partial class DescribeRemediationExecutionStatusRequest : AmazonConfigServiceRequest
+    public partial class ListTagsForResourceRequest : AmazonConfigServiceRequest
     {
-        private string _configRuleName;
         private int? _limit;
         private string _nextToken;
-        private List<ResourceKey> _resourceKeys = new List<ResourceKey>();
-
-        /// <summary>
-        /// Gets and sets the property ConfigRuleName. 
-        /// <para>
-        /// A list of AWS Config rule names.
-        /// </para>
-        /// </summary>
-        public string ConfigRuleName
-        {
-            get { return this._configRuleName; }
-            set { this._configRuleName = value; }
-        }
-
-        // Check to see if ConfigRuleName property is set
-        internal bool IsSetConfigRuleName()
-        {
-            return this._configRuleName != null;
-        }
+        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of RemediationExecutionStatuses returned on each page. The default
-        /// is maximum. If you specify 0, AWS Config uses the default. 
+        /// The maximum number of tags returned on each page. The limit maximum is 50. You cannot
+        /// specify a number greater than 50. If you specify 0, AWS Config uses the default. 
         /// </para>
         /// </summary>
         public int Limit
@@ -81,8 +59,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response.
+        /// The nextToken string returned on a previous page that you use to get the next page
+        /// of results in a paginated response. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -98,22 +76,23 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceKeys. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// A list of resource keys to be processed with the current request. Each element in
-        /// the list consists of the resource type and resource ID. 
+        /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
+        /// tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code>
+        /// and <code>AggregatorAuthorization</code>.
         /// </para>
         /// </summary>
-        public List<ResourceKey> ResourceKeys
+        public string ResourceArn
         {
-            get { return this._resourceKeys; }
-            set { this._resourceKeys = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ResourceKeys property is set
-        internal bool IsSetResourceKeys()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._resourceKeys != null && this._resourceKeys.Count > 0; 
+            return this._resourceArn != null;
         }
 
     }

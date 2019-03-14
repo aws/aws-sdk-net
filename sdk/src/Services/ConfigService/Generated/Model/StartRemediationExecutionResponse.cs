@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FailedItems. 
         /// <para>
-        /// For resources that have failed to start execuition the API returns a resource key
+        /// For resources that have failed to start execution, the API returns a resource key
         /// object.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// Returns a failure message. For example, the resource is compliant.
+        /// Returns a failure message. For example, the resource is already compliant.
         /// </para>
         /// </summary>
         public string FailureMessage

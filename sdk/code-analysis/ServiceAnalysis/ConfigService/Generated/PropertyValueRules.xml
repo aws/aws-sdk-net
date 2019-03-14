@@ -258,6 +258,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListTagsForResourceRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.PutAggregationAuthorizationRequest.AuthorizedAccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -289,6 +299,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StopConfigurationRecorderRequest.ConfigurationRecorderName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -595,6 +615,16 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Source.SourceIdentifier</property>
     <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.Tag.Value</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
 </property-value-rules>

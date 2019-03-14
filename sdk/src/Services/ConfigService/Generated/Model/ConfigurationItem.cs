@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// accoun
         /// </para>
         /// </summary>
         public string Arn

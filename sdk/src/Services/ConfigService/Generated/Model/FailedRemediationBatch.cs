@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// List of each of the failed remediation with specific reasons.
+    /// List of each of the failed remediations with specific reasons.
     /// </summary>
     public partial class FailedRemediationBatch
     {
@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// Returns a failure message. For example, the resource is compliant.
+        /// Returns a failure message. For example, the resource is already compliant.
         /// </para>
         /// </summary>
         public string FailureMessage

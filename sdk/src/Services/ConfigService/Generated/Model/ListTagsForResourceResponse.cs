@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRemediationConfiguration operation.
-    /// Deletes the remediation configuration.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class DeleteRemediationConfigurationRequest : AmazonConfigServiceRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _configRuleName;
-        private string _resourceType;
+        private string _nextToken;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ConfigRuleName. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The name of the AWS Config rule for which you want to delete remediation configuration.
+        /// The nextToken string returned on a previous page that you use to get the next page
+        /// of results in a paginated response. 
         /// </para>
         /// </summary>
-        public string ConfigRuleName
+        public string NextToken
         {
-            get { return this._configRuleName; }
-            set { this._configRuleName = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ConfigRuleName property is set
-        internal bool IsSetConfigRuleName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._configRuleName != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The type of a resource.
+        /// The tags for the resource.
         /// </para>
         /// </summary>
-        public string ResourceType
+        public List<Tag> Tags
         {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._resourceType != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

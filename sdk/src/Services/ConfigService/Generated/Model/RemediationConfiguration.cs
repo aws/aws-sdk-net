@@ -97,7 +97,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// Public ID is document.
+        /// Target ID is the name of the public document.
         /// </para>
         /// </summary>
         public string TargetId

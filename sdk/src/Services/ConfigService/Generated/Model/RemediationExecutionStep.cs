@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// An error message if the step was interupted during execution.
+        /// An error message if the step was interrupted during execution.
         /// </para>
         /// </summary>
         public string ErrorMessage

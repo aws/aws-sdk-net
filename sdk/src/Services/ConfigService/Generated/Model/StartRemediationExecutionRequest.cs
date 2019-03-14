@@ -65,7 +65,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceKeys. 
         /// <para>
-        /// A list of resource key object.
+        /// A list of resource keys to be processed with the current request. Each element in
+        /// the list consists of the resource type and resource ID. 
         /// </para>
         /// </summary>
         public List<ResourceKey> ResourceKeys

@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RemediationExecutionStatuses. 
         /// <para>
-        /// Returns a list of remediation execution statuses object.
+        /// Returns a list of remediation execution statuses objects.
         /// </para>
         /// </summary>
         public List<RemediationExecutionStatus> RemediationExecutionStatuses

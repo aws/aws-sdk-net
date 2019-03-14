@@ -28,31 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRemediationConfigurations operation.
-    /// Returns the details of one or more remediation configurations.
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class DescribeRemediationConfigurationsRequest : AmazonConfigServiceRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private List<string> _configRuleNames = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property ConfigRuleNames. 
-        /// <para>
-        /// A list of AWS Config rule names of remediation configurations for which you want details.
-        /// 
-        /// </para>
-        /// </summary>
-        public List<string> ConfigRuleNames
-        {
-            get { return this._configRuleNames; }
-            set { this._configRuleNames = value; }
-        }
-
-        // Check to see if ConfigRuleNames property is set
-        internal bool IsSetConfigRuleNames()
-        {
-            return this._configRuleNames != null && this._configRuleNames.Count > 0; 
-        }
 
     }
 }
