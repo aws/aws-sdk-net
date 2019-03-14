@@ -98,8 +98,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Strategy. 
         /// <para>
-        /// Specifies the search strategy for hyperparameters. Currently, the only valid value
-        /// is <code>Bayesian</code>.
+        /// Specifies how hyperparameter tuning chooses the combinations of hyperparameter values
+        /// to use for the training job it launches. To use the Bayesian search stategy, set this
+        /// to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>. For information
+        /// about search strategies, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+        /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobStrategyType Strategy

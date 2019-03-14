@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _maxValue;
         private string _minValue;
         private string _name;
+        private HyperParameterScalingType _scalingType;
 
         /// <summary>
         /// Gets and sets the property MaxValue. 
@@ -89,6 +90,45 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingType. 
+        /// <para>
+        /// The scale that hyperparameter tuning uses to search the hyperparameter range. For
+        /// information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
+        /// Range Scaling</a>. One of the following values:
+        /// </para>
+        ///  <dl> <dt>Auto</dt> <dd> 
+        /// <para>
+        /// Amazon SageMaker hyperparameter tuning chooses the best scale for the hyperparameter.
+        /// </para>
+        ///  </dd> <dt>Linear</dt> <dd> 
+        /// <para>
+        /// Hyperparameter tuning searches the values in the hyperparameter range by using a linear
+        /// scale.
+        /// </para>
+        ///  </dd> <dt>Logarithmic</dt> <dd> 
+        /// <para>
+        /// Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic
+        /// scale.
+        /// </para>
+        ///  
+        /// <para>
+        /// Logarithmic scaling works only for ranges that have only values greater than 0.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public HyperParameterScalingType ScalingType
+        {
+            get { return this._scalingType; }
+            set { this._scalingType = value; }
+        }
+
+        // Check to see if ScalingType property is set
+        internal bool IsSetScalingType()
+        {
+            return this._scalingType != null;
         }
 
     }

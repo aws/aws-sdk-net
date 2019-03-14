@@ -963,6 +963,64 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type HyperParameterScalingType.
+    /// </summary>
+    public class HyperParameterScalingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Auto for HyperParameterScalingType
+        /// </summary>
+        public static readonly HyperParameterScalingType Auto = new HyperParameterScalingType("Auto");
+        /// <summary>
+        /// Constant Linear for HyperParameterScalingType
+        /// </summary>
+        public static readonly HyperParameterScalingType Linear = new HyperParameterScalingType("Linear");
+        /// <summary>
+        /// Constant Logarithmic for HyperParameterScalingType
+        /// </summary>
+        public static readonly HyperParameterScalingType Logarithmic = new HyperParameterScalingType("Logarithmic");
+        /// <summary>
+        /// Constant ReverseLogarithmic for HyperParameterScalingType
+        /// </summary>
+        public static readonly HyperParameterScalingType ReverseLogarithmic = new HyperParameterScalingType("ReverseLogarithmic");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterScalingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterScalingType FindValue(string value)
+        {
+            return FindValue<HyperParameterScalingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterScalingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HyperParameterTuningJobObjectiveType.
     /// </summary>
     public class HyperParameterTuningJobObjectiveType : ConstantClass
@@ -1138,6 +1196,10 @@ namespace Amazon.SageMaker
         /// Constant Bayesian for HyperParameterTuningJobStrategyType
         /// </summary>
         public static readonly HyperParameterTuningJobStrategyType Bayesian = new HyperParameterTuningJobStrategyType("Bayesian");
+        /// <summary>
+        /// Constant Random for HyperParameterTuningJobStrategyType
+        /// </summary>
+        public static readonly HyperParameterTuningJobStrategyType Random = new HyperParameterTuningJobStrategyType("Random");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

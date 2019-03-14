@@ -63,6 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetScalingType())
+            {
+                context.Writer.WritePropertyName("ScalingType");
+                context.Writer.Write(requestObject.ScalingType);
+            }
+
         }
 
         /// <summary>
