@@ -11322,7 +11322,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the specified network interface attribute. You can specify only one attribute
-        /// at a time.
+        /// at a time. You can use this action to attach and detach security groups from an existing
+        /// EC2 instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute service method.</param>
         /// 

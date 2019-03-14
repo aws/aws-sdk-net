@@ -6569,6 +6569,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType FpgaImage = new ResourceType("fpga-image");
         /// <summary>
+        /// Constant HostReservation for ResourceType
+        /// </summary>
+        public static readonly ResourceType HostReservation = new ResourceType("host-reservation");
+        /// <summary>
         /// Constant Image for ResourceType
         /// </summary>
         public static readonly ResourceType Image = new ResourceType("image");
