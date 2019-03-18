@@ -28,26 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeReplicationTasks operation.
-    /// Returns information about replication tasks for your account in the current region.
+    /// Container for the parameters to the DescribePendingMaintenanceActions operation.
+    /// For internal use only
     /// </summary>
-    public partial class DescribeReplicationTasksRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class DescribePendingMaintenanceActionsRequest : AmazonDatabaseMigrationServiceRequest
     {
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
-        private bool? _withoutSettings;
+        private string _replicationInstanceArn;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// Filters applied to the describe action.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn
-        /// </para>
+        /// Gets and sets the property Filters.
         /// </summary>
         public List<Filter> Filters
         {
@@ -110,23 +102,21 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WithoutSettings. 
+        /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// Set this flag to avoid returning setting information. Use this to reduce overhead
-        /// when settings are too large. Choose TRUE to use this flag, otherwise choose FALSE
-        /// (default).
+        /// The ARN of the replication instance.
         /// </para>
         /// </summary>
-        public bool WithoutSettings
+        public string ReplicationInstanceArn
         {
-            get { return this._withoutSettings.GetValueOrDefault(); }
-            set { this._withoutSettings = value; }
+            get { return this._replicationInstanceArn; }
+            set { this._replicationInstanceArn = value; }
         }
 
-        // Check to see if WithoutSettings property is set
-        internal bool IsSetWithoutSettings()
+        // Check to see if ReplicationInstanceArn property is set
+        internal bool IsSetReplicationInstanceArn()
         {
-            return this._withoutSettings.HasValue; 
+            return this._replicationInstanceArn != null;
         }
 
     }

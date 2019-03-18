@@ -166,6 +166,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RedshiftSettings", targetDepth))
+                {
+                    var unmarshaller = RedshiftSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Settings", targetDepth))
                 {
                     var unmarshaller = S3SettingsUnmarshaller.Instance;

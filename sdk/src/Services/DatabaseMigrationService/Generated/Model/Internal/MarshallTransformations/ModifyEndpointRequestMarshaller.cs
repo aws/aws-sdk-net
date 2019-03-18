@@ -183,6 +183,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Port);
                 }
 
+                if(publicRequest.IsSetRedshiftSettings())
+                {
+                    context.Writer.WritePropertyName("RedshiftSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RedshiftSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RedshiftSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetS3Settings())
                 {
                     context.Writer.WritePropertyName("S3Settings");

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeReplicationTasks Request Marshaller
+    /// ApplyPendingMaintenanceAction Request Marshaller
     /// </summary>       
-    public class DescribeReplicationTasksRequestMarshaller : IMarshaller<IRequest, DescribeReplicationTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ApplyPendingMaintenanceActionRequestMarshaller : IMarshaller<IRequest, ApplyPendingMaintenanceActionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeReplicationTasksRequest)input);
+            return this.Marshall((ApplyPendingMaintenanceActionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeReplicationTasksRequest publicRequest)
+        public IRequest Marshall(ApplyPendingMaintenanceActionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DatabaseMigrationService");
-            string target = "AmazonDMSv20160101.DescribeReplicationTasks";
+            string target = "AmazonDMSv20160101.ApplyPendingMaintenanceAction";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-01-01";            
@@ -68,38 +68,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                if(publicRequest.IsSetApplyAction())
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ApplyAction");
+                    context.Writer.Write(publicRequest.ApplyAction);
                 }
 
-                if(publicRequest.IsSetMarker())
+                if(publicRequest.IsSetOptInType())
                 {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
+                    context.Writer.WritePropertyName("OptInType");
+                    context.Writer.Write(publicRequest.OptInType);
                 }
 
-                if(publicRequest.IsSetMaxRecords())
+                if(publicRequest.IsSetReplicationInstanceArn())
                 {
-                    context.Writer.WritePropertyName("MaxRecords");
-                    context.Writer.Write(publicRequest.MaxRecords);
-                }
-
-                if(publicRequest.IsSetWithoutSettings())
-                {
-                    context.Writer.WritePropertyName("WithoutSettings");
-                    context.Writer.Write(publicRequest.WithoutSettings);
+                    context.Writer.WritePropertyName("ReplicationInstanceArn");
+                    context.Writer.Write(publicRequest.ReplicationInstanceArn);
                 }
 
         
@@ -111,9 +95,9 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeReplicationTasksRequestMarshaller _instance = new DescribeReplicationTasksRequestMarshaller();        
+        private static ApplyPendingMaintenanceActionRequestMarshaller _instance = new ApplyPendingMaintenanceActionRequestMarshaller();        
 
-        internal static DescribeReplicationTasksRequestMarshaller GetInstance()
+        internal static ApplyPendingMaintenanceActionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +105,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeReplicationTasksRequestMarshaller Instance
+        public static ApplyPendingMaintenanceActionRequestMarshaller Instance
         {
             get
             {

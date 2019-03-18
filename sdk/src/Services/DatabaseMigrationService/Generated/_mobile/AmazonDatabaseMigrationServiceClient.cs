@@ -49,7 +49,7 @@ namespace Amazon.DatabaseMigrationService
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+    /// For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
     /// Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
     /// 
     /// </para>
@@ -286,6 +286,39 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ApplyPendingMaintenanceAction
+
+        internal virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ApplyPendingMaintenanceActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyPendingMaintenanceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -946,6 +979,39 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeOrderableReplicationInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePendingMaintenanceActions
+
+        internal virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePendingMaintenanceActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePendingMaintenanceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
+        public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

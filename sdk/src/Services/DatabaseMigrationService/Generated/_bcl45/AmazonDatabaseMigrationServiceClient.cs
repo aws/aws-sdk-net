@@ -49,7 +49,7 @@ namespace Amazon.DatabaseMigrationService
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+    /// For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
     /// Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
     /// 
     /// </para>
@@ -298,6 +298,50 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ApplyPendingMaintenanceAction
+
+
+        /// <summary>
+        /// Applies a pending maintenance action to a resource (for example, to a replication
+        /// instance).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
+        /// 
+        /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        public virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ApplyPendingMaintenanceActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyPendingMaintenanceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ApplyPendingMaintenanceActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEndpoint
 
 
@@ -308,7 +352,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -378,7 +422,7 @@ namespace Amazon.DatabaseMigrationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// For more information about AWS DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
         /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
         /// 
         /// </para>
@@ -386,6 +430,22 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
+        /// access to
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
+        /// The specified master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
+        /// The state of the specified KMS resource isn't valid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
+        /// The specified KMS entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
+        /// This request triggered KMS request throttling.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
         /// </exception>
@@ -442,7 +502,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
         /// There are not enough resources allocated to the database migration.
@@ -513,7 +573,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
@@ -572,7 +632,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1132,7 +1192,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists categories for all event source types, or, if specified, for a specified source
-        /// type. You can see a list of the event categories and source types in <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
         /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
@@ -1174,7 +1234,7 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists events for a given source identifier and source type. You can also specify
-        /// a start and end time. For more information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// a start and end time. For more information on AWS DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
         /// with Events and Notifications</a> in the <i>AWS Database Migration User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
@@ -1300,6 +1360,49 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeOrderableReplicationInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePendingMaintenanceActions
+
+
+        /// <summary>
+        /// For internal use only
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribePendingMaintenanceActions service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
+        public virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePendingMaintenanceActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePendingMaintenanceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
+        public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePendingMaintenanceActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1771,7 +1874,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1825,6 +1928,22 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the ModifyEventSubscription service method.</param>
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or DMS account doesn't have an
+        /// access to
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
+        /// The specified master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
+        /// The state of the specified KMS resource isn't valid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSNotFoundException">
+        /// The specified KMS entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSThrottlingException">
+        /// This request triggered KMS request throttling.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -1883,6 +2002,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationInstance service method.</param>
         /// 
         /// <returns>The response from the ModifyReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
         /// There are not enough resources allocated to the database migration.
         /// </exception>
@@ -1942,7 +2064,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
@@ -2004,7 +2126,7 @@ namespace Amazon.DatabaseMigrationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
         /// with Migration Tasks</a> in the <i>AWS Database Migration Service User Guide</i>.
         /// </para>
         /// </summary>
@@ -2252,7 +2374,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
         /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
         /// 
         /// </para>
@@ -2261,7 +2383,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the StartReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// AWS DMS was denied access to the endpoint.
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.

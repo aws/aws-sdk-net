@@ -32,6 +32,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class OrderableReplicationInstance
     {
+        private List<string> _availabilityZones = new List<string>();
         private int? _defaultAllocatedStorage;
         private string _engineVersion;
         private int? _includedAllocatedStorage;
@@ -39,6 +40,24 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _minAllocatedStorage;
         private string _replicationInstanceClass;
         private string _storageType;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// List of availability zones for this replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultAllocatedStorage. 

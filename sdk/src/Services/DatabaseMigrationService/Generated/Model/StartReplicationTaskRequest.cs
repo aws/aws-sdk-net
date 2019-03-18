@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+    /// For more information about AWS DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
     /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
     /// 
     /// </para>

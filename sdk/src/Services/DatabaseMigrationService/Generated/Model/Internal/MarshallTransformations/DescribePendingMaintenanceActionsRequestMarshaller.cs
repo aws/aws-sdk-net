@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeReplicationTasks Request Marshaller
+    /// DescribePendingMaintenanceActions Request Marshaller
     /// </summary>       
-    public class DescribeReplicationTasksRequestMarshaller : IMarshaller<IRequest, DescribeReplicationTasksRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribePendingMaintenanceActionsRequestMarshaller : IMarshaller<IRequest, DescribePendingMaintenanceActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeReplicationTasksRequest)input);
+            return this.Marshall((DescribePendingMaintenanceActionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeReplicationTasksRequest publicRequest)
+        public IRequest Marshall(DescribePendingMaintenanceActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DatabaseMigrationService");
-            string target = "AmazonDMSv20160101.DescribeReplicationTasks";
+            string target = "AmazonDMSv20160101.DescribePendingMaintenanceActions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-01-01";            
@@ -96,10 +96,10 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxRecords);
                 }
 
-                if(publicRequest.IsSetWithoutSettings())
+                if(publicRequest.IsSetReplicationInstanceArn())
                 {
-                    context.Writer.WritePropertyName("WithoutSettings");
-                    context.Writer.Write(publicRequest.WithoutSettings);
+                    context.Writer.WritePropertyName("ReplicationInstanceArn");
+                    context.Writer.Write(publicRequest.ReplicationInstanceArn);
                 }
 
         
@@ -111,9 +111,9 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeReplicationTasksRequestMarshaller _instance = new DescribeReplicationTasksRequestMarshaller();        
+        private static DescribePendingMaintenanceActionsRequestMarshaller _instance = new DescribePendingMaintenanceActionsRequestMarshaller();        
 
-        internal static DescribeReplicationTasksRequestMarshaller GetInstance()
+        internal static DescribePendingMaintenanceActionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +121,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeReplicationTasksRequestMarshaller Instance
+        public static DescribePendingMaintenanceActionsRequestMarshaller Instance
         {
             get
             {

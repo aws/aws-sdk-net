@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CdcInsertsOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CdcInsertsOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompressionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,10 +100,64 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CsvRowDelimiter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataPageSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DataPageSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DictPageSizeLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DictPageSizeLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableStatistics", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableStatistics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EncodingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncodingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EncryptionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExternalTableDefinition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParquetVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParquetVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RowGroupLength", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RowGroupLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServerSideEncryptionKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideEncryptionKmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceAccessRoleArn", targetDepth))

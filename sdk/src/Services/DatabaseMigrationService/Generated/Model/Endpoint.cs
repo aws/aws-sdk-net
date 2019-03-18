@@ -49,6 +49,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
         private int? _port;
+        private RedshiftSettings _redshiftSettings;
         private S3Settings _s3Settings;
         private string _serverName;
         private string _serviceAccessRoleArn;
@@ -114,7 +115,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  <code>compressionType</code> - An optional parameter to use GZIP to compress the
         /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
-        /// the files uncompressed, don't use this value. 
+        /// the files uncompressed, don't use this value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -404,6 +405,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftSettings. 
+        /// <para>
+        /// Settings for the Amazon Redshift endpoint
+        /// </para>
+        /// </summary>
+        public RedshiftSettings RedshiftSettings
+        {
+            get { return this._redshiftSettings; }
+            set { this._redshiftSettings = value; }
+        }
+
+        // Check to see if RedshiftSettings property is set
+        internal bool IsSetRedshiftSettings()
+        {
+            return this._redshiftSettings != null;
         }
 
         /// <summary>

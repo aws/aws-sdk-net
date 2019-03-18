@@ -179,6 +179,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type DataFormatValue.
+    /// </summary>
+    public class DataFormatValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for DataFormatValue
+        /// </summary>
+        public static readonly DataFormatValue Csv = new DataFormatValue("csv");
+        /// <summary>
+        /// Constant Parquet for DataFormatValue
+        /// </summary>
+        public static readonly DataFormatValue Parquet = new DataFormatValue("parquet");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataFormatValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFormatValue FindValue(string value)
+        {
+            return FindValue<DataFormatValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFormatValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DmsSslModeValue.
     /// </summary>
     public class DmsSslModeValue : ConstantClass
@@ -230,6 +280,110 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DmsSslModeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncodingTypeValue.
+    /// </summary>
+    public class EncodingTypeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Plain for EncodingTypeValue
+        /// </summary>
+        public static readonly EncodingTypeValue Plain = new EncodingTypeValue("plain");
+        /// <summary>
+        /// Constant PlainDictionary for EncodingTypeValue
+        /// </summary>
+        public static readonly EncodingTypeValue PlainDictionary = new EncodingTypeValue("plain-dictionary");
+        /// <summary>
+        /// Constant RleDictionary for EncodingTypeValue
+        /// </summary>
+        public static readonly EncodingTypeValue RleDictionary = new EncodingTypeValue("rle-dictionary");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncodingTypeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncodingTypeValue FindValue(string value)
+        {
+            return FindValue<EncodingTypeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncodingTypeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionModeValue.
+    /// </summary>
+    public class EncryptionModeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SseKms for EncryptionModeValue
+        /// </summary>
+        public static readonly EncryptionModeValue SseKms = new EncryptionModeValue("sse-kms");
+        /// <summary>
+        /// Constant SseS3 for EncryptionModeValue
+        /// </summary>
+        public static readonly EncryptionModeValue SseS3 = new EncryptionModeValue("sse-s3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionModeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionModeValue FindValue(string value)
+        {
+            return FindValue<EncryptionModeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionModeValue(string value)
         {
             return FindValue(value);
         }
@@ -380,6 +534,56 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NestingLevelValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParquetVersionValue.
+    /// </summary>
+    public class ParquetVersionValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Parquet10 for ParquetVersionValue
+        /// </summary>
+        public static readonly ParquetVersionValue Parquet10 = new ParquetVersionValue("parquet-1-0");
+        /// <summary>
+        /// Constant Parquet20 for ParquetVersionValue
+        /// </summary>
+        public static readonly ParquetVersionValue Parquet20 = new ParquetVersionValue("parquet-2-0");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParquetVersionValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParquetVersionValue FindValue(string value)
+        {
+            return FindValue<ParquetVersionValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParquetVersionValue(string value)
         {
             return FindValue(value);
         }

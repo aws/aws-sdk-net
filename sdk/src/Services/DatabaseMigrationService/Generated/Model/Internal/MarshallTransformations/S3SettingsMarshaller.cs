@@ -57,6 +57,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetCdcInsertsOnly())
+            {
+                context.Writer.WritePropertyName("CdcInsertsOnly");
+                context.Writer.Write(requestObject.CdcInsertsOnly);
+            }
+
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
@@ -75,10 +81,64 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CsvRowDelimiter);
             }
 
+            if(requestObject.IsSetDataFormat())
+            {
+                context.Writer.WritePropertyName("DataFormat");
+                context.Writer.Write(requestObject.DataFormat);
+            }
+
+            if(requestObject.IsSetDataPageSize())
+            {
+                context.Writer.WritePropertyName("DataPageSize");
+                context.Writer.Write(requestObject.DataPageSize);
+            }
+
+            if(requestObject.IsSetDictPageSizeLimit())
+            {
+                context.Writer.WritePropertyName("DictPageSizeLimit");
+                context.Writer.Write(requestObject.DictPageSizeLimit);
+            }
+
+            if(requestObject.IsSetEnableStatistics())
+            {
+                context.Writer.WritePropertyName("EnableStatistics");
+                context.Writer.Write(requestObject.EnableStatistics);
+            }
+
+            if(requestObject.IsSetEncodingType())
+            {
+                context.Writer.WritePropertyName("EncodingType");
+                context.Writer.Write(requestObject.EncodingType);
+            }
+
+            if(requestObject.IsSetEncryptionMode())
+            {
+                context.Writer.WritePropertyName("EncryptionMode");
+                context.Writer.Write(requestObject.EncryptionMode);
+            }
+
             if(requestObject.IsSetExternalTableDefinition())
             {
                 context.Writer.WritePropertyName("ExternalTableDefinition");
                 context.Writer.Write(requestObject.ExternalTableDefinition);
+            }
+
+            if(requestObject.IsSetParquetVersion())
+            {
+                context.Writer.WritePropertyName("ParquetVersion");
+                context.Writer.Write(requestObject.ParquetVersion);
+            }
+
+            if(requestObject.IsSetRowGroupLength())
+            {
+                context.Writer.WritePropertyName("RowGroupLength");
+                context.Writer.Write(requestObject.RowGroupLength);
+            }
+
+            if(requestObject.IsSetServerSideEncryptionKmsKeyId())
+            {
+                context.Writer.WritePropertyName("ServerSideEncryptionKmsKeyId");
+                context.Writer.Write(requestObject.ServerSideEncryptionKmsKeyId);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())

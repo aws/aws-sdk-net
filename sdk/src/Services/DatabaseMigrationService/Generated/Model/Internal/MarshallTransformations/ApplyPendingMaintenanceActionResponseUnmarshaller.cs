@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyReplicationInstance operation
+    /// Response Unmarshaller for ApplyPendingMaintenanceAction operation
     /// </summary>  
-    public class ModifyReplicationInstanceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ApplyPendingMaintenanceActionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ModifyReplicationInstanceResponse response = new ModifyReplicationInstanceResponse();
+            ApplyPendingMaintenanceActionResponse response = new ApplyPendingMaintenanceActionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ReplicationInstance", targetDepth))
+                if (context.TestExpression("ResourcePendingMaintenanceActions", targetDepth))
                 {
-                    var unmarshaller = ReplicationInstanceUnmarshaller.Instance;
-                    response.ReplicationInstance = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ResourcePendingMaintenanceActionsUnmarshaller.Instance;
+                    response.ResourcePendingMaintenanceActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,40 +72,16 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedFault"))
-            {
-                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientResourceCapacityFault"))
-            {
-                return new InsufficientResourceCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateFault"))
-            {
-                return new InvalidResourceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsFault"))
-            {
-                return new ResourceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("StorageQuotaExceededFault"))
-            {
-                return new StorageQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UpgradeDependencyFailureFault"))
-            {
-                return new UpgradeDependencyFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonDatabaseMigrationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ModifyReplicationInstanceResponseUnmarshaller _instance = new ModifyReplicationInstanceResponseUnmarshaller();        
+        private static ApplyPendingMaintenanceActionResponseUnmarshaller _instance = new ApplyPendingMaintenanceActionResponseUnmarshaller();        
 
-        internal static ModifyReplicationInstanceResponseUnmarshaller GetInstance()
+        internal static ApplyPendingMaintenanceActionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +89,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyReplicationInstanceResponseUnmarshaller Instance
+        public static ApplyPendingMaintenanceActionResponseUnmarshaller Instance
         {
             get
             {
