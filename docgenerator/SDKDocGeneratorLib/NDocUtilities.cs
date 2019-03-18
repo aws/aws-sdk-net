@@ -14,6 +14,8 @@ using System.Xml;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
+using System.Web;
+
 namespace SDKDocGenerator
 {
     public static class NDocUtilities
@@ -727,7 +729,8 @@ namespace SDKDocGenerator
                     startPos = content.IndexOf('\n', startPos);
                     var endPos = content.IndexOf("#endregion", startPos);
 
-                    processedCodeSample = content.Substring(startPos, endPos - startPos);
+                    var sampleCode = content.Substring(startPos, endPos - startPos);
+                    processedCodeSample = HttpUtility.HtmlEncode(sampleCode);
                 }
                 else
                 {
