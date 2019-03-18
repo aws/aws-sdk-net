@@ -1,3 +1,11 @@
+### 3.3.477.0 (2019-03-18 18:07 UTC)
+* Chime (3.3.2.0)
+	* This release adds support for the Amazon Chime Business Calling and Voice Connector features.
+* DatabaseMigrationService (3.3.14.0)
+	* S3 Endpoint Settings added support for 1) Migrating to Amazon S3 as a target in Parquet format 2) Encrypting S3 objects after migration with custom KMS Server-Side encryption. Redshift Endpoint Settings added support for encrypting intermediate S3 objects during migration with custom KMS Server-Side encryption. 
+* EC2 (3.3.87.0)
+	* DescribeFpgaImages API now returns a new DataRetentionSupport attribute to indicate if the AFI meets the requirements to support DRAM data retention. DataRetentionSupport is a read-only attribute.
+
 ### 3.3.476.0 (2019-03-14 18:31 UTC)
 * ACMPCA (3.3.4.0)
 	* AWS Certificate Manager (ACM) Private CA allows customers to manage permissions on their CAs. Customers can grant or deny AWS Certificate Manager permission to renew exported private certificates.
