@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class FpgaImage
     {
         private DateTime? _createTime;
+        private bool? _dataRetentionSupport;
         private string _description;
         private string _fpgaImageGlobalId;
         private string _fpgaImageId;
@@ -63,6 +64,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataRetentionSupport. 
+        /// <para>
+        /// Indicates whether data retention support is enabled for the AFI.
+        /// </para>
+        /// </summary>
+        public bool DataRetentionSupport
+        {
+            get { return this._dataRetentionSupport.GetValueOrDefault(); }
+            set { this._dataRetentionSupport = value; }
+        }
+
+        // Check to see if DataRetentionSupport property is set
+        internal bool IsSetDataRetentionSupport()
+        {
+            return this._dataRetentionSupport.HasValue; 
         }
 
         /// <summary>
