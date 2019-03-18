@@ -100,6 +100,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrimaryEmail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrimaryProvisionedNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryProvisionedNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RegisteredOn", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

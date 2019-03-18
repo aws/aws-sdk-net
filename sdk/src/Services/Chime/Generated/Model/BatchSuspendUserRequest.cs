@@ -43,9 +43,9 @@ namespace Amazon.Chime.Model
     ///  
     /// <para>
     /// Users suspended from an <code>EnterpriseLWA</code> account are immediately signed
-    /// out of Amazon Chime and are no longer able to sign in. To remove the suspension from
-    /// suspended <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a>
-    /// action. 
+    /// out of Amazon Chime and can no longer sign in. To remove the suspension from suspended
+    /// <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a> action.
+    /// 
     /// </para>
     ///  
     /// <para>

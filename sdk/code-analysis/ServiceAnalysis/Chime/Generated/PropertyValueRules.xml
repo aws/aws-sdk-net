@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Chime.Model.AssociatePhoneNumbersWithVoiceConnectorRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.AssociatePhoneNumberWithUserRequest.E164PhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.BatchSuspendUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -19,7 +27,32 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateVoiceConnectorRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DeleteAccountRequest.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteVoiceConnectorRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteVoiceConnectorOriginationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteVoiceConnectorTerminationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DisassociatePhoneNumbersFromVoiceConnectorRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -31,11 +64,31 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.GetPhoneNumberOrderRequest.PhoneNumberOrderId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.GetUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetUserRequest.UserId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetVoiceConnectorRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetVoiceConnectorOriginationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetVoiceConnectorTerminationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetVoiceConnectorTerminationHealthRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -58,6 +111,16 @@
     <pattern>.+@.+\..+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListPhoneNumberOrdersRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListPhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListUsersRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -71,11 +134,32 @@
     <pattern>.+@.+\..+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListVoiceConnectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.LogoutUserRequest.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.LogoutUserRequest.UserId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutVoiceConnectorOriginationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutVoiceConnectorTerminationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PutVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -85,6 +169,15 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.ResetPersonalPINRequest.UserId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.RestorePhoneNumberRequest.PhoneNumberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UpdateAccountRequest.AccountId</property>
@@ -109,8 +202,60 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateVoiceConnectorRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateVoiceConnectorRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.Invite.EmailAddress</property>
     <pattern>.+@.+\..+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.OrderedPhoneNumber.E164PhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.OriginationRoute.Port</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.OriginationRoute.Priority</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.OriginationRoute.Weight</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PhoneNumber.E164PhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PhoneNumberError.PhoneNumberId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.PhoneNumberOrder.PhoneNumberOrderId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Termination.CpsLimit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.Termination.DefaultPhoneNumber</property>
+    <pattern>^\+?[1-9]\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdatePhoneNumberRequestItem.PhoneNumberId</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UpdateUserRequestItem.UserId</property>
@@ -122,6 +267,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UserError.UserId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.VoiceConnector.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.VoiceConnector.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
 </property-value-rules>
