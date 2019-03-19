@@ -29,10 +29,10 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationAggregatorSourcesStatus operation.
-    /// Returns status information for sources within an aggregator. The status includes
-    /// information about the last time AWS Config verified authorization between the source
-    /// account and an aggregator account. In case of a failure, the status contains the related
-    /// error code or message.
+    /// Returns status information for sources within an aggregator. The status includes information
+    /// about the last time AWS Config verified authorization between the source account and
+    /// an aggregator account. In case of a failure, the status contains the related error
+    /// code or message.
     /// </summary>
     public partial class DescribeConfigurationAggregatorSourcesStatusRequest : AmazonConfigServiceRequest
     {

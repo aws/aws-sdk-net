@@ -288,6 +288,16 @@
     <max>2557</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.SelectResourceConfigRequest.Expression</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.SelectResourceConfigRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.StartConfigurationRecorderRequest.ConfigurationRecorderName</property>
     <min>1</min>
     <max>256</max>

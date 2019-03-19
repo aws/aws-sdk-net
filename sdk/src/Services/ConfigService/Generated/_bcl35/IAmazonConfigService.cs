@@ -1183,10 +1183,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns status information for sources within an aggregator. The status includes
-        /// information about the last time AWS Config verified authorization between the source
-        /// account and an aggregator account. In case of a failure, the status contains the related
-        /// error code or message.
+        /// Returns status information for sources within an aggregator. The status includes information
+        /// about the last time AWS Config verified authorization between the source account and
+        /// an aggregator account. In case of a failure, the status contains the related error
+        /// code or message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
         /// 
@@ -3082,6 +3082,63 @@ namespace Amazon.ConfigService
         /// <returns>Returns a  PutRetentionConfigurationResult from ConfigService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         PutRetentionConfigurationResponse EndPutRetentionConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SelectResourceConfig
+
+
+        /// <summary>
+        /// Accepts a structured query language (SQL) <code>SELECT</code> command, performs the
+        /// corresponding search, and returns resource configurations matching the properties.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the SelectResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidExpressionException">
+        /// The syntax of the query is incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        SelectResourceConfigResponse SelectResourceConfig(SelectResourceConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelectResourceConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        IAsyncResult BeginSelectResourceConfig(SelectResourceConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SelectResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelectResourceConfig.</param>
+        /// 
+        /// <returns>Returns a  SelectResourceConfigResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        SelectResourceConfigResponse EndSelectResourceConfig(IAsyncResult asyncResult);
 
         #endregion
         

@@ -1001,10 +1001,10 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns status information for sources within an aggregator. The status includes
-        /// information about the last time AWS Config verified authorization between the source
-        /// account and an aggregator account. In case of a failure, the status contains the related
-        /// error code or message.
+        /// Returns status information for sources within an aggregator. The status includes information
+        /// about the last time AWS Config verified authorization between the source account and
+        /// an aggregator account. In case of a failure, the status contains the related error
+        /// code or message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationAggregatorSourcesStatus service method.</param>
         /// 
@@ -2606,6 +2606,50 @@ namespace Amazon.ConfigService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SelectResourceConfig
+
+
+        /// <summary>
+        /// Accepts a structured query language (SQL) <code>SELECT</code> command, performs the
+        /// corresponding search, and returns resource configurations matching the properties.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+        /// <b>Query Components</b> </a> section in the AWS Config Developer Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the SelectResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidExpressionException">
+        /// The syntax of the query is incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        SelectResourceConfigResponse SelectResourceConfig(SelectResourceConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        Task<SelectResourceConfigResponse> SelectResourceConfigAsync(SelectResourceConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

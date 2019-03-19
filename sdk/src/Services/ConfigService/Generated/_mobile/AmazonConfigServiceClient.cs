@@ -2078,6 +2078,39 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  SelectResourceConfig
+
+        internal virtual SelectResourceConfigResponse SelectResourceConfig(SelectResourceConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<SelectResourceConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
+        public virtual Task<SelectResourceConfigResponse> SelectResourceConfigAsync(SelectResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SelectResourceConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SelectResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SelectResourceConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartConfigRulesEvaluation
 
         internal virtual StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
