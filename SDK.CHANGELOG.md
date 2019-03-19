@@ -1,3 +1,9 @@
+### 3.3.478.0 (2019-03-19 18:29 UTC)
+* ConfigService (3.3.25.0)
+	* AWS Config adds a new API called SelectResourceConfig to run advanced queries based on resource configuration properties.
+* EKS (3.3.4.0)
+	* Added support to control private/public access to the Kubernetes API-server endpoint
+
 ### 3.3.477.0 (2019-03-18 18:07 UTC)
 * Chime (3.3.2.0)
 	* This release adds support for the Amazon Chime Business Calling and Voice Connector features.
