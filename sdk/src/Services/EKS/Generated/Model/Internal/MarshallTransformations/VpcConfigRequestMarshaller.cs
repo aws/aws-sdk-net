@@ -45,6 +45,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VpcConfigRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEndpointPrivateAccess())
+            {
+                context.Writer.WritePropertyName("endpointPrivateAccess");
+                context.Writer.Write(requestObject.EndpointPrivateAccess);
+            }
+
+            if(requestObject.IsSetEndpointPublicAccess())
+            {
+                context.Writer.WritePropertyName("endpointPublicAccess");
+                context.Writer.Write(requestObject.EndpointPublicAccess);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

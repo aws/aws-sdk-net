@@ -32,8 +32,56 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class VpcConfigRequest
     {
+        private bool? _endpointPrivateAccess;
+        private bool? _endpointPublicAccess;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property EndpointPrivateAccess. 
+        /// <para>
+        /// Set this value to <code>true</code> to enable private access for your cluster's Kubernetes
+        /// API server endpoint. If you enable private access, Kubernetes API requests from within
+        /// your cluster's VPC will use the private VPC endpoint. The default value for this parameter
+        /// is <code>false</code>, which disables private access for your Kubernetes API server.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public bool EndpointPrivateAccess
+        {
+            get { return this._endpointPrivateAccess.GetValueOrDefault(); }
+            set { this._endpointPrivateAccess = value; }
+        }
+
+        // Check to see if EndpointPrivateAccess property is set
+        internal bool IsSetEndpointPrivateAccess()
+        {
+            return this._endpointPrivateAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointPublicAccess. 
+        /// <para>
+        /// Set this value to <code>false</code> to disable public access for your cluster's Kubernetes
+        /// API server endpoint. If you disable public access, your cluster's Kubernetes API server
+        /// can only receive requests from within the cluster VPC. The default value for this
+        /// parameter is <code>true</code>, which enables public access for your Kubernetes API
+        /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public bool EndpointPublicAccess
+        {
+            get { return this._endpointPublicAccess.GetValueOrDefault(); }
+            set { this._endpointPublicAccess = value; }
+        }
+
+        // Check to see if EndpointPublicAccess property is set
+        internal bool IsSetEndpointPublicAccess()
+        {
+            return this._endpointPublicAccess.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

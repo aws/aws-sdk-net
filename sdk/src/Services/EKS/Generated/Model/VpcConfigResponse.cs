@@ -32,9 +32,52 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class VpcConfigResponse
     {
+        private bool? _endpointPrivateAccess;
+        private bool? _endpointPublicAccess;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property EndpointPrivateAccess. 
+        /// <para>
+        /// This parameter indicates whether the Amazon EKS private API server endpoint is enabled.
+        /// If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests
+        /// that originate from within your cluster's VPC will use the private VPC endpoint instead
+        /// of traversing the internet.
+        /// </para>
+        /// </summary>
+        public bool EndpointPrivateAccess
+        {
+            get { return this._endpointPrivateAccess.GetValueOrDefault(); }
+            set { this._endpointPrivateAccess = value; }
+        }
+
+        // Check to see if EndpointPrivateAccess property is set
+        internal bool IsSetEndpointPrivateAccess()
+        {
+            return this._endpointPrivateAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointPublicAccess. 
+        /// <para>
+        /// This parameter indicates whether the Amazon EKS public API server endpoint is enabled.
+        /// If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes
+        /// API server can only receive requests that originate from within the cluster VPC. 
+        /// </para>
+        /// </summary>
+        public bool EndpointPublicAccess
+        {
+            get { return this._endpointPublicAccess.GetValueOrDefault(); }
+            set { this._endpointPublicAccess = value; }
+        }
+
+        // Check to see if EndpointPublicAccess property is set
+        internal bool IsSetEndpointPublicAccess()
+        {
+            return this._endpointPublicAccess.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

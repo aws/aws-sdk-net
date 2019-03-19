@@ -156,7 +156,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version of your Amazon EKS cluster. For more information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+        /// The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
         /// Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
@@ -175,10 +175,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ResourcesVpcConfig. 
         /// <para>
-        /// The VPC subnets and security groups used by the cluster control plane. Amazon EKS
-        /// VPC resources have specific requirements to work properly with Kubernetes. For more
-        /// information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
-        /// VPC Considerations</a> and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+        /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources
+        /// have specific requirements to work properly with Kubernetes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+        /// VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
         /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>

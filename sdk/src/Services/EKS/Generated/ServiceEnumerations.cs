@@ -163,6 +163,14 @@ namespace Amazon.EKS
     {
 
         /// <summary>
+        /// Constant EndpointPrivateAccess for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType EndpointPrivateAccess = new UpdateParamType("EndpointPrivateAccess");
+        /// <summary>
+        /// Constant EndpointPublicAccess for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType EndpointPublicAccess = new UpdateParamType("EndpointPublicAccess");
+        /// <summary>
         /// Constant PlatformVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PlatformVersion = new UpdateParamType("PlatformVersion");
@@ -270,6 +278,10 @@ namespace Amazon.EKS
     public class UpdateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EndpointAccessUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType EndpointAccessUpdate = new UpdateType("EndpointAccessUpdate");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

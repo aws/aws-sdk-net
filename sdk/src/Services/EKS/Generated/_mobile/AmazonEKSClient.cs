@@ -455,6 +455,39 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  UpdateClusterConfig
+
+        internal virtual UpdateClusterConfigResponse UpdateClusterConfig(UpdateClusterConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">REST API Reference for UpdateClusterConfig Operation</seealso>
+        public virtual Task<UpdateClusterConfigResponse> UpdateClusterConfigAsync(UpdateClusterConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateClusterVersion
 
         internal virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
