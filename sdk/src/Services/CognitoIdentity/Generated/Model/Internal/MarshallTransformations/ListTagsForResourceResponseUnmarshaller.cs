@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateIdentityPool operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class UpdateIdentityPoolResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,16 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateIdentityPoolResponse response = new UpdateIdentityPoolResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllowUnauthenticatedIdentities", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.AllowUnauthenticatedIdentities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CognitoIdentityProviders", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CognitoIdentityProviderInfo, CognitoIdentityProviderInfoUnmarshaller>(CognitoIdentityProviderInfoUnmarshaller.Instance);
-                    response.CognitoIdentityProviders = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeveloperProviderName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeveloperProviderName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityPoolId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.IdentityPoolId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityPoolName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.IdentityPoolName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityPoolTags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.IdentityPoolTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OpenIdConnectProviderARNs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.OpenIdConnectProviderARNs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SamlProviderARNs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SamlProviderARNs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportedLoginProviders", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.SupportedLoginProviders = unmarshaller.Unmarshall(context);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -120,10 +72,6 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -132,17 +80,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
             {
                 return new NotAuthorizedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
-            {
-                return new ResourceConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -155,9 +95,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             return new AmazonCognitoIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateIdentityPoolResponseUnmarshaller _instance = new UpdateIdentityPoolResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static UpdateIdentityPoolResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -165,7 +105,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateIdentityPoolResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

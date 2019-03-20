@@ -28,35 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteIdentityPool operation.
-    /// Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate
-    /// with the pool.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags that are assigned to an Amazon Cognito identity pool.
     /// 
     ///  
     /// <para>
-    /// You must use AWS Developer credentials to call this API.
+    /// A tag is a label that you can apply to identity pools to categorize and manage them
+    /// in different ways, such as by purpose, owner, environment, or other criteria.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use this action up to 10 times per second, per account.
     /// </para>
     /// </summary>
-    public partial class DeleteIdentityPoolRequest : AmazonCognitoIdentityRequest
+    public partial class ListTagsForResourceRequest : AmazonCognitoIdentityRequest
     {
-        private string _identityPoolId;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An identity pool ID in the format REGION:GUID.
+        /// The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
         /// </para>
         /// </summary>
-        public string IdentityPoolId
+        public string ResourceArn
         {
-            get { return this._identityPoolId; }
-            set { this._identityPoolId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if IdentityPoolId property is set
-        internal bool IsSetIdentityPoolId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._identityPoolId != null;
+            return this._resourceArn != null;
         }
 
     }

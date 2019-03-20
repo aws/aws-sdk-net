@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// A provider representing an Amazon Cognito Identity User Pool and its client ID.
+    /// A provider representing an Amazon Cognito user pool and its client ID.
     /// </summary>
     public partial class CognitoIdentityProviderInfo
     {
@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the Amazon Cognito Identity User Pool.
+        /// The client ID for the Amazon Cognito user pool.
         /// </para>
         /// </summary>
         public string ClientId
@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+        /// The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
         /// </para>
         /// </summary>
         public string ProviderName
@@ -76,6 +76,18 @@ namespace Amazon.CognitoIdentity.Model
         /// Gets and sets the property ServerSideTokenCheck. 
         /// <para>
         /// TRUE if server-side token validation is enabled for the identity provider’s token.
+        /// </para>
+        ///  
+        /// <para>
+        /// Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
+        /// identity pool will check with the integrated user pools to make sure that the user
+        /// has not been globally signed out or deleted before the identity pool provides an OIDC
+        /// token or AWS credentials for the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user is signed out or deleted, the identity pool will return a 400 Not Authorized
+        /// error.
         /// </para>
         /// </summary>
         public bool ServerSideTokenCheck

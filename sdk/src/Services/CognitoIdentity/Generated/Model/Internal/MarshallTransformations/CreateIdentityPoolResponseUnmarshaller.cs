@@ -81,6 +81,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     response.IdentityPoolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentityPoolTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.IdentityPoolTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpenIdConnectProviderARNs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

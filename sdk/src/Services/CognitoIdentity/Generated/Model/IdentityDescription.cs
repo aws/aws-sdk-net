@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Logins. 
         /// <para>
-        /// A set of optional name-value pairs that map provider names to provider tokens.
+        /// The provider names.
         /// </para>
         /// </summary>
         public List<string> Logins

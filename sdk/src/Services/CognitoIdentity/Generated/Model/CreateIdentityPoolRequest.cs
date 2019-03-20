@@ -64,6 +64,7 @@ namespace Amazon.CognitoIdentity.Model
         private List<CognitoIdentityProviderInfo> _cognitoIdentityProviders = new List<CognitoIdentityProviderInfo>();
         private string _developerProviderName;
         private string _identityPoolName;
+        private Dictionary<string, string> _identityPoolTags = new Dictionary<string, string>();
         private List<string> _openIdConnectProviderARNs = new List<string>();
         private List<string> _samlProviderARNs = new List<string>();
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
@@ -89,7 +90,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property CognitoIdentityProviders. 
         /// <para>
-        /// An array of Amazon Cognito Identity user pools and their client IDs.
+        /// An array of Amazon Cognito user pools and their client IDs.
         /// </para>
         /// </summary>
         public List<CognitoIdentityProviderInfo> CognitoIdentityProviders
@@ -146,6 +147,26 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetIdentityPoolName()
         {
             return this._identityPoolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityPoolTags. 
+        /// <para>
+        /// Tags to assign to the identity pool. A tag is a label that you can apply to identity
+        /// pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> IdentityPoolTags
+        {
+            get { return this._identityPoolTags; }
+            set { this._identityPoolTags = value; }
+        }
+
+        // Check to see if IdentityPoolTags property is set
+        internal bool IsSetIdentityPoolTags()
+        {
+            return this._identityPoolTags != null && this._identityPoolTags.Count > 0; 
         }
 
         /// <summary>

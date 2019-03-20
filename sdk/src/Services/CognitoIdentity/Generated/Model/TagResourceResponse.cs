@@ -28,36 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteIdentityPool operation.
-    /// Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate
-    /// with the pool.
-    /// 
-    ///  
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class DeleteIdentityPoolRequest : AmazonCognitoIdentityRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _identityPoolId;
-
-        /// <summary>
-        /// Gets and sets the property IdentityPoolId. 
-        /// <para>
-        /// An identity pool ID in the format REGION:GUID.
-        /// </para>
-        /// </summary>
-        public string IdentityPoolId
-        {
-            get { return this._identityPoolId; }
-            set { this._identityPoolId = value; }
-        }
-
-        // Check to see if IdentityPoolId property is set
-        internal bool IsSetIdentityPoolId()
-        {
-            return this._identityPoolId != null;
-        }
 
     }
 }

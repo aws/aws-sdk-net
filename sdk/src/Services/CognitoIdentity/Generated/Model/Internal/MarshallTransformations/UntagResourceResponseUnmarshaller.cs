@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListIdentityPools operation
+    /// Response Unmarshaller for UntagResource operation
     /// </summary>  
-    public class ListIdentityPoolsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UntagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListIdentityPoolsResponse response = new ListIdentityPoolsResponse();
+            UntagResourceResponse response = new UntagResourceResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("IdentityPools", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<IdentityPoolShortDescription, IdentityPoolShortDescriptionUnmarshaller>(IdentityPoolShortDescriptionUnmarshaller.Instance);
-                    response.IdentityPools = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -101,9 +84,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             return new AmazonCognitoIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListIdentityPoolsResponseUnmarshaller _instance = new ListIdentityPoolsResponseUnmarshaller();        
+        private static UntagResourceResponseUnmarshaller _instance = new UntagResourceResponseUnmarshaller();        
 
-        internal static ListIdentityPoolsResponseUnmarshaller GetInstance()
+        internal static UntagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +94,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListIdentityPoolsResponseUnmarshaller Instance
+        public static UntagResourceResponseUnmarshaller Instance
         {
             get
             {

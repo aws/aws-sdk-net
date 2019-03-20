@@ -35,47 +35,32 @@ namespace Amazon.CognitoIdentity
     /// <summary>
     /// Implementation for accessing CognitoIdentity
     ///
-    /// Amazon Cognito 
+    /// Amazon Cognito Federated Identities 
     /// <para>
-    /// Amazon Cognito is a web service that delivers scoped temporary credentials to mobile
-    /// devices and other untrusted environments. Amazon Cognito uniquely identifies a device
-    /// and supplies the user with a consistent identity over the lifetime of an application.
+    /// Amazon Cognito Federated Identities is a web service that delivers scoped temporary
+    /// credentials to mobile devices and other untrusted environments. It uniquely identifies
+    /// a device and supplies the user with a consistent identity over the lifetime of an
+    /// application.
     /// </para>
     ///  
     /// <para>
-    /// Using Amazon Cognito, you can enable authentication with one or more third-party identity
-    /// providers (Facebook, Google, or Login with Amazon), and you can also choose to support
-    /// unauthenticated access from your app. Cognito delivers a unique identifier for each
-    /// user and acts as an OpenID token provider trusted by AWS Security Token Service (STS)
-    /// to access temporary, limited-privilege AWS credentials.
+    /// Using Amazon Cognito Federated Identities, you can enable authentication with one
+    /// or more third-party identity providers (Facebook, Google, or Login with Amazon) or
+    /// an Amazon Cognito user pool, and you can also choose to support unauthenticated access
+    /// from your app. Cognito delivers a unique identifier for each user and acts as an OpenID
+    /// token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege
+    /// AWS credentials.
     /// </para>
     ///  
     /// <para>
-    /// To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the
-    /// end user is authenticated with one of the supported identity providers, set the <code>Logins</code>
-    /// map with the identity provider token. <code>GetId</code> returns a unique identifier
-    /// for the user.
+    /// For a description of the authentication flow from the Amazon Cognito Developer Guide
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Authentication
+    /// Flow</a>.
     /// </para>
     ///  
     /// <para>
-    /// Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
-    /// the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
-    /// originally returned by <code>GetId</code>. Assuming your identity pool has been configured
-    /// via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
-    /// will return AWS credentials for your use. If your pool has not been configured with
-    /// <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
-    /// call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
-    /// and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
-    /// the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
-    /// by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
-    /// to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
-    /// to retrieve AWS credentials.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
-    /// probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
-    /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
+    /// For more information see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+    /// Cognito Federated Identities</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityClient : AmazonServiceClient, IAmazonCognitoIdentity
@@ -448,7 +433,7 @@ namespace Amazon.CognitoIdentity
         #region  DeleteIdentityPool
 
         /// <summary>
-        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+        /// Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
         ///  
@@ -484,7 +469,7 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+        /// Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
         ///  
@@ -840,7 +825,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
+        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
         /// 
         /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
         /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
@@ -1171,7 +1156,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 15 minutes.
+        /// The OpenId token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1218,7 +1203,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 15 minutes.
+        /// The OpenId token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1392,7 +1377,7 @@ namespace Amazon.CognitoIdentity
         #region  ListIdentities
 
         /// <summary>
-        /// Lists the identities in a pool.
+        /// Lists the identities in an identity pool.
         /// 
         ///  
         /// <para>
@@ -1485,6 +1470,9 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
@@ -1534,11 +1522,90 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists the tags that are assigned to an Amazon Cognito identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// A tag is a label that you can apply to identity pools to categorize and manage them
+        /// in different ways, such as by purpose, owner, environment, or other criteria.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this action up to 10 times per second, per account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from CognitoIdentity.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  LookupDeveloperIdentity
 
         /// <summary>
         /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
-        /// or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code>
+        /// or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code>
         /// for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code>
         /// must not be null. If you supply only one of these values, the other value will be
         /// searched in the database and returned as a part of the response. If you supply both,
@@ -1547,6 +1614,14 @@ namespace Amazon.CognitoIdentity
         /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
         /// is thrown.
         /// 
+        ///  
+        /// <para>
+        ///  <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane
+        /// operations: for example, to enable customer service to locate an identity ID by username.
+        /// If you are using it for higher-volume operations such as user authentication, your
+        /// requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is
+        /// a better option for higher-volume operations for user authentication.
+        /// </para>
         ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
@@ -1630,6 +1705,12 @@ namespace Amazon.CognitoIdentity
         /// users can be merged. If the users to be merged are associated with the same public
         /// provider, but as two different users, an exception will be thrown.
         /// 
+        ///  
+        /// <para>
+        /// The number of linked logins is limited to 20. So, the number of linked logins for
+        /// the source user, <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>,
+        /// together should not be larger than 20. Otherwise, an exception will be thrown.
+        /// </para>
         ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
@@ -1827,6 +1908,98 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you
+        /// can use to categorize and manage identity pools in different ways, such as by purpose,
+        /// owner, environment, or other criteria.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and value, both of which you define. A key is a general
+        /// category for more specific values. For example, if you have two versions of an identity
+        /// pool, one for testing and another for production, you might assign an <code>Environment</code>
+        /// tag key to both identity pools. The value of this key might be <code>Test</code> for
+        /// one identity pool and <code>Production</code> for the other.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags are useful for cost tracking and access control. You can activate your tags so
+        /// that they appear on the Billing and Cost Management console, where you can track the
+        /// costs associated with your identity pools. In an IAM policy, you can constrain permissions
+        /// for identity pools based on specific tags or tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this action up to 5 times per second, per account. An identity pool can
+        /// have as many as 50 tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from CognitoIdentity.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UnlinkDeveloperIdentity
 
         /// <summary>
@@ -1989,10 +2162,80 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from an Amazon Cognito identity pool. You can use this
+        /// action up to 5 times per second, per account
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from CognitoIdentity.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateIdentityPool
 
         /// <summary>
-        /// Updates a user pool.
+        /// Updates an identity pool.
         /// 
         ///  
         /// <para>

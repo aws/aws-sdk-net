@@ -102,6 +102,20 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityPoolName);
                 }
 
+                if(publicRequest.IsSetIdentityPoolTags())
+                {
+                    context.Writer.WritePropertyName("IdentityPoolTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestIdentityPoolTagsKvp in publicRequest.IdentityPoolTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestIdentityPoolTagsKvp.Key);
+                        var publicRequestIdentityPoolTagsValue = publicRequestIdentityPoolTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestIdentityPoolTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOpenIdConnectProviderARNs())
                 {
                     context.Writer.WritePropertyName("OpenIdConnectProviderARNs");

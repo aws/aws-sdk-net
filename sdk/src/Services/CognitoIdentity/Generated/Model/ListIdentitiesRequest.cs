@@ -29,7 +29,7 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
-    /// Lists the identities in a pool.
+    /// Lists the identities in an identity pool.
     /// 
     ///  
     /// <para>

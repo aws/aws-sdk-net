@@ -197,6 +197,11 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest.DeveloperUserIdentifier</property>
     <min>1</min>
     <max>1024</max>
@@ -269,6 +274,11 @@
     <pattern>[\w-]+:[0-9a-f-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest.DeveloperProviderName</property>
     <min>1</min>
     <max>128</max>
@@ -296,6 +306,11 @@
     <min>1</min>
     <max>55</max>
     <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest.DeveloperProviderName</property>

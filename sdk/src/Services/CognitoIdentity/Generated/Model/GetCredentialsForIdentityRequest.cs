@@ -87,7 +87,20 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Logins. 
         /// <para>
-        /// A set of optional name-value pairs that map provider names to provider tokens.
+        /// A set of optional name-value pairs that map provider names to provider tokens. The
+        /// name-value pair will follow the syntax "provider_name": "provider_user_identifier".
+        /// </para>
+        ///  
+        /// <para>
+        /// Logins should not be specified when trying to get credentials for an unauthenticated
+        /// identity.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Logins parameter is required when using identities associated with external identity
+        /// providers such as FaceBook. For examples of <code>Logins</code> maps, see the code
+        /// examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+        /// Identity Providers</a> section of the Amazon Cognito Developer Guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Logins

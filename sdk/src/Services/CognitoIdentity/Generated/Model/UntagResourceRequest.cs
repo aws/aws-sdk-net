@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Returned in response to a successful GetOpenIdToken request.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes the specified tags from an Amazon Cognito identity pool. You can use this
+    /// action up to 5 times per second, per account
     /// </summary>
-    public partial class GetOpenIdTokenResponse : AmazonWebServiceResponse
+    public partial class UntagResourceRequest : AmazonCognitoIdentityRequest
     {
-        private string _identityId;
-        private string _token;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// A unique identifier in the format REGION:GUID. Note that the IdentityId returned may
-        /// not match the one passed on input.
+        /// The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
         /// </para>
         /// </summary>
-        public string IdentityId
+        public string ResourceArn
         {
-            get { return this._identityId; }
-            set { this._identityId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if IdentityId property is set
-        internal bool IsSetIdentityId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._identityId != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Token. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// An OpenID token, valid for 10 minutes.
+        /// The keys of the tags to remove from the user pool.
         /// </para>
         /// </summary>
-        public string Token
+        public List<string> TagKeys
         {
-            get { return this._token; }
-            set { this._token = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Token property is set
-        internal bool IsSetToken()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._token != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

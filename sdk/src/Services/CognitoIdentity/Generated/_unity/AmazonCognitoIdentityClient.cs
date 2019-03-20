@@ -35,47 +35,32 @@ namespace Amazon.CognitoIdentity
     /// <summary>
     /// Implementation for accessing CognitoIdentity
     ///
-    /// Amazon Cognito 
+    /// Amazon Cognito Federated Identities 
     /// <para>
-    /// Amazon Cognito is a web service that delivers scoped temporary credentials to mobile
-    /// devices and other untrusted environments. Amazon Cognito uniquely identifies a device
-    /// and supplies the user with a consistent identity over the lifetime of an application.
+    /// Amazon Cognito Federated Identities is a web service that delivers scoped temporary
+    /// credentials to mobile devices and other untrusted environments. It uniquely identifies
+    /// a device and supplies the user with a consistent identity over the lifetime of an
+    /// application.
     /// </para>
     ///  
     /// <para>
-    /// Using Amazon Cognito, you can enable authentication with one or more third-party identity
-    /// providers (Facebook, Google, or Login with Amazon), and you can also choose to support
-    /// unauthenticated access from your app. Cognito delivers a unique identifier for each
-    /// user and acts as an OpenID token provider trusted by AWS Security Token Service (STS)
-    /// to access temporary, limited-privilege AWS credentials.
+    /// Using Amazon Cognito Federated Identities, you can enable authentication with one
+    /// or more third-party identity providers (Facebook, Google, or Login with Amazon) or
+    /// an Amazon Cognito user pool, and you can also choose to support unauthenticated access
+    /// from your app. Cognito delivers a unique identifier for each user and acts as an OpenID
+    /// token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege
+    /// AWS credentials.
     /// </para>
     ///  
     /// <para>
-    /// To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the
-    /// end user is authenticated with one of the supported identity providers, set the <code>Logins</code>
-    /// map with the identity provider token. <code>GetId</code> returns a unique identifier
-    /// for the user.
+    /// For a description of the authentication flow from the Amazon Cognito Developer Guide
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Authentication
+    /// Flow</a>.
     /// </para>
     ///  
     /// <para>
-    /// Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
-    /// the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
-    /// originally returned by <code>GetId</code>. Assuming your identity pool has been configured
-    /// via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
-    /// will return AWS credentials for your use. If your pool has not been configured with
-    /// <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
-    /// call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
-    /// and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
-    /// the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
-    /// by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
-    /// to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
-    /// to retrieve AWS credentials.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
-    /// probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
-    /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
+    /// For more information see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+    /// Cognito Federated Identities</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityClient : AmazonServiceClient, IAmazonCognitoIdentity
@@ -305,7 +290,7 @@ namespace Amazon.CognitoIdentity
         }
 
         /// <summary>
-        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+        /// Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
         ///  
@@ -603,7 +588,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
+        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -807,7 +792,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 15 minutes.
+        /// The OpenId token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -990,6 +975,43 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  ListTagsForResource
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual void ListTagsForResourceAsync(ListTagsForResourceRequest request, AmazonServiceCallback<ListTagsForResourceRequest, ListTagsForResourceResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListTagsForResourceRequest,ListTagsForResourceResponse> responseObject 
+                            = new AmazonServiceResult<ListTagsForResourceRequest,ListTagsForResourceResponse>((ListTagsForResourceRequest)req, (ListTagsForResourceResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  LookupDeveloperIdentity
         internal virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
@@ -1150,6 +1172,43 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  TagResource
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<TagResourceRequest,TagResourceResponse> responseObject 
+                            = new AmazonServiceResult<TagResourceRequest,TagResourceResponse>((TagResourceRequest)req, (TagResourceResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UnlinkDeveloperIdentity
         internal virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
@@ -1217,6 +1276,43 @@ namespace Amazon.CognitoIdentity
                 callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
                     AmazonServiceResult<UnlinkIdentityRequest,UnlinkIdentityResponse> responseObject 
                             = new AmazonServiceResult<UnlinkIdentityRequest,UnlinkIdentityResponse>((UnlinkIdentityRequest)req, (UnlinkIdentityResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke(request, invokeOptions, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonCognitoIdentityClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual void UntagResourceAsync(UntagResourceRequest request, AmazonServiceCallback<UntagResourceRequest, UntagResourceResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var invokeOptions = new InvokeOptions();
+            invokeOptions.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            invokeOptions.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UntagResourceRequest,UntagResourceResponse> responseObject 
+                            = new AmazonServiceResult<UntagResourceRequest,UntagResourceResponse>((UntagResourceRequest)req, (UntagResourceResponse)res, ex , ao.State);    
                         callback(responseObject); 
                 };
             BeginInvoke(request, invokeOptions, options, callbackHelper);

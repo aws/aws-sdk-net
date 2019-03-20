@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the LookupDeveloperIdentity operation.
     /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
-    /// or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code>
+    /// or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code>
     /// for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code>
     /// must not be null. If you supply only one of these values, the other value will be
     /// searched in the database and returned as a part of the response. If you supply both,
@@ -39,6 +39,14 @@ namespace Amazon.CognitoIdentity.Model
     /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
     /// is thrown.
     /// 
+    ///  
+    /// <para>
+    ///  <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane
+    /// operations: for example, to enable customer service to locate an identity ID by username.
+    /// If you are using it for higher-volume operations such as user authentication, your
+    /// requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is
+    /// a better option for higher-volume operations for user authentication.
+    /// </para>
     ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
