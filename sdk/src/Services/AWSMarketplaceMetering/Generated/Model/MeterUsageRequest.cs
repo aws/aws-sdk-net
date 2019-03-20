@@ -51,7 +51,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <para>
         /// Checks whether you have the permissions required for the action, but does not make
         /// the request. If you have the permissions, the request returns DryRunOperation; otherwise,
-        /// it returns UnauthorizedException.
+        /// it returns UnauthorizedException. Defaults to <code>false</code> if not specified.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -125,7 +125,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageQuantity. 
         /// <para>
-        /// Consumption value for the hour.
+        /// Consumption value for the hour. Defaults to <code>0</code> if not specified.
         /// </para>
         /// </summary>
         public int UsageQuantity

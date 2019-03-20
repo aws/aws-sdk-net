@@ -18,7 +18,7 @@
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.UsageQuantity</property>
     <min>0</min>
-    <max>1000000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.Nonce</property>
@@ -64,6 +64,6 @@
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.Quantity</property>
     <min>0</min>
-    <max>1000000</max>
+    <max>2147483647</max>
   </property-value-rule>
 </property-value-rules>

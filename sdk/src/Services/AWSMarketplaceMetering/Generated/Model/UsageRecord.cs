@@ -85,7 +85,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The quantity of usage consumed by the customer for the given dimension and time.
+        /// The quantity of usage consumed by the customer for the given dimension and time. Defaults
+        /// to <code>0</code> if not specified.
         /// </para>
         /// </summary>
         public int Quantity
