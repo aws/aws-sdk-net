@@ -15,6 +15,12 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591</NoWarn>
+
+    <!-- Compensate for the fact that we're testing .NET 3.5 assemblies but we're using .NET 4.5 to run the tests. -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\net35</OutputPath>
   </PropertyGroup>
   
   <ItemGroup>
