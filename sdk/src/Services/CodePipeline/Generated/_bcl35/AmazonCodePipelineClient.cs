@@ -43,7 +43,7 @@ namespace Amazon.CodePipeline
     /// <para>
     /// This is the AWS CodePipeline API Reference. This guide provides descriptions of the
     /// actions and data types for AWS CodePipeline. Some functionality for your pipeline
-    /// is only configurable through the API. For additional information, see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
+    /// is only configurable through the API. For additional information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
     /// CodePipeline User Guide</a>.
     /// </para>
     ///  
@@ -113,7 +113,7 @@ namespace Amazon.CodePipeline
     /// which displays the status of a pipeline, including the status of stages in the pipeline,
     /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
     /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// actions, also refer to the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -1484,6 +1484,13 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about the state of a pipeline, including the stages and actions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
+        /// information, such as the commit ID, for the current state.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="name">The name of the pipeline about which you want to get information.</param>
         /// 
@@ -1505,6 +1512,13 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about the state of a pipeline, including the stages and actions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
+        /// information, such as the commit ID, for the current state.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineState service method.</param>
         /// 
@@ -1670,6 +1684,74 @@ namespace Amazon.CodePipeline
         public virtual GetThirdPartyJobDetailsResponse EndGetThirdPartyJobDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<GetThirdPartyJobDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListActionExecutions
+
+        /// <summary>
+        /// Lists the action executions that have occurred in a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActionExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListActionExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">REST API Reference for ListActionExecutions Operation</seealso>
+        public virtual ListActionExecutionsResponse ListActionExecutions(ListActionExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActionExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActionExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActionExecutions operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActionExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">REST API Reference for ListActionExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListActionExecutions(ListActionExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListActionExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActionExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListActionExecutionsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">REST API Reference for ListActionExecutions Operation</seealso>
+        public virtual ListActionExecutionsResponse EndListActionExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListActionExecutionsResponse>(asyncResult);
         }
 
         #endregion

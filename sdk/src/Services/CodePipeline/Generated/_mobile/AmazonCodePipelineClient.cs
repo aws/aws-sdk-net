@@ -46,7 +46,7 @@ namespace Amazon.CodePipeline
     /// <para>
     /// This is the AWS CodePipeline API Reference. This guide provides descriptions of the
     /// actions and data types for AWS CodePipeline. Some functionality for your pipeline
-    /// is only configurable through the API. For additional information, see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
+    /// is only configurable through the API. For additional information, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
     /// CodePipeline User Guide</a>.
     /// </para>
     ///  
@@ -116,7 +116,7 @@ namespace Amazon.CodePipeline
     /// which displays the status of a pipeline, including the status of stages in the pipeline,
     /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
     /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// actions, also refer to the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -1111,6 +1111,13 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Returns information about the state of a pipeline, including the stages and actions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
+        /// information, such as the commit ID, for the current state.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="name">The name of the pipeline about which you want to get information.</param>
         /// <param name="cancellationToken">
@@ -1224,6 +1231,39 @@ namespace Amazon.CodePipeline
             options.ResponseUnmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetThirdPartyJobDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListActionExecutions
+
+        internal virtual ListActionExecutionsResponse ListActionExecutions(ListActionExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActionExecutionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActionExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActionExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">REST API Reference for ListActionExecutions Operation</seealso>
+        public virtual Task<ListActionExecutionsResponse> ListActionExecutionsAsync(ListActionExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListActionExecutionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

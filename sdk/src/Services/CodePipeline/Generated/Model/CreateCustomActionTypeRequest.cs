@@ -75,7 +75,7 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// You can refer to a name in the configuration properties of the custom action within
         /// the URL templates by following the format of {Config:name}, as long as the configuration
-        /// property is both required and not secret. For more information, see <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+        /// property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
         /// a Custom Action for a Pipeline</a>.
         /// </para>
         ///  </note>

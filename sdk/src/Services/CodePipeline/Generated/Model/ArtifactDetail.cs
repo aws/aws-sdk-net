@@ -28,24 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPipelineState operation.
-    /// Returns information about the state of a pipeline, including the stages and actions.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-    /// information, such as the commit ID, for the current state.
-    /// </para>
-    ///  </note>
+    /// Artifact details for the action execution, such as the artifact location.
     /// </summary>
-    public partial class GetPipelineStateRequest : AmazonCodePipelineRequest
+    public partial class ArtifactDetail
     {
         private string _name;
+        private S3Location _s3location;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the pipeline about which you want to get information.
+        /// The artifact object name for the action execution.
         /// </para>
         /// </summary>
         public string Name
@@ -58,6 +51,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3location. 
+        /// <para>
+        /// The Amazon S3 artifact location for the action execution.
+        /// </para>
+        /// </summary>
+        public S3Location S3location
+        {
+            get { return this._s3location; }
+            set { this._s3location = value; }
+        }
+
+        // Check to see if S3location property is set
+        internal bool IsSetS3location()
+        {
+            return this._s3location != null;
         }
 
     }

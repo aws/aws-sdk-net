@@ -28,36 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPipelineState operation.
-    /// Returns information about the state of a pipeline, including the stages and actions.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-    /// information, such as the commit ID, for the current state.
-    /// </para>
-    ///  </note>
+    /// The Amazon S3 artifact location for an action's artifacts.
     /// </summary>
-    public partial class GetPipelineStateRequest : AmazonCodePipelineRequest
+    public partial class S3Location
     {
-        private string _name;
+        private string _bucket;
+        private string _key;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the pipeline about which you want to get information.
+        /// The Amazon S3 artifact bucket for an action's artifacts.
         /// </para>
         /// </summary>
-        public string Name
+        public string Bucket
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
         {
-            return this._name != null;
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The artifact name.
+        /// </para>
+        /// </summary>
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
     }

@@ -28,36 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPipelineState operation.
-    /// Returns information about the state of a pipeline, including the stages and actions.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-    /// information, such as the commit ID, for the current state.
-    /// </para>
-    ///  </note>
+    /// Filter values for the action execution.
     /// </summary>
-    public partial class GetPipelineStateRequest : AmazonCodePipelineRequest
+    public partial class ActionExecutionFilter
     {
-        private string _name;
+        private string _pipelineExecutionId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The name of the pipeline about which you want to get information.
+        /// The pipeline execution ID used to filter action execution history.
         /// </para>
         /// </summary>
-        public string Name
+        public string PipelineExecutionId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._pipelineExecutionId; }
+            set { this._pipelineExecutionId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if PipelineExecutionId property is set
+        internal bool IsSetPipelineExecutionId()
         {
-            return this._name != null;
+            return this._pipelineExecutionId != null;
         }
 
     }
