@@ -1,3 +1,11 @@
+### 3.3.479.0 (2019-03-20 18:09 UTC)
+* AWSMarketplaceMetering (3.3.3.0)
+	* This release increases AWS Marketplace Metering Service maximum usage quantity to 2147483647 and makes parameters usage quantity and dryrun optional.
+* CodePipeline (3.3.7.0)
+	* Add support for viewing details of each action execution belonging to past and latest pipeline executions that have occurred in customer's pipeline. The details include start/updated times, action execution results, input/output artifacts information, etc. Customers also have the option to add pipelineExecutionId in the input to filter the results down to a single pipeline execution.
+* CognitoIdentity (3.3.3.0)
+	* This release adds tags and tag-based access control support to Amazon Cognito Identity Pools (Federated Identities). 
+
 ### 3.3.478.0 (2019-03-19 18:29 UTC)
 * ConfigService (3.3.25.0)
 	* AWS Config adds a new API called SelectResourceConfig to run advanced queries based on resource configuration properties.

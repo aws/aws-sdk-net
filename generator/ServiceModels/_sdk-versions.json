@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.478.0",
+    "ProductVersion" : "3.3.479.0",
     "CoreVersion"    : "3.3.32.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -101,7 +101,7 @@
             "InPreview"               : false
         },
         "CognitoIdentity"   : {
-            "Version" : "3.3.2.77",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2",
@@ -417,7 +417,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.6.28",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
@@ -529,7 +529,7 @@
             "InPreview"               : false
         },
         "AWSMarketplaceMetering"          : {
-            "Version" : "3.3.2.24",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
