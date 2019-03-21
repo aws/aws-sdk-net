@@ -3029,7 +3029,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a thing record in the registry.
+        /// Creates a thing record in the registry. If this call is made multiple times using
+        /// the same thing name and configuration, the call will succeed. If this call is made
+        /// with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code>
+        /// is thrown.
         /// 
         ///  <note> 
         /// <para>
@@ -7408,6 +7411,73 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetRegistrationCodeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetStatistics
+
+
+        /// <summary>
+        /// Gets statistics about things that match the specified query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetStatistics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
+        public virtual GetStatisticsResponse GetStatistics(GetStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStatistics operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
+        public virtual Task<GetStatisticsResponse> GetStatisticsAsync(GetStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatisticsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStatisticsResponse>(request, options, cancellationToken);
         }
 
         #endregion

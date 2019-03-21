@@ -28,21 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchIndex operation.
-    /// The query search index.
+    /// Container for the parameters to the GetStatistics operation.
+    /// Gets statistics about things that match the specified query.
     /// </summary>
-    public partial class SearchIndexRequest : AmazonIoTRequest
+    public partial class GetStatisticsRequest : AmazonIoTRequest
     {
+        private string _aggregationField;
         private string _indexName;
-        private int? _maxResults;
-        private string _nextToken;
         private string _queryString;
         private string _queryVersion;
 
         /// <summary>
+        /// Gets and sets the property AggregationField. 
+        /// <para>
+        /// The aggregation field name. Currently not supported.
+        /// </para>
+        /// </summary>
+        public string AggregationField
+        {
+            get { return this._aggregationField; }
+            set { this._aggregationField = value; }
+        }
+
+        // Check to see if AggregationField property is set
+        internal bool IsSetAggregationField()
+        {
+            return this._aggregationField != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
-        /// The search index name.
+        /// The name of the index to search. The default value is <code>AWS_Things</code>.
         /// </para>
         /// </summary>
         public string IndexName
@@ -58,46 +75,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return at one time.
-        /// </para>
-        /// </summary>
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token used to get the next set of results, or null if there are no additional
-        /// results.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The search query string.
+        /// The query used to search. You can specify "*" for the query string to get the count
+        /// of all indexed things in your AWS account.
         /// </para>
         /// </summary>
         public string QueryString
@@ -115,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueryVersion. 
         /// <para>
-        /// The query version.
+        /// The version of the query used to search.
         /// </para>
         /// </summary>
         public string QueryVersion

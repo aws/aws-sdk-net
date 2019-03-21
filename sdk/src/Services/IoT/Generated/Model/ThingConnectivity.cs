@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Connected. 
         /// <para>
-        /// True if the thing is connected to the AWS IoT service, false if it is not connected.
+        /// True if the thing is connected to the AWS IoT service; false if it is not connected.
         /// </para>
         /// </summary>
         public bool Connected
@@ -56,9 +56,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The epoch time (in milliseconds) when the thing last connected or disconnected. Note
-        /// that if the thing has been disconnected for more than a few weeks, the time value
-        /// can be missing.
+        /// The epoch time (in milliseconds) when the thing last connected or disconnected. If
+        /// the thing has been disconnected for more than a few weeks, the time value might be
+        /// missing.
         /// </para>
         /// </summary>
         public long Timestamp

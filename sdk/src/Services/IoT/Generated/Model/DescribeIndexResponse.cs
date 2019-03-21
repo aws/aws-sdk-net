@@ -79,21 +79,21 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// REGISTRY – Your thing index will contain only registry data.
+        /// REGISTRY – Your thing index contains only registry data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
+        /// REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and
-        /// thing connectivity status data.
+        /// REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing
+        /// connectivity status data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry
-        /// data, shadow data, and thing connectivity status data.
+        /// REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data,
+        /// shadow data, and thing connectivity status data.
         /// </para>
         ///  </li> </ul>
         /// </summary>

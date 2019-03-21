@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Connectivity. 
         /// <para>
-        /// Indicates whether or not the thing is connected to the AWS IoT service.
+        /// Indicates whether the thing is connected to the AWS IoT service.
         /// </para>
         /// </summary>
         public ThingConnectivity Connectivity

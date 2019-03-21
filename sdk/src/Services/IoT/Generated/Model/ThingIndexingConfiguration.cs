@@ -43,8 +43,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// STATUS – Your thing index will contain connectivity status. In order to enable thing
-        /// connectivity indexing, thingIndexMode must not be set to OFF.
+        /// STATUS – Your thing index contains connectivity status. To enable thing connectivity
+        /// indexing, thingIndexMode must not be set to OFF.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,11 +71,11 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// REGISTRY – Your thing index will contain only registry data.
+        /// REGISTRY – Your thing index contains registry data only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+        /// REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
         /// </para>
         ///  </li> <li> 
         /// <para>

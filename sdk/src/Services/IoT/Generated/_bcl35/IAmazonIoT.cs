@@ -2184,7 +2184,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a thing record in the registry.
+        /// Creates a thing record in the registry. If this call is made multiple times using
+        /// the same thing name and configuration, the call will succeed. If this call is made
+        /// with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code>
+        /// is thrown.
         /// 
         ///  <note> 
         /// <para>
@@ -6001,6 +6004,73 @@ namespace Amazon.IoT
         /// <returns>Returns a  GetRegistrationCodeResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">REST API Reference for GetRegistrationCode Operation</seealso>
         GetRegistrationCodeResponse EndGetRegistrationCode(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetStatistics
+
+
+        /// <summary>
+        /// Gets statistics about things that match the specified query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetStatistics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.IndexNotReadyException">
+        /// The index is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidAggregationException">
+        /// The aggregation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
+        GetStatisticsResponse GetStatistics(GetStatisticsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStatistics operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
+        IAsyncResult BeginGetStatistics(GetStatisticsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetStatisticsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">REST API Reference for GetStatistics Operation</seealso>
+        GetStatisticsResponse EndGetStatistics(IAsyncResult asyncResult);
 
         #endregion
         
