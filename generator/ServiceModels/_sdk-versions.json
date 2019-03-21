@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.479.0",
+    "ProductVersion" : "3.3.480.0",
     "CoreVersion"    : "3.3.32.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -13,7 +13,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.9.4",
+            "Version" : "3.3.9.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.26.0",
+            "Version" : "3.3.27.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
@@ -497,7 +497,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.3.8.24",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.12.20",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.9.12",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.32.2"

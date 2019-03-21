@@ -1,3 +1,15 @@
+### 3.3.480.0 (2019-03-21 18:07 UTC)
+* AutoScaling (3.3.9.5)
+	* Documentation updates for Amazon EC2 Auto Scaling
+* CloudWatchEvents (3.3.9.0)
+	* Added 3 new APIs, and one additional parameter to the PutRule API, to support tagging of CloudWatch Events rules.
+* CognitoIdentityProvider (3.3.13.0)
+	* This release adds tags and tag-based access control support to Amazon Cognito User Pools.
+* IoT (3.3.27.0)
+	* This release adds the GetStatistics API for the AWS IoT Fleet Indexing Service, which allows customers to query for statistics about registered devices that match a search query. This release only supports the count statistics. For more information about this API, see https://docs.aws.amazon.com/iot/latest/apireference/API_GetStatistics.html
+* Lightsail (3.3.10.0)
+	* This release adds the DeleteKnownHostKeys API, which enables Lightsail's browser-based SSH or RDP clients to connect to the instance after a host key mismatch.
+
 ### 3.3.479.0 (2019-03-20 18:09 UTC)
 * AWSMarketplaceMetering (3.3.3.0)
 	* This release increases AWS Marketplace Metering Service maximum usage quantity to 2147483647 and makes parameters usage quantity and dryrun optional.
