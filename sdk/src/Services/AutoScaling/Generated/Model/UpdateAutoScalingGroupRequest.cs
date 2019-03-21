@@ -200,7 +200,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HealthCheckType. 
         /// <para>
         /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>.
+        /// <code>ELB</code>. If you configure an Auto Scaling group to use ELB health checks,
+        /// it considers the instance unhealthy if it fails either the EC2 status checks or the
+        /// load balancer health checks.
         /// </para>
         /// </summary>
         public string HealthCheckType
@@ -297,9 +299,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-        /// Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+        /// Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public MixedInstancesPolicy MixedInstancesPolicy

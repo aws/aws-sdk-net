@@ -208,7 +208,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HealthCheckType. 
         /// <para>
         /// The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>.
+        /// <code>ELB</code>. If you configure an Auto Scaling group to use ELB health checks,
+        /// it considers the instance unhealthy if it fails either the EC2 status checks or the
+        /// load balancer health checks.
         /// </para>
         /// </summary>
         public string HealthCheckType
