@@ -28,7 +28,7 @@ namespace Amazon.CodePipeline
     ///<summary>
     /// Common exception for the CodePipeline service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCodePipelineException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodePipeline
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCodePipelineException class with serialized data.
         /// </summary>

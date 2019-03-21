@@ -25,7 +25,7 @@ namespace Amazon.MediaConnect.Model
     ///<summary>
     /// MediaConnect exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class GrantFlowEntitlements420Exception : AmazonMediaConnectException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaConnect.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the GrantFlowEntitlements420Exception class with serialized data.
         /// </summary>

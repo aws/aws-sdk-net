@@ -25,7 +25,7 @@ namespace Amazon.S3Control.Model
     ///<summary>
     /// S3Control exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class NoSuchPublicAccessBlockConfigurationException : AmazonS3ControlException 
@@ -79,7 +79,7 @@ namespace Amazon.S3Control.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NoSuchPublicAccessBlockConfigurationException class with serialized data.
         /// </summary>

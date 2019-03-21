@@ -46,7 +46,7 @@ namespace Amazon.Pinpoint
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonPinpointClient with the credentials loaded from the application's

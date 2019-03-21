@@ -57,7 +57,7 @@ namespace Amazon.Util.Internal
 
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
             string executionEnvironmentString = "";
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
             executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
 #endif 
 
@@ -118,7 +118,7 @@ namespace Amazon.Util.Internal
                 environmentInfo.FrameworkUserAgent,
                 environmentInfo.PlatformUserAgent,
                 _customData).Trim();
-#elif CORECLR
+#elif NETSTANDARD
             return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
                 _userAgentBaseName,
                 serviceSdkVersion,
@@ -219,7 +219,7 @@ namespace Amazon.Util.Internal
             return false;
         }
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         internal static string EXECUTION_ENVIRONMENT_ENVVAR = "AWS_EXECUTION_ENV";
         internal static string GetExecutionEnvironment()
         {

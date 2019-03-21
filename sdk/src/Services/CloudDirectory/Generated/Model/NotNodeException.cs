@@ -25,7 +25,7 @@ namespace Amazon.CloudDirectory.Model
     ///<summary>
     /// CloudDirectory exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class NotNodeException : AmazonCloudDirectoryException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudDirectory.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NotNodeException class with serialized data.
         /// </summary>

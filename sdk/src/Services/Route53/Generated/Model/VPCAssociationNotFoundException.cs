@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
     ///<summary>
     /// Route53 exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class VPCAssociationNotFoundException : AmazonRoute53Exception 
@@ -79,7 +79,7 @@ namespace Amazon.Route53.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the VPCAssociationNotFoundException class with serialized data.
         /// </summary>

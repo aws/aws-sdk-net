@@ -23,7 +23,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Returns information about the  DeleteObjects response and response metadata.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
     public class DeleteObjectsResponse : AmazonWebServiceResponse, System.Runtime.Serialization.ISerializable
 #else
@@ -93,7 +93,7 @@ namespace Amazon.S3.Model
             return requestCharged != null;
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about DeleteObjectsResponse
         /// </summary>

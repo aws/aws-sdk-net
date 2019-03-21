@@ -18,13 +18,13 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using Amazon.Util;
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
 
 namespace Amazon.Runtime
 {
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
     /// <summary>
     /// Determines the endpoint discovery enabled value based on an environment variable. If no value is found in the
     /// environment then an InvalidOperationException is thrown.
@@ -124,7 +124,7 @@ namespace Amazon.Runtime
     /// </summary>
     public static class FallbackEndpointDiscoveryEnabledFactory
     {
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
@@ -144,7 +144,7 @@ namespace Amazon.Runtime
             endpointDiscoveryEnabled = null;
             EnabledGenerators = new List<ConfigGenerator>
             {                
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
                 () => (new EnvironmentVariableAWSEndpointDiscoveryEnabled()).Enabled,
                 () => (new ProfileAWSEndpointDiscoveryEnabled(credentialProfileChain)).Enabled,                
 #endif

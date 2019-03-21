@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

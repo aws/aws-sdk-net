@@ -25,7 +25,7 @@ namespace Amazon.Rekognition.Model
     ///<summary>
     /// Rekognition exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class VideoTooLargeException : AmazonRekognitionException 
@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the VideoTooLargeException class with serialized data.
         /// </summary>

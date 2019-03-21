@@ -253,7 +253,7 @@ namespace Amazon.CodePipeline
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCodePipelineClient with the credentials loaded from the application's

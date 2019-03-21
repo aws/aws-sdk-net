@@ -16,13 +16,13 @@
 using Amazon.Runtime.Internal.Transform;
 using System;
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
 using System.Runtime.Serialization;
 #endif
 
 namespace Amazon.Runtime.Internal
 {
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class HttpErrorResponseException : Exception
@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
             this.Response = response;
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the HttpErrorResponseException class with serialized data.
         /// </summary>

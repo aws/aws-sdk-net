@@ -75,7 +75,7 @@ namespace Amazon.Neptune
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonNeptuneClient with the credentials loaded from the application's

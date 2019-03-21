@@ -28,7 +28,7 @@ namespace Amazon.DAX
     ///<summary>
     /// Common exception for the DAX service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDAXException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DAX
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDAXException class with serialized data.
         /// </summary>

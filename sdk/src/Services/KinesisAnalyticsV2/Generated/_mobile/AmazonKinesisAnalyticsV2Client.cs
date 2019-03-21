@@ -46,7 +46,7 @@ namespace Amazon.KinesisAnalyticsV2
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonKinesisAnalyticsV2Client with the credentials loaded from the application's

@@ -28,7 +28,7 @@ namespace Amazon.IoTAnalytics
     ///<summary>
     /// Common exception for the IoTAnalytics service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonIoTAnalyticsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IoTAnalytics
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonIoTAnalyticsException class with serialized data.
         /// </summary>

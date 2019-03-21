@@ -28,7 +28,7 @@ namespace Amazon.Lambda
     ///<summary>
     /// Common exception for the Lambda service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonLambdaException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Lambda
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonLambdaException class with serialized data.
         /// </summary>

@@ -9,15 +9,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <ProjectGuid><#=this.Project.ProjectGuid#></ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
 	<FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile></TargetFrameworkProfile>
-    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
-    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
-	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
+    <RootNamespace><#=this.Project.RootNamespace#></RootNamespace>
+	<BaseIntermediateOutputPath>obj\\<#=this.Project.BinSubfolder#></BaseIntermediateOutputPath>
 	<SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
 	<ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -27,39 +27,39 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
-    <DefineConstants>DEBUG;TRACE;AWS_APM_API;UNITY;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <OutputPath>bin\Debug\\<#=this.Project.BinSubfolder#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;AWS_APM_API;UNITY;<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn>3001,3002,3003,3008,3009,<#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn>3001,3002,3003,3008,3009,<#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
 	<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-	<DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+	<DocumentationFile>bin\Debug\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
-    <DefineConstants>TRACE;AWS_APM_API;UNITY;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <OutputPath>bin\Release\\<#=this.Project.BinSubfolder#></OutputPath>
+    <DefineConstants>TRACE;AWS_APM_API;UNITY;<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-	<DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+	<DocumentationFile>bin\Release\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <!--
@@ -71,10 +71,10 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if(this.Session.ContainsKey("KeyFilePath"))
+    if(this.Project.KeyFilePath != null)
     {
 #>
-		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile><#=this.Project.KeyFilePath#></AssemblyOriginatorKeyFile>
 <#
     }
 	else
@@ -99,18 +99,18 @@
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
 	<!-- create the path of reference UnityEngine for Unity projects  -->
-      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "Managed", "UnityEngine.dll")#></HintPath>
+      <HintPath><#=Path.Combine(this.Project.UnityPath, "Editor", "Data", "Managed", "UnityEngine.dll")#></HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
 <#
-	if(this.Session.ContainsKey("ReferenceDependencies"))
+	if(this.Project.ReferenceDependencies != null)
     {
-		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		foreach(var dependency in this.Project.ReferenceDependencies)
 		{
 #>
     <Reference Include="<#=dependency.Name#>">
-      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], dependency.HintPath)#></HintPath>
+      <HintPath><#=Path.Combine(this.Project.UnityPath, dependency.HintPath)#></HintPath>
       <Private>True</Private>
     </Reference>
 <#   
@@ -120,7 +120,7 @@
   </ItemGroup>
   <ItemGroup>
 <#
-    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    foreach(string subDirectory in this.Project.SourceDirectories)
     {
 #>
     <Compile Include="<#=subDirectory#>\*.cs">
@@ -132,9 +132,9 @@
   </ItemGroup>
   <ItemGroup>
 <#
-    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    if(this.Project.IndividualFileIncludes != null)
     {
-        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        foreach(string file in this.Project.IndividualFileIncludes)
         {
             if(file.EndsWith(".cs"))
             {
@@ -157,9 +157,9 @@
 #>
   </ItemGroup>
 <#
-    if(this.Session.ContainsKey("ProjectReferences"))
+    if(this.Project.ProjectReferences != null)
     {
-        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        foreach(var projectReferences in this.Project.ProjectReferences)
         {
 #>
   <ItemGroup>
@@ -186,3 +186,7 @@
   </Target>
   -->
 </Project>
+
+<#+
+	public Project Project { get; set; }
+#>

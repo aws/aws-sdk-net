@@ -25,7 +25,7 @@ namespace Amazon.Organizations.Model
     ///<summary>
     /// Organizations exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DuplicateAccountException : AmazonOrganizationsException 
@@ -79,7 +79,7 @@ namespace Amazon.Organizations.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DuplicateAccountException class with serialized data.
         /// </summary>

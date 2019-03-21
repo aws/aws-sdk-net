@@ -25,7 +25,7 @@ namespace Amazon.MachineLearning.Model
     ///<summary>
     /// MachineLearning exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalServerException : AmazonMachineLearningException 
@@ -79,7 +79,7 @@ namespace Amazon.MachineLearning.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalServerException class with serialized data.
         /// </summary>

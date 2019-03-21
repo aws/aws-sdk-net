@@ -28,7 +28,7 @@ namespace Amazon.MediaLive
     ///<summary>
     /// Common exception for the MediaLive service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMediaLiveException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MediaLive
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMediaLiveException class with serialized data.
         /// </summary>

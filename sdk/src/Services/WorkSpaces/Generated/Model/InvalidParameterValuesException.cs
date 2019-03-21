@@ -25,7 +25,7 @@ namespace Amazon.WorkSpaces.Model
     ///<summary>
     /// WorkSpaces exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidParameterValuesException : AmazonWorkSpacesException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkSpaces.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidParameterValuesException class with serialized data.
         /// </summary>

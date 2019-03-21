@@ -28,7 +28,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     ///<summary>
     /// Common exception for the ResourceGroupsTaggingAPI service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonResourceGroupsTaggingAPIException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonResourceGroupsTaggingAPIException class with serialized data.
         /// </summary>

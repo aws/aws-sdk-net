@@ -55,7 +55,7 @@ namespace Amazon.CloudDirectory
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloudDirectoryClient with the credentials loaded from the application's

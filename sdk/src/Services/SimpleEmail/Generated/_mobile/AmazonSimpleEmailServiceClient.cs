@@ -59,7 +59,7 @@ namespace Amazon.SimpleEmail
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's

@@ -25,7 +25,7 @@ namespace Amazon.ApiGatewayV2.Model
     ///<summary>
     /// ApiGatewayV2 exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class BadRequestException : AmazonApiGatewayV2Exception 
@@ -79,7 +79,7 @@ namespace Amazon.ApiGatewayV2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the BadRequestException class with serialized data.
         /// </summary>

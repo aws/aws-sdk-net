@@ -17,7 +17,7 @@ using System.Net;
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
-#if CORECLR
+#if NETSTANDARD
 using System.Net.Http;
 #endif
 
@@ -253,7 +253,7 @@ namespace Amazon.Runtime
         TcpKeepAlive TcpKeepAlive { get; }                
 #endif
 
-#if CORECLR
+#if NETSTANDARD
         /// <summary>
         /// Get the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
         /// If this property is null, <see cref="HttpClientHandler.MaxConnectionsPerServer"/>
@@ -262,7 +262,7 @@ namespace Amazon.Runtime
         int? MaxConnectionsPerServer { get; }
 #endif
 
-#if CORECLR || PCL
+#if NETSTANDARD || PCL
 
 
         /// <summary>

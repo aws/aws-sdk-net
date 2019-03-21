@@ -60,7 +60,7 @@ namespace Amazon.EKS
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonEKSClient with the credentials loaded from the application's

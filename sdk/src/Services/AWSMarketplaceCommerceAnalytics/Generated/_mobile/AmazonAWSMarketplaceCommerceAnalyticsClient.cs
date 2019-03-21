@@ -46,7 +46,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's

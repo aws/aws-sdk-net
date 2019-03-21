@@ -87,7 +87,7 @@ namespace Amazon.ACMPCA
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonACMPCAClient with the credentials loaded from the application's

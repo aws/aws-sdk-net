@@ -47,7 +47,7 @@ namespace Amazon.MobileAnalytics
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMobileAnalyticsClient with the credentials loaded from the application's

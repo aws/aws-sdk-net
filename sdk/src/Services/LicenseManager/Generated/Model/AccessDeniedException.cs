@@ -25,7 +25,7 @@ namespace Amazon.LicenseManager.Model
     ///<summary>
     /// LicenseManager exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class AccessDeniedException : AmazonLicenseManagerException 
@@ -79,7 +79,7 @@ namespace Amazon.LicenseManager.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AccessDeniedException class with serialized data.
         /// </summary>

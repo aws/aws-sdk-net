@@ -112,7 +112,7 @@ namespace Amazon.Budgets
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonBudgetsClient with the credentials loaded from the application's

@@ -25,7 +25,7 @@ namespace Amazon.CloudTrail.Model
     ///<summary>
     /// CloudTrail exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     [Obsolete("This exception is deprecated.")]
@@ -80,7 +80,7 @@ namespace Amazon.CloudTrail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the KmsKeyDisabledException class with serialized data.
         /// </summary>

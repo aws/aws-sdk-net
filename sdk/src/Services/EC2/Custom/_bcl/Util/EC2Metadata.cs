@@ -464,7 +464,7 @@ namespace Amazon.EC2.Util
             Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         [Serializable]
 #endif
         private class IMDSDisabledException : InvalidOperationException { };

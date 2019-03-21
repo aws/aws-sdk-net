@@ -25,7 +25,7 @@ namespace Amazon.KinesisAnalytics.Model
     ///<summary>
     /// KinesisAnalytics exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidApplicationConfigurationException : AmazonKinesisAnalyticsException 
@@ -79,7 +79,7 @@ namespace Amazon.KinesisAnalytics.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidApplicationConfigurationException class with serialized data.
         /// </summary>

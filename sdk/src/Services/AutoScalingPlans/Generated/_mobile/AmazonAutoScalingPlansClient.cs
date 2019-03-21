@@ -62,7 +62,7 @@ namespace Amazon.AutoScalingPlans
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAutoScalingPlansClient with the credentials loaded from the application's

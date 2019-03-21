@@ -532,7 +532,7 @@ namespace Amazon.GameLift
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGameLiftClient with the credentials loaded from the application's

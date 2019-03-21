@@ -72,7 +72,7 @@ namespace Amazon.CloudFormation
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's

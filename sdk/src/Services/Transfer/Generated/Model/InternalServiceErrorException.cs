@@ -25,7 +25,7 @@ namespace Amazon.Transfer.Model
     ///<summary>
     /// Transfer exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalServiceErrorException : AmazonTransferException 
@@ -79,7 +79,7 @@ namespace Amazon.Transfer.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalServiceErrorException class with serialized data.
         /// </summary>

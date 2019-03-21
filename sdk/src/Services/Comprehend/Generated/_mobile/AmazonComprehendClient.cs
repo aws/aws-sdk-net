@@ -49,7 +49,7 @@ namespace Amazon.Comprehend
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonComprehendClient with the credentials loaded from the application's

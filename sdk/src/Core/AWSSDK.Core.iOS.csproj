@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\Xamarin.iOS10</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -186,7 +186,7 @@
     <Compile Include="Amazon.Util\Internal\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Util\_bcl45+coreclr+pcl\*.cs">
+    <Compile Include="Amazon.Util\_bcl45+netstandard+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\_pcl\*.cs">

@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     ///<summary>
     /// CloudFront exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CloudFrontOriginAccessIdentityInUseException : AmazonCloudFrontException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CloudFrontOriginAccessIdentityInUseException class with serialized data.
         /// </summary>

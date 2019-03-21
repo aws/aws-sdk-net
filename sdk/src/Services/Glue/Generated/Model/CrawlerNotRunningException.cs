@@ -25,7 +25,7 @@ namespace Amazon.Glue.Model
     ///<summary>
     /// Glue exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CrawlerNotRunningException : AmazonGlueException 
@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CrawlerNotRunningException class with serialized data.
         /// </summary>

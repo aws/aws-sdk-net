@@ -125,7 +125,7 @@ namespace Amazon.StorageGateway
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's

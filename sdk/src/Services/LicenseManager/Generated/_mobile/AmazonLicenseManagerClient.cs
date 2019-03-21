@@ -58,7 +58,7 @@ namespace Amazon.LicenseManager
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonLicenseManagerClient with the credentials loaded from the application's

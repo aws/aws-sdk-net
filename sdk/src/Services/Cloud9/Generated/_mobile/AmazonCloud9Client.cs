@@ -104,7 +104,7 @@ namespace Amazon.Cloud9
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloud9Client with the credentials loaded from the application's

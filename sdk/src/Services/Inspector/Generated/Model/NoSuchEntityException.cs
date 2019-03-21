@@ -25,7 +25,7 @@ namespace Amazon.Inspector.Model
     ///<summary>
     /// Inspector exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class NoSuchEntityException : AmazonInspectorException 
@@ -79,7 +79,7 @@ namespace Amazon.Inspector.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NoSuchEntityException class with serialized data.
         /// </summary>

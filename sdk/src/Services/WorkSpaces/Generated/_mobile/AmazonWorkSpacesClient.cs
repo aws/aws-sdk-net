@@ -50,7 +50,7 @@ namespace Amazon.WorkSpaces
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonWorkSpacesClient with the credentials loaded from the application's

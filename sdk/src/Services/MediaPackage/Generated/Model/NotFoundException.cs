@@ -25,7 +25,7 @@ namespace Amazon.MediaPackage.Model
     ///<summary>
     /// MediaPackage exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class NotFoundException : AmazonMediaPackageException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaPackage.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NotFoundException class with serialized data.
         /// </summary>

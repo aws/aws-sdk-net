@@ -28,7 +28,7 @@ namespace Amazon.Lex
     ///<summary>
     /// Common exception for the Lex service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonLexException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Lex
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonLexException class with serialized data.
         /// </summary>

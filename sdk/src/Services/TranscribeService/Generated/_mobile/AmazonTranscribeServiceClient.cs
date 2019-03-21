@@ -46,7 +46,7 @@ namespace Amazon.TranscribeService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's

@@ -131,7 +131,7 @@ namespace Amazon.GlobalAccelerator
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGlobalAcceleratorClient with the credentials loaded from the application's

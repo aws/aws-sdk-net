@@ -69,7 +69,7 @@ namespace Amazon.AppMesh
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAppMeshClient with the credentials loaded from the application's

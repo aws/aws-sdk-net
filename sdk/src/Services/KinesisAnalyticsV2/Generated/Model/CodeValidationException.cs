@@ -25,7 +25,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     ///<summary>
     /// KinesisAnalyticsV2 exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CodeValidationException : AmazonKinesisAnalyticsV2Exception 
@@ -79,7 +79,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CodeValidationException class with serialized data.
         /// </summary>

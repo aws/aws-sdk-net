@@ -48,7 +48,7 @@ namespace Amazon.CloudHSMV2
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloudHSMV2Client with the credentials loaded from the application's

@@ -25,7 +25,7 @@ namespace Amazon.DocDB.Model
     ///<summary>
     /// DocDB exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DBSubnetGroupAlreadyExistsException : AmazonDocDBException 
@@ -79,7 +79,7 @@ namespace Amazon.DocDB.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DBSubnetGroupAlreadyExistsException class with serialized data.
         /// </summary>

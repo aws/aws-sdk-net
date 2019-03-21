@@ -69,7 +69,7 @@ namespace Amazon.Connect
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonConnectClient with the credentials loaded from the application's

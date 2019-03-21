@@ -25,7 +25,7 @@ namespace Amazon.Redshift.Model
     ///<summary>
     /// Redshift exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidTableRestoreArgumentException : AmazonRedshiftException 
@@ -79,7 +79,7 @@ namespace Amazon.Redshift.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidTableRestoreArgumentException class with serialized data.
         /// </summary>

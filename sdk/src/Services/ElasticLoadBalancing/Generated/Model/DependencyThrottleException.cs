@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///<summary>
     /// ElasticLoadBalancing exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DependencyThrottleException : AmazonElasticLoadBalancingException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DependencyThrottleException class with serialized data.
         /// </summary>

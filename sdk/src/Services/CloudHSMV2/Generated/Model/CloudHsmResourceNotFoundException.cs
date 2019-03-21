@@ -25,7 +25,7 @@ namespace Amazon.CloudHSMV2.Model
     ///<summary>
     /// CloudHSMV2 exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CloudHsmResourceNotFoundException : AmazonCloudHSMV2Exception 
@@ -79,7 +79,7 @@ namespace Amazon.CloudHSMV2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CloudHsmResourceNotFoundException class with serialized data.
         /// </summary>

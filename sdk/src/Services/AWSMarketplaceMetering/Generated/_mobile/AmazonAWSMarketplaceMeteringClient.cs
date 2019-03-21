@@ -102,7 +102,7 @@ namespace Amazon.AWSMarketplaceMetering
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAWSMarketplaceMeteringClient with the credentials loaded from the application's

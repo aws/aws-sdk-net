@@ -47,7 +47,7 @@ namespace Amazon.GuardDuty
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGuardDutyClient with the credentials loaded from the application's

@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
     ///<summary>
     /// RDS exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DBInstanceAutomatedBackupNotFoundException : AmazonRDSException 
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DBInstanceAutomatedBackupNotFoundException class with serialized data.
         /// </summary>

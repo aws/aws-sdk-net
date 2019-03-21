@@ -25,7 +25,7 @@ namespace Amazon.MediaStoreData.Model
     ///<summary>
     /// MediaStoreData exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class RequestedRangeNotSatisfiableException : AmazonMediaStoreDataException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaStoreData.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the RequestedRangeNotSatisfiableException class with serialized data.
         /// </summary>

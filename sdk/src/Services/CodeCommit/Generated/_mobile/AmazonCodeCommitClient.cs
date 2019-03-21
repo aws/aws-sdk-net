@@ -270,7 +270,7 @@ namespace Amazon.CodeCommit
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCodeCommitClient with the credentials loaded from the application's

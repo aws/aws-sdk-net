@@ -22,7 +22,7 @@ namespace AWSSDK.SmokeTests.Cloud9
             var response = cloud9Client.ListEnvironments(new ListEnvironmentsRequest
             {
             });
-#elif CORECLR
+#elif NETSTANDARD
             var response = cloud9Client.ListEnvironmentsAsync(new ListEnvironmentsRequest
             {
             }).Result;

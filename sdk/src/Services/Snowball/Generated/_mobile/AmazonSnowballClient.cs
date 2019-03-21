@@ -52,7 +52,7 @@ namespace Amazon.Snowball
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSnowballClient with the credentials loaded from the application's

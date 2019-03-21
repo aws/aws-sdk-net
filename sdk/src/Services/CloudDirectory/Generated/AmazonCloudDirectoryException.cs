@@ -28,7 +28,7 @@ namespace Amazon.CloudDirectory
     ///<summary>
     /// Common exception for the CloudDirectory service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCloudDirectoryException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudDirectory
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCloudDirectoryException class with serialized data.
         /// </summary>

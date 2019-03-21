@@ -116,7 +116,7 @@ namespace Amazon.ApplicationDiscoveryService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonApplicationDiscoveryServiceClient with the credentials loaded from the application's

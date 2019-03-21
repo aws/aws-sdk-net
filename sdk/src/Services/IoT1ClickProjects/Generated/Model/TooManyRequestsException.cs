@@ -25,7 +25,7 @@ namespace Amazon.IoT1ClickProjects.Model
     ///<summary>
     /// IoT1ClickProjects exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class TooManyRequestsException : AmazonIoT1ClickProjectsException 
@@ -79,7 +79,7 @@ namespace Amazon.IoT1ClickProjects.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TooManyRequestsException class with serialized data.
         /// </summary>

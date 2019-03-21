@@ -25,7 +25,7 @@ namespace Amazon.MediaConvert.Model
     ///<summary>
     /// MediaConvert exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ForbiddenException : AmazonMediaConvertException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaConvert.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ForbiddenException class with serialized data.
         /// </summary>

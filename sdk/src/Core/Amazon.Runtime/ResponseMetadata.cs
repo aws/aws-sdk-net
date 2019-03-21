@@ -21,7 +21,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Information about the request.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ResponseMetadata

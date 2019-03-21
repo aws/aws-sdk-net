@@ -49,7 +49,7 @@ namespace Amazon.MQ
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMQClient with the credentials loaded from the application's

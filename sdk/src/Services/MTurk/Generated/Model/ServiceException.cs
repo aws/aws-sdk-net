@@ -25,7 +25,7 @@ namespace Amazon.MTurk.Model
     ///<summary>
     /// MTurk exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceException : AmazonMTurkException 
@@ -79,7 +79,7 @@ namespace Amazon.MTurk.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceException class with serialized data.
         /// </summary>

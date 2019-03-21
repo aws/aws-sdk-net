@@ -25,7 +25,7 @@ namespace Amazon.WorkMail.Model
     ///<summary>
     /// WorkMail exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidPasswordException : AmazonWorkMailException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkMail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidPasswordException class with serialized data.
         /// </summary>

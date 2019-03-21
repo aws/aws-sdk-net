@@ -46,7 +46,7 @@ namespace Amazon.MediaPackage
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMediaPackageClient with the credentials loaded from the application's

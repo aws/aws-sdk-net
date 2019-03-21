@@ -25,7 +25,7 @@ namespace Amazon.Budgets.Model
     ///<summary>
     /// Budgets exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CreationLimitExceededException : AmazonBudgetsException 
@@ -79,7 +79,7 @@ namespace Amazon.Budgets.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CreationLimitExceededException class with serialized data.
         /// </summary>

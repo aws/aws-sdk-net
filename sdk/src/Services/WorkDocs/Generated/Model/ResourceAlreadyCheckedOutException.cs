@@ -25,7 +25,7 @@ namespace Amazon.WorkDocs.Model
     ///<summary>
     /// WorkDocs exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceAlreadyCheckedOutException : AmazonWorkDocsException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkDocs.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceAlreadyCheckedOutException class with serialized data.
         /// </summary>

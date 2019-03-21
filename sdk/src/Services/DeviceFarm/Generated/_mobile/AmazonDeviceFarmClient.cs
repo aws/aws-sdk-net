@@ -47,7 +47,7 @@ namespace Amazon.DeviceFarm
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with the credentials loaded from the application's

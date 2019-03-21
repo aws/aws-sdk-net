@@ -51,7 +51,7 @@ namespace Amazon.Greengrass
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGreengrassClient with the credentials loaded from the application's

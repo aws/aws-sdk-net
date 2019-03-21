@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's

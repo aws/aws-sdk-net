@@ -52,7 +52,7 @@ namespace Amazon.QuickSight
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonQuickSightClient with the credentials loaded from the application's

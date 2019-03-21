@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DefineConstants>$(DefineConstants);BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.MarketplaceEntitlementService</AssemblyName>
@@ -17,7 +17,6 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
   </PropertyGroup>
-
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -34,7 +33,7 @@
   <ItemGroup>
     <Compile Remove="**/_android/**"/>
     <Compile Remove="**/_bcl35/**"/>
-    <Compile Remove="**/_coreclr/**"/>
+    <Compile Remove="**/_netstandard/**"/>
     <Compile Remove="**/_ios/**"/>
     <Compile Remove="**/_mobile/**"/>
     <Compile Remove="**/_pcl/**"/>

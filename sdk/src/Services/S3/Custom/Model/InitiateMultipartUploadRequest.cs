@@ -65,7 +65,7 @@ namespace Amazon.S3.Model
         /// </summary>
         internal byte[] IV { get; set; }
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         /// <summary>
         /// Storage mode for encryption information.
         /// </summary>

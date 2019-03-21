@@ -28,7 +28,7 @@ namespace Amazon.Signer
     ///<summary>
     /// Common exception for the Signer service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonSignerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Signer
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonSignerException class with serialized data.
         /// </summary>

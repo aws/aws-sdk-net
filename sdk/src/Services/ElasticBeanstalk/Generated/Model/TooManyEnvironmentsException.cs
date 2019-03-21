@@ -25,7 +25,7 @@ namespace Amazon.ElasticBeanstalk.Model
     ///<summary>
     /// ElasticBeanstalk exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class TooManyEnvironmentsException : AmazonElasticBeanstalkException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticBeanstalk.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TooManyEnvironmentsException class with serialized data.
         /// </summary>

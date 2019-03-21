@@ -28,7 +28,7 @@ namespace Amazon.ApplicationDiscoveryService
     ///<summary>
     /// Common exception for the ApplicationDiscoveryService service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonApplicationDiscoveryServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ApplicationDiscoveryService
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonApplicationDiscoveryServiceException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.ECR.Model
     ///<summary>
     /// ECR exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ImageNotFoundException : AmazonECRException 
@@ -79,7 +79,7 @@ namespace Amazon.ECR.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ImageNotFoundException class with serialized data.
         /// </summary>

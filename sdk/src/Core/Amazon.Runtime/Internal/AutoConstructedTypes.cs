@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
 using System.Runtime.Serialization;
 #endif
 
@@ -34,12 +34,12 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     /// <typeparam name="K"></typeparam>
     /// <typeparam name="V"></typeparam>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class AutoConstructedDictionary<K, V> : Dictionary<K, V>
     {
-#if !PCL && !CORECLR        
+#if !PCL && !NETSTANDARD        
         protected AutoConstructedDictionary(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {

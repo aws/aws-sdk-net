@@ -20,7 +20,7 @@ namespace Amazon.Runtime
     /// Custom exception type thrown when authentication for a user fails due to
     /// invalid credentials.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class FederatedAuthenticationFailureException : Exception
@@ -44,7 +44,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the FederatedAuthenticationFailureException class with serialized data.
         /// </summary>

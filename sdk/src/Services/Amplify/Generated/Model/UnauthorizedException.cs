@@ -25,7 +25,7 @@ namespace Amazon.Amplify.Model
     ///<summary>
     /// Amplify exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class UnauthorizedException : AmazonAmplifyException 
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnauthorizedException class with serialized data.
         /// </summary>

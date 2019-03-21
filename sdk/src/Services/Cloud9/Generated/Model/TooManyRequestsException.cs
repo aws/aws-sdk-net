@@ -25,7 +25,7 @@ namespace Amazon.Cloud9.Model
     ///<summary>
     /// Cloud9 exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class TooManyRequestsException : AmazonCloud9Exception 
@@ -79,7 +79,7 @@ namespace Amazon.Cloud9.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TooManyRequestsException class with serialized data.
         /// </summary>

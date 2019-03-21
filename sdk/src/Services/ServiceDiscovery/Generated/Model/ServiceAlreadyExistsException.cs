@@ -25,7 +25,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///<summary>
     /// ServiceDiscovery exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceAlreadyExistsException : AmazonServiceDiscoveryException 
@@ -79,7 +79,7 @@ namespace Amazon.ServiceDiscovery.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceAlreadyExistsException class with serialized data.
         /// </summary>

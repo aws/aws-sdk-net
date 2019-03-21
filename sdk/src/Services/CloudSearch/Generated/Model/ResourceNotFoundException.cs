@@ -25,7 +25,7 @@ namespace Amazon.CloudSearch.Model
     ///<summary>
     /// CloudSearch exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceNotFoundException : AmazonCloudSearchException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudSearch.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.ElastiCache.Model
     ///<summary>
     /// ElastiCache exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class SnapshotFeatureNotSupportedException : AmazonElastiCacheException 
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the SnapshotFeatureNotSupportedException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.ACMPCA.Model
     ///<summary>
     /// ACMPCA exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class RequestFailedException : AmazonACMPCAException 
@@ -79,7 +79,7 @@ namespace Amazon.ACMPCA.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the RequestFailedException class with serialized data.
         /// </summary>

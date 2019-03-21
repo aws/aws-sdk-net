@@ -73,7 +73,7 @@ namespace Amazon.CloudTrail
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's

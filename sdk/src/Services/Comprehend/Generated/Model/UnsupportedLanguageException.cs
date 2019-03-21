@@ -25,7 +25,7 @@ namespace Amazon.Comprehend.Model
     ///<summary>
     /// Comprehend exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class UnsupportedLanguageException : AmazonComprehendException 
@@ -79,7 +79,7 @@ namespace Amazon.Comprehend.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnsupportedLanguageException class with serialized data.
         /// </summary>

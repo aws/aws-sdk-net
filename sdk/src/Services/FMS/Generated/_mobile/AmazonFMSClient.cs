@@ -53,7 +53,7 @@ namespace Amazon.FMS
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonFMSClient with the credentials loaded from the application's

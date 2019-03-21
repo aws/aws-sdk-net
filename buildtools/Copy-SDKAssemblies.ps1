@@ -166,7 +166,7 @@ Function Copy-CoreClrSdkAssemblies
 	
 	Process
 	{
-		Write-Verbose "Copying built CoreCLR SDK assemblies beneath $SourceRoot to $Destination"
+		Write-Verbose "Copying built NetStandard SDK assemblies beneath $SourceRoot to $Destination"
 		
 		if (!(Test-Path $Destination))
 		{
@@ -231,7 +231,7 @@ $args = @{
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
 #for unity the assemblies are not signed, so we copy them seperately and override the check
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -BuildType $BuildType -ValidatePublicKeyToken $false
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -BuildType $BuildType -ValidatePublicKeyToken $false
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
@@ -239,11 +239,11 @@ foreach ($s in $services)
     if ($builtservices -eq $null -Or $builtservices.contains($s.Name.ToLower()))
     {
         Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -ValidatePublicKeyToken $false  -BuildType $BuildType
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3", "netstandard2.0") -ValidatePublicKeyToken $false  -BuildType $BuildType
     }
 }
 
-Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for CoreCLR platforms"
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for NetStandard platforms"
 $args = @{
 	"Destination" = "..\Deployment\assemblies"
 	"PublicKeyToken" = $PublicKeyTokenToCheck

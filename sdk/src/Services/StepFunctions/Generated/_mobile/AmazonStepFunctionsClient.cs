@@ -69,7 +69,7 @@ namespace Amazon.StepFunctions
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonStepFunctionsClient with the credentials loaded from the application's

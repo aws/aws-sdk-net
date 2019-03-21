@@ -28,7 +28,7 @@ namespace Amazon.Redshift
     ///<summary>
     /// Common exception for the Redshift service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonRedshiftException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Redshift
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonRedshiftException class with serialized data.
         /// </summary>

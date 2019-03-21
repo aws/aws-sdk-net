@@ -25,7 +25,7 @@ namespace Amazon.APIGateway.Model
     ///<summary>
     /// APIGateway exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ConflictException : AmazonAPIGatewayException 
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>

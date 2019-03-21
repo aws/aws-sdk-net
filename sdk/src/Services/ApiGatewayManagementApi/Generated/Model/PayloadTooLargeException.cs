@@ -25,7 +25,7 @@ namespace Amazon.ApiGatewayManagementApi.Model
     ///<summary>
     /// ApiGatewayManagementApi exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class PayloadTooLargeException : AmazonApiGatewayManagementApiException 
@@ -79,7 +79,7 @@ namespace Amazon.ApiGatewayManagementApi.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PayloadTooLargeException class with serialized data.
         /// </summary>

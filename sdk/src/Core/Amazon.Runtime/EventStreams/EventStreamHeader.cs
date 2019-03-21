@@ -267,7 +267,7 @@ namespace Amazon.Runtime.EventStreams
                 case EventStreamHeaderType.Timestamp:
                     Int64 tempValue = EndianConversionUtility.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
                     newOffset += _sizeOfInt64;
-                    //keep in mind on the windows APIs (and hence CoreCLR as well) the epoch is 1/1/1900,
+                    //keep in mind on the windows APIs (and hence NetStandard as well) the epoch is 1/1/1900,
                     //and we're using unix epoch. So we compensate here.
                     header.HeaderValue = _unixEpoch.AddMilliseconds(tempValue);
                     break;

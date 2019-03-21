@@ -103,7 +103,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonResourceGroupsTaggingAPIClient with the credentials loaded from the application's

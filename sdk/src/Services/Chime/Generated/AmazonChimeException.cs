@@ -28,7 +28,7 @@ namespace Amazon.Chime
     ///<summary>
     /// Common exception for the Chime service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonChimeException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Chime
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonChimeException class with serialized data.
         /// </summary>

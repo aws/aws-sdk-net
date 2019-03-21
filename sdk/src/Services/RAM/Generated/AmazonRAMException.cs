@@ -28,7 +28,7 @@ namespace Amazon.RAM
     ///<summary>
     /// Common exception for the RAM service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonRAMException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.RAM
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonRAMException class with serialized data.
         /// </summary>

@@ -103,24 +103,7 @@
   </ItemGroup>
 <#
 	}
-	IList<ProjectFileCreator.Reference> dllReferences = this.Session["ServiceDllReferences"] as IList<ProjectFileCreator.Reference>;
-	if (dllReferences != null)
-	{
-#>
-  <ItemGroup>
-<#
-		foreach(var reference in dllReferences)
-		{
-#>
-    <Reference Include="<#=reference.Name#>">
-      <HintPath><#=reference.HintPath#></HintPath>
-    </Reference>
-<#
-		}
-#>
-  </ItemGroup>
-<#
-	}
+	
 	IList<ProjectFileCreator.ProjectReference> serviceReferences = this.Session["ServiceProjectReferences"] as IList<ProjectFileCreator.ProjectReference>;
 	if (serviceReferences != null)
 	{

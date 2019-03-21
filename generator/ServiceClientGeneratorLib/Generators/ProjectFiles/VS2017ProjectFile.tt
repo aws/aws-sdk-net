@@ -6,12 +6,39 @@
 <#@ import namespace="ServiceClientGenerator" #>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework><#=this.Session["TargetFramework"]#></TargetFramework>
-    <DefineConstants>$(DefineConstants);<#=this.Session["DefineConstants"]#></DefineConstants>
+<#
+    if (this.Project.TargetFrameworks.Count() == 1)
+    {
+#>
+    <TargetFramework><#=this.Project.TargetFrameworks.Single()#></TargetFramework>
+<#
+    }
+    else
+    {
+#>
+    <TargetFrameworks><#=string.Join(";", this.Project.TargetFrameworks)#></TargetFrameworks>
+<#
+    }
+#>
+    <DefineConstants>$(DefineConstants);<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
+<#
+    if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
+    {
+#>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard1.3'">$(DefineConstants);NETSTANDARD13;ADD_SUPPORT_ICLONEABLE;ADD_SUPPORT_IORDERED_DICTIONARY</DefineConstants>
+<#
+    }
+    if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
+    {
+#>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
+<#
+    }
+#>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
-    <PackageId><#=this.Session["AssemblyName"]#></PackageId>
+    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
+    <PackageId><#=this.Project.AssemblyName#></PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -23,48 +50,39 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
 <#
-    if(this.Session.ContainsKey("FrameworkPathOverride") && !string.IsNullOrEmpty((string)Session["FrameworkPathOverride"]))
+    if(!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
 #>
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
-    <FrameworkPathOverride><#=this.Session["FrameworkPathOverride"].ToString()#></FrameworkPathOverride>
+    <FrameworkPathOverride><#=this.Project.FrameworkPathOverride#></FrameworkPathOverride>
 <#
     }
     
-    if(this.Session.ContainsKey("ReferencePath") && !string.IsNullOrEmpty((string)Session["ReferencePath"]))
+    if(!string.IsNullOrEmpty(this.Project.SupressWarnings))
     {
 #>
-    <ReferencePath><#=this.Session["ReferencePath"].ToString()#></ReferencePath>
+    <NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 
-    if(this.Session.ContainsKey("NoWarn") && !string.IsNullOrEmpty((string)Session["NoWarn"]))
-    {
-#>
-    <NoWarn><#=this.Session["NoWarn"].ToString()#></NoWarn>
-<#
-    }
-
-    if(this.Session.ContainsKey("OutputPathOverride") && !string.IsNullOrEmpty((string)Session["OutputPathOverride"]))
+    if(!string.IsNullOrEmpty(this.Project.OutputPathOverride))
     {
 #>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath><#=this.Session["OutputPathOverride"].ToString()#></OutputPath>
+    <OutputPath><#=this.Project.OutputPathOverride#></OutputPath>
 <#
     }
-#>
-<#
-    if (string.Compare(this.Session["TargetFramework"].ToString(), "netstandard1.3") == 0)
+
+    if (this.Project.TargetFrameworks.Contains("netstandard1.3"))
     {
 #>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
 <#
-    }
+    }    
 #>
   </PropertyGroup>
-
 <#
-    if (this.Session.ContainsKey("SignBinaries") && (bool)Session["SignBinaries"])
+    if (this.Project.SignBinaries)
     {
 #>
   <Choose>
@@ -83,33 +101,39 @@
 <#
     }
 
-    if(this.Session.ContainsKey("ExternalFilesInclude"))
+    if(this.Project.IndividualFileIncludes != null)
     {
 #>
   <ItemGroup>
-    <Compile Include="<#=this.Session["ExternalFilesInclude"]#>"/>
+<#
+        foreach(var compileIncludeEntry in this.Project.IndividualFileIncludes)
+        {
+#>
+    <Compile Include="<#=compileIncludeEntry#>"/>
+<#
+		}
+#>
   </ItemGroup>
 <#
     }
 
-    if(this.Session.ContainsKey("CompileRemoveList") && this.Session["CompileRemoveList"] != null)
+    if(this.Project.CompileRemoveList != null)
     {
 #>
   <ItemGroup>
 <#
-        IList<string> compileRemoveList = this.Session["CompileRemoveList"] as IList<string>;
-        foreach(var compileRemoveEntry in compileRemoveList)
+        foreach(var compileRemoveEntry in this.Project.CompileRemoveList)
         {
-		  if(compileRemoveEntry.ToString()=="bin"||compileRemoveEntry.ToString()=="obj")
+		  if(compileRemoveEntry == "bin"||compileRemoveEntry == "obj")
 		  {
 #>
-    <Compile Remove="**/<#=compileRemoveEntry.ToString()#>/**"/>
-	<None Remove="**/<#=compileRemoveEntry.ToString()#>/**" />
+    <Compile Remove="**/<#=compileRemoveEntry#>/**"/>
+	<None Remove="**/<#=compileRemoveEntry#>/**" />
 <#
 			continue;
 		  }
 #>
-    <Compile Remove="**/<#=compileRemoveEntry.ToString()#>/**"/>
+    <Compile Remove="**/<#=compileRemoveEntry#>/**"/>
 <#
         }
 #>
@@ -119,13 +143,12 @@
     }
 #>
 <#
-    if(this.Session.ContainsKey("ProjectReferenceList") && this.Session["ProjectReferenceList"] != null)
+    if(this.Project.ProjectReferences != null)
     {
 #>
   <ItemGroup>
 <#
-        var projectReferenceList = this.Session["ProjectReferenceList"] as IList<ProjectFileCreator.ProjectReference>;
-        foreach(var projectReference in projectReferenceList)
+        foreach(var projectReference in this.Project.ProjectReferences)
         {
 #>
     <ProjectReference Include="<#=projectReference.IncludePath#>"/>
@@ -138,13 +161,12 @@
     }
 #>
 <#
-    if(this.Session.ContainsKey("PackageReferenceList") && this.Session["PackageReferenceList"] != null)
+    if(this.Project.PackageReferences != null)
     {
 #>
   <ItemGroup>
 <#
-        var packageReferenceList = this.Session["PackageReferenceList"] as IList<ProjectFileCreator.PackageReference>;
-        foreach(var package in packageReferenceList)
+        foreach(var package in this.Project.PackageReferences)
         {
 #>
     <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
@@ -155,36 +177,12 @@
 
 <#
     }
-#>
-<#
-    if(this.Session.ContainsKey("ServiceDllReferences") && this.Session["ServiceDllReferences"] != null)
+    if(this.Project.ReferenceDependencies != null)
     {
 #>
   <ItemGroup>
 <#
-        var dllReferenceList = this.Session["ServiceDllReferences"] as IList<ProjectFileCreator.Reference>;
-        foreach(var reference in dllReferenceList)
-        {
-#>
-    <Reference Include="<#=reference.Name#>">
-      <HintPath><#=reference.HintPath#></HintPath>
-    </Reference>
-<#
-        }
-#>
-  </ItemGroup>
-
-<#
-    }
-#>
-<#
-    if(this.Session.ContainsKey("FrameworkReferences") && this.Session["FrameworkReferences"] != null)
-    {
-#>
-  <ItemGroup>
-<#
-        var references = this.Session["FrameworkReferences"] as IEnumerable<ProjectFileCreator.FrameworkReference>;
-        foreach(var reference in references)
+        foreach(var reference in this.Project.ReferenceDependencies)
         {
             if (string.IsNullOrEmpty(reference.HintPath))
             {
@@ -206,13 +204,12 @@
 
 <#
     }
-    if(this.Session.ContainsKey("EmbeddedResources") && this.Session["EmbeddedResources"] != null)
+    if(this.Project.EmbeddedResources != null)
     {
 #>
   <ItemGroup>
 <#
-        var resourceList = this.Session["EmbeddedResources"] as IEnumerable<string>;
-        foreach(var resource in resourceList)
+        foreach(var resource in this.Project.EmbeddedResources)
         {
 #>
     <EmbeddedResource Include="<#=resource#>"/>
@@ -223,13 +220,12 @@
 <#
     }
 
-    if(this.Session.ContainsKey("Services") && this.Session["Services"] != null)
+    if(this.Project.Services != null)
     {
 #>
   <ItemGroup>
 <#
-        var serviceList = this.Session["EmbeddedResources"] as IEnumerable<string>;
-        foreach(var service in serviceList)
+        foreach(var service in this.Project.Services)
         {
 #>
     <Service Include="<#=service#>"/>
@@ -241,3 +237,7 @@
     }
 #>
 </Project>
+
+<#+
+	public Project Project { get; set; }
+#>

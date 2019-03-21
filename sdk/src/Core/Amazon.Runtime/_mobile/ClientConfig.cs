@@ -100,7 +100,7 @@ namespace Amazon.Runtime
                 }
             }
         }
-#if CORECLR
+#if NETSTANDARD
         /// <summary>
         /// Get or set the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
         /// If this property is null, <see cref="HttpClientHandler.MaxConnectionsPerServer"/>
@@ -183,7 +183,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         internal static string CreateConfigUniqueString(IClientConfig clientConfig)
         {
-#if CORECLR
+#if NETSTANDARD
             if (clientConfig.HttpClientFactory != null)
             {
                 return clientConfig.HttpClientFactory.GetConfigUniqueString(clientConfig);
@@ -195,7 +195,7 @@ namespace Amazon.Runtime
             if (clientConfig.Timeout.HasValue)
                 uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
 
-#if CORECLR
+#if NETSTANDARD
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 uniqueString = string.Concat(uniqueString, "MaxConnectionsPerServer:", clientConfig.MaxConnectionsPerServer.Value.ToString());
 #endif
@@ -213,7 +213,7 @@ namespace Amazon.Runtime
         /// </summary>
         internal static bool UseGlobalHttpClientCache(IClientConfig clientConfig)
         {
-#if CORECLR
+#if NETSTANDARD
             if (clientConfig.HttpClientFactory == null)
                 return clientConfig.ProxyCredentials == null && clientConfig.GetWebProxy() == null;
             else

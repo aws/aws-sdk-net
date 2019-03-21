@@ -76,7 +76,7 @@ namespace Amazon.EC2
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials loaded from the application's

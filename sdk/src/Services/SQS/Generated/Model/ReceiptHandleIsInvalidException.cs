@@ -25,7 +25,7 @@ namespace Amazon.SQS.Model
     ///<summary>
     /// SQS exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ReceiptHandleIsInvalidException : AmazonSQSException 
@@ -79,7 +79,7 @@ namespace Amazon.SQS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ReceiptHandleIsInvalidException class with serialized data.
         /// </summary>

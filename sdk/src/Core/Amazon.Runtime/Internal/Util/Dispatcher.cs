@@ -90,7 +90,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (disposing && resetEvent != null)
                 {
-#if PCL || CORECLR
+#if PCL || NETSTANDARD
                     resetEvent.Dispose();
 #else
                     resetEvent.Close();

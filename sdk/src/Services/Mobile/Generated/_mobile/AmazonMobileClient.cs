@@ -48,7 +48,7 @@ namespace Amazon.Mobile
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMobileClient with the credentials loaded from the application's

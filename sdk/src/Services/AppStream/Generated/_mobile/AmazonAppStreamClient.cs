@@ -69,7 +69,7 @@ namespace Amazon.AppStream
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAppStreamClient with the credentials loaded from the application's

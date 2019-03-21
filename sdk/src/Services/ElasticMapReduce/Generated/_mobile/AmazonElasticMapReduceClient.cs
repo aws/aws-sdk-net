@@ -49,7 +49,7 @@ namespace Amazon.ElasticMapReduce
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's

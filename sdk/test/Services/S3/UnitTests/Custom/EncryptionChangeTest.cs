@@ -23,17 +23,17 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class EncryptionChangeTest
     {
-        private const string ExpectedHash = "6D128C72FFFDCD7BD85ACA1A7BD600AB3BD1F9F9D57EF56DE422B184594B5C28";
+        private const string ExpectedHash = "DF3DC7D57821EA1DD25D319B1A11A4A9936642FDA7A6AC4D519437C9C2CE3E53";
         private const string Message = "Manually run EncryptionInteropTest.cs and EncryptionInteropTest.java.";
 
         private static readonly List<string> SourceFiles = new List<string>
             {
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\AmazonS3EncryptionClient.cs",
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\EncryptionMaterials.cs",
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\EncryptionUtils.cs",
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\Internal\\SetupDecryptionHandler.cs",
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\Internal\\SetupEncryptionHandler.cs",
-                 "Services\\S3\\Custom\\_bcl+coreclr\\Encryption\\UploadPartContextForEncryption.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\AmazonS3EncryptionClient.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\EncryptionMaterials.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\EncryptionUtils.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\Internal\\SetupDecryptionHandler.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\Internal\\SetupEncryptionHandler.cs",
+                 "Services\\S3\\Custom\\_bcl+netstandard\\Encryption\\UploadPartContextForEncryption.cs",
             };
 
         [TestMethod]

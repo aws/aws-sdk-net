@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
     ///<summary>
     /// RDS exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class PointInTimeRestoreNotEnabledException : AmazonRDSException 
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PointInTimeRestoreNotEnabledException class with serialized data.
         /// </summary>

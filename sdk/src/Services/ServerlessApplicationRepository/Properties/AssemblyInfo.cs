@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

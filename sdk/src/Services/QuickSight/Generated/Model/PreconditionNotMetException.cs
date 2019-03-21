@@ -25,7 +25,7 @@ namespace Amazon.QuickSight.Model
     ///<summary>
     /// QuickSight exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class PreconditionNotMetException : AmazonQuickSightException 
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the PreconditionNotMetException class with serialized data.
         /// </summary>

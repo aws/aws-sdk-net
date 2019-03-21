@@ -50,7 +50,7 @@ namespace Amazon.Kinesis
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonKinesisClient with the credentials loaded from the application's

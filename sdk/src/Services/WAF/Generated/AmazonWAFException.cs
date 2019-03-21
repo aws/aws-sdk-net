@@ -28,7 +28,7 @@ namespace Amazon.WAF
     ///<summary>
     /// Common exception for the WAF service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonWAFException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WAF
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonWAFException class with serialized data.
         /// </summary>

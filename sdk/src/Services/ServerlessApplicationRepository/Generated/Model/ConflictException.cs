@@ -25,7 +25,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     ///<summary>
     /// ServerlessApplicationRepository exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ConflictException : AmazonServerlessApplicationRepositoryException 
@@ -79,7 +79,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.Backup.Model
     ///<summary>
     /// Backup exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DependencyFailureException : AmazonBackupException 
@@ -79,7 +79,7 @@ namespace Amazon.Backup.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DependencyFailureException class with serialized data.
         /// </summary>

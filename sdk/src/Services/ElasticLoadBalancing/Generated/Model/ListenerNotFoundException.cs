@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///<summary>
     /// ElasticLoadBalancing exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ListenerNotFoundException : AmazonElasticLoadBalancingException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ListenerNotFoundException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.AWSSupport.Model
     ///<summary>
     /// AWSSupport exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CaseIdNotFoundException : AmazonAWSSupportException 
@@ -79,7 +79,7 @@ namespace Amazon.AWSSupport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CaseIdNotFoundException class with serialized data.
         /// </summary>

@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon Transcribe Service. Amazon Transcribe Public Preview Release")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

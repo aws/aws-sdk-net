@@ -25,7 +25,7 @@ namespace Amazon.Translate.Model
     ///<summary>
     /// Translate exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class TextSizeLimitExceededException : AmazonTranslateException 
@@ -79,7 +79,7 @@ namespace Amazon.Translate.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TextSizeLimitExceededException class with serialized data.
         /// </summary>

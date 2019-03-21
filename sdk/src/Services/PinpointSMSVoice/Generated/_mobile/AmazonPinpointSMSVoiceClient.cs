@@ -46,7 +46,7 @@ namespace Amazon.PinpointSMSVoice
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonPinpointSMSVoiceClient with the credentials loaded from the application's

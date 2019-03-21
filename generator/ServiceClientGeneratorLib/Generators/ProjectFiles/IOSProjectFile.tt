@@ -11,13 +11,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <ProjectGuid><#=this.Project.ProjectGuid#></ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
-    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
+    <RootNamespace><#=this.Project.RootNamespace#></RootNamespace>
+    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
 	<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+	<BaseIntermediateOutputPath>obj\\<#=this.Project.BinSubfolder#></BaseIntermediateOutputPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -25,49 +25,49 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
-    <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <OutputPath>bin\Debug\\<#=this.Project.BinSubfolder#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-	<DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+	<DocumentationFile>bin\Debug\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <OutputPath>bin\Debug\\<#=this.Project.BinSubfolder#></OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <OutputPath>bin\Release\\<#=this.Project.BinSubfolder#></OutputPath>
     <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-	<DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+	<DocumentationFile>bin\Release\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <OutputPath>bin\Release\\<#=this.Project.BinSubfolder#></OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
@@ -77,10 +77,10 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if(this.Session.ContainsKey("KeyFilePath"))
+    if(this.Project.KeyFilePath != null)
     {
 #>
-		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile><#=this.Project.KeyFilePath#></AssemblyOriginatorKeyFile>
 <#
     }
 	else
@@ -100,7 +100,7 @@
   </Choose>
   <ItemGroup>
 <#
-    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    foreach(string subDirectory in this.Project.SourceDirectories)
     {
 #>
     <Compile Include="<#=subDirectory#>\*.cs">
@@ -112,9 +112,9 @@
   </ItemGroup>
   <ItemGroup>
 <#
-    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    if(this.Project.IndividualFileIncludes != null)
     {
-        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        foreach(string file in this.Project.IndividualFileIncludes)
         {
             if(file.EndsWith(".cs"))
             {
@@ -137,9 +137,9 @@
 #>
   </ItemGroup>
 <#
-    if(this.Session.ContainsKey("ProjectReferences"))
+    if(this.Project.ProjectReferences != null)
     {
-        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        foreach(var projectReferences in this.Project.ProjectReferences)
         {
 #>
   <ItemGroup>
@@ -164,36 +164,36 @@
     <Reference Include="System.Xml" />
 	<Reference Include="Xamarin.iOS" />
     <Reference Include="PCLCrypto">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLCrypto.1.0.2.15130\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#>PCLCrypto.1.0.2.15130\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
     </Reference>
     <Reference Include="PCLStorage">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
     </Reference>
     <Reference Include="PCLStorage.Abstractions">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#>PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
 <#
-	if(this.Session["AssemblyName"]=="AWSSDK.Core")
+	if(this.Project.AssemblyName == "AWSSDK.Core")
 	{
 #>
 	<Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Extensions">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#>Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
 <#
 	}
 #>
 <#
-    if(this.Session.ContainsKey("ReferenceDependencies"))
+    if(this.Project.ReferenceDependencies != null)
     {
-		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		foreach(var dependency in this.Project.ReferenceDependencies)
 		{
 #>
     <Reference Include="<#=dependency.Name#>">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#><#=dependency.HintPath#></HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#><#=dependency.HintPath#></HintPath>
       <Private>True</Private>
     </Reference>
 <#   
@@ -217,3 +217,7 @@
   </Target>
   -->
 </Project>
+
+<#+
+	public Project Project { get; set; }
+#>

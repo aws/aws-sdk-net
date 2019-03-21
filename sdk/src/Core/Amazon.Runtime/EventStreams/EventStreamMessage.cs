@@ -29,7 +29,7 @@ namespace Amazon.Runtime.EventStreams
 {
     #region exceptions
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamParseException : Exception
@@ -38,7 +38,7 @@ namespace Amazon.Runtime.EventStreams
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamParseException class with serialized data.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Amazon.Runtime.EventStreams
 #endif
     }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamChecksumFailureException : Exception
@@ -62,7 +62,7 @@ namespace Amazon.Runtime.EventStreams
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamChecksumFailureException class with serialized data.
         /// </summary>

@@ -51,7 +51,7 @@ namespace Amazon.Backup
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonBackupClient with the credentials loaded from the application's

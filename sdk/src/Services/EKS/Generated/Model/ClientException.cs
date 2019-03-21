@@ -25,7 +25,7 @@ namespace Amazon.EKS.Model
     ///<summary>
     /// EKS exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ClientException : AmazonEKSException 
@@ -79,7 +79,7 @@ namespace Amazon.EKS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ClientException class with serialized data.
         /// </summary>

@@ -54,7 +54,7 @@ namespace Amazon.Macie
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMacieClient with the credentials loaded from the application's

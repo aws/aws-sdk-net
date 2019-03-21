@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     ///<summary>
     /// DynamoDB exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class LimitExceededException : AmazonDynamoDBException 
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the LimitExceededException class with serialized data.
         /// </summary>

@@ -118,7 +118,7 @@ namespace Amazon.ApplicationAutoScaling
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonApplicationAutoScalingClient with the credentials loaded from the application's

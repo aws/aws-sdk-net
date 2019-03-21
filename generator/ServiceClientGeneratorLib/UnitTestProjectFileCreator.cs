@@ -58,49 +58,46 @@ namespace ServiceClientGenerator
 
                 commonReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
 
-                var session = new Dictionary<string, object>
+                var projectProperties = new Project()
                 {
-                    {"TargetFramework",         configuration.TargetFrameworkVersion },
-                    {"DefineConstants",         "DEBUG;" + configuration.CompilationConstants},
-                    {"Reference",               configuration.FrameworkReferences},
-                    {"CompileRemoveList",       configuration.PlatformExcludeFolders},
-                    {"Services",                configuration.VisualStudioServices},
-                    {"ReferencePath",           configuration.ReferencePath},
-                    {"FrameworkPathOverride",   configuration.FrameworkPathOverride },
-                    {"FrameworkReferences",     configuration.FrameworkReferences },
-                    {"PackageReferenceList",    configuration.PackageReferences },
-                    {"NoWarn",                  configuration.NoWarn},
-                    {"OutputPathOverride",      configuration.OutputPathOverride },
-                    {"SignBinaries",            false},
-                    {"ConfigurationName",       configuration.Name}
+                    TargetFrameworks       = configuration.TargetFrameworkVersions,
+                    DefineConstants        = configuration.CompilationConstants.Concat(new string[] { "DEBUG" }).ToList(),
+                    ReferenceDependencies  = configuration.DllReferences,
+                    CompileRemoveList      = configuration.PlatformExcludeFolders,
+                    Services               = configuration.VisualStudioServices,
+                    FrameworkPathOverride  = configuration.FrameworkPathOverride,
+                    PackageReferences      = configuration.PackageReferences,
+                    SupressWarnings        = configuration.NoWarn,
+                    OutputPathOverride     = configuration.OutputPathOverride,
+                    SignBinaries           = false
                 };
                 if (_isLegacyProj)
                 {
-                    session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
-                    session["ExternalFilesInclude"] = "../Services/*/UnitTests/**/*.cs";
-                    session["EmbeddedResources"] = configuration.EmbeddedResources;
+                    projectProperties.AssemblyName = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
+                    projectProperties.IndividualFileIncludes = new List<string> { "../Services/*/UnitTests/**/*.cs" };
+                    projectProperties.EmbeddedResources = configuration.EmbeddedResources;
                 }
                 else
                 {
-                    session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}.{1}", _serviceName, configuration.Name);
+                    projectProperties.AssemblyName = string.Format("AWSSDK.UnitTests.{0}.{1}", _serviceName, configuration.Name);
                     //Check for embedded resources
                     var embeddedResourcePath = Path.Combine(unitTestRoot, "Custom", "EmbeddedResource");
                     if (Directory.Exists(embeddedResourcePath))
                     {
-                        session["EmbeddedResources"] = new List<string> { Path.Combine("Custom", "EmbeddedResource", "*") };
+                        projectProperties.EmbeddedResources = new List<string> { Path.Combine("Custom", "EmbeddedResource", "*") };
                     }
                 }
-
+                                
                 if (serviceProjectReferences != null)
                 {
-                    session["ProjectReferenceList"] = commonReferences.Concat(serviceProjectReferences).ToList();
+                    projectProperties.ProjectReferences = commonReferences.Concat(serviceProjectReferences).ToList();
                 }
                 else
                 {
-                    session["ProjectReferenceList"] = commonReferences;
+                    projectProperties.ProjectReferences = commonReferences;
                 }
 
-                GenerateProjectFile(session, unitTestRoot, projectName);
+                GenerateProjectFile(projectProperties, unitTestRoot, projectName);
             }
         }
 
@@ -127,11 +124,7 @@ namespace ServiceClientGenerator
                     IncludePath = coreIncludePath
                 });
             }
-            else
-            {
-                // if adding all serices as dll reference, add core dll as a dll reference in ServiceDllReferences()
-            }
-
+            
             //
             // CommonTest project reference
             //
@@ -207,46 +200,7 @@ namespace ServiceClientGenerator
             return references;
         }
 
-        private IList<ProjectFileCreator.Reference> ServiceDllReferences(string unitTestRoot,
-                                                                                    IEnumerable<ServiceConfiguration> serviceConfigurations,
-                                                                                    string projectType)
-        {
-            HashSet<string> nameSet = new HashSet<string>();
-            List<ProjectFileCreator.Reference> references = new List<ProjectFileCreator.Reference>();
-
-            // Technically not a service dll, but we can add it here to avoid recompiling core dll.
-            string coreAssemblyTitle = "AWSSDK.Core";
-            references.Add(new ProjectFileCreator.Reference
-            {
-                Name = coreAssemblyTitle,
-                HintPath = Path.Combine(@"..\..\..\Deployment\assemblies", projectType.ToLower(), coreAssemblyTitle + ".dll")
-            });
-
-            foreach (var configuration in serviceConfigurations)
-            {
-                if (nameSet.Contains(configuration.AssemblyTitle))
-                {
-                    // ServiceConfiguration list contains two entries for DynamoDBv2 and DynamoDBStreams
-                    // which resolve to the same dll.
-                    continue;
-                }
-
-                references.Add(new ProjectFileCreator.Reference
-                {
-                    Name = configuration.AssemblyTitle,
-                    HintPath = Path.Combine(@"..\..\..\Deployment\assemblies", projectType.ToLower(), configuration.AssemblyTitle + ".dll")
-                });
-
-                nameSet.Add(configuration.AssemblyTitle);
-            }
-
-            references.Sort();
-            return references;
-        }
-
-        private void GenerateProjectFile(IDictionary<string, object> session,
-                                            string unitTestProjectRoot,
-                                            string projectFilename)
+        private void GenerateProjectFile(Project projectProperties, string unitTestProjectRoot, string projectFilename)
         {
             var projectName = Path.GetFileNameWithoutExtension(projectFilename);
             string generatedContent = null;
@@ -256,10 +210,10 @@ namespace ServiceClientGenerator
                     "ServiceClientGenerator.Generators.ProjectFiles." +
                     TemplateName);
                 dynamic generator = Activator.CreateInstance(projectTemplateType);
-                generator.Session = session;
+                generator.Project = projectProperties;
                 generatedContent = generator.TransformText();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new ArgumentException("Project template name "
                     + TemplateName + " is not recognized");

@@ -162,10 +162,9 @@ namespace TestWrapper.TestRunners
                 Match match = summaryRegex.Match(line);
                 if (match.Success)
                 {
-                    total = Int32.Parse(match.Groups[1].ToString());
-                    failed = Int32.Parse(match.Groups[2].ToString());
-                    skipped = Int32.Parse(match.Groups[3].ToString());
-                    break;
+                    total += int.Parse(match.Groups[1].ToString());
+                    failed += int.Parse(match.Groups[2].ToString());
+                    skipped += int.Parse(match.Groups[3].ToString());                    
                 }
             }
             passedCount = total - failed;

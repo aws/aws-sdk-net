@@ -47,7 +47,7 @@ namespace Amazon.XRay
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonXRayClient with the credentials loaded from the application's

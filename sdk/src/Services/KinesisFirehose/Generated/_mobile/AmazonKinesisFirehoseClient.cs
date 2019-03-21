@@ -51,7 +51,7 @@ namespace Amazon.KinesisFirehose
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonKinesisFirehoseClient with the credentials loaded from the application's

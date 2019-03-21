@@ -51,7 +51,7 @@ namespace Amazon.ECR
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's

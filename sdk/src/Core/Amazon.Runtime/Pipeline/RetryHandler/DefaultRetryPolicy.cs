@@ -75,7 +75,7 @@ namespace Amazon.Runtime.Internal
 #endif
         };
 
-        private static readonly HashSet<string> _coreCLRRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        private static readonly HashSet<string> _netStandardRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "The server returned an invalid or unrecognized response",
             "The connection with the server was terminated abnormally",
@@ -244,7 +244,7 @@ namespace Amazon.Runtime.Internal
             if (exception is IOException)
             {
 
-#if !PCL && !CORECLR  // ThreadAbortException is not PCL and CoreCLR
+#if !PCL && !NETSTANDARD  // ThreadAbortException is not PCL and NetStandard
 
                 // Don't retry IOExceptions that are caused by a ThreadAbortException
                 if (IsInnerException<ThreadAbortException>(exception))
@@ -255,7 +255,7 @@ namespace Amazon.Runtime.Internal
                 return true;
             }
 
-#if CORECLR
+#if NETSTANDARD
             // Version 7.35 libcurl which is the default version installed with Ubuntu 14.04 
             // has issues under high concurrency causing response streams being disposed
             // during unmarshalling. To work around this issue will add the ObjectDisposedException
@@ -373,7 +373,7 @@ namespace Amazon.Runtime.Internal
             if (exception == null)
                 return false;
 
-            if (_coreCLRRetryErrorMessages.Contains(exception.Message))
+            if (_netStandardRetryErrorMessages.Contains(exception.Message))
                 return true;
             return ContainErrorMessage(exception.InnerException);
         }

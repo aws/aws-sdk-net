@@ -46,7 +46,7 @@ namespace Amazon.ApiGatewayV2
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonApiGatewayV2Client with the credentials loaded from the application's

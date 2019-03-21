@@ -25,7 +25,7 @@ namespace Amazon.GlobalAccelerator.Model
     ///<summary>
     /// GlobalAccelerator exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ListenerNotFoundException : AmazonGlobalAcceleratorException 
@@ -79,7 +79,7 @@ namespace Amazon.GlobalAccelerator.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ListenerNotFoundException class with serialized data.
         /// </summary>

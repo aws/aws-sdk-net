@@ -46,7 +46,7 @@ namespace Amazon.MediaLive
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMediaLiveClient with the credentials loaded from the application's

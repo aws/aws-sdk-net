@@ -69,7 +69,7 @@ namespace Amazon.ECS
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonECSClient with the credentials loaded from the application's

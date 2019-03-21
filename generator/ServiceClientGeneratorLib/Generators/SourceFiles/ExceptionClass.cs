@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+    #line 1 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ExceptionClass : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 6 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 	AddLicenseHeader();
 
@@ -38,22 +38,22 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("using System;\r\nusing System.Net;\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 13 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    ///<summary>\r\n    /// ");
             
-            #line 16 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 16 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write(" exception\r\n    /// </summary>\r\n#if !PCL && !CORECLR\r\n    [Serializable]\r\n#endif\r" +
-                    "\n");
+            this.Write(" exception\r\n    /// </summary>\r\n#if !PCL && !NETSTANDARD\r\n    [Serializable]\r\n#en" +
+                    "dif\r\n");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 21 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(this.Exception.Structure.IsDeprecated)
 		{
@@ -63,14 +63,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t[Obsolete(\"");
             
-            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 25 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Structure.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 26 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 		}
 
@@ -79,21 +79,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("    public class ");
             
-            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 29 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
             #line hidden
             this.Write(" : ");
             
-            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 29 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(BaseException));
             
             #line default
             #line hidden
             this.Write(" \r\n    {\r\n        /// <summary>\r\n        /// Constructs a new ");
             
-            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 32 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -102,7 +102,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "/// <param name=\"message\">\r\n        /// Describes the error encountered.\r\n      " +
                     "  /// </param>\r\n        public ");
             
-            #line 38 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 38 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -110,7 +110,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("(string message) \r\n            : base(message) {}\r\n          \r\n        /// <summa" +
                     "ry>\r\n        /// Construct instance of ");
             
-            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 42 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -118,7 +118,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"message\"></param>\r\n        ///" +
                     " <param name=\"innerException\"></param>\r\n        public ");
             
-            #line 46 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 46 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -127,7 +127,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "eption) {}\r\n            \r\n        /// <summary>\r\n        /// Construct instance " +
                     "of ");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 50 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -135,7 +135,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n        /// </summary>\r\n        /// <param name=\"innerException\"></param>\r\n    " +
                     "    public ");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 53 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -143,7 +143,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("(Exception innerException) \r\n            : base(innerException) {}\r\n            \r" +
                     "\n        /// <summary>\r\n        /// Construct instance of ");
             
-            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 57 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -158,7 +158,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""statusCode""></param>
         public ");
             
-            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 65 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -169,7 +169,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <summary>
         /// Construct instance of ");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 69 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -183,7 +183,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""statusCode""></param>
         public ");
             
-            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 76 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -192,7 +192,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "tusCode statusCode) \r\n            : base(message, errorType, errorCode, requestI" +
                     "d, statusCode) {}\r\n\r\n");
             
-            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 79 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(this.GenerateComplexException)
 		{
@@ -205,14 +205,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        /// <summary>\r\n        /// Gets and sets the ");
             
-            #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 87 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" property.\r\n        /// </summary>\r\n");
             
-            #line 89 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 89 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(member.IsDeprecated)
 		{
@@ -222,14 +222,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 93 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 93 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 94 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 		}
 
@@ -238,21 +238,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\tpublic ");
             
-            #line 97 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 97 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 97 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 97 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" { get; set; }\r\n\r\n");
             
-            #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 99 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			}
 		}
@@ -260,10 +260,10 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\r\n#if !PCL && !CORECLR\r\n        /// <summary>\r\n        /// Constructs a new insta" +
-                    "nce of the ");
+            this.Write("\r\n#if !PCL && !NETSTANDARD\r\n        /// <summary>\r\n        /// Constructs a new i" +
+                    "nstance of the ");
             
-            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 106 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -276,7 +276,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <exception cref=""T:System.Runtime.Serialization.SerializationException"">The class name is null or <see cref=""P:System.Exception.HResult"" /> is zero (0). </exception>
         protected ");
             
-            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 112 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Exception.Name));
             
             #line default
@@ -284,7 +284,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serializatio" +
                     "n.StreamingContext context)\r\n            : base(info, context)\r\n        {\r\n");
             
-            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 115 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(this.GenerateComplexException)
 		{
@@ -294,7 +294,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            if (info != null)\r\n            {\r\n");
             
-            #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 121 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			foreach(var member in Exception.Structure.Members)
 			{
@@ -305,28 +305,28 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                this.");
             
-            #line 126 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 126 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = info.");
             
-            #line 126 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 126 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.GetSerializationInfoMethodName()));
             
             #line default
             #line hidden
             this.Write("(\"");
             
-            #line 126 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 126 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 127 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 127 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			}
 
@@ -335,7 +335,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            }\r\n");
             
-            #line 131 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 131 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 		}
 
@@ -344,7 +344,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 136 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 		
 		if(this.GenerateComplexException && Exception.Structure.Members.Count > 0)
 		{
@@ -373,7 +373,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     ".Serialization.StreamingContext context)\r\n        {\r\n            base.GetObjectD" +
                     "ata(info, context);\r\n            if (info != null)\r\n            {\r\n");
             
-            #line 160 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 160 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			foreach(var member in Exception.Structure.Members)
 			{
@@ -384,21 +384,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                info.AddValue(\"");
             
-            #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 165 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\", this.");
             
-            #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 165 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 166 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 166 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 			}
 
@@ -407,7 +407,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            }\r\n        }\r\n");
             
-            #line 171 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+            #line 171 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
 		}
 
@@ -418,7 +418,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 178 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
+        #line 178 "C:\Dev\Worktrees\NetStandard20\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
 
     public ExceptionModel Exception { get; set; }
 

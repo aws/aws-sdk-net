@@ -72,7 +72,7 @@ namespace Amazon.IoTAnalytics
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonIoTAnalyticsClient with the credentials loaded from the application's

@@ -25,7 +25,7 @@ namespace Amazon.AppStream.Model
     ///<summary>
     /// AppStream exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class IncompatibleImageException : AmazonAppStreamException 
@@ -79,7 +79,7 @@ namespace Amazon.AppStream.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the IncompatibleImageException class with serialized data.
         /// </summary>

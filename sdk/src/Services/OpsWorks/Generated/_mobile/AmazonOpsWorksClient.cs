@@ -190,7 +190,7 @@ namespace Amazon.OpsWorks
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's

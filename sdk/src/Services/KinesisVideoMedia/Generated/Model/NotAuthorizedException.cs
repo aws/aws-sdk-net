@@ -25,7 +25,7 @@ namespace Amazon.KinesisVideoMedia.Model
     ///<summary>
     /// KinesisVideoMedia exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class NotAuthorizedException : AmazonKinesisVideoMediaException 
@@ -79,7 +79,7 @@ namespace Amazon.KinesisVideoMedia.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the NotAuthorizedException class with serialized data.
         /// </summary>

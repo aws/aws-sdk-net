@@ -10,14 +10,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <ProjectGuid><#=this.Project.ProjectGuid#></ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
-    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
-    <TargetFrameworkVersion><#=this.Session["TargetFrameworkVersion"]#></TargetFrameworkVersion>
+    <RootNamespace><#=this.Project.RootNamespace#></RootNamespace>
+    <AssemblyName><#=this.Project.AssemblyName#></AssemblyName>
+    <TargetFrameworkVersion><#=this.Project.TargetFrameworks.First()#></TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj\\<#=this.Project.BinSubfolder#></BaseIntermediateOutputPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -25,16 +25,16 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
-    <DefineConstants>DEBUG;TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <OutputPath>bin\Debug\\<#=this.Project.BinSubfolder#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
@@ -43,16 +43,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
-    <DefineConstants>TRACE;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <OutputPath>bin\Release\\<#=this.Project.BinSubfolder#></OutputPath>
+    <DefineConstants>TRACE;<#=string.Join(";", this.Project.DefineConstants)#></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\\<#=this.Project.BinSubfolder#>\\<#=this.Project.AssemblyName#>.XML</DocumentationFile>
 <#
-    if(this.Session.ContainsKey("SupressWarnings"))
+    if(this.Project.SupressWarnings != null)
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn><#=this.Project.SupressWarnings#></NoWarn>
 <#
     }
 #>
@@ -66,10 +66,10 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if(this.Session.ContainsKey("KeyFilePath"))
+    if(this.Project.KeyFilePath != null)
     {
 #>
-		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile><#=this.Project.KeyFilePath#></AssemblyOriginatorKeyFile>
 <#
     }
 	else
@@ -97,14 +97,14 @@
     <Reference Include="System.Xml" />
 <#
 
-	if(this.Session.ContainsKey("ReferenceDependencies"))
+	if(this.Project.ReferenceDependencies != null)
     {
-		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		foreach(var dependency in this.Project.ReferenceDependencies)
 		{
 #>
     
     <Reference Include="<#=dependency.Name#>">
-      <HintPath><#=this.Session["NugetPackagesLocation"]#><#=dependency.HintPath#></HintPath>
+      <HintPath><#=this.Project.NugetPackagesLocation#><#=dependency.HintPath#></HintPath>
       <Private>True</Private>
     </Reference>
 <#   
@@ -125,7 +125,7 @@
   </ItemGroup>
   <ItemGroup>
 <#
-    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    foreach(string subDirectory in this.Project.SourceDirectories)
     {
 #>
     <Compile Include="<#=subDirectory#>\*.cs">
@@ -137,9 +137,9 @@
   </ItemGroup>
   <ItemGroup>
 <#
-    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    if(this.Project.IndividualFileIncludes != null)
     {
-        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        foreach(string file in this.Project.IndividualFileIncludes)
         {
             if(file.EndsWith(".cs"))
             {
@@ -162,9 +162,9 @@
 #>
   </ItemGroup>
 <#
-    if(this.Session.ContainsKey("ProjectReferences"))
+    if(this.Project.ProjectReferences != null)
     {
-        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        foreach(var projectReferences in this.Project.ProjectReferences)
         {
 #>
   <ItemGroup>
@@ -214,13 +214,16 @@
 <#+
 	private bool IsDependencyPresentFor35(string name)
 	{
-		if(this.Session["Name"].Equals(SolutionFileCreator.ProjectTypes.Net35) &&
-		   this.Session.ContainsKey("ReferenceDependencies"))
+		if(this.Project.Name.Equals(SolutionFileCreator.ProjectTypes.Net35) &&
+		   this.Project.ReferenceDependencies != null)
 		{		
-			var dependencies = (List<Dependency>)this.Session["ReferenceDependencies"];	
-			return dependencies.SingleOrDefault(d=>d.Name.Equals(name)) != null;
+			return this.Project.ReferenceDependencies.SingleOrDefault(d=>d.Name.Equals(name)) != null;
 		}
 
 		return false;
    }
+#>
+
+<#+
+	public Project Project { get; set; }
 #>

@@ -49,7 +49,7 @@ namespace Amazon.Glue
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGlueClient with the credentials loaded from the application's

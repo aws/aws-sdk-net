@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

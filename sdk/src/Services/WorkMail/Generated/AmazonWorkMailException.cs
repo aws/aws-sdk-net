@@ -28,7 +28,7 @@ namespace Amazon.WorkMail
     ///<summary>
     /// Common exception for the WorkMail service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonWorkMailException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WorkMail
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonWorkMailException class with serialized data.
         /// </summary>

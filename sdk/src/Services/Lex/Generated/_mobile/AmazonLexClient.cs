@@ -55,7 +55,7 @@ namespace Amazon.Lex
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonLexClient with the credentials loaded from the application's

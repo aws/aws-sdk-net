@@ -54,7 +54,7 @@ namespace Amazon.Transfer
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonTransferClient with the credentials loaded from the application's

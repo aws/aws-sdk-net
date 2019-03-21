@@ -27,7 +27,7 @@ namespace Amazon.Runtime
     /// may throw this exception if there is a problem which is caught in the core client code.
     /// </para>
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class AmazonServiceException : Exception
@@ -127,7 +127,7 @@ namespace Amazon.Runtime
         }
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonServiceException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.TranscribeService
     ///<summary>
     /// Common exception for the TranscribeService service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonTranscribeServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.TranscribeService
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonTranscribeServiceException class with serialized data.
         /// </summary>

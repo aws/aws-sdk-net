@@ -25,7 +25,7 @@ namespace Amazon.KeyManagementService.Model
     ///<summary>
     /// KeyManagementService exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DependencyTimeoutException : AmazonKeyManagementServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.KeyManagementService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DependencyTimeoutException class with serialized data.
         /// </summary>

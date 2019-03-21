@@ -25,7 +25,7 @@ namespace Amazon.Kinesis.Model
     ///<summary>
     /// Kinesis exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class KMSInvalidStateException : AmazonKinesisException 
@@ -79,7 +79,7 @@ namespace Amazon.Kinesis.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the KMSInvalidStateException class with serialized data.
         /// </summary>

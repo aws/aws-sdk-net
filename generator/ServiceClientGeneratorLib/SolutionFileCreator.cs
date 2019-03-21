@@ -26,7 +26,7 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
-            public const string CoreCLR = "CoreCLR";
+            public const string NetStandard = "NetStandard";            
             public const string Win8 = "Win8";
             public const string WinPhone81 = "WinPhone81";
             public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
@@ -168,9 +168,9 @@ namespace ServiceClientGenerator
         },
         new Project
         {
-            Name = "AWSSDK.Core.CoreCLR",
+            Name = "AWSSDK.Core.NetStandard",
             ProjectGuid = "{A855B58E-ED32-40AE-AE8F-054F448B9F2C}",
-            ProjectPath = @"..\..\Core\AWSSDK.Core.CoreCLR.csproj"
+            ProjectPath = @"..\..\Core\AWSSDK.Core.NetStandard.csproj"
         }
         };
         private readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> _allProjects
@@ -207,9 +207,9 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.Unity)
                 };
 
-            var coreCLRProjectConfigs = new List<ProjectFileConfiguration> {
-                    GetProjectConfig(ProjectTypes.CoreCLR)
-                };
+            var netStandardProjectConfigs = new List<ProjectFileConfiguration> {
+                    GetProjectConfig(ProjectTypes.NetStandard)
+                };            
 
             GenerateVS2017ServiceSolution(net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net35.sln", true, false, net35ProjectConfigs);
@@ -217,7 +217,7 @@ namespace ServiceClientGenerator
             GenerateCombinedSolution("AWSSDK.PCL.sln", true, pclProjectConfigs);
             GenerateCombinedSolution("AWSSDK.Unity.sln", false, unityProjectConfigs);
 
-            GenerateVS2017Solution("AWSSDK.CoreCLR.sln", true, false, coreCLRProjectConfigs);
+            GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);            
 
             // Include solutions that Travis CI can build
             GenerateVS2017Solution("AWSSDK.Net35.Travis.sln", false, true, net35ProjectConfigs);
@@ -328,7 +328,7 @@ namespace ServiceClientGenerator
 
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
-                case ProjectTypes.CoreCLR:
+                case ProjectTypes.NetStandard:                
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
@@ -609,7 +609,7 @@ namespace ServiceClientGenerator
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
             session["SolutionGuid"] = solutionGuid;
 
-            var generator = new SolutionFileBclAndCoreCLR() { Session = session };
+            var generator = new SolutionFileBclAndNetStandard() { Session = session };
             var content = generator.TransformText();
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
@@ -710,7 +710,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Service specific solution generator. A single sln file is created that contains csproj for net35,net45 and CoreCLR and their corresponding integ and unit tests.
+        /// Service specific solution generator. A single sln file is created that contains csproj for net35,net45,netstandard and their corresponding integ and unit tests.
         /// </summary>
         private void GenerateVS2017ServiceSolution(IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
         {
@@ -737,10 +737,10 @@ namespace ServiceClientGenerator
                 // to .sln files if possible.
                 IDictionary<string, string> projectGuidDictionary = GetItemGuidDictionary(solutionPath);
 
-                // Include only net35,net45 and CoreCLR service csproj
+                // Include only net35,net45,netstandard service csproj
                 // in the service specific solutions
                 foreach (var projectFile in Directory.EnumerateFiles(servicePath, "*.*", SearchOption.TopDirectoryOnly)
-                    .Where(s => s.Contains("CoreCLR") || s.Contains("Net35") || s.Contains("Net45")))
+                    .Where(s => s.Contains("NetStandard") || s.Contains("Net35") || s.Contains("Net45")))
                 {
                     serviceProjectDependencies.AddRange(AddProjectDependencies(projectFile, serviceDirectory.Name, new List<string>()));
                     serviceProjectDependencies.Add(projectFile);
@@ -805,7 +805,7 @@ namespace ServiceClientGenerator
                 }
                 //Adding integration test service dependencies
                 session["IntegrationTestDependencies"] = dependentProjectList;
-                var generator = new SolutionFileBclAndCoreCLR() { Session = session };
+                var generator = new SolutionFileBclAndNetStandard() { Session = session };
                 var content = generator.TransformText();
                 GeneratorDriver.WriteFile(serviceDirectory.FullName, null, solutionFileName, content, true, false);
             }

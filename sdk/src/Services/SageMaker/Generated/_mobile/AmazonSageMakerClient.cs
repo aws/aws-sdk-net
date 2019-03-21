@@ -46,7 +46,7 @@ namespace Amazon.SageMaker
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSageMakerClient with the credentials loaded from the application's

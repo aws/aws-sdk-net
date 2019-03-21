@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCostExplorerClient with the credentials loaded from the application's

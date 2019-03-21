@@ -50,7 +50,7 @@ namespace Amazon.ApiGatewayManagementApi
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonApiGatewayManagementApiClient with the credentials loaded from the application's

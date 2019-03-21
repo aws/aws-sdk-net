@@ -62,7 +62,7 @@ namespace Amazon.Runtime.Internal
                             semaphore.Release();
                         }
                     });
-#if !CORECLR
+#if !NETSTANDARD
                 using (var ctr = cancellationToken.Register(() =>
                 {
                     if (thread.IsAlive)

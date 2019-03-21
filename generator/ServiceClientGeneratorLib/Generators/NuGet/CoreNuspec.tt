@@ -66,6 +66,9 @@
         <dependency id="System.Threading.Thread" version="4.0.0" />
         <dependency id="Microsoft.CSharp" version="4.0.1" />
       </group>
+
+	    <group targetFramework="netstandard2.0">
+      </group>
     </dependencies>
   </metadata> 
   <files>
@@ -123,6 +126,10 @@
 	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
 	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
 	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
+
+	<file src=".\bin\Release\netstandard2.0\AWSSDK.Core.dll" target="lib\netstandard2.0"/>
+	<file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
+	<file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
 
   </files>
 </package>

@@ -25,7 +25,7 @@ namespace Amazon.Glacier.Model
     ///<summary>
     /// Glacier exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class LimitExceededException : AmazonGlacierException 
@@ -89,7 +89,7 @@ namespace Amazon.Glacier.Model
         public string Type { get; set; }
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the LimitExceededException class with serialized data.
         /// </summary>

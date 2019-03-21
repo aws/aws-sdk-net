@@ -47,7 +47,7 @@ namespace Amazon.Amplify
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAmplifyClient with the credentials loaded from the application's

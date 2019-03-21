@@ -25,7 +25,7 @@ namespace Amazon.OpsWorksCM.Model
     ///<summary>
     /// OpsWorksCM exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceAlreadyExistsException : AmazonOpsWorksCMException 
@@ -79,7 +79,7 @@ namespace Amazon.OpsWorksCM.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceAlreadyExistsException class with serialized data.
         /// </summary>

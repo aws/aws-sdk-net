@@ -28,7 +28,7 @@ namespace Amazon.MediaStore
     ///<summary>
     /// Common exception for the MediaStore service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonMediaStoreException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MediaStore
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonMediaStoreException class with serialized data.
         /// </summary>

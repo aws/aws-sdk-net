@@ -25,7 +25,7 @@ namespace Amazon.StorageGateway.Model
     ///<summary>
     /// StorageGateway exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceUnavailableErrorException : AmazonStorageGatewayException 
@@ -79,7 +79,7 @@ namespace Amazon.StorageGateway.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceUnavailableErrorException class with serialized data.
         /// </summary>

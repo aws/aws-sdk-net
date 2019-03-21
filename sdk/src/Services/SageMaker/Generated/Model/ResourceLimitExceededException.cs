@@ -25,7 +25,7 @@ namespace Amazon.SageMaker.Model
     ///<summary>
     /// SageMaker exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ResourceLimitExceededException : AmazonSageMakerException 
@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ResourceLimitExceededException class with serialized data.
         /// </summary>

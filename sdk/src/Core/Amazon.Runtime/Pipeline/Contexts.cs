@@ -44,7 +44,7 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
         System.Threading.CancellationToken CancellationToken { get; }
 #endif
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         MonitoringAPICallAttempt CSMCallAttempt { get; set; }
 
         MonitoringAPICallEvent CSMCallEvent { get; set; }
@@ -144,7 +144,7 @@ namespace Amazon.Runtime.Internal
         {
             get { return this.OriginalRequest.GetType().Name; }
         }
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         public MonitoringAPICallAttempt CSMCallAttempt { get; set; }
 
         public MonitoringAPICallEvent CSMCallEvent { get; set; }
@@ -162,7 +162,7 @@ namespace Amazon.Runtime.Internal
                 // Along with the customer set CSMEnabled flag, the ServiceMetadata.ServiceId needs to be set
                 // to capture client side metrics. Older service nuget packages might not have a ServiceMetadata
                 // implementation and in such cases client side metrics will not be captured.
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
                 CSMEnabled = DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(_serviceMetadata.ServiceId);
 #endif
             }

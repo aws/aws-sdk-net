@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Lex Model Building Service. Amazon Lex is a service for building conversational interfaces into any application using voice and text.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Lex Model Building Service. Amazon Lex is a service for building conversational interfaces into any application using voice and text.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Lex Model Building Service. Amazon Lex is a service for building conversational interfaces into any application using voice and text.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Lex Model Building Service. Amazon Lex is a service for building conversational interfaces into any application using voice and text.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon Lex Model Building Service. Amazon Lex is a service for building conversational interfaces into any application using voice and text.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

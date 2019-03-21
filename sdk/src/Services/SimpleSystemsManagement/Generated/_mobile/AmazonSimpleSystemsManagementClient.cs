@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSimpleSystemsManagementClient with the credentials loaded from the application's

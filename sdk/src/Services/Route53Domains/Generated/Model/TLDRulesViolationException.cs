@@ -25,7 +25,7 @@ namespace Amazon.Route53Domains.Model
     ///<summary>
     /// Route53Domains exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class TLDRulesViolationException : AmazonRoute53DomainsException 
@@ -79,7 +79,7 @@ namespace Amazon.Route53Domains.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the TLDRulesViolationException class with serialized data.
         /// </summary>

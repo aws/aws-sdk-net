@@ -25,7 +25,7 @@ namespace Amazon.DatabaseMigrationService.Model
     ///<summary>
     /// DatabaseMigrationService exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class SNSInvalidTopicException : AmazonDatabaseMigrationServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.DatabaseMigrationService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the SNSInvalidTopicException class with serialized data.
         /// </summary>

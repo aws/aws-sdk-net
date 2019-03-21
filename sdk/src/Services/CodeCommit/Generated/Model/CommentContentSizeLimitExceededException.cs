@@ -25,7 +25,7 @@ namespace Amazon.CodeCommit.Model
     ///<summary>
     /// CodeCommit exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class CommentContentSizeLimitExceededException : AmazonCodeCommitException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeCommit.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the CommentContentSizeLimitExceededException class with serialized data.
         /// </summary>

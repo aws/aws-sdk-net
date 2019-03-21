@@ -628,7 +628,7 @@ namespace Amazon.S3.Model
             }
         }
 
-#if BCL45 || CORECLR
+#if BCL45 || NETSTANDARD
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>
@@ -650,7 +650,7 @@ namespace Amazon.S3.Model
             try
             {
                 long current = 0;
-#if CORECLR
+#if NETSTANDARD
                 Stream stream = this.ResponseStream;
 #else
                 Stream stream = new BufferedStream(this.ResponseStream);

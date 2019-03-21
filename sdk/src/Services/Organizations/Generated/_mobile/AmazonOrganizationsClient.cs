@@ -204,7 +204,7 @@ namespace Amazon.Organizations
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonOrganizationsClient with the credentials loaded from the application's

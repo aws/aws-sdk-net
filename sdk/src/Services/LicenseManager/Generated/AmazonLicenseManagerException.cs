@@ -28,7 +28,7 @@ namespace Amazon.LicenseManager
     ///<summary>
     /// Common exception for the LicenseManager service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonLicenseManagerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.LicenseManager
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonLicenseManagerException class with serialized data.
         /// </summary>

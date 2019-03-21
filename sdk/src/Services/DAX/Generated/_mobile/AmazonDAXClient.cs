@@ -51,7 +51,7 @@ namespace Amazon.DAX
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonDAXClient with the credentials loaded from the application's

@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceEntitlementService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMarketplaceEntitlementServiceClient with the credentials loaded from the application's

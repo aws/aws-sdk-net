@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Marketplace Entitlement Service. AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

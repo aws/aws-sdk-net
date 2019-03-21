@@ -24,7 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Globalization;
-#if BCL45 || PCL || CORECLR
+#if BCL45 || PCL || NETSTANDARD
 using System.Threading.Tasks;
 using System.Runtime.ExceptionServices;
 #endif

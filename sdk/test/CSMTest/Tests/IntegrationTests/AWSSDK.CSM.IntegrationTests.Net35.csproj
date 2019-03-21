@@ -22,7 +22,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Compile Remove="**\_bcl45+coreclr\**" />
+    <Compile Remove="**\_bcl45+netstandard\**" />
     <Compile Remove="**\_bcl45\**" />
     <Compile Remove="obj\**" />
     <None Remove="obj\**" />

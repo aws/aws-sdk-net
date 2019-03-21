@@ -25,7 +25,7 @@ namespace Amazon.XRay.Model
     ///<summary>
     /// XRay exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ThrottledException : AmazonXRayException 
@@ -79,7 +79,7 @@ namespace Amazon.XRay.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ThrottledException class with serialized data.
         /// </summary>

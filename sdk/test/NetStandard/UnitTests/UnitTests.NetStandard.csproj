@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp2.0</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+    <DebugType>portable</DebugType>
+    <AssemblyName>UnitTests</AssemblyName>
+    <PackageId>UnitTests</PackageId>
+    <PackageTargetFallback Condition="'$(TargetFramework)' == 'netcoreapp1.0'">$(PackageTargetFallback);dotnet5.4;portable-net451+win8</PackageTargetFallback>
+
+    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp1.0'">$(DefineConstants);NETSTANDARD13</DefineConstants>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="sample.rsa.private.key.txt" />
+    <EmbeddedResource Include="endpoint.customization.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\*\*.NetStandard.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

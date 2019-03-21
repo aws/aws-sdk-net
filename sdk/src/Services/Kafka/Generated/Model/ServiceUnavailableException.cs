@@ -25,7 +25,7 @@ namespace Amazon.Kafka.Model
     ///<summary>
     /// Kafka exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ServiceUnavailableException : AmazonKafkaException 
@@ -79,7 +79,7 @@ namespace Amazon.Kafka.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ServiceUnavailableException class with serialized data.
         /// </summary>

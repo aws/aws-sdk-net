@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
 using Amazon.Runtime.Internal.Util;
@@ -28,7 +28,7 @@ namespace Amazon.Runtime
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory
     {
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         internal const string DefaultProfileName = "default";
 
@@ -56,7 +56,7 @@ namespace Amazon.Runtime
 #if BCL
                 () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
 #endif
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                 () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
@@ -65,7 +65,7 @@ namespace Amazon.Runtime
             };
         }
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
             var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);

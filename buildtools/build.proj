@@ -56,10 +56,10 @@
       <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
       <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
       <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
-      <CoreCLRSolutionFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionFile>
+      <NetStandardSolutionFile>AWSSDK.NetStandard.sln</NetStandardSolutionFile>      
       <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
       <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
-      <CoreCLRUnitTests>UnitTests.CoreCLR.csproj</CoreCLRUnitTests>
+      <NetStandardUnitTests>UnitTests.NetStandard.csproj</NetStandardUnitTests>
       <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
       <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
     </PropertyGroup>
@@ -69,7 +69,7 @@
                 <FxCop35TargetFileName>SDK-3.5.FxCop</FxCop35TargetFileName>
                 <FxCop45TargetFileName>SDK-4.5.FxCop</FxCop45TargetFileName>
                 <BCLUnitTestCategories></BCLUnitTestCategories>
-                <CoreCLRTestCategories></CoreCLRTestCategories>
+                <NetStandardTestCategories></NetStandardTestCategories>
             </PropertyGroup>
         </When>
         <Otherwise>
@@ -170,13 +170,13 @@
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-last-released-unity-bits;copy-assemblies">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-netstandard;copy-last-released-unity-bits;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-last-released-unity-bits;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-netstandard;copy-last-released-unity-bits;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -215,11 +215,11 @@
             Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
     </Target>
 
-    <Target Name="build-sdk-coreclr">
-        <Message Text="Restore and compile CoreCLR version of the SDK"/>
-        <Exec Command="dotnet restore -f  $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(CoreCLRSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
+    <Target Name="build-sdk-netstandard">
+        <Message Text="Restore and compile NetStandard versions of the SDK"/>
+        <Exec Command="dotnet restore -f  $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="dotnet clean -c $(Configuration) $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>        
     </Target>
 
   <Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
@@ -259,9 +259,9 @@
         <Exec Command="dotnet clean -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="dotnet build -c $(Configuration) $(Net45UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
 
-        <Exec Command="dotnet restore -f  $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
-        <Exec Command="dotnet build -c $(Configuration) $(CoreCLRUnitTests)" WorkingDirectory="..\sdk\test\CoreCLR\UnitTests"/>
+        <Exec Command="dotnet restore -f  $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
+        <Exec Command="dotnet clean -c $(Configuration) $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
+        <Exec Command="dotnet build -c $(Configuration) $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
     </Target>
 
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-tests;build-test-wrapper;" >
@@ -281,9 +281,9 @@
 
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
             Configuration="$(Configuration)"
-            Categories="$(CoreCLRTestCategories)"
+            Categories="$(NetStandardTestCategories)"
             TestExecutionProfile="test-runner"/>
     </Target>
 
@@ -316,9 +316,9 @@
 
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
             Configuration="$(Configuration)"
-            Categories="$(CoreCLRTestCategories)"
+            Categories="$(NetStandardTestCategories)"
             TestExecutionProfile="test-runner"/>
     </Target>
 
@@ -361,7 +361,7 @@
 
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CoreCLR\IntegrationTests\IntegrationTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\NetStandard\IntegrationTests\IntegrationTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             Categories="$(IntegCategoriesToTest)"
             TestExecutionProfile="test-runner"/>
@@ -386,7 +386,7 @@
             TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             TestExecutionProfile="test-runner"/>
     </Target>
@@ -395,7 +395,7 @@
         <Message Text="CSM Corelr"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             TestExecutionProfile="test-runner"/>
         <Message Text="CSM 45"/>
@@ -420,7 +420,7 @@
             TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
@@ -430,7 +430,7 @@
             TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.CoreCLR.csproj"
+            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.NetStandard.csproj"
             Configuration="$(Configuration)"
             TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
@@ -599,7 +599,7 @@
         <ItemGroup>
             <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\Services\EC2\UnitTests\Custom\PasswordTest.cs" />
-            <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
+            <PrivateKeyException Include="sdk\test\NetStandard\UnitTests\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\test\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\WorkLink\Generated\PropertyValueRules.xml" />
         </ItemGroup>

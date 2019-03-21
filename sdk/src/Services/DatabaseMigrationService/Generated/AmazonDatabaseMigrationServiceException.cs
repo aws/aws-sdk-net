@@ -28,7 +28,7 @@ namespace Amazon.DatabaseMigrationService
     ///<summary>
     /// Common exception for the DatabaseMigrationService service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonDatabaseMigrationServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DatabaseMigrationService
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonDatabaseMigrationServiceException class with serialized data.
         /// </summary>

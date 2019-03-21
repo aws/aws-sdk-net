@@ -65,7 +65,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// machine is an invalid state. This is usually the result of an interanl exception
     /// being thrown during parsing of the network stream.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class EventStreamDecoderIllegalStateException : Exception
@@ -74,7 +74,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamDecoderIllegalStateException class with serialized data.
         /// </summary>

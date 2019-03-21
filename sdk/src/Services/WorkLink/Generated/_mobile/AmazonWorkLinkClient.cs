@@ -52,7 +52,7 @@ namespace Amazon.WorkLink
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonWorkLinkClient with the credentials loaded from the application's

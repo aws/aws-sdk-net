@@ -25,7 +25,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///<summary>
     /// CognitoIdentityProvider exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidLambdaResponseException : AmazonCognitoIdentityProviderException 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidLambdaResponseException class with serialized data.
         /// </summary>

@@ -46,7 +46,7 @@ namespace Amazon.IoT1ClickProjects
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonIoT1ClickProjectsClient with the credentials loaded from the application's

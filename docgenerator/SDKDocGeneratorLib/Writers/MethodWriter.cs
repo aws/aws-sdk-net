@@ -151,7 +151,7 @@ namespace SDKDocGenerator.Writers
             get
             {
                 // This check is mostly to keep the generator from emitting multiple rewrite rules for the same shape.
-                // i.e. we don't want a rewrite rule for pcl, bcl35, bcl45, and coreclr. We only emit rules for bcl45
+                // i.e. we don't want a rewrite rule for pcl, bcl35, bcl45, and netstandard. We only emit rules for bcl45
                 //      we don't want to emit rules for both Async and Sync.  We only emit rules for Async.
                 return (this._version == FrameworkVersion.DotNet45 &&
                         !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal) &&

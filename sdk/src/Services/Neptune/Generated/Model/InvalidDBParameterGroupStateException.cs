@@ -25,7 +25,7 @@ namespace Amazon.Neptune.Model
     ///<summary>
     /// Neptune exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidDBParameterGroupStateException : AmazonNeptuneException 
@@ -79,7 +79,7 @@ namespace Amazon.Neptune.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidDBParameterGroupStateException class with serialized data.
         /// </summary>

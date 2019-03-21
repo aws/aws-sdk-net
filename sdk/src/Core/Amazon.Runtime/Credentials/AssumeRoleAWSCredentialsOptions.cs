@@ -43,7 +43,7 @@ namespace Amazon.Runtime
         /// </summary>
 #if BCL || UNITY
         public WebProxy ProxySettings { get; set; }
-#elif CORECLR
+#elif NETSTANDARD
         public IWebProxy ProxySettings { get; set; }
 #endif
 

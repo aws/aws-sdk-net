@@ -21,7 +21,7 @@ namespace AWSSDK.SmokeTests.TranscribeService
             var response = transcribeServiceClient.ListTranscriptionJobs(new ListTranscriptionJobsRequest
             {
             });
-#elif CORECLR
+#elif NETSTANDARD
             var response = transcribeServiceClient.ListTranscriptionJobsAsync(new ListTranscriptionJobsRequest
             {
             }).Result;

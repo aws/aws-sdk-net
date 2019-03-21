@@ -25,7 +25,7 @@ namespace Amazon.FSx.Model
     ///<summary>
     /// FSx exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidExportPathException : AmazonFSxException 
@@ -79,7 +79,7 @@ namespace Amazon.FSx.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidExportPathException class with serialized data.
         /// </summary>

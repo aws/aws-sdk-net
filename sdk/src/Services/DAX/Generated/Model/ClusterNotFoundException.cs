@@ -25,7 +25,7 @@ namespace Amazon.DAX.Model
     ///<summary>
     /// DAX exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ClusterNotFoundException : AmazonDAXException 
@@ -79,7 +79,7 @@ namespace Amazon.DAX.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ClusterNotFoundException class with serialized data.
         /// </summary>

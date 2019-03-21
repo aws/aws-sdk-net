@@ -25,7 +25,7 @@ namespace Amazon.CloudSearchDomain.Model
     ///<summary>
     /// CloudSearchDomain exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class DocumentServiceException : AmazonCloudSearchDomainException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudSearchDomain.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the DocumentServiceException class with serialized data.
         /// </summary>

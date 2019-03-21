@@ -113,7 +113,7 @@ namespace Amazon.AWSHealth
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAWSHealthClient with the credentials loaded from the application's

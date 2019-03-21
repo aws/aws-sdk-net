@@ -25,7 +25,7 @@ namespace Amazon.StepFunctions.Model
     ///<summary>
     /// StepFunctions exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidArnException : AmazonStepFunctionsException 
@@ -79,7 +79,7 @@ namespace Amazon.StepFunctions.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidArnException class with serialized data.
         /// </summary>

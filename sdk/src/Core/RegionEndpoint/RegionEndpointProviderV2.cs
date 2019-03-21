@@ -69,7 +69,7 @@ namespace Amazon.Internal
         /// </summary>
         public class RegionEndpoint : IRegionEndpoint
         {
-#if CORECLR
+#if NETSTANDARD
             // The shared endpoint rules used by other AWS SDKs.
             const string REGIONS_FILE = "Core.endpoints.json";
             // The .NET SDK specific customization to support legacy decisions made for endpoints.
@@ -248,7 +248,7 @@ namespace Amazon.Internal
                         LoadEndpointDefinitionFromWeb(endpointsPath);
                     }
 #endif
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
                     else
                     {
                         LoadEndpointDefinitionFromFilePath(endpointsPath);
@@ -318,7 +318,7 @@ namespace Amazon.Internal
                 return true;
             }
 #endif
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
             static void LoadEndpointDefinitionFromFilePath(string path)
             {
                 if (!System.IO.File.Exists(path))

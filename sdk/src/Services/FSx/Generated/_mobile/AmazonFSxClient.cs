@@ -47,7 +47,7 @@ namespace Amazon.FSx
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonFSxClient with the credentials loaded from the application's

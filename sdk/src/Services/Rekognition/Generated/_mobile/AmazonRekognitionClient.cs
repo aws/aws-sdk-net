@@ -46,7 +46,7 @@ namespace Amazon.Rekognition
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonRekognitionClient with the credentials loaded from the application's

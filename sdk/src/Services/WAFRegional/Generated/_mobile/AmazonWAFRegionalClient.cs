@@ -53,7 +53,7 @@ namespace Amazon.WAFRegional
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonWAFRegionalClient with the credentials loaded from the application's

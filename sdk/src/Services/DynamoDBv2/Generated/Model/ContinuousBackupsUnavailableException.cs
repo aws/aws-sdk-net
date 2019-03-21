@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     ///<summary>
     /// DynamoDB exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ContinuousBackupsUnavailableException : AmazonDynamoDBException 
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ContinuousBackupsUnavailableException class with serialized data.
         /// </summary>

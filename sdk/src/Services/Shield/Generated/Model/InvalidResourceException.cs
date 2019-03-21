@@ -25,7 +25,7 @@ namespace Amazon.Shield.Model
     ///<summary>
     /// Shield exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidResourceException : AmazonShieldException 
@@ -79,7 +79,7 @@ namespace Amazon.Shield.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidResourceException class with serialized data.
         /// </summary>

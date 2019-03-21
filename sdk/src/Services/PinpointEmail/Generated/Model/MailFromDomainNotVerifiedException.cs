@@ -25,7 +25,7 @@ namespace Amazon.PinpointEmail.Model
     ///<summary>
     /// PinpointEmail exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class MailFromDomainNotVerifiedException : AmazonPinpointEmailException 
@@ -79,7 +79,7 @@ namespace Amazon.PinpointEmail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the MailFromDomainNotVerifiedException class with serialized data.
         /// </summary>

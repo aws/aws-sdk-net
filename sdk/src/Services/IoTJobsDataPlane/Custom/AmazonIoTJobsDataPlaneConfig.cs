@@ -32,7 +32,7 @@ namespace Amazon.IoTJobsDataPlane
         protected override void Initialize()
         {
             this.AllowAutoRedirect = false;
-#if BCL45||CORECLR
+#if BCL45||NETSTANDARD
             // Set Timeout and ReadWriteTimeout for Amazon IoTJobsDataPlane service to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;

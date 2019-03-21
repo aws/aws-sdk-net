@@ -121,7 +121,7 @@ namespace Amazon.SQS
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials loaded from the application's

@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace#>.Model
     ///<summary>
     /// <#= this.Config.ClassName#> exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
 <#		
@@ -101,7 +101,7 @@ namespace <#=this.Config.Namespace#>.Model
 		}
 #>
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the <#=this.Exception.Name#> class with serialized data.
         /// </summary>

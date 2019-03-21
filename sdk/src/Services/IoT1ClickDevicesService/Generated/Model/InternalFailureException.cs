@@ -25,7 +25,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
     ///<summary>
     /// IoT1ClickDevicesService exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalFailureException : AmazonIoT1ClickDevicesServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalFailureException class with serialized data.
         /// </summary>

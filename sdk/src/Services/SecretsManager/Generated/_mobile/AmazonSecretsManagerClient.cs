@@ -130,7 +130,7 @@ namespace Amazon.SecretsManager
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSecretsManagerClient with the credentials loaded from the application's

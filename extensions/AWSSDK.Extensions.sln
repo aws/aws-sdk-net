@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sdk", "sdk", "{0BA39F07-84D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A960D001-40B3-4B1A-A890-D1049FB7586E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.CoreCLR", "..\sdk\src\Core\AWSSDK.Core.CoreCLR.csproj", "{2008FB42-71F9-4B1A-B22E-574D9112C3C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj", "{2008FB42-71F9-4B1A-B22E-574D9112C3C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NETCore.SetupTests", "test\NETCore.SetupTests\NETCore.SetupTests.csproj", "{2C63DA02-EB94-443A-A986-B0E2CA5FA558}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.NETCore.Setup", "src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.csproj", "{C5AA3F6E-7BC8-4E26-8A4D-406938FC95FF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CoreCLR", "..\sdk\src\Services\S3\AWSSDK.S3.CoreCLR.csproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.NetStandard", "..\sdk\src\Services\S3\AWSSDK.S3.NetStandard.csproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

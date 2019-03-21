@@ -25,7 +25,7 @@ namespace Amazon.AlexaForBusiness.Model
     ///<summary>
     /// AlexaForBusiness exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class AlreadyExistsException : AmazonAlexaForBusinessException 
@@ -79,7 +79,7 @@ namespace Amazon.AlexaForBusiness.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AlreadyExistsException class with serialized data.
         /// </summary>

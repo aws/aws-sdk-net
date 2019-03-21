@@ -57,23 +57,23 @@ namespace ServiceClientGenerator
                         projectGuid = Utils.NewProjectGuid;
                         Console.WriteLine("...creating project file {0}", projectFilename);
                     }
-                    var templateSession = new Dictionary<string, object>();
+                    var projectProperties = new Project();
 
-                    templateSession["Name"] = projectFileConfiguration.Name;
-                    templateSession["ProjectGuid"] = projectGuid;
-                    templateSession["RootNamespace"] = "Amazon";
-                    templateSession["AssemblyName"] = assemblyName;
-                    templateSession["SourceDirectories"] = GetCoreProjectSourceFolders(projectFileConfiguration, coreFilesRoot);
-                    templateSession["IndividualFileIncludes"] = new List<string>
+                    projectProperties.Name = projectFileConfiguration.Name;
+                    projectProperties.ProjectGuid = projectGuid;
+                    projectProperties.RootNamespace = "Amazon";
+                    projectProperties.AssemblyName = assemblyName;
+                    projectProperties.SourceDirectories = GetCoreProjectSourceFolders(projectFileConfiguration, coreFilesRoot);
+                    projectProperties.IndividualFileIncludes = new List<string>
                     {
                         "endpoints.json",
                     };
-                    templateSession["KeyFilePath"] = @"..\..\awssdk.dll.snk";
-                    templateSession["SupressWarnings"] = "419,1570,1591";
-                    templateSession["NugetPackagesLocation"] = @"..\..\packages\";
-                    templateSession["TargetFrameworkVersion"] = projectFileConfiguration.TargetFrameworkVersion;
-                    templateSession["DefineConstants"] = projectFileConfiguration.CompilationConstants;
-                    templateSession["BinSubfolder"] = projectFileConfiguration.BinSubFolder;
+                    projectProperties.KeyFilePath = @"..\..\awssdk.dll.snk";
+                    projectProperties.SupressWarnings = "419,1570,1591";
+                    projectProperties.NugetPackagesLocation = @"..\..\packages\";
+                    projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
+                    projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
+                    projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
 
                     var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                     var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -82,11 +82,11 @@ namespace ServiceClientGenerator
                         CreatedProjectFiles[projectName] = projectConfigurationData;
 
                     var projectReferences = new List<ProjectReference>();
-                    templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
+                    projectProperties.ProjectReferences = projectReferences.OrderBy(x => x.Name).ToList();
 
-                    templateSession["UnityPath"] = Options.UnityPath;
+                    projectProperties.UnityPath = Options.UnityPath;
 
-                    GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, coreFilesRoot, projectFilename);
+                    GenerateProjectFile(projectFileConfiguration, projectConfigurationData, projectProperties, coreFilesRoot, projectFilename);
                 }
             }
         }
@@ -106,8 +106,10 @@ namespace ServiceClientGenerator
             {
                 var projectType = projectFileConfiguration.Name;
 
-                if (projectType.Equals("Unity", StringComparison.InvariantCultureIgnoreCase) &&     !serviceConfiguration.SupportedInUnity) continue;
-                if (projectType.Equals("CoreCLR", StringComparison.InvariantCultureIgnoreCase) &&   !serviceConfiguration.CoreCLRSupport) continue;
+                if (projectType.Equals("Unity", StringComparison.InvariantCultureIgnoreCase) && !serviceConfiguration.SupportedInUnity) 
+                    continue;
+                if (projectType.Equals("NetStandard", StringComparison.InvariantCultureIgnoreCase) && !serviceConfiguration.NetStandardSupport)
+                    continue;
 
                 if (projectFileConfiguration.Template.Equals("VS2017ProjectFile", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -157,17 +159,17 @@ namespace ServiceClientGenerator
                 }
 
 
-                var templateSession = new Dictionary<string, object>();
+                var projectProperties = new Project();
 
-                templateSession["Name"] = projectFileConfiguration.Name;
-                templateSession["ProjectGuid"] = projectGuid;
-                templateSession["RootNamespace"] = serviceConfiguration.Namespace;
-                templateSession["AssemblyName"] = assemblyName;
-                templateSession["SourceDirectories"] = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
-                templateSession["NugetPackagesLocation"] = @"..\..\..\packages\";
-                templateSession["TargetFrameworkVersion"] = projectFileConfiguration.TargetFrameworkVersion;
-                templateSession["DefineConstants"] = projectFileConfiguration.CompilationConstants;
-                templateSession["BinSubfolder"] = projectFileConfiguration.BinSubFolder;
+                projectProperties.Name = projectFileConfiguration.Name;
+                projectProperties.ProjectGuid = projectGuid;
+                projectProperties.RootNamespace = serviceConfiguration.Namespace;
+                projectProperties.AssemblyName = assemblyName;
+                projectProperties.SourceDirectories = GetProjectSourceFolders(projectFileConfiguration, serviceFilesRoot);
+                projectProperties.NugetPackagesLocation = @"..\..\..\packages\";
+                projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
+                projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
+                projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
 
                 var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                 var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -207,23 +209,17 @@ namespace ServiceClientGenerator
                 }
 
 
-                templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
+                projectProperties.ProjectReferences = projectReferences.OrderBy(x => x.Name).ToList();
 
-                templateSession["UnityPath"] = Options.UnityPath;
-
-                if (serviceConfiguration.ModelName.Equals("s3", StringComparison.OrdinalIgnoreCase) && projectType == "Net45")
-                {
-                    templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
-                }
+                projectProperties.UnityPath = Options.UnityPath;
 
                 if (serviceConfiguration.ReferenceDependencies != null &&
                     serviceConfiguration.ReferenceDependencies.ContainsKey(projectFileConfiguration.Name))
                 {
-                    templateSession["ReferenceDependencies"] = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
-                    templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
+                    projectProperties.ReferenceDependencies = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
                 }
 
-                GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
+                GenerateProjectFile(projectFileConfiguration, projectConfigurationData, projectProperties, serviceFilesRoot, projectFilename);
             }
         }
 
@@ -236,7 +232,7 @@ namespace ServiceClientGenerator
         /// <param name="projectFilename"></param>
         private void GenerateProjectFile(ProjectFileConfiguration projectFileConfiguration,
                                          ProjectConfigurationData projectConfiguration,
-                                         IDictionary<string, object> session,
+                                         Project projectProperties,
                                          string serviceFilesRoot,
                                          string projectFilename)
         {
@@ -248,7 +244,7 @@ namespace ServiceClientGenerator
                     "ServiceClientGenerator.Generators.ProjectFiles." +
                     projectFileConfiguration.Template);
                 dynamic generator = Activator.CreateInstance(projectTemplateType);
-                generator.Session = session;
+                generator.Project = projectProperties;
                 generatedContent = generator.TransformText();
             }
             catch (Exception)
@@ -265,19 +261,17 @@ namespace ServiceClientGenerator
             var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
             var projectType = projectFileConfiguration.Name;
 
-            var templateSession = new Dictionary<string, object>();
+            var projectProperties = new Project();
 
-            templateSession["AssemblyName"]         = assemblyName;
-            templateSession["ProjectReferenceList"] = projectFileConfiguration.ProjectReferences;
-            templateSession["TargetFramework"]      = projectFileConfiguration.TargetFrameworkVersion;
-            templateSession["DefineConstants"]      = projectFileConfiguration.CompilationConstants;
-            templateSession["CompileRemoveList"]    = projectFileConfiguration.PlatformExcludeFolders;
-            templateSession["FrameworkPathOverride"]= projectFileConfiguration.FrameworkPathOverride;
-            templateSession["ReferencePath"]        = projectFileConfiguration.ReferencePath;
-            templateSession["FrameworkReferences"]  = projectFileConfiguration.FrameworkReferences;
-            templateSession["NoWarn"]               = projectFileConfiguration.NoWarn;
-            templateSession["SignBinaries"]         = true;
-            templateSession["ConfigurationName"]    = projectFileConfiguration.TargetFrameworkVersion;
+            projectProperties.AssemblyName          = assemblyName;
+            projectProperties.ProjectReferences     = projectFileConfiguration.ProjectReferences;
+            projectProperties.TargetFrameworks      = projectFileConfiguration.TargetFrameworkVersions;
+            projectProperties.DefineConstants       = projectFileConfiguration.CompilationConstants;
+            projectProperties.CompileRemoveList     = projectFileConfiguration.PlatformExcludeFolders;
+            projectProperties.FrameworkPathOverride = projectFileConfiguration.FrameworkPathOverride;
+            projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
+            projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;
+            projectProperties.SignBinaries          = true;
 
             List<Dependency> dependencies;
             List<PackageReference> references = new List<PackageReference>();
@@ -293,11 +287,11 @@ namespace ServiceClientGenerator
                     });
                 }
 
-                templateSession["PackageReferenceList"] = references;
+                projectProperties.PackageReferences = references;
             }
 
             var projectJsonTemplate = new VS2017ProjectFile();
-            projectJsonTemplate.Session = templateSession;
+            projectJsonTemplate.Project = projectProperties;
 
             var content = projectJsonTemplate.TransformText();
 
@@ -461,17 +455,6 @@ namespace ServiceClientGenerator
             return foldersThatExist;
         }
 
-        public class Reference : IComparable<Reference>
-        {
-            public string Name { get; set; }
-            public string HintPath { get; set; }
-
-            int IComparable<Reference>.CompareTo(Reference that)
-            {
-                return string.Compare(this.Name, that.Name);
-            }
-        }
-
         public class ProjectReference : IComparable<ProjectReference>
         {
             public string IncludePath { get; set; }
@@ -500,21 +483,6 @@ namespace ServiceClientGenerator
                 {
                     Include = data.SafeGetString("include"),
                     Version = data.SafeGetString("version"),
-                };
-            }
-        }
-
-        public class FrameworkReference
-        {
-            public string Name { get; set; }
-            public string HintPath { get; set; }
-
-            public static FrameworkReference ParseJson(Json.LitJson.JsonData data)
-            {
-                return new FrameworkReference
-                {
-                    Name = data.SafeGetString("name"),
-                    HintPath = data.SafeGetString("hintPath"),
                 };
             }
         }

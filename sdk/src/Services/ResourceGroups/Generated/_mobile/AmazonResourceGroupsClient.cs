@@ -95,7 +95,7 @@ namespace Amazon.ResourceGroups
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonResourceGroupsClient with the credentials loaded from the application's

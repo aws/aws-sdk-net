@@ -25,7 +25,7 @@ namespace Amazon.SecurityToken.Model
     ///<summary>
     /// SecurityTokenService exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidIdentityTokenException : AmazonSecurityTokenServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SecurityToken.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidIdentityTokenException class with serialized data.
         /// </summary>

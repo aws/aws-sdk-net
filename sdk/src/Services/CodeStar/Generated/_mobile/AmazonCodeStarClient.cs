@@ -139,7 +139,7 @@ namespace Amazon.CodeStar
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCodeStarClient with the credentials loaded from the application's

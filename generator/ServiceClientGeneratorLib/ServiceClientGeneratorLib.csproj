@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExampleMetadata.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\Marshallers\EndpointDiscoveryMarshaller.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointDiscoveryMarshaller.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,15 +103,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CodeAnalysisProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\ProjectFiles\SolutionFileBclAndCoreCLR.cs">
+    <Compile Update="Generators\ProjectFiles\SolutionFileBclAndNetStandard.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>SolutionFileBclAndCoreCLR.tt</DependentUpon>
+      <DependentUpon>SolutionFileBclAndNetStandard.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\ProjectFiles\IOSProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IOSProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\ProjectFiles\UnitTestProjectFile.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UnitTestProjectFile.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\ProjectFiles\VS2017ProjectFile.cs">
       <DependentUpon>VS2017ProjectFile.tt</DependentUpon>
@@ -117,11 +127,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators\ProjectFiles\UnitTestProjectFile.cs">
-      <DependentUpon>UnitTestProjectFile.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Generators\ProjectFiles\UnityProjectFile.cs">
       <AutoGen>True</AutoGen>
@@ -237,6 +242,11 @@
       <DependentUpon>ExceptionClass.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Generators\TestFiles\EndpointDiscoveryMarshallingTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointDiscoveryMarshallingTests.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\TestFiles\JsonMarshallingTests.cs">
       <DependentUpon>JsonMarshallingTests.tt</DependentUpon>
@@ -385,6 +395,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GettingStarted.cs</LastGenOutput>
     </None>
+    <None Update="Generators\Marshallers\EndpointDiscoveryMarshaller.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointDiscoveryMarshaller.cs</LastGenOutput>
+    </None>
     <None Update="Generators\NuGet\CoreNuspec.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreNuspec.cs</LastGenOutput>
@@ -400,6 +414,10 @@
     <None Update="Generators\ProjectFiles\PCLProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PCLProjectFile.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\ProjectFiles\UnitTestProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
     </None>
     <None Update="Generators\ProjectFiles\UnityProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -484,6 +502,10 @@
     <None Update="Generators\SourceFiles\ExceptionClass.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExceptionClass.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\TestFiles\EndpointDiscoveryMarshallingTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointDiscoveryMarshallingTests.cs</LastGenOutput>
     </None>
     <None Update="Generators\TestFiles\JsonMarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -631,10 +653,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>VS2017ProjectFile.cs</LastGenOutput>
     </None>
-    <None Update="Generators\ProjectFiles\UnitTestProjectFile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
-    </None>
     <None Update="Generators\Examples\ExampleCode.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExampleCode.cs</LastGenOutput>
@@ -653,9 +671,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Generators\ProjectFiles\SolutionFileBclAndCoreCLR.tt">
+    <None Update="Generators\ProjectFiles\SolutionFileBclAndNetStandard.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SolutionFileBclAndCoreCLR.cs</LastGenOutput>
+      <LastGenOutput>SolutionFileBclAndNetStandard.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

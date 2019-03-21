@@ -28,7 +28,7 @@ namespace Amazon.CostExplorer
     ///<summary>
     /// Common exception for the CostExplorer service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonCostExplorerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CostExplorer
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonCostExplorerException class with serialized data.
         /// </summary>

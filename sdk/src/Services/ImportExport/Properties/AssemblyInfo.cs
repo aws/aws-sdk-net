@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

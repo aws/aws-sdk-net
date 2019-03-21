@@ -52,7 +52,7 @@ namespace Amazon.CloudFront
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's

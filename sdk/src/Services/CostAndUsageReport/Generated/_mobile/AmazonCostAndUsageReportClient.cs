@@ -69,7 +69,7 @@ namespace Amazon.CostAndUsageReport
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCostAndUsageReportClient with the credentials loaded from the application's

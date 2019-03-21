@@ -25,7 +25,7 @@ namespace Amazon.AWSHealth.Model
     ///<summary>
     /// AWSHealth exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidPaginationTokenException : AmazonAWSHealthException 
@@ -79,7 +79,7 @@ namespace Amazon.AWSHealth.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidPaginationTokenException class with serialized data.
         /// </summary>

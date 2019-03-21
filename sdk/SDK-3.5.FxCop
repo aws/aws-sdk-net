@@ -183,6 +183,7 @@
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/textract/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/transcribeservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/transfer/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/translate/bin/Release/net35/</Directory>
@@ -356,6 +357,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Textract.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.TranscribeService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Transfer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Translate.dll" Analyze="True" AnalyzeAllChildren="True" />

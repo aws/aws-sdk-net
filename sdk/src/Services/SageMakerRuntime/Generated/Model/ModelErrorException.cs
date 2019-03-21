@@ -25,7 +25,7 @@ namespace Amazon.SageMakerRuntime.Model
     ///<summary>
     /// SageMakerRuntime exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ModelErrorException : AmazonSageMakerRuntimeException 
@@ -79,7 +79,7 @@ namespace Amazon.SageMakerRuntime.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ModelErrorException class with serialized data.
         /// </summary>

@@ -91,7 +91,7 @@ namespace Amazon.Runtime.Internal.Transform
                 //failing to do so may result in the stream being cut off in the middle (since the zip stream length is less than the responseData.ContentLength)
                 //or may result in a crc32 exception since the crc32 calcuated value for an unzipped stream will differ from the crc32 values for a zipped stream.
                 //
-                // Temporary work around checking Content-Encoding for an issue with CoreCLR on Linux returning Content-Length for a gzipped response.
+                // Temporary work around checking Content-Encoding for an issue with NetStandard on Linux returning Content-Length for a gzipped response.
                 // Causing the SDK to attempt a CRC check over the gzipped response data with a CRC value for the uncompressed value. 
                 // The Content-Encoding check can be removed with the following github issue is shipped.
                 // https://github.com/dotnet/corefx/issues/6796

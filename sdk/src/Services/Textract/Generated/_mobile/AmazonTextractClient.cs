@@ -47,7 +47,7 @@ namespace Amazon.Textract
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonTextractClient with the credentials loaded from the application's

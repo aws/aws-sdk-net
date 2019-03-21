@@ -28,16 +28,16 @@ namespace ServiceClientGenerator
         public IEnumerable<string> Configurations { get; set; }
 
         /// <summary>
-        /// The .Net Framework version, in format vX.Y, that the project will compile 
+        /// The .Net Framework versions, in format vX.Y, that the project will compile 
         /// against.
         /// </summary>
-        public string TargetFrameworkVersion { get; set; }
+        public IEnumerable<string> TargetFrameworkVersions { get; set; }
 
         /// <summary>
         /// The #define constants to be set at compile time. These are used for all
         /// compilation types (debug, release etc).
         /// </summary>
-        public string CompilationConstants { get; set; }
+        public IEnumerable<string> CompilationConstants { get; set; }
 
         /// <summary>
         /// The name of the subfolder that the compile outputs should be placed into.
@@ -107,8 +107,6 @@ namespace ServiceClientGenerator
 
         public IEnumerable<string> VisualStudioServices { get; set; }
 
-        public string ReferencePath { get; set; }
-
         public string NoWarn { get; set; }
 
         public string OutputPathOverride { get; set; }
@@ -121,7 +119,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public string FrameworkPathOverride { get; set; }
 
-        public IEnumerable<ProjectFileCreator.FrameworkReference> FrameworkReferences { get; set; }
+        public IEnumerable<Dependency> DllReferences { get; set; }
 
         /// <summary>
         /// Returns true if the specified folder ends with one of the custom code

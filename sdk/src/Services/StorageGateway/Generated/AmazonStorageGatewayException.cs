@@ -28,7 +28,7 @@ namespace Amazon.StorageGateway
     ///<summary>
     /// Common exception for the StorageGateway service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonStorageGatewayException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.StorageGateway
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonStorageGatewayException class with serialized data.
         /// </summary>

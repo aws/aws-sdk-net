@@ -25,7 +25,7 @@ namespace Amazon.CertificateManager.Model
     ///<summary>
     /// CertificateManager exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidTagException : AmazonCertificateManagerException 
@@ -79,7 +79,7 @@ namespace Amazon.CertificateManager.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidTagException class with serialized data.
         /// </summary>

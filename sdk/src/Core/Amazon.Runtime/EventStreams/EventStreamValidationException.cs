@@ -26,7 +26,7 @@ namespace Amazon.Runtime.EventStreams
     /// <summary>
     /// Defines exceptions that arise from an <see cref="EventStreamMessage"/> not conforming to specification.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public sealed class EventStreamValidationException : Exception
@@ -58,7 +58,7 @@ namespace Amazon.Runtime.EventStreams
 
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EventStreamValidationException class with serialized data.
         /// </summary>

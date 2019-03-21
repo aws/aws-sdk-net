@@ -46,7 +46,7 @@ namespace Amazon.Translate
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonTranslateClient with the credentials loaded from the application's

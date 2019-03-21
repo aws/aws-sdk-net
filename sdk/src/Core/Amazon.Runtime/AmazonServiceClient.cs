@@ -510,7 +510,7 @@ namespace Amazon.Runtime
                 _logger
             );
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
             if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(ServiceMetadata.ServiceId))
             {
                 this.RuntimePipeline.AddHandlerBefore<ErrorHandler>(new CSMCallAttemptHandler());
@@ -664,7 +664,7 @@ namespace Amazon.Runtime
 
         private static void SetupCSMHandler(IRequestContext requestContext)
         {
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
             if (requestContext.CSMEnabled)
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);

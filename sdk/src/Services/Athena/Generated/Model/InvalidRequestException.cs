@@ -25,7 +25,7 @@ namespace Amazon.Athena.Model
     ///<summary>
     /// Athena exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidRequestException : AmazonAthenaException 
@@ -79,7 +79,7 @@ namespace Amazon.Athena.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidRequestException class with serialized data.
         /// </summary>

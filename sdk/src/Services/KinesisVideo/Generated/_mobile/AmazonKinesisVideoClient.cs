@@ -46,7 +46,7 @@ namespace Amazon.KinesisVideo
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonKinesisVideoClient with the credentials loaded from the application's

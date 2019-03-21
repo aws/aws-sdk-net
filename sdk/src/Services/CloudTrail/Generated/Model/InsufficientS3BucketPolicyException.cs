@@ -25,7 +25,7 @@ namespace Amazon.CloudTrail.Model
     ///<summary>
     /// CloudTrail exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InsufficientS3BucketPolicyException : AmazonCloudTrailException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudTrail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InsufficientS3BucketPolicyException class with serialized data.
         /// </summary>

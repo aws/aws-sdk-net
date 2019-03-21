@@ -117,7 +117,7 @@ namespace Amazon.RDS
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's

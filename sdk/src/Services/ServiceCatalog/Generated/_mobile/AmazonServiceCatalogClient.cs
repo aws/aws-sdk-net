@@ -53,7 +53,7 @@ namespace Amazon.ServiceCatalog
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonServiceCatalogClient with the credentials loaded from the application's

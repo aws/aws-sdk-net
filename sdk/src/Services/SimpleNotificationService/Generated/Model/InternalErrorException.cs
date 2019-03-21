@@ -25,7 +25,7 @@ namespace Amazon.SimpleNotificationService.Model
     ///<summary>
     /// SimpleNotificationService exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalErrorException : AmazonSimpleNotificationServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleNotificationService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalErrorException class with serialized data.
         /// </summary>

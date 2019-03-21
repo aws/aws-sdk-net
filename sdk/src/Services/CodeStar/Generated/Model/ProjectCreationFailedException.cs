@@ -25,7 +25,7 @@ namespace Amazon.CodeStar.Model
     ///<summary>
     /// CodeStar exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ProjectCreationFailedException : AmazonCodeStarException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeStar.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ProjectCreationFailedException class with serialized data.
         /// </summary>

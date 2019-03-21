@@ -56,7 +56,7 @@ namespace Amazon.DataSync
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonDataSyncClient with the credentials loaded from the application's

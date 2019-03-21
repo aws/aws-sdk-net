@@ -265,7 +265,7 @@ namespace Amazon.Runtime
         private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
         {
             var httpMessageHandler = new HttpClientHandler();
-#if CORECLR
+#if NETSTANDARD
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
 #endif
@@ -548,7 +548,7 @@ namespace Amazon.Runtime
                 {
                     if (e.InnerException is IOException)
                         throw e.InnerException;
-#if !CORECLR
+#if !NETSTANDARD
                     if (e.InnerException is WebException)
                         throw e.InnerException;
 #endif

@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
 
-#if CORECLR
+#if NETSTANDARD
 using System.Runtime.InteropServices;
 #endif
 
@@ -118,7 +118,7 @@ namespace Amazon.Runtime
         {
             get
             {
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
@@ -606,10 +606,10 @@ namespace Amazon.Runtime
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
 
-#if CORECLR || PCL
+#if NETSTANDARD || PCL
 
 
-#if CORECLR
+#if NETSTANDARD
         bool cacheHttpClient = true;
 #else
         bool cacheHttpClient = false;
@@ -652,7 +652,7 @@ namespace Amazon.Runtime
                 {
                     return this._httpClientCacheSize.Value;
                 }
-#if CORECLR
+#if NETSTANDARD
                 if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
                     return 1;

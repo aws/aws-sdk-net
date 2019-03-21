@@ -25,7 +25,7 @@ namespace Amazon.Lambda.Model
     ///<summary>
     /// Lambda exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class EC2AccessDeniedException : AmazonLambdaException 
@@ -79,7 +79,7 @@ namespace Amazon.Lambda.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the EC2AccessDeniedException class with serialized data.
         /// </summary>

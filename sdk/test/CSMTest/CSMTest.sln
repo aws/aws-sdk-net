@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.Net45", "..\..\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{38B80159-FBF2-4465-ADA1-87AC911A2884}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.CoreCLR", "..\..\src\Core\AWSSDK.Core.CoreCLR.csproj", "{7102C771-D879-4C74-A9D9-E749C4B904DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Core.NetStandard", "..\..\src\Core\AWSSDK.Core.NetStandard.csproj", "{7102C771-D879-4C74-A9D9-E749C4B904DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{C87937CE-C6F5-4E20-AF28-1AEAEB0C6AC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.CoreCLR", "..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.CoreCLR.csproj", "{05961F11-A7B8-4640-A22B-473F494EEA6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.NetStandard", "..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj", "{05961F11-A7B8-4640-A22B-473F494EEA6A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.Net35", "..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net35.csproj", "{37E3DE08-3923-44D5-95B4-2D1DC0B47ECE}"
 EndProject
@@ -35,13 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CSM.Utilities.Net45"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CSM.IntegrationTests.Net35", "Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.Net35.csproj", "{C83CE245-EDC3-4FAC-865B-C50554B410BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EnvFallBackTests.CoreCLR", "Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.CoreCLR.csproj", "{560ED75D-7E40-4A2C-9405-979D7F679533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EnvFallBackTests.NetStandard", "Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.NetStandard.csproj", "{560ED75D-7E40-4A2C-9405-979D7F679533}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.EnvFallBackTests.Net45", "Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.Net45.csproj", "{64945244-7DFF-416E-85B6-2D4F9FF21787}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CSM.IntegrationTests.CoreCLR", "Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.CoreCLR.csproj", "{10E2911A-BF60-46F2-8ED0-D359356798DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CSM.IntegrationTests.NetStandard", "Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.NetStandard.csproj", "{10E2911A-BF60-46F2-8ED0-D359356798DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SharedProfileTests.CoreCLR", "Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.CoreCLR.csproj", "{D7418804-3371-4F6A-ACDF-26FB1F726B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SharedProfileTests.NetStandard", "Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.NetStandard.csproj", "{D7418804-3371-4F6A-ACDF-26FB1F726B5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SharedProfileTests.Net45", "Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.Net45.csproj", "{B2A10929-B606-474D-BDF1-608C924B51F0}"
 EndProject

@@ -12,7 +12,7 @@ using Amazon.Util;
 
 using ThirdParty.Json.LitJson;
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
 using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -257,7 +257,7 @@ namespace Amazon.SimpleNotificationService.Util
             throw new AmazonClientException("Signing certificate url is not from a recognised source.");
         }
 
-#if BCL || CORECLR
+#if BCL || NETSTANDARD
 
         #region Message Verification
         /// <summary>

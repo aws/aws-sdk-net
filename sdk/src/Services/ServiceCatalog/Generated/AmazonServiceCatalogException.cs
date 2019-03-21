@@ -28,7 +28,7 @@ namespace Amazon.ServiceCatalog
     ///<summary>
     /// Common exception for the ServiceCatalog service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonServiceCatalogException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ServiceCatalog
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonServiceCatalogException class with serialized data.
         /// </summary>

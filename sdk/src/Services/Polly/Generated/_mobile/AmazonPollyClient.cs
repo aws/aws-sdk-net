@@ -53,7 +53,7 @@ namespace Amazon.Polly
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonPollyClient with the credentials loaded from the application's

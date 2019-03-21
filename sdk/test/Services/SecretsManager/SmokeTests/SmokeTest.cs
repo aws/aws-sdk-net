@@ -21,7 +21,7 @@ namespace AWSSDK.SmokeTests.SecretsManager
             var response = secretsManagerClient.ListSecrets(new ListSecretsRequest
             {
             });
-#elif CORECLR
+#elif NETSTANDARD
             var response = secretsManagerClient.ListSecretsAsync(new ListSecretsRequest
             {
             }).Result;

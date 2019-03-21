@@ -52,7 +52,7 @@ namespace Amazon.APIGateway
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonAPIGatewayClient with the credentials loaded from the application's

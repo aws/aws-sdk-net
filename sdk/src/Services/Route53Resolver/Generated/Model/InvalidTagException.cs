@@ -25,7 +25,7 @@ namespace Amazon.Route53Resolver.Model
     ///<summary>
     /// Route53Resolver exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidTagException : AmazonRoute53ResolverException 
@@ -79,7 +79,7 @@ namespace Amazon.Route53Resolver.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidTagException class with serialized data.
         /// </summary>

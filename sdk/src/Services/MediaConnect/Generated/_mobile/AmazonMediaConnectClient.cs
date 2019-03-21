@@ -46,7 +46,7 @@ namespace Amazon.MediaConnect
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMediaConnectClient with the credentials loaded from the application's

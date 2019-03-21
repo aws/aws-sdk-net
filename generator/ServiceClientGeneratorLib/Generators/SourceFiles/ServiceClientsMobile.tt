@@ -37,7 +37,7 @@ namespace <#=this.Config.Namespace#>
 #>
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
 	
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with the credentials loaded from the application's

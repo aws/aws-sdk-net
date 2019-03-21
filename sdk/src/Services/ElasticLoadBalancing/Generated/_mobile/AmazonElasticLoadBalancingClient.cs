@@ -78,7 +78,7 @@ namespace Amazon.ElasticLoadBalancing
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's

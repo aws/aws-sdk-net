@@ -145,7 +145,7 @@ namespace Amazon.Runtime.Internal
             {
                 if (disposing && _waitHandle != null)
                 {
-#if PCL || CORECLR
+#if PCL || NETSTANDARD
                     _waitHandle.Dispose();
 #else
                     _waitHandle.Close();

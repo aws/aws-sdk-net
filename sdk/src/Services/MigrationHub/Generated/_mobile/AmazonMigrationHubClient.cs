@@ -48,7 +48,7 @@ namespace Amazon.MigrationHub
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMigrationHubClient with the credentials loaded from the application's

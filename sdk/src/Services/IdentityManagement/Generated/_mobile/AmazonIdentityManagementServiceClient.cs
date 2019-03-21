@@ -121,7 +121,7 @@ namespace Amazon.IdentityManagement
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's

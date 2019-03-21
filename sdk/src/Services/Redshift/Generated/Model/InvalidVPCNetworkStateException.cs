@@ -25,7 +25,7 @@ namespace Amazon.Redshift.Model
     ///<summary>
     /// Redshift exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidVPCNetworkStateException : AmazonRedshiftException 
@@ -79,7 +79,7 @@ namespace Amazon.Redshift.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidVPCNetworkStateException class with serialized data.
         /// </summary>

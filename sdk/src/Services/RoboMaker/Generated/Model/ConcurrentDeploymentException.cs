@@ -25,7 +25,7 @@ namespace Amazon.RoboMaker.Model
     ///<summary>
     /// RoboMaker exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ConcurrentDeploymentException : AmazonRoboMakerException 
@@ -79,7 +79,7 @@ namespace Amazon.RoboMaker.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ConcurrentDeploymentException class with serialized data.
         /// </summary>

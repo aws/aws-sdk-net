@@ -299,7 +299,7 @@ namespace Amazon.Internal
 
     public class RegionEndpointProviderV3 : IRegionEndpointProvider
     {
-#if CORECLR
+#if NETSTANDARD
         private const string ENDPOINT_JSON_RESOURCE = "Core.endpoints.json";
 #else
         private const string ENDPOINT_JSON_RESOURCE = "Amazon.endpoints.json";

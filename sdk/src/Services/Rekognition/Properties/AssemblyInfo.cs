@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

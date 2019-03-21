@@ -46,7 +46,7 @@ namespace Amazon.MediaConvert
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonMediaConvertClient with the credentials loaded from the application's

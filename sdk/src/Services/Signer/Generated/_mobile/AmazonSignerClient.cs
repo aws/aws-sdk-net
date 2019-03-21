@@ -52,7 +52,7 @@ namespace Amazon.Signer
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonSignerClient with the credentials loaded from the application's

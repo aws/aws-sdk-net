@@ -72,7 +72,7 @@ namespace Amazon.CognitoIdentity
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with the credentials loaded from the application's

@@ -88,7 +88,7 @@ namespace Amazon.Glacier
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonGlacierClient with the credentials loaded from the application's

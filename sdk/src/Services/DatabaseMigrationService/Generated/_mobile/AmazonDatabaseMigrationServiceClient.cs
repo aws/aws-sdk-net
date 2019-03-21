@@ -60,7 +60,7 @@ namespace Amazon.DatabaseMigrationService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with the credentials loaded from the application's

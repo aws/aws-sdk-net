@@ -1078,8 +1078,8 @@ namespace ServiceClientGenerator
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
-                { "CoreCLRSupport",  Configuration.CoreCLRSupport },
-                { "CoreCLRCoreAssemblyName",  Configuration.ServiceFolderName },
+                { "NetStandardSupport",  Configuration.NetStandardSupport },
+                { "NetStandardCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },

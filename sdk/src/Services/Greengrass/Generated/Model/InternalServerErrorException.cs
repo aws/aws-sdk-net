@@ -25,7 +25,7 @@ namespace Amazon.Greengrass.Model
     ///<summary>
     /// Greengrass exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalServerErrorException : AmazonGreengrassException 
@@ -79,7 +79,7 @@ namespace Amazon.Greengrass.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalServerErrorException class with serialized data.
         /// </summary>

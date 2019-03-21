@@ -102,7 +102,7 @@ namespace Amazon.S3
 
         internal static GetHeadResponse GetHead(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
-#if PCL || CORECLR
+#if PCL || NETSTANDARD
             return GetHeadAsync(s3Client, config, url, header).GetAwaiter().GetResult();
 #else
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
@@ -160,7 +160,7 @@ namespace Amazon.S3
 
         private static void SetProxyIfAvailableAndConfigured(IClientConfig config, HttpWebRequest httpWebRequest)
         {
-#if BCL || UNITY || CORECLR
+#if BCL || UNITY || NETSTANDARD
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy != null)
             {
@@ -171,7 +171,7 @@ namespace Amazon.S3
 #if !PCL
         private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {
-#if BCL || UNITY || CORECLR
+#if BCL || UNITY || NETSTANDARD
             return config.GetWebProxy();
 #else
             return null;

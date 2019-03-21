@@ -51,7 +51,7 @@ namespace Amazon.LexModelBuildingService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonLexModelBuildingServiceClient with the credentials loaded from the application's

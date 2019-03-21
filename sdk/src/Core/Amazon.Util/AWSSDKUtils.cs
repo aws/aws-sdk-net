@@ -995,7 +995,7 @@ namespace Amazon.Util
         
         public static string DownloadStringContent(Uri uri, TimeSpan timeout, IWebProxy proxy)
         {
-#if PCL || CORECLR 
+#if PCL || NETSTANDARD 
             using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 if (timeout > TimeSpan.Zero)
@@ -1037,7 +1037,7 @@ namespace Amazon.Util
 
         public static Stream OpenStream(Uri uri, IWebProxy proxy)
         {
-#if PCL || CORECLR
+#if PCL || NETSTANDARD
             using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 var task = client.GetStreamAsync(uri);

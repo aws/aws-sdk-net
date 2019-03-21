@@ -25,7 +25,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///<summary>
     /// SimpleSystemsManagement exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidFilterOptionException : AmazonSimpleSystemsManagementException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidFilterOptionException class with serialized data.
         /// </summary>

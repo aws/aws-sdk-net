@@ -25,7 +25,7 @@ namespace Amazon.CloudWatch.Model
     ///<summary>
     /// CloudWatch exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InvalidParameterCombinationException : AmazonCloudWatchException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatch.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InvalidParameterCombinationException class with serialized data.
         /// </summary>

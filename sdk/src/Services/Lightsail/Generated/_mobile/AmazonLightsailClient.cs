@@ -64,7 +64,7 @@ namespace Amazon.Lightsail
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonLightsailClient with the credentials loaded from the application's

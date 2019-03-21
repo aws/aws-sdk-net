@@ -28,7 +28,7 @@ namespace Amazon.PinpointSMSVoice
     ///<summary>
     /// Common exception for the PinpointSMSVoice service.
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public partial class AmazonPinpointSMSVoiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.PinpointSMSVoice
         {
         }
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the AmazonPinpointSMSVoiceException class with serialized data.
         /// </summary>

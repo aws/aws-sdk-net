@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal
             return (T)executionContext.ResponseContext.Response;
         }
 
-#elif PCL || CORECLR
+#elif PCL || NETSTANDARD
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
@@ -158,7 +158,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if PCL || CORECLR
+#if PCL || NETSTANDARD
 
         /// <summary>
         /// Unmarshalls the HTTP response.

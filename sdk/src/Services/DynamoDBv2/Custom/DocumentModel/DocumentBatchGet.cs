@@ -427,7 +427,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return results;
         }
 
-#if PCL || UNITY || CORECLR
+#if PCL || UNITY || NETSTANDARD
         private static void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
 #else
         private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
@@ -449,7 +449,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API 
-#if PCL || UNITY || CORECLR
+#if PCL || UNITY || NETSTANDARD
         private static async Task CallUntilCompletionAsync(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
 #else
         private static async Task CallUntilCompletionAsync(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)

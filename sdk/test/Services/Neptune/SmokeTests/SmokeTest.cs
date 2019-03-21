@@ -21,7 +21,7 @@ namespace AWSSDK.SmokeTests.Neptune
             var response = neptuneServiceClient.DescribeDBInstances(new DescribeDBInstancesRequest
             {
             });
-#elif CORECLR
+#elif NETSTANDARD
             var response = neptuneServiceClient.DescribeDBInstancesAsync(new DescribeDBInstancesRequest
             {
             }).Result;

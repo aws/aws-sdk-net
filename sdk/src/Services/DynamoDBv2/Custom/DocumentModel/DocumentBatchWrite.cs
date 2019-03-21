@@ -464,7 +464,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return nextItems;
         }
 
-#if (PCL || UNITY || CORECLR)
+#if (PCL || UNITY || NETSTANDARD)
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client)
 #else
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
@@ -524,7 +524,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if AWS_ASYNC_API 
-#if (PCL || UNITY || CORECLR)
+#if (PCL || UNITY || NETSTANDARD)
         private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client, CancellationToken cancellationToken)
 #else
         private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client, CancellationToken cancellationToken)

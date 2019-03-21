@@ -25,7 +25,7 @@ namespace Amazon.CostAndUsageReport.Model
     ///<summary>
     /// CostAndUsageReport exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class ReportLimitReachedException : AmazonCostAndUsageReportException 
@@ -79,7 +79,7 @@ namespace Amazon.CostAndUsageReport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ReportLimitReachedException class with serialized data.
         /// </summary>

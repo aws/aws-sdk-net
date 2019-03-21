@@ -15,8 +15,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
-#elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
+#elif NETSTANDARD13
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 1.3)- Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
+#elif NETSTANDARD20
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0)- Amazon Elasticsearch Service. Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

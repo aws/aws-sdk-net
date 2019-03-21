@@ -25,7 +25,7 @@ namespace Amazon.MediaStoreData.Model
     ///<summary>
     /// MediaStoreData exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class InternalServerErrorException : AmazonMediaStoreDataException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaStoreData.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the InternalServerErrorException class with serialized data.
         /// </summary>

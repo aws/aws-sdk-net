@@ -46,7 +46,7 @@ namespace Amazon.RDSDataService
         
         #region Constructors
 
-#if CORECLR
+#if NETSTANDARD
     
         /// <summary>
         /// Constructs AmazonRDSDataServiceClient with the credentials loaded from the application's

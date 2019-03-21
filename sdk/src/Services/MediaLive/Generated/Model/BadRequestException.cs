@@ -25,7 +25,7 @@ namespace Amazon.MediaLive.Model
     ///<summary>
     /// MediaLive exception
     /// </summary>
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
     [Serializable]
 #endif
     public class BadRequestException : AmazonMediaLiveException 
@@ -79,7 +79,7 @@ namespace Amazon.MediaLive.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL && !CORECLR
+#if !PCL && !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the BadRequestException class with serialized data.
         /// </summary>
