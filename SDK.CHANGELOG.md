@@ -1,3 +1,8 @@
+### 3.3.481.0 (2019-03-21 21:55 UTC)
+* Core 3.3.100.0
+	* Added .NET Standard 2.0 support. All services packages starting with 3.3.100 will also include .NET Standard 2.0 support.
+	* All services packages updated to require new Core
+
 ### 3.3.480.0 (2019-03-21 18:07 UTC)
 * AutoScaling (3.3.9.5)
 	* Documentation updates for Amazon EC2 Auto Scaling

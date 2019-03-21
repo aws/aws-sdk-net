@@ -32,7 +32,7 @@ namespace Amazon.ComprehendMedical
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.24");
+            InternalSDKUtils.BuildUserAgentString("3.3.100.0");
 
         private string _userAgent = UserAgentString;
 
