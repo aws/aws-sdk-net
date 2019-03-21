@@ -69,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about adding a custom domain to your user pool, see <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+    /// For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
     /// Your Own Domain for the Hosted UI</a>.
     /// </para>
     /// </summary>

@@ -153,7 +153,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomDomain.
+        /// Gets and sets the property CustomDomain. 
+        /// <para>
+        /// A custom domain name that you provide to Amazon Cognito. This parameter applies only
+        /// if you use a custom domain to host the sign-up and sign-in pages for your application.
+        /// For example: <code>auth.example.com</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+        /// Your Own Domain for the Hosted UI</a>.
+        /// </para>
         /// </summary>
         public string CustomDomain
         {
@@ -564,8 +574,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolTags. 
         /// <para>
-        /// The cost allocation tags for the user pool. For more information, see <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-        /// Cost Allocation Tags to Your User Pool</a> 
+        /// The tags that are assigned to the user pool. A tag is a label that you can apply to
+        /// user pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.
         /// </para>
         /// </summary>
         public Dictionary<string, string> UserPoolTags

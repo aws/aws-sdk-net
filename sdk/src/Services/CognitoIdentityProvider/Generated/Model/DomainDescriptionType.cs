@@ -78,7 +78,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomDomainConfig.
+        /// Gets and sets the property CustomDomainConfig. 
+        /// <para>
+        /// The configuration for a custom domain that hosts the sign-up and sign-in webpages
+        /// for your application.
+        /// </para>
         /// </summary>
         public CustomDomainConfigType CustomDomainConfig
         {
