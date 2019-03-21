@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// <para>
     /// If you grant permissions using an organization, then accounts in that organization
     /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
-    /// to add your account's event bus as a target. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+    /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
     /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
     /// Guide</i>.
     /// </para>
@@ -91,7 +91,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <para>
         /// This parameter enables you to limit the permission to accounts that fulfill a certain
         /// condition, such as being a member of a certain AWS organization. For more information
-        /// about AWS Organizations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+        /// about AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
         /// Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  

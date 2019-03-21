@@ -53,6 +53,21 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
+    /// When you initially create a rule, you can optionally assign one or more tags to the
+    /// rule. Tags can help you organize and categorize your resources. You can also use them
+    /// to scope user permissions, by granting a user permission to access or change only
+    /// rules with certain tag values. To use the <code>PutRule</code> operation and assign
+    /// tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code>
+    /// permissions.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
+    /// operation are ignored. To update the tags of an existing rule, use <a>TagResource</a>
+    /// and <a>UntagResource</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs).
     /// However, CloudWatch Events uses an exact match in event patterns and rules. Be sure
     /// to use the correct ARN characters when creating event patterns so that they match
@@ -76,7 +91,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// <para>
     /// An infinite loop can quickly cause higher than expected charges. We recommend that
     /// you use budgeting, which alerts you when charges exceed your specified limit. For
-    /// more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
+    /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
     /// Your Costs with Budgets</a>.
     /// </para>
     /// </summary>
@@ -88,6 +103,7 @@ namespace Amazon.CloudWatchEvents.Model
         private string _roleArn;
         private string _scheduleExpression;
         private RuleState _state;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -110,7 +126,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+        /// The event pattern. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
         /// and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
@@ -196,6 +212,24 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of key-value pairs to associate with the rule.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

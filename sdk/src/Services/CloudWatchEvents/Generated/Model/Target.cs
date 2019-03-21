@@ -36,7 +36,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// If you are setting the event bus of another account as the target, and that account
     /// granted permission to your account through an organization instead of directly by
     /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-    /// in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+    /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
     /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
     /// Guide</i>.
     /// </para>
@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property BatchParameters. 
         /// <para>
         /// If the event target is an AWS Batch job, this contains the job definition, job name,
-        /// and other parameters. For more information, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+        /// and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
         /// in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property EcsParameters. 
         /// <para>
         /// Contains the Amazon ECS task definition and task count to be used, if the event target
-        /// is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+        /// is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
         /// Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

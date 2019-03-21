@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvents
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about the features of Amazon CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon
+    /// For more information about the features of Amazon CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon
     /// CloudWatch Events User Guide</a>.
     /// </para>
     /// </summary>
@@ -96,7 +96,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse DeleteRule(DeleteRuleRequest request);
@@ -256,7 +257,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -318,7 +320,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -466,6 +469,53 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Displays the tags associated with a CloudWatch Events resource. In CloudWatch Events,
+        /// rules can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTargetsByRule
 
 
@@ -581,7 +631,7 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// If you grant permissions using an organization, then accounts in that organization
         /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
-        /// to add your account's event bus as a target. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+        /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
         /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
         /// Guide</i>.
         /// </para>
@@ -664,6 +714,21 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  
         /// <para>
+        /// When you initially create a rule, you can optionally assign one or more tags to the
+        /// rule. Tags can help you organize and categorize your resources. You can also use them
+        /// to scope user permissions, by granting a user permission to access or change only
+        /// rules with certain tag values. To use the <code>PutRule</code> operation and assign
+        /// tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code>
+        /// permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
+        /// operation are ignored. To update the tags of an existing rule, use <a>TagResource</a>
+        /// and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs).
         /// However, CloudWatch Events uses an exact match in event patterns and rules. Be sure
         /// to use the correct ARN characters when creating event patterns so that they match
@@ -687,7 +752,7 @@ namespace Amazon.CloudWatchEvents
         /// <para>
         /// An infinite loop can quickly cause higher than expected charges. We recommend that
         /// you use budgeting, which alerts you when charges exceed your specified limit. For
-        /// more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
+        /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
         /// Your Costs with Budgets</a>.
         /// </para>
         /// </summary>
@@ -711,7 +776,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         PutRuleResponse PutRule(PutRuleRequest request);
@@ -841,7 +907,7 @@ namespace Amazon.CloudWatchEvents
         /// CloudWatch Events relies on resource-based policies. For EC2 instances, Kinesis data
         /// streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
         /// that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
         /// and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         ///  
@@ -861,7 +927,7 @@ namespace Amazon.CloudWatchEvents
         /// If you are setting the event bus of another account as the target, and that account
         /// granted permission to your account through an organization instead of directly by
         /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-        /// in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+        /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
         /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
         /// Guide</i>.
         /// </para>
@@ -932,7 +998,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1053,7 +1120,8 @@ namespace Amazon.CloudWatchEvents
         /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
         /// you can use the <code>Force</code> parameter in those calls to delete the rule or
         /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
-        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1086,6 +1154,84 @@ namespace Amazon.CloudWatchEvents
         /// <returns>Returns a  RemoveTargetsResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         RemoveTargetsResponse EndRemoveTargets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified CloudWatch Events resource.
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only resources
+        /// with certain tag values. In CloudWatch Events, rules can be tagged.
+        /// 
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to AWS and are interpreted strictly as strings
+        /// of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> action with a rule that already has tags.
+        /// If you specify a new tag key for the rule, this tag is appended to the list of tags
+        /// associated with the rule. If you specify a tag key that is already associated with
+        /// the rule, the new tag value that you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule or target.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1140,6 +1286,64 @@ namespace Amazon.CloudWatchEvents
         /// <returns>Returns a  TestEventPatternResult from CloudWatchEvents.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         TestEventPatternResponse EndTestEventPattern(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified CloudWatch Events resource. In CloudWatch
+        /// Events, rules can be tagged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule or target.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>,
+        /// or <code>UntagResource</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonCloudWatchEventsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from CloudWatchEvents.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         
