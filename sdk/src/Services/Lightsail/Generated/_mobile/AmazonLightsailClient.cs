@@ -40,9 +40,10 @@ namespace Amazon.Lightsail
     ///
     /// Amazon Lightsail is the easiest way to get started with AWS for developers who just
     /// need virtual private servers. Lightsail includes everything you need to launch your
-    /// project quickly - a virtual machine, SSD-based storage, data transfer, DNS management,
-    /// and a static IP - for a low, predictable price. You manage those Lightsail servers
-    /// through the Lightsail console or by using the API or command-line interface (CLI).
+    /// project quickly - a virtual machine, a managed database, SSD-based storage, data transfer,
+    /// DNS management, and a static IP - for a low, predictable price. You manage those Lightsail
+    /// servers through the Lightsail console or by using the API or command-line interface
+    /// (CLI).
     /// 
     ///  
     /// <para>
@@ -1213,6 +1214,39 @@ namespace Amazon.Lightsail
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKeyPairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteKnownHostKeys
+
+        internal virtual DeleteKnownHostKeysResponse DeleteKnownHostKeys(DeleteKnownHostKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKnownHostKeysResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKnownHostKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnownHostKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">REST API Reference for DeleteKnownHostKeys Operation</seealso>
+        public virtual Task<DeleteKnownHostKeysResponse> DeleteKnownHostKeysAsync(DeleteKnownHostKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteKnownHostKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion

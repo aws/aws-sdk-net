@@ -76,6 +76,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hostKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HostKeyAttributes, HostKeyAttributesUnmarshaller>(HostKeyAttributesUnmarshaller.Instance);
+                    unmarshalledObject.HostKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,8 +29,9 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomainEntry operation.
-    /// Creates one of the following entry records associated with the domain: A record, CNAME
-    /// record, TXT record, or MX record.
+    /// Creates one of the following entry records associated with the domain: Address (A),
+    /// canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority
+    /// (SOA), service locator (SRV), or text (TXT).
     /// 
     ///  
     /// <para>

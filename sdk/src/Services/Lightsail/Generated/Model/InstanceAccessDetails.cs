@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _certKey;
         private DateTime? _expiresAt;
+        private List<HostKeyAttributes> _hostKeys = new List<HostKeyAttributes>();
         private string _instanceName;
         private string _ipAddress;
         private string _password;
@@ -77,6 +78,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetExpiresAt()
         {
             return this._expiresAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostKeys. 
+        /// <para>
+        /// Describes the public SSH host keys or the RDP certificate.
+        /// </para>
+        /// </summary>
+        public List<HostKeyAttributes> HostKeys
+        {
+            get { return this._hostKeys; }
+            set { this._hostKeys = value; }
+        }
+
+        // Check to see if HostKeys property is set
+        internal bool IsSetHostKeys()
+        {
+            return this._hostKeys != null && this._hostKeys.Count > 0; 
         }
 
         /// <summary>

@@ -1729,6 +1729,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType DeleteInstanceSnapshot = new OperationType("DeleteInstanceSnapshot");
         /// <summary>
+        /// Constant DeleteKnownHostKeys for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteKnownHostKeys = new OperationType("DeleteKnownHostKeys");
+        /// <summary>
         /// Constant DeleteLoadBalancer for OperationType
         /// </summary>
         public static readonly OperationType DeleteLoadBalancer = new OperationType("DeleteLoadBalancer");

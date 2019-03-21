@@ -37,9 +37,10 @@ namespace Amazon.Lightsail
     ///
     /// Amazon Lightsail is the easiest way to get started with AWS for developers who just
     /// need virtual private servers. Lightsail includes everything you need to launch your
-    /// project quickly - a virtual machine, SSD-based storage, data transfer, DNS management,
-    /// and a static IP - for a low, predictable price. You manage those Lightsail servers
-    /// through the Lightsail console or by using the API or command-line interface (CLI).
+    /// project quickly - a virtual machine, a managed database, SSD-based storage, data transfer,
+    /// DNS management, and a static IP - for a low, predictable price. You manage those Lightsail
+    /// servers through the Lightsail console or by using the API or command-line interface
+    /// (CLI).
     /// 
     ///  
     /// <para>
@@ -1393,8 +1394,9 @@ namespace Amazon.Lightsail
         #region  CreateDomainEntry
 
         /// <summary>
-        /// Creates one of the following entry records associated with the domain: A record, CNAME
-        /// record, TXT record, or MX record.
+        /// Creates one of the following entry records associated with the domain: Address (A),
+        /// canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority
+        /// (SOA), service locator (SRV), or text (TXT).
         /// 
         ///  
         /// <para>
@@ -3002,6 +3004,102 @@ namespace Amazon.Lightsail
         public virtual DeleteKeyPairResponse EndDeleteKeyPair(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteKeyPairResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteKnownHostKeys
+
+        /// <summary>
+        /// Deletes the known host key or certificate used by the Amazon Lightsail browser-based
+        /// SSH or RDP clients to authenticate an instance. This operation enables the Lightsail
+        /// browser-based SSH or RDP clients to connect to the instance after a host key mismatch.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Perform this operation only if you were expecting the host key or certificate mismatch
+        /// or if you are familiar with the new host key or certificate on the instance. For more
+        /// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+        /// connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnownHostKeys service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKnownHostKeys service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">REST API Reference for DeleteKnownHostKeys Operation</seealso>
+        public virtual DeleteKnownHostKeysResponse DeleteKnownHostKeys(DeleteKnownHostKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKnownHostKeysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKnownHostKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnownHostKeys operation on AmazonLightsailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKnownHostKeys
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">REST API Reference for DeleteKnownHostKeys Operation</seealso>
+        public virtual IAsyncResult BeginDeleteKnownHostKeys(DeleteKnownHostKeysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteKnownHostKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKnownHostKeys.</param>
+        /// 
+        /// <returns>Returns a  DeleteKnownHostKeysResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">REST API Reference for DeleteKnownHostKeys Operation</seealso>
+        public virtual DeleteKnownHostKeysResponse EndDeleteKnownHostKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteKnownHostKeysResponse>(asyncResult);
         }
 
         #endregion
