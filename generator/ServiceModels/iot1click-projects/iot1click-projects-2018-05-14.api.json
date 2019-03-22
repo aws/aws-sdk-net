@@ -26,8 +26,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceConflictException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Associates a physical device with a placement.</p>"
+      ]
     },
     "CreatePlacement":{
       "name":"CreatePlacement",
@@ -42,8 +41,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceConflictException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Creates an empty placement.</p>"
+      ]
     },
     "CreateProject":{
       "name":"CreateProject",
@@ -57,8 +55,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceConflictException"}
-      ],
-      "documentation":"<p>Creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project.</p>"
+      ]
     },
     "DeletePlacement":{
       "name":"DeletePlacement",
@@ -73,8 +70,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyRequestsException"}
-      ],
-      "documentation":"<p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note> <p>When you delete a placement, all associated data becomes irretrievable.</p> </note>"
+      ]
     },
     "DeleteProject":{
       "name":"DeleteProject",
@@ -89,8 +85,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyRequestsException"}
-      ],
-      "documentation":"<p>Deletes a project. To delete a project, it must not have any placements associated with it.</p> <note> <p>When you delete a project, all associated data becomes irretrievable.</p> </note>"
+      ]
     },
     "DescribePlacement":{
       "name":"DescribePlacement",
@@ -104,8 +99,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Describes a placement in a project.</p>"
+      ]
     },
     "DescribeProject":{
       "name":"DescribeProject",
@@ -119,8 +113,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Returns an object describing a project.</p>"
+      ]
     },
     "DisassociateDeviceFromPlacement":{
       "name":"DisassociateDeviceFromPlacement",
@@ -135,8 +128,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyRequestsException"}
-      ],
-      "documentation":"<p>Removes a physical device from a placement.</p>"
+      ]
     },
     "GetDevicesInPlacement":{
       "name":"GetDevicesInPlacement",
@@ -150,8 +142,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Returns an object enumerating the devices in a placement.</p>"
+      ]
     },
     "ListPlacements":{
       "name":"ListPlacements",
@@ -165,8 +156,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Lists the placement(s) of a project.</p>"
+      ]
     },
     "ListProjects":{
       "name":"ListProjects",
@@ -179,8 +169,7 @@
       "errors":[
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"}
-      ],
-      "documentation":"<p>Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.</p>"
+      ]
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -194,8 +183,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Lists the tags (metadata key/value pairs) which you have assigned to the resource.</p>"
+      ]
     },
     "TagResource":{
       "name":"TagResource",
@@ -209,8 +197,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be used to manage a resource. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.</p>"
+      ]
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -224,8 +211,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"}
-      ],
-      "documentation":"<p>Removes one or more tags (metadata key/value pairs) from a resource.</p>"
+      ]
     },
     "UpdatePlacement":{
       "name":"UpdatePlacement",
@@ -240,8 +226,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyRequestsException"}
-      ],
-      "documentation":"<p>Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., \"\").</p>"
+      ]
     },
     "UpdateProject":{
       "name":"UpdateProject",
@@ -256,8 +241,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"TooManyRequestsException"}
-      ],
-      "documentation":"<p>Updates a project associated with your AWS account and region. With the exception of device template names, you can pass just the values that need to be updated because the update request will change only the values that are provided. To clear a value, pass the empty string (i.e., <code>\"\"</code>).</p>"
+      ]
     }
   },
   "shapes":{
@@ -272,23 +256,17 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project containing the placement in which to associate the device.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the placement in which to associate the device.</p>",
           "location":"uri",
           "locationName":"placementName"
         },
-        "deviceId":{
-          "shape":"DeviceId",
-          "documentation":"<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>"
-        },
+        "deviceId":{"shape":"DeviceId"},
         "deviceTemplateName":{
           "shape":"DeviceTemplateName",
-          "documentation":"<p>The device template name to associate with the device ID.</p>",
           "location":"uri",
           "locationName":"deviceTemplateName"
         }
@@ -320,20 +298,13 @@
         "projectName"
       ],
       "members":{
-        "placementName":{
-          "shape":"PlacementName",
-          "documentation":"<p>The name of the placement to be created.</p>"
-        },
+        "placementName":{"shape":"PlacementName"},
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project in which to create the placement.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
-        "attributes":{
-          "shape":"PlacementAttributeMap",
-          "documentation":"<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>"
-        }
+        "attributes":{"shape":"PlacementAttributeMap"}
       }
     },
     "CreatePlacementResponse":{
@@ -345,22 +316,10 @@
       "type":"structure",
       "required":["projectName"],
       "members":{
-        "projectName":{
-          "shape":"ProjectName",
-          "documentation":"<p>The name of the project to create.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>An optional description for the project.</p>"
-        },
-        "placementTemplate":{
-          "shape":"PlacementTemplate",
-          "documentation":"<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {\"key1\": \"value1\", \"key2\": \"value2\"} }</code>. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.</p>"
-        }
+        "projectName":{"shape":"ProjectName"},
+        "description":{"shape":"Description"},
+        "placementTemplate":{"shape":"PlacementTemplate"},
+        "tags":{"shape":"TagMap"}
       }
     },
     "CreateProjectResponse":{
@@ -382,13 +341,11 @@
       "members":{
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the empty placement to delete.</p>",
           "location":"uri",
           "locationName":"placementName"
         },
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The project containing the empty placement to delete.</p>",
           "location":"uri",
           "locationName":"projectName"
         }
@@ -405,7 +362,6 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the empty project to delete.</p>",
           "location":"uri",
           "locationName":"projectName"
         }
@@ -425,13 +381,11 @@
       "members":{
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the placement within a project.</p>",
           "location":"uri",
           "locationName":"placementName"
         },
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The project containing the placement to be described.</p>",
           "location":"uri",
           "locationName":"projectName"
         }
@@ -441,10 +395,7 @@
       "type":"structure",
       "required":["placement"],
       "members":{
-        "placement":{
-          "shape":"PlacementDescription",
-          "documentation":"<p>An object describing the placement.</p>"
-        }
+        "placement":{"shape":"PlacementDescription"}
       }
     },
     "DescribeProjectRequest":{
@@ -453,7 +404,6 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project to be described.</p>",
           "location":"uri",
           "locationName":"projectName"
         }
@@ -463,10 +413,7 @@
       "type":"structure",
       "required":["project"],
       "members":{
-        "project":{
-          "shape":"ProjectDescription",
-          "documentation":"<p>An object describing the project.</p>"
-        }
+        "project":{"shape":"ProjectDescription"}
       }
     },
     "Description":{
@@ -501,16 +448,9 @@
     "DeviceTemplate":{
       "type":"structure",
       "members":{
-        "deviceType":{
-          "shape":"DeviceType",
-          "documentation":"<p>The device type, which currently must be <code>\"button\"</code>.</p>"
-        },
-        "callbackOverrides":{
-          "shape":"DeviceCallbackOverrideMap",
-          "documentation":"<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>"
-        }
-      },
-      "documentation":"<p>An object representing a device for a placement template (see <a>PlacementTemplate</a>).</p>"
+        "deviceType":{"shape":"DeviceType"},
+        "callbackOverrides":{"shape":"DeviceCallbackOverrideMap"}
+      }
     },
     "DeviceTemplateMap":{
       "type":"map",
@@ -537,19 +477,16 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project that contains the placement.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the placement that the device should be removed from.</p>",
           "location":"uri",
           "locationName":"placementName"
         },
         "deviceTemplateName":{
           "shape":"DeviceTemplateName",
-          "documentation":"<p>The device ID that should be removed from the placement.</p>",
           "location":"uri",
           "locationName":"deviceTemplateName"
         }
@@ -569,13 +506,11 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project containing the placement.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the placement to get the devices from.</p>",
           "location":"uri",
           "locationName":"placementName"
         }
@@ -585,10 +520,7 @@
       "type":"structure",
       "required":["devices"],
       "members":{
-        "devices":{
-          "shape":"DeviceMap",
-          "documentation":"<p>An object containing the devices (zero or more) within the placement.</p>"
-        }
+        "devices":{"shape":"DeviceMap"}
       }
     },
     "InternalFailureException":{
@@ -601,7 +533,6 @@
         "code":{"shape":"Code"},
         "message":{"shape":"Message"}
       },
-      "documentation":"<p/>",
       "error":{"httpStatusCode":500},
       "exception":true
     },
@@ -615,7 +546,6 @@
         "code":{"shape":"Code"},
         "message":{"shape":"Message"}
       },
-      "documentation":"<p/>",
       "error":{"httpStatusCode":400},
       "exception":true
     },
@@ -625,19 +555,16 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The project containing the placements to be listed.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>The token to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         },
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>",
           "location":"querystring",
           "locationName":"maxResults"
         }
@@ -647,14 +574,8 @@
       "type":"structure",
       "required":["placements"],
       "members":{
-        "placements":{
-          "shape":"PlacementSummaryList",
-          "documentation":"<p>An object listing the requested placements.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>"
-        }
+        "placements":{"shape":"PlacementSummaryList"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListProjectsRequest":{
@@ -662,13 +583,11 @@
       "members":{
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>The token to retrieve the next set of results.</p>",
           "location":"querystring",
           "locationName":"nextToken"
         },
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>",
           "location":"querystring",
           "locationName":"maxResults"
         }
@@ -678,14 +597,8 @@
       "type":"structure",
       "required":["projects"],
       "members":{
-        "projects":{
-          "shape":"ProjectSummaryList",
-          "documentation":"<p>An object containing the list of projects.</p>"
-        },
-        "nextToken":{
-          "shape":"NextToken",
-          "documentation":"<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>"
-        }
+        "projects":{"shape":"ProjectSummaryList"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListTagsForResourceRequest":{
@@ -694,7 +607,6 @@
       "members":{
         "resourceArn":{
           "shape":"ProjectArn",
-          "documentation":"<p>The ARN of the resource whose tags you want to list.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         }
@@ -703,10 +615,7 @@
     "ListTagsForResourceResponse":{
       "type":"structure",
       "members":{
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>"
-        }
+        "tags":{"shape":"TagMap"}
       }
     },
     "MaxResults":{
@@ -735,28 +644,12 @@
         "updatedDate"
       ],
       "members":{
-        "projectName":{
-          "shape":"ProjectName",
-          "documentation":"<p>The name of the project containing the placement.</p>"
-        },
-        "placementName":{
-          "shape":"PlacementName",
-          "documentation":"<p>The name of the placement.</p>"
-        },
-        "attributes":{
-          "shape":"PlacementAttributeMap",
-          "documentation":"<p>The user-defined attributes associated with the placement.</p>"
-        },
-        "createdDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the placement was initially created, in UNIX epoch time format.</p>"
-        },
-        "updatedDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>"
-        }
-      },
-      "documentation":"<p>An object describing a project's placement.</p>"
+        "projectName":{"shape":"ProjectName"},
+        "placementName":{"shape":"PlacementName"},
+        "attributes":{"shape":"PlacementAttributeMap"},
+        "createdDate":{"shape":"Time"},
+        "updatedDate":{"shape":"Time"}
+      }
     },
     "PlacementName":{
       "type":"string",
@@ -773,24 +666,11 @@
         "updatedDate"
       ],
       "members":{
-        "projectName":{
-          "shape":"ProjectName",
-          "documentation":"<p>The name of the project containing the placement.</p>"
-        },
-        "placementName":{
-          "shape":"PlacementName",
-          "documentation":"<p>The name of the placement being summarized.</p>"
-        },
-        "createdDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the placement was originally created, in UNIX epoch time format.</p>"
-        },
-        "updatedDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>"
-        }
-      },
-      "documentation":"<p>An object providing summary information for a particular placement.</p>"
+        "projectName":{"shape":"ProjectName"},
+        "placementName":{"shape":"PlacementName"},
+        "createdDate":{"shape":"Time"},
+        "updatedDate":{"shape":"Time"}
+      }
     },
     "PlacementSummaryList":{
       "type":"list",
@@ -799,16 +679,9 @@
     "PlacementTemplate":{
       "type":"structure",
       "members":{
-        "defaultAttributes":{
-          "shape":"DefaultPlacementAttributeMap",
-          "documentation":"<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>"
-        },
-        "deviceTemplates":{
-          "shape":"DeviceTemplateMap",
-          "documentation":"<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>"
-        }
-      },
-      "documentation":"<p>An object defining the template for a placement.</p>"
+        "defaultAttributes":{"shape":"DefaultPlacementAttributeMap"},
+        "deviceTemplates":{"shape":"DeviceTemplateMap"}
+      }
     },
     "ProjectArn":{
       "type":"string",
@@ -822,36 +695,14 @@
         "updatedDate"
       ],
       "members":{
-        "arn":{
-          "shape":"ProjectArn",
-          "documentation":"<p>The ARN of the project.</p>"
-        },
-        "projectName":{
-          "shape":"ProjectName",
-          "documentation":"<p>The name of the project for which to obtain information from.</p>"
-        },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>The description of the project.</p>"
-        },
-        "createdDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the project was originally created, in UNIX epoch time format.</p>"
-        },
-        "updatedDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>"
-        },
-        "placementTemplate":{
-          "shape":"PlacementTemplate",
-          "documentation":"<p>An object describing the project's placement specifications.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags (metadata key/value pairs) associated with the project.</p>"
-        }
-      },
-      "documentation":"<p>An object providing detailed information for a particular project associated with an AWS account and region.</p>"
+        "arn":{"shape":"ProjectArn"},
+        "projectName":{"shape":"ProjectName"},
+        "description":{"shape":"Description"},
+        "createdDate":{"shape":"Time"},
+        "updatedDate":{"shape":"Time"},
+        "placementTemplate":{"shape":"PlacementTemplate"},
+        "tags":{"shape":"TagMap"}
+      }
     },
     "ProjectName":{
       "type":"string",
@@ -867,28 +718,12 @@
         "updatedDate"
       ],
       "members":{
-        "arn":{
-          "shape":"ProjectArn",
-          "documentation":"<p>The ARN of the project.</p>"
-        },
-        "projectName":{
-          "shape":"ProjectName",
-          "documentation":"<p>The name of the project being summarized.</p>"
-        },
-        "createdDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the project was originally created, in UNIX epoch time format.</p>"
-        },
-        "updatedDate":{
-          "shape":"Time",
-          "documentation":"<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>"
-        },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The tags (metadata key/value pairs) associated with the project.</p>"
-        }
-      },
-      "documentation":"<p>An object providing summary information for a particular project for an associated AWS account and region.</p>"
+        "arn":{"shape":"ProjectArn"},
+        "projectName":{"shape":"ProjectName"},
+        "createdDate":{"shape":"Time"},
+        "updatedDate":{"shape":"Time"},
+        "tags":{"shape":"TagMap"}
+      }
     },
     "ProjectSummaryList":{
       "type":"list",
@@ -904,7 +739,6 @@
         "code":{"shape":"Code"},
         "message":{"shape":"Message"}
       },
-      "documentation":"<p/>",
       "error":{"httpStatusCode":409},
       "exception":true
     },
@@ -918,7 +752,6 @@
         "code":{"shape":"Code"},
         "message":{"shape":"Message"}
       },
-      "documentation":"<p/>",
       "error":{"httpStatusCode":404},
       "exception":true
     },
@@ -950,14 +783,10 @@
       "members":{
         "resourceArn":{
           "shape":"ProjectArn",
-          "documentation":"<p>The ARN of the resouce for which tag(s) should be added or modified.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
-        "tags":{
-          "shape":"TagMap",
-          "documentation":"<p>The new or modifying tag(s) for the resource. See <a href=\"https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits\">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>"
-        }
+        "tags":{"shape":"TagMap"}
       }
     },
     "TagResourceResponse":{
@@ -980,7 +809,6 @@
         "code":{"shape":"Code"},
         "message":{"shape":"Message"}
       },
-      "documentation":"<p/>",
       "error":{"httpStatusCode":429},
       "exception":true
     },
@@ -993,13 +821,11 @@
       "members":{
         "resourceArn":{
           "shape":"ProjectArn",
-          "documentation":"<p>The ARN of the resource whose tag you want to remove.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
         "tagKeys":{
           "shape":"TagKeyList",
-          "documentation":"<p>The keys of those tags which you want to remove.</p>",
           "location":"querystring",
           "locationName":"tagKeys"
         }
@@ -1019,20 +845,15 @@
       "members":{
         "placementName":{
           "shape":"PlacementName",
-          "documentation":"<p>The name of the placement to update.</p>",
           "location":"uri",
           "locationName":"placementName"
         },
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project containing the placement to be updated.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
-        "attributes":{
-          "shape":"PlacementAttributeMap",
-          "documentation":"<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>"
-        }
+        "attributes":{"shape":"PlacementAttributeMap"}
       }
     },
     "UpdatePlacementResponse":{
@@ -1046,18 +867,11 @@
       "members":{
         "projectName":{
           "shape":"ProjectName",
-          "documentation":"<p>The name of the project to be updated.</p>",
           "location":"uri",
           "locationName":"projectName"
         },
-        "description":{
-          "shape":"Description",
-          "documentation":"<p>An optional user-defined description for the project.</p>"
-        },
-        "placementTemplate":{
-          "shape":"PlacementTemplate",
-          "documentation":"<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>"
-        }
+        "description":{"shape":"Description"},
+        "placementTemplate":{"shape":"PlacementTemplate"}
       }
     },
     "UpdateProjectResponse":{
@@ -1065,6 +879,5 @@
       "members":{
       }
     }
-  },
-  "documentation":"<p>The AWS IoT 1-Click Projects API Reference</p>"
+  }
 }

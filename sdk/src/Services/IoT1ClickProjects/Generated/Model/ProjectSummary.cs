@@ -33,9 +33,29 @@ namespace Amazon.IoT1ClickProjects.Model
     /// </summary>
     public partial class ProjectSummary
     {
+        private string _arn;
         private DateTime? _createdDate;
         private string _projectName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedDate;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the project.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -73,6 +93,25 @@ namespace Amazon.IoT1ClickProjects.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags (metadata key/value pairs) associated with the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

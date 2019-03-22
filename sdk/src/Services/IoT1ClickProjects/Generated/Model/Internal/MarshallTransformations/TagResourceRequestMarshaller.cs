@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateProject Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateProjectRequestMarshaller : IMarshaller<IRequest, CreateProjectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateProjectRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,43 +52,23 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateProjectRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickProjects");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/projects";
+            string uriResourcePath = "/tags/{resourceArn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonIoT1ClickProjectsException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetPlacementTemplate())
-                {
-                    context.Writer.WritePropertyName("placementTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PlacementTemplateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PlacementTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProjectName())
-                {
-                    context.Writer.WritePropertyName("projectName");
-                    context.Writer.Write(publicRequest.ProjectName);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -112,9 +92,9 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateProjectRequestMarshaller _instance = new CreateProjectRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateProjectRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +102,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateProjectRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

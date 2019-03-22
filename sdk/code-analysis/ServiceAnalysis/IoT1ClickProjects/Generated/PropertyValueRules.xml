@@ -149,6 +149,18 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT1ClickProjects.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickProjects.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickProjects.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT1ClickProjects.Model.UpdatePlacementRequest.PlacementName</property>
     <min>1</min>
     <max>128</max>
@@ -200,6 +212,10 @@
     <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT1ClickProjects.Model.ProjectDescription.Arn</property>
+    <pattern>^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT1ClickProjects.Model.ProjectDescription.Description</property>
     <min>0</min>
     <max>500</max>
@@ -209,6 +225,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickProjects.Model.ProjectSummary.Arn</property>
+    <pattern>^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT1ClickProjects.Model.ProjectSummary.ProjectName</property>
