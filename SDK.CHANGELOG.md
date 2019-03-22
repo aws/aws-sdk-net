@@ -1,3 +1,14 @@
+### 3.3.482.0 (2019-03-22 20:57 UTC)
+* IoT1ClickProjects (3.3.101.0)
+	* This release adds tagging support for AWS IoT 1-Click Project resources. Use these APIs to add, remove, or list tags on Projects, and leverage the tags for various authorization and billing scenarios. This release also adds the ARN property to projects for DescribeProject and ListProject responses.
+* TranscribeService (3.3.101.0)
+	* Amazon Transcribe - support transcriptions from audio sources in German (de-DE) and Korean (ko-KR).
+* Core 3.3.100.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.481.0 (2019-03-21 21:55 UTC)
 * Core 3.3.100.0
 	* Added .NET Standard 2.0 support. All services packages starting with 3.3.100 will also include .NET Standard 2.0 support.
