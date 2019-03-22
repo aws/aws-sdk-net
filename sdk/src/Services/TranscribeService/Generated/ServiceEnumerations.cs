@@ -63,6 +63,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
         /// <summary>
+        /// Constant KoKR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+        /// <summary>
         /// Constant PtBR for LanguageCode
         /// </summary>
         public static readonly LanguageCode PtBR = new LanguageCode("pt-BR");

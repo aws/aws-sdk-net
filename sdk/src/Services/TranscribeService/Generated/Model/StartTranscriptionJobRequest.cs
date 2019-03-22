@@ -133,6 +133,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
+        /// Amazon Transcribe uses the default Amazon S3 key for server-side encryption of transcripts
+        /// that are placed in your S3 bucket. You can't specify your own encryption key.
+        /// </para>
+        ///  
+        /// <para>
         /// If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a
         /// pre-signed URL, a shareable URL that provides secure access to your transcription,
         /// and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download
