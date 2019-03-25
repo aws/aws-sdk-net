@@ -334,7 +334,9 @@ namespace Amazon.IoTAnalytics
 
         /// <summary>
         /// Creates a pipeline. A pipeline consumes messages from one or more channels and allows
-        /// you to process the messages before storing them in a data store.
+        /// you to process the messages before storing them in a data store. You must specify
+        /// both a <code>channel</code> and a <code>datastore</code> activity and, optionally,
+        /// as many as 23 additional activities in the <code>pipelineActivities</code> array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
@@ -1480,7 +1482,9 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a pipeline.
+        /// Updates the settings of a pipeline. You must specify both a <code>channel</code> and
+        /// a <code>datastore</code> activity and, optionally, as many as 23 additional activities
+        /// in the <code>pipelineActivities</code> array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 

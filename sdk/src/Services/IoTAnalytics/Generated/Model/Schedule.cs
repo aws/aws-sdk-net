@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// The expression that defines when to trigger an update. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-        /// Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.
+        /// Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
         /// </para>
         /// </summary>
         public string Expression

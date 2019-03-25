@@ -118,6 +118,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Triggers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("versioningConfiguration", targetDepth))
+                {
+                    var unmarshaller = VersioningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VersioningConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

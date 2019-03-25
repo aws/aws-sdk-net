@@ -38,6 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         private string _datasetName;
         private RetentionPeriod _retentionPeriod;
         private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
+        private VersioningConfiguration _versioningConfiguration;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -99,7 +100,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data set.
+        /// How long, in days, data set contents are kept for the data set.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod
@@ -132,6 +133,27 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetTriggers()
         {
             return this._triggers != null && this._triggers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersioningConfiguration. 
+        /// <para>
+        /// [Optional] How many versions of data set contents are kept. If not specified or set
+        /// to null, only the latest version plus the latest succeeded version (if they are different)
+        /// are kept for the time period specified by the "retentionPeriod" parameter. (For more
+        /// information, see https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+        /// </para>
+        /// </summary>
+        public VersioningConfiguration VersioningConfiguration
+        {
+            get { return this._versioningConfiguration; }
+            set { this._versioningConfiguration = value; }
+        }
+
+        // Check to see if VersioningConfiguration property is set
+        internal bool IsSetVersioningConfiguration()
+        {
+            return this._versioningConfiguration != null;
         }
 
     }

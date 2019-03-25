@@ -76,7 +76,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data set.
+        /// How long, in days, data set contents are kept for the data set.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

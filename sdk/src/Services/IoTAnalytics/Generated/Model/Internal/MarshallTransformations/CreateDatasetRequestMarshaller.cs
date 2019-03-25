@@ -147,6 +147,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVersioningConfiguration())
+                {
+                    context.Writer.WritePropertyName("versioningConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VersioningConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VersioningConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

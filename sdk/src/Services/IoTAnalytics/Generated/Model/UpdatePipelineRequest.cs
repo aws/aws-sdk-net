@@ -29,7 +29,9 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipeline operation.
-    /// Updates the settings of a pipeline.
+    /// Updates the settings of a pipeline. You must specify both a <code>channel</code> and
+    /// a <code>datastore</code> activity and, optionally, as many as 23 additional activities
+    /// in the <code>pipelineActivities</code> array.
     /// </summary>
     public partial class UpdatePipelineRequest : AmazonIoTAnalyticsRequest
     {
@@ -39,15 +41,21 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property PipelineActivities. 
         /// <para>
-        /// A list of "PipelineActivity" objects.
+        /// A list of "PipelineActivity" objects. Activities perform transformations on your messages,
+        /// such as removing, renaming or adding message attributes; filtering messages based
+        /// on attribute values; invoking your Lambda functions on messages for advanced processing;
+        /// or performing mathematical transformations to normalize device data.
         /// </para>
         ///  
         /// <para>
-        /// The list can be 1-25 <b>PipelineActivity</b> objects. Activities perform transformations
-        /// on your messages, such as removing, renaming or adding message attributes; filtering
-        /// messages based on attribute values; invoking your Lambda functions on messages for
-        /// advanced processing; or performing mathematical transformations to normalize device
-        /// data.
+        /// The list can be 2-25 <b>PipelineActivity</b> objects and must contain both a <code>channel</code>
+        /// and a <code>datastore</code> activity. Each entry in the list must contain only one
+        /// activity, for example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
