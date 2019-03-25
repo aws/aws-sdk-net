@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DirectConnectGatewayAssociation Object
+    /// Response Unmarshaller for DirectConnectGatewayAssociationProposal Object
     /// </summary>  
-    public class DirectConnectGatewayAssociationUnmarshaller : IUnmarshaller<DirectConnectGatewayAssociation, XmlUnmarshallerContext>, IUnmarshaller<DirectConnectGatewayAssociation, JsonUnmarshallerContext>
+    public class DirectConnectGatewayAssociationProposalUnmarshaller : IUnmarshaller<DirectConnectGatewayAssociationProposal, XmlUnmarshallerContext>, IUnmarshaller<DirectConnectGatewayAssociationProposal, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DirectConnectGatewayAssociation IUnmarshaller<DirectConnectGatewayAssociation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DirectConnectGatewayAssociationProposal IUnmarshaller<DirectConnectGatewayAssociationProposal, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DirectConnectGatewayAssociation Unmarshall(JsonUnmarshallerContext context)
+        public DirectConnectGatewayAssociationProposal Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DirectConnectGatewayAssociation unmarshalledObject = new DirectConnectGatewayAssociation();
+            DirectConnectGatewayAssociationProposal unmarshalledObject = new DirectConnectGatewayAssociationProposal();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allowedPrefixesToDirectConnectGateway", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
-                    unmarshalledObject.AllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("associatedGateway", targetDepth))
                 {
                     var unmarshaller = AssociatedGatewayUnmarshaller.Instance;
                     unmarshalledObject.AssociatedGateway = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("associationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("associationState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("directConnectGatewayId", targetDepth))
@@ -100,28 +82,28 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectConnectGatewayOwnerAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stateChangeError", targetDepth))
+                if (context.TestExpression("existingAllowedPrefixesToDirectConnectGateway", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    unmarshalledObject.ExistingAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayId", targetDepth))
+                if (context.TestExpression("proposalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProposalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayOwnerAccount", targetDepth))
+                if (context.TestExpression("proposalState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayOwnerAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProposalState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayRegion", targetDepth))
+                if (context.TestExpression("requestedAllowedPrefixesToDirectConnectGateway", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayRegion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    unmarshalledObject.RequestedAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,12 +112,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static DirectConnectGatewayAssociationUnmarshaller _instance = new DirectConnectGatewayAssociationUnmarshaller();        
+        private static DirectConnectGatewayAssociationProposalUnmarshaller _instance = new DirectConnectGatewayAssociationProposalUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DirectConnectGatewayAssociationUnmarshaller Instance
+        public static DirectConnectGatewayAssociationProposalUnmarshaller Instance
         {
             get
             {

@@ -33,12 +33,70 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DirectConnectGatewayAssociation
     {
+        private List<RouteFilterPrefix> _allowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private AssociatedGateway _associatedGateway;
+        private string _associationId;
         private DirectConnectGatewayAssociationState _associationState;
         private string _directConnectGatewayId;
+        private string _directConnectGatewayOwnerAccount;
         private string _stateChangeError;
         private string _virtualGatewayId;
         private string _virtualGatewayOwnerAccount;
         private string _virtualGatewayRegion;
+
+        /// <summary>
+        /// Gets and sets the property AllowedPrefixesToDirectConnectGateway. 
+        /// <para>
+        /// The Amazon VPC prefixes to advertise to the Direct Connect gateway.
+        /// </para>
+        /// </summary>
+        public List<RouteFilterPrefix> AllowedPrefixesToDirectConnectGateway
+        {
+            get { return this._allowedPrefixesToDirectConnectGateway; }
+            set { this._allowedPrefixesToDirectConnectGateway = value; }
+        }
+
+        // Check to see if AllowedPrefixesToDirectConnectGateway property is set
+        internal bool IsSetAllowedPrefixesToDirectConnectGateway()
+        {
+            return this._allowedPrefixesToDirectConnectGateway != null && this._allowedPrefixesToDirectConnectGateway.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedGateway. 
+        /// <para>
+        /// Information about the associated virtual private gateway.
+        /// </para>
+        /// </summary>
+        public AssociatedGateway AssociatedGateway
+        {
+            get { return this._associatedGateway; }
+            set { this._associatedGateway = value; }
+        }
+
+        // Check to see if AssociatedGateway property is set
+        internal bool IsSetAssociatedGateway()
+        {
+            return this._associatedGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The ID of the Direct Connect gateway association.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationState. 
@@ -94,6 +152,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetDirectConnectGatewayId()
         {
             return this._directConnectGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectConnectGatewayOwnerAccount. 
+        /// <para>
+        /// The ID of the AWS account that owns the associated gateway.
+        /// </para>
+        /// </summary>
+        public string DirectConnectGatewayOwnerAccount
+        {
+            get { return this._directConnectGatewayOwnerAccount; }
+            set { this._directConnectGatewayOwnerAccount = value; }
+        }
+
+        // Check to see if DirectConnectGatewayOwnerAccount property is set
+        internal bool IsSetDirectConnectGatewayOwnerAccount()
+        {
+            return this._directConnectGatewayOwnerAccount != null;
         }
 
         /// <summary>

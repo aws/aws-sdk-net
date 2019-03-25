@@ -28,22 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDirectConnectGatewayAssociation operation.
-    /// Creates an association between a Direct Connect gateway and a virtual private gateway.
-    /// The virtual private gateway must be attached to a VPC and must not be associated with
-    /// another Direct Connect gateway.
+    /// Container for the parameters to the UpdateDirectConnectGatewayAssociation operation.
+    /// Updates the specified attributes of the Direct Connect gateway association.
+    /// 
+    ///  
+    /// <para>
+    /// Add or remove prefixes from the association.
+    /// </para>
     /// </summary>
-    public partial class CreateDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
+    public partial class UpdateDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
     {
         private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
-        private string _directConnectGatewayId;
-        private string _gatewayId;
-        private string _virtualGatewayId;
+        private string _associationId;
+        private List<RouteFilterPrefix> _removeAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
 
         /// <summary>
         /// Gets and sets the property AddAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// The Amazon VPC prefixes to advertise to the Direct Connect gateway
+        /// The Amazon VPC prefixes to advertise to the Direct Connect gateway.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> AddAllowedPrefixesToDirectConnectGateway
@@ -59,58 +61,39 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayId. 
+        /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The ID of the Direct Connect gateway.
+        /// The ID of the Direct Connect gateway association.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DirectConnectGatewayId
+        public string AssociationId
         {
-            get { return this._directConnectGatewayId; }
-            set { this._directConnectGatewayId = value; }
+            get { return this._associationId; }
+            set { this._associationId = value; }
         }
 
-        // Check to see if DirectConnectGatewayId property is set
-        internal bool IsSetDirectConnectGatewayId()
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
         {
-            return this._directConnectGatewayId != null;
+            return this._associationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayId. 
+        /// Gets and sets the property RemoveAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.
         /// </para>
         /// </summary>
-        public string GatewayId
+        public List<RouteFilterPrefix> RemoveAllowedPrefixesToDirectConnectGateway
         {
-            get { return this._gatewayId; }
-            set { this._gatewayId = value; }
+            get { return this._removeAllowedPrefixesToDirectConnectGateway; }
+            set { this._removeAllowedPrefixesToDirectConnectGateway = value; }
         }
 
-        // Check to see if GatewayId property is set
-        internal bool IsSetGatewayId()
+        // Check to see if RemoveAllowedPrefixesToDirectConnectGateway property is set
+        internal bool IsSetRemoveAllowedPrefixesToDirectConnectGateway()
         {
-            return this._gatewayId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VirtualGatewayId. 
-        /// <para>
-        /// The ID of the virtual private gateway.
-        /// </para>
-        /// </summary>
-        public string VirtualGatewayId
-        {
-            get { return this._virtualGatewayId; }
-            set { this._virtualGatewayId = value; }
-        }
-
-        // Check to see if VirtualGatewayId property is set
-        internal bool IsSetVirtualGatewayId()
-        {
-            return this._virtualGatewayId != null;
+            return this._removeAllowedPrefixesToDirectConnectGateway != null && this._removeAllowedPrefixesToDirectConnectGateway.Count > 0; 
         }
 
     }

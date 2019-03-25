@@ -39,10 +39,48 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsRequest : AmazonDirectConnectRequest
     {
+        private string _associatedGatewayId;
+        private string _associationId;
         private string _directConnectGatewayId;
         private int? _maxResults;
         private string _nextToken;
         private string _virtualGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedGatewayId. 
+        /// <para>
+        /// The ID of the associated gateway.
+        /// </para>
+        /// </summary>
+        public string AssociatedGatewayId
+        {
+            get { return this._associatedGatewayId; }
+            set { this._associatedGatewayId = value; }
+        }
+
+        // Check to see if AssociatedGatewayId property is set
+        internal bool IsSetAssociatedGatewayId()
+        {
+            return this._associatedGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The ID of the Direct Connect gateway association.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
@@ -65,7 +103,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of associations to return per page.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+        /// returned.
         /// </para>
         /// </summary>
         public int MaxResults

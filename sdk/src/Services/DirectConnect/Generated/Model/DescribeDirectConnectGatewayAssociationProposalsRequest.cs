@@ -28,21 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDirectConnectGatewayAttachments operation.
-    /// Lists the attachments between your Direct Connect gateways and virtual interfaces.
-    /// You must specify a Direct Connect gateway, a virtual interface, or both. If you specify
-    /// a Direct Connect gateway, the response contains all virtual interfaces attached to
-    /// the Direct Connect gateway. If you specify a virtual interface, the response contains
-    /// all Direct Connect gateways attached to the virtual interface. If you specify both,
-    /// the response contains the attachment between the Direct Connect gateway and the virtual
-    /// interface.
+    /// Container for the parameters to the DescribeDirectConnectGatewayAssociationProposals operation.
+    /// Describes one or more association proposals for connection between a virtual private
+    /// gateway and a Direct Connect gateway.
     /// </summary>
-    public partial class DescribeDirectConnectGatewayAttachmentsRequest : AmazonDirectConnectRequest
+    public partial class DescribeDirectConnectGatewayAssociationProposalsRequest : AmazonDirectConnectRequest
     {
+        private string _associatedGatewayId;
         private string _directConnectGatewayId;
         private int? _maxResults;
         private string _nextToken;
-        private string _virtualInterfaceId;
+        private string _proposalId;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedGatewayId. 
+        /// <para>
+        /// The ID of the associated virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string AssociatedGatewayId
+        {
+            get { return this._associatedGatewayId; }
+            set { this._associatedGatewayId = value; }
+        }
+
+        // Check to see if AssociatedGatewayId property is set
+        internal bool IsSetAssociatedGatewayId()
+        {
+            return this._associatedGatewayId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
@@ -89,7 +103,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token provided in the previous call to retrieve the next page.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -105,21 +119,21 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId. 
+        /// Gets and sets the property ProposalId. 
         /// <para>
-        /// The ID of the virtual interface.
+        /// The ID of the proposal.
         /// </para>
         /// </summary>
-        public string VirtualInterfaceId
+        public string ProposalId
         {
-            get { return this._virtualInterfaceId; }
-            set { this._virtualInterfaceId = value; }
+            get { return this._proposalId; }
+            set { this._proposalId = value; }
         }
 
-        // Check to see if VirtualInterfaceId property is set
-        internal bool IsSetVirtualInterfaceId()
+        // Check to see if ProposalId property is set
+        internal bool IsSetProposalId()
         {
-            return this._virtualInterfaceId != null;
+            return this._proposalId != null;
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// interrupted and re-established as a standalone connection (the connection is not deleted;
     /// to delete the connection, use the <a>DeleteConnection</a> request). If the LAG has
     /// associated virtual interfaces or hosted connections, they remain associated with the
-    /// LAG. A disassociated connection owned by an AWS Direct Connect partner is automatically
+    /// LAG. A disassociated connection owned by an AWS Direct Connect Partner is automatically
     /// converted to an interconnect.
     /// 
     ///  

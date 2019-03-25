@@ -68,10 +68,32 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
+                {
+                    context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RouteFilterPrefixMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDirectConnectGatewayId())
                 {
                     context.Writer.WritePropertyName("directConnectGatewayId");
                     context.Writer.Write(publicRequest.DirectConnectGatewayId);
+                }
+
+                if(publicRequest.IsSetGatewayId())
+                {
+                    context.Writer.WritePropertyName("gatewayId");
+                    context.Writer.Write(publicRequest.GatewayId);
                 }
 
                 if(publicRequest.IsSetVirtualGatewayId())

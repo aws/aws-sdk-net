@@ -43,6 +43,23 @@ namespace Amazon.DirectConnect
     public partial interface IAmazonDirectConnect : IAmazonService, IDisposable
     {
                 
+        #region  AcceptDirectConnectGatewayAssociationProposal
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal">REST API Reference for AcceptDirectConnectGatewayAssociationProposal Operation</seealso>
+        Task<AcceptDirectConnectGatewayAssociationProposalResponse> AcceptDirectConnectGatewayAssociationProposalAsync(AcceptDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AllocateConnectionOnInterconnect
 
 
@@ -282,6 +299,23 @@ namespace Amazon.DirectConnect
 
         #endregion
                 
+        #region  CreateDirectConnectGatewayAssociationProposal
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">REST API Reference for CreateDirectConnectGatewayAssociationProposal Operation</seealso>
+        Task<CreateDirectConnectGatewayAssociationProposalResponse> CreateDirectConnectGatewayAssociationProposalAsync(CreateDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateInterconnect
 
 
@@ -418,6 +452,23 @@ namespace Amazon.DirectConnect
 
         #endregion
                 
+        #region  DeleteDirectConnectGatewayAssociationProposal
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal">REST API Reference for DeleteDirectConnectGatewayAssociationProposal Operation</seealso>
+        Task<DeleteDirectConnectGatewayAssociationProposalResponse> DeleteDirectConnectGatewayAssociationProposalAsync(DeleteDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteInterconnect
 
 
@@ -537,6 +588,23 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         Task<DescribeConnectionsOnInterconnectResponse> DescribeConnectionsOnInterconnectAsync(DescribeConnectionsOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDirectConnectGatewayAssociationProposals
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAssociationProposals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociationProposals operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals">REST API Reference for DescribeDirectConnectGatewayAssociationProposals Operation</seealso>
+        Task<DescribeDirectConnectGatewayAssociationProposalsResponse> DescribeDirectConnectGatewayAssociationProposalsAsync(DescribeDirectConnectGatewayAssociationProposalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -881,6 +949,23 @@ namespace Amazon.DirectConnect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDirectConnectGatewayAssociation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation">REST API Reference for UpdateDirectConnectGatewayAssociation Operation</seealso>
+        Task<UpdateDirectConnectGatewayAssociationResponse> UpdateDirectConnectGatewayAssociationAsync(UpdateDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

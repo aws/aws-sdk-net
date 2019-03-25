@@ -69,7 +69,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDevice. 
         /// <para>
-        /// The Direct Connect endpoint that hosts the LAG.
+        /// The AWS Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDevice
@@ -87,7 +87,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The Direct Connect endpoint that hosts the LAG.
+        /// The AWS Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -124,7 +124,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
         /// The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps.
+        /// values are 1Gbps and 10Gbps. 
         /// </para>
         /// </summary>
         public string ConnectionsBandwidth

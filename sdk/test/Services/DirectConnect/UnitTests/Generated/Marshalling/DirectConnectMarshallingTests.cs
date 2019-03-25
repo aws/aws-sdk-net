@@ -43,6 +43,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DirectConnect")]
+        public void AcceptDirectConnectGatewayAssociationProposalMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AcceptDirectConnectGatewayAssociationProposalRequest>();
+            var marshaller = new AcceptDirectConnectGatewayAssociationProposalRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AcceptDirectConnectGatewayAssociationProposalRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AcceptDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context)
+                as AcceptDirectConnectGatewayAssociationProposalResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
         public void AllocateConnectionOnInterconnectMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<AllocateConnectionOnInterconnectRequest>();
@@ -449,6 +478,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DirectConnect")]
+        public void CreateDirectConnectGatewayAssociationProposalMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateDirectConnectGatewayAssociationProposalRequest>();
+            var marshaller = new CreateDirectConnectGatewayAssociationProposalRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreateDirectConnectGatewayAssociationProposalRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateDirectConnectGatewayAssociationProposalResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
         public void CreateInterconnectMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateInterconnectRequest>();
@@ -681,6 +739,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DirectConnect")]
+        public void DeleteDirectConnectGatewayAssociationProposalMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteDirectConnectGatewayAssociationProposalRequest>();
+            var marshaller = new DeleteDirectConnectGatewayAssociationProposalRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteDirectConnectGatewayAssociationProposalRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteDirectConnectGatewayAssociationProposal").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDirectConnectGatewayAssociationProposalResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
         public void DeleteInterconnectMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteInterconnectRequest>();
@@ -847,6 +934,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeConnectionsOnInterconnectResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
+        public void DescribeDirectConnectGatewayAssociationProposalsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDirectConnectGatewayAssociationProposalsRequest>();
+            var marshaller = new DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeDirectConnectGatewayAssociationProposalsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeDirectConnectGatewayAssociationProposals").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDirectConnectGatewayAssociationProposalsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1276,6 +1392,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UntagResourceResponseUnmarshaller.Instance.Unmarshall(context)
                 as UntagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
+        public void UpdateDirectConnectGatewayAssociationMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateDirectConnectGatewayAssociationRequest>();
+            var marshaller = new UpdateDirectConnectGatewayAssociationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateDirectConnectGatewayAssociationRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateDirectConnectGatewayAssociation").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateDirectConnectGatewayAssociationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

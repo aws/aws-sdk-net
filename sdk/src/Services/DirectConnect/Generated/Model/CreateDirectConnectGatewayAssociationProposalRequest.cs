@@ -28,22 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDirectConnectGatewayAssociation operation.
-    /// Creates an association between a Direct Connect gateway and a virtual private gateway.
-    /// The virtual private gateway must be attached to a VPC and must not be associated with
-    /// another Direct Connect gateway.
+    /// Container for the parameters to the CreateDirectConnectGatewayAssociationProposal operation.
+    /// Creates a proposal to associate the specified virtual private gateway with the specified
+    /// Direct Connect gateway.
+    /// 
+    ///  
+    /// <para>
+    /// You can only associate a Direct Connect gateway and virtual private gateway when the
+    /// account that owns the Direct Connect gateway and the account that owns the virtual
+    /// private gateway have the same payer ID.
+    /// </para>
     /// </summary>
-    public partial class CreateDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
+    public partial class CreateDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
     {
         private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
         private string _directConnectGatewayId;
+        private string _directConnectGatewayOwnerAccount;
         private string _gatewayId;
-        private string _virtualGatewayId;
+        private List<RouteFilterPrefix> _removeAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
 
         /// <summary>
         /// Gets and sets the property AddAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// The Amazon VPC prefixes to advertise to the Direct Connect gateway
+        /// The Amazon VPC prefixes to advertise to the Direct Connect gateway.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> AddAllowedPrefixesToDirectConnectGateway
@@ -78,11 +85,31 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DirectConnectGatewayOwnerAccount. 
+        /// <para>
+        /// The ID of the AWS account that owns the Direct Connect gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string DirectConnectGatewayOwnerAccount
+        {
+            get { return this._directConnectGatewayOwnerAccount; }
+            set { this._directConnectGatewayOwnerAccount = value; }
+        }
+
+        // Check to see if DirectConnectGatewayOwnerAccount property is set
+        internal bool IsSetDirectConnectGatewayOwnerAccount()
+        {
+            return this._directConnectGatewayOwnerAccount != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
         /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -96,21 +123,21 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayId. 
+        /// Gets and sets the property RemoveAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.
         /// </para>
         /// </summary>
-        public string VirtualGatewayId
+        public List<RouteFilterPrefix> RemoveAllowedPrefixesToDirectConnectGateway
         {
-            get { return this._virtualGatewayId; }
-            set { this._virtualGatewayId = value; }
+            get { return this._removeAllowedPrefixesToDirectConnectGateway; }
+            set { this._removeAllowedPrefixesToDirectConnectGateway = value; }
         }
 
-        // Check to see if VirtualGatewayId property is set
-        internal bool IsSetVirtualGatewayId()
+        // Check to see if RemoveAllowedPrefixesToDirectConnectGateway property is set
+        internal bool IsSetRemoveAllowedPrefixesToDirectConnectGateway()
         {
-            return this._virtualGatewayId != null;
+            return this._removeAllowedPrefixesToDirectConnectGateway != null && this._removeAllowedPrefixesToDirectConnectGateway.Count > 0; 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect Partners only.
     /// </para>
     ///  </note>
     /// </summary>

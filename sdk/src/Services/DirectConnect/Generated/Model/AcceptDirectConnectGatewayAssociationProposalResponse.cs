@@ -28,17 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteDirectConnectGatewayAssociation operation.
+    /// This is the response object from the AcceptDirectConnectGatewayAssociationProposal operation.
     /// </summary>
-    public partial class DeleteDirectConnectGatewayAssociationResponse : AmazonWebServiceResponse
+    public partial class AcceptDirectConnectGatewayAssociationProposalResponse : AmazonWebServiceResponse
     {
         private DirectConnectGatewayAssociation _directConnectGatewayAssociation;
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayAssociation. 
-        /// <para>
-        /// Information about the deleted association.
-        /// </para>
+        /// Gets and sets the property DirectConnectGatewayAssociation.
         /// </summary>
         public DirectConnectGatewayAssociation DirectConnectGatewayAssociation
         {

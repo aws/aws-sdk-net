@@ -28,28 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteDirectConnectGatewayAssociation operation.
+    /// Container for the parameters to the DeleteDirectConnectGatewayAssociationProposal operation.
+    /// Deletes the association proposal request between the specified Direct Connect gateway
+    /// and virtual private gateway.
     /// </summary>
-    public partial class DeleteDirectConnectGatewayAssociationResponse : AmazonWebServiceResponse
+    public partial class DeleteDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
     {
-        private DirectConnectGatewayAssociation _directConnectGatewayAssociation;
+        private string _proposalId;
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayAssociation. 
+        /// Gets and sets the property ProposalId. 
         /// <para>
-        /// Information about the deleted association.
+        /// The ID of the proposal.
         /// </para>
         /// </summary>
-        public DirectConnectGatewayAssociation DirectConnectGatewayAssociation
+        [AWSProperty(Required=true)]
+        public string ProposalId
         {
-            get { return this._directConnectGatewayAssociation; }
-            set { this._directConnectGatewayAssociation = value; }
+            get { return this._proposalId; }
+            set { this._proposalId = value; }
         }
 
-        // Check to see if DirectConnectGatewayAssociation property is set
-        internal bool IsSetDirectConnectGatewayAssociation()
+        // Check to see if ProposalId property is set
+        internal bool IsSetProposalId()
         {
-            return this._directConnectGatewayAssociation != null;
+            return this._proposalId != null;
         }
 
     }

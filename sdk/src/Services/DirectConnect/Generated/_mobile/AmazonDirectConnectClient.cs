@@ -250,6 +250,39 @@ namespace Amazon.DirectConnect
         #endregion
 
 
+        #region  AcceptDirectConnectGatewayAssociationProposal
+
+        internal virtual AcceptDirectConnectGatewayAssociationProposalResponse AcceptDirectConnectGatewayAssociationProposal(AcceptDirectConnectGatewayAssociationProposalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptDirectConnectGatewayAssociationProposalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal">REST API Reference for AcceptDirectConnectGatewayAssociationProposal Operation</seealso>
+        public virtual Task<AcceptDirectConnectGatewayAssociationProposalResponse> AcceptDirectConnectGatewayAssociationProposalAsync(AcceptDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AllocateConnectionOnInterconnect
 
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
@@ -714,6 +747,39 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateDirectConnectGatewayAssociationProposal
+
+        internal virtual CreateDirectConnectGatewayAssociationProposalResponse CreateDirectConnectGatewayAssociationProposal(CreateDirectConnectGatewayAssociationProposalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectConnectGatewayAssociationProposalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">REST API Reference for CreateDirectConnectGatewayAssociationProposal Operation</seealso>
+        public virtual Task<CreateDirectConnectGatewayAssociationProposalResponse> CreateDirectConnectGatewayAssociationProposalAsync(CreateDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInterconnect
 
         internal virtual CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
@@ -978,6 +1044,39 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DeleteDirectConnectGatewayAssociationProposal
+
+        internal virtual DeleteDirectConnectGatewayAssociationProposalResponse DeleteDirectConnectGatewayAssociationProposal(DeleteDirectConnectGatewayAssociationProposalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDirectConnectGatewayAssociationProposalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectConnectGatewayAssociationProposal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociationProposal operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal">REST API Reference for DeleteDirectConnectGatewayAssociationProposal Operation</seealso>
+        public virtual Task<DeleteDirectConnectGatewayAssociationProposalResponse> DeleteDirectConnectGatewayAssociationProposalAsync(DeleteDirectConnectGatewayAssociationProposalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDirectConnectGatewayAssociationProposalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteInterconnect
 
         internal virtual DeleteInterconnectResponse DeleteInterconnect(DeleteInterconnectRequest request)
@@ -1201,6 +1300,39 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConnectionsOnInterconnectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDirectConnectGatewayAssociationProposals
+
+        internal virtual DescribeDirectConnectGatewayAssociationProposalsResponse DescribeDirectConnectGatewayAssociationProposals(DescribeDirectConnectGatewayAssociationProposalsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectConnectGatewayAssociationProposalsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectConnectGatewayAssociationProposals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociationProposals operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals">REST API Reference for DescribeDirectConnectGatewayAssociationProposals Operation</seealso>
+        public virtual Task<DescribeDirectConnectGatewayAssociationProposalsResponse> DescribeDirectConnectGatewayAssociationProposalsAsync(DescribeDirectConnectGatewayAssociationProposalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDirectConnectGatewayAssociationProposalsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1814,6 +1946,39 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDirectConnectGatewayAssociation
+
+        internal virtual UpdateDirectConnectGatewayAssociationResponse UpdateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDirectConnectGatewayAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectConnectGatewayAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGatewayAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation">REST API Reference for UpdateDirectConnectGatewayAssociation Operation</seealso>
+        public virtual Task<UpdateDirectConnectGatewayAssociationResponse> UpdateDirectConnectGatewayAssociationAsync(UpdateDirectConnectGatewayAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDirectConnectGatewayAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

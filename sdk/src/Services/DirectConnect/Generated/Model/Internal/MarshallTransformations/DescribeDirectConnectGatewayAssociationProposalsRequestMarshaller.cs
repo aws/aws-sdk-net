@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteDirectConnectGatewayAssociation Request Marshaller
+    /// DescribeDirectConnectGatewayAssociationProposals Request Marshaller
     /// </summary>       
-    public class DeleteDirectConnectGatewayAssociationRequestMarshaller : IMarshaller<IRequest, DeleteDirectConnectGatewayAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller : IMarshaller<IRequest, DescribeDirectConnectGatewayAssociationProposalsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteDirectConnectGatewayAssociationRequest)input);
+            return this.Marshall((DescribeDirectConnectGatewayAssociationProposalsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteDirectConnectGatewayAssociationRequest publicRequest)
+        public IRequest Marshall(DescribeDirectConnectGatewayAssociationProposalsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectConnect");
-            string target = "OvertureService.DeleteDirectConnectGatewayAssociation";
+            string target = "OvertureService.DescribeDirectConnectGatewayAssociationProposals";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-10-25";            
@@ -68,10 +68,10 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationId())
+                if(publicRequest.IsSetAssociatedGatewayId())
                 {
-                    context.Writer.WritePropertyName("associationId");
-                    context.Writer.Write(publicRequest.AssociationId);
+                    context.Writer.WritePropertyName("associatedGatewayId");
+                    context.Writer.Write(publicRequest.AssociatedGatewayId);
                 }
 
                 if(publicRequest.IsSetDirectConnectGatewayId())
@@ -80,10 +80,22 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DirectConnectGatewayId);
                 }
 
-                if(publicRequest.IsSetVirtualGatewayId())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("virtualGatewayId");
-                    context.Writer.Write(publicRequest.VirtualGatewayId);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetProposalId())
+                {
+                    context.Writer.WritePropertyName("proposalId");
+                    context.Writer.Write(publicRequest.ProposalId);
                 }
 
         
@@ -95,9 +107,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteDirectConnectGatewayAssociationRequestMarshaller _instance = new DeleteDirectConnectGatewayAssociationRequestMarshaller();        
+        private static DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller _instance = new DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller();        
 
-        internal static DeleteDirectConnectGatewayAssociationRequestMarshaller GetInstance()
+        internal static DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +117,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDirectConnectGatewayAssociationRequestMarshaller Instance
+        public static DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller Instance
         {
             get
             {

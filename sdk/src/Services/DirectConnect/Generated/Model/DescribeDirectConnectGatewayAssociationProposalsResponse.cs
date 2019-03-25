@@ -28,35 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeDirectConnectGatewayAssociations operation.
+    /// This is the response object from the DescribeDirectConnectGatewayAssociationProposals operation.
     /// </summary>
-    public partial class DescribeDirectConnectGatewayAssociationsResponse : AmazonWebServiceResponse
+    public partial class DescribeDirectConnectGatewayAssociationProposalsResponse : AmazonWebServiceResponse
     {
-        private List<DirectConnectGatewayAssociation> _directConnectGatewayAssociations = new List<DirectConnectGatewayAssociation>();
+        private List<DirectConnectGatewayAssociationProposal> _directConnectGatewayAssociationProposals = new List<DirectConnectGatewayAssociationProposal>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayAssociations. 
+        /// Gets and sets the property DirectConnectGatewayAssociationProposals. 
         /// <para>
-        /// Information about the associations.
+        /// Describes the Direct Connect gateway association proposals.
         /// </para>
         /// </summary>
-        public List<DirectConnectGatewayAssociation> DirectConnectGatewayAssociations
+        public List<DirectConnectGatewayAssociationProposal> DirectConnectGatewayAssociationProposals
         {
-            get { return this._directConnectGatewayAssociations; }
-            set { this._directConnectGatewayAssociations = value; }
+            get { return this._directConnectGatewayAssociationProposals; }
+            set { this._directConnectGatewayAssociationProposals = value; }
         }
 
-        // Check to see if DirectConnectGatewayAssociations property is set
-        internal bool IsSetDirectConnectGatewayAssociations()
+        // Check to see if DirectConnectGatewayAssociationProposals property is set
+        internal bool IsSetDirectConnectGatewayAssociationProposals()
         {
-            return this._directConnectGatewayAssociations != null && this._directConnectGatewayAssociations.Count > 0; 
+            return this._directConnectGatewayAssociationProposals != null && this._directConnectGatewayAssociationProposals.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page.
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

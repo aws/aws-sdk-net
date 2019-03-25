@@ -30,16 +30,18 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the AllocateHostedConnection operation.
     /// Creates a hosted connection on the specified interconnect or a link aggregation group
-    /// (LAG).
+    /// (LAG) of interconnects.
     /// 
     ///  
     /// <para>
-    /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
-    /// on the specified interconnect or LAG.
+    /// Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by
+    /// a hosted connection on the specified interconnect or LAG of interconnects. AWS polices
+    /// the hosted connection for the specified capacity and the AWS Direct Connect Partner
+    /// must also police the hosted connection for the specified capacity.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect Partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -54,8 +56,10 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps,
-        /// 200Mbps, 300Mbps, 400Mbps, and 500Mbps.
+        /// The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
+        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS
+        /// Direct Connect Partners who have met specific requirements are allowed to create a
+        /// 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

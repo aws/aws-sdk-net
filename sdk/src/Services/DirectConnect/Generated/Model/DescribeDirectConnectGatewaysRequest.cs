@@ -59,7 +59,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Direct Connect gateways to return per page.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>MaxResults</code> is given a value larger than 100, only 100 results are
+        /// returned.
         /// </para>
         /// </summary>
         public int MaxResults
