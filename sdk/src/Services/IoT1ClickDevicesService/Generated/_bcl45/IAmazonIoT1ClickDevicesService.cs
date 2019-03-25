@@ -366,6 +366,77 @@ namespace Amazon.IoT1ClickDevicesService
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List all tags on an AWS IoT 1-Click resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoT1ClickDevicesService.</returns>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these
+        /// user-defined tags so that they appear on the Billing and Cost Management console for
+        /// cost allocation tracking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoT1ClickDevicesService.</returns>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UnclaimDevice
 
 
@@ -399,6 +470,42 @@ namespace Amazon.IoT1ClickDevicesService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UnclaimDevice">REST API Reference for UnclaimDevice Operation</seealso>
         Task<UnclaimDeviceResponse> UnclaimDeviceAsync(UnclaimDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the association of tags from an AWS IoT 1-Click resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoT1ClickDevicesService.</returns>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickDevicesService.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

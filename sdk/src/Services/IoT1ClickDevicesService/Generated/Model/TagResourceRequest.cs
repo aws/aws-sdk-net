@@ -28,47 +28,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
-    /// Container for the parameters to the FinalizeDeviceClaim operation.
-    /// Given a device ID, finalizes the claim request for the associated device.
-    /// 
-    /// <note> 
-    /// <para>
-    /// Claiming a device consists of initiating a claim, then publishing a device event,
-    /// and finalizing the claim. For a device of type button, a device event can be published
-    /// by simply clicking the device.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the TagResource operation.
+    /// Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these
+    /// user-defined tags so that they appear on the Billing and Cost Management console for
+    /// cost allocation tracking.
     /// </summary>
-    public partial class FinalizeDeviceClaimRequest : AmazonIoT1ClickDevicesServiceRequest
+    public partial class TagResourceRequest : AmazonIoT1ClickDevicesServiceRequest
     {
-        private string _deviceId;
+        private string _resourceArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property DeviceId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The unique identifier of the device.
+        /// Identifies the AWS IoT 1-Click resource to which tags should be added. This value
+        /// is an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string DeviceId
+        public string ResourceArn
         {
-            get { return this._deviceId; }
-            set { this._deviceId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if DeviceId property is set
-        internal bool IsSetDeviceId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._deviceId != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the AWS IoT 1-Click device.
+        /// The tags to be assigned to the AWS IoT 1-Click resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

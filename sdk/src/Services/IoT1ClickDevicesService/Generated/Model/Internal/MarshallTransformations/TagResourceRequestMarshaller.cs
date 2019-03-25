@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FinalizeDeviceClaim Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class FinalizeDeviceClaimRequestMarshaller : IMarshaller<IRequest, FinalizeDeviceClaimRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((FinalizeDeviceClaimRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,17 +52,17 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(FinalizeDeviceClaimRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickDevicesService");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/devices/{deviceId}/finalize-claim";
-            if (!publicRequest.IsSetDeviceId())
-                throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
+            string uriResourcePath = "/tags/{resource-arn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -92,9 +92,9 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static FinalizeDeviceClaimRequestMarshaller _instance = new FinalizeDeviceClaimRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static FinalizeDeviceClaimRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +102,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FinalizeDeviceClaimRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

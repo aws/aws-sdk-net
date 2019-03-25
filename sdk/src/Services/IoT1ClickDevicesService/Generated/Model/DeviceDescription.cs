@@ -32,11 +32,31 @@ namespace Amazon.IoT1ClickDevicesService.Model
     /// </summary>
     public partial class DeviceDescription
     {
+        private string _arn;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _deviceId;
         private bool? _enabled;
         private double? _remainingLife;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the device.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -110,6 +130,24 @@ namespace Amazon.IoT1ClickDevicesService.Model
         internal bool IsSetRemainingLife()
         {
             return this._remainingLife.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags currently associated with the AWS IoT 1-Click device.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

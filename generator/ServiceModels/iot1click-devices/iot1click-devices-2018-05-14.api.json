@@ -1,9 +1,9 @@
 {
   "metadata" : {
     "apiVersion" : "2018-05-14",
-    "endpointPrefix" : "devices",
+    "endpointPrefix" : "devices.iot1click",
     "signingName" : "iot1click",
-    "serviceFullName" : "AWS IoT 1Click Devices Service",
+    "serviceFullName" : "AWS IoT 1-Click Devices Service",
     "serviceId" : "IoT 1Click Devices Service",
     "protocol" : "rest-json",
     "jsonVersion" : "1.1",
@@ -25,9 +25,9 @@
         "shape" : "ClaimDevicesByClaimCodeResponse"
       },
       "errors" : [ {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       }, {
         "shape" : "ForbiddenException"
       } ]
@@ -46,11 +46,11 @@
         "shape" : "DescribeDeviceResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       } ]
     },
     "FinalizeDeviceClaim" : {
@@ -67,22 +67,22 @@
         "shape" : "FinalizeDeviceClaimResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
+      }, {
+        "shape" : "InternalFailureException"
       }, {
         "shape" : "PreconditionFailedException"
       }, {
-        "shape" : "InternalServerErrorException"
-      }, {
-        "shape" : "ConflictException"
+        "shape" : "ResourceConflictException"
       } ]
     },
     "GetDeviceMethods" : {
       "name" : "GetDeviceMethods",
       "http" : {
         "method" : "GET",
-        "requestUri" : "/devices/methods",
+        "requestUri" : "/devices/{deviceId}/methods",
         "responseCode" : 200
       },
       "input" : {
@@ -92,11 +92,11 @@
         "shape" : "GetDeviceMethodsResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       } ]
     },
     "InitiateDeviceClaim" : {
@@ -113,20 +113,20 @@
         "shape" : "InitiateDeviceClaimResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       }, {
-        "shape" : "ConflictException"
+        "shape" : "ResourceConflictException"
       } ]
     },
     "InvokeDeviceMethod" : {
       "name" : "InvokeDeviceMethod",
       "http" : {
         "method" : "POST",
-        "requestUri" : "/devices/methods",
+        "requestUri" : "/devices/{deviceId}/methods",
         "responseCode" : 200
       },
       "input" : {
@@ -136,17 +136,17 @@
         "shape" : "InvokeDeviceMethodResponse"
       },
       "errors" : [ {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
         "shape" : "PreconditionFailedException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       }, {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
         "shape" : "RangeNotSatisfiableException"
       }, {
-        "shape" : "ConflictException"
+        "shape" : "ResourceConflictException"
       } ]
     },
     "ListDeviceEvents" : {
@@ -163,13 +163,13 @@
         "shape" : "ListDeviceEventsResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
         "shape" : "RangeNotSatisfiableException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       } ]
     },
     "ListDevices" : {
@@ -188,9 +188,46 @@
       "errors" : [ {
         "shape" : "RangeNotSatisfiableException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
+      } ]
+    },
+    "ListTagsForResource" : {
+      "name" : "ListTagsForResource",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "ListTagsForResourceRequest"
+      },
+      "output" : {
+        "shape" : "ListTagsForResourceResponse"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "shape" : "InternalFailureException"
+      } ]
+    },
+    "TagResource" : {
+      "name" : "TagResource",
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 204
+      },
+      "input" : {
+        "shape" : "TagResourceRequest"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "shape" : "InvalidRequestException"
+      }, {
+        "shape" : "InternalFailureException"
       } ]
     },
     "UnclaimDevice" : {
@@ -207,11 +244,29 @@
         "shape" : "UnclaimDeviceResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
+      } ]
+    },
+    "UntagResource" : {
+      "name" : "UntagResource",
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/tags/{resource-arn}",
+        "responseCode" : 204
+      },
+      "input" : {
+        "shape" : "UntagResourceRequest"
+      },
+      "errors" : [ {
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "shape" : "InvalidRequestException"
+      }, {
+        "shape" : "InternalFailureException"
       } ]
     },
     "UpdateDeviceState" : {
@@ -228,11 +283,11 @@
         "shape" : "UpdateDeviceStateResponse"
       },
       "errors" : [ {
-        "shape" : "NotFoundException"
+        "shape" : "ResourceNotFoundException"
       }, {
-        "shape" : "BadRequestException"
+        "shape" : "InvalidRequestException"
       }, {
-        "shape" : "InternalServerErrorException"
+        "shape" : "InternalFailureException"
       } ]
     }
   },
@@ -240,23 +295,6 @@
     "Attributes" : {
       "type" : "structure",
       "members" : { }
-    },
-    "BadRequestException" : {
-      "type" : "structure",
-      "members" : {
-        "Code" : {
-          "shape" : "__string",
-          "locationName" : "code"
-        },
-        "Message" : {
-          "shape" : "__string",
-          "locationName" : "message"
-        }
-      },
-      "exception" : true,
-      "error" : {
-        "httpStatusCode" : 400
-      }
     },
     "ClaimDevicesByClaimCodeRequest" : {
       "type" : "structure",
@@ -276,43 +314,10 @@
           "shape" : "__stringMin12Max40",
           "locationName" : "claimCode"
         },
-        "ClaimGroupStatus" : {
-          "shape" : "ClaimGroupStatus",
-          "locationName" : "claimGroupStatus"
-        },
-        "CreatedDate" : {
-          "shape" : "__double",
-          "locationName" : "createdDate"
-        },
         "Total" : {
           "shape" : "__integer",
           "locationName" : "total"
-        },
-        "UpdatedDate" : {
-          "shape" : "__double",
-          "locationName" : "updatedDate"
         }
-      }
-    },
-    "ClaimGroupStatus" : {
-      "type" : "string",
-      "enum" : [ "OPEN", "READY", "IN_PROGRESS", "CLAIMED" ]
-    },
-    "ConflictException" : {
-      "type" : "structure",
-      "members" : {
-        "Code" : {
-          "shape" : "__string",
-          "locationName" : "code"
-        },
-        "Message" : {
-          "shape" : "__string",
-          "locationName" : "message"
-        }
-      },
-      "exception" : true,
-      "error" : {
-        "httpStatusCode" : 409
       }
     },
     "DescribeDeviceRequest" : {
@@ -373,6 +378,10 @@
     "DeviceDescription" : {
       "type" : "structure",
       "members" : {
+        "Arn" : {
+          "shape" : "__string",
+          "locationName" : "arn"
+        },
         "Attributes" : {
           "shape" : "DeviceAttributes",
           "locationName" : "attributes"
@@ -386,12 +395,16 @@
           "locationName" : "enabled"
         },
         "RemainingLife" : {
-          "shape" : "__doubleMin0Max1",
+          "shape" : "__doubleMin0Max100",
           "locationName" : "remainingLife"
         },
         "Type" : {
           "shape" : "__string",
           "locationName" : "type"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags"
         }
       }
     },
@@ -445,6 +458,10 @@
           "shape" : "__string",
           "location" : "uri",
           "locationName" : "deviceId"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags"
         }
       },
       "required" : [ "DeviceId" ]
@@ -480,15 +497,11 @@
       "members" : {
         "DeviceId" : {
           "shape" : "__string",
-          "location" : "querystring",
+          "location" : "uri",
           "locationName" : "deviceId"
-        },
-        "DeviceType" : {
-          "shape" : "__string",
-          "location" : "querystring",
-          "locationName" : "deviceType"
         }
-      }
+      },
+      "required" : [ "DeviceId" ]
     },
     "GetDeviceMethodsResponse" : {
       "type" : "structure",
@@ -530,19 +543,6 @@
           "shape" : "__string",
           "locationName" : "message"
         }
-      }
-    },
-    "InternalServerErrorException" : {
-      "type" : "structure",
-      "members" : {
-        "Code" : {
-          "shape" : "__string",
-          "locationName" : "code"
-        },
-        "Message" : {
-          "shape" : "__string",
-          "locationName" : "message"
-        }
       },
       "exception" : true,
       "error" : {
@@ -560,11 +560,20 @@
           "shape" : "__string",
           "locationName" : "message"
         }
+      },
+      "exception" : true,
+      "error" : {
+        "httpStatusCode" : 400
       }
     },
     "InvokeDeviceMethodRequest" : {
       "type" : "structure",
       "members" : {
+        "DeviceId" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "deviceId"
+        },
         "DeviceMethod" : {
           "shape" : "DeviceMethod",
           "locationName" : "deviceMethod"
@@ -573,7 +582,8 @@
           "shape" : "__string",
           "locationName" : "deviceMethodParameters"
         }
-      }
+      },
+      "required" : [ "DeviceId" ]
     },
     "InvokeDeviceMethodResponse" : {
       "type" : "structure",
@@ -661,27 +671,30 @@
         }
       }
     },
+    "ListTagsForResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn"
+        }
+      },
+      "required" : [ "ResourceArn" ]
+    },
+    "ListTagsForResourceResponse" : {
+      "type" : "structure",
+      "members" : {
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags"
+        }
+      }
+    },
     "MaxResults" : {
       "type" : "integer",
       "min" : 1,
       "max" : 250
-    },
-    "NotFoundException" : {
-      "type" : "structure",
-      "members" : {
-        "Code" : {
-          "shape" : "__string",
-          "locationName" : "code"
-        },
-        "Message" : {
-          "shape" : "__string",
-          "locationName" : "message"
-        }
-      },
-      "exception" : true,
-      "error" : {
-        "httpStatusCode" : 404
-      }
     },
     "PreconditionFailedException" : {
       "type" : "structure",
@@ -728,6 +741,10 @@
           "shape" : "__string",
           "locationName" : "message"
         }
+      },
+      "exception" : true,
+      "error" : {
+        "httpStatusCode" : 409
       }
     },
     "ResourceNotFoundException" : {
@@ -741,7 +758,26 @@
           "shape" : "__string",
           "locationName" : "message"
         }
+      },
+      "exception" : true,
+      "error" : {
+        "httpStatusCode" : 404
       }
+    },
+    "TagResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn"
+        },
+        "Tags" : {
+          "shape" : "__mapOf__string",
+          "locationName" : "tags"
+        }
+      },
+      "required" : [ "ResourceArn", "Tags" ]
     },
     "UnclaimDeviceRequest" : {
       "type" : "structure",
@@ -762,6 +798,22 @@
           "locationName" : "state"
         }
       }
+    },
+    "UntagResourceRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ResourceArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "resource-arn"
+        },
+        "TagKeys" : {
+          "shape" : "__listOf__string",
+          "location" : "querystring",
+          "locationName" : "tagKeys"
+        }
+      },
+      "required" : [ "TagKeys", "ResourceArn" ]
     },
     "UpdateDeviceStateRequest" : {
       "type" : "structure",
@@ -788,7 +840,7 @@
     "__double" : {
       "type" : "double"
     },
-    "__doubleMin0Max1" : {
+    "__doubleMin0Max100" : {
       "type" : "double"
     },
     "__integer" : {
@@ -812,8 +864,23 @@
         "shape" : "DeviceMethod"
       }
     },
+    "__listOf__string" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "__string"
+      }
+    },
     "__long" : {
       "type" : "long"
+    },
+    "__mapOf__string" : {
+      "type" : "map",
+      "key" : {
+        "shape" : "__string"
+      },
+      "value" : {
+        "shape" : "__string"
+      }
     },
     "__string" : {
       "type" : "string"

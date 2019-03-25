@@ -28,45 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
-    /// Container for the parameters to the FinalizeDeviceClaim operation.
-    /// Given a device ID, finalizes the claim request for the associated device.
-    /// 
-    /// <note> 
-    /// <para>
-    /// Claiming a device consists of initiating a claim, then publishing a device event,
-    /// and finalizing the claim. For a device of type button, a device event can be published
-    /// by simply clicking the device.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class FinalizeDeviceClaimRequest : AmazonIoT1ClickDevicesServiceRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _deviceId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property DeviceId. 
-        /// <para>
-        /// The unique identifier of the device.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string DeviceId
-        {
-            get { return this._deviceId; }
-            set { this._deviceId = value; }
-        }
-
-        // Check to see if DeviceId property is set
-        internal bool IsSetDeviceId()
-        {
-            return this._deviceId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the AWS IoT 1-Click device.
+        /// The tags currently associated with the AWS IoT 1-Click resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
