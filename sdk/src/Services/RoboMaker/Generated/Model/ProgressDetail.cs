@@ -32,7 +32,9 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class ProgressDetail
     {
-        private string _currentProgress;
+        private RobotDeploymentStep _currentProgress;
+        private int? _estimatedTimeRemainingSeconds;
+        private float? _percentDone;
         private string _targetResource;
 
         /// <summary>
@@ -40,8 +42,33 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// The current progress status.
         /// </para>
+        ///  <dl> <dt>Validating</dt> <dd> 
+        /// <para>
+        /// Validating the deployment.
+        /// </para>
+        ///  </dd> <dt>Downloading/Extracting</dt> <dd> 
+        /// <para>
+        /// Downloading and extracting the bundle on the robot.
+        /// </para>
+        ///  </dd> <dt>Executing pre-launch script(s)</dt> <dd> 
+        /// <para>
+        /// Executing pre-launch script(s) if provided.
+        /// </para>
+        ///  </dd> <dt>Launching</dt> <dd> 
+        /// <para>
+        /// Launching the robot application.
+        /// </para>
+        ///  </dd> <dt>Executing post-launch script(s)</dt> <dd> 
+        /// <para>
+        /// Executing post-launch script(s) if provided.
+        /// </para>
+        ///  </dd> <dt>Finished</dt> <dd> 
+        /// <para>
+        /// Deployment is complete.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
-        public string CurrentProgress
+        public RobotDeploymentStep CurrentProgress
         {
             get { return this._currentProgress; }
             set { this._currentProgress = value; }
@@ -51,6 +78,46 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetCurrentProgress()
         {
             return this._currentProgress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EstimatedTimeRemainingSeconds. 
+        /// <para>
+        /// Estimated amount of time in seconds remaining in the step. This currently only applies
+        /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for
+        /// other steps.
+        /// </para>
+        /// </summary>
+        public int EstimatedTimeRemainingSeconds
+        {
+            get { return this._estimatedTimeRemainingSeconds.GetValueOrDefault(); }
+            set { this._estimatedTimeRemainingSeconds = value; }
+        }
+
+        // Check to see if EstimatedTimeRemainingSeconds property is set
+        internal bool IsSetEstimatedTimeRemainingSeconds()
+        {
+            return this._estimatedTimeRemainingSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PercentDone. 
+        /// <para>
+        /// Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code>
+        /// step of the deployment. It is empty for other steps.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public float PercentDone
+        {
+            get { return this._percentDone.GetValueOrDefault(); }
+            set { this._percentDone = value; }
+        }
+
+        // Check to see if PercentDone property is set
+        internal bool IsSetPercentDone()
+        {
+            return this._percentDone.HasValue; 
         }
 
         /// <summary>

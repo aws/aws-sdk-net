@@ -43,6 +43,11 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// Optional filters to limit results.
         /// </para>
+        ///  
+        /// <para>
+        /// The filter name <code>name</code> is supported. When filtering, you must use the complete
+        /// value of the filtered item. You can use up to three filters.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
         public List<Filter> Filters

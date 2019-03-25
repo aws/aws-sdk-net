@@ -736,6 +736,28 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.LaunchFile</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.PackageName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.PostLaunchFile</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DeploymentLaunchConfig.PreLaunchFile</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.Filter.Name</property>
     <min>1</min>
     <max>255</max>
@@ -760,6 +782,18 @@
     <pattern>[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.LaunchConfig.LaunchFile</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.LaunchConfig.PackageName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9_.\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.OutputLocation.S3Bucket</property>
     <min>3</min>
     <max>63</max>
@@ -770,6 +804,11 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ProgressDetail.PercentDone</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.RenderingEngine.Version</property>
@@ -908,7 +947,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.SimulationSoftwareSuite.Version</property>
-    <pattern>7</pattern>
+    <pattern>7|9</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.Source.S3Bucket</property>

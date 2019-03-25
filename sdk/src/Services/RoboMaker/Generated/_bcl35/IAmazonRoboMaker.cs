@@ -29,7 +29,7 @@ namespace Amazon.RoboMaker
     /// <summary>
     /// Interface for accessing RoboMaker
     ///
-    /// his section provides documentation for the AWS RoboMaker API operations.
+    /// This section provides documentation for the AWS RoboMaker API operations.
     /// </summary>
     public partial interface IAmazonRoboMaker : IAmazonService, IDisposable
     {
@@ -154,6 +154,12 @@ namespace Amazon.RoboMaker
         /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
         /// a Robot Application Version</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After 90 days, deployment jobs expire and will be deleted. They will no longer be
+        /// accessible. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentJob service method.</param>
         /// 
@@ -567,6 +573,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Creates a simulation job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After 90 days, simulation jobs expire and will be deleted. They will no longer be
+        /// accessible. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSimulationJob service method.</param>
         /// 
@@ -1199,7 +1212,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
-        /// to retrieve specific deployment jobs.
+        /// to retrieve specific deployment jobs. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentJobs service method.</param>
         /// 
@@ -1814,7 +1833,7 @@ namespace Amazon.RoboMaker
         ///  
         /// <para>
         /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
-        /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+        /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
         /// <code>TagResource</code> </a>. 
         /// </para>
         /// </summary>

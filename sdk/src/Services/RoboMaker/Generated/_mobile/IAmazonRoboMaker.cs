@@ -31,7 +31,7 @@ namespace Amazon.RoboMaker
     /// <summary>
     /// Interface for accessing RoboMaker
     ///
-    /// his section provides documentation for the AWS RoboMaker API operations.
+    /// This section provides documentation for the AWS RoboMaker API operations.
     /// </summary>
     public partial interface IAmazonRoboMaker : IAmazonService, IDisposable
     {

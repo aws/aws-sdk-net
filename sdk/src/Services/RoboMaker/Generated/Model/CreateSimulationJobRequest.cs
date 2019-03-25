@@ -30,6 +30,13 @@ namespace Amazon.RoboMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateSimulationJob operation.
     /// Creates a simulation job.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After 90 days, simulation jobs expire and will be deleted. They will no longer be
+    /// accessible. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateSimulationJobRequest : AmazonRoboMakerRequest
     {

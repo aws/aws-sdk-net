@@ -220,8 +220,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property MaxJobDurationInSeconds. 
         /// <para>
-        /// The maximum simulation job duration in seconds. The value must be 8 days (691,200
-        /// seconds) or less. 
+        /// The maximum simulation job duration in seconds. 
         /// </para>
         /// </summary>
         public long MaxJobDurationInSeconds

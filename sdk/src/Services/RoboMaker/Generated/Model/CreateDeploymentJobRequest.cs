@@ -38,6 +38,12 @@ namespace Amazon.RoboMaker.Model
     /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
     /// a Robot Application Version</a>. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// After 90 days, deployment jobs expire and will be deleted. They will no longer be
+    /// accessible. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateDeploymentJobRequest : AmazonRoboMakerRequest
     {

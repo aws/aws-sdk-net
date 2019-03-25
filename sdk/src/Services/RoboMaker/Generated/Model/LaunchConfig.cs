@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model
         /// The launch file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string LaunchFile
         {
             get { return this._launchFile; }
@@ -80,7 +80,7 @@ namespace Amazon.RoboMaker.Model
         /// The package name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string PackageName
         {
             get { return this._packageName; }

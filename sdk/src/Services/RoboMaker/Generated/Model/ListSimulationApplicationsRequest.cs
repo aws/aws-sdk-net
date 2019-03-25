@@ -42,7 +42,12 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional list of filters to limit results. The only valid filter name is <code>name</code>.
+        /// Optional list of filters to limit results.
+        /// </para>
+        ///  
+        /// <para>
+        /// The filter name <code>name</code> is supported. When filtering, you must use the complete
+        /// value of the filtered item. You can use up to three filters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -65,8 +70,8 @@ namespace Amazon.RoboMaker.Model
         /// in paginated output. When this parameter is used, <code>ListSimulationApplications</code>
         /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
+        /// another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
         /// returns up to 100 results and a <code>nextToken</code> value if applicable. 
         /// </para>
         /// </summary>

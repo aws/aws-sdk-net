@@ -89,6 +89,14 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly DeploymentJobErrorCode BadPermissionError = new DeploymentJobErrorCode("BadPermissionError");
         /// <summary>
+        /// Constant EnvironmentSetupError for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode EnvironmentSetupError = new DeploymentJobErrorCode("EnvironmentSetupError");
+        /// <summary>
+        /// Constant EtagMismatch for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode EtagMismatch = new DeploymentJobErrorCode("EtagMismatch");
+        /// <summary>
         /// Constant ExtractingBundleFailure for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode ExtractingBundleFailure = new DeploymentJobErrorCode("ExtractingBundleFailure");
@@ -132,6 +140,10 @@ namespace Amazon.RoboMaker
         /// Constant ResourceNotFound for DeploymentJobErrorCode
         /// </summary>
         public static readonly DeploymentJobErrorCode ResourceNotFound = new DeploymentJobErrorCode("ResourceNotFound");
+        /// <summary>
+        /// Constant RobotAgentConnectionTimeout for DeploymentJobErrorCode
+        /// </summary>
+        public static readonly DeploymentJobErrorCode RobotAgentConnectionTimeout = new DeploymentJobErrorCode("RobotAgentConnectionTimeout");
         /// <summary>
         /// Constant RobotDeploymentNoResponse for DeploymentJobErrorCode
         /// </summary>
@@ -324,6 +336,72 @@ namespace Amazon.RoboMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RenderingEngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RobotDeploymentStep.
+    /// </summary>
+    public class RobotDeploymentStep : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DownloadingExtracting for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep DownloadingExtracting = new RobotDeploymentStep("DownloadingExtracting");
+        /// <summary>
+        /// Constant ExecutingPostLaunch for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep ExecutingPostLaunch = new RobotDeploymentStep("ExecutingPostLaunch");
+        /// <summary>
+        /// Constant ExecutingPreLaunch for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep ExecutingPreLaunch = new RobotDeploymentStep("ExecutingPreLaunch");
+        /// <summary>
+        /// Constant Finished for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep Finished = new RobotDeploymentStep("Finished");
+        /// <summary>
+        /// Constant Launching for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep Launching = new RobotDeploymentStep("Launching");
+        /// <summary>
+        /// Constant Validating for RobotDeploymentStep
+        /// </summary>
+        public static readonly RobotDeploymentStep Validating = new RobotDeploymentStep("Validating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RobotDeploymentStep(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RobotDeploymentStep FindValue(string value)
+        {
+            return FindValue<RobotDeploymentStep>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RobotDeploymentStep(string value)
         {
             return FindValue(value);
         }
