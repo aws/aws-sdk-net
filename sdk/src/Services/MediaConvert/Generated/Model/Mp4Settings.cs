@@ -38,7 +38,10 @@ namespace Amazon.MediaConvert.Model
         private string _mp4MajorBrand;
 
         /// <summary>
-        /// Gets and sets the property CslgAtom.
+        /// Gets and sets the property CslgAtom. When enabled, file composition times will start
+        /// at zero, composition times in the 'ctts' (composition time to sample) box for B-frames
+        /// will be negative, and a 'cslg' (composition shift least greatest) box will be included
+        /// per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
         /// </summary>
         public Mp4CslgAtom CslgAtom
         {
@@ -53,7 +56,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FreeSpaceBox.
+        /// Gets and sets the property FreeSpaceBox. Inserts a free-space box immediately after
+        /// the moov box.
         /// </summary>
         public Mp4FreeSpaceBox FreeSpaceBox
         {
@@ -68,7 +72,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MoovPlacement.
+        /// Gets and sets the property MoovPlacement. If set to PROGRESSIVE_DOWNLOAD, the MOOV
+        /// atom is relocated to the beginning of the archive as required for progressive downloading.
+        /// Otherwise it is placed normally at the end.
         /// </summary>
         public Mp4MoovPlacement MoovPlacement
         {

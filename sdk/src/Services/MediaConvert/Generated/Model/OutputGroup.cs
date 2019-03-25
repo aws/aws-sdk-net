@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputGroupSettings.
+        /// Gets and sets the property OutputGroupSettings. Output Group settings, including type
         /// </summary>
         public OutputGroupSettings OutputGroupSettings
         {

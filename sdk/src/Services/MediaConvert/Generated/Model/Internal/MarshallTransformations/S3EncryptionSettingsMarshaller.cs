@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FileGroupSettings Marshaller
+    /// S3EncryptionSettings Marshaller
     /// </summary>       
-    public class FileGroupSettingsMarshaller : IRequestMarshaller<FileGroupSettings, JsonMarshallerContext> 
+    public class S3EncryptionSettingsMarshaller : IRequestMarshaller<S3EncryptionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FileGroupSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(S3EncryptionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDestination())
+            if(requestObject.IsSetEncryptionType())
             {
-                context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WritePropertyName("encryptionType");
+                context.Writer.Write(requestObject.EncryptionType);
             }
 
-            if(requestObject.IsSetDestinationSettings())
+            if(requestObject.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("destinationSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DestinationSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.DestinationSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.Write(requestObject.KmsKeyArn);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FileGroupSettingsMarshaller Instance = new FileGroupSettingsMarshaller();
+        public readonly static S3EncryptionSettingsMarshaller Instance = new S3EncryptionSettingsMarshaller();
 
     }
 }

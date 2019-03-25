@@ -74,7 +74,8 @@ namespace Amazon.MediaConvert.Model
         private H264UnregisteredSeiTimecode _unregisteredSeiTimecode;
 
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization.
+        /// Gets and sets the property AdaptiveQuantization. Adaptive quantization. Allows intra-frame
+        /// quantizers to vary to improve visual quality.
         /// </summary>
         public H264AdaptiveQuantization AdaptiveQuantization
         {
@@ -107,7 +108,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecLevel.
+        /// Gets and sets the property CodecLevel. Specify an H.264 level that is consistent with
+        /// your output video settings. If you aren't sure what level to specify, choose Auto
+        /// (AUTO).
         /// </summary>
         public H264CodecLevel CodecLevel
         {
@@ -122,7 +125,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecProfile.
+        /// Gets and sets the property CodecProfile. H.264 Profile. High 4:2:2 and 10-bit profiles
+        /// are only available with the AVC-I License.
         /// </summary>
         public H264CodecProfile CodecProfile
         {
@@ -156,7 +160,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntropyEncoding.
+        /// Gets and sets the property EntropyEncoding. Entropy encoding mode. Use CABAC (must
+        /// be in Main or High profile) or CAVLC.
         /// </summary>
         public H264EntropyEncoding EntropyEncoding
         {
@@ -171,7 +176,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldEncoding.
+        /// Gets and sets the property FieldEncoding. Choosing FORCE_FIELD disables PAFF encoding
+        /// for interlaced outputs.
         /// </summary>
         public H264FieldEncoding FieldEncoding
         {
@@ -186,7 +192,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlickerAdaptiveQuantization.
+        /// Gets and sets the property FlickerAdaptiveQuantization. Adjust quantization within
+        /// each frame to reduce flicker or 'pop' on I-frames.
         /// </summary>
         public H264FlickerAdaptiveQuantization FlickerAdaptiveQuantization
         {
@@ -201,7 +208,17 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateControl.
+        /// Gets and sets the property FramerateControl. If you are using the console, use the
+        /// Framerate setting to specify the frame rate for this output. If you want to keep the
+        /// same frame rate as the input video, choose Follow source. If you want to do frame
+        /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
+        /// framerates shown in the dropdown list are decimal approximations of fractions. If
+        /// you choose Custom, specify your frame rate as a fraction. If you are creating your
+        /// transcoding job specification as a JSON file without the console, use FramerateControl
+        /// to specify which value the service uses for the frame rate for this output. Choose
+        /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
+        /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
+        /// settings FramerateNumerator and FramerateDenominator.
         /// </summary>
         public H264FramerateControl FramerateControl
         {
@@ -216,7 +233,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateConversionAlgorithm.
+        /// Gets and sets the property FramerateConversionAlgorithm. When set to INTERPOLATE,
+        /// produces smoother motion during frame rate conversion.
         /// </summary>
         public H264FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -269,7 +287,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopBReference.
+        /// Gets and sets the property GopBReference. If enable, use reference B frames for GOP
+        /// structures that have B frames > 1.
         /// </summary>
         public H264GopBReference GopBReference
         {
@@ -319,7 +338,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopSizeUnits.
+        /// Gets and sets the property GopSizeUnits. Indicates if the GOP Size in H264 is specified
+        /// in frames or seconds. If seconds the system will convert the GOP Size into a frame
+        /// count at run time.
         /// </summary>
         public H264GopSizeUnits GopSizeUnits
         {
@@ -368,7 +389,17 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InterlaceMode.
+        /// Gets and sets the property InterlaceMode. Use Interlace mode (InterlaceMode) to choose
+        /// the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field
+        /// First (BOTTOM_FIELD) produce interlaced output with the entire output having the same
+        /// field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and
+        /// Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+        /// Therefore, behavior depends on the input scan type, as follows.  - If the source is
+        /// interlaced, the output will be interlaced with the same polarity as the source (it
+        /// will follow the source). The output could therefore be a mix of "top field first"
+        /// and "bottom field first".  - If the source is progressive, the output will be interlaced
+        /// with "top field first" or "bottom field first" polarity, depending on which of the
+        /// Follow options you chose.
         /// </summary>
         public H264InterlaceMode InterlaceMode
         {
@@ -456,7 +487,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl.
+        /// Gets and sets the property ParControl. Using the API, enable ParFollowSource if you
+        /// want the service to use the pixel aspect ratio from the input. Using the console,
+        /// do this by choosing Follow source for Pixel aspect ratio.
         /// </summary>
         public H264ParControl ParControl
         {
@@ -503,7 +536,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QualityTuningLevel.
+        /// Gets and sets the property QualityTuningLevel. Use Quality tuning level (H264QualityTuningLevel)
+        /// to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality
+        /// multipass video encoding.
         /// </summary>
         public H264QualityTuningLevel QualityTuningLevel
         {
@@ -536,7 +571,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateControlMode.
+        /// Gets and sets the property RateControlMode. Use this setting to specify whether this
+        /// output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable
+        /// bitrate (QVBR).
         /// </summary>
         public H264RateControlMode RateControlMode
         {
@@ -551,7 +588,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepeatPps.
+        /// Gets and sets the property RepeatPps. Places a PPS header on each encoded picture,
+        /// even if repeated.
         /// </summary>
         public H264RepeatPps RepeatPps
         {
@@ -566,7 +604,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect.
+        /// Gets and sets the property SceneChangeDetect. Scene change detection (inserts I-frames
+        /// on scene changes).
         /// </summary>
         public H264SceneChangeDetect SceneChangeDetect
         {
@@ -599,7 +638,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlowPal.
+        /// Gets and sets the property SlowPal. Enables Slow PAL rate conversion. 23.976fps and
+        /// 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
         /// </summary>
         public H264SlowPal SlowPal
         {
@@ -631,7 +671,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpatialAdaptiveQuantization.
+        /// Gets and sets the property SpatialAdaptiveQuantization. Adjust quantization within
+        /// each frame based on spatial variation of content complexity.
         /// </summary>
         public H264SpatialAdaptiveQuantization SpatialAdaptiveQuantization
         {
@@ -646,7 +687,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Syntax.
+        /// Gets and sets the property Syntax. Produces a bitstream compliant with SMPTE RP-2027.
         /// </summary>
         public H264Syntax Syntax
         {
@@ -661,7 +702,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Telecine.
+        /// Gets and sets the property Telecine. This field applies only if the Streams > Advanced
+        /// > Framerate (framerate) field  is set to 29.970. This field works with the Streams
+        /// > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams
+        /// > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for
+        /// the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces
+        /// 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this
+        /// output to 29.97i.
         /// </summary>
         public H264Telecine Telecine
         {
@@ -676,7 +723,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemporalAdaptiveQuantization.
+        /// Gets and sets the property TemporalAdaptiveQuantization. Adjust quantization within
+        /// each frame based on temporal variation of content complexity.
         /// </summary>
         public H264TemporalAdaptiveQuantization TemporalAdaptiveQuantization
         {
@@ -691,7 +739,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnregisteredSeiTimecode.
+        /// Gets and sets the property UnregisteredSeiTimecode. Inserts timecode for each frame
+        /// as 4 bytes of an unregistered SEI message.
         /// </summary>
         public H264UnregisteredSeiTimecode UnregisteredSeiTimecode
         {

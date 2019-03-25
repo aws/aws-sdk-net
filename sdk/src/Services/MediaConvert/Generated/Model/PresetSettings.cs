@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContainerSettings.
+        /// Gets and sets the property ContainerSettings. Container specific settings.
         /// </summary>
         public ContainerSettings ContainerSettings
         {

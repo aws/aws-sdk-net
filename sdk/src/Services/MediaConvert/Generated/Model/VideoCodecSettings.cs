@@ -61,7 +61,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameCaptureSettings.
+        /// Gets and sets the property FrameCaptureSettings. Required when you set (Codec) under
+        /// (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
         /// </summary>
         public FrameCaptureSettings FrameCaptureSettings
         {
@@ -76,7 +77,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property H264Settings.
+        /// Gets and sets the property H264Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value H_264.
         /// </summary>
         public H264Settings H264Settings
         {
@@ -91,7 +93,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property H265Settings.
+        /// Gets and sets the property H265Settings. Settings for H265 codec
         /// </summary>
         public H265Settings H265Settings
         {
@@ -106,7 +108,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mpeg2Settings.
+        /// Gets and sets the property Mpeg2Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value MPEG2.
         /// </summary>
         public Mpeg2Settings Mpeg2Settings
         {
@@ -121,7 +124,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProresSettings.
+        /// Gets and sets the property ProresSettings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value PRORES.
         /// </summary>
         public ProresSettings ProresSettings
         {

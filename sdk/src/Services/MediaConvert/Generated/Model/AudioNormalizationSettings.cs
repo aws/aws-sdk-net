@@ -40,7 +40,8 @@ namespace Amazon.MediaConvert.Model
         private double? _targetLkfs;
 
         /// <summary>
-        /// Gets and sets the property Algorithm.
+        /// Gets and sets the property Algorithm. Audio normalization algorithm to use. 1770-1
+        /// conforms to the CALM Act specification, 1770-2 conforms to the EBU R-128 specification.
         /// </summary>
         public AudioNormalizationAlgorithm Algorithm
         {
@@ -55,7 +56,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AlgorithmControl.
+        /// Gets and sets the property AlgorithmControl. When enabled the output audio is corrected
+        /// using the chosen algorithm. If disabled, the audio will be measured but not adjusted.
         /// </summary>
         public AudioNormalizationAlgorithmControl AlgorithmControl
         {
@@ -88,7 +90,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoudnessLogging.
+        /// Gets and sets the property LoudnessLogging. If set to LOG, log each output's audio
+        /// track loudness to a CSV file.
         /// </summary>
         public AudioNormalizationLoudnessLogging LoudnessLogging
         {
@@ -103,7 +106,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeakCalculation.
+        /// Gets and sets the property PeakCalculation. If set to TRUE_PEAK, calculate and log
+        /// the TruePeak for each output's audio track loudness.
         /// </summary>
         public AudioNormalizationPeakCalculation PeakCalculation
         {

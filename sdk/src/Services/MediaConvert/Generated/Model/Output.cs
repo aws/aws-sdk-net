@@ -77,7 +77,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContainerSettings.
+        /// Gets and sets the property ContainerSettings. Container specific settings.
         /// </summary>
         public ContainerSettings ContainerSettings
         {
@@ -133,7 +133,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputSettings.
+        /// Gets and sets the property OutputSettings. Specific settings for this type of output.
         /// </summary>
         public OutputSettings OutputSettings
         {

@@ -84,7 +84,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NielsenId3.
+        /// Gets and sets the property NielsenId3. If INSERT, Nielsen inaudible tones for media
+        /// tracking will be detected in the input audio and an equivalent ID3 tag will be inserted
+        /// in the output.
         /// </summary>
         public M3u8NielsenId3 NielsenId3
         {
@@ -116,7 +118,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PcrControl.
+        /// Gets and sets the property PcrControl. When set to PCR_EVERY_PES_PACKET a Program
+        /// Clock Reference value is inserted for every Packetized Elementary Stream (PES) header.
+        /// This parameter is effective only when the PCR PID is the same as the video or audio
+        /// elementary stream.
         /// </summary>
         public M3u8PcrControl PcrControl
         {
@@ -234,7 +239,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35Source.
+        /// Gets and sets the property Scte35Source. Enables SCTE-35 passthrough (scte35Source)
+        /// to pass any SCTE-35 signals from input to output.
         /// </summary>
         public M3u8Scte35Source Scte35Source
         {
@@ -249,7 +255,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadata.
+        /// Gets and sets the property TimedMetadata. Applies only to HLS outputs. Use this setting
+        /// to specify whether the service inserts the ID3 timed metadata from the input in this
+        /// output.
         /// </summary>
         public TimedMetadata TimedMetadata
         {

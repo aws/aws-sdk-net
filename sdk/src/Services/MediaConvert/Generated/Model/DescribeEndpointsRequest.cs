@@ -55,7 +55,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mode.
+        /// Gets and sets the property Mode. Optional field, defaults to DEFAULT. Specify DEFAULT
+        /// for this operation to return your endpoints if any exist, or to create an endpoint
+        /// for you and return it if one doesn't already exist. Specify GET_ONLY to return your
+        /// endpoints if any exist, or an empty list if none exist.
         /// </summary>
         public DescribeEndpointsMode Mode
         {

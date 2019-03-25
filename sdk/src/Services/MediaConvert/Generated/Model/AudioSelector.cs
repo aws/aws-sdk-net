@@ -61,7 +61,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultSelection.
+        /// Gets and sets the property DefaultSelection. Enable this setting on one audio selector
+        /// to set it as the default for the job. The service uses this default for outputs where
+        /// it can't find the specified input audio. If you don't set a default, those outputs
+        /// have no audio.
         /// </summary>
         public AudioDefaultSelection DefaultSelection
         {
@@ -181,7 +184,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SelectorType.
+        /// Gets and sets the property SelectorType. Specifies the type of the audio selector.
         /// </summary>
         public AudioSelectorType SelectorType
         {

@@ -35,7 +35,9 @@ namespace Amazon.MediaConvert.Model
         private Preset _preset;
 
         /// <summary>
-        /// Gets and sets the property Preset.
+        /// Gets and sets the property Preset. A preset is a collection of preconfigured media
+        /// conversion settings that you want MediaConvert to apply to the output during the conversion
+        /// process.
         /// </summary>
         public Preset Preset
         {

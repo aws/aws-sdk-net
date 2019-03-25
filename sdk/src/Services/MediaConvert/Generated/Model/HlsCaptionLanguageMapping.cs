@@ -71,7 +71,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode.
+        /// Gets and sets the property LanguageCode. Specify the language, using the ISO 639-2
+        /// three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
         /// </summary>
         public LanguageCode LanguageCode
         {

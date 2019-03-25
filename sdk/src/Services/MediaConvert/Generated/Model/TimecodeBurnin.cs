@@ -55,7 +55,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Position.
+        /// Gets and sets the property Position. Use Position (Position) under under Timecode
+        /// burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output
+        /// video.
         /// </summary>
         public TimecodeBurninPosition Position
         {

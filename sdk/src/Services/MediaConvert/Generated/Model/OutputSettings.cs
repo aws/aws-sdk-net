@@ -35,7 +35,7 @@ namespace Amazon.MediaConvert.Model
         private HlsSettings _hlsSettings;
 
         /// <summary>
-        /// Gets and sets the property HlsSettings.
+        /// Gets and sets the property HlsSettings. Settings for HLS output groups
         /// </summary>
         public HlsSettings HlsSettings
         {

@@ -36,7 +36,7 @@ namespace Amazon.MediaConvert.Model
         private SpekeKeyProvider _spekeKeyProvider;
 
         /// <summary>
-        /// Gets and sets the property SpekeKeyProvider.
+        /// Gets and sets the property SpekeKeyProvider. Settings for use with a SPEKE key provider
         /// </summary>
         public SpekeKeyProvider SpekeKeyProvider
         {

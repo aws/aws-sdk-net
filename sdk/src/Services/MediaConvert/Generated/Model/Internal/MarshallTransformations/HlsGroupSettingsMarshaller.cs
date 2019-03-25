@@ -102,6 +102,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Destination);
             }
 
+            if(requestObject.IsSetDestinationSettings())
+            {
+                context.Writer.WritePropertyName("destinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDirectoryStructure())
             {
                 context.Writer.WritePropertyName("directoryStructure");

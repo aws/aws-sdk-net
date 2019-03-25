@@ -39,7 +39,8 @@ namespace Amazon.MediaConvert.Model
         private MovReference _reference;
 
         /// <summary>
-        /// Gets and sets the property ClapAtom.
+        /// Gets and sets the property ClapAtom. When enabled, include 'clap' atom if appropriate
+        /// for the video output settings.
         /// </summary>
         public MovClapAtom ClapAtom
         {
@@ -54,7 +55,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CslgAtom.
+        /// Gets and sets the property CslgAtom. When enabled, file composition times will start
+        /// at zero, composition times in the 'ctts' (composition time to sample) box for B-frames
+        /// will be negative, and a 'cslg' (composition shift least greatest) box will be included
+        /// per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
         /// </summary>
         public MovCslgAtom CslgAtom
         {
@@ -69,7 +73,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mpeg2FourCCControl.
+        /// Gets and sets the property Mpeg2FourCCControl. When set to XDCAM, writes MPEG2 video
+        /// streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility
+        /// with Apple editors and players, but may decrease compatibility with other players.
+        /// Only applicable when the video codec is MPEG2.
         /// </summary>
         public MovMpeg2FourCCControl Mpeg2FourCCControl
         {
@@ -84,7 +91,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PaddingControl.
+        /// Gets and sets the property PaddingControl. If set to OMNEON, inserts Omneon-compatible
+        /// padding
         /// </summary>
         public MovPaddingControl PaddingControl
         {
@@ -99,7 +107,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reference.
+        /// Gets and sets the property Reference. Always keep the default value (SELF_CONTAINED)
+        /// for this setting.
         /// </summary>
         public MovReference Reference
         {

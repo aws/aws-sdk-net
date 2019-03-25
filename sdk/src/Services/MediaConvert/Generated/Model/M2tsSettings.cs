@@ -78,7 +78,8 @@ namespace Amazon.MediaConvert.Model
         private int? _videoPid;
 
         /// <summary>
-        /// Gets and sets the property AudioBufferModel.
+        /// Gets and sets the property AudioBufferModel. Selects between the DVB and ATSC buffer
+        /// models for Dolby Digital audio.
         /// </summary>
         public M2tsAudioBufferModel AudioBufferModel
         {
@@ -145,7 +146,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BufferModel.
+        /// Gets and sets the property BufferModel. Controls what buffer model to use for accurate
+        /// interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this
+        /// can lead to lower latency, but low-memory devices may not be able to play back the
+        /// stream without interruptions.
         /// </summary>
         public M2tsBufferModel BufferModel
         {
@@ -160,7 +164,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbNitSettings.
+        /// Gets and sets the property DvbNitSettings. Inserts DVB Network Information Table (NIT)
+        /// at the specified table repetition interval.
         /// </summary>
         public DvbNitSettings DvbNitSettings
         {
@@ -175,7 +180,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbSdtSettings.
+        /// Gets and sets the property DvbSdtSettings. Inserts DVB Service Description Table (NIT)
+        /// at the specified table repetition interval.
         /// </summary>
         public DvbSdtSettings DvbSdtSettings
         {
@@ -207,7 +213,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbTdtSettings.
+        /// Gets and sets the property DvbTdtSettings. Inserts DVB Time and Date Table (TDT) at
+        /// the specified table repetition interval.
         /// </summary>
         public DvbTdtSettings DvbTdtSettings
         {
@@ -239,7 +246,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EbpAudioInterval.
+        /// Gets and sets the property EbpAudioInterval. When set to VIDEO_AND_FIXED_INTERVALS,
+        /// audio EBP markers will be added to partitions 3 and 4. The interval between these
+        /// additional markers will be fixed, and will be slightly shorter than the video EBP
+        /// marker interval. When set to VIDEO_INTERVAL, these additional markers will not be
+        /// inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers
+        /// is EBP or EBP_LEGACY).
         /// </summary>
         public M2tsEbpAudioInterval EbpAudioInterval
         {
@@ -254,7 +266,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EbpPlacement.
+        /// Gets and sets the property EbpPlacement. Selects which PIDs to place EBP markers on.
+        /// They can either be placed only on the video PID, or on both the video PID and all
+        /// audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers
+        /// is EBP or EBP_LEGACY).
         /// </summary>
         public M2tsEbpPlacement EbpPlacement
         {
@@ -269,7 +284,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EsRateInPes.
+        /// Gets and sets the property EsRateInPes. Controls whether to include the ES Rate field
+        /// in the PES header.
         /// </summary>
         public M2tsEsRateInPes EsRateInPes
         {
@@ -355,7 +371,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NielsenId3.
+        /// Gets and sets the property NielsenId3. If INSERT, Nielsen inaudible tones for media
+        /// tracking will be detected in the input audio and an equivalent ID3 tag will be inserted
+        /// in the output.
         /// </summary>
         public M2tsNielsenId3 NielsenId3
         {
@@ -404,7 +422,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PcrControl.
+        /// Gets and sets the property PcrControl. When set to PCR_EVERY_PES_PACKET, a Program
+        /// Clock Reference value is inserted for every Packetized Elementary Stream (PES) header.
+        /// This is effective only when the PCR PID is the same as the video or audio elementary
+        /// stream.
         /// </summary>
         public M2tsPcrControl PcrControl
         {
@@ -507,7 +528,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateMode.
+        /// Gets and sets the property RateMode. When set to CBR, inserts null packets into transport
+        /// stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the
+        /// maximum bitrate, but the output will not be padded up to that bitrate.
         /// </summary>
         public M2tsRateMode RateMode
         {
@@ -556,7 +579,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35Source.
+        /// Gets and sets the property Scte35Source. Enables SCTE-35 passthrough (scte35Source)
+        /// to pass any SCTE-35 signals from input to output.
         /// </summary>
         public M2tsScte35Source Scte35Source
         {
@@ -571,7 +595,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentationMarkers.
+        /// Gets and sets the property SegmentationMarkers. Inserts segmentation markers at each
+        /// segmentation_time period. rai_segstart sets the Random Access Indicator bit in the
+        /// adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the
+        /// private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments.
+        /// ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable
+        /// specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information
+        /// to the adaptation field using a legacy proprietary format.
         /// </summary>
         public M2tsSegmentationMarkers SegmentationMarkers
         {
@@ -586,7 +616,17 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentationStyle.
+        /// Gets and sets the property SegmentationStyle. The segmentation style parameter controls
+        /// how segmentation markers are inserted into the transport stream. With avails, it is
+        /// possible that segments may be truncated, which can influence where future segmentation
+        /// markers are inserted. When a segmentation style of "reset_cadence" is selected and
+        /// a segment is truncated due to an avail, we will reset the segmentation cadence. This
+        /// means the subsequent segment will have a duration of of $segmentation_time seconds.
+        /// When a segmentation style of "maintain_cadence" is selected and a segment is truncated
+        /// due to an avail, we will not reset the segmentation cadence. This means the subsequent
+        /// segment will likely be truncated as well. However, all segments after that will have
+        /// a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception
+        /// to this rule.
         /// </summary>
         public M2tsSegmentationStyle SegmentationStyle
         {

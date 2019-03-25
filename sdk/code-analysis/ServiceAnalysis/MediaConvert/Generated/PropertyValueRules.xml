@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.MediaConvert.Model.CreateJobRequest.StatusUpdateIntervalInSecs</property>
-    <min>10</min>
-    <max>600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaConvert.Model.CreateJobTemplateRequest.StatusUpdateIntervalInSecs</property>
-    <min>10</min>
-    <max>600</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -29,11 +19,6 @@
     <property>Amazon.MediaConvert.Model.ListQueuesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.StatusUpdateIntervalInSecs</property>
-    <min>10</min>
-    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.Bitrate</property>
@@ -807,19 +792,9 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MediaConvert.Model.Job.StatusUpdateIntervalInSecs</property>
-    <min>10</min>
-    <max>600</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobSettings.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaConvert.Model.JobTemplate.StatusUpdateIntervalInSecs</property>
-    <min>10</min>
-    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.JobTemplateSettings.AdAvailOffset</property>
@@ -1159,6 +1134,10 @@
     <property>Amazon.MediaConvert.Model.RemixSettings.ChannelsOut</property>
     <min>1</min>
     <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.S3EncryptionSettings.KmsKeyArn</property>
+    <pattern>^arn:aws(-us-gov)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.CertificateArn</property>

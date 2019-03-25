@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     public partial class FileGroupSettings
     {
         private string _destination;
+        private DestinationSettings _destinationSettings;
 
         /// <summary>
         /// Gets and sets the property Destination. Use Destination (Destination) to specify the
@@ -51,6 +52,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationSettings. Settings associated with the destination.
+        /// Will vary based on the type of destination
+        /// </summary>
+        public DestinationSettings DestinationSettings
+        {
+            get { return this._destinationSettings; }
+            set { this._destinationSettings = value; }
+        }
+
+        // Check to see if DestinationSettings property is set
+        internal bool IsSetDestinationSettings()
+        {
+            return this._destinationSettings != null;
         }
 
     }

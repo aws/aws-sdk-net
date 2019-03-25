@@ -28,26 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Settings associated with S3 destination
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class S3DestinationSettings
     {
-        private ResourceTags _resourceTags;
+        private S3EncryptionSettings _encryption;
 
         /// <summary>
-        /// Gets and sets the property ResourceTags. The Amazon Resource Name (ARN) and tags for
-        /// an AWS Elemental MediaConvert resource.
+        /// Gets and sets the property Encryption. Settings for how your job outputs are encrypted
+        /// as they are uploaded to Amazon S3.
         /// </summary>
-        public ResourceTags ResourceTags
+        public S3EncryptionSettings Encryption
         {
-            get { return this._resourceTags; }
-            set { this._resourceTags = value; }
+            get { return this._encryption; }
+            set { this._encryption = value; }
         }
 
-        // Check to see if ResourceTags property is set
-        internal bool IsSetResourceTags()
+        // Check to see if Encryption property is set
+        internal bool IsSetEncryption()
         {
-            return this._resourceTags != null;
+            return this._encryption != null;
         }
 
     }

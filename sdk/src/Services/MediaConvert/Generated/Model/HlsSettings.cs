@@ -72,7 +72,16 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AudioTrackType.
+        /// Gets and sets the property AudioTrackType. Four types of audio-only tracks are supported:
+        /// Audio-Only Variant Stream The client can play back this audio-only stream instead
+        /// of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS
+        /// manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client
+        /// should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest
+        /// with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate
+        /// rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA
+        /// in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select
+        /// Alternate rendition that the client will not try to play back by default. Represented
+        /// as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
         /// </summary>
         public HlsAudioTrackType AudioTrackType
         {
@@ -87,7 +96,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IFrameOnlyManifest.
+        /// Gets and sets the property IFrameOnlyManifest. When set to INCLUDE, writes I-Frame
+        /// Only Manifest in addition to the HLS manifest
         /// </summary>
         public HlsIFrameOnlyManifest IFrameOnlyManifest
         {

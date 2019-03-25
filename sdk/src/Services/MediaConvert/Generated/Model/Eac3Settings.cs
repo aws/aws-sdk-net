@@ -56,7 +56,8 @@ namespace Amazon.MediaConvert.Model
         private Eac3SurroundMode _surroundMode;
 
         /// <summary>
-        /// Gets and sets the property AttenuationControl.
+        /// Gets and sets the property AttenuationControl. If set to ATTENUATE_3_DB, applies a
+        /// 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
         /// </summary>
         public Eac3AttenuationControl AttenuationControl
         {
@@ -88,7 +89,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitstreamMode.
+        /// Gets and sets the property BitstreamMode. Specifies the "Bitstream Mode" (bsmod) for
+        /// the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
         /// </summary>
         public Eac3BitstreamMode BitstreamMode
         {
@@ -103,7 +105,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodingMode.
+        /// Gets and sets the property CodingMode. Dolby Digital Plus coding mode. Determines
+        /// number of channels.
         /// </summary>
         public Eac3CodingMode CodingMode
         {
@@ -118,7 +121,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DcFilter.
+        /// Gets and sets the property DcFilter. Activates a DC highpass filter for all input
+        /// channels.
         /// </summary>
         public Eac3DcFilter DcFilter
         {
@@ -150,7 +154,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionLine.
+        /// Gets and sets the property DynamicRangeCompressionLine. Enables Dynamic Range Compression
+        /// that restricts the absolute peak level for a signal.
         /// </summary>
         public Eac3DynamicRangeCompressionLine DynamicRangeCompressionLine
         {
@@ -165,7 +170,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DynamicRangeCompressionRf.
+        /// Gets and sets the property DynamicRangeCompressionRf. Enables Heavy Dynamic Range
+        /// Compression, ensures that the instantaneous signal peaks do not exceed specified levels.
         /// </summary>
         public Eac3DynamicRangeCompressionRf DynamicRangeCompressionRf
         {
@@ -180,7 +186,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LfeControl.
+        /// Gets and sets the property LfeControl. When encoding 3/2 audio, controls whether the
+        /// LFE channel is enabled
         /// </summary>
         public Eac3LfeControl LfeControl
         {
@@ -195,7 +202,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LfeFilter.
+        /// Gets and sets the property LfeFilter. Applies a 120Hz lowpass filter to the LFE channel
+        /// prior to encoding. Only valid with 3_2_LFE coding mode.
         /// </summary>
         public Eac3LfeFilter LfeFilter
         {
@@ -274,7 +282,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetadataControl.
+        /// Gets and sets the property MetadataControl. When set to FOLLOW_INPUT, encoder metadata
+        /// will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data.
+        /// If audio was not supplied from one of these streams, then the static metadata settings
+        /// will be used.
         /// </summary>
         public Eac3MetadataControl MetadataControl
         {
@@ -289,7 +300,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PassthroughControl.
+        /// Gets and sets the property PassthroughControl. When set to WHEN_POSSIBLE, input DD+
+        /// audio will be passed through if it is present on the input. this detection is dynamic
+        /// over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content
+        /// will have a consistent DD+ output as the system alternates between passthrough and
+        /// encoding.
         /// </summary>
         public Eac3PassthroughControl PassthroughControl
         {
@@ -304,7 +319,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhaseControl.
+        /// Gets and sets the property PhaseControl. Controls the amount of phase-shift applied
+        /// to the surround channels. Only used for 3/2 coding mode.
         /// </summary>
         public Eac3PhaseControl PhaseControl
         {
@@ -335,7 +351,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StereoDownmix.
+        /// Gets and sets the property StereoDownmix. Stereo downmix preference. Only used for
+        /// 3/2 coding mode.
         /// </summary>
         public Eac3StereoDownmix StereoDownmix
         {
@@ -350,7 +367,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SurroundExMode.
+        /// Gets and sets the property SurroundExMode. When encoding 3/2 audio, sets whether an
+        /// extra center back surround channel is matrix encoded into the left and right surround
+        /// channels.
         /// </summary>
         public Eac3SurroundExMode SurroundExMode
         {
@@ -365,7 +384,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SurroundMode.
+        /// Gets and sets the property SurroundMode. When encoding 2/0 audio, sets whether Dolby
+        /// Surround is matrix encoded into the two channels.
         /// </summary>
         public Eac3SurroundMode SurroundMode
         {

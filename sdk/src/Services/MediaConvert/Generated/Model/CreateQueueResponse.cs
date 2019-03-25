@@ -35,7 +35,10 @@ namespace Amazon.MediaConvert.Model
         private Queue _queue;
 
         /// <summary>
-        /// Gets and sets the property Queue.
+        /// Gets and sets the property Queue. You can use queues to manage the resources that
+        /// are available to your AWS account for running multiple transcoding jobs at the same
+        /// time. If you don't specify a queue, the service sends all jobs through the default
+        /// queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
         /// </summary>
         public Queue Queue
         {

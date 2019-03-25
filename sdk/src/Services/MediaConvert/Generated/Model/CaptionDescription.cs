@@ -79,7 +79,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationSettings.
+        /// Gets and sets the property DestinationSettings. Specific settings required by destination
+        /// type. Note that burnin_destination_settings are not available if the source of the
+        /// caption data is Embedded or Teletext.
         /// </summary>
         public CaptionDestinationSettings DestinationSettings
         {

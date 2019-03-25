@@ -8365,6 +8365,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type JobPhase.
+    /// </summary>
+    public class JobPhase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROBING for JobPhase
+        /// </summary>
+        public static readonly JobPhase PROBING = new JobPhase("PROBING");
+        /// <summary>
+        /// Constant TRANSCODING for JobPhase
+        /// </summary>
+        public static readonly JobPhase TRANSCODING = new JobPhase("TRANSCODING");
+        /// <summary>
+        /// Constant UPLOADING for JobPhase
+        /// </summary>
+        public static readonly JobPhase UPLOADING = new JobPhase("UPLOADING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobPhase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobPhase FindValue(string value)
+        {
+            return FindValue<JobPhase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobPhase(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass
@@ -12569,6 +12623,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type S3ServerSideEncryptionType.
+    /// </summary>
+    public class S3ServerSideEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVER_SIDE_ENCRYPTION_KMS for S3ServerSideEncryptionType
+        /// </summary>
+        public static readonly S3ServerSideEncryptionType SERVER_SIDE_ENCRYPTION_KMS = new S3ServerSideEncryptionType("SERVER_SIDE_ENCRYPTION_KMS");
+        /// <summary>
+        /// Constant SERVER_SIDE_ENCRYPTION_S3 for S3ServerSideEncryptionType
+        /// </summary>
+        public static readonly S3ServerSideEncryptionType SERVER_SIDE_ENCRYPTION_S3 = new S3ServerSideEncryptionType("SERVER_SIDE_ENCRYPTION_S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ServerSideEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ServerSideEncryptionType FindValue(string value)
+        {
+            return FindValue<S3ServerSideEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ServerSideEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScalingBehavior.
     /// </summary>
     public class ScalingBehavior : ConstantClass
@@ -12670,6 +12774,108 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SccDestinationFramerate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusUpdateInterval.
+    /// </summary>
+    public class StatusUpdateInterval : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SECONDS_10 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_10 = new StatusUpdateInterval("SECONDS_10");
+        /// <summary>
+        /// Constant SECONDS_12 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_12 = new StatusUpdateInterval("SECONDS_12");
+        /// <summary>
+        /// Constant SECONDS_120 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_120 = new StatusUpdateInterval("SECONDS_120");
+        /// <summary>
+        /// Constant SECONDS_15 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_15 = new StatusUpdateInterval("SECONDS_15");
+        /// <summary>
+        /// Constant SECONDS_180 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_180 = new StatusUpdateInterval("SECONDS_180");
+        /// <summary>
+        /// Constant SECONDS_20 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_20 = new StatusUpdateInterval("SECONDS_20");
+        /// <summary>
+        /// Constant SECONDS_240 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_240 = new StatusUpdateInterval("SECONDS_240");
+        /// <summary>
+        /// Constant SECONDS_30 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_30 = new StatusUpdateInterval("SECONDS_30");
+        /// <summary>
+        /// Constant SECONDS_300 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_300 = new StatusUpdateInterval("SECONDS_300");
+        /// <summary>
+        /// Constant SECONDS_360 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_360 = new StatusUpdateInterval("SECONDS_360");
+        /// <summary>
+        /// Constant SECONDS_420 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_420 = new StatusUpdateInterval("SECONDS_420");
+        /// <summary>
+        /// Constant SECONDS_480 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_480 = new StatusUpdateInterval("SECONDS_480");
+        /// <summary>
+        /// Constant SECONDS_540 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_540 = new StatusUpdateInterval("SECONDS_540");
+        /// <summary>
+        /// Constant SECONDS_60 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_60 = new StatusUpdateInterval("SECONDS_60");
+        /// <summary>
+        /// Constant SECONDS_600 for StatusUpdateInterval
+        /// </summary>
+        public static readonly StatusUpdateInterval SECONDS_600 = new StatusUpdateInterval("SECONDS_600");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusUpdateInterval(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusUpdateInterval FindValue(string value)
+        {
+            return FindValue<StatusUpdateInterval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusUpdateInterval(string value)
         {
             return FindValue(value);
         }

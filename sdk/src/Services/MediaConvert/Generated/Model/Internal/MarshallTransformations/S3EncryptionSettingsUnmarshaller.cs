@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileGroupSettings Object
+    /// Response Unmarshaller for S3EncryptionSettings Object
     /// </summary>  
-    public class FileGroupSettingsUnmarshaller : IUnmarshaller<FileGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<FileGroupSettings, JsonUnmarshallerContext>
+    public class S3EncryptionSettingsUnmarshaller : IUnmarshaller<S3EncryptionSettings, XmlUnmarshallerContext>, IUnmarshaller<S3EncryptionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FileGroupSettings IUnmarshaller<FileGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3EncryptionSettings IUnmarshaller<S3EncryptionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FileGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public S3EncryptionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FileGroupSettings unmarshalledObject = new FileGroupSettings();
+            S3EncryptionSettings unmarshalledObject = new S3EncryptionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("encryptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("destinationSettings", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
-                    var unmarshaller = DestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileGroupSettingsUnmarshaller _instance = new FileGroupSettingsUnmarshaller();        
+        private static S3EncryptionSettingsUnmarshaller _instance = new S3EncryptionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileGroupSettingsUnmarshaller Instance
+        public static S3EncryptionSettingsUnmarshaller Instance
         {
             get
             {

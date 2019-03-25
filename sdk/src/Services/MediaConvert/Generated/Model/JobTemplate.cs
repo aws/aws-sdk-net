@@ -42,11 +42,12 @@ namespace Amazon.MediaConvert.Model
         private string _name;
         private string _queue;
         private JobTemplateSettings _settings;
-        private long? _statusUpdateIntervalInSecs;
+        private StatusUpdateInterval _statusUpdateInterval;
         private Type _type;
 
         /// <summary>
-        /// Gets and sets the property AccelerationSettings. Acceleration settings for job execution.
+        /// Gets and sets the property AccelerationSettings. Accelerated transcoding is currently
+        /// in private preview. Contact AWS for more information.
         /// </summary>
         public AccelerationSettings AccelerationSettings
         {
@@ -174,7 +175,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings.
+        /// Gets and sets the property Settings. JobTemplateSettings contains all the transcode
+        /// settings saved in the template that will be applied to jobs created from it.
         /// </summary>
         [AWSProperty(Required=true)]
         public JobTemplateSettings Settings
@@ -190,23 +192,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusUpdateIntervalInSecs. Specify how often MediaConvert
-        /// sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds,
-        /// between status updates. MediaConvert sends an update at this interval from the time
-        /// the service begins processing your job to the time it completes the transcode or encounters
-        /// an error.
+        /// Gets and sets the property StatusUpdateInterval. Specify how often MediaConvert sends
+        /// STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between
+        /// status updates. MediaConvert sends an update at this interval from the time the service
+        /// begins processing your job to the time it completes the transcode or encounters an
+        /// error.
         /// </summary>
-        [AWSProperty(Min=10, Max=600)]
-        public long StatusUpdateIntervalInSecs
+        public StatusUpdateInterval StatusUpdateInterval
         {
-            get { return this._statusUpdateIntervalInSecs.GetValueOrDefault(); }
-            set { this._statusUpdateIntervalInSecs = value; }
+            get { return this._statusUpdateInterval; }
+            set { this._statusUpdateInterval = value; }
         }
 
-        // Check to see if StatusUpdateIntervalInSecs property is set
-        internal bool IsSetStatusUpdateIntervalInSecs()
+        // Check to see if StatusUpdateInterval property is set
+        internal bool IsSetStatusUpdateInterval()
         {
-            return this._statusUpdateIntervalInSecs.HasValue; 
+            return this._statusUpdateInterval != null;
         }
 
         /// <summary>

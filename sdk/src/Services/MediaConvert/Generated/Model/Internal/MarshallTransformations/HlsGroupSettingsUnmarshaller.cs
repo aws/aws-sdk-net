@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationSettings", targetDepth))
+                {
+                    var unmarshaller = DestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("directoryStructure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

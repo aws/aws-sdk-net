@@ -76,7 +76,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Order.
+        /// Gets and sets the property Order. When you request lists of resources, you can optionally
+        /// specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by
+        /// resource.
         /// </summary>
         public Order Order
         {
@@ -107,7 +109,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. A job's status can be SUBMITTED, PROGRESSING, COMPLETE,
+        /// CANCELED, or ERROR.
         /// </summary>
         public JobStatus Status
         {

@@ -112,10 +112,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetStatusUpdateIntervalInSecs())
+                if(publicRequest.IsSetStatusUpdateInterval())
                 {
-                    context.Writer.WritePropertyName("statusUpdateIntervalInSecs");
-                    context.Writer.Write(publicRequest.StatusUpdateIntervalInSecs);
+                    context.Writer.WritePropertyName("statusUpdateInterval");
+                    context.Writer.Write(publicRequest.StatusUpdateInterval);
                 }
 
                 if(publicRequest.IsSetTags())

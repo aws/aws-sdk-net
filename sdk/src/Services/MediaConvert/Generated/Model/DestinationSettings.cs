@@ -28,26 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Settings associated with the destination. Will vary based on the type of destination
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class DestinationSettings
     {
-        private ResourceTags _resourceTags;
+        private S3DestinationSettings _s3Settings;
 
         /// <summary>
-        /// Gets and sets the property ResourceTags. The Amazon Resource Name (ARN) and tags for
-        /// an AWS Elemental MediaConvert resource.
+        /// Gets and sets the property S3Settings. Settings associated with S3 destination
         /// </summary>
-        public ResourceTags ResourceTags
+        public S3DestinationSettings S3Settings
         {
-            get { return this._resourceTags; }
-            set { this._resourceTags = value; }
+            get { return this._s3Settings; }
+            set { this._s3Settings = value; }
         }
 
-        // Check to see if ResourceTags property is set
-        internal bool IsSetResourceTags()
+        // Check to see if S3Settings property is set
+        internal bool IsSetS3Settings()
         {
-            return this._resourceTags != null;
+            return this._s3Settings != null;
         }
 
     }

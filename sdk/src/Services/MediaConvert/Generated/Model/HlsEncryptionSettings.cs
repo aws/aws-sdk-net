@@ -59,7 +59,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionMethod.
+        /// Gets and sets the property EncryptionMethod. Encrypts the segments with the given
+        /// encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface
+        /// also disables encryption.
         /// </summary>
         public HlsEncryptionType EncryptionMethod
         {
@@ -74,7 +76,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitializationVectorInManifest.
+        /// Gets and sets the property InitializationVectorInManifest. The Initialization Vector
+        /// is a 128-bit number used in conjunction with the key for encrypting blocks. If set
+        /// to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization
+        /// Vector is not in the manifest.
         /// </summary>
         public HlsInitializationVectorInManifest InitializationVectorInManifest
         {
@@ -89,7 +94,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfflineEncrypted.
+        /// Gets and sets the property OfflineEncrypted. Enable this setting to insert the EXT-X-SESSION-KEY
+        /// element into the master playlist. This allows for offline Apple HLS FairPlay content
+        /// protection.
         /// </summary>
         public HlsOfflineEncrypted OfflineEncrypted
         {
@@ -104,7 +111,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpekeKeyProvider.
+        /// Gets and sets the property SpekeKeyProvider. Settings for use with a SPEKE key provider
         /// </summary>
         public SpekeKeyProvider SpekeKeyProvider
         {
@@ -119,7 +126,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticKeyProvider.
+        /// Gets and sets the property StaticKeyProvider. Use these settings to set up encryption
+        /// with a static key provider.
         /// </summary>
         public StaticKeyProvider StaticKeyProvider
         {
@@ -134,7 +142,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. Indicates which type of key provider is used for
+        /// encryption.
         /// </summary>
         public HlsKeyProviderType Type
         {

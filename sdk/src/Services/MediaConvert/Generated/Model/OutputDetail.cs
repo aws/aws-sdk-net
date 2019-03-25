@@ -51,7 +51,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoDetails.
+        /// Gets and sets the property VideoDetails. Contains details about the output's video
+        /// stream
         /// </summary>
         public VideoDetail VideoDetails
         {

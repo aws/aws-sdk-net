@@ -40,7 +40,8 @@ namespace Amazon.MediaConvert.Model
         private Mp4Settings _mp4Settings;
 
         /// <summary>
-        /// Gets and sets the property Container.
+        /// Gets and sets the property Container. Container for this output. Some containers require
+        /// a container settings object. If not specified, the default object will be created.
         /// </summary>
         public ContainerType Container
         {
@@ -55,7 +56,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property F4vSettings.
+        /// Gets and sets the property F4vSettings. Settings for F4v container
         /// </summary>
         public F4vSettings F4vSettings
         {
@@ -70,7 +71,15 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property M2tsSettings.
+        /// Gets and sets the property M2tsSettings. MPEG-2 TS container settings. These apply
+        /// to outputs in a File output group when the output's container (ContainerType) is MPEG-2
+        /// Transport Stream (M2TS). In these assets, data is organized by the program map table
+        /// (PMT). Each transport stream program contains subsets of data, including audio, video,
+        /// and metadata. Each of these subsets of data has a numerical label called a packet
+        /// identifier (PID). Each transport stream program corresponds to one MediaConvert output.
+        /// The PMT lists the types of data in a program along with their PID. Downstream systems
+        /// and players use the program map table to look up the PID for each type of data it
+        /// accesses and then uses the PIDs to locate specific data within the asset.
         /// </summary>
         public M2tsSettings M2tsSettings
         {
@@ -85,7 +94,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property M3u8Settings.
+        /// Gets and sets the property M3u8Settings. Settings for TS segments in HLS
         /// </summary>
         public M3u8Settings M3u8Settings
         {
@@ -100,7 +109,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MovSettings.
+        /// Gets and sets the property MovSettings. Settings for MOV Container.
         /// </summary>
         public MovSettings MovSettings
         {
@@ -115,7 +124,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mp4Settings.
+        /// Gets and sets the property Mp4Settings. Settings for MP4 Container
         /// </summary>
         public Mp4Settings Mp4Settings
         {

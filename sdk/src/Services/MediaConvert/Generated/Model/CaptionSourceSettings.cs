@@ -42,7 +42,8 @@ namespace Amazon.MediaConvert.Model
         private TrackSourceSettings _trackSourceSettings;
 
         /// <summary>
-        /// Gets and sets the property AncillarySourceSettings.
+        /// Gets and sets the property AncillarySourceSettings. Settings for ancillary captions
+        /// source.
         /// </summary>
         public AncillarySourceSettings AncillarySourceSettings
         {
@@ -57,7 +58,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DvbSubSourceSettings.
+        /// Gets and sets the property DvbSubSourceSettings. DVB Sub Source Settings
         /// </summary>
         public DvbSubSourceSettings DvbSubSourceSettings
         {
@@ -72,7 +73,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmbeddedSourceSettings.
+        /// Gets and sets the property EmbeddedSourceSettings. Settings for embedded captions
+        /// Source
         /// </summary>
         public EmbeddedSourceSettings EmbeddedSourceSettings
         {
@@ -87,7 +89,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileSourceSettings.
+        /// Gets and sets the property FileSourceSettings. Settings for File-based Captions in
+        /// Source
         /// </summary>
         public FileSourceSettings FileSourceSettings
         {
@@ -102,7 +105,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceType.
+        /// Gets and sets the property SourceType. Use Source (SourceType) to identify the format
+        /// of your input captions.  The service cannot auto-detect caption format.
         /// </summary>
         public CaptionSourceType SourceType
         {
@@ -117,7 +121,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeletextSourceSettings.
+        /// Gets and sets the property TeletextSourceSettings. Settings specific to Teletext caption
+        /// sources, including Page number.
         /// </summary>
         public TeletextSourceSettings TeletextSourceSettings
         {
@@ -132,7 +137,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrackSourceSettings.
+        /// Gets and sets the property TrackSourceSettings. Settings specific to caption sources
+        /// that are specfied by track number. Sources include IMSC in IMF.
         /// </summary>
         public TrackSourceSettings TrackSourceSettings
         {

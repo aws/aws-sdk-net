@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private HlsClientCache _clientCache;
         private HlsCodecSpecification _codecSpecification;
         private string _destination;
+        private DestinationSettings _destinationSettings;
         private HlsDirectoryStructure _directoryStructure;
         private HlsEncryptionSettings _encryption;
         private HlsManifestCompression _manifestCompression;
@@ -106,7 +107,15 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CaptionLanguageSetting.
+        /// Gets and sets the property CaptionLanguageSetting. Applies only to 608 Embedded output
+        /// captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least
+        /// one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for
+        /// each Language Code you specify. Make sure to specify the languages in the order in
+        /// which they appear in the original source (if the source is embedded format) or the
+        /// order of the caption selectors (if the source is other than embedded). Otherwise,
+        /// languages in the manifest will not match up properly with the output captions. None:
+        /// Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS
+        /// line from the manifest.
         /// </summary>
         public HlsCaptionLanguageSetting CaptionLanguageSetting
         {
@@ -121,7 +130,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCache.
+        /// Gets and sets the property ClientCache. When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no
+        /// tag, which prevents client from saving media segments for later replay.
         /// </summary>
         public HlsClientCache ClientCache
         {
@@ -136,7 +146,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecSpecification.
+        /// Gets and sets the property CodecSpecification. Specification to use (RFC-6381 or the
+        /// default RFC-4281) during m3u8 playlist generation.
         /// </summary>
         public HlsCodecSpecification CodecSpecification
         {
@@ -170,7 +181,24 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectoryStructure.
+        /// Gets and sets the property DestinationSettings. Settings associated with the destination.
+        /// Will vary based on the type of destination
+        /// </summary>
+        public DestinationSettings DestinationSettings
+        {
+            get { return this._destinationSettings; }
+            set { this._destinationSettings = value; }
+        }
+
+        // Check to see if DestinationSettings property is set
+        internal bool IsSetDestinationSettings()
+        {
+            return this._destinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectoryStructure. Indicates whether segments should be
+        /// placed in subdirectories.
         /// </summary>
         public HlsDirectoryStructure DirectoryStructure
         {
@@ -200,7 +228,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ManifestCompression.
+        /// Gets and sets the property ManifestCompression. When set to GZIP, compresses HLS playlist.
         /// </summary>
         public HlsManifestCompression ManifestCompression
         {
@@ -215,7 +243,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ManifestDurationFormat.
+        /// Gets and sets the property ManifestDurationFormat. Indicates whether the output manifest
+        /// should use floating point values for segment duration.
         /// </summary>
         public HlsManifestDurationFormat ManifestDurationFormat
         {
@@ -273,7 +302,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputSelection.
+        /// Gets and sets the property OutputSelection. Indicates whether the .m3u8 manifest file
+        /// should be generated for this HLS output group.
         /// </summary>
         public HlsOutputSelection OutputSelection
         {
@@ -288,7 +318,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramDateTime.
+        /// Gets and sets the property ProgramDateTime. Includes or excludes EXT-X-PROGRAM-DATE-TIME
+        /// tag in .m3u8 manifest files. The value is calculated as follows: either the program
+        /// date and time are initialized using the input timecode source, or the time is initialized
+        /// using the input timecode source and the date is initialized using the timestamp_offset.
         /// </summary>
         public HlsProgramDateTime ProgramDateTime
         {
@@ -320,7 +353,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentControl.
+        /// Gets and sets the property SegmentControl. When set to SINGLE_FILE, emits program
+        /// as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment
+        /// for playback.
         /// </summary>
         public HlsSegmentControl SegmentControl
         {
@@ -371,7 +406,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamInfResolution.
+        /// Gets and sets the property StreamInfResolution. Include or exclude RESOLUTION attribute
+        /// for video in EXT-X-STREAM-INF tag of variant manifest.
         /// </summary>
         public HlsStreamInfResolution StreamInfResolution
         {
@@ -386,7 +422,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataId3Frame.
+        /// Gets and sets the property TimedMetadataId3Frame. Indicates ID3 frame that has the
+        /// timecode.
         /// </summary>
         public HlsTimedMetadataId3Frame TimedMetadataId3Frame
         {

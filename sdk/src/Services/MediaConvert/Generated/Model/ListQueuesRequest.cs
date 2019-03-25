@@ -41,7 +41,9 @@ namespace Amazon.MediaConvert.Model
         private Order _order;
 
         /// <summary>
-        /// Gets and sets the property ListBy.
+        /// Gets and sets the property ListBy. Optional. When you request a list of queues, you
+        /// can choose to list them alphabetically by NAME or chronologically by CREATION_DATE.
+        /// If you don't specify, the service will list them by creation date.
         /// </summary>
         public QueueListBy ListBy
         {
@@ -89,7 +91,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Order.
+        /// Gets and sets the property Order. When you request lists of resources, you can optionally
+        /// specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by
+        /// resource.
         /// </summary>
         public Order Order
         {

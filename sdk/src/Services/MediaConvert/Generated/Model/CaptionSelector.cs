@@ -79,7 +79,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceSettings.
+        /// Gets and sets the property SourceSettings. Source settings (SourceSettings) contains
+        /// the group of settings for captions in the input.
         /// </summary>
         public CaptionSourceSettings SourceSettings
         {

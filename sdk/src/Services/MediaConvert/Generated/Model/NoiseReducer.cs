@@ -40,7 +40,12 @@ namespace Amazon.MediaConvert.Model
         private NoiseReducerSpatialFilterSettings _spatialFilterSettings;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. Use Noise reducer filter (NoiseReducerFilter) to
+        /// select one of the following spatial image filtering functions. To use this setting,
+        /// you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving
+        /// noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest)
+        /// are convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+        /// is a frequency-domain filter based on JND principles.
         /// </summary>
         public NoiseReducerFilter Filter
         {
@@ -55,7 +60,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterSettings.
+        /// Gets and sets the property FilterSettings. Settings for a noise reducer filter
         /// </summary>
         public NoiseReducerFilterSettings FilterSettings
         {
@@ -70,7 +75,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpatialFilterSettings.
+        /// Gets and sets the property SpatialFilterSettings. Noise reducer filter settings for
+        /// spatial filter.
         /// </summary>
         public NoiseReducerSpatialFilterSettings SpatialFilterSettings
         {

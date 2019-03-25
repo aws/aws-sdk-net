@@ -35,7 +35,9 @@ namespace Amazon.MediaConvert.Model
         private TtmlStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property StylePassthrough.
+        /// Gets and sets the property StylePassthrough. Pass through style and position information
+        /// from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
+        /// output.
         /// </summary>
         public TtmlStylePassthrough StylePassthrough
         {

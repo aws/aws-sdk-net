@@ -35,7 +35,8 @@ namespace Amazon.MediaConvert.Model
         private JobTemplate _jobTemplate;
 
         /// <summary>
-        /// Gets and sets the property JobTemplate.
+        /// Gets and sets the property JobTemplate. A job template is a pre-made set of encoding
+        /// instructions that you can use to quickly create a job.
         /// </summary>
         public JobTemplate JobTemplate
         {

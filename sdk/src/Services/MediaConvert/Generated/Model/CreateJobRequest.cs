@@ -41,7 +41,7 @@ namespace Amazon.MediaConvert.Model
         private string _queue;
         private string _role;
         private JobSettings _settings;
-        private long? _statusUpdateIntervalInSecs;
+        private StatusUpdateInterval _statusUpdateInterval;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
@@ -61,7 +61,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BillingTagsSource.
+        /// Gets and sets the property BillingTagsSource. Optional. Choose a tag type that AWS
+        /// Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
+        /// on any billing report that you set up. Any transcoding outputs that don't have an
+        /// associated tag will appear in your billing report unsorted. If you don't choose a
+        /// valid value for this field, your job outputs will appear on the billing report unsorted.
         /// </summary>
         public BillingTagsSource BillingTagsSource
         {
@@ -142,7 +146,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings.
+        /// Gets and sets the property Settings. JobSettings contains all the transcode settings
+        /// for a job.
         /// </summary>
         [AWSProperty(Required=true)]
         public JobSettings Settings
@@ -158,23 +163,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusUpdateIntervalInSecs. Specify how often MediaConvert
-        /// sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds,
-        /// between status updates. MediaConvert sends an update at this interval from the time
-        /// the service begins processing your job to the time it completes the transcode or encounters
-        /// an error.
+        /// Gets and sets the property StatusUpdateInterval. Specify how often MediaConvert sends
+        /// STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between
+        /// status updates. MediaConvert sends an update at this interval from the time the service
+        /// begins processing your job to the time it completes the transcode or encounters an
+        /// error.
         /// </summary>
-        [AWSProperty(Min=10, Max=600)]
-        public long StatusUpdateIntervalInSecs
+        public StatusUpdateInterval StatusUpdateInterval
         {
-            get { return this._statusUpdateIntervalInSecs.GetValueOrDefault(); }
-            set { this._statusUpdateIntervalInSecs = value; }
+            get { return this._statusUpdateInterval; }
+            set { this._statusUpdateInterval = value; }
         }
 
-        // Check to see if StatusUpdateIntervalInSecs property is set
-        internal bool IsSetStatusUpdateIntervalInSecs()
+        // Check to see if StatusUpdateInterval property is set
+        internal bool IsSetStatusUpdateInterval()
         {
-            return this._statusUpdateIntervalInSecs.HasValue; 
+            return this._statusUpdateInterval != null;
         }
 
         /// <summary>

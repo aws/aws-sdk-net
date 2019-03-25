@@ -49,7 +49,12 @@ namespace Amazon.MediaConvert.Model
         private int? _width;
 
         /// <summary>
-        /// Gets and sets the property AfdSignaling.
+        /// Gets and sets the property AfdSignaling. This setting only applies to H.264, H.265,
+        /// and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the
+        /// service includes AFD values in the output video data and what those values are. *
+        /// Choose None to remove all AFD values from this output. * Choose Fixed to ignore input
+        /// AFD values and instead encode the value specified in the job. * Choose Auto to calculate
+        /// output AFD values based on the input AFD scaler data.
         /// </summary>
         public AfdSignaling AfdSignaling
         {
@@ -64,8 +69,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AntiAlias. You no longer need to specify the anti-alias
-        /// filter. It's now automatically applied to all outputs. This property is deprecated.
+        /// Gets and sets the property AntiAlias. The anti-alias filter is automatically applied
+        /// to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If
+        /// you specify that in your job, the service will ignore the setting.
         /// </summary>
         public AntiAlias AntiAlias
         {
@@ -80,7 +86,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecSettings.
+        /// Gets and sets the property CodecSettings. Video codec settings, (CodecSettings) under
+        /// (VideoDescription), contains the group of settings related to video encoding. The
+        /// settings in this group vary depending on the value you choose for Video codec (Codec).
+        /// For each codec enum you choose, define the corresponding settings object. The following
+        /// lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings
+        /// * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
         /// </summary>
         public VideoCodecSettings CodecSettings
         {
@@ -95,7 +106,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorMetadata.
+        /// Gets and sets the property ColorMetadata. Enable Insert color metadata (ColorMetadata)
+        /// to include color metadata in this output. This setting is enabled by default.
         /// </summary>
         public ColorMetadata ColorMetadata
         {
@@ -130,7 +142,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DropFrameTimecode.
+        /// Gets and sets the property DropFrameTimecode. Applies only to 29.97 fps outputs. When
+        /// this feature is enabled, the service will use drop-frame timecode on outputs. If it
+        /// is not possible to use drop-frame timecode, the system will fall back to non-drop-frame.
+        /// This setting is enabled by default when Timecode insertion (TimecodeInsertion) is
+        /// enabled.
         /// </summary>
         public DropFrameTimecode DropFrameTimecode
         {
@@ -197,7 +213,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RespondToAfd.
+        /// Gets and sets the property RespondToAfd. Use Respond to AFD (RespondToAfd) to specify
+        /// how the service changes the video itself in response to AFD values in the input. *
+        /// Choose Respond to clip the input video frame according to the AFD value, input display
+        /// aspect ratio, and output display aspect ratio. * Choose Passthrough to include the
+        /// input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred
+        /// implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling
+        /// to (AUTO). * Choose None to remove all input AFD values from this output.
         /// </summary>
         public RespondToAfd RespondToAfd
         {
@@ -212,7 +234,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingBehavior.
+        /// Gets and sets the property ScalingBehavior. Applies only if your input aspect ratio
+        /// is different from your output aspect ratio. Choose "Stretch to output" to have the
+        /// service stretch your video image to fit. Keep the setting "Default" to allow the service
+        /// to letterbox your video instead. This setting overrides any positioning value you
+        /// specify elsewhere in the job.
         /// </summary>
         public ScalingBehavior ScalingBehavior
         {
@@ -247,7 +273,18 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimecodeInsertion.
+        /// Gets and sets the property TimecodeInsertion. Applies only to H.264, H.265, MPEG2,
+        /// and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical
+        /// to the output frame rate. To include timecodes in this output, set Timecode insertion
+        /// (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED.
+        /// Default is DISABLED. When the service inserts timecodes in an output, by default,
+        /// it uses any embedded timecodes from the input. If none are present, the service will
+        /// set the timecode for the first output frame to zero. To change this default behavior,
+        /// adjust the settings under Timecode configuration (TimecodeConfig). In the console,
+        /// these settings are located under Job > Job settings > Timecode configuration. Note
+        /// - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes
+        /// that are inserted in the output. Source under Job settings > Timecode configuration
+        /// (TimecodeSource) does.
         /// </summary>
         public VideoTimecodeInsertion TimecodeInsertion
         {

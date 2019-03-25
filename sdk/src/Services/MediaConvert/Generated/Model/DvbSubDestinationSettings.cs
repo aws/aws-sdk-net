@@ -51,7 +51,14 @@ namespace Amazon.MediaConvert.Model
         private int? _yPosition;
 
         /// <summary>
-        /// Gets and sets the property Alignment.
+        /// Gets and sets the property Alignment. If no explicit x_position or y_position is provided,
+        /// setting alignment to centered will place the captions at the bottom center of the
+        /// output. Similarly, setting a left alignment will align captions to the bottom left
+        /// of the output. If x and y positions are given in conjunction with the alignment parameter,
+        /// the font will be justified (either left or centered) relative to those coordinates.
+        /// This option is not valid for source captions that are STL, 608/embedded or teletext.
+        /// These source settings are already pre-defined by the caption stream. All burn-in and
+        /// DVB-Sub font settings must match.
         /// </summary>
         public DvbSubtitleAlignment Alignment
         {
@@ -66,7 +73,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BackgroundColor.
+        /// Gets and sets the property BackgroundColor. Specifies the color of the rectangle behind
+        /// the captions.All burn-in and DVB-Sub font settings must match.
         /// </summary>
         public DvbSubtitleBackgroundColor BackgroundColor
         {
@@ -99,7 +107,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FontColor.
+        /// Gets and sets the property FontColor. Specifies the color of the burned-in captions.
+        /// This option is not valid for source captions that are STL, 608/embedded or teletext.
+        /// These source settings are already pre-defined by the caption stream. All burn-in and
+        /// DVB-Sub font settings must match.
         /// </summary>
         public DvbSubtitleFontColor FontColor
         {
@@ -184,7 +195,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutlineColor.
+        /// Gets and sets the property OutlineColor. Specifies font outline color. This option
+        /// is not valid for source captions that are either 608/embedded or teletext. These source
+        /// settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+        /// settings must match.
         /// </summary>
         public DvbSubtitleOutlineColor OutlineColor
         {
@@ -218,7 +232,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShadowColor.
+        /// Gets and sets the property ShadowColor. Specifies the color of the shadow cast by
+        /// the captions.All burn-in and DVB-Sub font settings must match.
         /// </summary>
         public DvbSubtitleShadowColor ShadowColor
         {
@@ -287,7 +302,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeletextSpacing.
+        /// Gets and sets the property TeletextSpacing. Only applies to jobs with input captions
+        /// in Teletext or STL formats. Specify whether the spacing between letters in your captions
+        /// is set by the captions grid or varies depending on letter width. Choose fixed grid
+        /// to conform to the spacing specified in the captions file more accurately. Choose proportional
+        /// to make the text easier to read if the captions are closed caption.
         /// </summary>
         public DvbSubtitleTeletextSpacing TeletextSpacing
         {

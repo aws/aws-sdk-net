@@ -44,7 +44,8 @@ namespace Amazon.MediaConvert.Model
         private string _streamName;
 
         /// <summary>
-        /// Gets and sets the property AudioNormalizationSettings.
+        /// Gets and sets the property AudioNormalizationSettings. Advanced audio normalization
+        /// settings.
         /// </summary>
         public AudioNormalizationSettings AudioNormalizationSettings
         {
@@ -101,7 +102,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AudioTypeControl.
+        /// Gets and sets the property AudioTypeControl. When set to FOLLOW_INPUT, if the input
+        /// contains an ISO 639 audio_type, then that value is passed through to the output. If
+        /// the input contains no ISO 639 audio_type, the value in Audio Type is included in the
+        /// output. Otherwise the value in Audio Type is included in the output. Note that this
+        /// field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
         /// </summary>
         public AudioTypeControl AudioTypeControl
         {
@@ -116,7 +121,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecSettings.
+        /// Gets and sets the property CodecSettings. Audio codec settings (CodecSettings) under
+        /// (AudioDescriptions) contains the group of settings related to audio encoding. The
+        /// settings in this group vary depending on the value you choose for Audio codec (Codec).
+        /// For each codec enum you choose, define the corresponding settings object. The following
+        /// lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings
+        /// * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
         /// </summary>
         public AudioCodecSettings CodecSettings
         {
@@ -169,7 +179,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCodeControl.
+        /// Gets and sets the property LanguageCodeControl. Choosing FOLLOW_INPUT will cause the
+        /// ISO 639 language code of the output to follow the ISO 639 language code of the input.
+        /// The language specified for languageCode' will be used when USE_CONFIGURED is selected
+        /// or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by
+        /// the input.
         /// </summary>
         public AudioLanguageCodeControl LanguageCodeControl
         {

@@ -66,7 +66,8 @@ namespace Amazon.MediaConvert.Model
         private Mpeg2TemporalAdaptiveQuantization _temporalAdaptiveQuantization;
 
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization.
+        /// Gets and sets the property AdaptiveQuantization. Adaptive quantization. Allows intra-frame
+        /// quantizers to vary to improve visual quality.
         /// </summary>
         public Mpeg2AdaptiveQuantization AdaptiveQuantization
         {
@@ -99,7 +100,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecLevel.
+        /// Gets and sets the property CodecLevel. Use Level (Mpeg2CodecLevel) to set the MPEG-2
+        /// level for the video output.
         /// </summary>
         public Mpeg2CodecLevel CodecLevel
         {
@@ -114,7 +116,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CodecProfile.
+        /// Gets and sets the property CodecProfile. Use Profile (Mpeg2CodecProfile) to set the
+        /// MPEG-2 profile for the video output.
         /// </summary>
         public Mpeg2CodecProfile CodecProfile
         {
@@ -148,7 +151,17 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateControl.
+        /// Gets and sets the property FramerateControl. If you are using the console, use the
+        /// Framerate setting to specify the frame rate for this output. If you want to keep the
+        /// same frame rate as the input video, choose Follow source. If you want to do frame
+        /// rate conversion, choose a frame rate from the dropdown list or choose Custom. The
+        /// framerates shown in the dropdown list are decimal approximations of fractions. If
+        /// you choose Custom, specify your frame rate as a fraction. If you are creating your
+        /// transcoding job sepecification as a JSON file without the console, use FramerateControl
+        /// to specify which value the service uses for the frame rate for this output. Choose
+        /// INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input.
+        /// Choose SPECIFIED if you want the service to use the frame rate you specify in the
+        /// settings FramerateNumerator and FramerateDenominator.
         /// </summary>
         public Mpeg2FramerateControl FramerateControl
         {
@@ -163,7 +176,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FramerateConversionAlgorithm.
+        /// Gets and sets the property FramerateConversionAlgorithm. When set to INTERPOLATE,
+        /// produces smoother motion during frame rate conversion.
         /// </summary>
         public Mpeg2FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -246,7 +260,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GopSizeUnits.
+        /// Gets and sets the property GopSizeUnits. Indicates if the GOP Size in MPEG2 is specified
+        /// in frames or seconds. If seconds the system will convert the GOP Size into a frame
+        /// count at run time.
         /// </summary>
         public Mpeg2GopSizeUnits GopSizeUnits
         {
@@ -295,7 +311,17 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InterlaceMode.
+        /// Gets and sets the property InterlaceMode. Use Interlace mode (InterlaceMode) to choose
+        /// the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field
+        /// First (BOTTOM_FIELD) produce interlaced output with the entire output having the same
+        /// field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and
+        /// Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+        /// Therefore, behavior depends on the input scan type.  - If the source is interlaced,
+        /// the output will be interlaced with the same polarity as the source (it will follow
+        /// the source). The output could therefore be a mix of "top field first" and "bottom
+        /// field first".  - If the source is progressive, the output will be interlaced with
+        /// "top field first" or "bottom field first" polarity, depending on which of the Follow
+        /// options you chose.
         /// </summary>
         public Mpeg2InterlaceMode InterlaceMode
         {
@@ -310,7 +336,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntraDcPrecision.
+        /// Gets and sets the property IntraDcPrecision. Use Intra DC precision (Mpeg2IntraDcPrecision)
+        /// to set quantization precision for intra-block DC coefficients. If you choose the value
+        /// auto, the service will automatically select the precision based on the per-frame compression
+        /// ratio.
         /// </summary>
         public Mpeg2IntraDcPrecision IntraDcPrecision
         {
@@ -381,7 +410,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParControl.
+        /// Gets and sets the property ParControl. Using the API, enable ParFollowSource if you
+        /// want the service to use the pixel aspect ratio from the input. Using the console,
+        /// do this by choosing Follow source for Pixel aspect ratio.
         /// </summary>
         public Mpeg2ParControl ParControl
         {
@@ -428,7 +459,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QualityTuningLevel.
+        /// Gets and sets the property QualityTuningLevel. Use Quality tuning level (Mpeg2QualityTuningLevel)
+        /// to specifiy whether to use single-pass or multipass video encoding.
         /// </summary>
         public Mpeg2QualityTuningLevel QualityTuningLevel
         {
@@ -443,7 +475,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateControlMode.
+        /// Gets and sets the property RateControlMode. Use Rate control mode (Mpeg2RateControlMode)
+        /// to specifiy whether the bitrate is variable (vbr) or constant (cbr).
         /// </summary>
         public Mpeg2RateControlMode RateControlMode
         {
@@ -458,7 +491,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect.
+        /// Gets and sets the property SceneChangeDetect. Scene change detection (inserts I-frames
+        /// on scene changes).
         /// </summary>
         public Mpeg2SceneChangeDetect SceneChangeDetect
         {
@@ -473,7 +507,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlowPal.
+        /// Gets and sets the property SlowPal. Enables Slow PAL rate conversion. 23.976fps and
+        /// 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
         /// </summary>
         public Mpeg2SlowPal SlowPal
         {
@@ -505,7 +540,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpatialAdaptiveQuantization.
+        /// Gets and sets the property SpatialAdaptiveQuantization. Adjust quantization within
+        /// each frame based on spatial variation of content complexity.
         /// </summary>
         public Mpeg2SpatialAdaptiveQuantization SpatialAdaptiveQuantization
         {
@@ -520,7 +556,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Syntax.
+        /// Gets and sets the property Syntax. Produces a Type D-10 compatible bitstream (SMPTE
+        /// 356M-2001).
         /// </summary>
         public Mpeg2Syntax Syntax
         {
@@ -535,7 +572,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Telecine.
+        /// Gets and sets the property Telecine. Only use Telecine (Mpeg2Telecine) when you set
+        /// Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard (hard) to produce
+        /// a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output
+        /// and leave converstion to the player.
         /// </summary>
         public Mpeg2Telecine Telecine
         {
@@ -550,7 +590,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemporalAdaptiveQuantization.
+        /// Gets and sets the property TemporalAdaptiveQuantization. Adjust quantization within
+        /// each frame based on temporal variation of content complexity.
         /// </summary>
         public Mpeg2TemporalAdaptiveQuantization TemporalAdaptiveQuantization
         {

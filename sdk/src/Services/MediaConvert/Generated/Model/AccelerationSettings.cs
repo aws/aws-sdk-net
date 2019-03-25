@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Acceleration settings for job execution.
+    /// Accelerated transcoding is currently in private preview. Contact AWS for more information.
     /// </summary>
     public partial class AccelerationSettings
     {

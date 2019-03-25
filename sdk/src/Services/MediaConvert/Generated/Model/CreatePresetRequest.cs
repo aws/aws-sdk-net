@@ -87,7 +87,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings.
+        /// Gets and sets the property Settings. Settings for preset
         /// </summary>
         [AWSProperty(Required=true)]
         public PresetSettings Settings

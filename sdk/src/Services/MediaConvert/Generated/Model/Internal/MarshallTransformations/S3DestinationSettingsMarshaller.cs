@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FileGroupSettings Marshaller
+    /// S3DestinationSettings Marshaller
     /// </summary>       
-    public class FileGroupSettingsMarshaller : IRequestMarshaller<FileGroupSettings, JsonMarshallerContext> 
+    public class S3DestinationSettingsMarshaller : IRequestMarshaller<S3DestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,21 +43,15 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FileGroupSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(S3DestinationSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDestination())
+            if(requestObject.IsSetEncryption())
             {
-                context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
-            }
-
-            if(requestObject.IsSetDestinationSettings())
-            {
-                context.Writer.WritePropertyName("destinationSettings");
+                context.Writer.WritePropertyName("encryption");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DestinationSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.DestinationSettings, context);
+                var marshaller = S3EncryptionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Encryption, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -67,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FileGroupSettingsMarshaller Instance = new FileGroupSettingsMarshaller();
+        public readonly static S3DestinationSettingsMarshaller Instance = new S3DestinationSettingsMarshaller();
 
     }
 }

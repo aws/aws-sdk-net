@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("currentPhase", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentPhase = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorCode", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobPercentComplete", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.JobPercentComplete = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobTemplate", targetDepth))
@@ -124,6 +136,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,10 +160,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("statusUpdateIntervalInSecs", targetDepth))
+                if (context.TestExpression("statusUpdateInterval", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StatusUpdateIntervalInSecs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusUpdateInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timing", targetDepth))

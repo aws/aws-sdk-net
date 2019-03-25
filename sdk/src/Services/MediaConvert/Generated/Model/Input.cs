@@ -101,7 +101,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeblockFilter.
+        /// Gets and sets the property DeblockFilter. Enable Deblock (InputDeblockFilter) to produce
+        /// smoother motion in the output. Default is disabled. Only manaully controllable for
+        /// MPEG2 and uncompressed video inputs.
         /// </summary>
         public InputDeblockFilter DeblockFilter
         {
@@ -117,7 +119,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DecryptionSettings. Settings for decrypting any input files
-        /// that are encrypted.
+        /// that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files
+        /// only when you use AWS Key Management Service (KMS) to encrypt the data key that you
+        /// use to encrypt your content.
         /// </summary>
         public InputDecryptionSettings DecryptionSettings
         {
@@ -132,7 +136,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DenoiseFilter.
+        /// Gets and sets the property DenoiseFilter. Enable Denoise (InputDenoiseFilter) to filter
+        /// noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265,
+        /// and uncompressed video inputs.
         /// </summary>
         public InputDenoiseFilter DenoiseFilter
         {
@@ -168,7 +174,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterEnable.
+        /// Gets and sets the property FilterEnable. Use Filter enable (InputFilterEnable) to
+        /// specify how the transcoding service applies the denoise and deblock filters. You must
+        /// also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+        /// (InputDeblockFilter). * Auto - The transcoding service determines whether to apply
+        /// filtering, depending on input type and quality. * Disable - The input is not filtered.
+        /// This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter).
+        /// * Force - The in put is filtered regardless of input type.
         /// </summary>
         public InputFilterEnable FilterEnable
         {
@@ -257,7 +269,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PsiControl.
+        /// Gets and sets the property PsiControl. Set PSI control (InputPsiControl) for transport
+        /// stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan
+        /// all PIDs for audio and video. * Use PSI - Scan only PSI data.
         /// </summary>
         public InputPsiControl PsiControl
         {
@@ -292,7 +306,13 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimecodeSource.
+        /// Gets and sets the property TimecodeSource. Timecode source under input settings (InputTimecodeSource)
+        /// only affects the behavior of features that apply to a single input at a time, such
+        /// as input clipping and synchronizing some captions formats. Use this setting to specify
+        /// whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+        /// by starting the first frame at zero (ZEROBASED). In both cases, the timecode format
+        /// is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED
+        /// if your source video has embedded timecodes.
         /// </summary>
         public InputTimecodeSource TimecodeSource
         {
@@ -307,7 +327,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoSelector.
+        /// Gets and sets the property VideoSelector. Selector for video.
         /// </summary>
         public VideoSelector VideoSelector
         {
