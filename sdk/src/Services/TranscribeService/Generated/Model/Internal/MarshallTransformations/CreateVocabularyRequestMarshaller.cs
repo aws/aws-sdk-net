@@ -85,6 +85,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVocabularyFileUri())
+                {
+                    context.Writer.WritePropertyName("VocabularyFileUri");
+                    context.Writer.Write(publicRequest.VocabularyFileUri);
+                }
+
                 if(publicRequest.IsSetVocabularyName())
                 {
                     context.Writer.WritePropertyName("VocabularyName");
