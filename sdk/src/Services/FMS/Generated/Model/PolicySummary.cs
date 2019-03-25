@@ -117,9 +117,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to protect with the policy, either an Application Load Balancer
-        /// or a CloudFront distribution. This is in the format shown in <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// The type of resource to protect with the policy. This is in the format shown in <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
         /// or <code>AWS::CloudFront::Distribution</code>.
         /// </para>
         /// </summary>
@@ -139,7 +139,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property SecurityServiceType. 
         /// <para>
-        /// The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+        /// The service that the policy is using to protect the resources. This specifies the
+        /// type of policy that is created, either a WAF policy or Shield Advanced policy.
         /// </para>
         /// </summary>
         public SecurityServiceType SecurityServiceType

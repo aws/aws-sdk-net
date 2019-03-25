@@ -135,6 +135,17 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ResourceType);
             }
 
+            if(requestObject.IsSetResourceTypeList())
+            {
+                context.Writer.WritePropertyName("ResourceTypeList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceTypeListListValue in requestObject.ResourceTypeList)
+                {
+                        context.Writer.Write(requestObjectResourceTypeListListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSecurityServicePolicyData())
             {
                 context.Writer.WritePropertyName("SecurityServicePolicyData");

@@ -40,7 +40,7 @@ namespace Amazon.FMS
     /// This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers
     /// who need detailed information about the AWS Firewall Manager API actions, data types,
     /// and errors. For detailed information about AWS Firewall Manager features, see the
-    /// <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
     /// Firewall Manager Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -789,6 +789,71 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  GetProtectionStatus
+
+        /// <summary>
+        /// If you created a Shield Advanced policy, returns policy-level attack summary information
+        /// in the event of a potential DDoS attack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetProtectionStatus service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
+        public virtual GetProtectionStatusResponse GetProtectionStatus(GetProtectionStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetProtectionStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProtectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectionStatus operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProtectionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetProtectionStatus(GetProtectionStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectionStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProtectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProtectionStatus.</param>
+        /// 
+        /// <returns>Returns a  GetProtectionStatusResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
+        public virtual GetProtectionStatusResponse EndGetProtectionStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProtectionStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListComplianceStatus
 
         /// <summary>
@@ -939,7 +1004,7 @@ namespace Amazon.FMS
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.LimitExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
         /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
@@ -1062,6 +1127,22 @@ namespace Amazon.FMS
 
         /// <summary>
         /// Creates an AWS Firewall Manager policy.
+        /// 
+        ///  
+        /// <para>
+        /// Firewall Manager provides two types of policies: A Shield Advanced policy, which applies
+        /// Shield Advanced protection to specified accounts and resources, or a WAF policy, which
+        /// contains a rule group and defines which resources are to be protected by that rule
+        /// group. A policy is specific to either WAF or Shield Advanced. If you want to enforce
+        /// both WAF rules and Shield Advanced protection across accounts, you can create multiple
+        /// policies. You can create one or more policies for WAF rules, and one or more policies
+        /// for Shield Advanced.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must be subscribed to Shield Advanced to create a Shield Advanced policy. For
+        /// more information on subscribing to Shield Advanced, see <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
         /// 
@@ -1083,7 +1164,7 @@ namespace Amazon.FMS
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.LimitExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
         /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">

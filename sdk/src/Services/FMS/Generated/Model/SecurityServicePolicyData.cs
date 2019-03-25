@@ -47,6 +47,10 @@ namespace Amazon.FMS.Model
         /// \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// If this is a Shield Advanced policy, this string will be empty.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string ManagedServiceData
@@ -64,7 +68,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+        /// The service that the policy is using to protect the resources. This specifies the
+        /// type of policy that is created, either a WAF policy or Shield Advanced policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

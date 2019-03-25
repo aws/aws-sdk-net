@@ -143,6 +143,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly DependentServiceName AWSCONFIG = new DependentServiceName("AWSCONFIG");
         /// <summary>
+        /// Constant AWSSHIELD_ADVANCED for DependentServiceName
+        /// </summary>
+        public static readonly DependentServiceName AWSSHIELD_ADVANCED = new DependentServiceName("AWSSHIELD_ADVANCED");
+        /// <summary>
         /// Constant AWSWAF for DependentServiceName
         /// </summary>
         public static readonly DependentServiceName AWSWAF = new DependentServiceName("AWSWAF");
@@ -239,6 +243,10 @@ namespace Amazon.FMS
     {
 
         /// <summary>
+        /// Constant SHIELD_ADVANCED for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType SHIELD_ADVANCED = new SecurityServiceType("SHIELD_ADVANCED");
+        /// <summary>
         /// Constant WAF for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType WAF = new SecurityServiceType("WAF");
@@ -288,6 +296,10 @@ namespace Amazon.FMS
         /// Constant RESOURCE_INCORRECT_WEB_ACL for ViolationReason
         /// </summary>
         public static readonly ViolationReason RESOURCE_INCORRECT_WEB_ACL = new ViolationReason("RESOURCE_INCORRECT_WEB_ACL");
+        /// <summary>
+        /// Constant RESOURCE_MISSING_SHIELD_PROTECTION for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason RESOURCE_MISSING_SHIELD_PROTECTION = new ViolationReason("RESOURCE_MISSING_SHIELD_PROTECTION");
         /// <summary>
         /// Constant RESOURCE_MISSING_WEB_ACL for ViolationReason
         /// </summary>

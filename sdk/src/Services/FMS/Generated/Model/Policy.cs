@@ -41,6 +41,7 @@ namespace Amazon.FMS.Model
         private bool? _remediationEnabled;
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private string _resourceType;
+        private List<string> _resourceTypeList = new List<string>();
         private SecurityServicePolicyData _securityServicePolicyData;
 
         /// <summary>
@@ -218,9 +219,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to protect with the policy, either an Application Load Balancer
-        /// or a CloudFront distribution. This is in the format shown in <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-        /// Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// The type of resource to protect with the policy. This is in the format shown in <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+        /// Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
         /// or <code>AWS::CloudFront::Distribution</code>.
         /// </para>
         /// </summary>
@@ -235,6 +236,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypeList. 
+        /// <para>
+        /// An array of <code>ResourceType</code>.
+        /// </para>
+        /// </summary>
+        public List<string> ResourceTypeList
+        {
+            get { return this._resourceTypeList; }
+            set { this._resourceTypeList = value; }
+        }
+
+        // Check to see if ResourceTypeList property is set
+        internal bool IsSetResourceTypeList()
+        {
+            return this._resourceTypeList != null && this._resourceTypeList.Count > 0; 
         }
 
         /// <summary>
