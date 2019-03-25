@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.482.0",
+    "ProductVersion" : "3.3.483.0",
     "CoreVersion"    : "3.3.100.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -135,7 +135,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.101.0",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -1065,7 +1065,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -1089,7 +1089,7 @@
             "InPreview"               : false
         },
         "IoTAnalytics"                    : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -1097,7 +1097,7 @@
             "InPreview"               : false
         },
         "IoT1ClickDevicesService"         : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
@@ -1241,7 +1241,7 @@
             "InPreview"               : false
         },
         "RoboMaker"                       : {
-            "Version" : "3.3.100.1",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.1"
