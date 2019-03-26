@@ -1,3 +1,14 @@
+### 3.3.484.0 (2019-03-26 19:47 UTC)
+* Glue (3.3.101.0)
+	* This new feature will now allow customers to add a customized csv classifier with classifier API. They can specify a custom delimiter, quote symbol and control other behavior they'd like crawlers to have while recognizing csv files
+* WorkMail (3.3.100.2)
+	* Documentation updates for Amazon WorkMail.
+* Core 3.3.100.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.483.0 (2019-03-25 18:24 UTC)
 * DirectConnect (3.3.101.0)
 	* Direct Connect gateway enables you to establish connectivity between your on-premise networks and Amazon Virtual Private Clouds (VPCs) in any commercial AWS Region (except in China) using AWS Direct Connect connections at any AWS Direct Connect location. This release enables multi-account support for Direct Connect gateway, with multi-account support for Direct Connect gateway, you can associate up to ten VPCs from any AWS account with a Direct Connect gateway. The AWS accounts owning VPCs and the Direct Connect gateway must belong to the same AWS payer account ID. This release also enables Direct Connect Gateway owners to allocate allowed prefixes from each associated VPCs.
