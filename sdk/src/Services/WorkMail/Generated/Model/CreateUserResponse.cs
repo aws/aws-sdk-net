@@ -37,7 +37,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The information regarding the newly created user.
+        /// The identifier for the new user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=256)]

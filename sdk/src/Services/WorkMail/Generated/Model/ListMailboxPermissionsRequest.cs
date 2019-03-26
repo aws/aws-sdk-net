@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMailboxPermissions operation.
-    /// Lists the mailbox permissions associated with a mailbox.
+    /// Lists the mailbox permissions associated with a user, group, or resource mailbox.
     /// </summary>
     public partial class ListMailboxPermissionsRequest : AmazonWorkMailRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the entity (user or group) for which to list mailbox permissions.
+        /// The identifier of the user, group, or resource for which to list mailbox permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -99,7 +99,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The identifier of the organization under which the entity (user or group) exists.
+        /// The identifier of the organization under which the user, group, or resource exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -58,7 +58,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// One page of the entity's mailbox permissions.
+        /// One page of the user, group, or resource mailbox permissions.
         /// </para>
         /// </summary>
         public List<Permission> Permissions

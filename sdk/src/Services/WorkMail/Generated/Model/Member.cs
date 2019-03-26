@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// The representation of a group member (user or group).
+    /// The representation of a user or group.
     /// </summary>
     public partial class Member
     {

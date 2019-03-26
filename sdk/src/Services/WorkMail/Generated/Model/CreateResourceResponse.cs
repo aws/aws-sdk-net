@@ -37,7 +37,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier of the created resource.
+        /// The identifier of the new resource.
         /// </para>
         /// </summary>
         public string ResourceId

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// The overview for a resource containing relevant data regarding it.
+    /// The representation of a resource.
     /// </summary>
     public partial class Resource
     {

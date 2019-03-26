@@ -62,8 +62,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DisabledDate. 
         /// <para>
-        /// The date and time when a resource was registered from Amazon WorkMail, in UNIX epoch
-        /// time format.
+        /// The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.
         /// </para>
         /// </summary>
         public DateTime DisabledDate
@@ -100,8 +99,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EnabledDate. 
         /// <para>
-        /// The date and time when a resource was registered to Amazon WorkMail, in UNIX epoch
-        /// time format.
+        /// The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.
         /// </para>
         /// </summary>
         public DateTime EnabledDate
@@ -157,7 +155,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the resource: enabled (registered to Amazon WorkMail) or disabled (deregistered
-        /// or never registered to Amazon WorkMail).
+        /// or never registered to WorkMail).
         /// </para>
         /// </summary>
         public EntityState State

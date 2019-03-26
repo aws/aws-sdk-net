@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateMemberToGroup operation.
-    /// Adds a member to the group's set.
+    /// Adds a member (user or group) to the group's set.
     /// </summary>
     public partial class AssociateMemberToGroupRequest : AmazonWorkMailRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The group for which the member is associated.
+        /// The group to which the member (user or group) is associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property MemberId. 
         /// <para>
-        /// The member to associate to the group.
+        /// The member (user or group) to associate to the group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]

@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResource operation.
-    /// Creates a new Amazon WorkMail resource. The available types are equipment and room.
+    /// Creates a new Amazon WorkMail resource.
     /// </summary>
     public partial class CreateResourceRequest : AmazonWorkMailRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the created resource.
+        /// The name of the new resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -78,7 +78,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the created resource.
+        /// The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

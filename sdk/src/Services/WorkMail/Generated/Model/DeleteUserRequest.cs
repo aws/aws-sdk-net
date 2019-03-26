@@ -29,9 +29,15 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be
-    /// undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore
-    /// it.
+    /// Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete
+    /// a user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
+    /// action to confirm the user state.
+    /// 
+    ///  
+    /// <para>
+    /// Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes
+    /// for 30 days before they are permanently removed.
+    /// </para>
     /// </summary>
     public partial class DeleteUserRequest : AmazonWorkMailRequest
     {
@@ -41,7 +47,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The organization that contains the user.
+        /// The organization that contains the user to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

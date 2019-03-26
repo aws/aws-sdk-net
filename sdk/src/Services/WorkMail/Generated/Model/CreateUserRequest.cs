@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail
+    /// Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
     /// operation.
     /// </summary>
     public partial class CreateUserRequest : AmazonWorkMailRequest
@@ -42,7 +42,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name for the user to be created.
+        /// The display name for the new user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -61,7 +61,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the user to be created.
+        /// The name for the new user. Simple AD or AD Connector user names have a maximum length
+        /// of 20. All others have a maximum length of 64.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -99,7 +100,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the user to be created.
+        /// The password for the new user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

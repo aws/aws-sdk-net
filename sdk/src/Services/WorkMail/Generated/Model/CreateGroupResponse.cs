@@ -37,7 +37,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the group.
+        /// The identifier of the group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=256)]

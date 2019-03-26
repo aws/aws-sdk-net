@@ -140,7 +140,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered
-        /// or never registered to Amazon WorkMail).
+        /// or never registered to WorkMail).
         /// </para>
         /// </summary>
         public EntityState State
@@ -177,12 +177,11 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property UserRole. 
         /// <para>
-        /// In certain cases other entities are modeled as users. If interoperability is enabled,
-        /// resources are imported into Amazon WorkMail as users. Because different Amazon WorkMail
-        /// organizations rely on different directory types, administrators can distinguish between
-        /// a user that is not registered to Amazon WorkMail (is disabled and has a user role)
-        /// and the administrative users of the directory. The values are USER, RESOURCE, and
-        /// SYSTEM_USER.
+        /// In certain cases, other entities are modeled as users. If interoperability is enabled,
+        /// resources are imported into Amazon WorkMail as users. Because different WorkMail organizations
+        /// rely on different directory types, administrators can distinguish between an unregistered
+        /// user (account is disabled and has a user role) and the directory administrators. The
+        /// values are USER, RESOURCE, and SYSTEM_USER.
         /// </para>
         /// </summary>
         public UserRole UserRole

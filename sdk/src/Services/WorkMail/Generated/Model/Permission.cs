@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Permission granted to an entity (user, group) to access a certain aspect of another
-    /// entity's mailbox.
+    /// Permission granted to a user, group, or resource to access a certain aspect of another
+    /// user, group, or resource mailbox.
     /// </summary>
     public partial class Permission
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GranteeId. 
         /// <para>
-        /// The identifier of the entity (user or group) to which the permissions are granted.
+        /// The identifier of the user, group, or resource to which the permissions are granted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GranteeType. 
         /// <para>
-        /// The type of entity (user, group) of the entity referred to in GranteeId.
+        /// The type of user, group, or resource referred to in GranteeId.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// The brief overview associated with an organization.
+    /// The representation of an organization.
     /// </summary>
     public partial class OrganizationSummary
     {

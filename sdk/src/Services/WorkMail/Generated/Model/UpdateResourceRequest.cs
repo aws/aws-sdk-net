@@ -29,9 +29,9 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResource operation.
-    /// Updates data for the resource. It must be preceded by a describe call in order to
-    /// have the latest information. The dataset in the request should be the one expected
-    /// when performing another describe call.
+    /// Updates data for the resource. To have the latest information, it must be preceded
+    /// by a <a>DescribeResource</a> call. The dataset in the request should be the one expected
+    /// when performing another <code>DescribeResource</code> call.
     /// </summary>
     public partial class UpdateResourceRequest : AmazonWorkMailRequest
     {

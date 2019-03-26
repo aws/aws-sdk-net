@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Container for the parameters to the DeregisterFromWorkMail operation.
     /// Mark a user, group, or resource as no longer used in Amazon WorkMail. This action
-    /// disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes
+    /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes
     /// for 30 days before they are permanently removed. The functionality in the console
     /// is <i>Disable</i>.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier for the entity to be updated.
+        /// The identifier for the member (user or group) to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]

@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDelegateToResource operation.
-    /// Adds a member to the resource's set of delegates.
+    /// Adds a member (user or group) to the resource's set of delegates.
     /// </summary>
     public partial class AssociateDelegateToResourceRequest : AmazonWorkMailRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource for which members are associated.
+        /// The resource for which members (users or groups) are associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

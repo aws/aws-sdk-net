@@ -63,8 +63,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property CompletedDate. 
         /// <para>
-        /// The date at which the organization became usable in the Amazon WorkMail context, in
-        /// UNIX epoch time format.
+        /// The date at which the organization became usable in the WorkMail context, in UNIX
+        /// epoch time format.
         /// </para>
         /// </summary>
         public DateTime CompletedDate
@@ -120,7 +120,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DirectoryType. 
         /// <para>
-        /// The type of directory associated with the Amazon WorkMail organization.
+        /// The type of directory associated with the WorkMail organization.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -139,7 +139,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The (optional) error message indicating if unexpected behavior was encountered with
+        /// (Optional) The error message indicating if unexpected behavior was encountered with
         /// regards to the organization.
         /// </para>
         /// </summary>

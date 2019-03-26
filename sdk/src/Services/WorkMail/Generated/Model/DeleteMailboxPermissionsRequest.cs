@@ -29,7 +29,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMailboxPermissions operation.
-    /// Deletes permissions granted to a user or group.
+    /// Deletes permissions granted to a member (user or group).
     /// </summary>
     public partial class DeleteMailboxPermissionsRequest : AmazonWorkMailRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the entity (user or group) for which to delete mailbox permissions.
+        /// The identifier of the member (user or group)that owns the mailbox.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GranteeId. 
         /// <para>
-        /// The identifier of the entity (user or group) for which to delete granted permissions.
+        /// The identifier of the member (user or group) for which to delete granted permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -78,7 +78,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The identifier of the organization under which the entity (user or group) exists.
+        /// The identifier of the organization under which the member (user or group) exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

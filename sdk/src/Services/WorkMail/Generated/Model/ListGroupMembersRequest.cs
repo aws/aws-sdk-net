@@ -29,7 +29,8 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupMembers operation.
-    /// Returns an overview of the members of a group.
+    /// Returns an overview of the members of a group. Users and groups can be members of
+    /// a group.
     /// </summary>
     public partial class ListGroupMembersRequest : AmazonWorkMailRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The identifier for the group to which the members are associated.
+        /// The identifier for the group to which the members (users or groups) are associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]

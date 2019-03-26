@@ -31,14 +31,14 @@ namespace Amazon.WorkMail
     ///
     /// Amazon WorkMail is a secure, managed business email and calendaring service with support
     /// for existing desktop and mobile email clients. You can access your email, contacts,
-    /// and calendars using Microsoft Outlook, your browser, or their native iOS and Android
-    /// email applications. You can integrate Amazon WorkMail with your existing corporate
-    /// directory and control both the keys that encrypt your data and the location in which
-    /// your data is stored.
+    /// and calendars using Microsoft Outlook, your browser, or other native iOS and Android
+    /// email applications. You can integrate WorkMail with your existing corporate directory
+    /// and control both the keys that encrypt your data and the location in which your data
+    /// is stored.
     /// 
     ///  
     /// <para>
-    /// The Amazon WorkMail API is designed for the following scenarios:
+    /// The WorkMail API is designed for the following scenarios:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -58,15 +58,15 @@ namespace Amazon.WorkMail
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// All Amazon WorkMail API actions are Amazon-authenticated and certificate-signed. They
-    /// not only require the use of the AWS SDK, but also allow for the exclusive use of IAM
-    /// users and roles to help facilitate access, trust, and permission policies. By creating
-    /// a role and allowing an IAM user to access the Amazon WorkMail site, the IAM user gains
-    /// full administrative visibility into the entire Amazon WorkMail organization (or as
-    /// set in the IAM policy). This includes, but is not limited to, the ability to create,
-    /// update, and delete users, groups, and resources. This allows developers to perform
-    /// the scenarios listed above, as well as give users the ability to grant access on a
-    /// selective basis using the IAM model.
+    /// All WorkMail API operations are Amazon-authenticated and certificate-signed. They
+    /// not only require the use of the AWS SDK, but also allow for the exclusive use of AWS
+    /// Identity and Access Management users and roles to help facilitate access, trust, and
+    /// permission policies. By creating a role and allowing an IAM user to access the WorkMail
+    /// site, the IAM user gains full administrative visibility into the entire WorkMail organization
+    /// (or as set in the IAM policy). This includes, but is not limited to, the ability to
+    /// create, update, and delete users, groups, and resources. This allows developers to
+    /// perform the scenarios listed above, as well as give users the ability to grant access
+    /// on a selective basis using the IAM model.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkMail : IAmazonService, IDisposable
@@ -77,17 +77,17 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Adds a member to the resource's set of delegates.
+        /// Adds a member (user or group) to the resource's set of delegates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDelegateToResource service method.</param>
         /// 
         /// <returns>The response from the AssociateDelegateToResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -98,7 +98,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request);
@@ -135,24 +135,23 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Adds a member to the group's set.
+        /// Adds a member (user or group) to the group's set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateMemberToGroup service method.</param>
         /// 
         /// <returns>The response from the AssociateMemberToGroup service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -163,7 +162,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -203,7 +202,7 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Adds an alias to the set of a given member of Amazon WorkMail.
+        /// Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// 
@@ -213,11 +212,11 @@ namespace Amazon.WorkMail
         /// user, group, or resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -236,7 +235,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
@@ -273,24 +272,23 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail
+        /// Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
         /// <returns>The response from the CreateGroup service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -298,10 +296,10 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This entity name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -341,23 +339,22 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Creates a new Amazon WorkMail resource. The available types are equipment and room.
+        /// Creates a new Amazon WorkMail resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResource service method.</param>
         /// 
         /// <returns>The response from the CreateResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -365,10 +362,10 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This entity name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in Amazon WorkMail.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         CreateResourceResponse CreateResource(CreateResourceRequest request);
@@ -405,18 +402,17 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail
+        /// Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
         /// <returns>The response from the CreateUser service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -426,7 +422,7 @@ namespace Amazon.WorkMail
         /// or use of special characters.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -434,10 +430,10 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
-        /// This entity name is not allowed in Amazon WorkMail.
+        /// This user, group, or resource name is not allowed in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -477,17 +473,17 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Remove the alias from a set of aliases for a given user.
+        /// Remove one or more specified aliases from a set of aliases for a given user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -498,7 +494,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
@@ -541,15 +537,14 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -560,7 +555,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -600,17 +595,17 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Deletes permissions granted to a user or group.
+        /// Deletes permissions granted to a member (user or group).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMailboxPermissions service method.</param>
         /// 
         /// <returns>The response from the DeleteMailboxPermissions service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -621,7 +616,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
         DeleteMailboxPermissionsResponse DeleteMailboxPermissions(DeleteMailboxPermissionsRequest request);
@@ -664,8 +659,8 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DeleteResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -676,7 +671,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         DeleteResourceResponse DeleteResource(DeleteResourceRequest request);
@@ -713,23 +708,28 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be
-        /// undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore
-        /// it.
+        /// Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete
+        /// a user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
+        /// action to confirm the user state.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes
+        /// for 30 days before they are permanently removed.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -740,7 +740,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -781,7 +781,7 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Mark a user, group, or resource as no longer used in Amazon WorkMail. This action
-        /// disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes
+        /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes
         /// for 30 days before they are permanently removed. The functionality in the console
         /// is <i>Disable</i>.
         /// </summary>
@@ -789,11 +789,11 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DeregisterFromWorkMail service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -804,7 +804,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         DeregisterFromWorkMailResponse DeregisterFromWorkMail(DeregisterFromWorkMailRequest request);
@@ -847,7 +847,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DescribeGroup service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -858,7 +858,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         DescribeGroupResponse DescribeGroup(DescribeGroupRequest request);
@@ -948,7 +948,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DescribeResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -959,7 +959,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         DescribeResourceResponse DescribeResource(DescribeResourceRequest request);
@@ -1002,7 +1002,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1013,7 +1013,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         DescribeUserResponse DescribeUser(DescribeUserRequest request);
@@ -1056,11 +1056,11 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DisassociateDelegateFromResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1071,7 +1071,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request);
@@ -1114,18 +1114,17 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the DisassociateMemberFromGroup service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1136,7 +1135,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1182,11 +1181,11 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the ListAliases service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1197,7 +1196,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse ListAliases(ListAliasesRequest request);
@@ -1234,17 +1233,18 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Returns an overview of the members of a group.
+        /// Returns an overview of the members of a group. Users and groups can be members of
+        /// a group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupMembers service method.</param>
         /// 
         /// <returns>The response from the ListGroupMembers service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1255,7 +1255,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request);
@@ -1298,7 +1298,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the ListGroups service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1309,7 +1309,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse ListGroups(ListGroupsRequest request);
@@ -1346,13 +1346,13 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Lists the mailbox permissions associated with a mailbox.
+        /// Lists the mailbox permissions associated with a user, group, or resource mailbox.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMailboxPermissions service method.</param>
         /// 
         /// <returns>The response from the ListMailboxPermissions service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1363,7 +1363,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         ListMailboxPermissionsResponse ListMailboxPermissions(ListMailboxPermissionsRequest request);
@@ -1450,11 +1450,11 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the ListResourceDelegates service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1465,7 +1465,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request);
@@ -1516,7 +1516,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         ListResourcesResponse ListResources(ListResourcesRequest request);
@@ -1567,7 +1567,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers(ListUsersRequest request);
@@ -1604,18 +1604,17 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Sets permissions for a user or group. This replaces any pre-existing permissions set
-        /// for the entity.
+        /// Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMailboxPermissions service method.</param>
         /// 
         /// <returns>The response from the PutMailboxPermissions service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1626,7 +1625,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
         PutMailboxPermissionsResponse PutMailboxPermissions(PutMailboxPermissionsRequest request);
@@ -1663,23 +1662,27 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail
-        /// use by associating a mailbox and calendaring capabilities. It performs no change if
-        /// the entity is enabled and fails if the entity is deleted. This operation results in
-        /// the accumulation of costs. For more information, see <a href="http://aws.amazon.com/workmail/pricing">Pricing</a>.
-        /// The equivalent console functionality for this operation is <i>Enable</i>. Users can
-        /// either be created by calling the CreateUser API or they can be synchronized from your
-        /// directory. For more information, see DeregisterFromWorkMail.
+        /// Registers an existing and disabled user, group, or resource for Amazon WorkMail use
+        /// by associating a mailbox and calendaring capabilities. It performs no change if the
+        /// user, group, or resource is enabled and fails if the user, group, or resource is deleted.
+        /// This operation results in the accumulation of costs. For more information, see <a
+        /// href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console
+        /// functionality for this operation is <i>Enable</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// Users can either be created by calling the <a>CreateUser</a> API operation or they
+        /// can be synchronized from your directory. For more information, see <a>DeregisterFromWorkMail</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterToWorkMail service method.</param>
         /// 
         /// <returns>The response from the RegisterToWorkMail service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -1689,11 +1692,11 @@ namespace Amazon.WorkMail
         /// The user, group, or resource that you're trying to register is already registered.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1712,7 +1715,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         RegisterToWorkMailResponse RegisterToWorkMail(RegisterToWorkMailRequest request);
@@ -1755,18 +1758,17 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the ResetPassword service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1781,7 +1783,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1821,30 +1823,29 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Updates the primary email for an entity. The current email is moved into the list
-        /// of aliases (or swapped between an existing alias and the current primary email) and
-        /// the email provided in the input is promoted as the primary.
+        /// Updates the primary email for a user, group, or resource. The current email is moved
+        /// into the list of aliases (or swapped between an existing alias and the current primary
+        /// email), and the email provided in the input is promoted as the primary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePrimaryEmailAddress service method.</param>
         /// 
         /// <returns>The response from the UpdatePrimaryEmailAddress service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryServiceAuthenticationFailedException">
-        /// The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail
-        /// service.
+        /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
         /// user, group, or resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -1866,7 +1867,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1906,30 +1907,30 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Updates data for the resource. It must be preceded by a describe call in order to
-        /// have the latest information. The dataset in the request should be the one expected
-        /// when performing another describe call.
+        /// Updates data for the resource. To have the latest information, it must be preceded
+        /// by a <a>DescribeResource</a> call. The dataset in the request should be the one expected
+        /// when performing another <code>DescribeResource</code> call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory that you are trying to perform operations on isn't available.
+        /// The directory on which you are trying to perform operations isn't available.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
         /// user, group, or resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
-        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
-        /// You are performing an operation on an entity that isn't in the expected state, such
-        /// as trying to update a deleted user.
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidConfigurationException">
         /// The configuration for a resource isn't valid. A resource must either be able to auto-respond
-        /// to requests or have at least one delegate associated that can do it on its behalf.
+        /// to requests or have at least one delegate associated that can do so on its behalf.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
         /// For an email or alias to be created in Amazon WorkMail, the included domain must be
@@ -1940,7 +1941,7 @@ namespace Amazon.WorkMail
         /// is not yet verified.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
-        /// The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
         /// An operation received a valid organization identifier that either doesn't belong or
@@ -1948,7 +1949,7 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
         /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its entities.
+        /// operations on the organization or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         UpdateResourceResponse UpdateResource(UpdateResourceRequest request);
