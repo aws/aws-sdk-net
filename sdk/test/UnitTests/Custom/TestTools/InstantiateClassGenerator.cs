@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         private static object InstantiateType(TypeCircularReference<Type> tcr, Type type)
         {
             bool pushed = false;
-            if (!type.FullName.StartsWith("System"))
+            if (!type.FullName.StartsWith("System."))
             {
                 pushed = tcr.Push(type);
                 if (!pushed)
