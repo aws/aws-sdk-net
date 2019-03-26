@@ -591,7 +591,8 @@ namespace Amazon.Glue
         /// <summary>
         /// Returns a list of resource metadata for a given list of crawler names. After calling
         /// the <code>ListCrawlers</code> operation, you can call this operation to access the
-        /// data to which you have been granted permissions to based on tags.
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers service method.</param>
         /// 
@@ -985,8 +986,8 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>,
-        /// an <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on
-        /// which field of the request is present.
+        /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
+        /// depending on which field of the request is present.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateClassifier service method.</param>
         /// 
@@ -6122,8 +6123,9 @@ namespace Amazon.Glue
         #region  UpdateClassifier
 
         /// <summary>
-        /// Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>,
-        /// or <code>JsonClassifier</code>, depending on which field is present).
+        /// Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>,
+        /// a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+        /// field is present).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClassifier service method.</param>
         /// 

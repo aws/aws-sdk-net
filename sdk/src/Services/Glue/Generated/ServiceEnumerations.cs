@@ -323,6 +323,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type CsvHeaderOption.
+    /// </summary>
+    public class CsvHeaderOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABSENT for CsvHeaderOption
+        /// </summary>
+        public static readonly CsvHeaderOption ABSENT = new CsvHeaderOption("ABSENT");
+        /// <summary>
+        /// Constant PRESENT for CsvHeaderOption
+        /// </summary>
+        public static readonly CsvHeaderOption PRESENT = new CsvHeaderOption("PRESENT");
+        /// <summary>
+        /// Constant UNKNOWN for CsvHeaderOption
+        /// </summary>
+        public static readonly CsvHeaderOption UNKNOWN = new CsvHeaderOption("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CsvHeaderOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CsvHeaderOption FindValue(string value)
+        {
+            return FindValue<CsvHeaderOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CsvHeaderOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeleteBehavior.
     /// </summary>
     public class DeleteBehavior : ConstantClass

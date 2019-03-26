@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlersNotFound. 
         /// <para>
-        /// A list of crawlers not found.
+        /// A list of names of crawlers not found.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

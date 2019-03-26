@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CsvClassifier", targetDepth))
+                {
+                    var unmarshaller = CsvClassifierUnmarshaller.Instance;
+                    unmarshalledObject.CsvClassifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GrokClassifier", targetDepth))
                 {
                     var unmarshaller = GrokClassifierUnmarshaller.Instance;

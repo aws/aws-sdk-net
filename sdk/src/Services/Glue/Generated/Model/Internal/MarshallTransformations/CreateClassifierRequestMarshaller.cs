@@ -68,6 +68,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCsvClassifier())
+                {
+                    context.Writer.WritePropertyName("CsvClassifier");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateCsvClassifierRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CsvClassifier, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGrokClassifier())
                 {
                     context.Writer.WritePropertyName("GrokClassifier");

@@ -1035,6 +1035,23 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCsvClassifierRequest.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCsvClassifierRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCsvClassifierRequest.QuoteSymbol</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateGrokClassifierRequest.CustomPatterns</property>
     <min>0</min>
     <max>16000</max>
@@ -1058,6 +1075,23 @@
     <property>Amazon.Glue.Model.CreateXMLClassifierRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CsvClassifier.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CsvClassifier.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CsvClassifier.QuoteSymbol</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Database.Description</property>
@@ -1426,6 +1460,23 @@
     <property>Amazon.Glue.Model.TriggerUpdate.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateCsvClassifierRequest.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateCsvClassifierRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateCsvClassifierRequest.QuoteSymbol</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[^\r\n]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGrokClassifierRequest.CustomPatterns</property>

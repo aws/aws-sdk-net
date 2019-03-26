@@ -29,14 +29,34 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateClassifier operation.
-    /// Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>,
-    /// or <code>JsonClassifier</code>, depending on which field is present).
+    /// Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>,
+    /// a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+    /// field is present).
     /// </summary>
     public partial class UpdateClassifierRequest : AmazonGlueRequest
     {
+        private UpdateCsvClassifierRequest _csvClassifier;
         private UpdateGrokClassifierRequest _grokClassifier;
         private UpdateJsonClassifierRequest _jsonClassifier;
         private UpdateXMLClassifierRequest _xmlClassifier;
+
+        /// <summary>
+        /// Gets and sets the property CsvClassifier. 
+        /// <para>
+        /// A <code>CsvClassifier</code> object with updated fields.
+        /// </para>
+        /// </summary>
+        public UpdateCsvClassifierRequest CsvClassifier
+        {
+            get { return this._csvClassifier; }
+            set { this._csvClassifier = value; }
+        }
+
+        // Check to see if CsvClassifier property is set
+        internal bool IsSetCsvClassifier()
+        {
+            return this._csvClassifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
