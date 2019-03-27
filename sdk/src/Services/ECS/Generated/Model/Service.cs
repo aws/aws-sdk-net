@@ -531,7 +531,12 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceRegistries.
+        /// Gets and sets the property ServiceRegistries. 
+        /// <para>
+        /// The details of the service discovery registries to assign to this service. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.
+        /// </para>
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries
         {
@@ -608,9 +613,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskSets. 
         /// <para>
-        /// Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon
-        /// ECS task set includes details such as the desired number of tasks, how many tasks
-        /// are running, and whether the task set serves production traffic.
+        /// Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+        /// deployment. An Amazon ECS task set includes details such as the desired number of
+        /// tasks, how many tasks are running, and whether the task set serves production traffic.
         /// </para>
         /// </summary>
         public List<TaskSet> TaskSets

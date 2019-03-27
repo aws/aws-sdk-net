@@ -332,6 +332,39 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  CreateTaskSet
+
+        internal virtual CreateTaskSetResponse CreateTaskSet(CreateTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTaskSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
+        public virtual Task<CreateTaskSetResponse> CreateTaskSetAsync(CreateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTaskSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAccountSetting
 
         internal virtual DeleteAccountSettingResponse DeleteAccountSetting(DeleteAccountSettingRequest request)
@@ -460,6 +493,39 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTaskSet
+
+        internal virtual DeleteTaskSetResponse DeleteTaskSet(DeleteTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTaskSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
+        public virtual Task<DeleteTaskSetResponse> DeleteTaskSetAsync(DeleteTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTaskSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -691,6 +757,39 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTaskSets
+
+        internal virtual DescribeTaskSetsResponse DescribeTaskSets(DescribeTaskSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTaskSetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTaskSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTaskSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
+        public virtual Task<DescribeTaskSetsResponse> DescribeTaskSetsAsync(DescribeTaskSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTaskSetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1384,6 +1483,72 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServicePrimaryTaskSet
+
+        internal virtual UpdateServicePrimaryTaskSetResponse UpdateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServicePrimaryTaskSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServicePrimaryTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServicePrimaryTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
+        public virtual Task<UpdateServicePrimaryTaskSetResponse> UpdateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServicePrimaryTaskSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTaskSet
+
+        internal virtual UpdateTaskSetResponse UpdateTaskSet(UpdateTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskSetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
+        public virtual Task<UpdateTaskSetResponse> UpdateTaskSetAsync(UpdateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTaskSetResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -28,12 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon
-    /// ECS task set includes details such as the desired number of tasks, how many tasks
-    /// are running, and whether the task set serves production traffic.
+    /// Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+    /// deployment. An Amazon ECS task set includes details such as the desired number of
+    /// tasks, how many tasks are running, and whether the task set serves production traffic.
     /// </summary>
     public partial class TaskSet
     {
+        private string _clusterArn;
         private int? _computedDesiredCount;
         private DateTime? _createdAt;
         private string _externalId;
@@ -45,6 +46,8 @@ namespace Amazon.ECS.Model
         private string _platformVersion;
         private int? _runningCount;
         private Scale _scale;
+        private string _serviceArn;
+        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private StabilityStatus _stabilityStatus;
         private DateTime? _stabilityStatusAt;
         private string _startedBy;
@@ -54,10 +57,31 @@ namespace Amazon.ECS.Model
         private DateTime? _updatedAt;
 
         /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cluster that the service that hosts the task
+        /// set exists in.
+        /// </para>
+        /// </summary>
+        public string ClusterArn
+        {
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
+        }
+
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
+        {
+            return this._clusterArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComputedDesiredCount. 
         /// <para>
         /// The computed desired count for the task set. This is calculated by multiplying the
         /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage.
+        /// The result is always rounded up. For example, if the computed desired count is 1.2,
+        /// it rounds up to 2 tasks.
         /// </para>
         /// </summary>
         public int ComputedDesiredCount
@@ -93,7 +117,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The deployment ID of the AWS CodeDeploy deployment.
+        /// The external ID associated with the task set.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a task set is created by an AWS CodeDeploy deployment, the <code>externalId</code>
+        /// parameter contains the AWS CodeDeploy deployment ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a task set is created for an external deployment and is associated with a service
+        /// discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code>
+        /// AWS Cloud Map attribute.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -188,7 +223,7 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the task set that are in the <code>PENDING</code> status during
         /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code>
         /// state. A task set enters the <code>PENDING</code> status when it launches for the
-        /// first time, or when it is restarted after being in the <code>STOPPED</code> state.
+        /// first time or when it is restarted after being in the <code>STOPPED</code> state.
         /// </para>
         /// </summary>
         public int PendingCount
@@ -249,7 +284,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Scale. 
         /// <para>
         /// A floating-point percentage of the desired number of tasks to place and keep running
-        /// in the service.
+        /// in the task set.
         /// </para>
         /// </summary>
         public Scale Scale
@@ -262,6 +297,44 @@ namespace Amazon.ECS.Model
         internal bool IsSetScale()
         {
             return this._scale != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service the task set exists in.
+        /// </para>
+        /// </summary>
+        public string ServiceArn
+        {
+            get { return this._serviceArn; }
+            set { this._serviceArn = value; }
+        }
+
+        // Check to see if ServiceArn property is set
+        internal bool IsSetServiceArn()
+        {
+            return this._serviceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegistries. 
+        /// <para>
+        /// The details of the service discovery registries to assign to this task set. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.
+        /// </para>
+        /// </summary>
+        public List<ServiceRegistry> ServiceRegistries
+        {
+            get { return this._serviceRegistries; }
+            set { this._serviceRegistries = value; }
+        }
+
+        // Check to see if ServiceRegistries property is set
+        internal bool IsSetServiceRegistries()
+        {
+            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
         }
 
         /// <summary>
@@ -325,8 +398,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The tag specified when a task set is started. If the task is started by an AWS CodeDeploy
-        /// deployment, then the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+        /// The tag specified when a task set is started. If the task set is created by an AWS
+        /// CodeDeploy deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>.
+        /// For a task set created for an external deployment, the startedBy field isn't used.
         /// </para>
         /// </summary>
         public string StartedBy

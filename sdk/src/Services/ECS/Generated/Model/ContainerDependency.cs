@@ -28,7 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The dependencies defined for container startup. A container can contain multiple dependencies.
+    /// The dependencies defined for container startup and shutdown. A container can contain
+    /// multiple dependencies. When a dependency is defined for container startup, for container
+    /// shutdown it is reversed.
+    /// 
+    ///  
+    /// <para>
+    /// Your Amazon ECS container instances require at least version 1.26.0 of the container
+    /// agent to enable container dependencies. However, we recommend using the latest container
+    /// agent version. For information about checking your agent version and updating to the
+    /// latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+    /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
+    /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
+    /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
+    /// instances are launched from version <code>20190301</code> or later, then they contain
+    /// the required versions of the container agent and <code>ecs-init</code>. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+    /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you are using tasks that use the Fargate launch type, container dependency parameters
+    /// are not supported.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ContainerDependency
     {
@@ -51,19 +74,19 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <code>COMPLETE</code> - This condition validates that a dependent container runs
         /// to completion (exits) before permitting other containers to start. This can be useful
-        /// for non-essential containers that run a script and then subsequently exit.
+        /// for nonessential containers that run a script and then exit.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it
-        /// will also require that the container exits with a <code>zero</code> status.
+        /// also requires that the container exits with a <code>zero</code> status.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>HEALTHY</code> - This condition validates that the dependent container passes
         /// its Docker health check before permitting other containers to start. This requires
-        /// that the dependent container has health checks configured. This condition will only
-        /// be confirmed at task startup.
+        /// that the dependent container has health checks configured. This condition is confirmed
+        /// only at task startup.
         /// </para>
         ///  </li> </ul>
         /// </summary>

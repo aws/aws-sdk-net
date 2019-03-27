@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A floating-point percentage of the desired number of tasks to place and keep running
-    /// in the task set.
+    /// This is the response object from the DescribeTaskSets operation.
     /// </summary>
-    public partial class Scale
+    public partial class DescribeTaskSetsResponse : AmazonWebServiceResponse
     {
-        private ScaleUnit _unit;
-        private double? _value;
+        private List<Failure> _failures = new List<Failure>();
+        private List<TaskSet> _taskSets = new List<TaskSet>();
 
         /// <summary>
-        /// Gets and sets the property Unit. 
+        /// Gets and sets the property Failures. 
         /// <para>
-        /// The unit of measure for the scale value.
+        /// Any failures associated with the call.
         /// </para>
         /// </summary>
-        public ScaleUnit Unit
+        public List<Failure> Failures
         {
-            get { return this._unit; }
-            set { this._unit = value; }
+            get { return this._failures; }
+            set { this._failures = value; }
         }
 
-        // Check to see if Unit property is set
-        internal bool IsSetUnit()
+        // Check to see if Failures property is set
+        internal bool IsSetFailures()
         {
-            return this._unit != null;
+            return this._failures != null && this._failures.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property TaskSets. 
         /// <para>
-        /// The value, specified as a percent total of a service's <code>desiredCount</code>,
-        /// to scale the task set. Accepted values are numbers between 0 and 100.
+        /// The list of task sets described.
         /// </para>
         /// </summary>
-        public double Value
+        public List<TaskSet> TaskSets
         {
-            get { return this._value.GetValueOrDefault(); }
-            set { this._value = value; }
+            get { return this._taskSets; }
+            set { this._taskSets = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if TaskSets property is set
+        internal bool IsSetTaskSets()
         {
-            return this._value.HasValue; 
+            return this._taskSets != null && this._taskSets.Count > 0; 
         }
 
     }

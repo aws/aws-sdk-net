@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The details of an Amazon ECS service deployment. This is used when a service uses
-    /// the <code>CODE_DEPLOY</code> deployment controller type.
+    /// The details of an Amazon ECS service deployment. This is used only when a service
+    /// uses the <code>ECS</code> deployment controller type.
     /// </summary>
     public partial class Deployment
     {

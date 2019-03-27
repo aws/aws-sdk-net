@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// There are two deployment controller types available:
+        /// There are three deployment controller types available:
         /// </para>
         ///  <dl> <dt>ECS</dt> <dd> 
         /// <para>
@@ -56,8 +56,13 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment
         /// model powered by AWS CodeDeploy, which allows you to verify a new deployment of a
-        /// service before sending production traffic to it. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// service before sending production traffic to it.
+        /// </para>
+        ///  </dd> <dt>EXTERNAL</dt> <dd> 
+        /// <para>
+        /// The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party
+        /// deployment controller for full control over the deployment process for an Amazon ECS
+        /// service.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

@@ -458,6 +458,10 @@ namespace Amazon.ECS
         /// Constant ECS for DeploymentControllerType
         /// </summary>
         public static readonly DeploymentControllerType ECS = new DeploymentControllerType("ECS");
+        /// <summary>
+        /// Constant EXTERNAL for DeploymentControllerType
+        /// </summary>
+        public static readonly DeploymentControllerType EXTERNAL = new DeploymentControllerType("EXTERNAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

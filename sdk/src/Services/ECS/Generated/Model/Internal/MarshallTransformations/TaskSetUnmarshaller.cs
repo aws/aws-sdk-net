@@ -64,6 +64,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("clusterArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("computedDesiredCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -128,6 +134,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ScaleUnmarshaller.Instance;
                     unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceRegistries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceRegistry, ServiceRegistryUnmarshaller>(ServiceRegistryUnmarshaller.Instance);
+                    unmarshalledObject.ServiceRegistries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stabilityStatus", targetDepth))

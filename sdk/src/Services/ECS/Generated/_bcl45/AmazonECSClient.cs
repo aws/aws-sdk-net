@@ -331,9 +331,9 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Runs and maintains a desired number of tasks from a specified task definition. If
-        /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-        /// ECS spawns another copy of the task in the specified cluster. To update an existing
-        /// service, see <a>UpdateService</a>.
+        /// the number of tasks running in a service drops below the <code>desiredCount</code>,
+        /// Amazon ECS spawns another copy of the task in the specified cluster. To update an
+        /// existing service, see <a>UpdateService</a>.
         /// 
         ///  
         /// <para>
@@ -344,25 +344,56 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// You can optionally specify a deployment configuration for your service. The deployment
-        /// is triggered by changing properties, such as the task definition or the desired count
-        /// of a service, with an <a>UpdateService</a> operation.
+        /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
+        /// they're in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
+        /// load balancer are considered healthy if they're in the <code>RUNNING</code> state
+        /// and the container instance that they're hosted on is reported as healthy by the load
+        /// balancer.
         /// </para>
         ///  
         /// <para>
-        /// If a service is using the <code>ECS</code> deployment controller, the <b>minimum healthy
-        /// percent</b> represents a lower limit on the number of tasks in a service that must
-        /// remain in the <code>RUNNING</code> state during a deployment, as a percentage of the
-        /// desired number of tasks (rounded up to the nearest integer), and while any container
-        /// instances are in the <code>DRAINING</code> state if the service contains tasks using
-        /// the EC2 launch type. This parameter enables you to deploy without using additional
-        /// cluster capacity. For example, if your service has a desired number of four tasks
-        /// and a minimum healthy percent of 50%, the scheduler may stop two existing tasks to
-        /// free up cluster capacity before starting two new tasks. Tasks for services that <i>do
-        /// not</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
-        /// state; tasks for services that <i>do</i> use a load balancer are considered healthy
-        /// if they are in the <code>RUNNING</code> state and they are reported as healthy by
-        /// the load balancer. The default value for minimum healthy percent is 100%.
+        /// There are two service scheduler strategies available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REPLICA</code> - The replica scheduling strategy places and maintains the desired
+        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
+        /// across Availability Zones. You can use task placement strategies and constraints to
+        /// customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on
+        /// each active container instance that meets all of the task placement constraints that
+        /// you specify in your cluster. When using this strategy, you don't need to specify a
+        /// desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can optionally specify a deployment configuration for your service. The deployment
+        /// is triggered by changing properties, such as the task definition or the desired count
+        /// of a service, with an <a>UpdateService</a> operation. The default value for a replica
+        /// service for <code>minimumHealthyPercent</code> is 100%. The default value for a daemon
+        /// service for <code>minimumHealthyPercent</code> is 0%.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a service is using the <code>ECS</code> deployment controller, the minimum healthy
+        /// percent represents a lower limit on the number of tasks in a service that must remain
+        /// in the <code>RUNNING</code> state during a deployment, as a percentage of the desired
+        /// number of tasks (rounded up to the nearest integer), and while any container instances
+        /// are in the <code>DRAINING</code> state if the service contains tasks using the EC2
+        /// launch type. This parameter enables you to deploy without using additional cluster
+        /// capacity. For example, if your service has a desired number of four tasks and a minimum
+        /// healthy percent of 50%, the scheduler might stop two existing tasks to free up cluster
+        /// capacity before starting two new tasks. Tasks for services that <i>do not</i> use
+        /// a load balancer are considered healthy if they're in the <code>RUNNING</code> state.
+        /// Tasks for services that <i>do</i> use a load balancer are considered healthy if they're
+        /// in the <code>RUNNING</code> state and they're reported as healthy by the load balancer.
+        /// The default value for minimum healthy percent is 100%.
         /// </para>
         ///  
         /// <para>
@@ -379,23 +410,22 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// If a service is using the <code>CODE_DEPLOY</code> deployment controller and tasks
-        /// that use the EC2 launch type, the <b>minimum healthy percent</b> and <b>maximum percent</b>
-        /// values are only used to define the lower and upper limit on the number of the tasks
-        /// in the service that remain in the <code>RUNNING</code> state while the container instances
-        /// are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
-        /// launch type, the minimum healthy percent and maximum percent values are not used,
-        /// although they are currently visible when describing your service.
+        /// If a service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+        /// deployment controller types and tasks that use the EC2 launch type, the <b>minimum
+        /// healthy percent</b> and <b>maximum percent</b> values are used only to define the
+        /// lower and upper limit on the number of the tasks in the service that remain in the
+        /// <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code>
+        /// state. If the tasks in the service use the Fargate launch type, the minimum healthy
+        /// percent and maximum percent values aren't used, although they're currently visible
+        /// when describing your service.
         /// </para>
         ///  
         /// <para>
-        /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
-        /// they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use
-        /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
-        /// and the container instance they are hosted on is reported as healthy by the load balancer.
-        /// The default value for a replica service for <code>minimumHealthyPercent</code> is
-        /// 100%. The default value for a daemon service for <code>minimumHealthyPercent</code>
-        /// is 0%.
+        /// When creating a service that uses the <code>EXTERNAL</code> deployment controller,
+        /// you can specify only parameters that aren't controlled at the task set level. The
+        /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -486,6 +516,84 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTaskSet
+
+
+        /// <summary>
+        /// Create a task set in the specified cluster and service. This is used when a service
+        /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateTaskSet service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version does not satisfy the task definition's required capabilities.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You can't update a service that is inactive.
+        /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task is not supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
+        public virtual CreateTaskSetResponse CreateTaskSet(CreateTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTaskSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
+        public virtual Task<CreateTaskSetResponse> CreateTaskSetAsync(CreateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTaskSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -742,6 +850,82 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTaskSet
+
+
+        /// <summary>
+        /// Deletes a specified task set within a service. This is used when a service uses the
+        /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTaskSet service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You can't update a service that is inactive.
+        /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
+        /// The specified task set could not be found. You can view your available container instances
+        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+        /// Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task is not supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
+        public virtual DeleteTaskSetResponse DeleteTaskSet(DeleteTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTaskSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
+        public virtual Task<DeleteTaskSetResponse> DeleteTaskSetAsync(DeleteTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTaskSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1166,6 +1350,78 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTaskSets
+
+
+        /// <summary>
+        /// Describes the task sets in the specified cluster and service. This is used when a
+        /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTaskSets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTaskSets service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You can't update a service that is inactive.
+        /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task is not supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
+        public virtual DescribeTaskSetsResponse DescribeTaskSets(DescribeTaskSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTaskSetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTaskSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTaskSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
+        public virtual Task<DescribeTaskSetsResponse> DescribeTaskSetsAsync(DescribeTaskSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTaskSetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2511,6 +2767,13 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
+        /// For services using an external deployment controller, you can update only the desired
+        /// count and health check grace period using this API. If the launch type, load balancer,
+        /// network configuration, platform version, or task definition need to be updated, you
+        /// should create a new task set. For more information, see <a>CreateTaskSet</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// You can add to or subtract from the number of instantiations of a task definition
         /// in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code>
         /// parameter.
@@ -2674,6 +2937,163 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServicePrimaryTaskSet
+
+
+        /// <summary>
+        /// Modifies which task set in a service is the primary task set. Any parameters that
+        /// are updated on the primary task set in a service will transition to the service. This
+        /// is used when a service uses the <code>EXTERNAL</code> deployment controller type.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServicePrimaryTaskSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServicePrimaryTaskSet service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You can't update a service that is inactive.
+        /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
+        /// The specified task set could not be found. You can view your available container instances
+        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+        /// Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task is not supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
+        public virtual UpdateServicePrimaryTaskSetResponse UpdateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServicePrimaryTaskSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServicePrimaryTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServicePrimaryTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
+        public virtual Task<UpdateServicePrimaryTaskSetResponse> UpdateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateServicePrimaryTaskSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTaskSet
+
+
+        /// <summary>
+        /// Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment
+        /// controller type. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskSet service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You do not have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service is not active. You can't update a service that is inactive.
+        /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service could not be found. You can view your available services with
+        /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
+        /// The specified task set could not be found. You can view your available container instances
+        /// with <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and
+        /// Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task is not supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
+        public virtual UpdateTaskSetResponse UpdateTaskSet(UpdateTaskSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
+        public virtual Task<UpdateTaskSetResponse> UpdateTaskSetAsync(UpdateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTaskSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
