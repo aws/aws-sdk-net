@@ -35,6 +35,8 @@ namespace Amazon.Transfer.Model
     public partial class DescribedServer
     {
         private string _arn;
+        private EndpointDetails _endpointDetails;
+        private EndpointType _endpointType;
         private IdentityProviderDetails _identityProviderDetails;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
@@ -60,6 +62,36 @@ namespace Amazon.Transfer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointDetails.
+        /// </summary>
+        public EndpointDetails EndpointDetails
+        {
+            get { return this._endpointDetails; }
+            set { this._endpointDetails = value; }
+        }
+
+        // Check to see if EndpointDetails property is set
+        internal bool IsSetEndpointDetails()
+        {
+            return this._endpointDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType.
+        /// </summary>
+        public EndpointType EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>

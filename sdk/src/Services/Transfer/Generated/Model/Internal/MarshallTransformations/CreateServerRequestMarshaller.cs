@@ -68,6 +68,23 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndpointDetails())
+                {
+                    context.Writer.WritePropertyName("EndpointDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndpointDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEndpointType())
+                {
+                    context.Writer.WritePropertyName("EndpointType");
+                    context.Writer.Write(publicRequest.EndpointType);
+                }
+
                 if(publicRequest.IsSetIdentityProviderDetails())
                 {
                     context.Writer.WritePropertyName("IdentityProviderDetails");

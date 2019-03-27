@@ -70,6 +70,18 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointDetails", targetDepth))
+                {
+                    var unmarshaller = EndpointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EndpointDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndpointType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityProviderDetails", targetDepth))
                 {
                     var unmarshaller = IdentityProviderDetailsUnmarshaller.Instance;

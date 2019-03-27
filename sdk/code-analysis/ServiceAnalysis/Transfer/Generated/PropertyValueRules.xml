@@ -28,7 +28,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserResponse.ServerId</property>
@@ -36,7 +36,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CreateUserResponse.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteServerRequest.ServerId</property>
@@ -52,7 +52,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteSshPublicKeyRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteUserRequest.ServerId</property>
@@ -60,7 +60,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteUserRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeServerRequest.ServerId</property>
@@ -72,7 +72,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeUserRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeUserResponse.ServerId</property>
@@ -89,7 +89,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyResponse.ServerId</property>
@@ -101,7 +101,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyResponse.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListServersRequest.MaxResults</property>
@@ -185,7 +185,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.TestIdentityProviderRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UntagResourceRequest.Arn</property>
@@ -219,7 +219,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserRequest.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserResponse.ServerId</property>
@@ -227,7 +227,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateUserResponse.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedServer.Arn</property>
@@ -258,7 +258,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedUser.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.EndpointDetails.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.IdentityProviderDetails.InvocationRole</property>
@@ -293,7 +297,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedUser.UserName</property>
-    <pattern>^[a-z0-9]{3,32}$</pattern>
+    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.SshPublicKey.SshPublicKeyBody</property>

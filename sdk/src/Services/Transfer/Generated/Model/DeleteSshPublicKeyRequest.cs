@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyId. 
         /// <para>
-        /// A unique identifier used to reference your user’s specific SSH key.
+        /// A unique identifier used to reference your user's specific SSH key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

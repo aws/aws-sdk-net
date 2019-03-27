@@ -39,9 +39,41 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class UpdateServerRequest : AmazonTransferRequest
     {
+        private EndpointDetails _endpointDetails;
+        private EndpointType _endpointType;
         private IdentityProviderDetails _identityProviderDetails;
         private string _loggingRole;
         private string _serverId;
+
+        /// <summary>
+        /// Gets and sets the property EndpointDetails.
+        /// </summary>
+        public EndpointDetails EndpointDetails
+        {
+            get { return this._endpointDetails; }
+            set { this._endpointDetails = value; }
+        }
+
+        // Check to see if EndpointDetails property is set
+        internal bool IsSetEndpointDetails()
+        {
+            return this._endpointDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType.
+        /// </summary>
+        public EndpointType EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityProviderDetails. 

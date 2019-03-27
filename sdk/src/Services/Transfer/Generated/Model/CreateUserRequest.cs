@@ -95,11 +95,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role that controls your user’s access to your Amazon S3 bucket. The policies
+        /// The IAM role that controls your user's access to your Amazon S3 bucket. The policies
         /// attached to this role will determine the level of access you want to provide your
         /// users when transferring files into and out of your Amazon S3 bucket or buckets. The
         /// IAM role should also contain a trust relationship that allows the SFTP server to access
-        /// your resources when servicing your SFTP user’s transfer requests.
+        /// your resources when servicing your SFTP user's transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
