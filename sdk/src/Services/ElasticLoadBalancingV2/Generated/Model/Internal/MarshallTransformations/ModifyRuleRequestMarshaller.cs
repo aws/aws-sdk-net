@@ -237,6 +237,89 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Field", StringUtils.FromString(publicRequestlistValue.Field));
                         }
+                        if(publicRequestlistValue.IsSetHostHeaderConfig())
+                        {
+                            if(publicRequestlistValue.HostHeaderConfig.IsSetValues())
+                            {
+                                int publicRequestlistValueHostHeaderConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueHostHeaderConfiglistValue in publicRequestlistValue.HostHeaderConfig.Values)
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHostHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHostHeaderConfiglistValue));
+                                    publicRequestlistValueHostHeaderConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetHttpHeaderConfig())
+                        {
+                            if(publicRequestlistValue.HttpHeaderConfig.IsSetHttpHeaderName())
+                            {
+                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "HttpHeaderName", StringUtils.FromString(publicRequestlistValue.HttpHeaderConfig.HttpHeaderName));
+                            }
+                            if(publicRequestlistValue.HttpHeaderConfig.IsSetValues())
+                            {
+                                int publicRequestlistValueHttpHeaderConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueHttpHeaderConfiglistValue in publicRequestlistValue.HttpHeaderConfig.Values)
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpHeaderConfiglistValue));
+                                    publicRequestlistValueHttpHeaderConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetHttpRequestMethodConfig())
+                        {
+                            if(publicRequestlistValue.HttpRequestMethodConfig.IsSetValues())
+                            {
+                                int publicRequestlistValueHttpRequestMethodConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueHttpRequestMethodConfiglistValue in publicRequestlistValue.HttpRequestMethodConfig.Values)
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpRequestMethodConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpRequestMethodConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpRequestMethodConfiglistValue));
+                                    publicRequestlistValueHttpRequestMethodConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetPathPatternConfig())
+                        {
+                            if(publicRequestlistValue.PathPatternConfig.IsSetValues())
+                            {
+                                int publicRequestlistValuePathPatternConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValuePathPatternConfiglistValue in publicRequestlistValue.PathPatternConfig.Values)
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValuePathPatternConfiglistValueIndex, StringUtils.FromString(publicRequestlistValuePathPatternConfiglistValue));
+                                    publicRequestlistValuePathPatternConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetQueryStringConfig())
+                        {
+                            if(publicRequestlistValue.QueryStringConfig.IsSetValues())
+                            {
+                                int publicRequestlistValueQueryStringConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueQueryStringConfiglistValue in publicRequestlistValue.QueryStringConfig.Values)
+                                {
+                                    if(publicRequestlistValueQueryStringConfiglistValue.IsSetKey())
+                                    {
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Key));
+                                    }
+                                    if(publicRequestlistValueQueryStringConfiglistValue.IsSetValue())
+                                    {
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Value));
+                                    }
+                                    publicRequestlistValueQueryStringConfiglistValueIndex++;
+                                }
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetSourceIpConfig())
+                        {
+                            if(publicRequestlistValue.SourceIpConfig.IsSetValues())
+                            {
+                                int publicRequestlistValueSourceIpConfiglistValueIndex = 1;
+                                foreach(var publicRequestlistValueSourceIpConfiglistValue in publicRequestlistValue.SourceIpConfig.Values)
+                                {
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceIpConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueSourceIpConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueSourceIpConfiglistValue));
+                                    publicRequestlistValueSourceIpConfiglistValueIndex++;
+                                }
+                            }
+                        }
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;

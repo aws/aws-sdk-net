@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleCondition Object
+    /// Response Unmarshaller for HttpHeaderConditionConfig Object
     /// </summary>  
-    public class RuleConditionUnmarshaller : IUnmarshaller<RuleCondition, XmlUnmarshallerContext>, IUnmarshaller<RuleCondition, JsonUnmarshallerContext>
+    public class HttpHeaderConditionConfigUnmarshaller : IUnmarshaller<HttpHeaderConditionConfig, XmlUnmarshallerContext>, IUnmarshaller<HttpHeaderConditionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleCondition Unmarshall(XmlUnmarshallerContext context)
+        public HttpHeaderConditionConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            RuleCondition unmarshalledObject = new RuleCondition();
+            HttpHeaderConditionConfig unmarshalledObject = new HttpHeaderConditionConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Field", targetDepth))
+                    if (context.TestExpression("HttpHeaderName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Field = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HostHeaderConfig", targetDepth))
-                    {
-                        var unmarshaller = HostHeaderConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.HostHeaderConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HttpHeaderConfig", targetDepth))
-                    {
-                        var unmarshaller = HttpHeaderConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.HttpHeaderConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HttpRequestMethodConfig", targetDepth))
-                    {
-                        var unmarshaller = HttpRequestMethodConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.HttpRequestMethodConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PathPatternConfig", targetDepth))
-                    {
-                        var unmarshaller = PathPatternConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.PathPatternConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("QueryStringConfig", targetDepth))
-                    {
-                        var unmarshaller = QueryStringConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.QueryStringConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SourceIpConfig", targetDepth))
-                    {
-                        var unmarshaller = SourceIpConditionConfigUnmarshaller.Instance;
-                        unmarshalledObject.SourceIpConfig = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HttpHeaderName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Values/member", targetDepth))
@@ -118,18 +82,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleCondition Unmarshall(JsonUnmarshallerContext context)
+        public HttpHeaderConditionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static RuleConditionUnmarshaller _instance = new RuleConditionUnmarshaller();        
+        private static HttpHeaderConditionConfigUnmarshaller _instance = new HttpHeaderConditionConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleConditionUnmarshaller Instance
+        public static HttpHeaderConditionConfigUnmarshaller Instance
         {
             get
             {
