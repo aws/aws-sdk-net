@@ -86,6 +86,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KMSKey);
                 }
 
+                if(publicRequest.IsSetPoolId())
+                {
+                    context.Writer.WritePropertyName("PoolId");
+                    context.Writer.Write(publicRequest.PoolId);
+                }
+
                 if(publicRequest.IsSetTapeBarcode())
                 {
                     context.Writer.WritePropertyName("TapeBarcode");

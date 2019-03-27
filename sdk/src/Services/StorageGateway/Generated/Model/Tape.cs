@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     public partial class Tape
     {
         private string _kmsKey;
+        private string _poolId;
         private double? _progress;
         private string _tapeARN;
         private string _tapeBarcode;
@@ -56,6 +57,32 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetKMSKey()
         {
             return this._kmsKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolId. 
+        /// <para>
+        /// The ID of the pool that contains tapes that will be archived. The tapes in this pool
+        /// are archived in the S3 storage class that is associated with the pool. When you use
+        /// your backup application to eject the tape, the tape is archived directly into the
+        /// storage class (Glacier or Deep Archive) that corresponds to the pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: "GLACIER", "DEEP_ARCHIVE"
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string PoolId
+        {
+            get { return this._poolId; }
+            set { this._poolId = value; }
+        }
+
+        // Check to see if PoolId property is set
+        internal bool IsSetPoolId()
+        {
+            return this._poolId != null;
         }
 
         /// <summary>

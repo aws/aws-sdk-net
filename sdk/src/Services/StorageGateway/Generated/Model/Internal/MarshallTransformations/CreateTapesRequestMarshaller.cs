@@ -98,6 +98,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumTapesToCreate);
                 }
 
+                if(publicRequest.IsSetPoolId())
+                {
+                    context.Writer.WritePropertyName("PoolId");
+                    context.Writer.Write(publicRequest.PoolId);
+                }
+
                 if(publicRequest.IsSetTapeBarcodePrefix())
                 {
                     context.Writer.WritePropertyName("TapeBarcodePrefix");

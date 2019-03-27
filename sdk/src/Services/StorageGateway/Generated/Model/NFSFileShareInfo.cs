@@ -344,10 +344,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of up to ten (10) tags assigned to the NFS file share are returned, sorted
-        /// alphabetically by key name. Every tag is a key-value pair. For a gateway with more
-        /// than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
-        /// API.
+        /// A list of up to 10 tags assigned to the NFS file share, sorted alphabetically by key
+        /// name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned,
+        /// you can view all tags using the <code>ListTagsForResource</code> API operation.
         /// </para>
         /// </summary>
         public List<Tag> Tags

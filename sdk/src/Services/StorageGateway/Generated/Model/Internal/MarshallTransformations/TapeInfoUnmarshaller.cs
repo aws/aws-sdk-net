@@ -70,6 +70,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PoolId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TapeARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

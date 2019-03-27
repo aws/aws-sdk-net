@@ -372,6 +372,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapesRequest.PoolId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapesRequest.TapeBarcodePrefix</property>
     <min>1</min>
     <max>4</max>
@@ -386,6 +391,11 @@
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.KMSKey</property>
     <min>7</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.PoolId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.TapeBarcode</property>
@@ -1553,6 +1563,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.Tape.PoolId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.TapeARN</property>
     <min>50</min>
     <max>500</max>
@@ -1575,6 +1590,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.TapeArchive.PoolId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.RetrievedTo</property>
     <min>50</min>
     <max>500</max>
@@ -1595,6 +1615,11 @@
     <property>Amazon.StorageGateway.Model.TapeInfo.GatewayARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.TapeInfo.PoolId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeInfo.TapeARN</property>

@@ -40,15 +40,15 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Storage Volumes
+    /// Storage volumes
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Virtual Tapes
+    /// Virtual tapes
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// NFS and SMB File Shares
+    /// NFS and SMB file shares
     /// </para>
     ///  </li> </ul> 
     /// <para>
