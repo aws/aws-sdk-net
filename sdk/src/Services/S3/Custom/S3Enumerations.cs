@@ -606,6 +606,13 @@ namespace Amazon.S3
         public static readonly S3StorageClass IntelligentTiering = new S3StorageClass("INTELLIGENT_TIERING");
 
         /// <summary>
+        /// S3 Glacier Deep Archive provides secure, durable object storage class for long term data archival.
+        /// It is the ideal storage class to make an archival, durable copy of data that rarely, if ever, needs to be accessed.
+        /// It can be used as an offline backup for their most important data assets and to meet long-term retention needs.
+        /// </summary>
+        public static readonly S3StorageClass DeepArchive = new S3StorageClass("DEEP_ARCHIVE");
+
+        /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
         /// <param name="value"></param>
