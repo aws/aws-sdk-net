@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("spec", targetDepth))
+                {
+                    var unmarshaller = MeshSpecUnmarshaller.Instance;
+                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = MeshStatusUnmarshaller.Instance;

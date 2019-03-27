@@ -29,7 +29,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVirtualRouter operation.
-    /// Creates a new virtual router within a service mesh.
+    /// Creates a virtual router within a service mesh.
     /// 
     ///          
     /// <para>
@@ -38,9 +38,9 @@ namespace Amazon.AppMesh.Model
     /// </para>
     ///          
     /// <para>
-    /// Virtual routers handle traffic for one or more service names within your mesh. After
-    /// you         create your virtual router, create and associate routes for your virtual
-    /// router that direct         incoming requests to different virtual nodes.
+    /// Virtual routers handle traffic for one or more virtual services within your mesh.
+    /// After         you create your virtual router, create and associate routes for your
+    /// virtual router that         direct incoming requests to different virtual nodes.
     /// </para>
     /// </summary>
     public partial class CreateVirtualRouterRequest : AmazonAppMeshRequest
@@ -48,6 +48,7 @@ namespace Amazon.AppMesh.Model
         private string _clientToken;
         private string _meshName;
         private VirtualRouterSpec _spec;
+        private List<TagRef> _tags = new List<TagRef>();
         private string _virtualRouterName;
 
         /// <summary>
@@ -105,6 +106,28 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetSpec()
         {
             return this._spec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you can apply to the virtual router to assist with categorization
+        /// and organization.         Each tag consists of a key and an optional value, both of
+        /// which you define.         Tag keys can have a maximum character length of 128 characters,
+        /// and tag values can have            a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TagRef> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

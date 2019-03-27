@@ -29,11 +29,11 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVirtualNode operation.
-    /// Creates a new virtual node within a service mesh.
+    /// Creates a virtual node within a service mesh.
     /// 
     ///          
     /// <para>
-    /// A virtual node acts as logical pointer to a particular task group, such as an Amazon
+    /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
     /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
     /// must specify the         DNS service discovery hostname for your task group.
     /// </para>
@@ -47,7 +47,7 @@ namespace Amazon.AppMesh.Model
     /// <para>
     /// The response metadata for your new virtual node contains the <code>arn</code> that
     /// is         associated with the virtual node. Set this value (either the full ARN or
-    /// the truncated         resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,
+    /// the truncated         resource name: for example, <code>mesh/default/virtualNode/simpleapp</code>)
     /// as the            <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for
     /// your task group's Envoy         proxy container in your task definition or pod spec.
     /// This is then mapped to the            <code>node.id</code> and <code>node.cluster</code>
@@ -66,6 +66,7 @@ namespace Amazon.AppMesh.Model
         private string _clientToken;
         private string _meshName;
         private VirtualNodeSpec _spec;
+        private List<TagRef> _tags = new List<TagRef>();
         private string _virtualNodeName;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to create the virtual node.
+        /// The name of the service mesh to create the virtual node in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -123,6 +124,28 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetSpec()
         {
             return this._spec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you can apply to the virtual node to assist with categorization
+        /// and organization.         Each tag consists of a key and an optional value, both of
+        /// which you define.         Tag keys can have a maximum character length of 128 characters,
+        /// and tag values can have            a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TagRef> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

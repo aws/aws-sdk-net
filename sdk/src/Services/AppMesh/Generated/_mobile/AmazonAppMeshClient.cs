@@ -39,26 +39,26 @@ namespace Amazon.AppMesh
     /// Implementation for accessing AppMesh
     ///
     /// AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
-    /// and         control containerized microservices. App Mesh standardizes how your microservices
-    ///         communicate, giving you end-to-end visibility and helping to ensure high-availability
-    /// for         your applications.
+    /// and         control microservices. App Mesh standardizes how your microservices communicate,
+    /// giving you         end-to-end visibility and helping to ensure high availability for
+    /// your applications.
     /// 
     ///          
     /// <para>
     /// App Mesh gives you consistent visibility and network traffic controls for every  
-    ///       microservice in an application. You can use App Mesh with Amazon ECS       
-    ///  (using the Amazon EC2 launch type), Amazon EKS, and Kubernetes on AWS.
+    ///       microservice in an application. You can use App Mesh with AWS Fargate, Amazon
+    /// ECS, Amazon EKS, and         Kubernetes on AWS.
     /// </para>
     ///          <note>            
     /// <para>
-    /// App Mesh supports containerized microservice applications that use service discovery
-    ///            naming for their components. To use App Mesh, you must have a containerized
-    /// application            running on Amazon EC2 instances, hosted in either Amazon ECS,
-    /// Amazon EKS, or Kubernetes on AWS. For            more information about service discovery
-    /// on Amazon ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-    /// Discovery</a> in the               <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// Kubernetes <code>kube-dns</code> and               <code>coredns</code> are supported.
-    /// For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
+    /// App Mesh supports microservice applications that use service discovery naming for
+    /// their            components. To use App Mesh, you must have an application running
+    /// on Amazon EC2 instances,            hosted in either Amazon ECS, Amazon EKS, or Kubernetes
+    /// on AWS. For more information about            service discovery on Amazon ECS, see
+    /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+    ///               Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// Kubernetes               <code>kube-dns</code> and <code>coredns</code> are supported.
+    /// For more information,            see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
     ///               for Services and Pods</a> in the Kubernetes documentation.
     /// </para>
     ///          </note>
@@ -827,6 +827,39 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVirtualNodes
 
         internal virtual ListVirtualNodesResponse ListVirtualNodes(ListVirtualNodesRequest request)
@@ -922,6 +955,105 @@ namespace Amazon.AppMesh
             options.ResponseUnmarshaller = ListVirtualServicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVirtualServicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMesh
+
+        internal virtual UpdateMeshResponse UpdateMesh(UpdateMeshRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMeshResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMeshResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMesh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMesh operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
+        public virtual Task<UpdateMeshResponse> UpdateMeshAsync(UpdateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMeshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMeshResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMeshResponse>(request, options, cancellationToken);
         }
 
         #endregion

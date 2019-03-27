@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// You must delete all resources (virtual services, routes, virtual routers, virtual
+    /// You must delete all resources (virtual services, routes, virtual routers, and virtual
     /// nodes)         in the service mesh before you can delete the mesh itself.
     /// </para>
     /// </summary>

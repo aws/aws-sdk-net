@@ -43,22 +43,6 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// The full Amazon Resource Name (ARN) for the resource.
         /// </para>
-        ///          <note>            
-        /// <para>
-        /// After you create a virtual node, set this value (either the full ARN or the      
-        ///      truncated resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,
-        ///            as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for
-        /// your task group's            Envoy proxy container in your task definition or pod
-        /// spec. This is then mapped to the               <code>node.id</code> and <code>node.cluster</code>
-        /// Envoy parameters.
-        /// </para>
-        ///             
-        /// <para>
-        /// If you require your Envoy stats or tracing to use a different name, you can override
-        ///            the <code>node.cluster</code> value that is set by               <code>APPMESH_VIRTUAL_NODE_NAME</code>
-        /// with the               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
-        /// </para>
-        ///          </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Arn

@@ -41,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// Currently only one listener is supported per virtual router.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<VirtualRouterListener> Listeners
         {
             get { return this._listeners; }

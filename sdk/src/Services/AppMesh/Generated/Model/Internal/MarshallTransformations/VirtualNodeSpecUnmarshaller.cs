@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Listeners = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logging", targetDepth))
+                {
+                    var unmarshaller = LoggingUnmarshaller.Instance;
+                    unmarshalledObject.Logging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceDiscovery", targetDepth))
                 {
                     var unmarshaller = ServiceDiscoveryUnmarshaller.Instance;

@@ -33,6 +33,7 @@ namespace Amazon.AppMesh.Model
     public partial class RouteSpec
     {
         private HttpRoute _httpRoute;
+        private TcpRoute _tcpRoute;
 
         /// <summary>
         /// Gets and sets the property HttpRoute. 
@@ -50,6 +51,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHttpRoute()
         {
             return this._httpRoute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TcpRoute. 
+        /// <para>
+        /// The TCP routing information for the route.
+        /// </para>
+        /// </summary>
+        public TcpRoute TcpRoute
+        {
+            get { return this._tcpRoute; }
+            set { this._tcpRoute = value; }
+        }
+
+        // Check to see if TcpRoute property is set
+        internal bool IsSetTcpRoute()
+        {
+            return this._tcpRoute != null;
         }
 
     }

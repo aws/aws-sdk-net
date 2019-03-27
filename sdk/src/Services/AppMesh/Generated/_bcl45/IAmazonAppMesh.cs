@@ -32,26 +32,26 @@ namespace Amazon.AppMesh
     /// Interface for accessing AppMesh
     ///
     /// AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
-    /// and         control containerized microservices. App Mesh standardizes how your microservices
-    ///         communicate, giving you end-to-end visibility and helping to ensure high-availability
-    /// for         your applications.
+    /// and         control microservices. App Mesh standardizes how your microservices communicate,
+    /// giving you         end-to-end visibility and helping to ensure high availability for
+    /// your applications.
     /// 
     ///          
     /// <para>
     /// App Mesh gives you consistent visibility and network traffic controls for every  
-    ///       microservice in an application. You can use App Mesh with Amazon ECS       
-    ///  (using the Amazon EC2 launch type), Amazon EKS, and Kubernetes on AWS.
+    ///       microservice in an application. You can use App Mesh with AWS Fargate, Amazon
+    /// ECS, Amazon EKS, and         Kubernetes on AWS.
     /// </para>
     ///          <note>            
     /// <para>
-    /// App Mesh supports containerized microservice applications that use service discovery
-    ///            naming for their components. To use App Mesh, you must have a containerized
-    /// application            running on Amazon EC2 instances, hosted in either Amazon ECS,
-    /// Amazon EKS, or Kubernetes on AWS. For            more information about service discovery
-    /// on Amazon ECS, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-    /// Discovery</a> in the               <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// Kubernetes <code>kube-dns</code> and               <code>coredns</code> are supported.
-    /// For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
+    /// App Mesh supports microservice applications that use service discovery naming for
+    /// their            components. To use App Mesh, you must have an application running
+    /// on Amazon EC2 instances,            hosted in either Amazon ECS, Amazon EKS, or Kubernetes
+    /// on AWS. For more information about            service discovery on Amazon ECS, see
+    /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+    ///               Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// Kubernetes               <code>kube-dns</code> and <code>coredns</code> are supported.
+    /// For more information,            see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
     ///               for Services and Pods</a> in the Kubernetes documentation.
     /// </para>
     ///          </note>
@@ -64,8 +64,8 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Creates a new service mesh. A service mesh is a logical boundary for network traffic
-        ///         between the services that reside within it.
+        /// Creates a service mesh. A service mesh is a logical boundary for network traffic 
+        ///        between the services that reside within it.
         /// 
         ///          
         /// <para>
@@ -127,15 +127,14 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Creates a new route that is associated with a virtual router.
+        /// Creates a route that is associated with a virtual router.
         /// 
         ///          
         /// <para>
         /// You can use the <code>prefix</code> parameter in your route specification for path-based
-        ///         routing of requests. For example, if your virtual router service name is 
-        ///           <code>my-service.local</code>, and you want the route to match requests
-        /// to            <code>my-service.local/metrics</code>, then your prefix should be  
-        ///       <code>/metrics</code>.
+        ///         routing of requests. For example, if your virtual service name is        
+        ///    <code>my-service.local</code> and you want the route to match requests to     
+        ///       <code>my-service.local/metrics</code>, your prefix should be         <code>/metrics</code>.
         /// </para>
         ///          
         /// <para>
@@ -196,11 +195,11 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Creates a new virtual node within a service mesh.
+        /// Creates a virtual node within a service mesh.
         /// 
         ///          
         /// <para>
-        /// A virtual node acts as logical pointer to a particular task group, such as an Amazon
+        /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
         /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
         /// must specify the         DNS service discovery hostname for your task group.
         /// </para>
@@ -214,7 +213,7 @@ namespace Amazon.AppMesh
         /// <para>
         /// The response metadata for your new virtual node contains the <code>arn</code> that
         /// is         associated with the virtual node. Set this value (either the full ARN or
-        /// the truncated         resource name, for example, <code>mesh/default/virtualNode/simpleapp</code>,
+        /// the truncated         resource name: for example, <code>mesh/default/virtualNode/simpleapp</code>)
         /// as the            <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for
         /// your task group's Envoy         proxy container in your task definition or pod spec.
         /// This is then mapped to the            <code>node.id</code> and <code>node.cluster</code>
@@ -281,7 +280,7 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Creates a new virtual router within a service mesh.
+        /// Creates a virtual router within a service mesh.
         /// 
         ///          
         /// <para>
@@ -290,9 +289,9 @@ namespace Amazon.AppMesh
         /// </para>
         ///          
         /// <para>
-        /// Virtual routers handle traffic for one or more service names within your mesh. After
-        /// you         create your virtual router, create and associate routes for your virtual
-        /// router that direct         incoming requests to different virtual nodes.
+        /// Virtual routers handle traffic for one or more virtual services within your mesh.
+        /// After         you create your virtual router, create and associate routes for your
+        /// virtual router that         direct incoming requests to different virtual nodes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualRouter service method.</param>
@@ -352,11 +351,11 @@ namespace Amazon.AppMesh
         /// 
         ///          
         /// <para>
-        /// A virtual service is an abstraction of a real service that is either provided by a
-        ///         virtual node directly, or indirectly by means of a virtual router. Dependent
-        /// services call         your virtual service by its <code>virtualServiceName</code>,
-        /// and those requests are routed         to the virtual node or virtual router that is
-        /// specified as the provider for the virtual         service.
+        /// A virtual service is an abstraction of a real service that is provided by a      
+        ///   virtual node directly or indirectly by means of a virtual router. Dependent services
+        /// call         your virtual service by its <code>virtualServiceName</code>, and those
+        /// requests are routed         to the virtual node or virtual router that is specified
+        /// as the provider for the virtual         service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualService service method.</param>
@@ -416,7 +415,7 @@ namespace Amazon.AppMesh
         /// 
         ///          
         /// <para>
-        /// You must delete all resources (virtual services, routes, virtual routers, virtual
+        /// You must delete all resources (virtual services, routes, virtual routers, and virtual
         /// nodes)         in the service mesh before you can delete the mesh itself.
         /// </para>
         /// </summary>
@@ -1006,6 +1005,45 @@ namespace Amazon.AppMesh
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List the tags for an App Mesh resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListVirtualNodes
 
 
@@ -1144,6 +1182,143 @@ namespace Amazon.AppMesh
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices">REST API Reference for ListVirtualServices Operation</seealso>
         Task<ListVirtualServicesResponse> ListVirtualServicesAsync(ListVirtualServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource with the specified         <code>resourceArn</code>.
+        /// If existing tags on a resource aren't specified in the         request parameters,
+        /// they aren't changed. When a resource is deleted, the tags         associated with
+        /// that resource are also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyTagsException">
+        /// The request exceeds the maximum allowed number of tags allowed per resource. The current
+        ///         limit is 50 user tags per resource. You must reduce the number of tags in
+        /// the request. None         of the tags in this request were applied.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes specified tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateMesh
+
+
+        /// <summary>
+        /// Updates an existing service mesh.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMesh service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMesh service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
+        UpdateMeshResponse UpdateMesh(UpdateMeshRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMesh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMesh operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
+        Task<UpdateMeshResponse> UpdateMeshAsync(UpdateMeshRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

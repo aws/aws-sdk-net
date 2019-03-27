@@ -44,7 +44,7 @@ namespace Amazon.AppMesh.Model
         ///         output. When you use this parameter, <code>ListVirtualRouters</code> returns
         /// only            <code>limit</code> results in a single page along with a <code>nextToken</code>
         /// response         element. You can see the remaining results of the initial request
-        ///  by sending another            <code>ListVirtualRouters</code> request with the returned
+        /// by sending another            <code>ListVirtualRouters</code> request with the returned
         /// <code>nextToken</code> value.         This value can be between 1 and 100. If you
         /// don't use this parameter,          <code>ListVirtualRouters</code> returns up to 100
         /// results and         a <code>nextToken</code> value if applicable.

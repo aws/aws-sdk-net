@@ -56,6 +56,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTcpRoute())
+            {
+                context.Writer.WritePropertyName("tcpRoute");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TcpRouteMarshaller.Instance;
+                marshaller.Marshall(requestObject.TcpRoute, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

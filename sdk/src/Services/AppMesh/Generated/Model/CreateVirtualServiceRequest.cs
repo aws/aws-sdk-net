@@ -33,11 +33,11 @@ namespace Amazon.AppMesh.Model
     /// 
     ///          
     /// <para>
-    /// A virtual service is an abstraction of a real service that is either provided by a
-    ///         virtual node directly, or indirectly by means of a virtual router. Dependent
-    /// services call         your virtual service by its <code>virtualServiceName</code>,
-    /// and those requests are routed         to the virtual node or virtual router that is
-    /// specified as the provider for the virtual         service.
+    /// A virtual service is an abstraction of a real service that is provided by a      
+    ///   virtual node directly or indirectly by means of a virtual router. Dependent services
+    /// call         your virtual service by its <code>virtualServiceName</code>, and those
+    /// requests are routed         to the virtual node or virtual router that is specified
+    /// as the provider for the virtual         service.
     /// </para>
     /// </summary>
     public partial class CreateVirtualServiceRequest : AmazonAppMeshRequest
@@ -45,6 +45,7 @@ namespace Amazon.AppMesh.Model
         private string _clientToken;
         private string _meshName;
         private VirtualServiceSpec _spec;
+        private List<TagRef> _tags = new List<TagRef>();
         private string _virtualServiceName;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to create the virtual service.
+        /// The name of the service mesh to create the virtual service in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -102,6 +103,28 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetSpec()
         {
             return this._spec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Optional metadata that you can apply to the virtual service to assist with categorization
+        /// and organization.         Each tag consists of a key and an optional value, both of
+        /// which you define.         Tag keys can have a maximum character length of 128 characters,
+        /// and tag values can have            a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TagRef> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

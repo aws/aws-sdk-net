@@ -67,7 +67,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshName. 
         /// <para>
-        /// The name of the service mesh in which to list routes.
+        /// The name of the service mesh to list routes in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

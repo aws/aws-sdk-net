@@ -77,6 +77,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLogging())
+            {
+                context.Writer.WritePropertyName("logging");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LoggingMarshaller.Instance;
+                marshaller.Marshall(requestObject.Logging, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServiceDiscovery())
             {
                 context.Writer.WritePropertyName("serviceDiscovery");

@@ -72,7 +72,7 @@ namespace Amazon.AppMesh.Model
         /// </para>
         ///          <note>            
         /// <para>
-        /// This token should be treated as an opaque identifier that is only used to        
+        /// This token should be treated as an opaque identifier that is used only to        
         ///        retrieve the next items in a list and not for other programmatic purposes.
         /// </para>
         ///         </note>
