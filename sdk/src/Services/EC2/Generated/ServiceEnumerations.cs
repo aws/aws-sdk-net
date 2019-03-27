@@ -4419,6 +4419,38 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M5a4xlarge = new InstanceType("m5a.4xlarge");
         /// <summary>
+        /// Constant M5ad12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad12xlarge = new InstanceType("m5ad.12xlarge");
+        /// <summary>
+        /// Constant M5ad16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad16xlarge = new InstanceType("m5ad.16xlarge");
+        /// <summary>
+        /// Constant M5ad24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad24xlarge = new InstanceType("m5ad.24xlarge");
+        /// <summary>
+        /// Constant M5ad2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad2xlarge = new InstanceType("m5ad.2xlarge");
+        /// <summary>
+        /// Constant M5ad4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad4xlarge = new InstanceType("m5ad.4xlarge");
+        /// <summary>
+        /// Constant M5ad8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5ad8xlarge = new InstanceType("m5ad.8xlarge");
+        /// <summary>
+        /// Constant M5adLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5adLarge = new InstanceType("m5ad.large");
+        /// <summary>
+        /// Constant M5adXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5adXlarge = new InstanceType("m5ad.xlarge");
+        /// <summary>
         /// Constant M5aLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5aLarge = new InstanceType("m5a.large");
@@ -4570,6 +4602,38 @@ namespace Amazon.EC2
         /// Constant R5a4xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5a4xlarge = new InstanceType("r5a.4xlarge");
+        /// <summary>
+        /// Constant R5ad12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad12xlarge = new InstanceType("r5ad.12xlarge");
+        /// <summary>
+        /// Constant R5ad16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad16xlarge = new InstanceType("r5ad.16xlarge");
+        /// <summary>
+        /// Constant R5ad24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad24xlarge = new InstanceType("r5ad.24xlarge");
+        /// <summary>
+        /// Constant R5ad2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad2xlarge = new InstanceType("r5ad.2xlarge");
+        /// <summary>
+        /// Constant R5ad4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad4xlarge = new InstanceType("r5ad.4xlarge");
+        /// <summary>
+        /// Constant R5ad8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5ad8xlarge = new InstanceType("r5ad.8xlarge");
+        /// <summary>
+        /// Constant R5adLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5adLarge = new InstanceType("r5ad.large");
+        /// <summary>
+        /// Constant R5adXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5adXlarge = new InstanceType("r5ad.xlarge");
         /// <summary>
         /// Constant R5aLarge for InstanceType
         /// </summary>
