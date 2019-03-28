@@ -1,3 +1,13 @@
+### 3.3.486.0 (2019-03-28 19:15 UTC)
+* MediaLive (3.3.101.0)
+	* This release adds a new output locking mode synchronized to the Unix epoch.
+* PinpointEmail (3.3.101.0)
+	* This release adds support for using the Amazon Pinpoint Email API to tag the following types of Amazon Pinpoint resources: configuration sets; dedicated IP pools; deliverability dashboard reports; and, email identities. A tag is a label that you optionally define and associate with these types of resources. Tags can help you categorize and manage these resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. For more information, see the Amazon Pinpoint Email API Reference.
+* ServiceCatalog (3.3.101.0)
+	* Adds "Tags" field in UpdateProvisionedProduct API. The product should have a new RESOURCE_UPDATE Constraint with TagUpdateOnProvisionedProduct field set to ALLOWED for it to work. See API docs for CreateConstraint for more information
+* WorkSpaces (3.3.101.0)
+	* Amazon WorkSpaces adds tagging support for WorkSpaces Images, WorkSpaces directories, WorkSpaces bundles and IP Access control groups.
+
 ### 3.3.485.0 (2019-03-27 20:34 UTC)
 * AppMesh (3.3.101.0)
 	* This release includes AWS Tagging integration for App Mesh, VirtualNode access logging, TCP routing, and Mesh-wide external traffic egress control. See https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html for more details.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.485.0",
+    "ProductVersion" : "3.3.486.0",
     "CoreVersion"    : "3.3.100.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.100.2",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.2"
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.100.2",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.2"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.100.2",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.2"
@@ -1177,7 +1177,7 @@
             "InPreview"               : false
         },
         "PinpointEmail"                   : {
-            "Version" : "3.3.100.2",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.2"
