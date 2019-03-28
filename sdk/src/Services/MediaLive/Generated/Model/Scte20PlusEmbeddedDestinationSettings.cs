@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Scte20PlusEmbeddedDestinationSettings
+    /// Scte20 Plus Embedded Destination Settings
     /// </summary>
     public partial class Scte20PlusEmbeddedDestinationSettings
     {

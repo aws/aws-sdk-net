@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for HlsBasicPutSettings
+    /// Hls Basic Put Settings
     /// </summary>
     public partial class HlsBasicPutSettings
     {

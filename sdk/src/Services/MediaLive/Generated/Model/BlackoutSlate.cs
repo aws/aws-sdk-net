@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for BlackoutSlate
+    /// Blackout Slate
     /// </summary>
     public partial class BlackoutSlate
     {

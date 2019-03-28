@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AvailConfiguration
+    /// Avail Configuration
     /// </summary>
     public partial class AvailConfiguration
     {

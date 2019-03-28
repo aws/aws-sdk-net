@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for DvbSubSourceSettings
+    /// Dvb Sub Source Settings
     /// </summary>
     public partial class DvbSubSourceSettings
     {

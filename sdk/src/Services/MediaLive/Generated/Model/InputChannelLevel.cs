@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for InputChannelLevel
+    /// Input Channel Level
     /// </summary>
     public partial class InputChannelLevel
     {

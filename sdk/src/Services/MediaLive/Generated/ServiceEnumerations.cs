@@ -3271,6 +3271,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type GlobalConfigurationOutputLockingMode.
+    /// </summary>
+    public class GlobalConfigurationOutputLockingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EPOCH_LOCKING for GlobalConfigurationOutputLockingMode
+        /// </summary>
+        public static readonly GlobalConfigurationOutputLockingMode EPOCH_LOCKING = new GlobalConfigurationOutputLockingMode("EPOCH_LOCKING");
+        /// <summary>
+        /// Constant PIPELINE_LOCKING for GlobalConfigurationOutputLockingMode
+        /// </summary>
+        public static readonly GlobalConfigurationOutputLockingMode PIPELINE_LOCKING = new GlobalConfigurationOutputLockingMode("PIPELINE_LOCKING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlobalConfigurationOutputLockingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalConfigurationOutputLockingMode FindValue(string value)
+        {
+            return FindValue<GlobalConfigurationOutputLockingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalConfigurationOutputLockingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalConfigurationOutputTimingSource.
     /// </summary>
     public class GlobalConfigurationOutputTimingSource : ConstantClass

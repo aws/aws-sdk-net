@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for InputLossBehavior
+    /// Input Loss Behavior
     /// </summary>
     public partial class InputLossBehavior
     {

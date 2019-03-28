@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for KeyProviderSettings
+    /// Key Provider Settings
     /// </summary>
     public partial class KeyProviderSettings
     {

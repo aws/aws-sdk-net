@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for H264Settings
+    /// H264 Settings
     /// </summary>
     public partial class H264Settings
     {

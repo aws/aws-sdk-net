@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for M2tsSettings
+    /// M2ts Settings
     /// </summary>
     public partial class M2tsSettings
     {

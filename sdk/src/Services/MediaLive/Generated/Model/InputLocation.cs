@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for InputLocation
+    /// Input Location
     /// </summary>
     public partial class InputLocation
     {

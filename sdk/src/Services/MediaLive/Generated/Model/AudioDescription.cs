@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioDescription
+    /// Audio Description
     /// </summary>
     public partial class AudioDescription
     {

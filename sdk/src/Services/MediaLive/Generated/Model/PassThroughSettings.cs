@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for PassThroughSettings
+    /// Pass Through Settings
     /// </summary>
     public partial class PassThroughSettings
     {

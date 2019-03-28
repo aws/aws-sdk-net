@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for CaptionSelectorSettings
+    /// Caption Selector Settings
     /// </summary>
     public partial class CaptionSelectorSettings
     {

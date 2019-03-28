@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Eac3Settings
+    /// Eac3 Settings
     /// </summary>
     public partial class Eac3Settings
     {

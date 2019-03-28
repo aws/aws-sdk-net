@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Scte35SpliceInsert
+    /// Scte35 Splice Insert
     /// </summary>
     public partial class Scte35SpliceInsert
     {

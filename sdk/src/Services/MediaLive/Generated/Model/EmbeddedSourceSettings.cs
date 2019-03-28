@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for EmbeddedSourceSettings
+    /// Embedded Source Settings
     /// </summary>
     public partial class EmbeddedSourceSettings
     {

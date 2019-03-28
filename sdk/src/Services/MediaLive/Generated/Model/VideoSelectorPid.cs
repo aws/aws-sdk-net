@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for VideoSelectorPid
+    /// Video Selector Pid
     /// </summary>
     public partial class VideoSelectorPid
     {

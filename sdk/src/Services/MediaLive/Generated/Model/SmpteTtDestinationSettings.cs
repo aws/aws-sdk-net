@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for SmpteTtDestinationSettings
+    /// Smpte Tt Destination Settings
     /// </summary>
     public partial class SmpteTtDestinationSettings
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Scte20SourceSettings
+    /// Scte20 Source Settings
     /// </summary>
     public partial class Scte20SourceSettings
     {

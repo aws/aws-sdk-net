@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputLossBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputLockingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputLockingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputTimingSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

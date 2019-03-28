@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for ArchiveContainerSettings
+    /// Archive Container Settings
     /// </summary>
     public partial class ArchiveContainerSettings
     {

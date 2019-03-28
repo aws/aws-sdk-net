@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Mp2Settings
+    /// Mp2 Settings
     /// </summary>
     public partial class Mp2Settings
     {

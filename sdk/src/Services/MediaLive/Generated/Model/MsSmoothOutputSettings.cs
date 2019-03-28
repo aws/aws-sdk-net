@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for MsSmoothOutputSettings
+    /// Ms Smooth Output Settings
     /// </summary>
     public partial class MsSmoothOutputSettings
     {

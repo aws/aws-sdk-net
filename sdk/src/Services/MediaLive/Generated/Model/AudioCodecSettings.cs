@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioCodecSettings
+    /// Audio Codec Settings
     /// </summary>
     public partial class AudioCodecSettings
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for Scte35TimeSignalApos
+    /// Scte35 Time Signal Apos
     /// </summary>
     public partial class Scte35TimeSignalApos
     {

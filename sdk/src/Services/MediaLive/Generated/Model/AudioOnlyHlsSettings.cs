@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioOnlyHlsSettings
+    /// Audio Only Hls Settings
     /// </summary>
     public partial class AudioOnlyHlsSettings
     {

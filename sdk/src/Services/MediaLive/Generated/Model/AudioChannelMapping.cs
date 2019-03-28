@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioChannelMapping
+    /// Audio Channel Mapping
     /// </summary>
     public partial class AudioChannelMapping
     {

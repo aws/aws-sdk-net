@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for RemixSettings
+    /// Remix Settings
     /// </summary>
     public partial class RemixSettings
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioLanguageSelection
+    /// Audio Language Selection
     /// </summary>
     public partial class AudioLanguageSelection
     {

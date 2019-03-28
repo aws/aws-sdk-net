@@ -68,6 +68,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOutputLockingMode())
+            {
+                context.Writer.WritePropertyName("outputLockingMode");
+                context.Writer.Write(requestObject.OutputLockingMode);
+            }
+
             if(requestObject.IsSetOutputTimingSource())
             {
                 context.Writer.WritePropertyName("outputTimingSource");

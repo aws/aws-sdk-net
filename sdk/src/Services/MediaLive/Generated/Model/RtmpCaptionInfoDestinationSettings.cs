@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for RtmpCaptionInfoDestinationSettings
+    /// Rtmp Caption Info Destination Settings
     /// </summary>
     public partial class RtmpCaptionInfoDestinationSettings
     {

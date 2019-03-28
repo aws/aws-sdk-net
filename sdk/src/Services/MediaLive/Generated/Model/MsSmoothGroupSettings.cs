@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for MsSmoothGroupSettings
+    /// Ms Smooth Group Settings
     /// </summary>
     public partial class MsSmoothGroupSettings
     {

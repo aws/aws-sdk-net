@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for HlsMediaStoreSettings
+    /// Hls Media Store Settings
     /// </summary>
     public partial class HlsMediaStoreSettings
     {

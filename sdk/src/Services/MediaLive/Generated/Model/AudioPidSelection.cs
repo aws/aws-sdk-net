@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioPidSelection
+    /// Audio Pid Selection
     /// </summary>
     public partial class AudioPidSelection
     {

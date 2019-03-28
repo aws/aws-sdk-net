@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AudioSelector
+    /// Audio Selector
     /// </summary>
     public partial class AudioSelector
     {

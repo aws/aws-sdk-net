@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for HlsInputSettings
+    /// Hls Input Settings
     /// </summary>
     public partial class HlsInputSettings
     {

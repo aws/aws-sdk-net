@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for AvailBlanking
+    /// Avail Blanking
     /// </summary>
     public partial class AvailBlanking
     {

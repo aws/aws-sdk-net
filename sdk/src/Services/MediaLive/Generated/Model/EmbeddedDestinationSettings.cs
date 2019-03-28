@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for EmbeddedDestinationSettings
+    /// Embedded Destination Settings
     /// </summary>
     public partial class EmbeddedDestinationSettings
     {

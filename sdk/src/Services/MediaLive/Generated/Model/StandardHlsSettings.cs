@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for StandardHlsSettings
+    /// Standard Hls Settings
     /// </summary>
     public partial class StandardHlsSettings
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for RtmpGroupSettings
+    /// Rtmp Group Settings
     /// </summary>
     public partial class RtmpGroupSettings
     {

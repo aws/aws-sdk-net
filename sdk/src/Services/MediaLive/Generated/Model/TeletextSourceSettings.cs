@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Placeholder documentation for TeletextSourceSettings
+    /// Teletext Source Settings
     /// </summary>
     public partial class TeletextSourceSettings
     {
