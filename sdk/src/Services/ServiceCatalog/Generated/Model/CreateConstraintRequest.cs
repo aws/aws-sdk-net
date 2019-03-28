@@ -144,6 +144,20 @@ namespace Amazon.ServiceCatalog.Model
         ///  <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
         /// 
         /// </para>
+        ///  </dd> <dt>RESOUCE_UPDATE</dt> <dd> 
+        /// <para>
+        /// Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of
+        /// <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.
+        /// </para>
         ///  </dd> <dt>STACKSET</dt> <dd> 
         /// <para>
         /// Specify the <code>Parameters</code> property as follows:
@@ -237,6 +251,10 @@ namespace Amazon.ServiceCatalog.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>NOTIFICATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESOURCE_UPDATE</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

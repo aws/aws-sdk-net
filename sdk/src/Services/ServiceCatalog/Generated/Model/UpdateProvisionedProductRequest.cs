@@ -52,6 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _provisioningArtifactId;
         private List<UpdateProvisioningParameter> _provisioningParameters = new List<UpdateProvisioningParameter>();
         private UpdateProvisioningPreferences _provisioningPreferences;
+        private List<Tag> _tags = new List<Tag>();
         private string _updateToken;
 
         /// <summary>
@@ -219,6 +220,27 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningPreferences()
         {
             return this._provisioningPreferences != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint
+        /// with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+        /// tag updates.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
