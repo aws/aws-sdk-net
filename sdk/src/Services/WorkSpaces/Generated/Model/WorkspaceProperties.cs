@@ -78,7 +78,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RunningMode. 
         /// <para>
-        /// The running mode. For more information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+        /// The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
         /// the WorkSpace Running Mode</a>.
         /// </para>
         /// </summary>

@@ -51,6 +51,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _groupDesc;
         private string _groupName;
+        private List<Tag> _tags = new List<Tag>();
         private List<IpRuleItem> _userRules = new List<IpRuleItem>();
 
         /// <summary>
@@ -88,6 +89,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The resource identifiers, in the form of directory IDs.
+        /// The resource identifier, in the form of directory IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

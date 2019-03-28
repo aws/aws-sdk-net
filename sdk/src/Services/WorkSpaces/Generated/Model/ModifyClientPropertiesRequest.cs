@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClientProperties operation.
-    /// Modifies the properties of the specified Amazon WorkSpaces client.
+    /// Modifies the properties of the specified Amazon WorkSpaces clients.
     /// </summary>
     public partial class ModifyClientPropertiesRequest : AmazonWorkSpacesRequest
     {

@@ -983,7 +983,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the properties of the specified Amazon WorkSpaces client.
+        /// Modifies the properties of the specified Amazon WorkSpaces clients.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClientProperties service method.</param>
         /// 
@@ -1044,7 +1044,7 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
         /// The configuration of this WorkSpace is not supported for this operation. For more
-        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
+        /// information, see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
         /// WorkSpaces Administration Guide</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
@@ -1159,7 +1159,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// Rebuilding a WorkSpace is a potentially destructive action that can result in the
-        /// loss of data. For more information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+        /// loss of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
         /// a WorkSpace</a>.
         /// </para>
         ///  

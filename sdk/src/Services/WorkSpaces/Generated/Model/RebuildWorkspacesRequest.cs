@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// Rebuilding a WorkSpace is a potentially destructive action that can result in the
-    /// loss of data. For more information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+    /// loss of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
     /// a WorkSpace</a>.
     /// </para>
     ///  
