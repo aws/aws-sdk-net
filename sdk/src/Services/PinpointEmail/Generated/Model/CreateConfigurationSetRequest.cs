@@ -41,6 +41,7 @@ namespace Amazon.PinpointEmail.Model
         private DeliveryOptions _deliveryOptions;
         private ReputationOptions _reputationOptions;
         private SendingOptions _sendingOptions;
+        private List<Tag> _tags = new List<Tag>();
         private TrackingOptions _trackingOptions;
 
         /// <summary>
@@ -116,6 +117,25 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetSendingOptions()
         {
             return this._sendingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An object that defines the tags (keys and values) that you want to associate with
+        /// the configuration set.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

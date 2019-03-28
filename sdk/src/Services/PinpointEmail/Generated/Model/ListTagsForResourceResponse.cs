@@ -28,32 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An object that defines an Amazon SNS destination for email events. You can use Amazon
-    /// SNS to send notification when certain email events occur.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class SnsDestination
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _topicArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property TopicArn. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
-        /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-        /// SNS Developer Guide</a>.
+        /// An array that lists all the tags that are associated with the resource. Each tag consists
+        /// of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TopicArn
+        public List<Tag> Tags
         {
-            get { return this._topicArn; }
-            set { this._topicArn = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._topicArn != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDeliverabilityTestReport Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateDeliverabilityTestReportRequestMarshaller : IMarshaller<IRequest, CreateDeliverabilityTestReportRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeliverabilityTestReportRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -52,59 +52,25 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeliverabilityTestReportRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.CreateDeliverabilityTestReport";
+            string target = "com.amazonaws.services.pinpoint.email.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "GET";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/test";
+            string uriResourcePath = "/v1/email/tags";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FromEmailAddress");
-                    context.Writer.Write(publicRequest.FromEmailAddress);
-                }
-
-                if(publicRequest.IsSetReportName())
-                {
-                    context.Writer.WritePropertyName("ReportName");
-                    context.Writer.Write(publicRequest.ReportName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
         
@@ -116,9 +82,9 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDeliverabilityTestReportRequestMarshaller _instance = new CreateDeliverabilityTestReportRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateDeliverabilityTestReportRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +92,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeliverabilityTestReportRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

@@ -37,6 +37,7 @@ namespace Amazon.PinpointEmail.Model
     public partial class CreateDedicatedIpPoolRequest : AmazonPinpointEmailRequest
     {
         private string _poolName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property PoolName. 
@@ -55,6 +56,25 @@ namespace Amazon.PinpointEmail.Model
         internal bool IsSetPoolName()
         {
             return this._poolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An object that defines the tags (keys and values) that you want to associate with
+        /// the pool.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

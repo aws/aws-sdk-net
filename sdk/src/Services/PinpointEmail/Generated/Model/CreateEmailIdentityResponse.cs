@@ -86,7 +86,7 @@ namespace Amazon.PinpointEmail.Model
         /// <para>
         /// Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only
         /// send email from verified email addresses or domains. For more information about verifying
-        /// identities, see the <a href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+        /// identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
         /// Pinpoint User Guide</a>.
         /// </para>
         /// </summary>

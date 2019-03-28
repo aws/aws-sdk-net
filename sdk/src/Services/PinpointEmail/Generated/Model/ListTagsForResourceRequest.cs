@@ -28,32 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An object that defines an Amazon SNS destination for email events. You can use Amazon
-    /// SNS to send notification when certain email events occur.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Retrieve a list of the tags (keys and values) that are associated with a specific
+    /// resource. A <i>tag</i> is a label that you optionally define and associate with a
+    /// resource in Amazon Pinpoint. Each tag consists of a required <i>tag key</i> and an
+    /// optional associated <i>tag value</i>. A tag key is a general label that acts as a
+    /// category for more specific tag values. A tag value acts as a descriptor within a tag
+    /// key.
     /// </summary>
-    public partial class SnsDestination
+    public partial class ListTagsForResourceRequest : AmazonPinpointEmailRequest
     {
-        private string _topicArn;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property TopicArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
-        /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-        /// SNS Developer Guide</a>.
+        /// The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TopicArn
+        public string ResourceArn
         {
-            get { return this._topicArn; }
-            set { this._topicArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if TopicArn property is set
-        internal bool IsSetTopicArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._topicArn != null;
+            return this._resourceArn != null;
         }
 
     }

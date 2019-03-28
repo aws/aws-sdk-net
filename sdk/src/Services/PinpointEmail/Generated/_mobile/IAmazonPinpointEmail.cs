@@ -35,13 +35,13 @@ namespace Amazon.PinpointEmail
     /// <para>
     ///  This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
     /// Pinpoint</a> Email API, version 1.0. This document is best used in conjunction with
-    /// the <a href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+    /// the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
     /// Pinpoint Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon)
-    /// and the EU (Ireland) Regions at the following endpoints:
+    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon),
+    /// EU (Frankfurt), and EU (Ireland) Regions at the following endpoints:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -50,6 +50,10 @@ namespace Amazon.PinpointEmail
     ///  </li> <li> 
     /// <para>
     ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -428,6 +432,22 @@ namespace Amazon.PinpointEmail
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutAccountDedicatedIpWarmupAttributes
 
 
@@ -633,6 +653,38 @@ namespace Amazon.PinpointEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

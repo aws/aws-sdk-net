@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDedicatedIpPool operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class DeleteDedicatedIpPoolResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteDedicatedIpPoolResponse response = new DeleteDedicatedIpPoolResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
 
             return response;
@@ -80,9 +80,9 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             return new AmazonPinpointEmailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteDedicatedIpPoolResponseUnmarshaller _instance = new DeleteDedicatedIpPoolResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static DeleteDedicatedIpPoolResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +90,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDedicatedIpPoolResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {

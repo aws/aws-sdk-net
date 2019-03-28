@@ -33,13 +33,13 @@ namespace Amazon.PinpointEmail
     /// <para>
     ///  This document contains reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
     /// Pinpoint</a> Email API, version 1.0. This document is best used in conjunction with
-    /// the <a href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+    /// the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
     /// Pinpoint Developer Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon)
-    /// and the EU (Ireland) Regions at the following endpoints:
+    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon),
+    /// EU (Frankfurt), and EU (Ireland) Regions at the following endpoints:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -48,6 +48,10 @@ namespace Amazon.PinpointEmail
     ///  </li> <li> 
     /// <para>
     ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,6 +81,9 @@ namespace Amazon.PinpointEmail
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
         /// There are too many instances of the specified resource type.
@@ -195,6 +202,9 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
         /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
         /// There are too many instances of the specified resource type.
         /// </exception>
@@ -251,6 +261,9 @@ namespace Amazon.PinpointEmail
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
         /// There are too many instances of the specified resource type.
@@ -330,6 +343,9 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
         /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
         /// There are too many instances of the specified resource type.
         /// </exception>
@@ -383,6 +399,9 @@ namespace Amazon.PinpointEmail
         /// <returns>The response from the DeleteConfigurationSet service method, as returned by PinpointEmail.</returns>
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
         /// The resource you attempted to access doesn't exist.
@@ -485,6 +504,9 @@ namespace Amazon.PinpointEmail
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
         /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
         /// The resource you attempted to access doesn't exist.
         /// </exception>
@@ -531,6 +553,9 @@ namespace Amazon.PinpointEmail
         /// <returns>The response from the DeleteEmailIdentity service method, as returned by PinpointEmail.</returns>
         /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
         /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
         /// </exception>
         /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
         /// The resource you attempted to access doesn't exist.
@@ -1247,6 +1272,57 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieve a list of the tags (keys and values) that are associated with a specific
+        /// resource. A <i>tag</i> is a label that you optionally define and associate with a
+        /// resource in Amazon Pinpoint. Each tag consists of a required <i>tag key</i> and an
+        /// optional associated <i>tag value</i>. A tag key is a general label that acts as a
+        /// category for more specific tag values. A tag value acts as a descriptor within a tag
+        /// key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from PinpointEmail.</returns>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAccountDedicatedIpWarmupAttributes
 
 
@@ -1919,6 +1995,114 @@ namespace Amazon.PinpointEmail
         /// 
         /// <returns>Returns a  SendEmailResult from PinpointEmail.</returns>
         SendEmailResponse EndSendEmail(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add one or more tags (keys and values) to one or more specified resources. A <i>tag</i> is
+        /// a label that you optionally define and associate with a resource in Amazon Pinpoint.
+        /// Tags can help you categorize and manage resources in different ways, such as by purpose,
+        /// owner, environment, or other criteria. A resource can have as many as 50 tags.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>,
+        /// both of which you define. A tag key is a general label that acts as a category for
+        /// more specific tag values. A tag value acts as a descriptor within a tag key.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from PinpointEmail.</returns>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove one or more tags (keys and values) from a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from PinpointEmail.</returns>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

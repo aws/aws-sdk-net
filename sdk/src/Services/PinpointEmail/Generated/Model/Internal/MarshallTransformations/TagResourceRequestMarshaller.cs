@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDeliverabilityTestReport Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateDeliverabilityTestReportRequestMarshaller : IMarshaller<IRequest, CreateDeliverabilityTestReportRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDeliverabilityTestReportRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,43 +52,26 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDeliverabilityTestReportRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            string target = "com.amazonaws.services.pinpoint.email.CreateDeliverabilityTestReport";
+            string target = "com.amazonaws.services.pinpoint.email.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/email/deliverability-dashboard/test";
+            string uriResourcePath = "/v1/email/tags";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailContentMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Content, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromEmailAddress())
-                {
-                    context.Writer.WritePropertyName("FromEmailAddress");
-                    context.Writer.Write(publicRequest.FromEmailAddress);
-                }
-
-                if(publicRequest.IsSetReportName())
-                {
-                    context.Writer.WritePropertyName("ReportName");
-                    context.Writer.Write(publicRequest.ReportName);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -116,9 +99,9 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDeliverabilityTestReportRequestMarshaller _instance = new CreateDeliverabilityTestReportRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateDeliverabilityTestReportRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +109,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDeliverabilityTestReportRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
