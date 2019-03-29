@@ -42,6 +42,7 @@ namespace Amazon.Comprehend.Model
         private string _message;
         private OutputDataConfig _outputDataConfig;
         private DateTime? _submitTime;
+        private string _volumeKmsKeyId;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
@@ -228,6 +229,37 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetSubmitTime()
         {
             return this._submitTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeKmsKeyId. 
+        /// <para>
+        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the
+        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string VolumeKmsKeyId
+        {
+            get { return this._volumeKmsKeyId; }
+            set { this._volumeKmsKeyId = value; }
+        }
+
+        // Check to see if VolumeKmsKeyId property is set
+        internal bool IsSetVolumeKmsKeyId()
+        {
+            return this._volumeKmsKeyId != null;
         }
 
     }

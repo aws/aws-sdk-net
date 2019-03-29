@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the DetectDominantLanguage operation.
     /// Determines the dominant language of the input text. For a list of languages that Amazon
-    /// Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+    /// Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
     /// Comprehend Supported Languages</a>.
     /// </summary>
     public partial class DetectDominantLanguageRequest : AmazonComprehendRequest

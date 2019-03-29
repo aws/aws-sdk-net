@@ -243,7 +243,7 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Determines the dominant language of the input text for a batch of documents. For a
-        /// list of languages that Amazon Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+        /// list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
         /// Comprehend Supported Languages</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectDominantLanguage service method.</param>
@@ -618,6 +618,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
         /// The specified name is already in use. Use a different name and try your request again.
         /// </exception>
@@ -693,6 +697,10 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
         /// The specified name is already in use. Use a different name and try your request again.
@@ -1466,7 +1474,7 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Determines the dominant language of the input text. For a list of languages that Amazon
-        /// Comprehend can detect, see <a href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+        /// Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
         /// Comprehend Supported Languages</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectDominantLanguage service method.</param>
@@ -2362,6 +2370,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
@@ -2432,6 +2444,10 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -2505,6 +2521,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
@@ -2576,6 +2596,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -2640,6 +2664,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -2703,6 +2731,10 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.

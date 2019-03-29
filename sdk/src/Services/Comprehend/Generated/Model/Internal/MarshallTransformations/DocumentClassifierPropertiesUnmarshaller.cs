@@ -130,6 +130,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

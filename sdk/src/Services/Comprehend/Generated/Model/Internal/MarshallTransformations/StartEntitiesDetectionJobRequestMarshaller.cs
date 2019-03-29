@@ -125,6 +125,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVolumeKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("VolumeKmsKeyId");
+                    context.Writer.Write(publicRequest.VolumeKmsKeyId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
