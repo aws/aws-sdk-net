@@ -1,3 +1,16 @@
+### 3.3.487.0 (2019-03-29 18:48 UTC)
+* CloudWatch (3.3.101.0)
+	* Added 3 new APIs, and one additional parameter to PutMetricAlarm API, to support tagging of CloudWatch Alarms.
+* Comprehend (3.3.101.0)
+	* With this release AWS Comprehend supports encryption of output results of analysis jobs and volume data on the storage volume attached to the compute instance that processes the analysis job.
+* Greengrass (3.3.101.0)
+	* Greengrass APIs now support tagging operations on resources
+* Core 3.3.100.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.486.0 (2019-03-28 19:15 UTC)
 * MediaLive (3.3.101.0)
 	* This release adds a new output locking mode synchronized to the Unix epoch.
