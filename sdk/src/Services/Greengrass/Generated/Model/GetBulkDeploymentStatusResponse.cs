@@ -37,6 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _createdAt;
         private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
         private string _errorMessage;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property BulkDeploymentMetrics. Relevant metrics on input records
@@ -113,6 +114,21 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The tags for the definition.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
