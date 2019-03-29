@@ -66,8 +66,7 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code>
-    /// for alarms with recover actions
+    /// No specific permissions are needed for alarms with recover actions
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -116,6 +115,7 @@ namespace Amazon.CloudWatch.Model
         private List<string> _okActions = new List<string>();
         private int? _period;
         private Statistic _statistic;
+        private List<Tag> _tags = new List<Tag>();
         private double? _threshold;
         private string _treatMissingData;
         private StandardUnit _unit;
@@ -148,8 +148,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
-        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+        /// | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+        /// | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
         /// </code> 
         /// </para>
         ///  
@@ -357,8 +358,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
-        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+        /// | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+        /// | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
         /// </code> 
         /// </para>
         ///  
@@ -414,6 +416,12 @@ namespace Amazon.CloudWatch.Model
         /// An array of <code>MetricDataQuery</code> structures that enable you to create an alarm
         /// based on the result of a metric math expression. Each item in the <code>Metrics</code>
         /// array either retrieves a metric or performs a math expression.
+        /// </para>
+        ///  
+        /// <para>
+        /// One item in the <code>Metrics</code> array is the expression that the alarm watches.
+        /// You designate this expression by setting <code>ReturnValue</code> to true for this
+        /// object in the array. For more information, see <a>MetricDataQuery</a>.
         /// </para>
         ///  
         /// <para>
@@ -546,6 +554,31 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetStatistic()
         {
             return this._statistic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of key-value pairs to associate with the alarm or dashboard. You can associate
+        /// as many as 50 tags with an alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -97,7 +97,7 @@ namespace Amazon.CloudWatch.Model
         /// that align with the value of the metric's <code>Period</code> and sync up with the
         /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
+        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +161,6 @@ namespace Amazon.CloudWatch.Model
         /// data points.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -206,7 +205,7 @@ namespace Amazon.CloudWatch.Model
         /// that align with the value of the metric's <code>Period</code> and sync up with the
         /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster
-        /// response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+        /// response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -246,7 +245,7 @@ namespace Amazon.CloudWatch.Model
         /// that align with the value of the metric's <code>Period</code> and sync up with the
         /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
+        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -283,7 +282,7 @@ namespace Amazon.CloudWatch.Model
         /// that align with the value of the metric's <code>Period</code> and sync up with the
         /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
         /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster
-        /// response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+        /// response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

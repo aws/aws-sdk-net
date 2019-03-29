@@ -780,6 +780,42 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutDashboard
 
 
@@ -879,8 +915,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code>
-        /// for alarms with recover actions
+        /// No specific permissions are needed for alarms with recover actions
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -968,7 +1003,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// You can use up to 10 dimensions per metric to further clarify what data the metric
-        /// collects. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// collects. Each dimension consists of a Name and Value pair. For more information about
+        /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  
@@ -1064,6 +1100,105 @@ namespace Amazon.CloudWatch
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Tags
+        /// can help you organize and categorize your resources. You can also use them to scope
+        /// user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values. In CloudWatch, alarms can be tagged.
+        /// 
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to AWS and are interpreted strictly as strings
+        /// of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> action with a resource that already has tags.
+        /// If you specify a new tag key for the resource, this tag is appended to the list of
+        /// tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value that you specify replaces the previous value
+        /// for that tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
+        /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
+        /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

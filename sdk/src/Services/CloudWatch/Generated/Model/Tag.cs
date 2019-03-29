@@ -28,47 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAlarmHistory operation.
+    /// A key-value pair associated with a CloudWatch resource.
     /// </summary>
-    public partial class DescribeAlarmHistoryResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private List<AlarmHistoryItem> _alarmHistoryItems = new List<AlarmHistoryItem>();
-        private string _nextToken;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property AlarmHistoryItems. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The alarm histories, in JSON format.
+        /// A string that you can use to assign a value. The combination of tag keys and values
+        /// can help you organize and categorize your resources.
         /// </para>
         /// </summary>
-        public List<AlarmHistoryItem> AlarmHistoryItems
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._alarmHistoryItems; }
-            set { this._alarmHistoryItems = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if AlarmHistoryItems property is set
-        internal bool IsSetAlarmHistoryItems()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._alarmHistoryItems != null && this._alarmHistoryItems.Count > 0; 
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The token that marks the start of the next batch of returned results.
+        /// The value for the specified tag key.
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._nextToken != null;
+            return this._value != null;
         }
 
     }

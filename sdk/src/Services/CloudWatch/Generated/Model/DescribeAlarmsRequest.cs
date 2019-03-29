@@ -124,7 +124,6 @@ namespace Amazon.CloudWatch.Model
         /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

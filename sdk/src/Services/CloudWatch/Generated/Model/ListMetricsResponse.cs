@@ -59,7 +59,6 @@ namespace Amazon.CloudWatch.Model
         /// The token that marks the start of the next batch of returned results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

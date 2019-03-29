@@ -39,11 +39,16 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Messages. 
         /// <para>
-        /// Contains a message about the operation or the results, if the operation results in
-        /// such a message. Examples of messages that may be returned include <code>Maximum number
-        /// of allowed metrics exceeded</code> and <code>You are not authorized to search one
-        /// or more metrics</code>. If there is a message, as much of the operation as possible
-        /// is still executed.
+        /// Contains a message about this <code>GetMetricData</code> operation, if the operation
+        /// results in such a message. An example of a message that may be returned is <code>Maximum
+        /// number of allowed metrics exceeded</code>. If there is a message, as much of the operation
+        /// as possible is still executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// A message appears here only if it is related to the global <code>GetMetricData</code>
+        /// operation. Any message about a specific metric returned by the operation appears in
+        /// the <code>MetricDataResult</code> object returned for that metric.
         /// </para>
         /// </summary>
         public List<MessageData> Messages
@@ -82,7 +87,6 @@ namespace Amazon.CloudWatch.Model
         /// A token that marks the next batch of returned results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
