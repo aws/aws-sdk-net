@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// The Automation execution role used by the currently executing Automation.
+        /// The Automation execution role used by the currently running Automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetLocationMaxErrors. 
         /// <para>
         /// The maxium number of errors allowed before the system stops queueing additional Automation
-        /// executions for the currently executing Automation. 
+        /// executions for the currently running Automation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]

@@ -61,8 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property FailedSteps. 
         /// <para>
-        /// The total number of steps that failed to execute in all specified AWS Regions and
-        /// accounts for the current Automation execution.
+        /// The total number of steps that failed to run in all specified AWS Regions and accounts
+        /// for the current Automation execution.
         /// </para>
         /// </summary>
         public int FailedSteps
@@ -118,8 +118,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TotalSteps. 
         /// <para>
-        /// The total number of steps executed in all specified AWS Regions and accounts for the
-        /// current Automation execution.
+        /// The total number of steps run in all specified AWS Regions and accounts for the current
+        /// Automation execution.
         /// </para>
         /// </summary>
         public int TotalSteps

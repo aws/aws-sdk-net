@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that the task finished executing on the target.
+        /// The time that the task finished running on the target.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters used at the time that the task executed.
+        /// The parameters used at the time that the task ran.
         /// </para>
         /// </summary>
         public string Parameters
@@ -141,7 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that the task started executing on the target.
+        /// The time that the task started running on the target.
         /// </para>
         /// </summary>
         public DateTime StartTime

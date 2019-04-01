@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CurrentAction. 
         /// <para>
-        /// The action of the currently executing step.
+        /// The action of the step that is currently running.
         /// </para>
         /// </summary>
         public string CurrentAction
@@ -116,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CurrentStepName. 
         /// <para>
-        /// The name of the currently executing step.
+        /// The name of the step that is currently running.
         /// </para>
         /// </summary>
         public string CurrentStepName
@@ -170,7 +170,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutedBy. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the user who executed the automation.
+        /// The Amazon Resource Name (ARN) of the user who ran the automation.
         /// </para>
         /// </summary>
         public string ExecutedBy
@@ -393,7 +393,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StepExecutions. 
         /// <para>
         /// A list of details about the current state of all steps that comprise an execution.
-        /// An Automation document contains a list of steps that are executed in order.
+        /// An Automation document contains a list of steps that are run in order.
         /// </para>
         /// </summary>
         public List<StepExecution> StepExecutions
@@ -449,7 +449,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocations. 
         /// <para>
-        /// The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+        /// The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

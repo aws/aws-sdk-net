@@ -109,7 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the document that was executed. For example, AWS-RunShellScript.
+        /// The name of the document that was run. For example, AWS-RunShellScript.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -163,8 +163,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionEndDateTime. 
         /// <para>
-        /// The date and time the plugin was finished executing. Date and time are written in
-        /// ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following
+        /// The date and time the plugin was finished running. Date and time are written in ISO
+        /// 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following
         /// sample AWS CLI command uses the <code>InvokedAfter</code> filter.
         /// </para>
         ///  
@@ -174,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If the plugin has not started to execute, the string is empty.
+        /// If the plugin has not started to run, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionEndDateTime
@@ -192,7 +192,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionStartDateTime. 
         /// <para>
-        /// The date and time the plugin started executing. Date and time are written in ISO 8601
+        /// The date and time the plugin started running. Date and time are written in ISO 8601
         /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
         /// AWS CLI command uses the <code>InvokedBefore</code> filter.
         /// </para>
@@ -203,7 +203,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If the plugin has not started to execute, the string is empty.
+        /// If the plugin has not started to run, the string is empty.
         /// </para>
         /// </summary>
         public string ExecutionStartDateTime
@@ -262,7 +262,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ResponseCode. 
         /// <para>
         /// The error level response code for the plugin script. If the response code is -1, then
-        /// the command has not started executing on the instance, or it was not received by the
+        /// the command has not started running on the instance, or it was not received by the
         /// instance.
         /// </para>
         /// </summary>
@@ -282,7 +282,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardErrorContent. 
         /// <para>
         /// The first 8,000 characters written by the plugin to stderr. If the command has not
-        /// finished executing, then this string is empty.
+        /// finished running, then this string is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8000)]
@@ -302,7 +302,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
         /// The URL for the complete text written by the plugin to stderr. If the command has
-        /// not finished executing, then this string is empty.
+        /// not finished running, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardErrorUrl
@@ -321,8 +321,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputContent. 
         /// <para>
         /// The first 24,000 characters written by the plugin to stdout. If the command has not
-        /// finished executing, if ExecutionStatus is neither Succeeded nor Failed, then this
-        /// string is empty.
+        /// finished running, if ExecutionStatus is neither Succeeded nor Failed, then this string
+        /// is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Max=24000)]
@@ -402,7 +402,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Success: The command or plugin was executed successfully. This is a terminal state.
+        /// Success: The command or plugin was run successfully. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -413,16 +413,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out: The command started to execute on the instance, but the execution
+        /// Execution Timed Out: The command started to run on the instance, but the execution
         /// was not complete before the timeout expired. Execution timeouts count against the
         /// MaxErrors limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command wasn't executed successfully on the instance. For a plugin, this
-        /// indicates that the result code was not zero. For a command invocation, this indicates
-        /// that the result code for one or more plugins was not zero. Invocation failures count
-        /// against the MaxErrors limit of the parent command. This is a terminal state.
+        /// Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
+        /// that the result code was not zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins was not zero. Invocation failures count against
+        /// the MaxErrors limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

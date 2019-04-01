@@ -125,7 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters that were provided for the invocation when it was executed.
+        /// The parameters that were provided for the invocation when it was run.
         /// </para>
         /// </summary>
         public string Parameters

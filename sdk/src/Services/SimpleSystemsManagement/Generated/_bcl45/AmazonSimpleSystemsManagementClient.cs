@@ -749,7 +749,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command, Policy, or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
@@ -923,7 +923,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command, Policy, or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM document that contains the configuration information for the instance. You can specify Command or Automation documents. You can specify AWS-predefined documents, documents you created, or a document that is shared with you from another account. For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3709,7 +3709,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the individual task executions (one per target) for a particular task executed
+        /// Retrieves the individual task executions (one per target) for a particular task run
         /// as part of a Maintenance Window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTaskInvocations service method.</param>
@@ -3763,7 +3763,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// For a given Maintenance Window execution, lists the tasks that were executed.
+        /// For a given Maintenance Window execution, lists the tasks that were run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTasks service method.</param>
         /// 
@@ -4844,7 +4844,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves details about a specific task executed as part of a Maintenance Window execution.
+        /// Retrieves details about a specific task run as part of a Maintenance Window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecution service method.</param>
         /// 
@@ -4897,8 +4897,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves the details about a specific task executed as part of a Maintenance Window
-        /// execution.
+        /// Retrieves the details about a specific task run as part of a Maintenance Window execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTask service method.</param>
         /// 
@@ -4951,7 +4950,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieves a task invocation. A task invocation is a specific task executing on a specific
+        /// Retrieves a task invocation. A task invocation is a specific task running on a specific
         /// target. Maintenance Windows report status for all invocations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTaskInvocation service method.</param>
@@ -5654,9 +5653,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user executes SendCommand against three instances, then a command invocation
-        /// is created for each requested instance ID. ListCommandInvocations provide status about
-        /// command execution.
+        /// if a user runs SendCommand against three instances, then a command invocation is created
+        /// for each requested instance ID. ListCommandInvocations provide status about command
+        /// execution.
         /// </summary>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
@@ -5706,9 +5705,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user executes SendCommand against three instances, then a command invocation
-        /// is created for each requested instance ID. ListCommandInvocations provide status about
-        /// command execution.
+        /// if a user runs SendCommand against three instances, then a command invocation is created
+        /// for each requested instance ID. ListCommandInvocations provide status about command
+        /// execution.
         /// </summary>
         /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
         /// 
@@ -5761,9 +5760,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user executes SendCommand against three instances, then a command invocation
-        /// is created for each requested instance ID. ListCommandInvocations provide status about
-        /// command execution.
+        /// if a user runs SendCommand against three instances, then a command invocation is created
+        /// for each requested instance ID. ListCommandInvocations provide status about command
+        /// execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations service method.</param>
         /// 
@@ -5818,9 +5817,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user executes SendCommand against three instances, then a command invocation
-        /// is created for each requested instance ID. ListCommandInvocations provide status about
-        /// command execution.
+        /// if a user runs SendCommand against three instances, then a command invocation is created
+        /// for each requested instance ID. ListCommandInvocations provide status about command
+        /// execution.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5872,9 +5871,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// An invocation is copy of a command sent to a specific instance. A command can apply
         /// to one or more instances. A command invocation applies to one instance. For example,
-        /// if a user executes SendCommand against three instances, then a command invocation
-        /// is created for each requested instance ID. ListCommandInvocations provide status about
-        /// command execution.
+        /// if a user runs SendCommand against three instances, then a command invocation is created
+        /// for each requested instance ID. ListCommandInvocations provide status about command
+        /// execution.
         /// </summary>
         /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
         /// <param name="cancellationToken">
@@ -7596,10 +7595,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Executes commands on one or more managed instances.
+        /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">Required. The name of the Systems Manager document to run. This can be a public document or a custom document.</param>
+        /// <param name="instanceIds">The instance IDs where the command should run. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
@@ -7673,7 +7672,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Executes commands on one or more managed instances.
+        /// Runs commands on one or more managed instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendCommand service method.</param>
         /// 
@@ -7750,10 +7749,10 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Executes commands on one or more managed instances.
+        /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">Required. The name of the Systems Manager document to run. This can be a public document or a custom document.</param>
+        /// <param name="instanceIds">The instance IDs where the command should run. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7853,8 +7852,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Use this API action to execute an association immediately and only one time. This
-        /// action can be helpful when troubleshooting associations.
+        /// Use this API action to run an association immediately and only one time. This action
+        /// can be helpful when troubleshooting associations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce service method.</param>
         /// 
@@ -8029,7 +8028,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Stop an Automation that is currently executing.
+        /// Stop an Automation that is currently running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAutomationExecution service method.</param>
         /// 
@@ -8135,6 +8134,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
         /// version, schedule, parameters, and Amazon S3 output.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you update an association, the association immediately runs against the specified
+        /// targets.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation service method.</param>
         /// 

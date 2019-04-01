@@ -172,7 +172,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The role that should be assumed when executing the task
+        /// The role that should be assumed when running the task.
         /// </para>
         /// </summary>
         public string ServiceRoleArn
@@ -232,7 +232,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters that should be passed to the task when it is executed.
+        /// The parameters that should be passed to the task when it is run.
         /// </para>
         ///  <note> 
         /// <para>

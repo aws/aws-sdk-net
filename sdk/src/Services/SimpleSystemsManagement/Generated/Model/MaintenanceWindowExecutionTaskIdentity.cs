@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the executed task.
+        /// The ARN of the task that ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -156,7 +156,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskType. 
         /// <para>
-        /// The type of executed task.
+        /// The type of task that ran.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType TaskType

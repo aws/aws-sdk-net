@@ -149,9 +149,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <important> 
         /// <para>
         /// If a user has access to a path, then the user can access all levels of that path.
-        /// For example, if a user has permission to access path /a, then the user can also access
-        /// /a/b. Even if a user has explicitly been denied access in IAM for parameter /a, they
-        /// can still call the GetParametersByPath API action recursively and view /a/b.
+        /// For example, if a user has permission to access path <code>/a</code>, then the user
+        /// can also access <code>/a/b</code>. Even if a user has explicitly been denied access
+        /// in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
+        /// API action recursively for <code>/a</code> and view <code>/a/b</code>.
         /// </para>
         ///  </important>
         /// </summary>

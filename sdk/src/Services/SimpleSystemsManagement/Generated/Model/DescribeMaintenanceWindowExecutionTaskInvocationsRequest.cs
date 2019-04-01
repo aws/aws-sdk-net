@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowExecutionTaskInvocations operation.
-    /// Retrieves the individual task executions (one per target) for a particular task executed
+    /// Retrieves the individual task executions (one per target) for a particular task run
     /// as part of a Maintenance Window execution.
     /// </summary>
     public partial class DescribeMaintenanceWindowExecutionTaskInvocationsRequest : AmazonSimpleSystemsManagementRequest

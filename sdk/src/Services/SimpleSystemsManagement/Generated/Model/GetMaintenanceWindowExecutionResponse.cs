@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time the Maintenance Window finished executing.
+        /// The time the Maintenance Window finished running.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the Maintenance Window started executing.
+        /// The time the Maintenance Window started running.
         /// </para>
         /// </summary>
         public DateTime StartTime

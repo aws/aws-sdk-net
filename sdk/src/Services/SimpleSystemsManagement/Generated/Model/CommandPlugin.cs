@@ -191,7 +191,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResponseCode. 
         /// <para>
-        /// A numeric response code generated after executing the plugin. 
+        /// A numeric response code generated after running the plugin. 
         /// </para>
         /// </summary>
         public int ResponseCode
@@ -209,7 +209,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResponseFinishDateTime. 
         /// <para>
-        /// The time the plugin stopped executing. Could stop prematurely if, for example, a cancel
+        /// The time the plugin stopped running. Could stop prematurely if, for example, a cancel
         /// command was sent. 
         /// </para>
         /// </summary>
@@ -228,7 +228,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResponseStartDateTime. 
         /// <para>
-        /// The time the plugin started executing. 
+        /// The time the plugin started running. 
         /// </para>
         /// </summary>
         public DateTime ResponseStartDateTime
@@ -284,7 +284,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this plugin. You can execute a document with multiple plugins.
+        /// The status of this plugin. You can run a document with multiple plugins.
         /// </para>
         /// </summary>
         public CommandPluginStatus Status

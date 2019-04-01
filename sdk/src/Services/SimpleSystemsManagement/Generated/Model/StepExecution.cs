@@ -279,7 +279,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OverriddenParameters. 
         /// <para>
-        /// A user-specified list of parameters to override when executing a step.
+        /// A user-specified list of parameters to override when running a step.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -446,7 +446,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Strategies used when step fails, we support Continue and Abort. Abort will fail the
         /// automation when the step fails. Continue will ignore the failure of current step and
-        /// allow automation to execute the next step. With conditional branching, we add step:stepName
+        /// allow automation to run the next step. With conditional branching, we add step:stepName
         /// to support the automation to go to another specific step.
         /// </para>
         /// </summary>

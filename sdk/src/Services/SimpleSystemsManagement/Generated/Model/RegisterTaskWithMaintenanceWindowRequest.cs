@@ -263,7 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the task to execute 
+        /// The ARN of the task to run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -301,7 +301,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters that should be passed to the task when it is executed.
+        /// The parameters that should be passed to the task when it is run.
         /// </para>
         ///  <note> 
         /// <para>

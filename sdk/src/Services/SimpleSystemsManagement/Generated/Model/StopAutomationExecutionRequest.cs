@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the StopAutomationExecution operation.
-    /// Stop an Automation that is currently executing.
+    /// Stop an Automation that is currently running.
     /// </summary>
     public partial class StopAutomationExecutionRequest : AmazonSimpleSystemsManagementRequest
     {

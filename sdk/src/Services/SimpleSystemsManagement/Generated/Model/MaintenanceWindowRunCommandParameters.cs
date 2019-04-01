@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Information about the command(s) to execute.
+        /// Information about the command(s) to run.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -223,7 +223,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// If this time is reached and the command has not already started executing, it doesn't
+        /// If this time is reached and the command has not already started running, it doesn't
         /// run.
         /// </para>
         /// </summary>

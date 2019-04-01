@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMaintenanceWindowExecutionTaskInvocation operation.
-    /// Retrieves a task invocation. A task invocation is a specific task executing on a specific
+    /// Retrieves a task invocation. A task invocation is a specific task running on a specific
     /// target. Maintenance Windows report status for all invocations.
     /// </summary>
     public partial class GetMaintenanceWindowExecutionTaskInvocationRequest : AmazonSimpleSystemsManagementRequest

@@ -147,8 +147,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If a new instance starts and attempts to execute an association while Systems Manager
-        /// is executing MaxConcurrency associations, the association is allowed to run. During
+        /// If a new instance starts and attempts to run an association while Systems Manager
+        /// is running MaxConcurrency associations, the association is allowed to run. During
         /// the next association interval, the new instance will process its association within
         /// the limit specified for MaxConcurrency.
         /// </para>
@@ -202,7 +202,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the SSM document that contains the configuration information for the instance.
-        /// You can specify Command, Policy, or Automation documents.
+        /// You can specify Command or Automation documents.
         /// </para>
         ///  
         /// <para>

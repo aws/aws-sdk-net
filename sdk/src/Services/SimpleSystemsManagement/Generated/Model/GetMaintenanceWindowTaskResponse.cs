@@ -153,7 +153,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the task when it executes. The lower the number, the higher the priority.
+        /// The priority of the task when it runs. The lower the number, the higher the priority.
         /// Tasks that have the same priority are scheduled in parallel.
         /// </para>
         /// </summary>
@@ -191,7 +191,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets where the task should execute.
+        /// The targets where the task should run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -232,7 +232,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskInvocationParameters. 
         /// <para>
-        /// The parameters to pass to the task when it executes.
+        /// The parameters to pass to the task when it runs.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskInvocationParameters TaskInvocationParameters
@@ -250,7 +250,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters to pass to the task when it executes.
+        /// The parameters to pass to the task when it runs.
         /// </para>
         ///  <note> 
         /// <para>
@@ -276,7 +276,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskType. 
         /// <para>
-        /// The type of task to execute.
+        /// The type of task to run.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType TaskType

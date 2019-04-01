@@ -97,10 +97,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AutomationType. 
         /// <para>
         /// Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-        /// CrossAccount. CrossAccount is an Automation that executes in multiple AWS Regions
-        /// and accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-        /// Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-        /// Manager User Guide</i>. 
+        /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and
+        /// accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+        /// Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager
+        /// User Guide</i>. 
         /// </para>
         /// </summary>
         public AutomationType AutomationType
@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CurrentAction. 
         /// <para>
-        /// The action of the currently executing step.
+        /// The action of the step that is currently running.
         /// </para>
         /// </summary>
         public string CurrentAction
@@ -136,7 +136,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CurrentStepName. 
         /// <para>
-        /// The name of the currently executing step.
+        /// The name of the step that is currently running.
         /// </para>
         /// </summary>
         public string CurrentStepName
@@ -190,7 +190,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutedBy. 
         /// <para>
-        /// The IAM role ARN of the user who executed the Automation.
+        /// The IAM role ARN of the user who ran the Automation.
         /// </para>
         /// </summary>
         public string ExecutedBy

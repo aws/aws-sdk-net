@@ -157,7 +157,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionDate. 
         /// <para>
-        /// The date the instance association executed. 
+        /// The date the instance association ran. 
         /// </para>
         /// </summary>
         public DateTime ExecutionDate

@@ -29,8 +29,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the StartAssociationsOnce operation.
-    /// Use this API action to execute an association immediately and only one time. This
-    /// action can be helpful when troubleshooting associations.
+    /// Use this API action to run an association immediately and only one time. This action
+    /// can be helpful when troubleshooting associations.
     /// </summary>
     public partial class StartAssociationsOnceRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationIds. 
         /// <para>
-        /// The association IDs that you want to execute immediately and only one time.
+        /// The association IDs that you want to run immediately and only one time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

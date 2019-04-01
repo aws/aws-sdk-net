@@ -208,8 +208,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
-        /// If this time is reached and the command has not already started executing, it will
-        /// not run. Calculated based on the ExpiresAfter user input provided as part of the SendCommand
+        /// If this time is reached and the command has not already started running, it will not
+        /// run. Calculated based on the ExpiresAfter user input provided as part of the SendCommand
         /// API.
         /// </para>
         /// </summary>
@@ -247,10 +247,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The maximum number of instances that are allowed to execute the command at the same
-        /// time. You can specify a number of instances, such as 10, or a percentage of instances,
-        /// such as 10%. The default value is 50. For more information about how to use MaxConcurrency,
-        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// The maximum number of instances that are allowed to run the command at the same time.
+        /// You can specify a number of instances, such as 10, or a percentage of instances, such
+        /// as 10%. The default value is 50. For more information about how to use MaxConcurrency,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
         /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
@@ -274,7 +274,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is 0. For more information about how to
-        /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
         /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
         /// Guide</i>.
         /// </para>
@@ -373,7 +373,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameter values to be inserted in the document when executing the command.
+        /// The parameter values to be inserted in the document when running the command.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
@@ -464,8 +464,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Success: The command successfully executed on all invocations. This is a terminal
-        /// state.
+        /// Success: The command successfully ran on all invocations. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -495,7 +494,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Rate Exceeded: The number of instances targeted by the command exceeded the account
-        /// limit for pending invocations. The system has canceled the command before executing
+        /// limit for pending invocations. The system has canceled the command before running
         /// it on any instance. This is a terminal state.
         /// </para>
         ///  </li> </ul>

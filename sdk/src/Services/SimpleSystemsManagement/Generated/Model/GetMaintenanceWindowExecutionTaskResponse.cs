@@ -125,7 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The role that was assumed when executing the task.
+        /// The role that was assumed when running the task.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -198,7 +198,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The ARN of the executed task.
+        /// The ARN of the task that ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -236,7 +236,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters passed to the task when it was executed.
+        /// The parameters passed to the task when it was run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -273,7 +273,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of task executed.
+        /// The type of task that was run.
         /// </para>
         /// </summary>
         public MaintenanceWindowTaskType Type

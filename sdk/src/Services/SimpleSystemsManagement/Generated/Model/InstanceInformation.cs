@@ -225,7 +225,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastAssociationExecutionDate. 
         /// <para>
-        /// The date the association was last executed.
+        /// The date the association was last run.
         /// </para>
         /// </summary>
         public DateTime LastAssociationExecutionDate
