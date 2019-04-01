@@ -1,3 +1,9 @@
+### 3.3.488.0 (2019-04-01 18:17 UTC)
+* ElasticMapReduce (3.3.101.0)
+	* Amazon EMR adds the ability to modify instance group configurations on a running cluster through the new "configurations" field in the ModifyInstanceGroups API.
+* SimpleSystemsManagement (3.3.100.4)
+	* March 2019 documentation updates for Systems Manager.
+
 ### 3.3.487.0 (2019-03-29 18:48 UTC)
 * CloudWatch (3.3.101.0)
 	* Added 3 new APIs, and one additional parameter to PutMetricAlarm API, to support tagging of CloudWatch Alarms.

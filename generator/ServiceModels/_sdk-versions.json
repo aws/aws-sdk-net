@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.487.0",
+    "ProductVersion" : "3.3.488.0",
     "CoreVersion"    : "3.3.100.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -191,7 +191,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.3.100.3",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.3"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.100.3",
+            "Version" : "3.3.100.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.3"
