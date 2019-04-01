@@ -45,6 +45,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceGroupModifyConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConfigurations())
+            {
+                context.Writer.WritePropertyName("Configurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEC2InstanceIdsToTerminate())
             {
                 context.Writer.WritePropertyName("EC2InstanceIdsToTerminate");

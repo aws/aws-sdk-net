@@ -28,10 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Modify an instance group size.
+    /// Modify the size or configurations of an instance group.
     /// </summary>
     public partial class InstanceGroupModifyConfig
     {
+        private List<Configuration> _configurations = new List<Configuration>();
         private List<string> _ec2InstanceIdsToTerminate = new List<string>();
         private int? _instanceCount;
         private string _instanceGroupId;
@@ -51,6 +52,24 @@ namespace Amazon.ElasticMapReduce.Model
         {
             _instanceGroupId = instanceGroupId;
             _instanceCount = instanceCount;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configurations. 
+        /// <para>
+        /// A list of new or modified configurations to apply for an instance group.
+        /// </para>
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && this._configurations.Count > 0; 
         }
 
         /// <summary>

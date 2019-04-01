@@ -82,6 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfigurationsVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationsVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EbsBlockDevices", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EbsBlockDevice, EbsBlockDeviceUnmarshaller>(EbsBlockDeviceUnmarshaller.Instance);
@@ -110,6 +116,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfullyAppliedConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.LastSuccessfullyAppliedConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfullyAppliedConfigurationsVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Market", targetDepth))

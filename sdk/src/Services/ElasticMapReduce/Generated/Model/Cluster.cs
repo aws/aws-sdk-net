@@ -239,7 +239,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property KerberosAttributes. 
         /// <para>
         /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
-        /// a security configuration. For more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+        /// a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
         /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
         /// </para>
         /// </summary>
@@ -339,7 +339,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
         /// where x.x.x is an Amazon EMR release version, for example, <code>emr-5.14.0</code>.
         /// For more information about Amazon EMR release versions and included application versions
-        /// and features, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+        /// and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
         /// The release label applies only to Amazon EMR releases versions 4.x and later. Earlier
         /// versions use <code>AmiVersion</code>.
         /// </para>

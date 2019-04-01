@@ -763,6 +763,10 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         public static readonly InstanceGroupState PROVISIONING = new InstanceGroupState("PROVISIONING");
         /// <summary>
+        /// Constant RECONFIGURING for InstanceGroupState
+        /// </summary>
+        public static readonly InstanceGroupState RECONFIGURING = new InstanceGroupState("RECONFIGURING");
+        /// <summary>
         /// Constant RESIZING for InstanceGroupState
         /// </summary>
         public static readonly InstanceGroupState RESIZING = new InstanceGroupState("RESIZING");

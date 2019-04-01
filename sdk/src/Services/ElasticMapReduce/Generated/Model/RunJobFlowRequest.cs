@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// require more than 256 steps to process your data. You can bypass the 256-step limitation
     /// in various ways, including using the SSH shell to connect to the master node and submitting
     /// queries directly to the software running on the master node, such as Hive and Hadoop.
-    /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+    /// For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
     /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
     ///  
@@ -153,7 +153,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
         /// for Amazon EMR to install and configure when launching the cluster. For a list of
-        /// applications available for each Amazon EMR release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
         /// EMR Release Guide</a>.
         /// </para>
         /// </summary>
@@ -232,16 +232,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed
         /// Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances.
-        /// For more information about custom AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+        /// For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
         /// a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster
         /// uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
         /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.
         /// </para>
         ///  
         /// <para>
-        /// For information about creating a custom AMI, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+        /// For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
         /// an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide
-        /// for Linux Instances</i>. For information about finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+        /// for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
         /// a Linux AMI</a>. 
         /// </para>
         /// </summary>
@@ -322,7 +322,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property KerberosAttributes. 
         /// <para>
         /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
-        /// a security configuration. For more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+        /// a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
         /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
         /// </para>
         /// </summary>
@@ -387,7 +387,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A list of strings that indicates third-party software to use with the job flow that
         /// accepts a user argument list. EMR accepts and forwards the argument list to the corresponding
         /// installation script as bootstrap action arguments. For more information, see "Launch
-        /// a Job Flow on the MapR Distribution for Hadoop" in the <a href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+        /// a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
         /// EMR Developer Guide</a>. Supported values are:
         /// </para>
         ///  <ul> <li> 
@@ -444,7 +444,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
         /// where x.x.x is an Amazon EMR release version, for example, <code>emr-5.14.0</code>.
         /// For more information about Amazon EMR release versions and included application versions
-        /// and features, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+        /// and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
         /// The release label applies only to Amazon EMR releases versions 4.x and later. Earlier
         /// versions use <code>AmiVersion</code>.
         /// </para>
@@ -577,7 +577,7 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note> 
         /// <para>
         /// A list of strings that indicates third-party software to use. For more information,
-        /// see the <a href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+        /// see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
         /// EMR Developer Guide</a>. Currently supported values are:
         /// </para>
         ///  <ul> <li> 
