@@ -240,7 +240,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
-        /// 
+        /// One or more of of request parameters specified is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         Task<ListCertificatesResponse> ListCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));

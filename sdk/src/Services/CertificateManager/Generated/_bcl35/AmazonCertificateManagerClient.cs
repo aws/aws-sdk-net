@@ -849,7 +849,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
-        /// 
+        /// One or more of of request parameters specified is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates()
@@ -866,7 +866,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
-        /// 
+        /// One or more of of request parameters specified is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
@@ -1058,8 +1058,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Renews an eligable ACM certificate. At this time, only exported private certificates
         /// can be renewed with this operation. In order to renew your ACM PCA certificates with
-        /// ACM, you must first <a href="acm-pca/latest/userguide/PcaPermissions.html">grant the
-        /// ACM service principal permission to do so</a>. For more information, see <a href="acm/latest/userguide/manuel-renewal.html">Testing
+        /// ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
+        /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
         /// Managed Renewal</a> in the ACM User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewCertificate service method.</param>
