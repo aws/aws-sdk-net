@@ -35,7 +35,14 @@ namespace Amazon.SecurityHub
     /// AWS and your compliance with the security industry standards and best practices. Security
     /// Hub collects security data from across AWS accounts, services, and supported third-party
     /// partners and helps you analyze your security trends and identify the highest priority
-    /// security issues. For more information, see <a href="">AWS Security Hub User Guide</a>.
+    /// security issues. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
+    /// Security Hub User Guide</a>. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Currently, AWS Security Hub is in Preview release.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
@@ -52,6 +59,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the AcceptInvitation service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -97,6 +107,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -138,6 +151,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -176,6 +192,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the BatchImportFindings service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -216,6 +235,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -223,6 +245,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateInsight">REST API Reference for CreateInsight Operation</seealso>
         CreateInsightResponse CreateInsight(CreateInsightRequest request);
@@ -255,6 +280,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -262,6 +290,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         CreateMembersResponse CreateMembers(CreateMembersRequest request);
@@ -294,13 +325,12 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
-        /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because the specified resource cannot be found.
@@ -335,6 +365,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -342,6 +375,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         DeleteInsightResponse DeleteInsight(DeleteInsightRequest request);
@@ -373,6 +409,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the DeleteInvitations service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -415,6 +454,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -448,8 +490,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Stops you from being able to import findings generated by integrated third-party providers
-        /// into Security Hub.
+        /// Cancels the subscription that allows a findings-generating solution (product) to import
+        /// its findings into Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct service method.</param>
         /// 
@@ -457,9 +499,16 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because the specified resource cannot be found.
@@ -494,9 +543,15 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">REST API Reference for DisableSecurityHub Operation</seealso>
         DisableSecurityHubResponse DisableSecurityHub(DisableSecurityHubRequest request);
@@ -527,6 +582,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the DisassociateFromMasterAccount service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -570,6 +628,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -603,8 +664,8 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Enables you to import findings generated by integrated third-party providers into
-        /// Security Hub.
+        /// Sets up the subscription that enables a findings-generating solution (product) to
+        /// import its findings into Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct service method.</param>
         /// 
@@ -612,9 +673,19 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">REST API Reference for EnableImportFindingsForProduct Operation</seealso>
         EnableImportFindingsForProductResponse EnableImportFindingsForProduct(EnableImportFindingsForProductRequest request);
@@ -643,12 +714,21 @@ namespace Amazon.SecurityHub
         /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
         /// 
         /// <returns>The response from the EnableSecurityHub service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You do not have permission to to perform the action specified in the request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">REST API Reference for EnableSecurityHub Operation</seealso>
         EnableSecurityHubResponse EnableSecurityHub(EnableSecurityHubRequest request);
@@ -679,6 +759,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the GetEnabledStandards service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -719,6 +802,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -726,9 +812,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         GetFindingsResponse GetFindings(GetFindingsRequest request);
@@ -760,6 +843,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -767,6 +853,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">REST API Reference for GetInsightResults Operation</seealso>
         GetInsightResultsResponse GetInsightResults(GetInsightResultsRequest request);
@@ -798,6 +887,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -805,6 +897,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">REST API Reference for GetInsights Operation</seealso>
         GetInsightsResponse GetInsights(GetInsightsRequest request);
@@ -837,6 +932,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -844,9 +942,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request);
@@ -877,6 +972,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the GetMasterAccount service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -919,6 +1017,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the GetMembers service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -963,6 +1064,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -996,13 +1100,17 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Lists all Security Hub-integrated third-party findings providers.
+        /// Lists all findings-generating solutions (products) whose findings you've subscribed
+        /// to receive in Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledProductsForImport service method.</param>
         /// 
         /// <returns>The response from the ListEnabledProductsForImport service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -1038,6 +1146,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -1045,9 +1156,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         ListInvitationsResponse ListInvitations(ListInvitationsRequest request);
@@ -1079,6 +1187,9 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
+        /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -1086,9 +1197,6 @@ namespace Amazon.SecurityHub
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
-        /// The request was rejected because the specified resource cannot be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         ListMembersResponse ListMembers(ListMembersRequest request);
@@ -1119,6 +1227,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the UpdateFindings service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
@@ -1160,6 +1271,9 @@ namespace Amazon.SecurityHub
         /// <returns>The response from the UpdateInsight service method, as returned by SecurityHub.</returns>
         /// <exception cref="Amazon.SecurityHub.Model.InternalException">
         /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub is not enabled for the account used to make this request.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for

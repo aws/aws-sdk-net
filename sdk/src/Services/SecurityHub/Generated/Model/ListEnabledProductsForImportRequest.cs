@@ -29,7 +29,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnabledProductsForImport operation.
-    /// Lists all Security Hub-integrated third-party findings providers.
+    /// Lists all findings-generating solutions (products) whose findings you've subscribed
+    /// to receive in Security Hub.
     /// </summary>
     public partial class ListEnabledProductsForImportRequest : AmazonSecurityHubRequest
     {

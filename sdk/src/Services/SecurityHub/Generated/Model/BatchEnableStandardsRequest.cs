@@ -43,6 +43,15 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The list of standards that you want to enable.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// In this release, Security Hub only supports the CIS AWS Foundations standard. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Its ARN is arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
         public List<StandardsSubscriptionRequest> StandardsSubscriptionRequests

@@ -177,6 +177,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A finding's description.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In this release, Description is a required property.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Description
         {
@@ -533,6 +538,11 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A finding's title.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In this release, Title is a required property.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Title
         {

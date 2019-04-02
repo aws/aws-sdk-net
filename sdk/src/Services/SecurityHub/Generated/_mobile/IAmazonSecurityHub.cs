@@ -35,7 +35,14 @@ namespace Amazon.SecurityHub
     /// AWS and your compliance with the security industry standards and best practices. Security
     /// Hub collects security data from across AWS accounts, services, and supported third-party
     /// partners and helps you analyze your security trends and identify the highest priority
-    /// security issues. For more information, see <a href="">AWS Security Hub User Guide</a>.
+    /// security issues. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
+    /// Security Hub User Guide</a>. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Currently, AWS Security Hub is in Preview release.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial interface IAmazonSecurityHub : IAmazonService, IDisposable
     {
