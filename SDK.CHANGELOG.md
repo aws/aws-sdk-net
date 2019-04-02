@@ -1,3 +1,11 @@
+### 3.3.489.0 (2019-04-02 18:11 UTC)
+* CertificateManager (3.3.100.4)
+	* Documentation updates for acm
+* EC2 (3.3.102.0)
+	* Add paginators.
+* SecurityHub (3.3.101.0)
+	* This update includes 3 additional error codes: AccessDeniedException, InvalidAccessException, and ResourceConflictException. This update also removes the error code ResourceNotFoundException from the GetFindings, GetInvitationsCount, ListInvitations, and ListMembers operations. 
+
 ### 3.3.488.0 (2019-04-01 18:17 UTC)
 * ElasticMapReduce (3.3.101.0)
 	* Amazon EMR adds the ability to modify instance group configurations on a running cluster through the new "configurations" field in the ModifyInstanceGroups API.
