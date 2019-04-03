@@ -238,7 +238,7 @@ namespace Amazon.Batch.Model
         /// to submit multi-node parallel jobs to your compute environment, you should consider
         /// creating a cluster placement group and associate it with your compute resources. This
         /// keeps your multi-node parallel job on a logical grouping of instances within a single
-        /// Availability Zone with high network flow potential. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>

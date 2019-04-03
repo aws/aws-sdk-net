@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NodeOverrides Marshaller
+    /// ResourceRequirement Marshaller
     /// </summary>       
-    public class NodeOverridesMarshaller : IRequestMarshaller<NodeOverrides, JsonMarshallerContext> 
+    public class ResourceRequirementMarshaller : IRequestMarshaller<ResourceRequirement, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NodeOverrides requestObject, JsonMarshallerContext context)
+        public void Marshall(ResourceRequirement requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetNodePropertyOverrides())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("nodePropertyOverrides");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectNodePropertyOverridesListValue in requestObject.NodePropertyOverrides)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NodePropertyOverrideMarshaller.Instance;
-                    marshaller.Marshall(requestObjectNodePropertyOverridesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
-            if(requestObject.IsSetNumNodes())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("numNodes");
-                context.Writer.Write(requestObject.NumNodes);
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static NodeOverridesMarshaller Instance = new NodeOverridesMarshaller();
+        public readonly static ResourceRequirementMarshaller Instance = new ResourceRequirementMarshaller();
 
     }
 }

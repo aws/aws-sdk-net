@@ -152,7 +152,7 @@ namespace Amazon.Batch.Model
         /// which AWS Batch terminates your jobs if they have not finished. If a job is terminated
         /// due to a timeout, it is not retried. The minimum value for the timeout is 60 seconds.
         /// Any timeout configuration that is specified during a <a>SubmitJob</a> operation overrides
-        /// the timeout configuration defined here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+        /// the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

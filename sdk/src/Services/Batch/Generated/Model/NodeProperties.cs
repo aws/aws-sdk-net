@@ -39,7 +39,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MainNode. 
         /// <para>
-        /// Specifies the node index for the main node of a multi-node parallel job.
+        /// Specifies the node index for the main node of a multi-node parallel job. This node
+        /// index value must be fewer than the number of nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

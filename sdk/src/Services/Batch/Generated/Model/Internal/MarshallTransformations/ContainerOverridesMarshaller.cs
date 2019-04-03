@@ -84,6 +84,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Memory);
             }
 
+            if(requestObject.IsSetResourceRequirements())
+            {
+                context.Writer.WritePropertyName("resourceRequirements");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceRequirementsListValue in requestObject.ResourceRequirements)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceRequirementMarshaller.Instance;
+                    marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVcpus())
             {
                 context.Writer.WritePropertyName("vcpus");

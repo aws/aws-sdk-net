@@ -118,6 +118,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReadonlyRootFilesystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceRequirements", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceRequirement, ResourceRequirementUnmarshaller>(ResourceRequirementUnmarshaller.Instance);
+                    unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ulimits", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Ulimit, UlimitUnmarshaller>(UlimitUnmarshaller.Instance);

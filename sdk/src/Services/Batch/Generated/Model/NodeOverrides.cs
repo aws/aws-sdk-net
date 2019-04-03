@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     public partial class NodeOverrides
     {
         private List<NodePropertyOverride> _nodePropertyOverrides = new List<NodePropertyOverride>();
+        private int? _numNodes;
 
         /// <summary>
         /// Gets and sets the property NodePropertyOverrides. 
@@ -51,6 +52,41 @@ namespace Amazon.Batch.Model
         internal bool IsSetNodePropertyOverrides()
         {
             return this._nodePropertyOverrides != null && this._nodePropertyOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumNodes. 
+        /// <para>
+        /// The number of nodes to use with a multi-node parallel job. This value overrides the
+        /// number of nodes that are specified in the job definition. To use this override:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There must be at least one node range in your job definition that has an open upper
+        /// boundary (such as <code>:</code> or <code>n:</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The lower boundary of the node range specified in the job definition must be fewer
+        /// than the number of nodes specified in the override.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The main node index specified in the job definition must be fewer than the number
+        /// of nodes specified in the override.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int NumNodes
+        {
+            get { return this._numNodes.GetValueOrDefault(); }
+            set { this._numNodes = value; }
+        }
+
+        // Check to see if NumNodes property is set
+        internal bool IsSetNumNodes()
+        {
+            return this._numNodes.HasValue; 
         }
 
     }

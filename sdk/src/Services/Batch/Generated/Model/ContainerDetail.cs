@@ -46,6 +46,7 @@ namespace Amazon.Batch.Model
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
+        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
         private string _taskArn;
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
@@ -314,6 +315,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRequirements. 
+        /// <para>
+        /// The type and amount of a resource to assign to a container. Currently, the only supported
+        /// resource is <code>GPU</code>.
+        /// </para>
+        /// </summary>
+        public List<ResourceRequirement> ResourceRequirements
+        {
+            get { return this._resourceRequirements; }
+            set { this._resourceRequirements = value; }
+        }
+
+        // Check to see if ResourceRequirements property is set
+        internal bool IsSetResourceRequirements()
+        {
+            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
         }
 
         /// <summary>

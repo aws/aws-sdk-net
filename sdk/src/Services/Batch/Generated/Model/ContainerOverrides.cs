@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private string _instanceType;
         private int? _memory;
+        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
         private int? _vcpus;
 
         /// <summary>
@@ -119,6 +120,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetMemory()
         {
             return this._memory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRequirements. 
+        /// <para>
+        /// The type and amount of a resource to assign to a container. This value overrides the
+        /// value set in the job definition. Currently, the only supported resource is <code>GPU</code>.
+        /// </para>
+        /// </summary>
+        public List<ResourceRequirement> ResourceRequirements
+        {
+            get { return this._resourceRequirements; }
+            set { this._resourceRequirements = value; }
+        }
+
+        // Check to see if ResourceRequirements property is set
+        internal bool IsSetResourceRequirements()
+        {
+            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
         }
 
         /// <summary>

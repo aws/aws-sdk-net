@@ -241,7 +241,7 @@ namespace Amazon.Batch.Model
         /// a job is terminated due to a timeout, it is not retried. The minimum value for the
         /// timeout is 60 seconds. This configuration overrides any timeout configuration specified
         /// in the job definition. For array jobs, child jobs have the same timeout configuration
-        /// as the parent job. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+        /// as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
