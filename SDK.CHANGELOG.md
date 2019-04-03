@@ -1,3 +1,14 @@
+### 3.3.490.0 (2019-04-03 18:38 UTC)
+* Batch (3.3.101.0)
+	* Support for GPU resource requirement in RegisterJobDefinition and SubmitJob
+* Comprehend (3.3.102.0)
+	* With this release AWS Comprehend  adds tagging support for document-classifiers and entity-recognizers.
+* Core 3.3.100.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.489.0 (2019-04-02 18:11 UTC)
 * CertificateManager (3.3.100.4)
 	* Documentation updates for acm
