@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private string _documentClassifierName;
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
+        private List<Tag> _tags = new List<Tag>();
         private string _volumeKmsKeyId;
 
         /// <summary>
@@ -139,6 +140,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to be associated with the document classifier being created. A tag is a key-value
+        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
+        /// a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to
+        /// indicate its use by a particular department. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
