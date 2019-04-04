@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private DateTime? _createdAt;
         private string _endpoint;
+        private Logging _logging;
         private string _name;
         private string _platformVersion;
         private VpcConfigResponse _resourcesVpcConfig;
@@ -133,6 +134,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Logging. 
+        /// <para>
+        /// The logging configuration for your cluster.
+        /// </para>
+        /// </summary>
+        public Logging Logging
+        {
+            get { return this._logging; }
+            set { this._logging = value; }
+        }
+
+        // Check to see if Logging property is set
+        internal bool IsSetLogging()
+        {
+            return this._logging != null;
         }
 
         /// <summary>

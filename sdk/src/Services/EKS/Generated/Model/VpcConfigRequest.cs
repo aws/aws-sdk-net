@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing an Amazon EKS cluster VPC configuration request.
+    /// An object representing the VPC configuration to use for an Amazon EKS cluster.
     /// </summary>
     public partial class VpcConfigRequest
     {

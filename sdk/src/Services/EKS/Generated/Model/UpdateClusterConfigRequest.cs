@@ -35,11 +35,26 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// Currently, the only cluster configuration changes supported are to enable or disable
-    /// Amazon EKS public and private API server endpoints. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+    /// You can use this API operation to enable or disable public and private access to your
+    /// cluster's Kubernetes API server endpoint. By default, public access is enabled and
+    /// private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
     /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+    /// 
     /// </para>
     ///  
+    /// <para>
+    /// You can also use this API operation to enable or disable exporting the Kubernetes
+    /// control plane logs for your cluster to CloudWatch Logs. By default, cluster control
+    /// plane logs are not exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+    /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
+    /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
+    /// CloudWatch Pricing</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Cluster updates are asynchronous, and they should finish within a few minutes. During
     /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
@@ -50,6 +65,7 @@ namespace Amazon.EKS.Model
     public partial class UpdateClusterConfigRequest : AmazonEKSRequest
     {
         private string _clientRequestToken;
+        private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
 
@@ -70,6 +86,34 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Logging. 
+        /// <para>
+        /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
+        /// CloudWatch Logs. By default, cluster control plane logs are not exported to CloudWatch
+        /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+        /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Logging Logging
+        {
+            get { return this._logging; }
+            set { this._logging = value; }
+        }
+
+        // Check to see if Logging property is set
+        internal bool IsSetLogging()
+        {
+            return this._logging != null;
         }
 
         /// <summary>

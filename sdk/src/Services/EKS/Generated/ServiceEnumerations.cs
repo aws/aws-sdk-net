@@ -157,11 +157,77 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Api for LogType
+        /// </summary>
+        public static readonly LogType Api = new LogType("api");
+        /// <summary>
+        /// Constant Audit for LogType
+        /// </summary>
+        public static readonly LogType Audit = new LogType("audit");
+        /// <summary>
+        /// Constant Authenticator for LogType
+        /// </summary>
+        public static readonly LogType Authenticator = new LogType("authenticator");
+        /// <summary>
+        /// Constant ControllerManager for LogType
+        /// </summary>
+        public static readonly LogType ControllerManager = new LogType("controllerManager");
+        /// <summary>
+        /// Constant Scheduler for LogType
+        /// </summary>
+        public static readonly LogType Scheduler = new LogType("scheduler");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UpdateParamType.
     /// </summary>
     public class UpdateParamType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ClusterLogging for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
         /// <summary>
         /// Constant EndpointPrivateAccess for UpdateParamType
         /// </summary>
@@ -282,6 +348,10 @@ namespace Amazon.EKS
         /// Constant EndpointAccessUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType EndpointAccessUpdate = new UpdateType("EndpointAccessUpdate");
+        /// <summary>
+        /// Constant LoggingUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType LoggingUpdate = new UpdateType("LoggingUpdate");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

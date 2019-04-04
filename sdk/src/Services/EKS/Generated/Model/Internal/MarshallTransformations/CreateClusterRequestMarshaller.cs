@@ -77,6 +77,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetLogging())
+                {
+                    context.Writer.WritePropertyName("logging");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoggingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Logging, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

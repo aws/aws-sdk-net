@@ -94,6 +94,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logging", targetDepth))
+                {
+                    var unmarshaller = LoggingUnmarshaller.Instance;
+                    unmarshalledObject.Logging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
