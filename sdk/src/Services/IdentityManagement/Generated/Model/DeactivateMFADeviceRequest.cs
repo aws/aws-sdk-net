@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// For more information about creating and working with virtual MFA devices, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling
     /// a Virtual Multi-factor Authentication (MFA) Device</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListInstanceProfilesForRole operation.
     /// Lists the instance profiles that have the specified associated IAM role. If there
     /// are none, the operation returns an empty list. For more information about instance
-    /// profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
     /// Instance Profiles</a>.
     /// 
     ///  

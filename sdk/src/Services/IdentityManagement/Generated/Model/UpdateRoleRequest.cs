@@ -73,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// are valid for one hour by default. This applies when you use the <code>AssumeRole*</code>
         /// API operations or the <code>assume-role*</code> CLI operations but does not apply
         /// when you use those operations to create a console URL. For more information, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

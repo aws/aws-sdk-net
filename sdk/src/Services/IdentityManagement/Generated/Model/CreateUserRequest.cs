@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     ///  For information about limitations on the number of IAM users you can create, see
-    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        ///  The path for the user name. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        ///  The path for the user name. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -115,7 +115,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of tags that you want to attach to the newly created user. Each tag consists
         /// of a key name and an associated value. For more information about tagging, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
         /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 

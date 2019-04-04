@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// A structure that represents user-provided metadata that can be associated with a resource
-    /// such as an IAM user or role. For more information about tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+    /// such as an IAM user or role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
     /// IAM Identities</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class Tag

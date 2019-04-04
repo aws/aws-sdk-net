@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// (user, group, role, or policy) was last used in an attempt to access AWS services.
     /// Recent activity usually appears within four hours. IAM reports activity for the last
     /// 365 days, or less if your region began supporting this feature within the last year.
-    /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
     /// Where Data Is Tracked</a>.
     /// 
     ///  <important> 
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     /// unexpected entry in the service last accessed data does not mean that your account
     /// has been compromised, because the request might have been denied. Refer to your CloudTrail
     /// logs as the authoritative source for information about all API calls and whether they
-    /// were successful or denied access. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+    /// were successful or denied access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
     /// IAM Events with CloudTrail</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </important> 
@@ -84,12 +84,12 @@ namespace Amazon.IdentityManagement.Model
     /// a resource could access a service. These other policy types include resource-based
     /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
     /// and AWS STS assume role policies. It only applies permissions policy logic. For more
-    /// about the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+    /// about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information about service last accessed data, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+    /// For more information about service last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
     /// Policy Scope by Viewing User Activity</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>

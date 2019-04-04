@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListUserTags operation.
     /// Lists the tags that are attached to the specified user. The returned list of tags
-    /// is sorted by tag key. For more information about tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+    /// is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
     /// IAM Identities</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class ListUserTagsRequest : AmazonIdentityManagementServiceRequest

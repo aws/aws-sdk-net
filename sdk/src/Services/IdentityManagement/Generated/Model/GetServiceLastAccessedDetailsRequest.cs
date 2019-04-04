@@ -40,7 +40,7 @@ namespace Amazon.IdentityManagement.Model
     /// a resource could access a service. These other policy types include resource-based
     /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
     /// and AWS STS assume role policies. It only applies permissions policy logic. For more
-    /// about the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+    /// about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 

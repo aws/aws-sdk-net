@@ -30,9 +30,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
     /// Creates a new role for your AWS account. For more information about roles, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>.
-    /// For information about limitations on role names and the number of roles you can create,
-    /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
+    /// Roles</a>. For information about limitations on role names and the number of roles
+    /// you can create, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
@@ -121,7 +121,7 @@ namespace Amazon.IdentityManagement.Model
         /// are valid for one hour by default. This applies when you use the <code>AssumeRole*</code>
         /// API operations or the <code>assume-role*</code> CLI operations but does not apply
         /// when you use those operations to create a console URL. For more information, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// Roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -141,7 +141,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        ///  The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        ///  The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -224,7 +224,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of tags that you want to attach to the newly created role. Each tag consists
         /// of a key name and an associated value. For more information about tagging, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a>
         /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 

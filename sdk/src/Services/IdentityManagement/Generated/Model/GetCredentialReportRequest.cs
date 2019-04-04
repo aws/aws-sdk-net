@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetCredentialReport operation.
     /// Retrieves a credential report for the AWS account. For more information about the
-    /// credential report, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+    /// credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
     /// Credential Reports</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class GetCredentialReportRequest : AmazonIdentityManagementServiceRequest

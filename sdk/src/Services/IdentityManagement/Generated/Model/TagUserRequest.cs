@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
     /// You can use tags to restrict access to only an IAM requesting user or to a role that
     /// has a specified tag attached. You can also restrict access to only those resources
     /// that have a certain tag attached. For examples of policies that show how to use tags
-    /// to control access, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+    /// to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
     /// Access Using IAM Tags</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </li> <li> 
@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> </note> 
     /// <para>
-    /// For more information about tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+    /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
     /// IAM Identities</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>

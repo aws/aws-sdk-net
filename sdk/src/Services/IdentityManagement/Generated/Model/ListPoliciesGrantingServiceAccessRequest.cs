@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
     /// could access a service. These other policy types include resource-based policies,
     /// access control lists, AWS Organizations policies, IAM permissions boundaries, and
     /// AWS STS assume role policies. It only applies permissions policy logic. For more about
-    /// the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+    /// the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
@@ -68,7 +68,7 @@ namespace Amazon.IdentityManagement.Model
     /// For each managed policy, this operation returns the ARN and policy name. For each
     /// inline policy, it returns the policy name and the entity to which it is attached.
     /// Inline policies do not have an ARN. For more information about these policy types,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
     /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -131,11 +131,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// To learn the service namespace for a service, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+        /// To learn the service namespace for a service, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
         /// Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose
         /// the name of the service to view details for that service. In the first paragraph,
         /// find the service prefix. For example, <code>(service prefix: a4b)</code>. For more
-        /// information about service namespaces, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>

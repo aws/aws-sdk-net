@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> </note> 
     /// <para>
-    ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+    ///  For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
     /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
         ///  Allows all IAM users in your account to use the AWS Management Console to change
-        /// their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+        /// their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
         /// IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  

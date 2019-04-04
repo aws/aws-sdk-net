@@ -92,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM policies and resource policies, this parameter explains how each set of policies
         /// contributes to the final evaluation decision. When simulating cross-account access
         /// to a resource, both the resource-based policy and the caller's IAM policy must grant
-        /// access. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+        /// access. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
         /// IAM Roles Differ from Resource-based Policies</a> 
         /// </para>
         /// </summary>

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// An IAM role can also have managed policies attached to it. To list the managed policies
     /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
-    /// about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
