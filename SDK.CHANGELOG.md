@@ -1,3 +1,9 @@
+### 3.3.491.0 (2019-04-04 18:43 UTC)
+* EKS (3.3.101.0)
+	* Added support to enable or disable publishing Kubernetes cluster logs in AWS CloudWatch
+* IdentityManagement (3.3.100.5)
+	* Documentation updates for iam
+
 ### 3.3.490.0 (2019-04-03 18:38 UTC)
 * Batch (3.3.101.0)
 	* Support for GPU resource requirement in RegisterJobDefinition and SubmitJob
