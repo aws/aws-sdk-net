@@ -1,3 +1,8 @@
+### 3.3.491.1 (2019-04-04 21:40 UTC)
+* Core 3.3.100.5
+	* Retry Support for RequestThrottledException
+	* All services packages updated to require new Core
+
 ### 3.3.491.0 (2019-04-04 18:43 UTC)
 * EKS (3.3.101.0)
 	* Added support to enable or disable publishing Kubernetes cluster logs in AWS CloudWatch
