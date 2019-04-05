@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.491.1",
+    "ProductVersion" : "3.3.492.0",
     "CoreVersion"    : "3.3.100.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.101.3",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.5"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.101.3",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.5"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.101.4",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.5"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.102.1",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.5"
@@ -1097,7 +1097,7 @@
             "InPreview"               : false
         },
         "IoT1ClickDevicesService"         : {
-            "Version" : "3.3.101.4",
+            "Version" : "3.3.101.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.5"

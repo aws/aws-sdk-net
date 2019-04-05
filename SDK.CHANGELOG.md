@@ -1,3 +1,15 @@
+### 3.3.492.0 (2019-04-05 18:07 UTC)
+* Comprehend (3.3.103.0)
+	* With this release AWS Comprehend provides confusion matrix for custom document classifier.
+* Glue (3.3.102.0)
+	* AWS Glue now supports workerType choices in the CreateJob, UpdateJob, and StartJobRun APIs, to be used for memory-intensive jobs.
+* IoT1ClickDevicesService (3.3.101.5)
+	* Documentation updates for 1-Click: improved descriptions of resource tagging APIs.
+* MediaConvert (3.3.102.0)
+	* Rectify incorrect modelling of DisassociateCertificate method
+* MediaLive (3.3.102.0)
+	* Today AWS Elemental MediaLive (https://aws.amazon.com/medialive/) adds the option to create "Single Pipeline" channels, which offers a lower-cost option compared to Standard channels. MediaLive Single Pipeline channels have a single encoding pipeline rather than the redundant dual Availability Zone (AZ) pipelines that MediaLive provides with a "Standard" channel.
+
 ### 3.3.491.1 (2019-04-04 21:40 UTC)
 * Core 3.3.100.5
 	* Retry Support for RequestThrottledException
