@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PurchaseOffering Request Marshaller
+    /// UpdateReservation Request Marshaller
     /// </summary>       
-    public class PurchaseOfferingRequestMarshaller : IMarshaller<IRequest, PurchaseOfferingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateReservationRequestMarshaller : IMarshaller<IRequest, UpdateReservationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PurchaseOfferingRequest)input);
+            return this.Marshall((UpdateReservationRequest)input);
         }
 
         /// <summary>
@@ -52,64 +52,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PurchaseOfferingRequest publicRequest)
+        public IRequest Marshall(UpdateReservationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/prod/offerings/{offeringId}/purchase";
-            if (!publicRequest.IsSetOfferingId())
-                throw new AmazonMediaLiveException("Request object does not have required field OfferingId set");
-            uriResourcePath = uriResourcePath.Replace("{offeringId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OfferingId));
+            string uriResourcePath = "/prod/reservations/{reservationId}";
+            if (!publicRequest.IsSetReservationId())
+                throw new AmazonMediaLiveException("Request object does not have required field ReservationId set");
+            uriResourcePath = uriResourcePath.Replace("{reservationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ReservationId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCount())
-                {
-                    context.Writer.WritePropertyName("count");
-                    context.Writer.Write(publicRequest.Count);
-                }
-
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetStart())
-                {
-                    context.Writer.WritePropertyName("start");
-                    context.Writer.Write(publicRequest.Start);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -121,9 +84,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PurchaseOfferingRequestMarshaller _instance = new PurchaseOfferingRequestMarshaller();        
+        private static UpdateReservationRequestMarshaller _instance = new UpdateReservationRequestMarshaller();        
 
-        internal static PurchaseOfferingRequestMarshaller GetInstance()
+        internal static UpdateReservationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +94,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PurchaseOfferingRequestMarshaller Instance
+        public static UpdateReservationRequestMarshaller Instance
         {
             get
             {

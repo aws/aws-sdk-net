@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class Channel
     {
         private string _arn;
+        private ChannelClass _channelClass;
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private List<ChannelEgressEndpoint> _egressEndpoints = new List<ChannelEgressEndpoint>();
         private EncoderSettings _encoderSettings;
@@ -59,6 +60,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelClass. The class for this channel. STANDARD for
+        /// a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+        /// </summary>
+        public ChannelClass ChannelClass
+        {
+            get { return this._channelClass; }
+            set { this._channelClass = value; }
+        }
+
+        // Check to see if ChannelClass property is set
+        internal bool IsSetChannelClass()
+        {
+            return this._channelClass != null;
         }
 
         /// <summary>

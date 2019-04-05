@@ -32,6 +32,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ReservationResourceSpecification
     {
+        private ChannelClass _channelClass;
         private ReservationCodec _codec;
         private ReservationMaximumBitrate _maximumBitrate;
         private ReservationMaximumFramerate _maximumFramerate;
@@ -39,6 +40,21 @@ namespace Amazon.MediaLive.Model
         private ReservationResourceType _resourceType;
         private ReservationSpecialFeature _specialFeature;
         private ReservationVideoQuality _videoQuality;
+
+        /// <summary>
+        /// Gets and sets the property ChannelClass. Channel class, e.g. 'STANDARD'
+        /// </summary>
+        public ChannelClass ChannelClass
+        {
+            get { return this._channelClass; }
+            set { this._channelClass = value; }
+        }
+
+        // Check to see if ChannelClass property is set
+        internal bool IsSetChannelClass()
+        {
+            return this._channelClass != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Codec. Codec, e.g. 'AVC'

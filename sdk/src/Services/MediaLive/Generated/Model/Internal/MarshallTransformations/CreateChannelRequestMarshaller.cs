@@ -66,6 +66,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChannelClass())
+                {
+                    context.Writer.WritePropertyName("channelClass");
+                    context.Writer.Write(publicRequest.ChannelClass);
+                }
+
                 if(publicRequest.IsSetDestinations())
                 {
                     context.Writer.WritePropertyName("destinations");

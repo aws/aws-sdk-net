@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaLiveRequest
     {
+        private ChannelClass _channelClass;
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private EncoderSettings _encoderSettings;
         private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
@@ -43,6 +44,22 @@ namespace Amazon.MediaLive.Model
         private string _reserved;
         private string _roleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property ChannelClass. The class for this channel. STANDARD for
+        /// a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+        /// </summary>
+        public ChannelClass ChannelClass
+        {
+            get { return this._channelClass; }
+            set { this._channelClass = value; }
+        }
+
+        // Check to see if ChannelClass property is set
+        internal bool IsSetChannelClass()
+        {
+            return this._channelClass != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Destinations.

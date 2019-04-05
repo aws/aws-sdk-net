@@ -60,6 +60,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/prod/reservations";
             
+            if (publicRequest.IsSetChannelClass())
+                request.Parameters.Add("channelClass", StringUtils.FromString(publicRequest.ChannelClass));
+            
             if (publicRequest.IsSetCodec())
                 request.Parameters.Add("codec", StringUtils.FromString(publicRequest.Codec));
             

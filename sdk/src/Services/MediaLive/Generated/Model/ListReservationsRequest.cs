@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListReservationsRequest : AmazonMediaLiveRequest
     {
+        private string _channelClass;
         private string _codec;
         private string _maximumBitrate;
         private string _maximumFramerate;
@@ -42,6 +43,21 @@ namespace Amazon.MediaLive.Model
         private string _resourceType;
         private string _specialFeature;
         private string _videoQuality;
+
+        /// <summary>
+        /// Gets and sets the property ChannelClass. Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+        /// </summary>
+        public string ChannelClass
+        {
+            get { return this._channelClass; }
+            set { this._channelClass = value; }
+        }
+
+        // Check to see if ChannelClass property is set
+        internal bool IsSetChannelClass()
+        {
+            return this._channelClass != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Codec. Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'

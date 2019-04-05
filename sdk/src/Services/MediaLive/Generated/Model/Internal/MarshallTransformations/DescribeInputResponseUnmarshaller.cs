@@ -75,6 +75,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InputClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mediaConnectFlows", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);

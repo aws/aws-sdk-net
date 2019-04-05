@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartChannel operation
+    /// Response Unmarshaller for UpdateReservation operation
     /// </summary>  
-    public class StartChannelResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateReservationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,94 +45,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartChannelResponse response = new StartChannelResponse();
+            UpdateReservationResponse response = new UpdateReservationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("reservation", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("channelClass", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChannelClass = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("destinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<OutputDestination, OutputDestinationUnmarshaller>(OutputDestinationUnmarshaller.Instance);
-                    response.Destinations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("egressEndpoints", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ChannelEgressEndpoint, ChannelEgressEndpointUnmarshaller>(ChannelEgressEndpointUnmarshaller.Instance);
-                    response.EgressEndpoints = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("encoderSettings", targetDepth))
-                {
-                    var unmarshaller = EncoderSettingsUnmarshaller.Instance;
-                    response.EncoderSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputAttachments", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InputAttachment, InputAttachmentUnmarshaller>(InputAttachmentUnmarshaller.Instance);
-                    response.InputAttachments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputSpecification", targetDepth))
-                {
-                    var unmarshaller = InputSpecificationUnmarshaller.Instance;
-                    response.InputSpecification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logLevel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LogLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelinesRunningCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.PipelinesRunningCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ReservationUnmarshaller.Instance;
+                    response.Reservation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -185,9 +107,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             return new AmazonMediaLiveException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static StartChannelResponseUnmarshaller _instance = new StartChannelResponseUnmarshaller();        
+        private static UpdateReservationResponseUnmarshaller _instance = new UpdateReservationResponseUnmarshaller();        
 
-        internal static StartChannelResponseUnmarshaller GetInstance()
+        internal static UpdateReservationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -195,7 +117,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartChannelResponseUnmarshaller Instance
+        public static UpdateReservationResponseUnmarshaller Instance
         {
             get
             {

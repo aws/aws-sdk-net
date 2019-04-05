@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private List<string> _attachedChannels = new List<string>();
         private List<InputDestination> _destinations = new List<InputDestination>();
         private string _id;
+        private InputClass _inputClass;
         private List<MediaConnectFlow> _mediaConnectFlows = new List<MediaConnectFlow>();
         private string _name;
         private string _roleArn;
@@ -105,6 +106,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputClass. STANDARD - MediaLive expects two sources to
+        /// be connected to this input. If the channel is also STANDARD, both sources will be
+        /// ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested;
+        /// the second source will always be ignored, even if the first source fails.SINGLE_PIPELINE
+        /// - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE,
+        /// this value is valid. If the ChannelClass is STANDARD, this value is not valid because
+        /// the channel requires two sources in the input.
+        /// </summary>
+        public InputClass InputClass
+        {
+            get { return this._inputClass; }
+            set { this._inputClass = value; }
+        }
+
+        // Check to see if InputClass property is set
+        internal bool IsSetInputClass()
+        {
+            return this._inputClass != null;
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListOfferingsRequest : AmazonMediaLiveRequest
     {
+        private string _channelClass;
         private string _channelConfiguration;
         private string _codec;
         private string _maximumBitrate;
@@ -43,6 +44,21 @@ namespace Amazon.MediaLive.Model
         private string _resourceType;
         private string _specialFeature;
         private string _videoQuality;
+
+        /// <summary>
+        /// Gets and sets the property ChannelClass. Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+        /// </summary>
+        public string ChannelClass
+        {
+            get { return this._channelClass; }
+            set { this._channelClass = value; }
+        }
+
+        // Check to see if ChannelClass property is set
+        internal bool IsSetChannelClass()
+        {
+            return this._channelClass != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelConfiguration. Filter to offerings that match the

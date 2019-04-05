@@ -1641,6 +1641,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelClass.
+    /// </summary>
+    public class ChannelClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SINGLE_PIPELINE for ChannelClass
+        /// </summary>
+        public static readonly ChannelClass SINGLE_PIPELINE = new ChannelClass("SINGLE_PIPELINE");
+        /// <summary>
+        /// Constant STANDARD for ChannelClass
+        /// </summary>
+        public static readonly ChannelClass STANDARD = new ChannelClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelClass FindValue(string value)
+        {
+            return FindValue<ChannelClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChannelState.
     /// </summary>
     public class ChannelState : ConstantClass
@@ -5522,6 +5572,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IFrameOnlyPlaylistType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputClass.
+    /// </summary>
+    public class InputClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SINGLE_PIPELINE for InputClass
+        /// </summary>
+        public static readonly InputClass SINGLE_PIPELINE = new InputClass("SINGLE_PIPELINE");
+        /// <summary>
+        /// Constant STANDARD for InputClass
+        /// </summary>
+        public static readonly InputClass STANDARD = new InputClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputClass FindValue(string value)
+        {
+            return FindValue<InputClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputClass(string value)
         {
             return FindValue(value);
         }
