@@ -142,6 +142,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NumberOfWorkers", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfWorkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PredecessorRuns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Predecessor, PredecessorUnmarshaller>(PredecessorUnmarshaller.Instance);
@@ -176,6 +182,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TriggerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkerType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkerType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

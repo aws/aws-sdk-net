@@ -44,10 +44,12 @@ namespace Amazon.Glue.Model
         private int? _maxRetries;
         private string _name;
         private NotificationProperty _notificationProperty;
+        private int? _numberOfWorkers;
         private string _role;
         private string _securityConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
+        private WorkerType _workerType;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -214,6 +216,10 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
+        /// Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// The value that can be allocated for <code>MaxCapacity</code> depends on whether you
         /// are running a python shell job, or an Apache Spark ETL job:
         /// </para>
@@ -298,6 +304,30 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumberOfWorkers. 
+        /// <para>
+        /// The number of workers of a defined <code>workerType</code> that are allocated when
+        /// a job runs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149
+        /// for <code>G.2X</code>. 
+        /// </para>
+        /// </summary>
+        public int NumberOfWorkers
+        {
+            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            set { this._numberOfWorkers = value; }
+        }
+
+        // Check to see if NumberOfWorkers property is set
+        internal bool IsSetNumberOfWorkers()
+        {
+            return this._numberOfWorkers.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The name or ARN of the IAM role associated with this job.
@@ -375,6 +405,41 @@ namespace Amazon.Glue.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerType. 
+        /// <para>
+        /// The type of predefined worker that is allocated when a job runs. Accepts a value of
+        /// Standard, G.1X, or G.2X.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// and a 50GB disk, and 2 executors per worker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// and a 64GB disk, and 1 executor per worker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
+        /// and a 128GB disk, and 1 executor per worker.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WorkerType WorkerType
+        {
+            get { return this._workerType; }
+            set { this._workerType = value; }
+        }
+
+        // Check to see if WorkerType property is set
+        internal bool IsSetWorkerType()
+        {
+            return this._workerType != null;
         }
 
     }

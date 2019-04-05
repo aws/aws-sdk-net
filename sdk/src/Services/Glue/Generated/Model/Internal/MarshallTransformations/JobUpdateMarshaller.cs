@@ -133,6 +133,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNumberOfWorkers())
+            {
+                context.Writer.WritePropertyName("NumberOfWorkers");
+                context.Writer.Write(requestObject.NumberOfWorkers);
+            }
+
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
@@ -149,6 +155,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Timeout");
                 context.Writer.Write(requestObject.Timeout);
+            }
+
+            if(requestObject.IsSetWorkerType())
+            {
+                context.Writer.WritePropertyName("WorkerType");
+                context.Writer.Write(requestObject.WorkerType);
             }
 
         }
