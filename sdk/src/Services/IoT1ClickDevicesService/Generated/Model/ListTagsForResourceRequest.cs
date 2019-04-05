@@ -29,7 +29,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List all tags on an AWS IoT 1-Click resource.
+    /// Lists the tags associated with the specified resource ARN.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoT1ClickDevicesServiceRequest
     {
@@ -38,8 +38,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The AWS IoT 1-Click resource with tags to be listed. This value is an Amazon Resource
-        /// Name (ARN).
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,8 @@ namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the association of tags from an AWS IoT 1-Click resource.
+    /// Using tag keys, deletes the tags (key/value pairs) associated with the specified resource
+    /// ARN.
     /// </summary>
     public partial class UntagResourceRequest : AmazonIoT1ClickDevicesServiceRequest
     {
@@ -39,8 +40,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The AWS IoT 1-Click resource the tags will be removed from. This value is an Amazon
-        /// Resource Name (ARN).
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +59,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys. Existing tags of the resource whose keys are members of this list
-        /// will be removed from the AWS IoT 1-Click resource.
+        /// A collections of tag keys. For example, {"key1","key2"}
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -37,7 +37,13 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags currently associated with the AWS IoT 1-Click resource.
+        /// A collection of key/value pairs defining the resource tags. For example, { "tags":
+        /// {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// Tagging Strategies</a>.
+        /// </para>
+        /// 
+        /// <para>
+        ///   
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

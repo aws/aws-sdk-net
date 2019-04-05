@@ -29,9 +29,8 @@ namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these
-    /// user-defined tags so that they appear on the Billing and Cost Management console for
-    /// cost allocation tracking.
+    /// Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
+    /// IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonIoT1ClickDevicesServiceRequest
     {
@@ -41,8 +40,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Identifies the AWS IoT 1-Click resource to which tags should be added. This value
-        /// is an Amazon Resource Name (ARN).
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +59,13 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the AWS IoT 1-Click resource.
+        /// A collection of key/value pairs defining the resource tags. For example, { "tags":
+        /// {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// Tagging Strategies</a>.
+        /// </para>
+        /// 
+        /// <para>
+        ///   
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

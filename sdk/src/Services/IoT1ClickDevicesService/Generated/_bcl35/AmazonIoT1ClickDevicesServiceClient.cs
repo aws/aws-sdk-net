@@ -35,7 +35,9 @@ namespace Amazon.IoT1ClickDevicesService
     /// <summary>
     /// Implementation for accessing IoT1ClickDevicesService
     ///
-    /// Stub description
+    /// Describes all of the AWS IoT 1-Click device-related API operations for the service.
+    /// Also provides sample requests, responses, and errors for the supported web services
+    /// protocols.
     /// </summary>
     public partial class AmazonIoT1ClickDevicesServiceClient : AmazonServiceClient, IAmazonIoT1ClickDevicesService
     {
@@ -784,7 +786,7 @@ namespace Amazon.IoT1ClickDevicesService
         #region  ListTagsForResource
 
         /// <summary>
-        /// List all tags on an AWS IoT 1-Click resource.
+        /// Lists the tags associated with the specified resource ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -844,9 +846,8 @@ namespace Amazon.IoT1ClickDevicesService
         #region  TagResource
 
         /// <summary>
-        /// Associate a set of tags with an AWS IoT 1-Click resource. You can then activate these
-        /// user-defined tags so that they appear on the Billing and Cost Management console for
-        /// cost allocation tracking.
+        /// Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
+        /// IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -972,7 +973,8 @@ namespace Amazon.IoT1ClickDevicesService
         #region  UntagResource
 
         /// <summary>
-        /// Removes the association of tags from an AWS IoT 1-Click resource.
+        /// Using tag keys, deletes the tags (key/value pairs) associated with the specified resource
+        /// ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
