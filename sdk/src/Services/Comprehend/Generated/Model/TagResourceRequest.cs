@@ -31,8 +31,8 @@ namespace Amazon.Comprehend.Model
     /// Container for the parameters to the TagResource operation.
     /// Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value
     /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-    /// a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to
-    /// indicate its use by a particular department.
+    /// a tag with "Sales" as the key might be added to a resource to indicate its use by
+    /// the sales department.
     /// </summary>
     public partial class TagResourceRequest : AmazonComprehendRequest
     {
@@ -62,7 +62,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags being associated with a specific Amazon Comprehend resource. 
+        /// Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
+        /// of 50 tags (both existing and pending) associated with a specific resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

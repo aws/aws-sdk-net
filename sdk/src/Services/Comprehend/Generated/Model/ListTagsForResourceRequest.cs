@@ -29,8 +29,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags associated with a given Amazon Comprehend resource. Up to the maximum
-    /// number of tags allowed per resource will be displayed.
+    /// Lists all tags associated with a given Amazon Comprehend resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonComprehendRequest
     {

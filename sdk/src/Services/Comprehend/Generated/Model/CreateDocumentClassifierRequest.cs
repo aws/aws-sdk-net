@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private string _documentClassifierName;
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
+        private DocumentClassifierOutputDataConfig _outputDataConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _volumeKmsKeyId;
 
@@ -143,12 +144,31 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// Enables the addition of output results configuration parameters for custom classifier
+        /// jobs.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierOutputDataConfig OutputDataConfig
+        {
+            get { return this._outputDataConfig; }
+            set { this._outputDataConfig = value; }
+        }
+
+        // Check to see if OutputDataConfig property is set
+        internal bool IsSetOutputDataConfig()
+        {
+            return this._outputDataConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to be associated with the document classifier being created. A tag is a key-value
         /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to
-        /// indicate its use by a particular department. 
+        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
+        /// the sales department. 
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -108,6 +108,17 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LanguageCode);
                 }
 
+                if(publicRequest.IsSetOutputDataConfig())
+                {
+                    context.Writer.WritePropertyName("OutputDataConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DocumentClassifierOutputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

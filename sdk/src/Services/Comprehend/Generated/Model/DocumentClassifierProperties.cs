@@ -39,6 +39,7 @@ namespace Amazon.Comprehend.Model
         private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _message;
+        private DocumentClassifierOutputDataConfig _outputDataConfig;
         private ModelStatus _status;
         private DateTime? _submitTime;
         private DateTime? _trainingEndTime;
@@ -176,6 +177,24 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        ///  Provides output results configuration parameters for custom classifier jobs.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierOutputDataConfig OutputDataConfig
+        {
+            get { return this._outputDataConfig; }
+            set { this._outputDataConfig = value; }
+        }
+
+        // Check to see if OutputDataConfig property is set
+        internal bool IsSetOutputDataConfig()
+        {
+            return this._outputDataConfig != null;
         }
 
         /// <summary>

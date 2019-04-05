@@ -301,7 +301,8 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
         /// The request contains more tags than can be associated with a resource (50 tags per
-        /// resource).
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
@@ -358,7 +359,8 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
         /// The request contains more tags than can be associated with a resource (50 tags per
-        /// resource).
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For all custom entity
@@ -1318,8 +1320,7 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Lists all tags associated with a given Amazon Comprehend resource. Up to the maximum
-        /// number of tags allowed per resource will be displayed.
+        /// Lists all tags associated with a given Amazon Comprehend resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1977,8 +1978,8 @@ namespace Amazon.Comprehend
         /// <summary>
         /// Associates a specific tag with an Amazon Comprehend resource. A tag is a key-value
         /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example,
-        /// a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to
-        /// indicate its use by a particular department.
+        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
+        /// the sales department.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1998,7 +1999,8 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
         /// The request contains more tags than can be associated with a resource (50 tags per
-        /// resource).
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);

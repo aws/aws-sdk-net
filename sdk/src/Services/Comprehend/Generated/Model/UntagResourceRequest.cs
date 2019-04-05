@@ -60,8 +60,9 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// The initial part of a key-value pair that forms a tag being removed from a given resource.
-        /// For instance, “Department” might be used as the key portion of the pair, with multiple
-        /// values such as “sales,” “legal,” and “administration.” 
+        /// For example, a tag with "Sales" as the key might be added to a resource to indicate
+        /// its use by the sales department. Keys must be unique and cannot be duplicated for
+        /// a particular resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
