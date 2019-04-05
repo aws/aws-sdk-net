@@ -59,24 +59,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2017-08-29/certificates/{arn}";
+            if (!publicRequest.IsSetArn())
+                throw new AmazonMediaConvertException("Request object does not have required field Arn set");
+            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
-                {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
 
             return request;
         }
