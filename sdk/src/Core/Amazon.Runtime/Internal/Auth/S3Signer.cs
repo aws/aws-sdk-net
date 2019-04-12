@@ -62,7 +62,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (useV4)
             {
                 _regionDetector?.Invoke(request);
-                
+
                 var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
                 request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
                 if (request.UseChunkEncoding)
@@ -151,7 +151,7 @@ namespace Amazon.Runtime.Internal.Auth
         static string BuildCanonicalizedHeaders(IDictionary<string, string> headers)
         {
             var sb = new StringBuilder(256);
-            foreach (var key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
+            foreach (var key in headers.Keys.OrderBy(x => x, StringComparer.InvariantCultureIgnoreCase))
             {
                 var lowerKey = key.ToLowerInvariant();
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))
