@@ -68,6 +68,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDayOfMonth())
+                {
+                    context.Writer.WritePropertyName("DayOfMonth");
+                    context.Writer.Write(publicRequest.DayOfMonth);
+                }
+
                 if(publicRequest.IsSetDayOfWeek())
                 {
                     context.Writer.WritePropertyName("DayOfWeek");

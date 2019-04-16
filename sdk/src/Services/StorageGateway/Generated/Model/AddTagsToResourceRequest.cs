@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes
+    /// You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes
     /// that are recovered to a new gateway maintain their tags.
     /// </para>
     /// </summary>

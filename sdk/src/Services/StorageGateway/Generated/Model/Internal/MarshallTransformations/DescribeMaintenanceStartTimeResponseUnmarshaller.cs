@@ -51,6 +51,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DayOfMonth", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.DayOfMonth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DayOfWeek", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

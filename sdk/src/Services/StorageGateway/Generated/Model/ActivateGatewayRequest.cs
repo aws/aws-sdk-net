@@ -203,7 +203,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value
+        /// A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value
         /// pair.
         /// </para>
         ///  <note> 

@@ -32,11 +32,49 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class GatewayInfo
     {
+        private string _ec2InstanceId;
+        private string _ec2InstanceRegion;
         private string _gatewayARN;
         private string _gatewayId;
         private string _gatewayName;
         private string _gatewayOperationalState;
         private string _gatewayType;
+
+        /// <summary>
+        /// Gets and sets the property Ec2InstanceId. 
+        /// <para>
+        /// The ID of the Amazon EC2 instance that was used to launch the gateway.
+        /// </para>
+        /// </summary>
+        public string Ec2InstanceId
+        {
+            get { return this._ec2InstanceId; }
+            set { this._ec2InstanceId = value; }
+        }
+
+        // Check to see if Ec2InstanceId property is set
+        internal bool IsSetEc2InstanceId()
+        {
+            return this._ec2InstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2InstanceRegion. 
+        /// <para>
+        /// The AWS Region where the Amazon EC2 instance is located.
+        /// </para>
+        /// </summary>
+        public string Ec2InstanceRegion
+        {
+            get { return this._ec2InstanceRegion; }
+            set { this._ec2InstanceRegion = value; }
+        }
+
+        // Check to see if Ec2InstanceRegion property is set
+        internal bool IsSetEc2InstanceRegion()
+        {
+            return this._ec2InstanceRegion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayARN. 

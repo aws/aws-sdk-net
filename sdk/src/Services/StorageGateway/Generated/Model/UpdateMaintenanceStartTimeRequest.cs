@@ -34,19 +34,46 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateMaintenanceStartTimeRequest : AmazonStorageGatewayRequest
     {
+        private int? _dayOfMonth;
         private int? _dayOfWeek;
         private string _gatewayARN;
         private int? _hourOfDay;
         private int? _minuteOfHour;
 
         /// <summary>
+        /// Gets and sets the property DayOfMonth. 
+        /// <para>
+        /// The day of the month component of the maintenance start time represented as an ordinal
+        /// number from 1 to 28, where 1 represents the first day of the month and 28 represents
+        /// the last day of the month.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is only available for tape and volume gateways.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=28)]
+        public int DayOfMonth
+        {
+            get { return this._dayOfMonth.GetValueOrDefault(); }
+            set { this._dayOfMonth = value; }
+        }
+
+        // Check to see if DayOfMonth property is set
+        internal bool IsSetDayOfMonth()
+        {
+            return this._dayOfMonth.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// The maintenance start time day of the week represented as an ordinal number from 0
-        /// to 6, where 0 represents Sunday and 6 Saturday.
+        /// The day of the week component of the maintenance start time week represented as an
+        /// ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=6)]
+        [AWSProperty(Min=0, Max=6)]
         public int DayOfWeek
         {
             get { return this._dayOfWeek.GetValueOrDefault(); }

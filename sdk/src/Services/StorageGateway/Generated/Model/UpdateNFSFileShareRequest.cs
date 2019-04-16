@@ -260,9 +260,18 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property RequesterPays. 
         /// <para>
-        /// A value that sets the access control list permission for objects in the Amazon S3
-        /// bucket that a file gateway puts objects into. The default value is <code>private</code>.
+        /// A value that sets who pays the cost of the request and the cost associated with data
+        /// download from the S3 bucket. If this value is set to true, the requester pays the
+        /// costs. Otherwise the S3 bucket owner pays. However, the S3 bucket owner always pays
+        /// the cost of storing data.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file
+        /// share, so make sure that the configuration on the file share is the same as the S3
+        /// bucket configuration.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool RequesterPays
         {

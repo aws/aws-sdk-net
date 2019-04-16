@@ -47,6 +47,7 @@ namespace Amazon.StorageGateway.Model
         private string _kmsKey;
         private int? _numTapesToCreate;
         private string _poolId;
+        private List<Tag> _tags = new List<Tag>();
         private string _tapeBarcodePrefix;
         private long? _tapeSizeInBytes;
 
@@ -158,9 +159,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property PoolId. 
         /// <para>
         /// The ID of the pool that you want to add your tape to for archiving. The tape in this
-        /// pool is archived in the S3 storage class you chose when you created the tape. When
-        /// you use your backup application to eject the tape, the tape is archived directly into
-        /// the storage class (Glacier or Deep Archive).
+        /// pool is archived in the S3 storage class that is associated with the pool. When you
+        /// use your backup application to eject the tape, the tape is archived directly into
+        /// the storage class (Glacier or Deep Archive) that corresponds to the pool.
         /// </para>
         ///  
         /// <para>
@@ -178,6 +179,33 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetPoolId()
         {
             return this._poolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value
+        /// pair.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Valid characters for key and value are letters, spaces, and numbers representable
+        /// in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum
+        /// length of a tag's key is 128 characters, and the maximum length for a tag's value
+        /// is 256.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

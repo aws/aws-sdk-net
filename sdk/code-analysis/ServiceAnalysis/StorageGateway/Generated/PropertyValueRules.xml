@@ -594,6 +594,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeResponse.DayOfMonth</property>
+    <min>1</min>
+    <max>28</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeResponse.DayOfWeek</property>
     <min>0</min>
     <max>6</max>
@@ -1159,6 +1164,11 @@
     <property>Amazon.StorageGateway.Model.UpdateGatewaySoftwareNowResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeRequest.DayOfMonth</property>
+    <min>1</min>
+    <max>28</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeRequest.DayOfWeek</property>

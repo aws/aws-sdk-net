@@ -97,7 +97,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheMissPercentage.
+        /// Gets and sets the property CacheMissPercentage. 
+        /// <para>
+        /// Percent of application read operations from the file shares that are not served from
+        /// cache. The sample is taken at the end of the reporting period.
+        /// </para>
         /// </summary>
         public double CacheMissPercentage
         {
