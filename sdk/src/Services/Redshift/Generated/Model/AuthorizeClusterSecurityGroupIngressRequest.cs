@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model
     /// <para>
     /// You must also associate the security group with a cluster so that clients running
     /// on these IP addresses or the EC2 instance are authorized to connect to the cluster.
-    /// For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
+    /// For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
     /// with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>

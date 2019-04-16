@@ -127,7 +127,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional set of tags you can use to search for the schedule.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

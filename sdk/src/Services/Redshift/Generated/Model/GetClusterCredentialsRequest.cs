@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or
     /// more database user groups that the user will join at log on. By default, the temporary
     /// credentials expire in 900 seconds. You can optionally specify a duration between 900
-    /// seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
+    /// seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
     /// IAM Authentication to Generate Database User Credentials</a> in the Amazon Redshift
     /// Cluster Management Guide.
     /// 
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model
     /// <para>
     /// The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials
     /// must have an IAM policy attached that allows access to all necessary actions and resources.
-    /// For more information about permissions, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
+    /// For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
     /// Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
     /// </para>
     ///  
@@ -218,7 +218,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+        /// For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
         /// USER</a> in the Amazon Redshift Database Developer Guide. 
         /// </para>
         ///  

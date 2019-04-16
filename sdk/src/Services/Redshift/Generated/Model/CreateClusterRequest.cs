@@ -36,7 +36,7 @@ namespace Amazon.Redshift.Model
     /// To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet
     /// group name. The cluster subnet group identifies the subnets of your VPC that Amazon
     /// Redshift uses when creating the cluster. For more information about managing clusters,
-    /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
     /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
@@ -240,7 +240,7 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Default: The default Amazon Redshift cluster parameter group. For information about
-        /// the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+        /// the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
         /// with Amazon Redshift Parameter Groups</a> 
         /// </para>
         ///  
@@ -392,7 +392,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// To create additional databases after the cluster is created, connect to the cluster
         /// with a SQL client and use SQL commands to create a database. For more information,
-        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
         /// a Database</a> in the Amazon Redshift Database Developer Guide. 
         /// </para>
         ///  
@@ -414,7 +414,7 @@ namespace Amazon.Redshift.Model
         ///  </li> <li> 
         /// <para>
         /// Cannot be a word that is reserved by the service. A list of reserved words can be
-        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
         /// Words</a> in the Amazon Redshift Database Developer Guide. 
         /// </para>
         ///  </li> </ul>
@@ -440,7 +440,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through
         /// an Internet gateway. For more information about provisioning clusters in EC2-VPC,
-        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
         /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
@@ -483,7 +483,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
         /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
-        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
         /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         ///  
@@ -652,7 +652,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
         /// Words</a> in the Amazon Redshift Database Developer Guide. 
         /// </para>
         ///  </li> </ul>
@@ -720,7 +720,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property NodeType. 
         /// <para>
         /// The node type to be provisioned for the cluster. For information about node types,
-        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+        /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
         /// Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -752,7 +752,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about determining how many nodes you need, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+        /// For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
         /// Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
@@ -827,7 +827,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         ///  Default: A 30-minute window selected at random from an 8-hour block of time per region,
         /// occurring on a random day of the week. For more information about the time blocks
-        /// for each region, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+        /// for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
         /// Windows</a> in Amazon Redshift Cluster Management Guide.
         /// </para>
         ///  

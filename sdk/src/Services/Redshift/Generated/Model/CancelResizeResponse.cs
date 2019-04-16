@@ -33,6 +33,7 @@ namespace Amazon.Redshift.Model
     public partial class CancelResizeResponse : AmazonWebServiceResponse
     {
         private double? _avgResizeRateInMegaBytesPerSecond;
+        private double? _dataTransferProgressPercent;
         private long? _elapsedTimeInSeconds;
         private long? _estimatedTimeToCompletionInSeconds;
         private List<string> _importTablesCompleted = new List<string>();
@@ -66,6 +67,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvgResizeRateInMegaBytesPerSecond()
         {
             return this._avgResizeRateInMegaBytesPerSecond.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTransferProgressPercent. 
+        /// <para>
+        /// The percent of data transferred from source cluster to target cluster.
+        /// </para>
+        /// </summary>
+        public double DataTransferProgressPercent
+        {
+            get { return this._dataTransferProgressPercent.GetValueOrDefault(); }
+            set { this._dataTransferProgressPercent = value; }
+        }
+
+        // Check to see if DataTransferProgressPercent property is set
+        internal bool IsSetDataTransferProgressPercent()
+        {
+            return this._dataTransferProgressPercent.HasValue; 
         }
 
         /// <summary>

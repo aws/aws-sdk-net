@@ -42,7 +42,10 @@ namespace Amazon.Redshift.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AssociatedClusterCount.
+        /// Gets and sets the property AssociatedClusterCount. 
+        /// <para>
+        /// The number of clusters associated with the schedule.
+        /// </para>
         /// </summary>
         public int AssociatedClusterCount
         {
@@ -57,7 +60,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssociatedClusters.
+        /// Gets and sets the property AssociatedClusters. 
+        /// <para>
+        /// A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+        /// </para>
         /// </summary>
         public List<ClusterAssociatedToSchedule> AssociatedClusters
         {
@@ -89,7 +95,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ScheduleDefinitions. 
         /// <para>
-        /// A list of ScheduleDefinitions
+        /// A list of ScheduleDefinitions.
         /// </para>
         /// </summary>
         public List<string> ScheduleDefinitions

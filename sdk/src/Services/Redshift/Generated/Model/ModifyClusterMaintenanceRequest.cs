@@ -82,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property DeferMaintenanceDuration. 
         /// <para>
         /// An integer indicating the duration of the maintenance window in days. If you specify
-        /// a duration, you can't specify an end time. The duration must be 14 days or less.
+        /// a duration, you can't specify an end time. The duration must be 45 days or less.
         /// </para>
         /// </summary>
         public int DeferMaintenanceDuration

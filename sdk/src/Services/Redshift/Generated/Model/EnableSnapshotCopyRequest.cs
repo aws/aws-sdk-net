@@ -72,7 +72,7 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Constraints: Must be the name of a valid AWS Region. For more information, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+        /// href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
         /// and Endpoints</a> in the Amazon Web Services General Reference. 
         /// </para>
         /// </summary>

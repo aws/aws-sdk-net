@@ -87,6 +87,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.AvgResizeRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DataTransferProgressPercent", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        response.DataTransferProgressPercent = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;

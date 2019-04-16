@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// can request. The node types differ by available storage, memory, CPU and price. With
     /// the cost involved you might want to obtain a list of cluster options in the specific
     /// region and specify values when creating a cluster. For more information about managing
-    /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
     /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </summary>
     public partial class DescribeOrderableClusterOptionsRequest : AmazonRedshiftRequest

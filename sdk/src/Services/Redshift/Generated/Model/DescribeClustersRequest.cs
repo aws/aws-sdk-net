@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Returns properties of provisioned clusters including general cluster properties, cluster
     /// database properties, maintenance and backup properties, and security and access properties.
     /// This operation supports pagination. For more information about managing clusters,
-    /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
     /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     ///  
