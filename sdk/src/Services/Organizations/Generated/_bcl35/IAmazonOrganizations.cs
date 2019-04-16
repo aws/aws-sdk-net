@@ -249,8 +249,8 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
         /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// so that AWS Organizations can create the required service-linked role. You don't have
-        /// that permission.
+        /// for <code>organizations.amazonaws.com</code> permission so that AWS Organizations
+        /// can create the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -640,16 +640,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -1212,16 +1212,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -1425,8 +1425,8 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
         /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// so that AWS Organizations can create the required service-linked role. You don't have
-        /// that permission.
+        /// for <code>organizations.amazonaws.com</code> permission so that AWS Organizations
+        /// can create the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
         /// This account is already a member of an organization. An account can belong to only
@@ -1529,16 +1529,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -1831,16 +1831,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -2136,16 +2136,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -4070,16 +4070,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -4400,16 +4400,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -4705,16 +4705,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -5288,16 +5288,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -5593,16 +5593,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -6199,16 +6199,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -6849,16 +6849,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -8609,7 +8609,7 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Lists all the roots, organizaitonal units (OUs), and accounts to which the specified
+        /// Lists all the roots, organizational units (OUs), and accounts to which the specified
         /// policy is attached.
         /// 
         ///  <note> 
@@ -9111,16 +9111,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
@@ -9585,16 +9585,16 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
-        /// account, you first must associate a payment instrument, such as a credit card, with
-        /// the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide</i>.
         /// </para>
