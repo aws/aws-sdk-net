@@ -559,8 +559,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs to associate with the alarm or dashboard. You can associate
-        /// as many as 50 tags with an alarm.
+        /// A list of key-value pairs to associate with the alarm. You can associate as many as
+        /// 50 tags with an alarm.
         /// </para>
         ///  
         /// <para>
