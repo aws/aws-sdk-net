@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The maximum number of identity providers to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=60)]
+        [AWSProperty(Min=0, Max=60)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

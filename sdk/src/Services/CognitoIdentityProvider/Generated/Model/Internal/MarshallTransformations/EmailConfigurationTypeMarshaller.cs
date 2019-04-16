@@ -45,6 +45,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EmailConfigurationType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEmailSendingAccount())
+            {
+                context.Writer.WritePropertyName("EmailSendingAccount");
+                context.Writer.Write(requestObject.EmailSendingAccount);
+            }
+
             if(requestObject.IsSetReplyToEmailAddress())
             {
                 context.Writer.WritePropertyName("ReplyToEmailAddress");

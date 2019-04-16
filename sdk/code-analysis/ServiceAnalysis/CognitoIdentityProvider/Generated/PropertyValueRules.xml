@@ -960,7 +960,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListIdentityProvidersRequest.MaxResults</property>
-    <min>1</min>
+    <min>0</min>
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
