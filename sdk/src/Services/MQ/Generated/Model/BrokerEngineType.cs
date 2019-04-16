@@ -28,45 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTags operation.
-    /// Removes a tag from a resource.
+    /// Types of broker engines.
     /// </summary>
-    public partial class DeleteTagsRequest : AmazonMQRequest
+    public partial class BrokerEngineType
     {
-        private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private EngineType _engineType;
+        private List<EngineVersion> _engineVersions = new List<EngineVersion>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
-        /// tag.
+        /// Gets and sets the property EngineType. The type of broker engine.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceArn
+        public EngineType EngineType
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._engineType; }
+            set { this._engineType = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if EngineType property is set
+        internal bool IsSetEngineType()
         {
-            return this._resourceArn != null;
+            return this._engineType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. An array of tag keys to delete
+        /// Gets and sets the property EngineVersions. The list of engine versions.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> TagKeys
+        public List<EngineVersion> EngineVersions
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._engineVersions; }
+            set { this._engineVersions = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if EngineVersions property is set
+        internal bool IsSetEngineVersions()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._engineVersions != null && this._engineVersions.Count > 0; 
         }
 
     }

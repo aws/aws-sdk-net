@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTags operation.
-    /// Lists tags for a resource.
+    /// Name of the availability zone.
     /// </summary>
-    public partial class ListTagsRequest : AmazonMQRequest
+    public partial class AvailabilityZone
     {
-        private string _resourceArn;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
-        /// tag.
+        /// Gets and sets the property Name. Id for the availability zone.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceArn
+        public string Name
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceArn != null;
+            return this._name != null;
         }
 
     }

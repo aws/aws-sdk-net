@@ -175,6 +175,40 @@ namespace Amazon.MQ
 
         #endregion
                 
+        #region  DescribeBrokerEngineTypes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerEngineTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeBrokerInstanceOptions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerInstanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        Task<DescribeBrokerInstanceOptionsResponse> DescribeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeConfiguration
 
 

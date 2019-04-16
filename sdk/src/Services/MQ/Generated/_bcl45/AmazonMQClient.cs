@@ -512,7 +512,7 @@ namespace Amazon.MQ
 
 
         /// <summary>
-        /// Remove a tag from a resource.
+        /// Removes a tag from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -660,6 +660,104 @@ namespace Amazon.MQ
             options.ResponseUnmarshaller = DescribeBrokerResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeBrokerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBrokerEngineTypes
+
+
+        /// <summary>
+        /// Describe available engine types and versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBrokerEngineTypes service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual DescribeBrokerEngineTypesResponse DescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerEngineTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerEngineTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBrokerEngineTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBrokerInstanceOptions
+
+
+        /// <summary>
+        /// Describe available broker instance options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBrokerInstanceOptions service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual DescribeBrokerInstanceOptionsResponse DescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerInstanceOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerInstanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual Task<DescribeBrokerInstanceOptionsResponse> DescribeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeBrokerInstanceOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

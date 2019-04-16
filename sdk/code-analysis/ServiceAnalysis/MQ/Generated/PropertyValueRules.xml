@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MQ.Model.DescribeBrokerEngineTypesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.DescribeBrokerEngineTypesResponse.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.DescribeBrokerInstanceOptionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.DescribeBrokerInstanceOptionsResponse.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MQ.Model.ListBrokersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -22,6 +42,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MQ.Model.ListUsersResponse.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.BrokerEngineTypeOutput.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.BrokerInstanceOptionsOutput.MaxResults</property>
     <min>5</min>
     <max>100</max>
   </property-value-rule>

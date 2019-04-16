@@ -510,6 +510,72 @@ namespace Amazon.MQ
 
         #endregion
         
+        #region  DescribeBrokerEngineTypes
+
+        internal virtual DescribeBrokerEngineTypesResponse DescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerEngineTypesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerEngineTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBrokerEngineTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBrokerInstanceOptions
+
+        internal virtual DescribeBrokerInstanceOptionsResponse DescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerInstanceOptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerInstanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual Task<DescribeBrokerInstanceOptionsResponse> DescribeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBrokerInstanceOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConfiguration
 
         internal virtual DescribeConfigurationResponse DescribeConfiguration(DescribeConfigurationRequest request)

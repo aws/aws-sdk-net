@@ -579,7 +579,7 @@ namespace Amazon.MQ
         #region  DeleteTags
 
         /// <summary>
-        /// Remove a tag from a resource.
+        /// Removes a tag from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -770,6 +770,132 @@ namespace Amazon.MQ
         public virtual DescribeBrokerResponse EndDescribeBroker(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBrokerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBrokerEngineTypes
+
+        /// <summary>
+        /// Describe available engine types and versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBrokerEngineTypes service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual DescribeBrokerEngineTypesResponse DescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerEngineTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerEngineTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes operation on AmazonMQClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBrokerEngineTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBrokerEngineTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBrokerEngineTypes.</param>
+        /// 
+        /// <returns>Returns a  DescribeBrokerEngineTypesResult from MQ.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
+        public virtual DescribeBrokerEngineTypesResponse EndDescribeBrokerEngineTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBrokerEngineTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBrokerInstanceOptions
+
+        /// <summary>
+        /// Describe available broker instance options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBrokerInstanceOptions service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual DescribeBrokerInstanceOptionsResponse DescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBrokerInstanceOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBrokerInstanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions operation on AmazonMQClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBrokerInstanceOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBrokerInstanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBrokerInstanceOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeBrokerInstanceOptionsResult from MQ.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
+        public virtual DescribeBrokerInstanceOptionsResponse EndDescribeBrokerInstanceOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBrokerInstanceOptionsResponse>(asyncResult);
         }
 
         #endregion

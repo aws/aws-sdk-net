@@ -37,7 +37,8 @@ namespace Amazon.MQ.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. the Amazon Resource Name (ARN)
+        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
+        /// tag.
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
