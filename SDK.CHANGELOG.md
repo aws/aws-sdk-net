@@ -1,3 +1,22 @@
+### 3.3.493.0 (2019-04-16 18:22 UTC)
+* CloudWatch (3.3.101.3)
+	* Documentation updates for monitoring
+* CognitoIdentityProvider (3.3.101.0)
+	* This release adds support for the new email configuration in Amazon Cognito User Pools. You can now specify whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon SES email configuration.
+* MQ (3.3.101.0)
+	* This release adds the ability to retrieve information about broker engines and broker instance options. See Broker Engine Types and Broker Instance Options in the Amazon MQ REST API Reference.
+* Organizations (3.3.100.6)
+	* Documentation updates for organizations
+* Redshift (3.3.101.0)
+	* DescribeResize can now return percent of data transferred from source cluster to target cluster for a classic resize.
+* StorageGateway (3.3.102.0)
+	* This change allows you to select either a weekly or monthly maintenance window for your volume or tape gateway. It also allows you to tag your tape and volume resources on creation by adding a Tag value on calls to the respective api endpoints.
+* Core 3.3.100.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.492.0 (2019-04-05 18:07 UTC)
 * Comprehend (3.3.103.0)
 	* With this release AWS Comprehend provides confusion matrix for custom document classifier.
