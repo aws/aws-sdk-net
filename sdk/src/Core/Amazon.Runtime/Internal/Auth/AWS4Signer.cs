@@ -629,18 +629,22 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
         /// <returns>List of headers that must be included in the signature</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
-        protected static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
+        protected static IDictionary<string, string> SortAndPruneHeaders(IDictionary<string, string> requestHeaders)
         {
-            var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-            foreach (var header in requestHeaders)
+            IDictionary<string, string> preSortedHeaders = new Dictionary<string, string>();
+            foreach (var item in requestHeaders)
             {
-                if (_headersToIgnoreWhenSigning.Contains(header.Key))
-                {
+                var lowerKey = item.Key.ToLowerInvariant();
+                if (_headersToIgnoreWhenSigning.Contains(item.Key))
                     continue;
-                }
-                sortedHeaders.Add(header.Key, header.Value);
+                preSortedHeaders.Add(lowerKey, item.Key);
             }
-            
+            var sortedHeaders = new Dictionary<string, string>();
+            foreach (var key in preSortedHeaders.Keys.OrderBy(x => x, StringComparer.Ordinal))
+            {
+                var pointer = preSortedHeaders[key];
+                sortedHeaders.Add(pointer, requestHeaders[pointer]);
+            }
             return sortedHeaders;
         }
 
