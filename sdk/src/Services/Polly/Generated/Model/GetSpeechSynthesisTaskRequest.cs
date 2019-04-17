@@ -43,7 +43,7 @@ namespace Amazon.Polly.Model
         /// The Amazon Polly generated identifier for a speech synthesis task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string TaskId
         {
             get { return this._taskId; }

@@ -111,6 +111,7 @@ namespace Amazon.Polly.Model
         /// operation. If present, this indicates where to continue the listing.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

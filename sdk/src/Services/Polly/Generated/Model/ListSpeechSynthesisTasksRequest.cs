@@ -65,6 +65,7 @@ namespace Amazon.Polly.Model
         /// synthesis tasks. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

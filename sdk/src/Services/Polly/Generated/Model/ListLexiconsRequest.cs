@@ -44,6 +44,7 @@ namespace Amazon.Polly.Model
         /// If present, indicates where to continue the list of lexicons.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -60,6 +60,7 @@ namespace Amazon.Polly.Model
         /// <code>NextToken</code> is returned only if the response is truncated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }
