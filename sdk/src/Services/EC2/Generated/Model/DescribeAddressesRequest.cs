@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAddresses operation.
-    /// Describes one or more of your Elastic IP addresses.
+    /// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
     /// 
     ///  
     /// <para>
@@ -47,11 +47,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationIds. 
         /// <para>
-        /// [EC2-VPC] One or more allocation IDs.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your Elastic IP addresses.
+        /// [EC2-VPC] Information about the allocation IDs.
         /// </para>
         /// </summary>
         public List<string> AllocationIds

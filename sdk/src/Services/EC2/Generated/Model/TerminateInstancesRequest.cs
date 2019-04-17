@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateInstances operation.
-    /// Shuts down one or more instances. This operation is idempotent; if you terminate an
-    /// instance more than once, each call succeeds. 
+    /// Shuts down the specified instances. This operation is idempotent; if you terminate
+    /// an instance more than once, each call succeeds. 
     /// 
     ///  
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates TerminateInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceIds">One or more instance IDs. Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</param>
+        /// <param name="instanceIds">The IDs of the instances. Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</param>
         public TerminateInstancesRequest(List<string> instanceIds)
         {
             _instanceIds = instanceIds;
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The IDs of the instances.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupIngress operation.
-    /// Adds one or more ingress rules to a security group.
+    /// Adds the specified ingress rules to a security group.
     /// 
     ///  
     /// <para>
@@ -38,18 +38,17 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to
-    /// access a security group in your account, or gives one or more security groups (called
-    /// the <i>source groups</i>) permission to access a security group for your account.
-    /// A source group can be for your own AWS account, or another. You can have up to 100
-    /// rules per group.
+    /// [EC2-Classic] This action gives the IPv4 CIDR address ranges permission to access
+    /// a security group in your account, or gives the security groups (called the <i>source
+    /// groups</i>) permission to access a security group for your account. A source group
+    /// can be for your own AWS account, or another. You can have up to 100 rules per group.
     /// </para>
     ///  
     /// <para>
-    /// [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission
-    /// to access a security group in your VPC, or gives one or more other security groups
-    /// (called the <i>source groups</i>) permission to access a security group for your VPC.
-    /// The security groups must all be for the same VPC or a peer VPC in a VPC peering connection.
+    /// [EC2-VPC] This action gives the specified IPv4 or IPv6 CIDR address ranges permission
+    /// to access a security group in your VPC, or gives the specified security groups (called
+    /// the <i>source groups</i>) permission to access a security group for your VPC. The
+    /// security groups must all be for the same VPC or a peer VPC in a VPC peering connection.
     /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
     /// VPC Limits</a>.
     /// </para>
@@ -73,7 +72,7 @@ namespace Amazon.EC2.Model
         /// Instantiates AuthorizeSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
         /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.</param>
-        /// <param name="ipPermissions">One or more sets of IP permissions. Can be used to specify multiple rules in a single command.</param>
+        /// <param name="ipPermissions">The sets of IP permissions. Can be used to specify multiple rules in a single command.</param>
         public AuthorizeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
             _groupName = groupName;
@@ -122,8 +121,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// One or more sets of IP permissions. Can be used to specify multiple rules in a single
-        /// command.
+        /// The sets of IP permissions. Can be used to specify multiple rules in a single command.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

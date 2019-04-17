@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PlacementGroups. 
         /// <para>
-        /// One or more placement groups.
+        /// Information about the placement groups.
         /// </para>
         /// </summary>
         public List<PlacementGroup> PlacementGroups

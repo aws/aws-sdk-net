@@ -203,7 +203,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key alias, in the form <code>alias/<i>ExampleAlias</i> </code> 
+        /// Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed
+        /// by the region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
+        /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

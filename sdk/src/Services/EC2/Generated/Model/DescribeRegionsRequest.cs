@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegions operation.
-    /// Describes one or more regions that are currently available to you.
+    /// Describes the regions that are currently available to you.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RegionNames. 
         /// <para>
-        /// The names of one or more regions.
+        /// The names of the regions.
         /// </para>
         /// </summary>
         public List<string> RegionNames

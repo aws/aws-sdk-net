@@ -29,10 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC.
-    /// Specifically, this action permits instances to send traffic to one or more destination
-    /// IPv4 or IPv6 CIDR address ranges, or to one or more destination security groups for
-    /// the same VPC. This action doesn't apply to security groups for use in EC2-Classic.
+    /// [EC2-VPC only] Adds the specified egress rules to a security group for use with a
+    /// VPC. Specifically, this action permits instances to send traffic to the specified
+    /// destination IPv4 or IPv6 CIDR address ranges, or to the specified destination security
+    /// groups for the same VPC. This action doesn't apply to security groups for use in EC2-Classic.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
     /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For
     /// more information about security group limits, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
@@ -79,8 +79,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// One or more sets of IP permissions. You can't specify a destination security group
-        /// and a CIDR IP address range in the same set of permissions.
+        /// The sets of IP permissions. You can't specify a destination security group and a CIDR
+        /// IP address range in the same set of permissions.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

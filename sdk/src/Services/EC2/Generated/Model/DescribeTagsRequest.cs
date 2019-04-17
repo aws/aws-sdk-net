@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Describes one or more of the tags for your EC2 resources.
+    /// Describes the specified tags for your EC2 resources.
     /// 
     ///  
     /// <para>

@@ -2295,7 +2295,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your Elastic IP addresses.
+        /// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
         /// 
         ///  
         /// <para>
@@ -2348,10 +2348,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Availability Zones that are available to you. The results
-        /// include zones only for the region you're currently using. If there is an event impacting
-        /// an Availability Zone, you can use this request to view the state and any provided
-        /// message for that Availability Zone.
+        /// Describes the Availability Zones that are available to you. The results include zones
+        /// only for the region you're currently using. If there is an event impacting an Availability
+        /// Zone, you can use this request to view the state and any provided message for that
+        /// Availability Zone.
         /// 
         ///  
         /// <para>
@@ -2386,7 +2386,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your bundling tasks.
+        /// Describes the specified bundle tasks or all of your bundle tasks.
         /// 
         ///  <note> 
         /// <para>
@@ -2950,10 +2950,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images
-        /// available to you include public images, private images that you own, and private images
-        /// owned by other AWS accounts but for which you have explicit launch permissions.
+        /// Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the
+        /// images available to you.
         /// 
+        ///  
+        /// <para>
+        /// The images available to you include public images, private images that you own, and
+        /// private images owned by other AWS accounts for which you have explicit launch permissions.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Deregistered images are included in the returned results for an unspecified interval
@@ -3056,7 +3060,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your instances.
+        /// Describes the specified instances or all of your instances.
         /// 
         ///  
         /// <para>
@@ -3106,8 +3110,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances. By default, only running instances
-        /// are described, unless you specifically indicate to return the status of all instances.
+        /// Describes the status of the specified instances or all of your instances. By default,
+        /// only running instances are described, unless you specifically indicate to return the
+        /// status of all instances.
         /// 
         ///  
         /// <para>
@@ -3192,7 +3197,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your key pairs.
+        /// Describes the specified key pairs or all of your key pairs.
         /// 
         ///  
         /// <para>
@@ -3393,7 +3398,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your placement groups. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Describes the specified placement groups or all of your placement groups. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -3474,7 +3480,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more regions that are currently available to you.
+        /// Describes the regions that are currently available to you.
         /// 
         ///  
         /// <para>
@@ -3774,7 +3780,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your security groups.
+        /// Describes the specified security groups or all of your security groups.
         /// 
         ///  
         /// <para>
@@ -3829,11 +3835,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-        /// public snapshots available for use by any AWS account, private snapshots that you
-        /// own, and private snapshots owned by another AWS account for which you've been given
-        /// explicit create volume permissions.
+        /// Describes the specified EBS snapshots available to you or all of the EBS snapshots
+        /// available to you.
         /// 
+        ///  
+        /// <para>
+        /// The snapshots available to you include public snapshots, private snapshots that you
+        /// own, and private snapshots owned by other AWS accounts for which you have explicit
+        /// create volume permissions.
+        /// </para>
         ///  
         /// <para>
         /// The create volume permissions fall into the following categories:
@@ -4146,7 +4156,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the tags for your EC2 resources.
+        /// Describes the specified tags for your EC2 resources.
         /// 
         ///  
         /// <para>
@@ -4266,7 +4276,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified EBS volumes.
+        /// Describes the specified EBS volumes or all of your EBS volumes.
         /// 
         ///  
         /// <para>

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstances operation.
-    /// Requests a reboot of one or more instances. This operation is asynchronous; it only
+    /// Requests a reboot of the specified instances. This operation is asynchronous; it only
     /// queues a request to reboot the specified instances. The operation succeeds if the
     /// instances are valid and belong to you. Requests to reboot terminated instances are
     /// ignored.
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RebootInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceIds">One or more instance IDs.</param>
+        /// <param name="instanceIds">The instance IDs.</param>
         public RebootInstancesRequest(List<string> instanceIds)
         {
             _instanceIds = instanceIds;
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The instance IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

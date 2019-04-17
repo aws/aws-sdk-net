@@ -128,9 +128,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        ///  Value from an Amazon-maintained list (<code>amazon</code> | <code>aws-marketplace</code>
-        /// | <code>microsoft</code>) of snapshot owners. Not to be confused with the user-configured
-        /// AWS account alias, which is set from the IAM console. 
+        ///  Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code>
+        /// | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to
+        /// be confused with the user-configured AWS account alias, which is set from the IAM
+        /// console. 
         /// </para>
         /// </summary>
         public string OwnerAlias

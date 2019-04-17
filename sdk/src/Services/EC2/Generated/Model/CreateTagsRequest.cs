@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
+    /// Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources.
     /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
     /// value. Tag keys must be unique per resource.
     /// 
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resources">The IDs of one or more resources, separated by spaces. Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</param>
+        /// <param name="resources">The IDs of the resources, separated by spaces. Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</param>
         /// <param name="tags">One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string. </param>
         public CreateTagsRequest(List<string> resources, List<Tag> tags)
         {
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The IDs of one or more resources, separated by spaces.
+        /// The IDs of the resources, separated by spaces.
         /// </para>
         ///  
         /// <para>

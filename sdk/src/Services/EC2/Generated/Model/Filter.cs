@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// Instantiates Filter with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the filter. Filter names are case-sensitive.</param>
-        /// <param name="values">One or more filter values. Filter values are case-sensitive.</param>
+        /// <param name="values">The filter values. Filter values are case-sensitive.</param>
         public Filter(string name, List<string> values)
         {
             _name = name;
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more filter values. Filter values are case-sensitive.
+        /// The filter values. Filter values are case-sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Ranges. 
         /// <para>
-        /// One or more IPv4 ranges.
+        /// The IPv4 ranges.
         /// </para>
         /// </summary>
         public List<IpRange> Ipv4Ranges
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Ranges. 
         /// <para>
-        /// [EC2-VPC only] One or more IPv6 ranges.
+        /// [EC2-VPC only] The IPv6 ranges.
         /// </para>
         /// </summary>
         public List<Ipv6Range> Ipv6Ranges
@@ -129,7 +129,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
+        /// [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
         /// this is the AWS service that you want to access through a VPC endpoint from instances
         /// associated with the security group.
         /// </para>
@@ -169,7 +169,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIdGroupPairs. 
         /// <para>
-        /// One or more security group and AWS account ID pairs.
+        /// The security group and AWS account ID pairs.
         /// </para>
         /// </summary>
         public List<UserIdGroupPair> UserIdGroupPairs

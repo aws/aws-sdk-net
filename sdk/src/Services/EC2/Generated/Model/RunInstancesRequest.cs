@@ -186,10 +186,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries. You can't specify both a snapshot ID and
-        /// an encryption value. This is because only blank volumes can be encrypted on creation.
-        /// If a snapshot is the basis for a volume, it is not blank and its encryption status
-        /// is used for the volume encryption status.
+        /// The block device mapping entries. You can't specify both a snapshot ID and an encryption
+        /// value. This is because only blank volumes can be encrypted on creation. If a snapshot
+        /// is the basis for a volume, it is not blank and its encryption status is used for the
+        /// volume encryption status.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -534,10 +534,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate
-        /// with the primary network interface. You cannot specify this option and the option
-        /// to assign a number of IPv6 addresses in the same request. You cannot specify this
-        /// option if you've specified a minimum number of instances to launch.
+        /// [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary
+        /// network interface. You cannot specify this option and the option to assign a number
+        /// of IPv6 addresses in the same request. You cannot specify this option if you've specified
+        /// a minimum number of instances to launch.
         /// </para>
         ///  
         /// <para>
@@ -721,7 +721,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces.
+        /// The network interfaces.
         /// </para>
         ///  
         /// <para>
@@ -816,7 +816,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+        /// The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
         /// </para>
         ///  
         /// <para>
@@ -842,7 +842,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC,
+        /// [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC,
         /// you must use security group IDs instead.
         /// </para>
         ///  

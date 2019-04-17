@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StartingInstances. 
         /// <para>
-        /// Information about one or more started instances.
+        /// Information about the started instances.
         /// </para>
         /// </summary>
         public List<InstanceStateChange> StartingInstances

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeKeyPairs operation.
-    /// Describes one or more of your key pairs.
+    /// Describes the specified key pairs or all of your key pairs.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyNames. 
         /// <para>
-        /// One or more key pair names.
+        /// The key pair names.
         /// </para>
         ///  
         /// <para>

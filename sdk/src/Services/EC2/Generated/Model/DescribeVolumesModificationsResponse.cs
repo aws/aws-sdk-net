@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumesModifications. 
         /// <para>
-        /// A list of returned <a>VolumeModification</a> objects.
+        /// Information about the volume modifications.
         /// </para>
         /// </summary>
         public List<VolumeModification> VolumesModifications

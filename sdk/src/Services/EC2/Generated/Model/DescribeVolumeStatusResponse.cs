@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeVolumeStatus.
+    /// This is the response object from the DescribeVolumeStatus operation.
     /// </summary>
     public partial class DescribeVolumeStatusResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeStatuses. 
         /// <para>
-        /// A list of volumes.
+        /// Information about the status of the volumes.
         /// </para>
         /// </summary>
         public List<VolumeStatusItem> VolumeStatuses

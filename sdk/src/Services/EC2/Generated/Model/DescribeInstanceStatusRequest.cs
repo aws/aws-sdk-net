@@ -29,8 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceStatus operation.
-    /// Describes the status of one or more instances. By default, only running instances
-    /// are described, unless you specifically indicate to return the status of all instances.
+    /// Describes the status of the specified instances or all of your instances. By default,
+    /// only running instances are described, unless you specifically indicate to return the
+    /// status of all instances.
     /// 
     ///  
     /// <para>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -183,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The instance IDs.
         /// </para>
         ///  
         /// <para>

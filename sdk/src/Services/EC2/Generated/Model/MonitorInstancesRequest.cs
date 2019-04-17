@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates MonitorInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceIds">One or more instance IDs.</param>
+        /// <param name="instanceIds">The IDs of the instances.</param>
         public MonitorInstancesRequest(List<string> instanceIds)
         {
             _instanceIds = instanceIds;
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The IDs of the instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

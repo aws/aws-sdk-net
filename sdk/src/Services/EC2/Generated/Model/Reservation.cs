@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// [EC2-Classic only] One or more security groups.
+        /// [EC2-Classic only] The security groups.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> Groups
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// One or more instances.
+        /// The instances.
         /// </para>
         /// </summary>
         public List<Instance> Instances

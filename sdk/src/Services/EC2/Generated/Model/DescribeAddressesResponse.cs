@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// Information about one or more Elastic IP addresses.
+        /// Information about the Elastic IP addresses.
         /// </para>
         /// </summary>
         public List<Address> Addresses

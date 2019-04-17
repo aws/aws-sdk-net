@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
+        /// The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
         /// <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
         /// <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
         /// <code>start-time</code>. 
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeIds. 
         /// <para>
-        /// One or more volume IDs for which in-progress modifications will be described.
+        /// The IDs of the volumes for which in-progress modifications will be described.
         /// </para>
         /// </summary>
         public List<string> VolumeIds

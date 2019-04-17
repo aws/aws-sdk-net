@@ -498,7 +498,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// [EC2-VPC] One or more network interfaces for the instance.
+        /// [EC2-VPC] The network interfaces for the instance.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterface> NetworkInterfaces
@@ -708,7 +708,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// One or more security groups for the instance.
+        /// The security groups for the instance.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> SecurityGroups

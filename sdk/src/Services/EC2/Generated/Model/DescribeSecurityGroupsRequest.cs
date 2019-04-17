@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityGroups operation.
-    /// Describes one or more of your security groups.
+    /// Describes the specified security groups or all of your security groups.
     /// 
     ///  
     /// <para>
@@ -51,9 +51,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. If using multiple filters for rules, the results include security
-        /// groups for which any combination of rules - not necessarily a single rule - match
-        /// all filters.
+        /// The filters. If using multiple filters for rules, the results include security groups
+        /// for which any combination of rules - not necessarily a single rule - match all filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -196,7 +195,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupIds. 
         /// <para>
-        /// One or more security group IDs. Required for security groups in a nondefault VPC.
+        /// The IDs of the security groups. Required for security groups in a nondefault VPC.
         /// </para>
         ///  
         /// <para>
@@ -218,7 +217,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupNames. 
         /// <para>
-        /// [EC2-Classic and default VPC only] One or more security group names. You can specify
+        /// [EC2-Classic and default VPC only] The names of the security groups. You can specify
         /// either the security group name or the security group ID. For security groups in a
         /// nondefault VPC, use the <code>group-name</code> filter to describe security groups
         /// by name.

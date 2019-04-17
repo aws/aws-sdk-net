@@ -93,6 +93,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateDnsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("requesterManaged", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.RequesterManaged = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("routeTableIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

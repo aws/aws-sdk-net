@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// Information about one or more regions.
+        /// Information about the regions.
         /// </para>
         /// </summary>
         public List<Region> Regions

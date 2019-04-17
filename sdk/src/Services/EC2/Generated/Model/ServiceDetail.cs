@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private bool? _acceptanceRequired;
         private List<string> _availabilityZones = new List<string>();
         private List<string> _baseEndpointDnsNames = new List<string>();
+        private bool? _managesVpcEndpoints;
         private string _owner;
         private string _privateDnsName;
         private string _serviceName;
@@ -94,6 +95,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetBaseEndpointDnsNames()
         {
             return this._baseEndpointDnsNames != null && this._baseEndpointDnsNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagesVpcEndpoints. 
+        /// <para>
+        /// Indicates whether the service manages it's VPC Endpoints. Management of the service
+        /// VPC Endpoints using the VPC Endpoint API is restricted.
+        /// </para>
+        /// </summary>
+        public bool ManagesVpcEndpoints
+        {
+            get { return this._managesVpcEndpoints.GetValueOrDefault(); }
+            set { this._managesVpcEndpoints = value; }
+        }
+
+        // Check to see if ManagesVpcEndpoints property is set
+        internal bool IsSetManagesVpcEndpoints()
+        {
+            return this._managesVpcEndpoints.HasValue; 
         }
 
         /// <summary>

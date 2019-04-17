@@ -88,7 +88,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// One or more instances.
+        /// The instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReasonCodes. 
         /// <para>
-        /// One or more reason codes that describe the health state of your instance.
+        /// The reason codes that describe the health state of your instance.
         /// </para>
         ///  <ul> <li> 
         /// <para>

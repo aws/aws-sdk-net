@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// One or more security group IDs in your account.
+        /// The IDs of the security groups in your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private List<string> _networkInterfaceIds = new List<string>();
         private string _policyDocument;
         private bool? _privateDnsEnabled;
+        private bool? _requesterManaged;
         private List<string> _routeTableIds = new List<string>();
         private string _serviceName;
         private State _state;
@@ -154,6 +155,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsEnabled()
         {
             return this._privateDnsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequesterManaged. 
+        /// <para>
+        /// Indicates whether the VPC Endpoint is being managed by its service.
+        /// </para>
+        /// </summary>
+        public bool RequesterManaged
+        {
+            get { return this._requesterManaged.GetValueOrDefault(); }
+            set { this._requesterManaged = value; }
+        }
+
+        // Check to see if RequesterManaged property is set
+        internal bool IsSetRequesterManaged()
+        {
+            return this._requesterManaged.HasValue; 
         }
 
         /// <summary>

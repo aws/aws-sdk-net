@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupEgress operation.
-    /// [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC.
+    /// [EC2-VPC only] Removes the specified egress rules from a security group for EC2-VPC.
     /// This action doesn't apply to security groups for use in EC2-Classic. To remove a rule,
     /// the values that you specify (for example, ports) must match the existing rule's values
     /// exactly.
@@ -75,8 +75,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// One or more sets of IP permissions. You can't specify a destination security group
-        /// and a CIDR IP address range in the same set of permissions.
+        /// The sets of IP permissions. You can't specify a destination security group and a CIDR
+        /// IP address range in the same set of permissions.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

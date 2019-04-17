@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AttributeValues. 
         /// <para>
-        /// One or more values for the account attribute.
+        /// The values for the account attribute.
         /// </para>
         /// </summary>
         public List<AccountAttributeValue> AttributeValues

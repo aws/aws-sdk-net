@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// One or more account attribute names.
+        /// The account attribute names.
         /// </para>
         /// </summary>
         public List<string> AttributeNames

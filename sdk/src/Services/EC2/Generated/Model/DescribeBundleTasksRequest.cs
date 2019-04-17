@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBundleTasks operation.
-    /// Describes one or more of your bundling tasks.
+    /// Describes the specified bundle tasks or all of your bundle tasks.
     /// 
     ///  <note> 
     /// <para>

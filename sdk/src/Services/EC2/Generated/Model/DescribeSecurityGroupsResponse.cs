@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// Information about one or more security groups.
+        /// Information about the security groups.
         /// </para>
         /// </summary>
         public List<SecurityGroup> SecurityGroups

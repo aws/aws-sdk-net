@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyPairs. 
         /// <para>
-        /// Information about one or more key pairs.
+        /// Information about the key pairs.
         /// </para>
         /// </summary>
         public List<KeyPairInfo> KeyPairs

@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceCreditSpecifications operation.
-    /// Describes the credit option for CPU usage of one or more of your T2 or T3 instances.
-    /// The credit options are <code>standard</code> and <code>unlimited</code>.
+    /// Describes the credit option for CPU usage of the specified T2 or T3 instances. The
+    /// credit options are <code>standard</code> and <code>unlimited</code>.
     /// 
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The instance IDs.
         /// </para>
         ///  
         /// <para>

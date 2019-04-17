@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// Describes the specified EBS volumes.
+    /// Describes the specified EBS volumes or all of your EBS volumes.
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeVolumesRequest with the parameterized properties
         /// </summary>
-        /// <param name="volumeIds">One or more volume IDs.</param>
+        /// <param name="volumeIds">The volume IDs.</param>
         public DescribeVolumesRequest(List<string> volumeIds)
         {
             _volumeIds = volumeIds;
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -210,7 +210,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeIds. 
         /// <para>
-        /// One or more volume IDs.
+        /// The volume IDs.
         /// </para>
         /// </summary>
         public List<string> VolumeIds

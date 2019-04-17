@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of CreateImage.
+    /// This is the response object from the CreateImage operation.
     /// </summary>
     public partial class CreateImageResponse : AmazonWebServiceResponse
     {

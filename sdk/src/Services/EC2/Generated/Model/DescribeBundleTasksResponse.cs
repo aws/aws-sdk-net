@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeBundleTasks.
+    /// This is the response object from the DescribeBundleTasks operation.
     /// </summary>
     public partial class DescribeBundleTasksResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BundleTasks. 
         /// <para>
-        /// Information about one or more bundle tasks.
+        /// Information about the bundle tasks.
         /// </para>
         /// </summary>
         public List<BundleTask> BundleTasks

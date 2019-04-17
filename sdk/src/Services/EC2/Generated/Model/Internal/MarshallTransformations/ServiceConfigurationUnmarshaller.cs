@@ -74,6 +74,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BaseEndpointDnsNames.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("managesVpcEndpoints", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ManagesVpcEndpoints = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkLoadBalancerArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StoppingInstances. 
         /// <para>
-        /// Information about one or more stopped instances.
+        /// Information about the stopped instances.
         /// </para>
         /// </summary>
         public List<InstanceStateChange> StoppingInstances

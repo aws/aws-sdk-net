@@ -29,11 +29,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// Describes one or more of the EBS snapshots available to you. Available snapshots include
-    /// public snapshots available for use by any AWS account, private snapshots that you
-    /// own, and private snapshots owned by another AWS account for which you've been given
-    /// explicit create volume permissions.
+    /// Describes the specified EBS snapshots available to you or all of the EBS snapshots
+    /// available to you.
     /// 
+    ///  
+    /// <para>
+    /// The snapshots available to you include public snapshots, private snapshots that you
+    /// own, and private snapshots owned by other AWS accounts for which you have explicit
+    /// create volume permissions.
+    /// </para>
     ///  
     /// <para>
     /// The create volume permissions fall into the following categories:
@@ -108,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -117,9 +121,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code>
-        /// | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to
-        /// be confused with the user-configured AWS account alias, which is set from the IAM
-        /// console.
+        /// | <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>)
+        /// of snapshot owners. Not to be confused with the user-configured AWS account alias,
+        /// which is set from the IAM console.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -229,7 +233,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerIds. 
         /// <para>
-        /// Describes the snapshots owned by one or more owners.
+        /// Describes the snapshots owned by these owners.
         /// </para>
         /// </summary>
         public List<string> OwnerIds
@@ -247,7 +251,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RestorableByUserIds. 
         /// <para>
-        /// One or more AWS accounts IDs that can create volumes from the snapshot.
+        /// The IDs of the AWS accounts that can create volumes from the snapshot.
         /// </para>
         /// </summary>
         public List<string> RestorableByUserIds
@@ -265,7 +269,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SnapshotIds. 
         /// <para>
-        /// One or more snapshot IDs.
+        /// The snapshot IDs.
         /// </para>
         ///  
         /// <para>

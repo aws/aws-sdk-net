@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpRanges. 
         /// <para>
-        /// One or more IP ranges. Not applicable for stale security group rules.
+        /// The IP ranges. Not applicable for stale security group rules.
         /// </para>
         /// </summary>
         public List<string> IpRanges
@@ -99,8 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// One or more prefix list IDs for an AWS service. Not applicable for stale security
-        /// group rules.
+        /// The prefix list IDs for an AWS service. Not applicable for stale security group rules.
         /// </para>
         /// </summary>
         public List<string> PrefixListIds
@@ -137,8 +136,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIdGroupPairs. 
         /// <para>
-        /// One or more security group pairs. Returns the ID of the referenced security group
-        /// and VPC, and the ID and status of the VPC peering connection.
+        /// The security group pairs. Returns the ID of the referenced security group and VPC,
+        /// and the ID and status of the VPC peering connection.
         /// </para>
         /// </summary>
         public List<UserIdGroupPair> UserIdGroupPairs
