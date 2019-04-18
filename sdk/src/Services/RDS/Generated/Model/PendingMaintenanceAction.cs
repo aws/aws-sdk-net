@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The type of pending maintenance action that is available for the resource. Valid actions
-        /// are <code>system-update</code> and <code>db-upgrade</code>.
+        /// are <code>system-update</code>, <code>db-upgrade</code>, and <code>hardware-maintenance</code>.
         /// </para>
         /// </summary>
         public string Action

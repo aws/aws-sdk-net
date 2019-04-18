@@ -386,10 +386,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The meaning of this parameter differs according to the database engine you use. For
-        /// example, this value returns MySQL, MariaDB, or PostgreSQL information when returning
-        /// values from CreateDBInstanceReadReplica since Read Replicas are only supported for
-        /// these engines.
+        /// The meaning of this parameter differs according to the database engine you use.
         /// </para>
         ///  
         /// <para>

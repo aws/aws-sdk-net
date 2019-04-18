@@ -186,6 +186,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ScalingConfiguration" + "." + "SecondsUntilAutoPause", StringUtils.FromInt(publicRequest.ScalingConfiguration.SecondsUntilAutoPause));
                     }
+                    if(publicRequest.ScalingConfiguration.IsSetTimeoutAction())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "TimeoutAction", StringUtils.FromString(publicRequest.ScalingConfiguration.TimeoutAction));
+                    }
                 }
                 if(publicRequest.IsSetStorageEncrypted())
                 {

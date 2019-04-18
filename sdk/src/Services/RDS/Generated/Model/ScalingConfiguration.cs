@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private int? _maxCapacity;
         private int? _minCapacity;
         private int? _secondsUntilAutoPause;
+        private string _timeoutAction;
 
         /// <summary>
         /// Gets and sets the property AutoPause. 
@@ -143,6 +144,40 @@ namespace Amazon.RDS.Model
         internal bool IsSetSecondsUntilAutoPause()
         {
             return this._secondsUntilAutoPause.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutAction. 
+        /// <para>
+        /// The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code>
+        /// or <code>RollbackCapacityChange</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified
+        /// value as soon as possible.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point
+        /// is not found in the timeout period.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TimeoutAction
+        {
+            get { return this._timeoutAction; }
+            set { this._timeoutAction = value; }
+        }
+
+        // Check to see if TimeoutAction property is set
+        internal bool IsSetTimeoutAction()
+        {
+            return this._timeoutAction != null;
         }
 
     }

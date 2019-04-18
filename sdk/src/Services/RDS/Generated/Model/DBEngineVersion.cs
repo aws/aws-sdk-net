@@ -282,7 +282,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsReadReplica. 
         /// <para>
-        /// Indicates whether the database engine version supports read replicas.
+        /// Indicates whether the database engine version supports Read Replicas.
         /// </para>
         /// </summary>
         public bool SupportsReadReplica

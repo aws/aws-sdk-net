@@ -78,6 +78,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SecondsUntilAutoPause = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TimeoutAction", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TimeoutAction = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

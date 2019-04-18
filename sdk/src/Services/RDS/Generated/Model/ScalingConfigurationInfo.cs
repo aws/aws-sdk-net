@@ -43,12 +43,18 @@ namespace Amazon.RDS.Model
         private int? _maxCapacity;
         private int? _minCapacity;
         private int? _secondsUntilAutoPause;
+        private string _timeoutAction;
 
         /// <summary>
         /// Gets and sets the property AutoPause. 
         /// <para>
         /// A value that indicates whether automatic pause is allowed for the Aurora DB cluster
-        /// in <code>serverless</code> DB engine mode. 
+        /// in <code>serverless</code> DB engine mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the value is set to false for an Aurora Serverless DB cluster, the DB cluster
+        /// automatically resumes.
         /// </para>
         /// </summary>
         public bool AutoPause
@@ -118,6 +124,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSecondsUntilAutoPause()
         {
             return this._secondsUntilAutoPause.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutAction. 
+        /// <para>
+        /// The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+        /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+        /// </para>
+        /// </summary>
+        public string TimeoutAction
+        {
+            get { return this._timeoutAction; }
+            set { this._timeoutAction = value; }
+        }
+
+        // Check to see if TimeoutAction property is set
+        internal bool IsSetTimeoutAction()
+        {
+            return this._timeoutAction != null;
         }
 
     }

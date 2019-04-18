@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupMemberships. 
         /// <para>
-        /// A list of DBSecurityGroupMemebrship name strings used for this option.
+        /// A list of DBSecurityGroupMembership name strings used for this option.
         /// </para>
         /// </summary>
         public List<string> DBSecurityGroupMemberships
@@ -133,7 +133,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupMemberships. 
         /// <para>
-        /// A list of VpcSecurityGroupMemebrship name strings used for this option.
+        /// A list of VpcSecurityGroupMembership name strings used for this option.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupMemberships

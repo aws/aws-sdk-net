@@ -76,6 +76,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// When you change the capacity of a paused Aurora Serverless DB cluster, it automatically
+        /// resumes.
+        /// </para>
+        ///  
+        /// <para>
         /// Constraints:
         /// </para>
         ///  <ul> <li> 
