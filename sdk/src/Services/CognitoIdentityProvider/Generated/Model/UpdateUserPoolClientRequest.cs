@@ -58,11 +58,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// code as the response. This code can be exchanged for access tokens with the token
         /// endpoint.
         /// </para>
-        ///  
-        /// <para>
-        /// Set to <code>token</code> to specify that the client should get the access token (and,
-        /// optionally, ID token, based on scopes) directly.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> AllowedOAuthFlows
