@@ -104,6 +104,10 @@ namespace Amazon.ApplicationDiscoveryService
         /// Constant NOT_FOUND for BatchDeleteImportDataErrorCode
         /// </summary>
         public static readonly BatchDeleteImportDataErrorCode NOT_FOUND = new BatchDeleteImportDataErrorCode("NOT_FOUND");
+        /// <summary>
+        /// Constant OVER_LIMIT for BatchDeleteImportDataErrorCode
+        /// </summary>
+        public static readonly BatchDeleteImportDataErrorCode OVER_LIMIT = new BatchDeleteImportDataErrorCode("OVER_LIMIT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -445,6 +449,10 @@ namespace Amazon.ApplicationDiscoveryService
         /// </summary>
         public static readonly ImportStatus IMPORT_COMPLETE = new ImportStatus("IMPORT_COMPLETE");
         /// <summary>
+        /// Constant IMPORT_COMPLETE_WITH_ERRORS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IMPORT_COMPLETE_WITH_ERRORS = new ImportStatus("IMPORT_COMPLETE_WITH_ERRORS");
+        /// <summary>
         /// Constant IMPORT_FAILED for ImportStatus
         /// </summary>
         public static readonly ImportStatus IMPORT_FAILED = new ImportStatus("IMPORT_FAILED");
@@ -460,6 +468,10 @@ namespace Amazon.ApplicationDiscoveryService
         /// Constant IMPORT_IN_PROGRESS for ImportStatus
         /// </summary>
         public static readonly ImportStatus IMPORT_IN_PROGRESS = new ImportStatus("IMPORT_IN_PROGRESS");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus INTERNAL_ERROR = new ImportStatus("INTERNAL_ERROR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
