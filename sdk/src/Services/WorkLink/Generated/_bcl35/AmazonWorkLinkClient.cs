@@ -242,6 +242,78 @@ namespace Amazon.WorkLink
         #endregion
 
 
+        #region  AssociateDomain
+
+        /// <summary>
+        /// Specifies a domain to be associated to Amazon WorkLink.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDomain service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        public virtual AssociateDomainResponse AssociateDomain(AssociateDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDomainResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDomain operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDomain(AssociateDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDomain.</param>
+        /// 
+        /// <returns>Returns a  AssociateDomainResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        public virtual AssociateDomainResponse EndAssociateDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateWebsiteCertificateAuthority
 
         /// <summary>
@@ -735,6 +807,75 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  DescribeDomain
+
+        /// <summary>
+        /// Provides information about the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomain operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomain.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        public virtual DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeFleetMetadata
 
         /// <summary>
@@ -943,6 +1084,76 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  DisassociateDomain
+
+        /// <summary>
+        /// Disassociates a domain from Amazon WorkLink. End users lose the ability to access
+        /// the domain with Amazon WorkLink.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDomain service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        public virtual DisassociateDomainResponse DisassociateDomain(DisassociateDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDomainResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDomainResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDomain operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateDomain(DisassociateDomainRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateDomain.</param>
+        /// 
+        /// <returns>Returns a  DisassociateDomainResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        public virtual DisassociateDomainResponse EndDisassociateDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateWebsiteCertificateAuthority
 
         /// <summary>
@@ -1081,6 +1292,72 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  ListDomains
+
+        /// <summary>
+        /// Retrieves a list of domains associated to a specified fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
+        /// 
+        /// <returns>Returns a  ListDomainsResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFleets
 
         /// <summary>
@@ -1209,6 +1486,144 @@ namespace Amazon.WorkLink
         public virtual ListWebsiteCertificateAuthoritiesResponse EndListWebsiteCertificateAuthorities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWebsiteCertificateAuthoritiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreDomainAccess
+
+        /// <summary>
+        /// Moves a domain to ACTIVE status if it was in the INACTIVE status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDomainAccess service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDomainAccess service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        public virtual RestoreDomainAccessResponse RestoreDomainAccess(RestoreDomainAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreDomainAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDomainAccessResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDomainAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDomainAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDomainAccess operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreDomainAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        public virtual IAsyncResult BeginRestoreDomainAccess(RestoreDomainAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreDomainAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDomainAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreDomainAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreDomainAccess.</param>
+        /// 
+        /// <returns>Returns a  RestoreDomainAccessResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        public virtual RestoreDomainAccessResponse EndRestoreDomainAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreDomainAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RevokeDomainAccess
+
+        /// <summary>
+        /// Moves a domain to INACTIVE status if it was in the ACTIVE status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeDomainAccess service method.</param>
+        /// 
+        /// <returns>The response from the RevokeDomainAccess service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        public virtual RevokeDomainAccessResponse RevokeDomainAccess(RevokeDomainAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeDomainAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeDomainAccessResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeDomainAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeDomainAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeDomainAccess operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeDomainAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        public virtual IAsyncResult BeginRevokeDomainAccess(RevokeDomainAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeDomainAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeDomainAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeDomainAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeDomainAccess.</param>
+        /// 
+        /// <returns>Returns a  RevokeDomainAccessResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        public virtual RevokeDomainAccessResponse EndRevokeDomainAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokeDomainAccessResponse>(asyncResult);
         }
 
         #endregion
@@ -1486,6 +1901,75 @@ namespace Amazon.WorkLink
         public virtual UpdateDevicePolicyConfigurationResponse EndUpdateDevicePolicyConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDevicePolicyConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDomainMetadata
+
+        /// <summary>
+        /// Updates domain metadata, such as DisplayName.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainMetadata service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        public virtual UpdateDomainMetadataResponse UpdateDomainMetadata(UpdateDomainMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDomainMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDomainMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainMetadata operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDomainMetadata(UpdateDomainMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDomainMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDomainMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDomainMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateDomainMetadataResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        public virtual UpdateDomainMetadataResponse EndUpdateDomainMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDomainMetadataResponse>(asyncResult);
         }
 
         #endregion

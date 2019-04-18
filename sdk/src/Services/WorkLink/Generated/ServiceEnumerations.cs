@@ -75,6 +75,80 @@ namespace Amazon.WorkLink
 
 
     /// <summary>
+    /// Constants used for properties of type DomainStatus.
+    /// </summary>
+    public class DomainStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus ACTIVE = new DomainStatus("ACTIVE");
+        /// <summary>
+        /// Constant ASSOCIATING for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus ASSOCIATING = new DomainStatus("ASSOCIATING");
+        /// <summary>
+        /// Constant DISASSOCIATED for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus DISASSOCIATED = new DomainStatus("DISASSOCIATED");
+        /// <summary>
+        /// Constant DISASSOCIATING for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus DISASSOCIATING = new DomainStatus("DISASSOCIATING");
+        /// <summary>
+        /// Constant FAILED_TO_ASSOCIATE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus FAILED_TO_ASSOCIATE = new DomainStatus("FAILED_TO_ASSOCIATE");
+        /// <summary>
+        /// Constant FAILED_TO_DISASSOCIATE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus FAILED_TO_DISASSOCIATE = new DomainStatus("FAILED_TO_DISASSOCIATE");
+        /// <summary>
+        /// Constant INACTIVE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus INACTIVE = new DomainStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus PENDING_VALIDATION = new DomainStatus("PENDING_VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainStatus FindValue(string value)
+        {
+            return FindValue<DomainStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetStatus.
     /// </summary>
     public class FleetStatus : ConstantClass

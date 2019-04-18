@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateDomainRequest.AcmCertificateArn</property>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateDomainRequest.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateDomainRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateDomainRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.AssociateWebsiteCertificateAuthorityRequest.Certificate</property>
     <min>1</min>
     <max>8192</max>
@@ -106,6 +125,21 @@
     <pattern>-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeDomainRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeDomainRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeDomainResponse.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.DescribeFleetMetadataRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -161,6 +195,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.DisassociateDomainRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DisassociateDomainRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.DisassociateWebsiteCertificateAuthorityRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -187,6 +232,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.ListDevicesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListDomainsRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListDomainsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListDomainsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListDomainsResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>[\w\-]+</pattern>
@@ -229,6 +295,28 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.RestoreDomainAccessRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.RestoreDomainAccessRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.RevokeDomainAccessRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.RevokeDomainAccessRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.SignOutUserRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -264,6 +352,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.UpdateDomainMetadataRequest.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.UpdateDomainMetadataRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.UpdateDomainMetadataRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.UpdateFleetMetadataRequest.DisplayName</property>
     <max>100</max>
   </property-value-rule>
@@ -286,6 +389,16 @@
     <property>Amazon.WorkLink.Model.DeviceSummary.DeviceId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DomainSummary.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DomainSummary.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.FleetSummary.CompanyCode</property>
