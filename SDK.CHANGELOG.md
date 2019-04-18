@@ -1,3 +1,24 @@
+### 3.3.495.0 (2019-04-18 21:07 UTC)
+* ApplicationDiscoveryService (3.3.101.0)
+	* The Application Discovery Service's DescribeImportTasks and BatchDeleteImportData APIs now return additional statuses for error reporting.
+* CognitoIdentityProvider (3.3.101.1)
+	* Document updates for Amazon Cognito Identity Provider.
+* Kafka (3.3.101.0)
+	* Amazon Kafka - Added tagging APIs
+* Organizations (3.3.101.0)
+	* AWS Organizations is now available in the AWS GovCloud (US) Regions, and we added a new API action for creating accounts in those Regions. For more information, see CreateGovCloudAccount in the AWS Organizations API Reference. 
+* RDS (3.3.101.0)
+	* This release adds the TimeoutAction parameter to the ScalingConfiguration of an Aurora Serverless DB cluster. You can now configure the behavior when an auto-scaling capacity change can't find a scaling point.
+* WorkLink (3.3.101.0)
+	* Amazon WorkLink is a fully managed, cloud-based service that enables secure, one-click access to internal websites and web apps from mobile phones. This release introduces new APIs to link and manage internal websites and web apps with Amazon WorkLink fleets. 
+* WorkSpaces (3.3.101.5)
+	* Documentation updates for workspaces
+* Core 3.3.100.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.494.0 (2019-04-17 18:14 UTC)
 * EC2 (3.3.103.0)
 	* This release adds support for requester-managed Interface VPC Endpoints (powered by AWS PrivateLink). The feature prevents VPC endpoint owners from accidentally deleting or otherwise mismanaging the VPC endpoints of some AWS VPC endpoint services.
