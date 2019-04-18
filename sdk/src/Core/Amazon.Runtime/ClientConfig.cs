@@ -174,7 +174,7 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Given this client configuration, return a string form ofthe service endpoint url.
+        /// Given this client configuration, return a string from the service endpoint url.
         /// </summary>
         public string DetermineServiceURL()
         {
