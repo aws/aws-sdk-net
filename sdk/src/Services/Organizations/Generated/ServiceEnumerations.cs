@@ -305,6 +305,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION = new ConstraintViolationExceptionReason("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
+        /// <summary>
         /// Constant EMAIL_VERIFICATION_CODE_EXPIRED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason EMAIL_VERIFICATION_CODE_EXPIRED = new ConstraintViolationExceptionReason("EMAIL_VERIFICATION_CODE_EXPIRED");
@@ -320,6 +324,10 @@ namespace Amazon.Organizations
         /// Constant MASTER_ACCOUNT_MISSING_CONTACT_INFO for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_MISSING_CONTACT_INFO = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
+        /// <summary>
+        /// Constant MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED");
         /// <summary>
         /// Constant MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
         /// </summary>

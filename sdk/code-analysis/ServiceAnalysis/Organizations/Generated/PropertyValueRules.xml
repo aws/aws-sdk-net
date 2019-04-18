@@ -33,6 +33,22 @@
     <pattern>[\w+=,.@-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.AccountName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[\u0020-\u007E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.Email</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.CreateGovCloudAccountRequest.RoleName</property>
+    <pattern>[\w+=,.@-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.CreateOrganizationalUnitRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -284,6 +300,10 @@
     <min>1</min>
     <max>50</max>
     <pattern>[\u0020-\u007E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.CreateAccountStatus.GovCloudAccountId</property>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>

@@ -65,6 +65,11 @@ namespace Amazon.Organizations.Model
         /// and paid by the master account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
         /// billing</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        ///  The consolidated billing feature subset isn't available for organizations in the
+        /// AWS GovCloud (US) Region.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>ALL</i>: In addition to all the features supported by the consolidated billing

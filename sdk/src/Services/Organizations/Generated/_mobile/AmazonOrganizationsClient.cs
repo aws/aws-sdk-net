@@ -533,6 +533,39 @@ namespace Amazon.Organizations
 
         #endregion
         
+        #region  CreateGovCloudAccount
+
+        internal virtual CreateGovCloudAccountResponse CreateGovCloudAccount(CreateGovCloudAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGovCloudAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGovCloudAccountResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGovCloudAccountResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGovCloudAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGovCloudAccount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateGovCloudAccount">REST API Reference for CreateGovCloudAccount Operation</seealso>
+        public virtual Task<CreateGovCloudAccountResponse> CreateGovCloudAccountAsync(CreateGovCloudAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGovCloudAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGovCloudAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGovCloudAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateOrganization
 
         internal virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)

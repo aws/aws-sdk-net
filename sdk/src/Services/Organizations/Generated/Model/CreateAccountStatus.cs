@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Contains the status about a <a>CreateAccount</a> request to create an AWS account
-    /// in an organization.
+    /// Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request
+    /// to create an AWS account or an AWS GovCloud (US) account in an organization.
     /// </summary>
     public partial class CreateAccountStatus
     {
@@ -37,6 +37,7 @@ namespace Amazon.Organizations.Model
         private string _accountName;
         private DateTime? _completedTimestamp;
         private CreateAccountFailureReason _failureReason;
+        private string _govCloudAccountId;
         private string _id;
         private DateTime? _requestedTimestamp;
         private CreateAccountState _state;
@@ -143,6 +144,21 @@ namespace Amazon.Organizations.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GovCloudAccountId.
+        /// </summary>
+        public string GovCloudAccountId
+        {
+            get { return this._govCloudAccountId; }
+            set { this._govCloudAccountId = value; }
+        }
+
+        // Check to see if GovCloudAccountId property is set
+        internal bool IsSetGovCloudAccountId()
+        {
+            return this._govCloudAccountId != null;
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeCreateAccountStatus operation
+    /// Response Unmarshaller for CreateGovCloudAccount operation
     /// </summary>  
-    public class DescribeCreateAccountStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateGovCloudAccountResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeCreateAccountStatusResponse response = new DescribeCreateAccountStatusResponse();
+            CreateGovCloudAccountResponse response = new CreateGovCloudAccountResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -80,9 +80,17 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 return new AWSOrganizationsNotInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CreateAccountStatusNotFoundException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
             {
-                return new CreateAccountStatusNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConstraintViolationException"))
+            {
+                return new ConstraintViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FinalizingOrganizationException"))
+            {
+                return new FinalizingOrganizationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
             {
@@ -103,9 +111,9 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             return new AmazonOrganizationsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeCreateAccountStatusResponseUnmarshaller _instance = new DescribeCreateAccountStatusResponseUnmarshaller();        
+        private static CreateGovCloudAccountResponseUnmarshaller _instance = new CreateGovCloudAccountResponseUnmarshaller();        
 
-        internal static DescribeCreateAccountStatusResponseUnmarshaller GetInstance()
+        internal static CreateGovCloudAccountResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +121,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeCreateAccountStatusResponseUnmarshaller Instance
+        public static CreateGovCloudAccountResponseUnmarshaller Instance
         {
             get
             {

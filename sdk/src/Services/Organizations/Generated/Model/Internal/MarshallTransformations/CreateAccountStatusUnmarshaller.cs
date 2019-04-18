@@ -88,6 +88,12 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GovCloudAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GovCloudAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
