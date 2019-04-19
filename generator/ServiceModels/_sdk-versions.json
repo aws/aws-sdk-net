@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.495.0",
+    "ProductVersion" : "3.3.496.0",
     "CoreVersion"    : "3.3.100.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.101.5",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.7"
@@ -993,7 +993,7 @@
             "InPreview"               : false
         },
         "ResourceGroups"                  : {
-            "Version" : "3.3.100.7",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.7"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.102.6",
+            "Version" : "3.3.103.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.100.7"

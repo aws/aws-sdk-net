@@ -1,3 +1,11 @@
+### 3.3.496.0 (2019-04-19 18:09 UTC)
+* ResourceGroups (3.3.101.0)
+	* The AWS Resource Groups service increased the query size limit to 4096 bytes.
+* TranscribeService (3.3.103.0)
+	* Amazon Transcribe - support transcriptions from audio sources in Spanish Spanish (es-ES).
+* WorkSpaces (3.3.102.0)
+	* Added a new reserved field.
+
 ### 3.3.495.0 (2019-04-18 21:07 UTC)
 * ApplicationDiscoveryService (3.3.101.0)
 	* The Application Discovery Service's DescribeImportTasks and BatchDeleteImportData APIs now return additional statuses for error reporting.
