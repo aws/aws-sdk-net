@@ -196,7 +196,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates the specified tags for the specified WorkSpaces resource.
+        /// Creates the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
@@ -314,7 +314,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Deletes the specified tags from the specified WorkSpaces resource.
+        /// Deletes the specified tags from the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -515,7 +515,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the specified tags for the specified WorkSpaces resource.
+        /// Describes the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -864,6 +864,9 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the ImportWorkspaceImage service method, as returned by WorkSpaces.</returns>
         /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
         /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
         /// This operation is not supported.

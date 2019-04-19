@@ -76,6 +76,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
+            {
+                return new InvalidParameterValuesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
             {
                 return new OperationNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
