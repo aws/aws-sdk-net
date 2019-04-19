@@ -38,9 +38,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the tagged resource.
+        /// The ARN of the tagged resource group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -56,7 +57,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the specified resource.
+        /// The tags associated with the specified resource group.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

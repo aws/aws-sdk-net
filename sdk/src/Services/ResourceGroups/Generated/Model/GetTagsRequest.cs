@@ -29,7 +29,8 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTags operation.
-    /// Returns a list of tags that are associated with a resource, specified by an ARN.
+    /// Returns a list of tags that are associated with a resource group, specified by an
+    /// ARN.
     /// </summary>
     public partial class GetTagsRequest : AmazonResourceGroupsRequest
     {
@@ -38,11 +39,11 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource for which you want a list of tags. The resource must exist
-        /// within the account you are using.
+        /// The ARN of the resource group for which you want a list of tags. The resource must
+        /// exist within the account you are using.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=1600)]
         public string Arn
         {
             get { return this._arn; }

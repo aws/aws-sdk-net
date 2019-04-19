@@ -61,7 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of a resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=1600)]
         public string GroupArn
         {
             get { return this._groupArn; }

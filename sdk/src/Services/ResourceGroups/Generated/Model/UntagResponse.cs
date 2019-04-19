@@ -41,6 +41,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of the resource from which tags have been removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=1600)]
         public string Arn
         {
             get { return this._arn; }

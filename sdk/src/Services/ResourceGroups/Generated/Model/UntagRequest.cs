@@ -42,7 +42,7 @@ namespace Amazon.ResourceGroups.Model
         /// The ARN of the resource from which to remove tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=1600)]
         public string Arn
         {
             get { return this._arn; }

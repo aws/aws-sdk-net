@@ -41,7 +41,7 @@ namespace Amazon.ResourceGroups.Model
         /// The query that defines a group or a search.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Max=4096)]
         public string Query
         {
             get { return this._query; }
@@ -78,13 +78,13 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>,
-        /// and <code>{"Key":"Version","Values":["2"]}</code> 
+        /// An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>,
+        /// and <code>{"Key":"Version","Value":"2"}</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]},
-        /// and {"Key":"Version","Values":["1"]}
+        /// An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+        /// {"Key":"Version","Value":"1"}
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -95,12 +95,12 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+        /// An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>,
-        /// and <code>{"Key":"Version","Values":["4"]}</code> 
+        /// An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>,
+        /// and <code>{"Key":"Version","Value":"4"}</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.ResourceGroups.Model
         /// a CloudFormation stack ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public QueryType Type
         {
             get { return this._type; }

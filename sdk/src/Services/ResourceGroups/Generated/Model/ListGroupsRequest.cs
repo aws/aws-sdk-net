@@ -91,6 +91,7 @@ namespace Amazon.ResourceGroups.Model
         /// and specify the NextToken value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }
