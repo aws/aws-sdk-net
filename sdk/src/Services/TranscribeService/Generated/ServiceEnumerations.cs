@@ -47,6 +47,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode EnUS = new LanguageCode("en-US");
         /// <summary>
+        /// Constant EsES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsES = new LanguageCode("es-ES");
+        /// <summary>
         /// Constant EsUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
