@@ -127,6 +127,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RequesterPays);
                 }
 
+                if(publicRequest.IsSetSMBACLEnabled())
+                {
+                    context.Writer.WritePropertyName("SMBACLEnabled");
+                    context.Writer.Write(publicRequest.SMBACLEnabled);
+                }
+
                 if(publicRequest.IsSetValidUserList())
                 {
                     context.Writer.WritePropertyName("ValidUserList");

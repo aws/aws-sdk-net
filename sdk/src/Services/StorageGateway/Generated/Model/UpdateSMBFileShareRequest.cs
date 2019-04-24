@@ -62,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         private ObjectACL _objectACL;
         private bool? _readOnly;
         private bool? _requesterPays;
+        private bool? _smbaclEnabled;
         private List<string> _validUserList = new List<string>();
 
         /// <summary>
@@ -249,6 +250,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetRequesterPays()
         {
             return this._requesterPays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMBACLEnabled. 
+        /// <para>
+        /// Set this value to "true to enable ACL (access control list) on the SMB file share.
+        /// Set it to "false" to map file and directory permissions to the POSIX permissions.
+        /// </para>
+        /// </summary>
+        public bool SMBACLEnabled
+        {
+            get { return this._smbaclEnabled.GetValueOrDefault(); }
+            set { this._smbaclEnabled = value; }
+        }
+
+        // Check to see if SMBACLEnabled property is set
+        internal bool IsSetSMBACLEnabled()
+        {
+            return this._smbaclEnabled.HasValue; 
         }
 
         /// <summary>

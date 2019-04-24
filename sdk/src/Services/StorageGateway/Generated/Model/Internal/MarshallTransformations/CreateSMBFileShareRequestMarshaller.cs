@@ -151,6 +151,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetSMBACLEnabled())
+                {
+                    context.Writer.WritePropertyName("SMBACLEnabled");
+                    context.Writer.Write(publicRequest.SMBACLEnabled);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
