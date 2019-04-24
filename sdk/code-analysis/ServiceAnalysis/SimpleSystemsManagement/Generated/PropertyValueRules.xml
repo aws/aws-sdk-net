@@ -1154,7 +1154,7 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Value</property>
+    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Policies</property>
     <min>1</min>
     <max>4096</max>
   </property-value-rule>
@@ -2810,11 +2810,6 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SimpleSystemsManagement.Model.Parameter.Value</property>
-    <min>1</min>
-    <max>4096</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.AllowedPattern</property>
     <min>0</min>
     <max>1024</max>
@@ -2834,11 +2829,6 @@
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Name</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Value</property>
-    <min>1</min>
-    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.AllowedPattern</property>
@@ -2865,7 +2855,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.ParameterStringFilter.Key</property>
     <min>1</min>
     <max>132</max>
-    <pattern>tag:.+|Name|Type|KeyId|Path|Label</pattern>
+    <pattern>tag:.+|Name|Type|KeyId|Path|Label|Tier</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterStringFilter.Option</property>

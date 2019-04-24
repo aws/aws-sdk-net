@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the target.
+        /// A description for the target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,8 +81,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this Maintenance Window.
+        /// A user-provided value that will be included in any CloudWatch events that are raised
+        /// while running tasks for these targets in this Maintenance Window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of target.
+        /// The type of target that is being registered with the Maintenance Window.
         /// </para>
         /// </summary>
         public MaintenanceWindowResourceType ResourceType
@@ -119,8 +119,23 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags). Instances are specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
-        /// Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// The targets, either instances or tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify instances using the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags are specified using the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -139,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID where the target is registered.
+        /// The ID of the Maintenance Window to register the target with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

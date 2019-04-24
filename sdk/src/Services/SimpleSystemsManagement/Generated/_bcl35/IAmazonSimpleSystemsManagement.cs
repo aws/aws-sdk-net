@@ -5980,6 +5980,10 @@ namespace Amazon.SimpleSystemsManagement
         /// you can't change a parameter from a String type to a SecureString type. You must create
         /// a new, unique parameter.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IncompatiblePolicyException">
+        /// There is a conflict in the policies specified for this parameter. You can't, for example,
+        /// specify two Expiration policies for a parameter. Review your policies, and try again.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
@@ -5988,6 +5992,13 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
         /// The query key ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyAttributeException">
+        /// A policy attribute or its value is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPolicyTypeException">
+        /// The policy type is not supported. Parameter Store supports the following policy types:
+        /// Expiration, ExpirationNotification, and NoChangeNotification.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterAlreadyExistsException">
         /// The parameter already exists. You can't create duplicate parameters.
@@ -6001,6 +6012,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterPatternMismatchException">
         /// The parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.PoliciesLimitExceededException">
+        /// You specified more than the maximum number of allowed policies for the parameter.
+        /// The maximum is 10.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.

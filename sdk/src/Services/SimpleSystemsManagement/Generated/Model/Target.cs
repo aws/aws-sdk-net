@@ -41,9 +41,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// User-defined criteria for sending commands that target instances that meet the criteria.
-        /// Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how
-        /// to send commands that target instances using Key,Value parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
-        /// Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>.
+        /// For more information about how to send commands that target instances using <code>Key,Value</code>
+        /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Using
+        /// Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -62,11 +64,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// User-defined criteria that maps to Key. For example, if you specified tag:ServerRole,
-        /// you could specify value:WebServer to run a command on instances that include Amazon
-        /// EC2 tags of ServerRole,WebServer. For more information about how to send commands
-        /// that target instances using Key,Value parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-        /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// User-defined criteria that maps to <code>Key</code>. For example, if you specified
+        /// <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run
+        /// a command on instances that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+        /// For more information about how to send commands that target instances using <code>Key,Value</code>
+        /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+        /// Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

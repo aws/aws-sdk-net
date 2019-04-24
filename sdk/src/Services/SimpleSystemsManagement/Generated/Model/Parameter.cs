@@ -168,7 +168,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
         public string Value
         {
             get { return this._value; }

@@ -116,8 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// The execution ID for the association. If the association does not run at intervals
-        /// or according to a schedule, then the ExecutionID is the same as the AssociationID.
+        /// The execution ID for the association.
         /// </para>
         /// </summary>
         public string ExecutionId

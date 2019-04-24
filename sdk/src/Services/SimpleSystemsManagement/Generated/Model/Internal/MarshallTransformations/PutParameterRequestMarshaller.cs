@@ -98,6 +98,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Overwrite);
                 }
 
+                if(publicRequest.IsSetPolicies())
+                {
+                    context.Writer.WritePropertyName("Policies");
+                    context.Writer.Write(publicRequest.Policies);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -112,6 +118,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTier())
+                {
+                    context.Writer.WritePropertyName("Tier");
+                    context.Writer.Write(publicRequest.Tier);
                 }
 
                 if(publicRequest.IsSetType())

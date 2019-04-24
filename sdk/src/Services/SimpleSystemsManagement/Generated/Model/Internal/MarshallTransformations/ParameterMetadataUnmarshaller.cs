@@ -100,6 +100,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Policies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ParameterInlinePolicy, ParameterInlinePolicyUnmarshaller>(ParameterInlinePolicyUnmarshaller.Instance);
+                    unmarshalledObject.Policies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Tier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

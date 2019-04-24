@@ -38,7 +38,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _keyId;
         private string _name;
         private bool? _overwrite;
+        private string _policies;
         private List<Tag> _tags = new List<Tag>();
+        private ParameterTier _tier;
         private ParameterType _type;
         private string _value;
 
@@ -207,6 +209,52 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Policies. 
+        /// <para>
+        /// One or more policies to apply to a parameter. This action takes a JSON array. Parameter
+        /// Store supports the following policy types:
+        /// </para>
+        ///  
+        /// <para>
+        /// Expiration: This policy deletes the parameter after it expires. When you create the
+        /// policy, you specify the expiration date. You can update the expiration date and time
+        /// by updating the policy. Updating the <i>parameter</i> does not affect the expiration
+        /// date and time. When the expiration time is reached, Parameter Store deletes the parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events
+        /// that notifies you about the expiration. By using this policy, you can receive notification
+        /// before or after the expiration time is reached, in units of days or hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not
+        /// been modified for a specified period of time. This policy type is useful when, for
+        /// example, a secret needs to be changed within a period of time, but it has not been
+        /// changed.
+        /// </para>
+        ///  
+        /// <para>
+        /// All existing policies are preserved until you send new policies or an empty policy.
+        /// For more information about parameter policies, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+        /// with Parameter Policies</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string Policies
+        {
+            get { return this._policies; }
+            set { this._policies = value; }
+        }
+
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
+        {
+            return this._policies != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Optional metadata that you assign to a resource. Tags enable you to categorize a resource
@@ -248,6 +296,50 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// Parameter Store offers a standard tier and an advanced tier for parameters. Standard
+        /// parameters have a value limit of 4 KB and can't be configured to use parameter policies.
+        /// You can create a maximum of 10,000 standard parameters per account and per Region.
+        /// Standard parameters are offered at no additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// Advanced parameters have a value limit of 8 KB and can be configured to use parameter
+        /// policies. You can create a maximum of 100,000 advanced parameters per account and
+        /// per Region. Advanced parameters incur a charge.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a parameter tier when you create a new parameter, the parameter
+        /// defaults to using the standard tier. You can change a standard parameter to an advanced
+        /// parameter at any time. But you can't revert an advanced parameter to a standard parameter.
+        /// Reverting an advanced parameter to a standard parameter would result in data loss
+        /// because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting
+        /// would also remove any policies attached to the parameter. Lastly, advanced parameters
+        /// use a different form of encryption than standard parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you no longer need an advanced parameter, or if you no longer want to incur charges
+        /// for an advanced parameter, you must delete it and recreate it as a new standard parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+        /// Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ParameterTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of parameter that you want to add to the system.
@@ -281,10 +373,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The parameter value that you want to add to the system.
+        /// The parameter value that you want to add to the system. Standard parameters have a
+        /// value limit of 4 KB. Advanced parameters have a value limit of 8 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true)]
         public string Value
         {
             get { return this._value; }

@@ -95,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The maximum number of targets this task can be run for in parallel.
+        /// The maximum number of targets this task can be run for, in parallel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -277,7 +277,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The Maintenance Window ID where the task is registered.
+        /// The ID of the Maintenance Window where the task is registered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

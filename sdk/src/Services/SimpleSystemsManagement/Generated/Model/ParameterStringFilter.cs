@@ -32,8 +32,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API
-    /// action.
+    /// The <code>Name</code> and <code>Tier</code> filter keys can't be used with the <a>GetParametersByPath</a>
+    /// API action. Also, the <code>Label</code> filter key can't be used with the <a>DescribeParameters</a>
+    /// API action.
     /// </para>
     ///  </note>
     /// </summary>

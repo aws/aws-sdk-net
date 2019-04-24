@@ -39,6 +39,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastModifiedDate;
         private string _lastModifiedUser;
         private string _name;
+        private List<ParameterInlinePolicy> _policies = new List<ParameterInlinePolicy>();
+        private ParameterTier _tier;
         private ParameterType _type;
         private long? _version;
 
@@ -156,6 +158,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policies. 
+        /// <para>
+        /// A list of policies associated with a parameter.
+        /// </para>
+        /// </summary>
+        public List<ParameterInlinePolicy> Policies
+        {
+            get { return this._policies; }
+            set { this._policies = value; }
+        }
+
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
+        {
+            return this._policies != null && this._policies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The parameter tier.
+        /// </para>
+        /// </summary>
+        public ParameterTier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
         /// <summary>
