@@ -47,6 +47,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType PAGE = new BlockType("PAGE");
         /// <summary>
+        /// Constant SELECTION_ELEMENT for BlockType
+        /// </summary>
+        public static readonly BlockType SELECTION_ELEMENT = new BlockType("SELECTION_ELEMENT");
+        /// <summary>
         /// Constant TABLE for BlockType
         /// </summary>
         public static readonly BlockType TABLE = new BlockType("TABLE");
@@ -292,6 +296,56 @@ namespace Amazon.Textract
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelectionStatus.
+    /// </summary>
+    public class SelectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_SELECTED for SelectionStatus
+        /// </summary>
+        public static readonly SelectionStatus NOT_SELECTED = new SelectionStatus("NOT_SELECTED");
+        /// <summary>
+        /// Constant SELECTED for SelectionStatus
+        /// </summary>
+        public static readonly SelectionStatus SELECTED = new SelectionStatus("SELECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelectionStatus FindValue(string value)
+        {
+            return FindValue<SelectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelectionStatus(string value)
         {
             return FindValue(value);
         }

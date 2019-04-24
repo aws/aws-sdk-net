@@ -46,7 +46,7 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  
     /// <para>
-    /// The AWS Region for the S3 bucket that contains the S3 object must match the Region
+    /// The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region
     /// that you use for Amazon Textract operations.
     /// </para>
     ///  
@@ -69,8 +69,13 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// A blob of documents bytes. The maximum size of a document that's provided in a blob
-        /// of bytes is 5 MB.
+        /// A blob of base-64 encoded documents bytes. The maximum size of a document that's provided
+        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPG format.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5242880)]

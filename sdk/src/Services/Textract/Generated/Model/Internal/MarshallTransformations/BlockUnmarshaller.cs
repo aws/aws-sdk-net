@@ -130,6 +130,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelectionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

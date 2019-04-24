@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// A <code>Block</code> represents text that's recognized in a document within a group
+    /// A <code>Block</code> represents items that are recognized in a document within a group
     /// of pixels close to each other. The information returned in a <code>Block</code> depends
     /// on the type of operation. In document-text detection (for example <a>DetectDocumentText</a>),
     /// you get information about the detected words and lines of text. In text analysis (for
-    /// example <a>AnalyzeDocument</a>), you can get information about the fields and tables
-    /// that are detected in the document.
+    /// example <a>AnalyzeDocument</a>), you can also get information about the fields, tables
+    /// and selection elements that are detected in the document.
     /// 
     ///  
     /// <para>
@@ -41,6 +41,11 @@ namespace Amazon.Textract.Model
     /// operations. In synchronous operations, such as <a>DetectDocumentText</a>, the array
     /// of <code>Block</code> objects is the entire set of results. In asynchronous operations,
     /// such as <a>GetDocumentAnalysis</a>, the array is returned over one or more responses.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How
+    /// Amazon Textract Works</a>.
     /// </para>
     /// </summary>
     public partial class Block
@@ -56,6 +61,7 @@ namespace Amazon.Textract.Model
         private List<Relationship> _relationships = new List<Relationship>();
         private int? _rowIndex;
         private int? _rowSpan;
+        private SelectionStatus _selectionStatus;
         private string _text;
 
         /// <summary>
@@ -66,17 +72,18 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a specific
+        ///  <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document
         /// page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>WORD</i> - One or more ISO basic Latin script characters that aren't separated
-        /// by spaces.
+        ///  <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic
+        /// Latin script characters that aren't separated by spaces.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>LINE</i> - A string of equally spaced words.
+        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
+        /// page.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -84,32 +91,42 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>PAGE</i> - Contains a list of child Block objects that are detected on a specific
+        ///  <i>PAGE</i> - Contains a list of child Block objects that are detected on a document
         /// page.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's
-        /// detected in a document. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET
-        /// object is a KEY Block object or a VALUE Block object. 
+        /// detected on a document page. Use the <code>EntityType</code> field to determine if
+        /// a KEY_VALUE_SET object is a KEY Block object or a VALUE Block object. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>WORD</i> - One or more ISO basic Latin script characters that aren't separated
-        /// by spaces.
+        ///  <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic
+        /// Latin script characters that aren't separated by spaces that's detected on a document
+        /// page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>LINE</i> - A string of tab-delimited, contiguous words.
+        ///  <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
+        /// page.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>TABLE</i> - A table that's detected in the document.
+        ///  <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based
+        /// information with 2 or more rows or columns with a cell span of 1 row and 1 column
+        /// each. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>CELL</i> - A cell within a detected table. The cell is the parent of the block
         /// that contains the text in the cell.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox
+        /// that's detected on a document page. Use the value of <code>SelectionStatus</code>
+        /// to determine the status of the selection element.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -257,7 +274,12 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Page. 
         /// <para>
-        /// The page in which a block was detected.
+        /// The page in which a block was detected. <code>Page</code> is returned by asynchronous
+        /// operations. Page values greater than 1 are only returned for multi-page documents
+        /// that are in PDF format. A scanned image (JPG/PNG), even if it contains multiple document
+        /// pages, is always considered to be a single-page document and the value of <code>Page</code>
+        /// is always 1. Synchronous operations don't return <code>Page</code> as every input
+        /// document is considered to be a single-page document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -341,6 +363,24 @@ namespace Amazon.Textract.Model
         internal bool IsSetRowSpan()
         {
             return this._rowSpan.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectionStatus. 
+        /// <para>
+        /// The selection status of a selectable element such as a radio button or checkbox. 
+        /// </para>
+        /// </summary>
+        public SelectionStatus SelectionStatus
+        {
+            get { return this._selectionStatus; }
+            set { this._selectionStatus = value; }
+        }
+
+        // Check to see if SelectionStatus property is set
+        internal bool IsSetSelectionStatus()
+        {
+            return this._selectionStatus != null;
         }
 
         /// <summary>

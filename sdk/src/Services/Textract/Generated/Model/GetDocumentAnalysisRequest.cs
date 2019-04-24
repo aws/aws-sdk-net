@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Container for the parameters to the GetDocumentAnalysis operation.
     /// Gets the results for an Amazon Textract asynchronous operation that analyzes text
-    /// in a document image.
+    /// in a document.
     /// 
     ///  
     /// <para>
@@ -44,10 +44,32 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. For more
-    /// information, see <a>how-it-works-analyzing</a>.
+    ///  <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. The following
+    /// types of information are returned: 
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// Words and lines that are related to nearby lines and words. The related information
+    /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+    /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+    /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+    /// value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Table and table cell data. A TABLE Block object contains information about a detected
+    /// table. A CELL Block object is returned for each cell in a table.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+    /// object contains information about a selectable element.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
     /// If there are more results than specified in <code>MaxResults</code>, the value of
@@ -55,6 +77,11 @@ namespace Amazon.Textract.Model
     /// the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
     /// and populate the <code>NextToken</code> request parameter with the token value that's
     /// returned from the previous call to <code>GetDocumentAnalysis</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+    /// Text Analysis</a>.
     /// </para>
     /// </summary>
     public partial class GetDocumentAnalysisRequest : AmazonTextractRequest

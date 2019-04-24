@@ -34,9 +34,9 @@ namespace Amazon.Textract.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Textract can detect text in document images and PDF files that are stored in
-    /// an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and the
-    /// file name of the document image. 
+    ///  <code>StartDocumentTextDetection</code> can analyze text in documents that are in
+    /// JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+    /// to specify the bucket name and file name of the document. 
     /// </para>
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Document Text Detection in the Amazon Textract Developer
-    /// Guide.
+    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+    /// Text Detection</a>.
     /// </para>
     /// </summary>
     public partial class StartDocumentTextDetectionRequest : AmazonTextractRequest
@@ -105,8 +105,10 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobTag. 
         /// <para>
-        /// A unique identifier you specify to identify the job in the completion status that's
-        /// published to the Amazon Simple Notification Service (Amazon SNS) topic.
+        /// An identifier you specify that's included in the completion notification that's published
+        /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
+        /// the type of document, such as a tax form or a receipt, that the completion notification
+        /// corresponds to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -42,23 +42,33 @@ namespace Amazon.Textract
 
 
         /// <summary>
-        /// Analyzes an input document for relationships in the detected text and tables. 
+        /// Analyzes an input document for relationships between detected items. 
         /// 
         ///  
         /// <para>
-        /// Two types of information are returned: 
+        /// The types of information returned are as follows: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Words and lines that are related to nearby lines and words. The related information
-        /// is returned in two <a>Block</a> objects: a KEY Block object and a VALUE Block object.
-        /// For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i>
-        /// is the key. <i>Ana Silva Carolina</i> is the value.
+        /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+        /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+        /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Table and table cell data. A TABLE Block contains information about a detected table.
-        /// A CELL block is returned for each cell in a table.
+        /// Table and table cell data. A TABLE Block object contains information about a detected
+        /// table. A CELL Block object is returned for each cell in a table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+        /// object contains information about a selectable element.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -67,13 +77,17 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        /// The output is returned in a list of <code>BLOCK</code> objects (Blocks). For more
-        /// information, see <a>how-it-works-analyzing</a>.
+        /// The output is returned in a list of <code>BLOCK</code> objects.
         /// </para>
         ///  
         /// <para>
         ///  <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously,
         /// use <a>StartDocumentAnalysis</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+        /// Text Analysis</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeDocument service method.</param>
@@ -138,12 +152,25 @@ namespace Amazon.Textract
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
         /// words that make up a line of text. The input document must be an image in JPG or PNG
         /// format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
-        /// objects. For more information, see <a>how-it-works-detecting</a>.
+        /// objects. 
         /// 
+        ///  
+        /// <para>
+        /// Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+        /// <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+        /// the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+        /// for each word that makes up the line. Words are represented by <code>Block</code>
+        /// objects of type WORD.
+        /// </para>
         ///  
         /// <para>
         ///  <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
         /// asynchronously, use <a>StartDocumentTextDetection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+        /// Text Detection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectDocumentText service method.</param>
@@ -206,7 +233,7 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Gets the results for an Amazon Textract asynchronous operation that analyzes text
-        /// in a document image.
+        /// in a document.
         /// 
         ///  
         /// <para>
@@ -220,10 +247,32 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. For more
-        /// information, see <a>how-it-works-analyzing</a>.
+        ///  <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. The following
+        /// types of information are returned: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Words and lines that are related to nearby lines and words. The related information
+        /// is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+        /// KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+        /// contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Table and table cell data. A TABLE Block object contains information about a detected
+        /// table. A CELL Block object is returned for each cell in a table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+        /// object contains information about a selectable element.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
         /// If there are more results than specified in <code>MaxResults</code>, the value of
@@ -231,6 +280,11 @@ namespace Amazon.Textract
         /// the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
         /// and populate the <code>NextToken</code> request parameter with the token value that's
         /// returned from the previous call to <code>GetDocumentAnalysis</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+        /// Text Analysis</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentAnalysis service method.</param>
@@ -281,8 +335,8 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Gets the results for an Amazon Textract asynchronous operation that detects text in
-        /// a document image. Amazon Textract can detect lines of text and the words that make
-        /// up a line of text.
+        /// a document. Amazon Textract can detect lines of text and the words that make up a
+        /// line of text.
         /// 
         ///  
         /// <para>
@@ -296,8 +350,15 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. For
-        /// more information, see <a>how-it-works-detecting</a>.
+        ///  <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+        /// <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+        /// the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+        /// for each word that makes up the line. Words are represented by <code>Block</code>
+        /// objects of type WORD.
         /// </para>
         ///  
         /// <para>
@@ -310,8 +371,8 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        /// For more information, see Document Text Detection in the Amazon Textract Developer
-        /// Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+        /// Text Detection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentTextDetection service method.</param>
@@ -361,27 +422,14 @@ namespace Amazon.Textract
 
 
         /// <summary>
-        /// Starts asynchronous analysis of text for relationships in the text and tables that
-        /// are detected in a document. Amazon Textract returns for two types of information:
+        /// Starts asynchronous analysis of an input document for relationships between detected
+        /// items such as key and value pairs, tables, and selection elements.
         /// 
-        /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Words and lines that are related to nearby lines and words. The related information
-        /// is returned in two <a>Block</a> objects: A KEY Block object and a VALUE Block object.
-        /// For example, <i>Name: Ana Silva Carolina</i> contains a key and value. <i>Name:</i>
-        /// is the key. <i>Ana Silva Carolina</i> is the value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Table and table cell data. A TABLE block contains information about a detected table.
-        /// A CELL block is returned for each cell in a table.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Amazon Textract can analyze text in document images and PDF files that are stored
-        /// in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and
-        /// file name of the document image. 
+        ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+        /// PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+        /// to specify the bucket name and file name of the document. 
         /// </para>
         ///  
         /// <para>
@@ -392,6 +440,11 @@ namespace Amazon.Textract
         /// results of the text analysis operation, first check that the status value published
         /// to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentAnalysis</a>,
         /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+        /// Text Analysis</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDocumentAnalysis service method.</param>
@@ -469,9 +522,9 @@ namespace Amazon.Textract
         /// 
         ///  
         /// <para>
-        /// Amazon Textract can detect text in document images and PDF files that are stored in
-        /// an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and the
-        /// file name of the document image. 
+        ///  <code>StartDocumentTextDetection</code> can analyze text in documents that are in
+        /// JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+        /// to specify the bucket name and file name of the document. 
         /// </para>
         ///  
         /// <para>
@@ -485,8 +538,8 @@ namespace Amazon.Textract
         /// </para>
         ///  
         /// <para>
-        /// For more information, see Document Text Detection in the Amazon Textract Developer
-        /// Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+        /// Text Detection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDocumentTextDetection service method.</param>

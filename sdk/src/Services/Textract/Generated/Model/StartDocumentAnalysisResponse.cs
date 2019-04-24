@@ -37,7 +37,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the document text-detection job. Use <code>JobId</code> to identify
+        /// The identifier for the document text detection job. Use <code>JobId</code> to identify
         /// the job in a subsequent call to <code>GetDocumentAnalysis</code>.
         /// </para>
         /// </summary>

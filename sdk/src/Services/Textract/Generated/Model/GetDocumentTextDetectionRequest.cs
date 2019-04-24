@@ -30,8 +30,8 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Container for the parameters to the GetDocumentTextDetection operation.
     /// Gets the results for an Amazon Textract asynchronous operation that detects text in
-    /// a document image. Amazon Textract can detect lines of text and the words that make
-    /// up a line of text.
+    /// a document. Amazon Textract can detect lines of text and the words that make up a
+    /// line of text.
     /// 
     ///  
     /// <para>
@@ -45,8 +45,15 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. For
-    /// more information, see <a>how-it-works-detecting</a>.
+    ///  <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+    /// <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+    /// the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+    /// for each word that makes up the line. Words are represented by <code>Block</code>
+    /// objects of type WORD.
     /// </para>
     ///  
     /// <para>
@@ -59,8 +66,8 @@ namespace Amazon.Textract.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Document Text Detection in the Amazon Textract Developer
-    /// Guide.
+    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+    /// Text Detection</a>.
     /// </para>
     /// </summary>
     public partial class GetDocumentTextDetectionRequest : AmazonTextractRequest
