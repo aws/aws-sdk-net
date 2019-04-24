@@ -29,7 +29,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes the specified tags from a resource.
+    /// Deletes specified tags from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMediaConnectRequest
     {
@@ -37,8 +37,8 @@ namespace Amazon.MediaConnect.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) of the resource
-        /// that you want to remove tags from.
+        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) that identifies
+        /// the AWS Elemental MediaConnect resource from which to delete tags.
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
