@@ -28,14 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// This is the response object from the GetCheckerIpRanges operation.
+    /// A complex type that contains the <code>CheckerIpRanges</code> element.
     /// </summary>
     public partial class GetCheckerIpRangesResponse : AmazonWebServiceResponse
     {
         private List<string> _checkerIpRanges = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CheckerIpRanges.
+        /// Gets and sets the property CheckerIpRanges. 
+        /// <para>
+        /// A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route
+        /// 53 health checkers.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> CheckerIpRanges

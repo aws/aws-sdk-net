@@ -82,7 +82,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>HealthCheckConfig$FullyQualifiedDomainName</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -209,7 +210,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
@@ -509,7 +510,8 @@ namespace Amazon.Route53.Model
         /// After you disable a health check, Route 53 considers the status of the health check
         /// to always be healthy. If you configured DNS failover, Route 53 continues to route
         /// traffic to the corresponding resources. If you want to stop routing traffic to a resource,
-        /// change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+        /// change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -534,10 +536,10 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HealthThreshold. 
         /// <para>
         /// The number of child health checks that are associated with a <code>CALCULATED</code>
-        /// health that Amazon Route 53 must consider healthy for the <code>CALCULATED</code>
+        /// health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code>
         /// health check to be considered healthy. To specify the child health checks that you
-        /// want to associate with a <code>CALCULATED</code> health check, use the <a>HealthCheckConfig$ChildHealthChecks</a>
-        /// and <a>HealthCheckConfig$ChildHealthChecks</a> elements.
+        /// want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a>
+        /// element.
         /// </para>
         ///  
         /// <para>

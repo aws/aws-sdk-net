@@ -33,8 +33,9 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
-    /// in <a>ChangeResourceRecordSets</a>. 
+    /// For information about adding health checks to resource record sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
+    /// in <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+    /// 
     /// </para>
     ///  
     /// <para>

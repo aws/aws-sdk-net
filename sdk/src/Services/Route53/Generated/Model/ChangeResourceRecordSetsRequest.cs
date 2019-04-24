@@ -131,7 +131,7 @@ namespace Amazon.Route53.Model
     /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
     /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
     /// Changes generally propagate to all Route 53 name servers within 60 seconds. For more
-    /// information, see <a>GetChange</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
     /// </para>
     ///  
     /// <para>
@@ -140,7 +140,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// For information about the limits on a <code>ChangeResourceRecordSets</code> request,
-    /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+    /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>

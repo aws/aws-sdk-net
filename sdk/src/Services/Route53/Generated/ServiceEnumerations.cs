@@ -197,6 +197,10 @@ namespace Amazon.Route53
     {
 
         /// <summary>
+        /// Constant ApEast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApEast1 = new CloudWatchRegion("ap-east-1");
+        /// <summary>
         /// Constant ApNortheast1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion ApNortheast1 = new CloudWatchRegion("ap-northeast-1");
@@ -224,6 +228,14 @@ namespace Amazon.Route53
         /// Constant CaCentral1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion CaCentral1 = new CloudWatchRegion("ca-central-1");
+        /// <summary>
+        /// Constant CnNorth1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion CnNorth1 = new CloudWatchRegion("cn-north-1");
+        /// <summary>
+        /// Constant CnNorthwest1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion CnNorthwest1 = new CloudWatchRegion("cn-northwest-1");
         /// <summary>
         /// Constant EuCentral1 for CloudWatchRegion
         /// </summary>
@@ -721,6 +733,10 @@ namespace Amazon.Route53
     {
 
         /// <summary>
+        /// Constant ApEast1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion ApEast1 = new ResourceRecordSetRegion("ap-east-1");
+        /// <summary>
         /// Constant ApNortheast1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion ApNortheast1 = new ResourceRecordSetRegion("ap-northeast-1");
@@ -1086,6 +1102,10 @@ namespace Amazon.Route53
     public class VPCRegion : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ApEast1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApEast1 = new VPCRegion("ap-east-1");
         /// <summary>
         /// Constant ApNortheast1 for VPCRegion
         /// </summary>

@@ -150,12 +150,12 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// Linux: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+        /// Windows: <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i> 
         /// </para>
         ///  </li> </ul> <note> 
@@ -166,7 +166,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a>UpdateHealthCheckRequest$FullyQualifiedDomainName</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -454,7 +455,8 @@ namespace Amazon.Route53.Model
         /// After you disable a health check, Route 53 considers the status of the health check
         /// to always be healthy. If you configured DNS failover, Route 53 continues to route
         /// traffic to the corresponding resources. If you want to stop routing traffic to a resource,
-        /// change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+        /// change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -655,22 +657,22 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a>
+        ///  <code>ChildHealthChecks</code>: Amazon Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ChildHealthChecks">ChildHealthChecks</a>
         /// to null.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FullyQualifiedDomainName</code>: Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+        ///  <code>FullyQualifiedDomainName</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
         /// to null.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Regions</code>: Route 53 resets the <a>HealthCheckConfig$Regions</a> list to
-        /// the default set of regions. 
+        ///  <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>
+        /// list to the default set of regions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ResourcePath</code>: Route 53 resets <a>HealthCheckConfig$ResourcePath</a>
+        ///  <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a>
         /// to null.
         /// </para>
         ///  </li> </ul>

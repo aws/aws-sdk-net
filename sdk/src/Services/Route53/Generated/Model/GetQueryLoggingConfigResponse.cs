@@ -38,7 +38,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property QueryLoggingConfig. 
         /// <para>
         /// A complex type that contains information about the query logging configuration that
-        /// you specified in a <a>GetQueryLoggingConfig</a> request.
+        /// you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

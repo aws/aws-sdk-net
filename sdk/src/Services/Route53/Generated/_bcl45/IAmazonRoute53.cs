@@ -31,7 +31,7 @@ namespace Amazon.Route53
     /// <summary>
     /// Interface for accessing Route53
     ///
-    /// 
+    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
     /// </summary>
     public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {
@@ -72,7 +72,7 @@ namespace Amazon.Route53
         /// name servers. You tried to create a hosted zone that has the same name as an existing
         /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
         /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a>CreateReusableDelegationSet</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,11 +94,11 @@ namespace Amazon.Route53
         /// This operation can't be completed either because the current account has reached the
         /// limit on reusable delegation sets that it can create or because you've reached the
         /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a>GetAccountLimit</a>.
+        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit, <a
-        /// href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
-        /// Center.
+        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -234,7 +234,7 @@ namespace Amazon.Route53
         /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
         /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
         /// Changes generally propagate to all Route 53 name servers within 60 seconds. For more
-        /// information, see <a>GetChange</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +243,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// For information about the limits on a <code>ChangeResourceRecordSets</code> request,
-        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -296,7 +296,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
@@ -348,8 +348,9 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
-        /// in <a>ChangeResourceRecordSets</a>. 
+        /// For information about adding health checks to resource record sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
+        /// in <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -422,12 +423,12 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about how to get the current limit for an account, see <a>GetAccountLimit</a>.
+        /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the AWS Support Center.
         /// </para>
@@ -529,7 +530,7 @@ namespace Amazon.Route53
         /// name servers. You tried to create a hosted zone that has the same name as an existing
         /// hosted zone or that's the parent or child of an existing hosted zone, and you specified
         /// a delegation set that shares one or more name servers with the existing hosted zone.
-        /// For more information, see <a>CreateReusableDelegationSet</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -573,17 +574,18 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To get the current limit on hosted zones that can be created by an account, see <a>GetAccountLimit</a>.
+        /// To get the current limit on hosted zones that can be created by an account, see <a
+        /// href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// </para>
         ///  
         /// <para>
         /// To get the current limit on hosted zones that can be associated with a reusable delegation
-        /// set, see <a>GetReusableDelegationSetLimit</a>.
+        /// set, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.
         /// </para>
         ///  
         /// <para>
@@ -736,13 +738,13 @@ namespace Amazon.Route53
         /// record set expires. Depending on how many DNS queries are submitted for a resource
         /// record set, and depending on the TTL for that resource record set, query logs might
         /// contain information about only one query out of every several thousand queries that
-        /// are submitted to DNS. For more information about how DNS works, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+        /// are submitted to DNS. For more information about how DNS works, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
         /// Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route 53
         /// Developer Guide</i>.
         /// </para>
         ///  </dd> <dt>Log File Format</dt> <dd> 
         /// <para>
-        /// For a list of the values in each query log and the format of each value, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// For a list of the values in each query log and the format of each value, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
         /// DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  </dd> <dt>Pricing</dt> <dd> 
@@ -753,7 +755,7 @@ namespace Amazon.Route53
         ///  </dd> <dt>How to Stop Logging</dt> <dd> 
         /// <para>
         /// If you want Route 53 to stop sending query logs to CloudWatch Logs, delete the query
-        /// logging configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.
+        /// logging configuration. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html">DeleteQueryLoggingConfig</a>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -917,11 +919,11 @@ namespace Amazon.Route53
         /// This operation can't be completed either because the current account has reached the
         /// limit on reusable delegation sets that it can create or because you've reached the
         /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a>GetAccountLimit</a>.
+        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a>GetHostedZoneLimit</a>. To request a higher limit, <a
-        /// href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support
-        /// Center.
+        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request);
@@ -964,12 +966,13 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To get the current limit for an account, see <a>GetAccountLimit</a>. 
+        /// To get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1027,12 +1030,12 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about default limits, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For information about how to get the current limit for an account, see <a>GetAccountLimit</a>.
+        /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// </para>
         ///  
         /// <para>
@@ -1096,8 +1099,9 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To create more traffic policy versions, you can use <a>GetTrafficPolicy</a> to get
-        /// the traffic policy document for a specified traffic policy version, and then use <a>CreateTrafficPolicy</a>
+        /// To create more traffic policy versions, you can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>
+        /// to get the traffic policy document for a specified traffic policy version, and then
+        /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>
         /// to create a new traffic policy using the traffic policy document.
         /// </para>
         /// </exception>
@@ -1233,30 +1237,47 @@ namespace Amazon.Route53
         /// <summary>
         /// Deletes a hosted zone.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// If the name servers for the hosted zone are associated with a domain and if you want
-        /// to make the domain unavailable on the Internet, we recommend that you delete the name
-        /// servers from the domain to prevent future DNS queries from possibly being misrouted.
-        /// If the domain is registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>.
-        /// If the domain is registered with another registrar, use the method provided by the
-        /// registrar to delete name servers for the domain.
+        /// If the hosted zone was created by another service, such as AWS Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
+        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route
+        /// 53 Developer Guide</i> for information about how to delete it. (The process is the
+        /// same for public and private hosted zones that were created by another service.)
         /// </para>
         ///  
         /// <para>
-        /// Some domain registries don't allow you to remove all of the name servers for a domain.
-        /// If the registry for your domain requires one or more name servers, we recommend that
-        /// you delete the hosted zone only if you transfer DNS service to another service provider,
-        /// and you replace the name servers for the domain with name servers from the new provider.
+        /// If you want to keep your domain registration but you want to stop routing internet
+        /// traffic to your website or web application, we recommend that you delete resource
+        /// record sets in the hosted zone instead of deleting the hosted zone.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you delete a hosted zone, you can't undelete it. You must create a new hosted zone
+        /// and update the name servers for your domain registration, which can require up to
+        /// 48 hours to take effect. (If you delegated responsibility for a subdomain to a hosted
+        /// zone and you delete the child hosted zone, you must update the name servers in the
+        /// parent hosted zone.) In addition, if you delete a hosted zone, someone could hijack
+        /// the domain and route traffic to their own resources using your domain name.
         /// </para>
         ///  </important> 
+        /// <para>
+        /// If you want to avoid the monthly charge for the hosted zone, you can transfer DNS
+        /// service for the domain to a free DNS service. When you transfer DNS service, you have
+        /// to update the name servers for the domain registration. If the domain is registered
+        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+        /// for information about how to replace Route 53 name servers with name servers for the
+        /// new DNS service. If the domain is registered with another registrar, use the method
+        /// provided by the registrar to update name servers for the domain registration. For
+        /// more information, perform an internet search on "free DNS service."
+        /// </para>
+        ///  
         /// <para>
         /// You can delete a hosted zone only if it contains only the default SOA record and NS
         /// resource record sets. If the hosted zone contains other resource record sets, you
         /// must delete them before you can delete the hosted zone. If you try to delete a hosted
         /// zone that contains other resource record sets, the request fails, and Route 53 returns
         /// a <code>HostedZoneNotEmpty</code> error. For information about deleting records from
-        /// your hosted zone, see <a>ChangeResourceRecordSets</a>.
+        /// your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// </para>
         ///  
         /// <para>
@@ -1324,7 +1345,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a>.
+        /// For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueryLoggingConfig service method.</param>
@@ -1372,8 +1393,8 @@ namespace Amazon.Route53
         ///  </important> 
         /// <para>
         /// To verify that the reusable delegation set is not associated with any hosted zones,
-        /// submit a <a>GetReusableDelegationSet</a> request and specify the ID of the reusable
-        /// delegation set that you want to delete.
+        /// submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
+        /// request and specify the ID of the reusable delegation set that you want to delete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet service method.</param>
@@ -1623,10 +1644,17 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
         /// a case</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can also view account limits in AWS Trusted Advisor. Sign in to the AWS Management
+        /// Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+        /// Then choose <b>Service limits</b> in the navigation pane.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountLimit service method.</param>
         /// 
@@ -2026,7 +2054,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
         /// a case</a>.
         /// </para>
@@ -2069,8 +2097,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a> and
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>
+        /// and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
         /// DNS Queries</a>.
         /// </para>
         /// </summary>
@@ -2147,7 +2175,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
         /// a case</a>.
         /// </para>
@@ -2652,8 +2680,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a>. Additional
-        /// information, including the format of DNS query logs, appears in <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+        /// For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
+        /// Additional information, including the format of DNS query logs, appears in <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
         /// DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2881,7 +2909,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
@@ -2933,7 +2961,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
         /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>

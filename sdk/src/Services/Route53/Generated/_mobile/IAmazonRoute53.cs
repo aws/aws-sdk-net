@@ -31,7 +31,7 @@ namespace Amazon.Route53
     /// <summary>
     /// Interface for accessing Route53
     ///
-    /// 
+    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
     /// </summary>
     public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {

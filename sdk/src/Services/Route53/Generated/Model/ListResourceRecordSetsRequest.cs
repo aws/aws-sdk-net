@@ -210,6 +210,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>API Gateway custom regional API or edge-optimized API</b>: A
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>CloudFront distribution</b>: A or AAAA
         /// </para>
         ///  </li> <li> 
@@ -218,11 +222,15 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ELB load balancer</b>: A | AAAA
+        ///  <b>Elastic Load Balancing load balancer</b>: A | AAAA
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon S3 bucket</b>: A
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon VPC interface VPC endpoint</b>: A
         /// </para>
         ///  </li> <li> 
         /// <para>

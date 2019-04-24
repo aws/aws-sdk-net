@@ -133,7 +133,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about routing policies, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+        /// For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
         /// a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -38,8 +38,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property QueryLoggingConfigs. 
         /// <para>
-        /// An array that contains one <a>QueryLoggingConfig</a> element for each configuration
-        /// for DNS query logging that is associated with the current AWS account.
+        /// An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a>
+        /// element for each configuration for DNS query logging that is associated with the current
+        /// AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,9 +65,9 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// If a response doesn't include the last of the configurations, you can get more configurations
-        /// by submitting another <a>ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code>
-        /// that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code>
-        /// in the next request.
+        /// by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
+        /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in
+        /// the previous response and include it in <code>NextToken</code> in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

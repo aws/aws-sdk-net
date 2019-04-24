@@ -34,10 +34,17 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// For the default limit, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+    /// For the default limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
     /// a case</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can also view account limits in AWS Trusted Advisor. Sign in to the AWS Management
+    /// Console and open the Trusted Advisor console at <a href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+    /// Then choose <b>Service limits</b> in the navigation pane.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetAccountLimitRequest : AmazonRoute53Request
     {

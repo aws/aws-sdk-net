@@ -67,7 +67,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The definition of this version of the traffic policy, in JSON format. You specified
         /// the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information
-        /// about the JSON format, see <a>CreateTrafficPolicy</a>.
+        /// about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=102400)]

@@ -146,7 +146,7 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// You can specify only one Amazon VPC when you create a private hosted zone. To associate
-        /// additional Amazon VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a>
+        /// additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.
         /// </para>
         /// </summary>
@@ -221,7 +221,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If you want to associate a reusable delegation set with this hosted zone, the ID that
         /// Amazon Route 53 assigned to the reusable delegation set when you created it. For more
-        /// information about reusable delegation sets, see <a>CreateReusableDelegationSet</a>.
+        /// information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

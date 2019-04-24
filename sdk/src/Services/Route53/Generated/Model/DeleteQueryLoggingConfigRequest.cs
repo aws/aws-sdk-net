@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// For more information about DNS query logs, see <a>CreateQueryLoggingConfig</a>.
+    /// For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
     /// </para>
     /// </summary>
     public partial class DeleteQueryLoggingConfigRequest : AmazonRoute53Request

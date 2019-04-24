@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateHealthCheck operation.
+    /// A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
     /// </summary>
     public partial class UpdateHealthCheckResponse : AmazonWebServiceResponse
     {

@@ -48,7 +48,7 @@ namespace Amazon.Route53.Model
         /// Instantiates HostedZone with the parameterized properties
         /// </summary>
         /// <param name="id">The ID that Amazon Route 53 assigned to the hosted zone when you created it.</param>
-        /// <param name="name">The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.</param>
+        /// <param name="name">The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</param>
         /// <param name="callerReference">The value that you specified for <code>CallerReference</code> when you created the hosted zone.</param>
         public HostedZone(string id, string name, string callerReference)
         {
@@ -86,7 +86,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>,
         /// and <code>-</code> (hyphen) and how to specify internationalized domain names, see
-        /// <a>CreateHostedZone</a>.
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

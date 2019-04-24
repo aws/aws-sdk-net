@@ -124,8 +124,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// This element contains an ID that you use when performing a <a>GetChange</a> action
-        /// to get detailed information about the change.
+        /// This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+        /// action to get detailed information about the change.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
