@@ -4719,6 +4719,34 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T32xlarge = new InstanceType("t3.2xlarge");
         /// <summary>
+        /// Constant T3a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3a2xlarge = new InstanceType("t3a.2xlarge");
+        /// <summary>
+        /// Constant T3aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aLarge = new InstanceType("t3a.large");
+        /// <summary>
+        /// Constant T3aMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aMedium = new InstanceType("t3a.medium");
+        /// <summary>
+        /// Constant T3aMicro for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aMicro = new InstanceType("t3a.micro");
+        /// <summary>
+        /// Constant T3aNano for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aNano = new InstanceType("t3a.nano");
+        /// <summary>
+        /// Constant T3aSmall for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aSmall = new InstanceType("t3a.small");
+        /// <summary>
+        /// Constant T3aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T3aXlarge = new InstanceType("t3a.xlarge");
+        /// <summary>
         /// Constant T3Large for InstanceType
         /// </summary>
         public static readonly InstanceType T3Large = new InstanceType("t3.large");
