@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// If the <code>Attribute</code> value is <code>Properties</code>, indicates whether
         /// a change to this property causes the resource to be recreated. The value can be <code>Never</code>,
         /// <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for
-        /// a <code>Conditionally</code> recreation, see the update behavior for that <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
+        /// a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
         /// in the AWS CloudFormation User Guide.
         /// </para>
         /// </summary>

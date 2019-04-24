@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
+    /// at <a href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation

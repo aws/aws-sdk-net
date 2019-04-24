@@ -36,7 +36,7 @@ namespace Amazon.CloudFormation.Model
     /// template configuration. Only resource properties explicitly defined in the stack template
     /// are checked for drift. A stack is considered to have drifted if one or more of its
     /// resources differ from their expected template configurations. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
     /// Unregulated Configuration Changes to Stacks and Resources</a>.
     /// 
     ///  
@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// For a list of stack resources that currently support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+    /// For a list of stack resources that currently support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
     /// that Support Drift Detection</a>.
     /// </para>
     ///  

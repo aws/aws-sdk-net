@@ -126,7 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Metadata. 
         /// <para>
         /// The content of the <code>Metadata</code> attribute declared for the resource. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
         /// Attribute</a> in the AWS CloudFormation User Guide.
         /// </para>
         /// </summary>
@@ -201,7 +201,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. ((For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+        /// Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
         /// AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
         /// </para>
         /// </summary>

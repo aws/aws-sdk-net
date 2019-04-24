@@ -116,37 +116,37 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
         /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
         /// AWS::IAM::InstanceProfile</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
         /// AWS::IAM::Policy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
         /// AWS::IAM::Role</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
         /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
         /// AWS::IAM::UserToGroupAddition</a> 
         /// </para>
         ///  </li> </ul> 
@@ -236,7 +236,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you create a change set for a new stack, AWS Cloudformation creates a stack with
-        /// a unique stack ID, but no template or resources. The stack will be in the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
         /// <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
         /// </para>
         ///  
@@ -351,7 +351,7 @@ namespace Amazon.CloudFormation.Model
         /// If the list of resource types doesn't include a resource type that you're updating,
         /// the stack update fails. By default, AWS CloudFormation grants permissions to all resource
         /// types. AWS Identity and Access Management (IAM) uses this parameter for condition
-        /// keys in IAM policies for AWS CloudFormation. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+        /// keys in IAM policies for AWS CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
         /// Access with AWS Identity and Access Management</a> in the AWS CloudFormation User
         /// Guide.
         /// </para>

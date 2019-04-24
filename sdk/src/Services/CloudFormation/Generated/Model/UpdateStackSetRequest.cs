@@ -100,15 +100,14 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Specify an IAM role only if you are using customized administrator roles to control
         /// which users or groups can manage specific stack sets within the same administrator
-        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+        /// Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  If you specify a customized administrator role, AWS CloudFormation uses that role
-        /// to update the stack. If you do not specify a customized administrator role, AWS CloudFormation
-        /// performs the update using the role previously associated with the stack set, so long
-        /// as you have permissions to perform operations on the stack set.
+        /// If you specified a customized administrator role when you created the stack set, you
+        /// must specify a customized administrator role, even if it is the same customized administrator
+        /// role used with this stack set previously.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -168,37 +167,37 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
         /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
         /// AWS::IAM::InstanceProfile</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
         /// AWS::IAM::Policy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
         /// AWS::IAM::Role</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
         /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
         /// AWS::IAM::UserToGroupAddition</a> 
         /// </para>
         ///  </li> </ul> 
@@ -474,7 +473,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// The structure that contains the template body, with a minimum length of 1 byte and
-        /// a maximum length of 51,200 bytes. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// a maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  
@@ -501,7 +500,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The location of the file that contains the template body. The URL must point to a
         /// template (maximum size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  

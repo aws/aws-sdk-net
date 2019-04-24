@@ -228,7 +228,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <code>Parameter</code> structures that describes the input parameters and
-        /// their values used to create the change set. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+        /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
         /// data type.
         /// </para>
         /// </summary>

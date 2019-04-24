@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
-        /// length of 51,200 bytes. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket. For more information,
-        /// go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.
         /// </para>
         ///  

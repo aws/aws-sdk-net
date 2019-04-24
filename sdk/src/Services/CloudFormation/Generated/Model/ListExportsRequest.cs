@@ -31,12 +31,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListExports operation.
     /// Lists all exported output values in the account and region in which you call this
     /// action. Use this action to see the exported output values that you can import into
-    /// other stacks. To import values, use the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+    /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
     /// <code>Fn::ImportValue</code> </a> function. 
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
     /// AWS CloudFormation Export Stack Output Values</a>.
     /// </para>
     /// </summary>

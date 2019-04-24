@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+        /// Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.)
         /// </para>
         ///  

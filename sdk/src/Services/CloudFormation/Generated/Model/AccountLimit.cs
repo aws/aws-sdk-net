@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The AccountLimit data type.
+    /// The AccountLimit data type. For more information about account limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
+    /// CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.
     /// </summary>
     public partial class AccountLimit
     {
@@ -38,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+        /// The name of the account limit.
         /// </para>
         /// </summary>
         public string Name

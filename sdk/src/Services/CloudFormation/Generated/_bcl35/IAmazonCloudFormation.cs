@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
+    /// at <a href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
@@ -117,7 +117,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
         /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
-        /// cause of the failure, you can manually <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// cause of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
         /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
         /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and
         /// then try to update the stack again.
@@ -214,8 +214,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on stack set limitations, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations
-        /// of StackSets</a>.
+        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a>
+        /// in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
@@ -272,8 +272,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on stack set limitations, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations
-        /// of StackSets</a>.
+        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a>
+        /// in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
@@ -330,8 +330,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on stack set limitations, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations
-        /// of StackSets</a>.
+        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a>
+        /// in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.OperationIdAlreadyExistsException">
@@ -396,8 +396,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on stack set limitations, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations
-        /// of StackSets</a>.
+        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a>
+        /// in the <i>AWS CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.NameAlreadyExistsException">
@@ -642,7 +642,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Retrieves your account's AWS CloudFormation limits, such as the maximum number of
-        /// stacks that you can create in your account.
+        /// stacks that you can create in your account. For more information about account limits,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
+        /// CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// 
@@ -683,7 +685,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the inputs for the change set and a list of changes that AWS CloudFormation
-        /// will make if you execute the change set. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
+        /// will make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
         /// Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet service method.</param>
@@ -733,7 +735,7 @@ namespace Amazon.CloudFormation
         /// from it's expected configuration, as defined in the stack template and any values
         /// specified as template parameters. A stack is considered to have drifted if one or
         /// more of its resources have drifted. For more information on stack and resource drift,
-        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// 
         ///  
@@ -784,7 +786,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+        /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
         /// in the AWS CloudFormation User Guide.
         /// 
         ///  <note> 
@@ -940,7 +942,7 @@ namespace Amazon.CloudFormation
         /// resource that has been checked for drift. Resources that have not yet been checked
         /// for drift are not included. Resources that do not currently support drift detection
         /// are not checked, and so not included. For a list of resources that support drift detection,
-        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         ///  
@@ -1007,7 +1009,7 @@ namespace Amazon.CloudFormation
         /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
         /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
         /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
+        /// and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
         ///  <note> 
@@ -1213,7 +1215,7 @@ namespace Amazon.CloudFormation
         /// template configuration. Only resource properties explicitly defined in the stack template
         /// are checked for drift. A stack is considered to have drifted if one or more of its
         /// resources differ from their expected template configurations. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// 
         ///  
@@ -1223,7 +1225,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// For a list of stack resources that currently support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// For a list of stack resources that currently support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         ///  
@@ -1284,7 +1286,7 @@ namespace Amazon.CloudFormation
         /// and any values specified as template parameters. This information includes actual
         /// and expected property values for resources in which AWS CloudFormation detects drift.
         /// Only resource properties explicitly defined in the stack template are checked for
-        /// drift. For more information about stack and resource drift, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// drift. For more information about stack and resource drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// 
         ///  
@@ -1296,7 +1298,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Resources that do not currently support drift detection cannot be checked. For a list
-        /// of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         /// </summary>
@@ -1649,12 +1651,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Lists all exported output values in the account and region in which you call this
         /// action. Use this action to see the exported output values that you can import into
-        /// other stacks. To import values, use the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
         /// <code>Fn::ImportValue</code> </a> function. 
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
         /// AWS CloudFormation Export Stack Output Values</a>.
         /// </para>
         /// </summary>
@@ -1702,7 +1704,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information about importing an exported output value, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
         /// <code>Fn::ImportValue</code> </a> function. 
         /// </para>
         /// </summary>
@@ -2164,7 +2166,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// For more information about creating an update template, updating a stack, and monitoring
-        /// the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
+        /// the progress of the update, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
         /// a Stack</a>.
         /// </para>
         /// </summary>
@@ -2220,7 +2222,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can only update stack instances in regions and accounts where they already exist;
-        /// to create additional stack instances, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+        /// to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
         /// 
         /// </para>
         ///  
@@ -2231,10 +2233,10 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can only update the parameter <i>values</i> that are specified in the stack set;
-        /// to add or delete a parameter itself, use <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
         /// to update the stack set template. If you add a parameter to a template, before you
         /// can override the parameter value specified in the stack set you must first use <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
         /// to update all stack instances with the updated template and parameter value specified
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
         /// can then override the parameter value using <code>UpdateStackInstances</code>.
