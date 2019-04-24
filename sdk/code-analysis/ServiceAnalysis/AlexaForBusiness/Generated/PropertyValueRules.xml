@@ -137,6 +137,27 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateGatewayGroupRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateGatewayGroupRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateGatewayGroupRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateGatewayGroupResponse.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateProfileRequest.Address</property>
     <min>1</min>
     <max>500</max>
@@ -268,6 +289,10 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeleteGatewayGroupRequest.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeleteProfileRequest.ProfileArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -362,6 +387,14 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetGatewayRequest.GatewayArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetGatewayGroupRequest.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.ContactEmail</property>
     <min>1</min>
     <max>128</max>
@@ -443,6 +476,40 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListDeviceEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewaysRequest.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewaysRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewaysRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListGatewaysResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -825,6 +892,42 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayRequest.GatewayArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayRequest.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayRequest.SoftwareVersion</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayGroupRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayGroupRequest.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateGatewayGroupRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateProfileRequest.Address</property>
     <min>1</min>
     <max>500</max>
@@ -1075,6 +1178,86 @@
     <property>Amazon.AlexaForBusiness.Model.Filter.Key</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Gateway.Arn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Gateway.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Gateway.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Gateway.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Gateway.SoftwareVersion</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroup.Arn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroup.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroup.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroupSummary.Arn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroupSummary.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewayGroupSummary.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewaySummary.Arn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewaySummary.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewaySummary.GatewayGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewaySummary.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GatewaySummary.SoftwareVersion</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.IPDialIn.Endpoint</property>

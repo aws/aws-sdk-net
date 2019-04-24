@@ -709,6 +709,52 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateGatewayGroup
+
+
+        /// <summary>
+        /// Creates a gateway group with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        public virtual CreateGatewayGroupResponse CreateGatewayGroup(CreateGatewayGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        public virtual Task<CreateGatewayGroupResponse> CreateGatewayGroupAsync(CreateGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateGatewayGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProfile
 
 
@@ -1128,6 +1174,49 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGatewayGroup
+
+
+        /// <summary>
+        /// Deletes a gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ResourceAssociatedException">
+        /// Another resource is associated with the resource in the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        public virtual DeleteGatewayGroupResponse DeleteGatewayGroup(DeleteGatewayGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        public virtual Task<DeleteGatewayGroupResponse> DeleteGatewayGroupAsync(DeleteGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteGatewayGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1889,6 +1978,92 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  GetGateway
+
+
+        /// <summary>
+        /// Retrieves the details of a gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGatewayGroup
+
+
+        /// <summary>
+        /// Retrieves the details of a gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        public virtual GetGatewayGroupResponse GetGatewayGroup(GetGatewayGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        public virtual Task<GetGatewayGroupResponse> GetGatewayGroupAsync(GetGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGatewayGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInvitationConfiguration
 
 
@@ -2223,6 +2398,89 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDeviceEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGatewayGroups
+
+
+        /// <summary>
+        /// Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details
+        /// of a specific gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListGatewayGroups service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        public virtual ListGatewayGroupsResponse ListGatewayGroups(ListGatewayGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGatewayGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        public virtual Task<ListGatewayGroupsResponse> ListGatewayGroupsAsync(ListGatewayGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewayGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListGatewayGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGateways
+
+
+        /// <summary>
+        /// Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific
+        /// gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries
+        /// of gateways that are associated with that gateway group ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways service method.</param>
+        /// 
+        /// <returns>The response from the ListGateways service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewaysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListGatewaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3538,6 +3796,100 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = UpdateDeviceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGateway
+
+
+        /// <summary>
+        /// Updates the details of a gateway. If any optional field is not provided, the existing
+        /// corresponding value is left unmodified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGateway service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        public virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        public virtual Task<UpdateGatewayResponse> UpdateGatewayAsync(UpdateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGatewayGroup
+
+
+        /// <summary>
+        /// Updates the details of a gateway group. If any optional field is not provided, the
+        /// existing corresponding value is left unmodified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        public virtual UpdateGatewayGroupResponse UpdateGatewayGroup(UpdateGatewayGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        public virtual Task<UpdateGatewayGroupResponse> UpdateGatewayGroupAsync(UpdateGatewayGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGatewayGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

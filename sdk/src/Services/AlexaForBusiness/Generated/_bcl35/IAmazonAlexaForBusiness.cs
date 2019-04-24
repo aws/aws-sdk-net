@@ -506,6 +506,52 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateGatewayGroup
+
+
+        /// <summary>
+        /// Creates a gateway group with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        CreateGatewayGroupResponse CreateGatewayGroup(CreateGatewayGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGatewayGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        IAsyncResult BeginCreateGatewayGroup(CreateGatewayGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGatewayGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateGatewayGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        CreateGatewayGroupResponse EndCreateGatewayGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateProfile
 
 
@@ -926,6 +972,49 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  DeleteDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
         DeleteDeviceResponse EndDeleteDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGatewayGroup
+
+
+        /// <summary>
+        /// Deletes a gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ResourceAssociatedException">
+        /// Another resource is associated with the resource in the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        DeleteGatewayGroupResponse DeleteGatewayGroup(DeleteGatewayGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        IAsyncResult BeginDeleteGatewayGroup(DeleteGatewayGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGatewayGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteGatewayGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        DeleteGatewayGroupResponse EndDeleteGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1686,6 +1775,92 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  GetGateway
+
+
+        /// <summary>
+        /// Retrieves the details of a gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        GetGatewayResponse GetGateway(GetGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        IAsyncResult BeginGetGateway(GetGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGateway.</param>
+        /// 
+        /// <returns>Returns a  GetGatewayResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        GetGatewayResponse EndGetGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetGatewayGroup
+
+
+        /// <summary>
+        /// Retrieves the details of a gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        GetGatewayGroupResponse GetGatewayGroup(GetGatewayGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        IAsyncResult BeginGetGatewayGroup(GetGatewayGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGatewayGroup.</param>
+        /// 
+        /// <returns>Returns a  GetGatewayGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        GetGatewayGroupResponse EndGetGatewayGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetInvitationConfiguration
 
 
@@ -2021,6 +2196,89 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  ListDeviceEventsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
         ListDeviceEventsResponse EndListDeviceEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListGatewayGroups
+
+
+        /// <summary>
+        /// Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details
+        /// of a specific gateway group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListGatewayGroups service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        ListGatewayGroupsResponse ListGatewayGroups(ListGatewayGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGatewayGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayGroups operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGatewayGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        IAsyncResult BeginListGatewayGroups(ListGatewayGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGatewayGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGatewayGroups.</param>
+        /// 
+        /// <returns>Returns a  ListGatewayGroupsResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        ListGatewayGroupsResponse EndListGatewayGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListGateways
+
+
+        /// <summary>
+        /// Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific
+        /// gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries
+        /// of gateways that are associated with that gateway group ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways service method.</param>
+        /// 
+        /// <returns>The response from the ListGateways service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        ListGatewaysResponse ListGateways(ListGatewaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGateways operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        IAsyncResult BeginListGateways(ListGatewaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGateways.</param>
+        /// 
+        /// <returns>Returns a  ListGatewaysResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        ListGatewaysResponse EndListGateways(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3336,6 +3594,100 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  UpdateDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
         UpdateDeviceResponse EndUpdateDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGateway
+
+
+        /// <summary>
+        /// Updates the details of a gateway. If any optional field is not provided, the existing
+        /// corresponding value is left unmodified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGateway service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGateway operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        IAsyncResult BeginUpdateGateway(UpdateGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGateway.</param>
+        /// 
+        /// <returns>Returns a  UpdateGatewayResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        UpdateGatewayResponse EndUpdateGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGatewayGroup
+
+
+        /// <summary>
+        /// Updates the details of a gateway group. If any optional field is not provided, the
+        /// existing corresponding value is left unmodified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        UpdateGatewayGroupResponse UpdateGatewayGroup(UpdateGatewayGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        IAsyncResult BeginUpdateGatewayGroup(UpdateGatewayGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGatewayGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateGatewayGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        UpdateGatewayGroupResponse EndUpdateGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
         

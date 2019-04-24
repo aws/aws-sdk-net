@@ -28,50 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// A filter name and value pair that is used to return a more specific list of results.
-    /// Filters can be used to match a set of resources by various criteria.
+    /// This is the response object from the ListGateways operation.
     /// </summary>
-    public partial class Filter
+    public partial class ListGatewaysResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private List<string> _values = new List<string>();
+        private List<GatewaySummary> _gateways = new List<GatewaySummary>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Gateways. 
         /// <para>
-        /// The key of a filter.
+        /// The gateways in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
-        public string Key
+        public List<GatewaySummary> Gateways
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._gateways; }
+            set { this._gateways = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Gateways property is set
+        internal bool IsSetGateways()
         {
-            return this._key != null;
+            return this._gateways != null && this._gateways.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Values. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The values of a filter.
+        /// The token used to paginate though multiple pages of gateway summaries.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> Values
+        [AWSProperty(Min=1, Max=1000)]
+        public string NextToken
         {
-            get { return this._values; }
-            set { this._values = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Values property is set
-        internal bool IsSetValues()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._nextToken != null;
         }
 
     }

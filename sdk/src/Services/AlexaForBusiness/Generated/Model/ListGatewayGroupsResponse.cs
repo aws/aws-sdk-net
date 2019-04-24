@@ -28,50 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// A filter name and value pair that is used to return a more specific list of results.
-    /// Filters can be used to match a set of resources by various criteria.
+    /// This is the response object from the ListGatewayGroups operation.
     /// </summary>
-    public partial class Filter
+    public partial class ListGatewayGroupsResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private List<string> _values = new List<string>();
+        private List<GatewayGroupSummary> _gatewayGroups = new List<GatewayGroupSummary>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property GatewayGroups. 
         /// <para>
-        /// The key of a filter.
+        /// The gateway groups in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500)]
-        public string Key
+        public List<GatewayGroupSummary> GatewayGroups
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._gatewayGroups; }
+            set { this._gatewayGroups = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if GatewayGroups property is set
+        internal bool IsSetGatewayGroups()
         {
-            return this._key != null;
+            return this._gatewayGroups != null && this._gatewayGroups.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Values. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The values of a filter.
+        /// The token used to paginate though multiple pages of gateway group summaries.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
-        public List<string> Values
+        [AWSProperty(Min=1, Max=1000)]
+        public string NextToken
         {
-            get { return this._values; }
-            set { this._values = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Values property is set
-        internal bool IsSetValues()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._nextToken != null;
         }
 
     }
