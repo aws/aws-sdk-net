@@ -17,6 +17,7 @@ using System.Net;
 
 namespace Amazon.Runtime
 {
+#if !NETSTANDARD13
     /// <summary>
     /// Options that control the behavior of <see cref="FederatedAWSCredentials"/>.
     /// </summary>
@@ -163,4 +164,5 @@ namespace Amazon.Runtime
             }
         }
     }
+#endif
 }

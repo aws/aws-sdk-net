@@ -461,7 +461,7 @@ namespace Amazon.Runtime
             this.UseNagleAlgorithm = useNagle;                
 #endif
         }
-        
+
         /// <summary>
         /// Performs validation on this config object.
         /// Throws exception if any of the required values are missing/invalid.

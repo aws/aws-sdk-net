@@ -21,6 +21,7 @@ using System.Collections.Generic;
 
 namespace Amazon.Runtime.CredentialManagement.Internal
 {
+#if !NETSTANDARD13
     public class SAMLRoleSessionManager
     {
         private SettingsManager settingsManager;
@@ -85,4 +86,5 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             settingsManager.UnregisterObject(roleSessionName);
         }
     }
+#endif
 }

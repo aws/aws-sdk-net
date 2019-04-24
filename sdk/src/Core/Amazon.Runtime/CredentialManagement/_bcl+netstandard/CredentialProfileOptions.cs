@@ -17,7 +17,7 @@ using Amazon.Util;
 
 namespace Amazon.Runtime.CredentialManagement
 {
-#if BCL
+#if !NETSTANDARD13
     /// <summary>
     /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
     /// The type of AWSCredentials that are created depends on which Options are set.
@@ -54,7 +54,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// The source of credentials to be used to obtain AWSCredentials.
         /// </summary>
         public string CredentialSource { get; set; }
-#if BCL
+#if !NETSTANDARD13
         /// <summary>
         /// The endpoint name to be used for federated AWSCredentials.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// The serial number of the MFA to use in assume role AWSCredentials.
         /// </summary>
         public string MfaSerial { get; set; }
-#if BCL
+#if !NETSTANDARD13
         /// <summary>The role ARN to use when creating assume role or federated AWSCredentials.</summary>
 #else
         /// <summary>The role ARN to use when creating assume role AWSCredentials.</summary>
@@ -87,7 +87,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// The session token to be used to create AWSCredentials.
         /// </summary>
         public string Token { get; set; }
-#if BCL
+#if !NETSTANDARD13
         /// <summary>
         /// The user identity to use when creating federated AWSCredentials.
         /// If not set, the user identity that the code is running under will be used.
@@ -103,7 +103,7 @@ namespace Amazon.Runtime.CredentialManagement
             get
             {
                 return
-#if BCL
+#if !NETSTANDARD13
                     string.IsNullOrEmpty(EndpointName) &&
                     string.IsNullOrEmpty(UserIdentity) &&
 #endif
@@ -121,7 +121,7 @@ namespace Amazon.Runtime.CredentialManagement
         {
             return
                 "[AccessKey=" + AccessKey + ", " +
-#if BCL
+#if !NETSTANDARD13
                 "EndpointName=" + EndpointName + ", " +
 #endif
                 "ExternalID=" + ExternalID + ", " +
@@ -130,7 +130,7 @@ namespace Amazon.Runtime.CredentialManagement
                 "SecretKey=XXXXX, " +
                 "SourceProfile=" + SourceProfile + ", " +
                 "Token=" + Token +
-#if BCL
+#if !NETSTANDARD13
                 ", " + "UserIdentity=" + UserIdentity +
 #endif
                 "]";
@@ -145,7 +145,7 @@ namespace Amazon.Runtime.CredentialManagement
             if (po == null)
                 return false;
 
-#if BCL
+#if !NETSTANDARD13
             return AWSSDKUtils.AreEqual(
                 new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity },
                 new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity });
@@ -158,7 +158,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         public override int GetHashCode()
         {
-#if BCL
+#if !NETSTANDARD13
             return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity);
 #else
             return Hashing.Hash(AccessKey, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token);

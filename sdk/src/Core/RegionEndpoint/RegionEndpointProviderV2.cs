@@ -233,7 +233,7 @@ namespace Amazon.Internal
                     _documentEndpoints = new Dictionary<string, JsonData>();
                     if (string.IsNullOrEmpty(endpointsPath))
                     {
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
                         if (TryLoadEndpointDefinitionsFromAssemblyDir())
                         {
                             RegionEndpoint.loaded = true;
@@ -283,7 +283,7 @@ namespace Amazon.Internal
                     ReadEndpointFile(stream);
                 }
             }
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
             static bool TryLoadEndpointDefinitionsFromAssemblyDir()
             {
                 string endpointsFile;

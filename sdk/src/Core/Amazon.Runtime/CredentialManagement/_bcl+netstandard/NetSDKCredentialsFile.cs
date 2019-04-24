@@ -63,7 +63,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     { "AccessKey", SettingsConstants.AccessKeyField },
                     { "CredentialSource", SettingsConstants.CredentialSourceField },
-#if BCL
+#if !NETSTANDARD13
                     { "EndpointName", SettingsConstants.EndpointNameField },
 #endif
                     { "ExternalID", SettingsConstants.ExternalIDField},
@@ -72,7 +72,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SecretKey", SettingsConstants.SecretKeyField },
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
-#if BCL
+#if !NETSTANDARD13
                     { "UserIdentity", SettingsConstants.UserIdentityField },
 #endif
                 }
@@ -277,9 +277,9 @@ namespace Amazon.Runtime.CredentialManagement
             {
                 properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
             }
-#if BCL
+#if !NETSTANDARD13
             else if (profileType == CredentialProfileType.SAMLRole ||
-                profileType == CredentialProfileType.SAMLRoleUserIdentity)
+                     profileType == CredentialProfileType.SAMLRoleUserIdentity)
             {
                 properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
             }

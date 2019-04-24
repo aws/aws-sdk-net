@@ -106,7 +106,6 @@ namespace Amazon.Runtime
 
             // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
             // assume the intent is to use the credentials file.
-#if BCL || NETSTANDARD
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName) && ProfileManager.IsAvailable)
             {
                 if (ProfileManager.IsProfileKnown(lookupName) && AWSCredentialsProfile.CanCreateFrom(lookupName))
@@ -116,7 +115,7 @@ namespace Amazon.Runtime
                     logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
                 }
             }
-#endif
+
             // If credentials weren't found in the SDK store then search the shared credentials file.
             if (this._wrappedCredentials == null)
             {

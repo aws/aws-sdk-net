@@ -25,6 +25,7 @@ using System.Net;
 
 namespace Amazon.Runtime
 {
+#if !NETSTANDARD13
     /// <summary>
     /// Temporary credentials that are created following successful authentication with
     /// a federated endpoint supporting SAML.
@@ -119,11 +120,41 @@ namespace Amazon.Runtime
             {
                 // If the profile indicates the user has already authenticated and received
                 // credentials which are still valid, adopt them instead of requiring a fresh
-                // authentication
+                // authentication.
                 SAMLImmutableCredentials currentSession;
                 if (TryGetRoleSession(out currentSession))
                 {
-                    return new CredentialsRefreshState(currentSession, currentSession.Expires);
+                    // Since cached role session credentials can be obtained, stored credentials exist 
+                    // and they were not expired. However, since the stored credentials are actual 
+                    // expiration time and not preempt expiration time we must preempt the expiration
+                    // to check that they will not expire before this call completes.
+                    var cachedState = new CredentialsRefreshState(currentSession, currentSession.Expires);
+
+                    // If currentState is null this is a new SDK startup. In this case we can possibly
+                    // use the cached credentials as long as they are not within the preempt expiry window
+                    // or have since actually expired since the prior call to TryGetRoleSession.
+                    if (currentState == null)
+                    {
+                        //Verify the actual expiration is not within the preempt expiration time.
+                        if (!cachedState.IsExpiredWithin(PreemptExpiryTime))
+                        {
+                            // The credentials have plenty of time left before they expire so they can be used. After
+                            // return the expiration time will be preempted for future checks using ShouldUpdate.
+                            return cachedState;
+                        }
+                    }
+                    else if (!ShouldUpdate)
+                    {
+                        // If currentState is not null we already have the credential state. This could
+                        // have come from a cached load or a new authentication. The preempted expiration
+                        // time would have already been built in to the ShouldUpdate check in this case.
+                        return cachedState;
+                    }
+
+                    // If the currentState was null but the credentials are already in the preempt expiry window
+                    // or the currentState was not null and we are currently in the preempt expiry window
+                    // new credentials must be obtained before the window closes. No longer use the cached
+                    // credentials so fall through to obtain new ones.
                 }
 
                 CredentialsRefreshState newState = null;
@@ -208,9 +239,20 @@ namespace Amazon.Runtime
                 throw new InvalidOperationException(msg, e);
             }
 
+            var samlCoreSTSClient
+#if NETSTANDARD
+                = coreSTSClient as ICoreAmazonSTS_SAML;
+            if (coreSTSClient == null)
+            {
+                throw new NotImplementedException("The currently loaded version of AWSSDK.SecurityToken doesn't support SAML authentication.");
+            }
+#else
+                = coreSTSClient;
+#endif
+
             try
             {
-                var credentials = coreSTSClient.CredentialsFromSAMLAuthentication(SAMLEndpoint.EndpointUri.ToString(),
+                var credentials = samlCoreSTSClient.CredentialsFromSAMLAuthentication(SAMLEndpoint.EndpointUri.ToString(),
                     SAMLEndpoint.AuthenticationType.ToString(), RoleArn, MaximumCredentialTimespan, userCredential);
 
                 RegisterRoleSession(credentials);
@@ -262,5 +304,18 @@ namespace Amazon.Runtime
                 sessionManager.RegisterRoleSession(GetRoleSessionName(), sessionCredentials);
             }
         }
+
+        /// <summary>
+        /// Clears currently-stored credentials, forcing the next GetCredentials call to generate new credentials.
+        /// </summary>
+        public override void ClearCredentials()
+        {
+            // For Federated AWS credentials, this method does not force the generation of new credentials. Even though 
+            // it clears the credential state to null, any cached credentials will immediately be picked up and used. 
+            // Changing this behavior is a possible breaking change. Once we decide to make this change, the proper course 
+            // of action would likely be to ensure the cache is cleared before setting the credential state to null. 
+            base.ClearCredentials();
+        }
     }
+#endif
 }

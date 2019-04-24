@@ -75,7 +75,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     { "AccessKey", "aws_access_key_id" },
                     { "CredentialSource", "credential_source" },
-#if BCL
+#if !NETSTANDARD13
                     { "EndpointName", null },
 #endif
                     { "ExternalID", "external_id" },
@@ -84,7 +84,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SecretKey", "aws_secret_access_key" },
                     { "SourceProfile", "source_profile" },
                     { "Token", "aws_session_token" },
-#if BCL
+#if !NETSTANDARD13
                     { "UserIdentity", null },
 #endif
                 }

@@ -22,12 +22,13 @@ using System.Globalization;
 
 namespace Amazon.Runtime.CredentialManagement
 {
+#if !NETSTANDARD13
     /// <summary>
     /// Manages endpoints to be used in conjunction with SAML role profiles. The role profiles
     /// reference the endpoint to obtain the actual endpoint and any customization settings
     /// needed to perform authentication.
     /// </summary>
-   public class SAMLEndpointManager
+    public class SAMLEndpointManager
     {
         private NamedSettingsManager settingsManager;
 
@@ -156,4 +157,5 @@ namespace Amazon.Runtime.CredentialManagement
             return endpoints;
         }
     }
+#endif
 }

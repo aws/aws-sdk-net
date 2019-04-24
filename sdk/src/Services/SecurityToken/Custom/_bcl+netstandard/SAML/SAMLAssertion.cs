@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.SecurityToken.Model;
-using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,9 +22,11 @@ using System.Text;
 using System.Xml;
 
 using Amazon.Runtime;
+using Amazon.SecurityToken.Model;
 
 namespace Amazon.SecurityToken.SAML
 {
+#if !NETSTANDARD13
     /// <summary>
     /// Contains the parsed SAML response data following successful user
     /// authentication against a federated endpoint. We only parse out the
@@ -59,7 +59,8 @@ namespace Amazon.SecurityToken.SAML
         /// </param>
         /// <param name="duration">The valid timespan for the credentials.</param>
         /// <returns>Temporary session credentials for the specified or default role for the user.</returns>
-        public SAMLImmutableCredentials GetRoleCredentials(IAmazonSecurityTokenService stsClient, string principalAndRoleArns, TimeSpan duration)
+        public SAMLImmutableCredentials GetRoleCredentials(
+            IAmazonSecurityTokenService stsClient, string principalAndRoleArns, TimeSpan duration)
         {
             string roleArn = null;
             string principalArn = null;
@@ -91,7 +92,7 @@ namespace Amazon.SecurityToken.SAML
                     {
                         //Documented format -- arn:...:role/RoleName,arn:...:saml-provider/SAML
                         roleArn = roleComponents.First();
-                        principalArn = roleComponents.Last();                        
+                        principalArn = roleComponents.Last();
                     }
                     
                     break;
@@ -101,13 +102,20 @@ namespace Amazon.SecurityToken.SAML
             if (string.IsNullOrEmpty(roleArn) || string.IsNullOrEmpty(principalArn))
                 throw new ArgumentException("Unknown or invalid role specified.");
 
-            var response = stsClient.AssumeRoleWithSAML(new AssumeRoleWithSAMLRequest
+            var assumeSamlRequest = new AssumeRoleWithSAMLRequest
             {
                 SAMLAssertion = AssertionDocument,
                 RoleArn = roleArn,
                 PrincipalArn = principalArn,
                 DurationSeconds = (int)duration.TotalSeconds
-            });
+            };
+
+#if NETSTANDARD
+            //In the NetStandard SDK flavor the sync operations are internal only.
+            var response = ((AmazonSecurityTokenServiceClient)stsClient).AssumeRoleWithSAML(assumeSamlRequest);
+#else
+            var response =  stsClient.AssumeRoleWithSAML(assumeSamlRequest);
+#endif
 
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
                                                 response.Credentials.Expiration.ToUniversalTime(),
@@ -164,8 +172,8 @@ namespace Amazon.SecurityToken.SAML
                         var chunks = roleNode.InnerText.Split(new[] { ',' }, 3);
                         var samlRole = chunks[0] + ',' + chunks[1];
                         if (!seenRoles.Contains(samlRole))
-                        {                            
-                            var roleName = string.Empty;                            
+                        {
+                            var roleName = string.Empty;
                             if (IsSamlProvider(chunks[1]))
                             {
                                 //Documented format -- arn:...:role/RoleName,arn:...:saml-provider/SAML
@@ -174,9 +182,9 @@ namespace Amazon.SecurityToken.SAML
                             else
                             {
                                 //Backwards compatible format -- arn:...:saml-provider/SAML,arn:...:role/RoleName
-                                roleName = ExtractRoleName(chunks[1]);                                
+                                roleName = ExtractRoleName(chunks[1]);
                             }
-                            
+
                             discoveredRoles.Add(roleName, samlRole);
 
                             seenRoles.Add(samlRole);
@@ -208,6 +216,7 @@ namespace Amazon.SecurityToken.SAML
                 roleName = chunk;
 
             return roleName;
-        }                
+        }
     }
+#endif
 }

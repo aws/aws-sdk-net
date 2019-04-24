@@ -18,8 +18,9 @@ using Amazon.Runtime.SharedInterfaces;
 namespace Amazon.SecurityToken
 {
     public partial interface IAmazonSecurityTokenService : IDisposable, ICoreAmazonSTS
-    {
-#if BCL
+#if NETSTANDARD20
+        , ICoreAmazonSTS_SAML
 #endif
+    {
     }
 }

@@ -118,6 +118,16 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void GetCredentialsSessionCachedAlmostExpired()
+        {
+            var sessionName = SomeSAMLEndpoint.Name + "," + RoleArn + ",";
+            var samlImmutableCredentials = new SAMLImmutableCredentials(AccessKeyID, SecretAccessKey, Token, DateTime.UtcNow.AddMinutes(1), Subject);
+            sessionManager.RegisterRoleSession(sessionName, samlImmutableCredentials);
+            var awsCredentials = new FederatedAWSCredentials(SomeSAMLEndpoint, RoleArn);
+            AssertCallSTSFails(awsCredentials);
+        }
+
+        [TestMethod]
         public void GetCredentialsUserIdentityNoCallback()
         {
             var awsCredentials = new FederatedAWSCredentials(SomeSAMLEndpoint, RoleArn, new FederatedAWSCredentialsOptions()

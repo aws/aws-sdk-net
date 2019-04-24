@@ -326,7 +326,7 @@ namespace Amazon.Internal
 
         private static Stream GetEndpointJsonSourceStream()
         {
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
             //
             // If the endpoints.json file has been provided next to the assembly:
             //

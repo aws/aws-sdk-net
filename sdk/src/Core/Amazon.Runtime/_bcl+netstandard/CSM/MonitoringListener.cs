@@ -86,7 +86,7 @@ namespace Amazon.Runtime
         {
             try
             {
-                _udpClient.SendAsync(Encoding.UTF8.GetBytes(response),
+                await _udpClient.SendAsync(Encoding.UTF8.GetBytes(response),
                     Encoding.UTF8.GetBytes(response).Length, Hostname, _port).ConfigureAwait(false);
             }
             catch(Exception e)

@@ -139,7 +139,7 @@ namespace Amazon.Runtime.Internal
         private static Assembly GetSDKAssembly(string assemblyName)
         {
             Assembly assembly = null;
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
             assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal));
 #endif
             if (assembly == null)

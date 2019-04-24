@@ -36,7 +36,7 @@ namespace Amazon.Runtime.Internal.Util
         //s3-control has a similar pattern to s3-region host names, so we explicitly exclude it
         private const string S3ControlExlusionPattern = @"^(.+\.)?s3-control\.";
 
-#if BCL
+#if BCL || NETSTANDARD
         private static readonly Regex S3EndpointRegex = new Regex(S3EndpointPattern, RegexOptions.Compiled);
         private static readonly Regex S3ControlExlusionRegex = new Regex(S3ControlExlusionPattern, RegexOptions.Compiled);
 #else

@@ -20,6 +20,7 @@ using Amazon.Util;
 
 namespace Amazon.SecurityToken.SAML
 {
+#if !NETSTANDARD13
     /// <summary>
     /// Interface implemented by plugins supplied to the SAMLAuthenticationController
     /// to perform the call to the authentication endpoint. The implementor returns the
@@ -40,7 +41,12 @@ namespace Amazon.SecurityToken.SAML
         /// </param>
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The raw response data from the authentication request.</returns>
-        string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType, WebProxy proxySettings);
+        string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType,
+#if NETSTANDARD
+            IWebProxy proxySettings);
+#else
+            WebProxy proxySettings);
+#endif
     }
 
     /// <summary>
@@ -84,7 +90,11 @@ namespace Amazon.SecurityToken.SAML
         /// <summary>
         /// Proxy details if required for communication with the authentication endpoint.
         /// </summary>
+#if NETSTANDARD
+        public IWebProxy ProxySettings { get; private set; }
+#else
         public WebProxy ProxySettings { get; private set; }
+#endif
 
         /// <summary>
         /// Instantiates a controller instance configured to use the built-in AD FS
@@ -100,7 +110,11 @@ namespace Amazon.SecurityToken.SAML
         /// classes to authenticate and parse the responses. The supplied proxy settings will
         /// be used in the HTTPS calls to the authentication endpoint.
         /// </summary>
+#if NETSTANDARD
+        public SAMLAuthenticationController(IWebProxy proxySettings)
+#else
         public SAMLAuthenticationController(WebProxy proxySettings)
+#endif
             : this(new AdfsAuthenticationController(), new AdfsAuthenticationResponseParser(), proxySettings)
         {
         }
@@ -120,7 +134,11 @@ namespace Amazon.SecurityToken.SAML
         /// </param>
         public SAMLAuthenticationController(IAuthenticationController authenticationController, 
                                             IAuthenticationResponseParser responseParser,
+#if NETSTANDARD
+                                            IWebProxy proxySettings)
+#else
                                             WebProxy proxySettings)
+#endif
         {
             if (authenticationController == null)
                 throw new ArgumentNullException("authenticationController");
@@ -179,4 +197,5 @@ namespace Amazon.SecurityToken.SAML
             return ResponseParser.Parse(response);
         }
     }
-}
+#endif
+    }

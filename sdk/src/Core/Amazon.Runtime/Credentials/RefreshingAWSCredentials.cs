@@ -42,6 +42,14 @@ namespace Amazon.Runtime
                 Credentials = credentials;
                 Expiration = expiration;
             }
+            internal bool IsExpiredWithin(TimeSpan preemptExpiryTime)
+            {
+#pragma warning disable CS0612 // Type or member is obsolete
+                var now = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0612 // Type or member is obsolete
+                var exp = Expiration.ToUniversalTime();
+                return (now > exp - preemptExpiryTime);
+            }
         }
 
 
@@ -84,7 +92,7 @@ namespace Amazon.Runtime
         {
             lock (this._refreshLock)
             {
-                // If credentials are expired, update
+                // If credentials are expired or we don't have any state yet, update
                 if (ShouldUpdate)
                 {
                     currentState = GenerateNewCredentials();
@@ -135,13 +143,14 @@ namespace Amazon.Runtime
                 throw new AmazonClientException(errorMessage);
             }
 
-            // Offset the Expiration by PreemptExpiryTime
+            // Offset the Expiration by PreemptExpiryTime. This produces the expiration window 
+            // where the credentials should be updated before they actually expire.
             state.Expiration -= PreemptExpiryTime;
 
             if (ShouldUpdate)
             {
                 // This could happen if the default value of PreemptExpiryTime is
-                // overriden and set too high such that ShouldUpdate returns true.
+                // overridden and set too high such that ShouldUpdate returns true.
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
@@ -154,7 +163,7 @@ namespace Amazon.Runtime
         }
 
         // Test credentials existence and expiration time
-        private bool ShouldUpdate
+        protected bool ShouldUpdate
         {
             get
             {
@@ -164,12 +173,11 @@ namespace Amazon.Runtime
                 if (currentState == null)
                     return true;
 
-                //  it's past the expiration time
-#pragma warning disable CS0612 // Type or member is obsolete
-                var now = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612 // Type or member is obsolete
-                var exp = currentState.Expiration.ToUniversalTime();
-                return (now > exp);
+                // it's past the expiration time. At this point currentState.Expiration may 
+                // have the PreemptExpiryTime baked into to the expiration from a call to 
+                // UpdateToGeneratedCredentials but it may not if this is new application 
+                // load.
+                return currentState.IsExpiredWithin(TimeSpan.Zero);
             }
         }
 

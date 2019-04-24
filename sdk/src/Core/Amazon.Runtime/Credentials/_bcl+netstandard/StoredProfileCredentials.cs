@@ -130,7 +130,7 @@ namespace Amazon.Runtime
                     }
                 }
             }
-#if BCL45
+#if BCL45 || (NETSTANDARD && !NETSTANDARD13)
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrEmpty(profileFolder))
             {

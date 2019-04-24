@@ -46,7 +46,7 @@ namespace Amazon
         }
 
 #region TraceListeners
-#if NETSTANDARD20
+#if !NETSTANDARD13
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 

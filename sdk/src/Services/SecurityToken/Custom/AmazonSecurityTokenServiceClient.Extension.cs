@@ -16,12 +16,10 @@ using System;
 using System.Net;
 
 using Amazon.Runtime;
-
+using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
-using Amazon.Runtime.Internal.Util;
-
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
 using Amazon.SecurityToken.SAML;
 #endif
 
@@ -29,13 +27,17 @@ namespace Amazon.SecurityToken
 {
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
-
-#if BCL
-        SAMLImmutableCredentials ICoreAmazonSTS.CredentialsFromSAMLAuthentication(string endpoint,
-                                                                                  string authenticationType,
-                                                                                  string roleARN,
-                                                                                  TimeSpan credentialDuration,
-                                                                                  ICredentials userCredential)
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
+#if NETSTANDARD20
+        SAMLImmutableCredentials ICoreAmazonSTS_SAML.CredentialsFromSAMLAuthentication(
+#else
+        SAMLImmutableCredentials ICoreAmazonSTS.CredentialsFromSAMLAuthentication(
+#endif
+            string endpoint,
+            string authenticationType,
+            string roleARN,
+            TimeSpan credentialDuration,
+            ICredentials userCredential)
         {
             SAMLAssertion assertion;
 

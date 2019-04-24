@@ -30,7 +30,7 @@ namespace Amazon.Runtime.CredentialManagement
     {
         private static HashSet<CredentialProfileType> CallbackProfileTypes = new HashSet<CredentialProfileType>()
             {
-#if BCL
+#if !NETSTANDARD13
                 CredentialProfileType.SAMLRoleUserIdentity,
 #endif
                 CredentialProfileType.AssumeRoleExternalMFA,
@@ -153,7 +153,7 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", profileName);
                     throw new InvalidOperationException(mfaMessage);
                 }
-#if BCL
+#if !NETSTANDARD13
                 else if (profileType == CredentialProfileType.SAMLRoleUserIdentity)
                 {
                     var samlMessage = profileName == null
@@ -231,7 +231,7 @@ namespace Amazon.Runtime.CredentialManagement
 #pragma warning restore CS0612 // Type or member is obsolete
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
-#if BCL
+#if !NETSTANDARD13
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         if (UserCrypto.IsUserCryptAvailable)

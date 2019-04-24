@@ -451,7 +451,7 @@ namespace Amazon.Runtime
 
         private void BuildRuntimePipeline()
         {
-#if BCL || BCL45
+#if BCL
             var httpRequestFactory = new HttpWebRequestFactory(new AmazonSecurityProtocolManager());
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
 #elif UNITY
@@ -656,7 +656,7 @@ namespace Amazon.Runtime
 
 
             newConfig.ProxyCredentials = this.Config.ProxyCredentials;
-#if BCL
+#if BCL || NETSTANDARD
             newConfig.ProxyHost = this.Config.ProxyHost;
             newConfig.ProxyPort = this.Config.ProxyPort;
 #endif

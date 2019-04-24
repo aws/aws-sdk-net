@@ -51,7 +51,7 @@ namespace ThirdParty.BouncyCastle.Asn1.Utilities
             get { return s.Position; }
             set { s.Position = value; }
         }
-#if BCL
+#if BCL || (NETSTANDARD && !NETSTANDARD13)
         public override void Close()
         {
             s.Close();
