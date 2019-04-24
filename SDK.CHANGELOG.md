@@ -1,3 +1,30 @@
+### 3.3.497.0 (2019-04-24 18:09 UTC)
+* AlexaForBusiness (3.3.101.0)
+	* This release adds support for the Alexa for Business gateway and gateway group APIs.
+* CloudFormation (3.3.100.8)
+	* Documentation updates for cloudformation
+* EC2 (3.3.104.0)
+	* You can now launch the new Amazon EC2 general purpose burstable instance types T3a that feature AMD EPYC processors.
+* MediaConnect (3.3.101.0)
+	* Adds support for ListEntitlements pagination.
+* MediaTailor (3.3.101.0)
+	* AWS Elemental MediaTailor SDK now includes a new parameter to support origin servers that produce single-period DASH manifests.
+* RDS (3.3.102.0)
+	* A new parameter "feature-name" is added to the add-role and remove-role db cluster APIs. The value for the parameter is optional for Aurora MySQL compatible database clusters, but mandatory for Aurora PostgresQL. You can find the valid list of values using describe db engine versions API.
+* Route53 (3.3.101.0)
+	* Amazon Route 53 now supports the Asia Pacific (Hong Kong) Region (ap-east-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SimpleSystemsManagement (3.3.101.0)
+	* This release updates AWS Systems Manager APIs to allow customers to configure parameters to use either the standard-parameter tier (the default tier) or the advanced-parameter tier. It allows customers to create parameters with larger values and attach parameter policies to an Advanced Parameter. 
+* StorageGateway (3.3.103.0)
+	* AWS Storage Gateway now supports Access Control Lists (ACLs) on File Gateway SMB shares, enabling you to apply fine grained access controls for Active Directory users and groups.
+* Textract (3.3.101.0)
+	* This release adds support for checkbox also known as SELECTION_ELEMENT in Amazon Textract.
+* Core 3.3.100.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.496.0 (2019-04-19 18:09 UTC)
 * ResourceGroups (3.3.101.0)
 	* The AWS Resource Groups service increased the query size limit to 4096 bytes.
