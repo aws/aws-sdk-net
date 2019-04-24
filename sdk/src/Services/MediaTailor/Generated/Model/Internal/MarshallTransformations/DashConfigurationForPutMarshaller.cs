@@ -51,6 +51,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MpdLocation);
             }
 
+            if(requestObject.IsSetOriginManifestType())
+            {
+                context.Writer.WritePropertyName("OriginManifestType");
+                context.Writer.Write(requestObject.OriginManifestType);
+            }
+
         }
 
         /// <summary>

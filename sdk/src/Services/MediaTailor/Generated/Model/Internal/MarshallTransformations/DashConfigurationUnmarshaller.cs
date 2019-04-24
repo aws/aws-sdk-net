@@ -76,6 +76,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.MpdLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OriginManifestType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OriginManifestType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
