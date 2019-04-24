@@ -38,7 +38,11 @@ namespace Amazon.RDS.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property FeatureName.
+        /// Gets and sets the property FeatureName. 
+        /// <para>
+        /// The name of the feature associated with the AWS Identity and Access Management (IAM)
+        /// role. For the list of supported feature names, see <a>DBEngineVersion</a>. 
+        /// </para>
         /// </summary>
         public string FeatureName
         {
