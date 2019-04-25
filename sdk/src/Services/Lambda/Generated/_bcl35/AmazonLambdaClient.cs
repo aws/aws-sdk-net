@@ -269,7 +269,8 @@ namespace Amazon.Lambda
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// Lambda function access policy is limited to 20 KB.
+        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
@@ -369,7 +370,8 @@ namespace Amazon.Lambda
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
-        /// Lambda function access policy is limited to 20 KB.
+        /// The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
@@ -655,7 +657,8 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -1600,6 +1603,76 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetLayerVersionByArn
+
+        /// <summary>
+        /// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+        /// Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionByArn service method.</param>
+        /// 
+        /// <returns>The response from the GetLayerVersionByArn service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
+        public virtual GetLayerVersionByArnResponse GetLayerVersionByArn(GetLayerVersionByArnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
+
+            return Invoke<GetLayerVersionByArnResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionByArn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionByArn operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLayerVersionByArn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
+        public virtual IAsyncResult BeginGetLayerVersionByArn(GetLayerVersionByArnRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLayerVersionByArn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLayerVersionByArn.</param>
+        /// 
+        /// <returns>Returns a  GetLayerVersionByArnResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
+        public virtual GetLayerVersionByArnResponse EndGetLayerVersionByArn(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLayerVersionByArnResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLayerVersionPolicy
 
         /// <summary>
@@ -1755,6 +1828,14 @@ namespace Amazon.Lambda
         /// log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>.
         /// To record function errors for asynchronous invocations, configure your function with
         /// a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When an error occurs, your function may be invoked multiple times. Retry behavior
+        /// varies by error type, client, event source, and invocation type. For example, if you
+        /// invoke a function asynchronously and it returns an error, Lambda executes the function
+        /// up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
+        /// Behavior</a>.
         /// </para>
         ///  
         /// <para>
@@ -2517,7 +2598,8 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishLayerVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -2602,7 +2684,8 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the PublishVersion service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -3214,7 +3297,8 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
-        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
+        /// more</a>
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
@@ -3285,7 +3369,7 @@ namespace Amazon.Lambda
         #region  UpdateFunctionConfiguration
 
         /// <summary>
-        /// Modify the version-specifc settings of a Lambda function.
+        /// Modify the version-specific settings of a Lambda function.
         /// 
         ///  
         /// <para>

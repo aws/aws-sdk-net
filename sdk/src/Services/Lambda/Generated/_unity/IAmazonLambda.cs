@@ -429,6 +429,23 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetLayerVersionByArn
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionByArn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionByArn operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
+        void GetLayerVersionByArnAsync(GetLayerVersionByArnRequest request, AmazonServiceCallback<GetLayerVersionByArnRequest, GetLayerVersionByArnResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetLayerVersionPolicy
 
 

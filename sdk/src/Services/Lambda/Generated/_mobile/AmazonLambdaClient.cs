@@ -900,6 +900,39 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetLayerVersionByArn
+
+        internal virtual GetLayerVersionByArnResponse GetLayerVersionByArn(GetLayerVersionByArnRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
+
+            return Invoke<GetLayerVersionByArnResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionByArn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionByArn operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
+        public virtual Task<GetLayerVersionByArnResponse> GetLayerVersionByArnAsync(GetLayerVersionByArnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLayerVersionByArnResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLayerVersionPolicy
 
         internal virtual GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request)
