@@ -301,7 +301,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>,
-        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
         /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

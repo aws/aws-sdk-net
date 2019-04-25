@@ -118,7 +118,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReplicaProvisionedReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -157,7 +157,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReplicaProvisionedWriteCapacityUnits. 
         /// <para>
         /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

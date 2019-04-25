@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
     /// When you establish an AWS account, the account has initial limits on the maximum read
     /// capacity units and write capacity units that you can provision across all of your
     /// DynamoDB tables in a given region. Also, there are per-table limits that apply when
-    /// you create a table there. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+    /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
     /// page in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  

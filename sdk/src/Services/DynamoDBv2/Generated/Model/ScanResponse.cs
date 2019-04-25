@@ -45,7 +45,7 @@ namespace Amazon.DynamoDBv2.Model
         /// includes the total provisioned throughput consumed, along with statistics for the
         /// table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
         /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
         /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -145,7 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
         /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates
-        /// an inefficient <code>Scan</code> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+        /// an inefficient <code>Scan</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
         /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
