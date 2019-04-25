@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Creates the specified tags for the specified WorkSpace.
+    /// Creates the specified tags for the specified WorkSpaces resource.
     /// </summary>
     public partial class CreateTagsRequest : AmazonWorkSpacesRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+        /// The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
+        /// registered directories, images, custom bundles, and IP access control groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -58,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags. Each WorkSpace can have a maximum of 50 tags.
+        /// The tags. Each WorkSpaces resource can have a maximum of 50 tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

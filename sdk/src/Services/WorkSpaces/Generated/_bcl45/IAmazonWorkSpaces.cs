@@ -196,7 +196,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates the specified tags for the specified WorkSpace.
+        /// Creates the specified tags for the specified WorkSpaces resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
@@ -314,7 +314,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Deletes the specified tags from the specified WorkSpace.
+        /// Deletes the specified tags from the specified WorkSpaces resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -515,7 +515,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the specified tags for the specified WorkSpace.
+        /// Describes the specified tags for the specified WorkSpaces resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
