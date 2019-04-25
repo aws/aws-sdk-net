@@ -124,6 +124,7 @@ namespace Amazon.GameLift.Model
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private OperatingSystem _operatingSystem;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
+        private string _scriptId;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
@@ -245,12 +246,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// Unique identifier for an AWS IAM role that manages access to your AWS services. Any
-        /// application that runs on an instance in this fleet can assume the role, including
-        /// install scripts, server processs, daemons (background processes). Create a role or
-        /// look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-        /// in the AWS Management Console. Learn more about using on-box credentials for your
-        /// game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Unique identifier for an AWS IAM role that manages access to your AWS services. With
+        /// an instance role ARN set, any application that runs on an instance in this fleet can
+        /// assume the role, including install scripts, server processes, daemons (background
+        /// processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+        /// dashboard</a> in the AWS Management Console. Learn more about using on-box credentials
+        /// for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>.
         /// </para>
         /// </summary>
@@ -418,6 +419,24 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScriptId. 
+        /// <para>
+        /// Unique identifier for a Realtime script.
+        /// </para>
+        /// </summary>
+        public string ScriptId
+        {
+            get { return this._scriptId; }
+            set { this._scriptId = value; }
+        }
+
+        // Check to see if ScriptId property is set
+        internal bool IsSetScriptId()
+        {
+            return this._scriptId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
         /// Game server launch parameters specified for fleets created before 2016-08-04 (or AWS
@@ -475,7 +494,8 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up
-        /// the new fleet, creating new instances with the game build and starting server processes.
+        /// the new fleet, creating new instances with the game build or Realtime script and starting
+        /// server processes.
         /// </para>
         ///  </li> <li> 
         /// <para>

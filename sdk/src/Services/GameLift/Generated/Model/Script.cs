@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Properties describing a custom game build.
+    /// Properties describing a Realtime script.
     /// 
     ///  
     /// <para>
@@ -36,53 +36,34 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateBuild</a> 
+    ///  <a>CreateScript</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListBuilds</a> 
+    ///  <a>ListScripts</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeBuild</a> 
+    ///  <a>DescribeScript</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateBuild</a> 
+    ///  <a>UpdateScript</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteBuild</a> 
+    ///  <a>DeleteScript</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class Build
+    public partial class Script
     {
-        private string _buildId;
         private DateTime? _creationTime;
         private string _name;
-        private OperatingSystem _operatingSystem;
+        private string _scriptId;
         private long? _sizeOnDisk;
-        private BuildStatus _status;
+        private S3Location _storageLocation;
         private string _version;
-
-        /// <summary>
-        /// Gets and sets the property BuildId. 
-        /// <para>
-        /// Unique identifier for a build.
-        /// </para>
-        /// </summary>
-        public string BuildId
-        {
-            get { return this._buildId; }
-            set { this._buildId = value; }
-        }
-
-        // Check to see if BuildId property is set
-        internal bool IsSetBuildId()
-        {
-            return this._buildId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -106,10 +87,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label that is associated with a build. Build names do not need to be unique.
-        /// It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Descriptive label that is associated with a script. Script names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -123,29 +105,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperatingSystem. 
+        /// Gets and sets the property ScriptId. 
         /// <para>
-        /// Operating system that the game server binaries are built to run on. This value determines
-        /// the type of fleet resources that you can use for this build.
+        /// Unique identifier for a Realtime script
         /// </para>
         /// </summary>
-        public OperatingSystem OperatingSystem
+        public string ScriptId
         {
-            get { return this._operatingSystem; }
-            set { this._operatingSystem = value; }
+            get { return this._scriptId; }
+            set { this._scriptId = value; }
         }
 
-        // Check to see if OperatingSystem property is set
-        internal bool IsSetOperatingSystem()
+        // Check to see if ScriptId property is set
+        internal bool IsSetScriptId()
         {
-            return this._operatingSystem != null;
+            return this._scriptId != null;
         }
 
         /// <summary>
         /// Gets and sets the property SizeOnDisk. 
         /// <para>
-        /// File size of the uploaded game build, expressed in bytes. When the build status is
-        /// <code>INITIALIZED</code>, this value is 0.
+        /// File size of the uploaded Realtime script, expressed in bytes. When files are uploaded
+        /// from an S3 location, this value remains at "0".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -162,51 +143,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// Current status of the build.
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible build statuses include the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded.
-        /// You cannot create fleets for builds that are in this status. When a build is successfully
-        /// created, the build status is set to this value. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>READY</b> -- The game build has been successfully uploaded. You can now create
-        /// new fleets for this build.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this
-        /// build. 
-        /// </para>
-        ///  </li> </ul>
+        /// Gets and sets the property StorageLocation.
         /// </summary>
-        public BuildStatus Status
+        public S3Location StorageLocation
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._storageLocation; }
+            set { this._storageLocation = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if StorageLocation property is set
+        internal bool IsSetStorageLocation()
         {
-            return this._status != null;
+            return this._storageLocation != null;
         }
 
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
         /// Version that is associated with a build or script. Version strings do not need to
-        /// be unique. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// be unique.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string Version
         {
             get { return this._version; }

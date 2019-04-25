@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListFleets Request Marshaller
+    /// ListScripts Request Marshaller
     /// </summary>       
-    public class ListFleetsRequestMarshaller : IMarshaller<IRequest, ListFleetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListScriptsRequestMarshaller : IMarshaller<IRequest, ListScriptsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListFleetsRequest)input);
+            return this.Marshall((ListScriptsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListFleetsRequest publicRequest)
+        public IRequest Marshall(ListScriptsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.ListFleets";
+            string target = "GameLift.ListScripts";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";            
@@ -68,12 +68,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBuildId())
-                {
-                    context.Writer.WritePropertyName("BuildId");
-                    context.Writer.Write(publicRequest.BuildId);
-                }
-
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
@@ -86,12 +80,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetScriptId())
-                {
-                    context.Writer.WritePropertyName("ScriptId");
-                    context.Writer.Write(publicRequest.ScriptId);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -101,9 +89,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListFleetsRequestMarshaller _instance = new ListFleetsRequestMarshaller();        
+        private static ListScriptsRequestMarshaller _instance = new ListScriptsRequestMarshaller();        
 
-        internal static ListFleetsRequestMarshaller GetInstance()
+        internal static ListScriptsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +99,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListFleetsRequestMarshaller Instance
+        public static ListScriptsRequestMarshaller Instance
         {
             get
             {

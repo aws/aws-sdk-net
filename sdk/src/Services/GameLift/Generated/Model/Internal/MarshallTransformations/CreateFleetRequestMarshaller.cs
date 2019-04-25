@@ -182,6 +182,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetScriptId())
+                {
+                    context.Writer.WritePropertyName("ScriptId");
+                    context.Writer.Write(publicRequest.ScriptId);
+                }
+
                 if(publicRequest.IsSetServerLaunchParameters())
                 {
                     context.Writer.WritePropertyName("ServerLaunchParameters");

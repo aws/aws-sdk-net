@@ -56,6 +56,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateFleetRequest.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateFleetRequest.ServerLaunchParameters</property>
     <min>1</min>
     <max>1024</max>
@@ -195,6 +199,20 @@
     <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateScriptRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateScriptRequest.Version</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateScriptRequest.ZipFile</property>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateVpcPeeringAuthorizationRequest.GameLiftAwsAccountId</property>
     <min>1</min>
     <max>1024</max>
@@ -256,6 +274,10 @@
     <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteScriptRequest.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteVpcPeeringAuthorizationRequest.GameLiftAwsAccountId</property>
@@ -548,6 +570,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeScriptRequest.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeVpcPeeringConnectionsRequest.FleetId</property>
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
@@ -612,9 +638,25 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.ListFleetsRequest.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ListScriptsRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ListScriptsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ListScriptsResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PutScalingPolicyRequest.EvaluationPeriods</property>
@@ -906,6 +948,24 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateScriptRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateScriptRequest.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateScriptRequest.Version</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateScriptRequest.ZipFile</property>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ValidateMatchmakingRuleSetRequest.RuleSetBody</property>
     <min>1</min>
     <max>65535</max>
@@ -1047,6 +1107,10 @@
     <property>Amazon.GameLift.Model.FleetAttributes.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.FleetAttributes.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.FleetAttributes.ServerLaunchParameters</property>
@@ -1468,6 +1532,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.S3Location.ObjectVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.S3Location.RoleArn</property>
     <min>1</min>
   </property-value-rule>
@@ -1481,6 +1549,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ScalingPolicy.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.ScriptId</property>
+    <pattern>^script-\S+|^arn:.*script-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.SizeOnDisk</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Script.Version</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

@@ -57,6 +57,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Key);
             }
 
+            if(requestObject.IsSetObjectVersion())
+            {
+                context.Writer.WritePropertyName("ObjectVersion");
+                context.Writer.Write(requestObject.ObjectVersion);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");

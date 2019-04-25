@@ -148,6 +148,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceCreationLimitPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScriptId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScriptId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerLaunchParameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

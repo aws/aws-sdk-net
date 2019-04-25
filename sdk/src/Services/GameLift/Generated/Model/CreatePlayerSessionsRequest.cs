@@ -29,17 +29,19 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlayerSessions operation.
-    /// Adds a group of players to a game session. This action is useful with a team matching
-    /// feature. Before players can be added, a game session must have an <code>ACTIVE</code>
-    /// status, have a creation policy of <code>ALLOW_ALL</code>, and have an open player
-    /// slot. To add a single player to a game session, use <a>CreatePlayerSession</a>.
+    /// Reserves open slots in a game session for a group of players. Before players can be
+    /// added, a game session must have an <code>ACTIVE</code> status, have a creation policy
+    /// of <code>ALLOW_ALL</code>, and have an open player slot. To add a single player to
+    /// a game session, use <a>CreatePlayerSession</a>. When a player connects to the game
+    /// server and references a player session ID, the game server contacts the Amazon GameLift
+    /// service to validate the player reservation and accept the player.
     /// 
     ///  
     /// <para>
     /// To create player sessions, specify a game session ID, a list of player IDs, and optionally
-    /// a set of player data strings. If successful, the players are added to the game session
-    /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
-    /// be updated.
+    /// a set of player data strings. If successful, a slot is reserved in the game session
+    /// for each player and a set of new <a>PlayerSession</a> objects is returned. Player
+    /// sessions cannot be updated.
     /// </para>
     ///  
     /// <para>

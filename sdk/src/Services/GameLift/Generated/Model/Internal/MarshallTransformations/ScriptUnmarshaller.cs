@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3Location Object
+    /// Response Unmarshaller for Script Object
     /// </summary>  
-    public class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext>
+    public class ScriptUnmarshaller : IUnmarshaller<Script, XmlUnmarshallerContext>, IUnmarshaller<Script, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3Location IUnmarshaller<S3Location, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Script IUnmarshaller<Script, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,51 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Location Unmarshall(JsonUnmarshallerContext context)
+        public Script Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3Location unmarshalledObject = new S3Location();
+            Script unmarshalledObject = new Script();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Bucket", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ObjectVersion", targetDepth))
+                if (context.TestExpression("ScriptId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScriptId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("SizeOnDisk", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SizeOnDisk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StorageLocation", targetDepth))
+                {
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.StorageLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +106,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3LocationUnmarshaller _instance = new S3LocationUnmarshaller();        
+        private static ScriptUnmarshaller _instance = new ScriptUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3LocationUnmarshaller Instance
+        public static ScriptUnmarshaller Instance
         {
             get
             {

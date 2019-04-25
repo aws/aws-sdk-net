@@ -29,20 +29,28 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a new fleet to run your game servers. A fleet is a set of Amazon Elastic Compute
-    /// Cloud (Amazon EC2) instances, each of which can run multiple server processes to host
-    /// game sessions. You set up a fleet to use instances with certain hardware specifications
-    /// (see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>),
-    /// and deploy your game build to the fleet. 
+    /// Creates a new fleet to run your game servers. whether they are custom game builds
+    /// or Realtime Servers with game-specific script. A fleet is a set of Amazon Elastic
+    /// Compute Cloud (Amazon EC2) instances, each of which can host multiple game sessions.
+    /// When creating a fleet, you choose the hardware specifications, set some configuration
+    /// options, and specify the game server to deploy on the new fleet. 
     /// 
     ///  
     /// <para>
     /// To create a new fleet, you must provide the following: (1) a fleet name, (2) an EC2
-    /// instance type, (3) the build ID for your game build, and (4) a run-time configuration,
-    /// which specifies the server processes to run on each instance in the fleet. If fleet
-    /// type is not set, the new fleet will use on-demand instances by default.
+    /// instance type and fleet type (spot or on-demand), (3) the build ID for your game build
+    /// or script ID if using Realtime Servers, and (4) a run-time configuration, which determines
+    /// how game servers will run on each instance in the fleet. 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When creating a Realtime Servers fleet, we recommend using a minimal version of the
+    /// Realtime script (see this <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-script.html#realtime-script-examples">
+    /// working code example </a>). This will make it much easier to troubleshoot any fleet
+    /// creation issues. Once the fleet is active, you can update your Realtime script as
+    /// needed.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
     /// tasks. You can track the process of a fleet by checking the fleet status or by monitoring
@@ -64,8 +72,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Downloads the game build to the new instance and installs it. Statuses: <code>DOWNLOADING</code>,
-    /// <code>VALIDATING</code>, <code>BUILDING</code>. 
+    /// Downloads the game build or Realtime script to the new instance and installs it. Statuses:
+    /// <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -85,7 +93,12 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-    /// Working with Fleets</a>.
+    /// Working with Fleets</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">
+    /// Debug Fleet Creation Issues</a> 
     /// </para>
     ///  
     /// <para>
@@ -185,18 +198,18 @@ namespace Amazon.GameLift.Model
         private string _peerVpcId;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
         private RuntimeConfiguration _runtimeConfiguration;
+        private string _scriptId;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
 
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for a build to be deployed on the new fleet. The build must have
-        /// been successfully uploaded to Amazon GameLift and be in a <code>READY</code> status.
-        /// This fleet setting cannot be changed once the fleet is created.
+        /// Unique identifier for a build to be deployed on the new fleet. The custom game server
+        /// build must have been successfully uploaded to Amazon GameLift and be in a <code>READY</code>
+        /// status. This fleet setting cannot be changed once the fleet is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string BuildId
         {
             get { return this._buildId; }
@@ -231,10 +244,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InboundPermissions. 
         /// <para>
-        /// Range of IP addresses and port settings that permit inbound traffic to access server
-        /// processes running on the fleet. If no inbound permissions are set, including both
-        /// IP address range and port range, the server processes in the fleet cannot accept connections.
-        /// You can specify one or more sets of permissions for a fleet.
+        /// Range of IP addresses and port settings that permit inbound traffic to access game
+        /// sessions that running on the fleet. For fleets using a custom game build, this parameter
+        /// is required before game sessions running on the fleet can accept connections. For
+        /// Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
+        /// use by the Realtime servers. You can specify multiple permission settings or add more
+        /// by updating the fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -278,12 +293,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Indicates whether to use on-demand instances or spot instances for this fleet. If
         /// empty, the default is ON_DEMAND. Both categories of instances use identical hardware
-        /// and configurations, based on the instance type selected for this fleet. You can acquire
-        /// on-demand instances at any time for a fixed price and keep them as long as you need
-        /// them. Spot instances have lower prices, but spot pricing is variable, and while in
-        /// use they can be interrupted (with a two-minute notification). Learn more about Amazon
-        /// GameLift spot instances with at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
-        /// Set up Access to External Services</a>. 
+        /// and configurations based on the instance type selected for this fleet. Learn more
+        /// about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+        /// On-Demand versus Spot Instances</a>. 
         /// </para>
         /// </summary>
         public FleetType FleetType
@@ -301,12 +313,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// Unique identifier for an AWS IAM role that manages access to your AWS services. Any
-        /// application that runs on an instance in this fleet can assume the role, including
-        /// install scripts, server processs, daemons (background processes). Create a role or
-        /// look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
-        /// in the AWS Management Console. Learn more about using on-box credentials for your
-        /// game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Unique identifier for an AWS IAM role that manages access to your AWS services. With
+        /// an instance role ARN set, any application that runs on an instance in this fleet can
+        /// assume the role, including install scripts, server processes, daemons (background
+        /// processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+        /// dashboard</a> in the AWS Management Console. Learn more about using on-box credentials
+        /// for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>.
         /// </para>
         /// </summary>
@@ -484,16 +496,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// Instructions for launching server processes on each instance in the fleet. The run-time
-        /// configuration for a fleet has a collection of server process configurations, one for
-        /// each type of server process to run on an instance. A server process configuration
-        /// specifies the location of the server executable, launch parameters, and the number
-        /// of concurrent processes with that configuration to maintain on each instance. A CreateFleet
-        /// request must include a run-time configuration with at least one server process configuration;
-        /// otherwise the request fails with an invalid request exception. (This parameter replaces
-        /// the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>;
-        /// requests that contain values for these parameters instead of a run-time configuration
-        /// will continue to work.) 
+        /// Instructions for launching server processes on each instance in the fleet. Server
+        /// processes run either a custom game build executable or a Realtime Servers script.
+        /// The run-time configuration lists the types of server processes to run on an instance
+        /// and includes the following configuration settings: the server executable or launch
+        /// script file, launch parameters, and the number of processes to run concurrently on
+        /// each instance. A CreateFleet request must include a run-time configuration with at
+        /// least one server process configuration.
         /// </para>
         /// </summary>
         public RuntimeConfiguration RuntimeConfiguration
@@ -506,6 +515,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetRuntimeConfiguration()
         {
             return this._runtimeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScriptId. 
+        /// <para>
+        /// Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime
+        /// script must have been successfully uploaded to Amazon GameLift. This fleet setting
+        /// cannot be changed once the fleet is created.
+        /// </para>
+        /// </summary>
+        public string ScriptId
+        {
+            get { return this._scriptId; }
+            set { this._scriptId = value; }
+        }
+
+        // Check to see if ScriptId property is set
+        internal bool IsSetScriptId()
+        {
+            return this._scriptId != null;
         }
 
         /// <summary>

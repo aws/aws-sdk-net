@@ -116,7 +116,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version that is associated with this build. Version strings do not need to be unique.
+        /// Version that is associated with a build or script. Version strings do not need to
+        /// be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

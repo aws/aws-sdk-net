@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListFleets Request Marshaller
+    /// UpdateScript Request Marshaller
     /// </summary>       
-    public class ListFleetsRequestMarshaller : IMarshaller<IRequest, ListFleetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateScriptRequestMarshaller : IMarshaller<IRequest, UpdateScriptRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListFleetsRequest)input);
+            return this.Marshall((UpdateScriptRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListFleetsRequest publicRequest)
+        public IRequest Marshall(UpdateScriptRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.ListFleets";
+            string target = "GameLift.UpdateScript";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";            
@@ -68,28 +68,39 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBuildId())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("BuildId");
-                    context.Writer.Write(publicRequest.BuildId);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetScriptId())
                 {
                     context.Writer.WritePropertyName("ScriptId");
                     context.Writer.Write(publicRequest.ScriptId);
+                }
+
+                if(publicRequest.IsSetStorageLocation())
+                {
+                    context.Writer.WritePropertyName("StorageLocation");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVersion())
+                {
+                    context.Writer.WritePropertyName("Version");
+                    context.Writer.Write(publicRequest.Version);
+                }
+
+                if(publicRequest.IsSetZipFile())
+                {
+                    context.Writer.WritePropertyName("ZipFile");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
                 }
 
         
@@ -101,9 +112,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListFleetsRequestMarshaller _instance = new ListFleetsRequestMarshaller();        
+        private static UpdateScriptRequestMarshaller _instance = new UpdateScriptRequestMarshaller();        
 
-        internal static ListFleetsRequestMarshaller GetInstance()
+        internal static UpdateScriptRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +122,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListFleetsRequestMarshaller Instance
+        public static UpdateScriptRequestMarshaller Instance
         {
             get
             {

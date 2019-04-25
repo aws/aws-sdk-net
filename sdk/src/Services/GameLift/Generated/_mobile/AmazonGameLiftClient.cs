@@ -49,482 +49,46 @@ namespace Amazon.GameLift
     /// </para>
     ///  
     /// <para>
-    /// The Amazon GameLift service API includes two important function sets:
+    /// When setting up hosting resources, you can deploy your custom game server or use the
+    /// Amazon GameLift Realtime Servers. Realtime Servers gives you the ability to quickly
+    /// stand up lightweight, efficient game servers with the core Amazon GameLift infrastructure
+    /// already built in.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Get Amazon GameLift Tools and Resources</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// This reference guide describes the low-level service API for Amazon GameLift and provides
+    /// links to language-specific SDK reference topics. See also <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html">
+    /// Amazon GameLift Tools and Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>API Summary</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon GameLift service API includes two key sets of actions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Manage game sessions and player access</b> -- Retrieve information on available
-    /// game sessions; create new game sessions; send player requests to join a game session.
+    /// Manage game sessions and player access -- Integrate this functionality into game client
+    /// services in order to create new game sessions, retrieve information on existing game
+    /// sessions; reserve a player slot in a game session, request matchmaking, etc.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
-    /// and aliases; set auto-scaling policies; retrieve logs and metrics.
+    /// Configure and manage game server resources -- Manage your Amazon GameLift hosting
+    /// resources, including builds, scripts, fleets, queues, and aliases. Set up matchmakers,
+    /// configure auto-scaling, retrieve game logs, and get hosting and game metrics.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This reference guide describes the low-level service API for Amazon GameLift. You
-    /// can use the API functionality with these tools: 
+    ///  <b> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">
+    /// Task-based list of API actions</a> </b> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS
-    /// SDK</a>) is available in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients">multiple
-    /// languages</a> including C++ and C#. Use the SDK to access the API programmatically
-    /// from an application, such as a game client.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The <a href="https://docs.aws.amazon.com/cli/latest/userguide/">AWS command-line interface</a>
-    /// (CLI) tool is primarily useful for handling administrative actions, such as setting
-    /// up and managing Amazon GameLift settings and resources. You can use the AWS CLI to
-    /// manage all of your AWS services.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
-    /// for Amazon GameLift provides a web interface to manage your Amazon GameLift settings
-    /// and resources. The console includes a dashboard for tracking key resources, including
-    /// builds and fleets, and displays usage and performance metrics for your games as customizable
-    /// graphs.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon GameLift Local is a tool for testing your game's integration with Amazon GameLift
-    /// before deploying it on the service. This tools supports a subset of key API actions,
-    /// which can be called from either the AWS CLI or programmatically. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
-    /// an Integration</a>.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Learn more</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer
-    /// Guide</a> -- Read about Amazon GameLift features and how to use them. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> -- Get started
-    /// fast with walkthroughs and sample projects.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://gamedev.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to
-    /// date with new features and techniques.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-    /// Forums</a> -- Connect with the GameDev community.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a>
-    /// and <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
-    /// history</a> -- Stay current with updates to the Amazon GameLift service, SDKs, and
-    /// documentation. 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>API SUMMARY</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// This list offers a functional overview of the Amazon GameLift service API.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Managing Games and Players</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Use these actions to start new game sessions, find existing game sessions, track game
-    /// session status and other information, and enable player access to game sessions.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>Discover existing game sessions</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>SearchGameSessions</a> -- Retrieve all available game sessions or search for game
-    /// sessions that match a set of criteria. 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Start new game sessions</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Start new games with Queues to find the best available hosting resources across multiple
-    /// regions, minimize player latency, and balance game session activity for efficiency
-    /// and cost effectiveness. 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartGameSessionPlacement</a> -- Request a new game session placement and add
-    /// one or more players to it.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionPlacement</a> -- Get details on a placement request, including
-    /// status.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopGameSessionPlacement</a> -- Cancel a placement request. 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>CreateGameSession</a> -- Start a new game session on a specific fleet. <i>Available
-    /// in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Match players to game sessions with FlexMatch matchmaking</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want
-    /// to play together. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
-    /// in an existing game session. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmaking</a> -- Get details on a matchmaking request, including status.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches
-    /// that require player acceptance. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopMatchmaking</a> -- Cancel a matchmaking request. 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage game session data</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions, including
-    /// length of time active and current player count. <i>Available in Amazon GameLift Local.</i>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionDetails</a> -- Retrieve metadata and the game session protection
-    /// setting for one or more game sessions.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSession</a> -- Change game session settings, such as maximum player
-    /// count and join policy.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetGameSessionLogUrl</a> -- Get the location of saved logs for a game session.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage player sessions</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreatePlayerSession</a> -- Send a request for a player to join a game session.
-    /// <i>Available in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreatePlayerSessions</a> -- Send a request for multiple players to join a game
-    /// session. <i>Available in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribePlayerSessions</a> -- Get details on player activity, including status,
-    /// playing time, and player data. <i>Available in Amazon GameLift Local.</i> 
-    /// </para>
-    ///  </li> </ul> </li> </ul> 
-    /// <para>
-    ///  <b>Setting Up and Managing Game Servers</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// When setting up Amazon GameLift resources for your game, you first <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create
-    /// a game build</a> and upload it to Amazon GameLift. You can then use these actions
-    /// to configure and manage a fleet of resources to run your game servers, scale capacity
-    /// to meet player demand, access performance and utilization metrics, and more.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>Manage game builds</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
-    /// To create a build and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListBuilds</a> -- Get a list of all builds uploaded to a Amazon GameLift region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeBuild</a> -- Retrieve information associated with a build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateBuild</a> -- Change build metadata, including build name and version.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteBuild</a> -- Remove a build from Amazon GameLift.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage fleets</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateFleet</a> -- Configure and activate a new fleet to run a build's game servers.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> -- Get a list of all fleet IDs in a Amazon GameLift region (all
-    /// statuses).
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> -- Terminate a fleet that is no longer running game servers or
-    /// hosting players.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// View / update fleet configurations.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> -- View or change a
-    /// fleet's metadata and settings for game session protection and resource creation limits.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> -- View or change
-    /// the inbound permissions (IP address and port setting ranges) allowed for a fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> -- View or
-    /// change what server processes (and how many) to run on each instance in a fleet.
-    /// </para>
-    ///  </li> </ul> </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Control fleet capacity</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> -- Retrieve maximum number of instances allowed
-    /// for the current AWS account and the current usage level.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> -- Retrieve the capacity
-    /// settings and the current number of instances in a fleet; adjust fleet capacity settings
-    /// to scale up or down.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Autoscale -- Manage auto-scaling rules and apply them to a fleet.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> -- Create a new auto-scaling policy, or update an existing
-    /// one.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and stop it from affecting
-    /// a fleet's capacity.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.
-    /// </para>
-    ///  </li> </ul> </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage game session queues</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game
-    /// sessions. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon
-    /// GameLift region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage FlexMatch resources</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with
-    /// instructions for building a player group and placing in a new game session. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined
-    /// a Amazon GameLift region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration.
-    /// queue.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
-    /// the region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for
-    /// player matches. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a
-    /// Amazon GameLift region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteMatchmakingRuleSet</a> -- Remove a matchmaking rule set from the region.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Access fleet activity statistics</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> -- Get current data on the number of server processes,
-    /// game sessions, and players currently active on a fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a specified time span.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more game
-    /// sessions, including length of time active and current player count.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Remotely access an instance</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeInstances</a> -- Get information on each instance in a fleet, including
-    /// instance ID, IP address, and status.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetInstanceAccess</a> -- Request access credentials needed to remotely connect
-    /// to a specified instance in a fleet.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage fleet aliases</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateAlias</a> -- Define a new alias and optionally assign it to a fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeAlias</a> -- Retrieve information on an existing alias.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> -- Change settings for a alias, such as redirecting it from one
-    /// fleet to another.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> -- Remove an alias from the region.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage VPC peering connections for fleets</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
-    /// your VPCs.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC
-    /// for a Amazon GameLift fleet and one of your VPCs.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending
-    /// VPC peering connections with a Amazon GameLift fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon
-    /// GameLift fleet.
-    /// </para>
-    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class AmazonGameLiftClient : AmazonServiceClient, IAmazonGameLift
     {
@@ -1006,17 +570,19 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds a player to a game session and creates a player session record. Before a player
-        /// can be added, a game session must have an <code>ACTIVE</code> status, have a creation
-        /// policy of <code>ALLOW_ALL</code>, and have an open player slot. To add a group of
-        /// players to a game session, use <a>CreatePlayerSessions</a>.
+        /// Reserves an open player slot in an active game session. Before a player can be added,
+        /// a game session must have an <code>ACTIVE</code> status, have a creation policy of
+        /// <code>ALLOW_ALL</code>, and have an open player slot. To add a group of players to
+        /// a game session, use <a>CreatePlayerSessions</a>. When the player connects to the game
+        /// server and references a player session ID, the game server contacts the Amazon GameLift
+        /// service to validate the player reservation and accept the player.
         /// 
         ///  
         /// <para>
         /// To create a player session, specify a game session ID, player ID, and optionally a
-        /// string of player data. If successful, the player is added to the game session and
-        /// a new <a>PlayerSession</a> object is returned. Player sessions cannot be updated.
-        /// 
+        /// string of player data. If successful, a slot is reserved in the game session for the
+        /// player and a new <a>PlayerSession</a> object is returned. Player sessions cannot be
+        /// updated. 
         /// </para>
         ///  
         /// <para>
@@ -1133,17 +699,19 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds a group of players to a game session. This action is useful with a team matching
-        /// feature. Before players can be added, a game session must have an <code>ACTIVE</code>
-        /// status, have a creation policy of <code>ALLOW_ALL</code>, and have an open player
-        /// slot. To add a single player to a game session, use <a>CreatePlayerSession</a>.
+        /// Reserves open slots in a game session for a group of players. Before players can be
+        /// added, a game session must have an <code>ACTIVE</code> status, have a creation policy
+        /// of <code>ALLOW_ALL</code>, and have an open player slot. To add a single player to
+        /// a game session, use <a>CreatePlayerSession</a>. When a player connects to the game
+        /// server and references a player session ID, the game server contacts the Amazon GameLift
+        /// service to validate the player reservation and accept the player.
         /// 
         ///  
         /// <para>
         /// To create player sessions, specify a game session ID, a list of player IDs, and optionally
-        /// a set of player data strings. If successful, the players are added to the game session
-        /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
-        /// be updated.
+        /// a set of player data strings. If successful, a slot is reserved in the game session
+        /// for each player and a set of new <a>PlayerSession</a> objects is returned. Player
+        /// sessions cannot be updated.
         /// </para>
         ///  
         /// <para>
@@ -1243,6 +811,39 @@ namespace Amazon.GameLift
             options.ResponseUnmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePlayerSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateScript
+
+        internal virtual CreateScriptResponse CreateScript(CreateScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScriptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScript operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateScript">REST API Reference for CreateScript Operation</seealso>
+        public virtual Task<CreateScriptResponse> CreateScriptAsync(CreateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScriptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1810,6 +1411,39 @@ namespace Amazon.GameLift
             options.ResponseUnmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteScalingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteScript
+
+        internal virtual DeleteScriptResponse DeleteScript(DeleteScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScriptResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScriptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScript operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScript">REST API Reference for DeleteScript Operation</seealso>
+        public virtual Task<DeleteScriptResponse> DeleteScriptAsync(DeleteScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScriptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScriptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2904,6 +2538,39 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  DescribeScript
+
+        internal virtual DescribeScriptResponse DescribeScript(DescribeScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScriptResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScriptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScript operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScript">REST API Reference for DescribeScript Operation</seealso>
+        public virtual Task<DescribeScriptResponse> DescribeScriptAsync(DescribeScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScriptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScriptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcPeeringAuthorizations
 
         internal virtual DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
@@ -3214,6 +2881,39 @@ namespace Amazon.GameLift
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListScripts
+
+        internal virtual ListScriptsResponse ListScripts(ListScriptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScriptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScriptsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScriptsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScripts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScripts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListScripts">REST API Reference for ListScripts Operation</seealso>
+        public virtual Task<ListScriptsResponse> ListScriptsAsync(ListScriptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScriptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScriptsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScriptsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4015,6 +3715,39 @@ namespace Amazon.GameLift
             options.ResponseUnmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRuntimeConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateScript
+
+        internal virtual UpdateScriptResponse UpdateScript(UpdateScriptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScriptResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScriptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScript operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScript operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateScript">REST API Reference for UpdateScript Operation</seealso>
+        public virtual Task<UpdateScriptResponse> UpdateScriptAsync(UpdateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScriptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScriptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateScriptResponse>(request, options, cancellationToken);
         }
 
         #endregion
