@@ -130,8 +130,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment.
         /// You can specify the short name or full Amazon Resource Name (ARN) of an instance profile.
-        /// For example, <code>ecsInstanceRole</code> or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+        /// For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
+        /// </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
         /// ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -154,8 +154,8 @@ namespace Amazon.Batch.Model
         /// The instances types that may be launched. You can specify instance families to launch
         /// any instance type within those families (for example, <code>c4</code> or <code>p3</code>),
         /// or you can specify specific sizes within a family (such as <code>c4.8xlarge</code>).
-        /// You can also choose <code>optimal</code> to pick instance types (from the latest C,
-        /// M, and R instance families) on the fly that match the demand of your job queues.
+        /// You can also choose <code>optimal</code> to pick instance types (from the C, M, and
+        /// R instance families) on the fly that match the demand of your job queues.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,7 +177,9 @@ namespace Amazon.Batch.Model
         /// The launch template to use for your compute resources. Any other compute resource
         /// parameters that you specify in a <a>CreateComputeEnvironment</a> API operation override
         /// the same parameters in the launch template. You must specify either the launch template
-        /// ID or launch template name in the request, but not both. 
+        /// ID or launch template name in the request, but not both. For more information, see
+        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+        /// Template Support</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -277,7 +279,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property SpotIamFleetRole. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a
-        /// <code>SPOT</code> compute environment.
+        /// <code>SPOT</code> compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+        /// EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string SpotIamFleetRole
@@ -315,7 +318,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pair tags to be applied to resources that are launched in the compute environment.
-        /// 
+        /// For AWS Batch, these take the form of "String1": "String2", where String1 is the tag
+        /// key and String2 is the tag value—for example, { "Name": "AWS Batch Instance - C4OnDemand"
+        /// }.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -333,7 +338,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of compute environment.
+        /// The type of compute environment: EC2 or SPOT.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

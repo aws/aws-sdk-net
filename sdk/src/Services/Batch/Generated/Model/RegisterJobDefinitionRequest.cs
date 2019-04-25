@@ -86,7 +86,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// An object with various properties specific to multi-node parallel jobs. If you specify
         /// node properties for a job, it becomes a multi-node parallel job. For more information,
-        /// see <a href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
         /// Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code>
         /// parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
         /// or <code>nodeProperties</code>.

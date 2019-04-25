@@ -118,7 +118,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ComputeResources. 
         /// <para>
         /// Details of the compute resources managed by the compute environment. This parameter
-        /// is required for managed compute environments.
+        /// is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources

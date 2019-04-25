@@ -61,8 +61,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitions. 
         /// <para>
-        /// A space-separated list of up to 100 job definition names or full Amazon Resource Name
-        /// (ARN) entries.
+        /// A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
         /// </para>
         /// </summary>
         public List<string> JobDefinitions
