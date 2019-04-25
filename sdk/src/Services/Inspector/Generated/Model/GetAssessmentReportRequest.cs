@@ -82,7 +82,7 @@ namespace Amazon.Inspector.Model
         /// <para>
         /// Specifies the type of the assessment report that you want to generate. There are two
         /// types of assessment reports: a finding report and a full report. For more information,
-        /// see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+        /// see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
         /// Reports</a>. 
         /// </para>
         /// </summary>

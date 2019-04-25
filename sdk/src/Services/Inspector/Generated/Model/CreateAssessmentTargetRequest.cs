@@ -36,7 +36,7 @@ namespace Amazon.Inspector.Model
     /// role</a> isn’t already registered, this action also creates and registers a service-linked
     /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
     /// You can create up to 50 assessment targets per AWS account. You can run up to 500
-    /// concurrent agents per AWS account. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+    /// concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
     /// Amazon Inspector Assessment Targets</a>.
     /// </summary>
     public partial class CreateAssessmentTargetRequest : AmazonInspectorRequest

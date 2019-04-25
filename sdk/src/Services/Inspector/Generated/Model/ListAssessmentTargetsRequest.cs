@@ -30,7 +30,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the ListAssessmentTargets operation.
     /// Lists the ARNs of the assessment targets within this AWS account. For more information
-    /// about assessment targets, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+    /// about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
     /// Inspector Assessment Targets</a>.
     /// </summary>
     public partial class ListAssessmentTargetsRequest : AmazonInspectorRequest

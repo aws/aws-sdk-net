@@ -49,7 +49,7 @@ namespace Amazon.Inspector.Model
         /// of the <a>Finding</a> data type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=99)]
         public List<string> AgentIds
         {
             get { return this._agentIds; }

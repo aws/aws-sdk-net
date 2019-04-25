@@ -38,7 +38,7 @@ namespace Amazon.Inspector
     /// Amazon Inspector 
     /// <para>
     /// Amazon Inspector enables you to analyze the behavior of your AWS resources and to
-    /// identify potential security issues. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
+    /// identify potential security issues. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
     /// Amazon Inspector User Guide</a>.
     /// </para>
     /// </summary>
@@ -323,7 +323,7 @@ namespace Amazon.Inspector
         /// role</a> isn’t already registered, this action also creates and registers a service-linked
         /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
         /// You can create up to 50 assessment targets per AWS account. You can run up to 500
-        /// concurrent agents per AWS account. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+        /// concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
         /// Amazon Inspector Assessment Targets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTarget service method.</param>
@@ -1698,7 +1698,7 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Lists the ARNs of the assessment targets within this AWS account. For more information
-        /// about assessment targets, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+        /// about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
         /// Inspector Assessment Targets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentTargets service method.</param>
