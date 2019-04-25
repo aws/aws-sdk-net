@@ -1,3 +1,8 @@
+### 3.3.498.0 (2019-04-24 23:22 UTC)
+* Core 3.3.101.0
+	* Added SAML authentication support in the .NET Standard 2.0 flavor of the SDK; Fix for expired token while using federated AWS credentials; Reverting updates to endpoints.json file from Core 3.3.100.8
+	* All services packages updated to require new Core
+
 ### 3.3.497.0 (2019-04-24 18:09 UTC)
 * AlexaForBusiness (3.3.101.0)
 	* This release adds support for the Alexa for Business gateway and gateway group APIs.
