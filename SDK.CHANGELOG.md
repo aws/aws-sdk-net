@@ -1,3 +1,22 @@
+### 3.3.499.0 (2019-04-25 20:21 UTC)
+* Batch (3.3.101.6)
+	* Documentation updates for AWS Batch.
+* DynamoDBv2 (3.3.101.0)
+	* This update allows you to tag Amazon DynamoDB tables when you create them. Tags are labels you can attach to AWS resources to make them easier to manage, search, and filter. 
+* GameLift (3.3.101.0)
+	* This release introduces the new Realtime Servers feature, giving game developers a lightweight yet flexible solution that eliminates the need to build a fully custom game server. The AWS SDK updates provide support for scripts, which are used to configure and customize Realtime Servers.
+* Inspector (3.3.101.0)
+	* AWS Inspector - Improve the ListFindings API response time and decreases the maximum number of agentIDs from 500 to 99.
+* Lambda (3.3.101.0)
+	* AWS Lambda now supports the GetLayerVersionByArn API.
+* WorkSpaces (3.3.102.3)
+	* Documentation updates for workspaces
+* Core 3.3.101.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.498.0 (2019-04-24 23:22 UTC)
 * Core 3.3.101.0
 	* Added SAML authentication support in the .NET Standard 2.0 flavor of the SDK; Fix for expired token while using federated AWS credentials; Reverting updates to endpoints.json file from Core 3.3.100.8
