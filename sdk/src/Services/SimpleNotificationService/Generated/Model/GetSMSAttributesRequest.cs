@@ -48,7 +48,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For all attribute names, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
+        /// For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
         /// </para>
         ///  
         /// <para>

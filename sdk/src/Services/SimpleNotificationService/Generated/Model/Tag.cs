@@ -28,32 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPlatformApplicationAttributes operation.
-    /// Retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// The list of tags to be added to the specified topic.
     /// </summary>
-    public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
+    public partial class Tag
     {
-        private string _platformApplicationArn;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+        /// The required key portion of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PlatformApplicationArn
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._platformApplicationArn != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The optional value portion of the tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

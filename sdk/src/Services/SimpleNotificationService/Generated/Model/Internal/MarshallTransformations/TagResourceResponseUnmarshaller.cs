@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfirmSubscription operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class ConfirmSubscriptionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ConfirmSubscriptionResponse response = new ConfirmSubscriptionResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ConfirmSubscriptionResult", 2))
+                    if(context.TestExpression("TagResourceResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ConfirmSubscriptionResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, TagResourceResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,12 +82,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("SubscriptionArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.SubscriptionArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -108,31 +103,35 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 return new AuthorizationErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FilterPolicyLimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentAccess"))
             {
-                return new FilterPolicyLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalError"))
-            {
-                return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ConcurrentAccessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameter"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
             {
-                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SubscriptionLimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("StaleTag"))
             {
-                return new SubscriptionLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new StaleTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TagLimitExceeded"))
+            {
+                return new TagLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TagPolicy"))
+            {
+                return new TagPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleNotificationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ConfirmSubscriptionResponseUnmarshaller _instance = new ConfirmSubscriptionResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static ConfirmSubscriptionResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +139,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfirmSubscriptionResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {

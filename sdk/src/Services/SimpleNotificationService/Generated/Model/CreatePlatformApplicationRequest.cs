@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CreatePlatformApplication operation.
     /// Creates a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM, to which devices and mobile apps may register. You must specify
+    /// such as APNS and FCM, to which devices and mobile apps may register. You must specify
     /// PlatformPrincipal and PlatformCredential attributes when using the <code>CreatePlatformApplication</code>
     /// action. The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX,
     /// PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable.
@@ -46,15 +46,15 @@ namespace Amazon.SimpleNotificationService.Model
     /// is "secret key". For MPNS, PlatformCredential is "private key". For Baidu, PlatformCredential
     /// is "secret key". The PlatformApplicationArn that is returned when using <code>CreatePlatformApplication</code>
     /// is then used as an attribute for the <code>CreatePlatformEndpoint</code> action. For
-    /// more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
     /// Amazon SNS Mobile Push Notifications</a>. For more information about obtaining the
     /// PlatformPrincipal and PlatformCredential for each of the supported push notification
-    /// services, see <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
-    /// Started with Apple Push Notification Service</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
-    /// Started with Amazon Device Messaging</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
-    /// Started with Baidu Cloud Push</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
-    /// Started with Google Cloud Messaging for Android</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
-    /// Started with MPNS</a>, or <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+    /// services, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+    /// Started with Apple Push Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+    /// Started with Amazon Device Messaging</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+    /// Started with Baidu Cloud Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+    /// Started with Google Cloud Messaging for Android</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+    /// Started with MPNS</a>, or <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
     /// Started with WNS</a>. 
     /// </para>
     /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// For a list of attributes, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
+        /// For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
         /// 
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CreateTopic operation.
     /// Creates a topic to which notifications can be published. Users can create at most
-    /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>.
+    /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
     /// This action is idempotent, so if the requester already owns a topic with the specified
     /// name, that topic's ARN is returned without creating a new topic.
     /// </summary>
@@ -38,6 +38,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -77,6 +78,17 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <code>Policy</code> – The policy that defines who can access your topic. By default,
         /// only the topic owner can publish or subscribe to the topic.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK)
+        /// for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+        /// in the <i>AWS Key Management Service API Reference</i>. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -113,6 +125,24 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags to add to a new topic.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTopic Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateTopicRequestMarshaller : IMarshaller<IRequest, CreateTopicRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTopicRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
     
         /// <summary>
@@ -50,32 +50,17 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTopicRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleNotificationService");
-            request.Parameters.Add("Action", "CreateTopic");
+            request.Parameters.Add("Action", "TagResource");
             request.Parameters.Add("Version", "2010-03-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAttributes())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    int mapIndex = 1;
-                    foreach(var key in publicRequest.Attributes.Keys)
-                    {
-                        String value;
-                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
-                        request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
-                        if (hasValue)
-                        {
-                            request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
-                        }
-                        mapIndex++;
-                    }
-                }
-                if(publicRequest.IsSetName())
-                {
-                    request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
+                    request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
                 if(publicRequest.IsSetTags())
                 {
@@ -96,9 +81,9 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
-                    private static CreateTopicRequestMarshaller _instance = new CreateTopicRequestMarshaller();        
+                    private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateTopicRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +91,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTopicRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleNotificationService.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+</property-value-rules>

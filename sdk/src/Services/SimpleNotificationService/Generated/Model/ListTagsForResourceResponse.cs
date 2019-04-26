@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPlatformApplicationAttributes operation.
-    /// Retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _platformApplicationArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+        /// The tags associated with the specified topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PlatformApplicationArn
+        public List<Tag> Tags
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._platformApplicationArn != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

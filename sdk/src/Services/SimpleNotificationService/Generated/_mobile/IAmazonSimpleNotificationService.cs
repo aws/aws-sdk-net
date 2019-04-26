@@ -36,10 +36,10 @@ namespace Amazon.SimpleNotificationService
     /// Amazon Simple Notification Service (Amazon SNS) is a web service that enables you
     /// to build distributed web-enabled applications. Applications can use Amazon SNS to
     /// easily push real-time notification messages to interested subscribers over multiple
-    /// delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>.
+    /// delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
     /// For detailed information about Amazon SNS features and their associated API calls,
-    /// see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a>.
-    /// 
+    /// see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+    /// Guide</a>. 
     /// </para>
     ///  
     /// <para>
@@ -136,6 +136,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
@@ -167,6 +171,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the ConfirmSubscription service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -236,7 +244,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create at most
-        /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>.
+        /// 100,000 topics. For more information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>.
         /// This action is idempotent, so if the requester already owns a topic with the specified
         /// name, that topic's ARN is returned without creating a new topic.
         /// </summary>
@@ -249,6 +257,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ConcurrentAccessException">
+        /// Can't perform multiple operations on a tag simultaneously. Perform the operations
+        /// sequentially.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
@@ -258,6 +270,17 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
         /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
         /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.StaleTagException">
+        /// A tag has been added to a resource with the same ARN as a deleted resource. Wait a
+        /// short while and then retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TagLimitExceededException">
+        /// Can't add more than 50 tags to a topic.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TagPolicyException">
+        /// The request doesn't comply with the IAM tag policy. Correct your request and then
+        /// retry it.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.TopicLimitExceededException">
         /// Indicates that the customer already owns the maximum allowed number of topics.
@@ -330,6 +353,10 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ConcurrentAccessException">
+        /// Can't perform multiple operations on a tag simultaneously. Perform the operations
+        /// sequentially.
+        /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
         /// </exception>
@@ -338,6 +365,14 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
         /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.StaleTagException">
+        /// A tag has been added to a resource with the same ARN as a deleted resource. Wait a
+        /// short while and then retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TagPolicyException">
+        /// The request doesn't comply with the IAM tag policy. Correct your request and then
+        /// retry it.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         Task<DeleteTopicResponse> DeleteTopicAsync(string topicArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -538,7 +573,7 @@ namespace Amazon.SimpleNotificationService
         /// after the first page results, then a NextToken string will be returned. To receive
         /// the next page, you call <code>ListPlatformApplications</code> using the NextToken
         /// string received from the previous call. When there are no more records to return,
-        /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+        /// NextToken will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
         /// Amazon SNS Mobile Push Notifications</a>. 
         /// 
         ///  
@@ -735,6 +770,23 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTopics
 
 
@@ -854,7 +906,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about formatting messages, see <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+        /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
         /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
         /// </para>
         /// </summary>
@@ -892,7 +944,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </exception>
@@ -904,7 +956,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
-        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
@@ -940,7 +992,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about formatting messages, see <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+        /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
         /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
         /// </para>
         /// </summary>
@@ -979,7 +1031,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
-        /// this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </exception>
@@ -991,7 +1043,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
-        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
@@ -1164,7 +1216,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a topic owner to set an attribute of the topic to a new value.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1220,7 +1272,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with "http://" </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with "https://" </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the endpoint is an URL beginning with "https://" </li> <li> For the <code>https</code> protocol, the endpoint is a URL beginning with "https://" </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1263,6 +1315,23 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1318,6 +1387,23 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

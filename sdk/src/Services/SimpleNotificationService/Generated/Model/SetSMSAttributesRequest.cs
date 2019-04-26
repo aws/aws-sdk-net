@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <para>
     /// You can override some of these settings for a single message when you use the <code>Publish</code>
     /// action with the <code>MessageAttributes.entry.N</code> parameter. For more information,
-    /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
     /// an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For an example bucket policy and usage report, see <a href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+        /// For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
         /// SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>

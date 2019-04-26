@@ -52,7 +52,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about formatting messages, see <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+    /// For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
     /// Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. 
     /// </para>
     /// </summary>
@@ -240,7 +240,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  
         /// <para>
         /// For information about sending different messages for each protocol using the AWS Management
-        /// Console, go to <a href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+        /// Console, go to <a href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
         /// Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service
         /// Getting Started Guide</i>. 
         /// </para>
@@ -312,10 +312,6 @@ namespace Amazon.SimpleNotificationService.Model
 
         /// <summary>
         /// Gets and sets the property TargetArn. 
-        /// <para>
-        /// Either TopicArn or EndpointArn, but not both.
-        /// </para>
-        ///  
         /// <para>
         /// If you don't specify a value for the <code>TargetArn</code> parameter, you must specify
         /// a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.

@@ -28,32 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPlatformApplicationAttributes operation.
-    /// Retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon
+    /// SNS Tags</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
     /// </summary>
-    public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
+    public partial class ListTagsForResourceRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string _platformApplicationArn;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+        /// The ARN of the topic for which to list tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PlatformApplicationArn
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string ResourceArn
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._platformApplicationArn != null;
+            return this._resourceArn != null;
         }
 
     }
