@@ -1,3 +1,14 @@
+### 3.3.500.0 (2019-04-26 19:02 UTC)
+* IdentityManagement (3.3.101.0)
+	* AWS Security Token Service (STS) enables you to request session tokens from the global STS endpoint that work in all AWS Regions. You can configure the global STS endpoint to vend session tokens that are compatible with all AWS Regions using the new IAM SetSecurityTokenServicePreferences API. 
+* SimpleNotificationService (3.3.101.0)
+	* With this release AWS SNS adds tagging support for Topics.
+* Core 3.3.101.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.499.0 (2019-04-25 20:21 UTC)
 * Batch (3.3.101.6)
 	* Documentation updates for AWS Batch.
