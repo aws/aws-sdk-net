@@ -65,7 +65,6 @@ namespace Amazon.IdentityManagement.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=320)]
         public string Marker
         {
             get { return this._marker; }

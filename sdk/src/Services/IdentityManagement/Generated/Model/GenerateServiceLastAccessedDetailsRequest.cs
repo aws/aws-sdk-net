@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// Generates a request for a report that includes details about when an IAM resource
     /// (user, group, role, or policy) was last used in an attempt to access AWS services.
     /// Recent activity usually appears within four hours. IAM reports activity for the last
-    /// 365 days, or less if your region began supporting this feature within the last year.
+    /// 365 days, or less if your Region began supporting this feature within the last year.
     /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
     /// Where Data Is Tracked</a>.
     /// 

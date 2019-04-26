@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetAccessKeyLastUsed operation.
     /// Retrieves information about when the specified access key was last used. The information
-    /// includes the date and time of last use, along with the AWS service and region that
+    /// includes the date and time of last use, along with the AWS service and Region that
     /// were specified in the last request made with that key.
     /// </summary>
     public partial class GetAccessKeyLastUsedRequest : AmazonIdentityManagementServiceRequest

@@ -2555,6 +2555,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void SetSecurityTokenServicePreferencesMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetSecurityTokenServicePreferences");
+
+            var request = InstantiateClassGenerator.Execute<SetSecurityTokenServicePreferencesRequest>();
+            var marshaller = new SetSecurityTokenServicePreferencesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void SimulateCustomPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("SimulateCustomPolicy");

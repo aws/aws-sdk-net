@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+    /// If the <code>UserName</code> is not specified, the user name is determined implicitly
     /// based on the AWS access key ID used to sign the request. This operation works for
     /// access keys under the AWS account. Consequently, you can use this operation to manage
     /// AWS account root user credentials even if the AWS account has no associated users.

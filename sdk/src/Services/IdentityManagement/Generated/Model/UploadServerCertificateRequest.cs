@@ -35,11 +35,11 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// We recommend that you use <a href="https://docs.aws.amazon.com/certificate-manager/">AWS
-    /// Certificate Manager</a> to provision, manage, and deploy your server certificates.
-    /// With ACM you can request a certificate, deploy it to AWS resources, and let ACM handle
-    /// certificate renewals for you. Certificates provided by ACM are free. For more information
-    /// about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS
+    /// We recommend that you use <a href="https://docs.aws.amazon.com/acm/">AWS Certificate
+    /// Manager</a> to provision, manage, and deploy your server certificates. With ACM you
+    /// can request a certificate, deploy it to AWS resources, and let ACM handle certificate
+    /// renewals for you. Certificates provided by ACM are free. For more information about
+    /// using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS
     /// Certificate Manager User Guide</a>.
     /// </para>
     ///  

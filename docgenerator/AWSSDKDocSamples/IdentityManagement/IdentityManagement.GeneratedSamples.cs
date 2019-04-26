@@ -754,6 +754,19 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceSetSecurityTokenServicePreferences()
+        {
+            #region 61a785a7-d30a-415a-ae18-ab9236e56871
+
+            var response = client.SetSecurityTokenServicePreferences(new SetSecurityTokenServicePreferencesRequest 
+            {
+                GlobalEndpointTokenVersion = "v2Token"
+            });
+
+
+            #endregion
+        }
+
         public void IdentityManagementServiceTagRole()
         {
             #region to-add-a-tag-key-and-value-to-an-iam-role-1506718791513

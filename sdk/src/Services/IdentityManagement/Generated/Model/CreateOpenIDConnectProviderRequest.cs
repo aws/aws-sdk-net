@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A list of thumbprints of the server certificate(s) that the IdP uses.
+    /// A list of thumbprints of the server certificate(s) that the IdP uses
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -61,9 +61,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Because trust for the OIDC provider is derived from the IAM provider that this operation
-    /// creates, it is best to limit access to the <a>CreateOpenIDConnectProvider</a> operation
-    /// to highly privileged users.
+    /// The trust for the OIDC provider is derived from the IAM provider that this operation
+    /// creates. Therefore, it is best to limit access to the <a>CreateOpenIDConnectProvider</a>
+    /// operation to highly privileged users.
     /// </para>
     ///  </note>
     /// </summary>

@@ -53,10 +53,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>GetServiceLastAccessedDetails</code> operation returns a list of services
-    /// that includes the number of entities that have attempted to access the service and
-    /// the date and time of the last attempt. It also returns the ARN of the following entity,
-    /// depending on the resource ARN that you used to generate the report:
+    /// The <code>GetServiceLastAccessedDetails</code> operation returns a list of services.
+    /// This list includes the number of entities that have attempted to access the service
+    /// and the date and time of the last attempt. It also returns the ARN of the following
+    /// entity, depending on the resource ARN that you used to generate the report:
     /// </para>
     ///  <ul> <li> 
     /// <para>

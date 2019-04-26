@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
     /// Returns information about the signing certificates associated with the specified IAM
-    /// user. If there none exists, the operation returns an empty list.
+    /// user. If none exists, the operation returns an empty list.
     /// 
     ///  
     /// <para>

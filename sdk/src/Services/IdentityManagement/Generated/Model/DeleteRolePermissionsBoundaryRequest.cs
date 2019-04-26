@@ -33,9 +33,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Deleting the permissions boundary for a role might increase its permissions by allowing
-    /// anyone who assumes the role to perform all the actions granted in its permissions
-    /// policies. 
+    /// Deleting the permissions boundary for a role might increase its permissions. For example,
+    /// it might allow anyone who assumes the role to perform all the actions granted in its
+    /// permissions policies. 
     /// </para>
     ///  </important>
     /// </summary>

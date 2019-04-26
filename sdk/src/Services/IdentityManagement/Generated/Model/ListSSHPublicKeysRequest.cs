@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListSSHPublicKeys operation.
     /// Returns information about the SSH public keys associated with the specified IAM user.
-    /// If there none exists, the operation returns an empty list.
+    /// If none exists, the operation returns an empty list.
     /// 
     ///  
     /// <para>

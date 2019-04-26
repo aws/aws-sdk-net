@@ -2168,6 +2168,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  SetSecurityTokenServicePreferences
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetSecurityTokenServicePreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetSecurityTokenServicePreferences operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences">REST API Reference for SetSecurityTokenServicePreferences Operation</seealso>
+        void SetSecurityTokenServicePreferencesAsync(SetSecurityTokenServicePreferencesRequest request, AmazonServiceCallback<SetSecurityTokenServicePreferencesRequest, SetSecurityTokenServicePreferencesResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  SimulateCustomPolicy
 
 

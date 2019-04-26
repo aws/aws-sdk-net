@@ -990,6 +990,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.SetSecurityTokenServicePreferences(Amazon.IdentityManagement.Model.SetSecurityTokenServicePreferencesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.SetSecurityTokenServicePreferences(Amazon.IdentityManagement.Model.SetSecurityTokenServicePreferencesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.SetSecurityTokenServicePreferencesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.SetSecurityTokenServicePreferencesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command sets the STS global endpoint token to version 2. Version 2 tokens are valid in all Regions.
+                </para>
+                <code
+                    title="To delete an access key for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="61a785a7-d30a-415a-ae18-ab9236e56871" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.TagRole(Amazon.IdentityManagement.Model.TagRoleRequest)" />
             <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.TagRole(Amazon.IdentityManagement.Model.TagRoleRequest)" />
             <member name="T:Amazon.IdentityManagement.Model.TagRoleRequest" />

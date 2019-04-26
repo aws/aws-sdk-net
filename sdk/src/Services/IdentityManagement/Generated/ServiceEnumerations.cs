@@ -339,6 +339,56 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type GlobalEndpointTokenVersion.
+    /// </summary>
+    public class GlobalEndpointTokenVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V1Token for GlobalEndpointTokenVersion
+        /// </summary>
+        public static readonly GlobalEndpointTokenVersion V1Token = new GlobalEndpointTokenVersion("v1Token");
+        /// <summary>
+        /// Constant V2Token for GlobalEndpointTokenVersion
+        /// </summary>
+        public static readonly GlobalEndpointTokenVersion V2Token = new GlobalEndpointTokenVersion("v2Token");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlobalEndpointTokenVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalEndpointTokenVersion FindValue(string value)
+        {
+            return FindValue<GlobalEndpointTokenVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalEndpointTokenVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatusType.
     /// </summary>
     public class JobStatusType : ConstantClass
@@ -954,6 +1004,10 @@ namespace Amazon.IdentityManagement
         /// Constant AttachedPoliciesPerUserQuota for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType AttachedPoliciesPerUserQuota = new SummaryKeyType("AttachedPoliciesPerUserQuota");
+        /// <summary>
+        /// Constant GlobalEndpointTokenVersion for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType GlobalEndpointTokenVersion = new SummaryKeyType("GlobalEndpointTokenVersion");
         /// <summary>
         /// Constant GroupPolicySizeQuota for SummaryKeyType
         /// </summary>

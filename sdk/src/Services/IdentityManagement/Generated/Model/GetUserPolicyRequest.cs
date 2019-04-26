@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// An IAM user can also have managed policies attached to it. To retrieve a managed policy
     /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
-    /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
+    /// default version. Then use <a>GetPolicyVersion</a> to retrieve the policy document.
     /// </para>
     ///  
     /// <para>

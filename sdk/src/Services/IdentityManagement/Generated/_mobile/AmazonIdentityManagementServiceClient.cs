@@ -4206,7 +4206,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the signing certificates associated with the specified IAM
-        /// user. If there none exists, the operation returns an empty list.
+        /// user. If none exists, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -4844,6 +4844,39 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDefaultPolicyVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetSecurityTokenServicePreferences
+
+        internal virtual SetSecurityTokenServicePreferencesResponse SetSecurityTokenServicePreferences(SetSecurityTokenServicePreferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSecurityTokenServicePreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSecurityTokenServicePreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<SetSecurityTokenServicePreferencesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetSecurityTokenServicePreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetSecurityTokenServicePreferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences">REST API Reference for SetSecurityTokenServicePreferences Operation</seealso>
+        public virtual Task<SetSecurityTokenServicePreferencesResponse> SetSecurityTokenServicePreferencesAsync(SetSecurityTokenServicePreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetSecurityTokenServicePreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetSecurityTokenServicePreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetSecurityTokenServicePreferencesResponse>(request, options, cancellationToken);
         }
 
         #endregion
