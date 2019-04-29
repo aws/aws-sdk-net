@@ -1,21 +1,27 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Amazon.CodeAnalysis.Shared;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using TestHelper;
+using System.Threading.Tasks;
 
 using MockAnalyzer;
+
+using VerifyCS = AnalyzerUnitTests.CSharpCodeFixVerifier<
+    MockAnalyzer.PropertyValueAssignmentAnalyzer,
+    Microsoft.CodeAnalysis.Testing.EmptyCodeFixProvider>;
 
 namespace Analyzer1.Test
 {
     [TestClass]
-    public class PropertyValueTests : DiagnosticVerifier
+    public class PropertyValueTests
     {
+        private static readonly AbstractPropertyValueAssignmentAnalyzer Analyzer = new PropertyValueAssignmentAnalyzer();
 
         //Diagnostic and CodeFix both triggered and checked for
         [TestMethod]
-        public void TestStringRules()
+        public async Task TestStringRules()
         {
             var test = @"
     using System;
@@ -41,60 +47,33 @@ namespace Analyzer1.Test
             public string Name {get; set;}
         }
     }";
-            var expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1000",
-                Message = "Value \"aa\" is too short for Name, it must be at least 3 characters",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            var expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 29).WithArguments("aa", "Name", "3");
 
-            VerifyCSharpDiagnostic(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
 
             test = test.Replace("\"aa\"", "\"aaa\"");
-            VerifyCSharpDiagnostic(test);
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("\"aaa\"", "\"aaaaa\"");
-            VerifyCSharpDiagnostic(test);
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("\"aaaaa\"", "\"aaaaaa\"");
 
-            expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1001",
-                Message = "Value \"aaaaaa\" is too long for Name, it must be at most 5 characters",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            expected = VerifyCS.Diagnostic(Analyzer.MaxLengthRule).WithLocation(16, 29).WithArguments("aaaaaa", "Name", "5");
 
-            VerifyCSharpDiagnostic(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
 
             test = test.Replace("\"aaaaaa\"", "\"#aaa\"");
 
-            expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1002",
-                Message = "Value \"#aaa\" does not match required pattern \"[0-9a-z\\-_]+\" for property Name",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            expected = VerifyCS.Diagnostic(Analyzer.PatternRule).WithLocation(16, 29).WithArguments("#aaa", "[0-9a-z\\-_]+", "Name");
 
-            VerifyCSharpDiagnostic(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
         [TestMethod]
-        public void TestIntRules()
+        public async Task TestIntRules()
         {
             var test = @"
     using System;
@@ -120,44 +99,26 @@ namespace Analyzer1.Test
             public int Size {get; set;}
         }
     }";
-            var expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1003",
-                Message = "Value \"9\" is less than minimum of 10 for property Size",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithLocation(16, 29).WithArguments("9", "10", "Size");
 
-            VerifyCSharpDiagnostic(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
 
             test = test.Replace("9", "10");
-            VerifyCSharpDiagnostic(test);
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("10", "20");
-            VerifyCSharpDiagnostic(test);
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("20", "21");
 
-            expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1004",
-                Message = "Value \"21\" is greater than maximum of 20 for property Size",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            expected = VerifyCS.Diagnostic(Analyzer.MaxValueRule).WithLocation(16, 29).WithArguments("21", "20", "Size");
 
-            VerifyCSharpDiagnostic(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
         [TestMethod]
-        public void TestNonLiteralExpression()
+        public async Task TestNonLiteralExpression()
         {
             var test = @"
     using System;
@@ -183,28 +144,19 @@ namespace Analyzer1.Test
             public int Size {get; set;}
         }
     }";
-            var expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1003",
-                Message = "Value \"-1\" is less than minimum of 10 for property Size",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 29)
-                        }
-            };
+            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithLocation(16, 29).WithArguments("-1", "10", "Size");
 
             string testCode = test.Replace("expression", "(-1)");
-            VerifyCSharpDiagnostic(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", "2-3");
-            VerifyCSharpDiagnostic(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", "(2*3)-7");
-            VerifyCSharpDiagnostic(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", "(2*3)-someValue");
-            VerifyCSharpDiagnostic(testCode);
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
 
             test = @"
     using System;
@@ -231,27 +183,13 @@ namespace Analyzer1.Test
         }
     }";
 
-            expected = new DiagnosticResult
-            {
-                Id = "MockAnalyzer1000",
-                Message = "Value \"aa\" is too short for Name, it must be at least 3 characters",
-                Severity = DiagnosticSeverity.Warning,
-                Locations =
-                    new[] {
-                            new DiagnosticResultLocation("Test0.cs", 16, 30)
-                        }
-            };
+            expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 30).WithArguments("aa", "Name", "3");
 
             testCode = test.Replace("expression", @" ""a"" + ""a"" ");
-            VerifyCSharpDiagnostic(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", @"string.Format(""aa"")");
-            VerifyCSharpDiagnostic(testCode);
-        }
-
-        protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
-        {
-            return new PropertyValueAssignmentAnalyzer();
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
         }
     }
 }
