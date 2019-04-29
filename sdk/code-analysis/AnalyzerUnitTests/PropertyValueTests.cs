@@ -39,7 +39,7 @@ namespace Analyzer1.Test
             public void Execute()
             {
                 var code = new AnalyzedClass();
-                code.Name = ""aa""
+                code.Name = ""aa"";
             }
         }
 
@@ -50,40 +50,27 @@ namespace Analyzer1.Test
     }";
             var expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithSpan(16, 29, 16, 33).WithArguments("aa", "Name", "3");
 
-            await VerifyCS.VerifyAnalyzerAsync(
-                test,
-                expected,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 33, 16, 33).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
 
             test = test.Replace("\"aa\"", "\"aaa\"");
-            await VerifyCS.VerifyAnalyzerAsync(
-                test,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 34, 16, 34).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("\"aaa\"", "\"aaaaa\"");
-            await VerifyCS.VerifyAnalyzerAsync(
-                test,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 36, 16, 36).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(test);
 
             test = test.Replace("\"aaaaa\"", "\"aaaaaa\"");
 
             expected = VerifyCS.Diagnostic(Analyzer.MaxLengthRule).WithSpan(16, 29, 16, 37).WithArguments("aaaaaa", "Name", "5");
 
-            await VerifyCS.VerifyAnalyzerAsync(
-                test,
-                expected,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 37, 16, 37).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
 
             test = test.Replace("\"aaaaaa\"", "\"#aaa\"");
 
             expected = VerifyCS.Diagnostic(Analyzer.PatternRule).WithSpan(16, 29, 16, 35).WithArguments("#aaa", "[0-9a-z\\-_]+", "Name");
 
-            await VerifyCS.VerifyAnalyzerAsync(
-                test,
-                expected,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 35, 16, 35).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
         [TestMethod]
@@ -189,7 +176,7 @@ namespace Analyzer1.Test
             public void Execute()
             {
                 var code = new AnalyzedClass();
-                code.Name = expression
+                code.Name = expression;
             }
         }
 
@@ -202,15 +189,10 @@ namespace Analyzer1.Test
             expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithSpan(16, 30, 16, 39).WithArguments("aa", "Name", "3");
 
             testCode = test.Replace("expression", @" ""a"" + ""a"" ");
-            await VerifyCS.VerifyAnalyzerAsync(
-                testCode,
-                expected,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 39, 16, 39).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", @"string.Format(""aa"")");
-            await VerifyCS.VerifyAnalyzerAsync(
-                testCode,
-                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 48, 16, 48).WithMessage("; expected"));
+            await VerifyCS.VerifyAnalyzerAsync(testCode);
         }
     }
 }
