@@ -48,7 +48,7 @@ namespace Analyzer1.Test
             public string Name {get; set;}
         }
     }";
-            var expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 29).WithArguments("aa", "Name", "3");
+            var expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithSpan(16, 29, 16, 33).WithArguments("aa", "Name", "3");
 
             await VerifyCS.VerifyAnalyzerAsync(
                 test,
@@ -68,7 +68,7 @@ namespace Analyzer1.Test
 
             test = test.Replace("\"aaaaa\"", "\"aaaaaa\"");
 
-            expected = VerifyCS.Diagnostic(Analyzer.MaxLengthRule).WithLocation(16, 29).WithArguments("aaaaaa", "Name", "5");
+            expected = VerifyCS.Diagnostic(Analyzer.MaxLengthRule).WithSpan(16, 29, 16, 37).WithArguments("aaaaaa", "Name", "5");
 
             await VerifyCS.VerifyAnalyzerAsync(
                 test,
@@ -78,7 +78,7 @@ namespace Analyzer1.Test
 
             test = test.Replace("\"aaaaaa\"", "\"#aaa\"");
 
-            expected = VerifyCS.Diagnostic(Analyzer.PatternRule).WithLocation(16, 29).WithArguments("#aaa", "[0-9a-z\\-_]+", "Name");
+            expected = VerifyCS.Diagnostic(Analyzer.PatternRule).WithSpan(16, 29, 16, 35).WithArguments("#aaa", "[0-9a-z\\-_]+", "Name");
 
             await VerifyCS.VerifyAnalyzerAsync(
                 test,
@@ -113,7 +113,7 @@ namespace Analyzer1.Test
             public int Size {get; set;}
         }
     }";
-            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithLocation(16, 29).WithArguments("9", "10", "Size");
+            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithSpan(16, 29, 16, 30).WithArguments("9", "10", "Size");
 
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
 
@@ -126,7 +126,7 @@ namespace Analyzer1.Test
 
             test = test.Replace("20", "21");
 
-            expected = VerifyCS.Diagnostic(Analyzer.MaxValueRule).WithLocation(16, 29).WithArguments("21", "20", "Size");
+            expected = VerifyCS.Diagnostic(Analyzer.MaxValueRule).WithSpan(16, 29, 16, 31).WithArguments("21", "20", "Size");
 
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
@@ -158,16 +158,16 @@ namespace Analyzer1.Test
             public int Size {get; set;}
         }
     }";
-            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithLocation(16, 29).WithArguments("-1", "10", "Size");
+            var expected = VerifyCS.Diagnostic(Analyzer.MinValueRule).WithArguments("-1", "10", "Size");
 
             string testCode = test.Replace("expression", "(-1)");
-            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected.WithSpan(16, 29, 16, 33));
 
             testCode = test.Replace("expression", "2-3");
-            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected.WithSpan(16, 29, 16, 32));
 
             testCode = test.Replace("expression", "(2*3)-7");
-            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(testCode, expected.WithSpan(16, 29, 16, 36));
 
             testCode = test.Replace("expression", "(2*3)-someValue");
             await VerifyCS.VerifyAnalyzerAsync(
@@ -199,7 +199,7 @@ namespace Analyzer1.Test
         }
     }";
 
-            expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 30).WithArguments("aa", "Name", "3");
+            expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithSpan(16, 30, 16, 39).WithArguments("aa", "Name", "3");
 
             testCode = test.Replace("expression", @" ""a"" + ""a"" ");
             await VerifyCS.VerifyAnalyzerAsync(
