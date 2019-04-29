@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationIds. 
         /// <para>
-        /// One or more IAM instance profile associations.
+        /// The IAM instance profile associations.
         /// </para>
         /// </summary>
         public List<string> AssociationIds
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

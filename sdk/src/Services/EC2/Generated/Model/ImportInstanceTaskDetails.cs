@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// One or more volumes.
+        /// The volumes.
         /// </para>
         /// </summary>
         public List<ImportInstanceVolumeDetailItem> Volumes

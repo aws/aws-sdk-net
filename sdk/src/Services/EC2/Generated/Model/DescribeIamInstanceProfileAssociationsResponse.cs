@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfileAssociations. 
         /// <para>
-        /// Information about one or more IAM instance profile associations.
+        /// Information about the IAM instance profile associations.
         /// </para>
         /// </summary>
         public List<IamInstanceProfileAssociation> IamInstanceProfileAssociations

@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoadPermissions. 
         /// <para>
-        /// One or more load permissions.
+        /// The load permissions.
         /// </para>
         /// </summary>
         public List<LoadPermission> LoadPermissions
@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// One or more product codes.
+        /// The product codes.
         /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes

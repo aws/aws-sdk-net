@@ -216,6 +216,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetInterfaceType())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InterfaceType));
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6AddressCount())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6AddressCount));

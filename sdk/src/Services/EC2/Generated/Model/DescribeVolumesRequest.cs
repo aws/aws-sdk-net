@@ -106,7 +106,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>encrypted</code> - The encryption status of the volume.
+        ///  <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code>
+        /// | <code>false</code>)
         /// </para>
         ///  </li> <li> 
         /// <para>

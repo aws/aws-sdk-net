@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RunInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="imageId">The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance and must be specified here or in a launch template.</param>
+        /// <param name="imageId">The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.</param>
         /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
         /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</param>
         public RunInstancesRequest(string imageId, int minCount, int maxCount)
@@ -271,7 +271,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreditSpecification. 
         /// <para>
-        /// The credit option for CPU usage of the instance. Valid values are <code>standard</code>
+        /// The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code>
         /// and <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
         /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -347,7 +347,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuSpecification. 
         /// <para>
-        /// An elastic GPU to associate with the instance.
+        /// An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that
+        /// you can attach to your Windows instance to accelerate the graphics performance of
+        /// your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
+        /// Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecification
@@ -365,7 +368,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAccelerators. 
         /// <para>
-        ///  An elastic inference accelerator. 
+        /// An elastic inference accelerator to associate with the instance. Elastic inference
+        /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
+        /// your Deep Learning (DL) inference workloads.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
@@ -421,8 +426,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required
-        /// to launch an instance and must be specified here or in a launch template.
+        /// The ID of the AMI. An AMI is required to launch an instance and must be specified
+        /// here or in a launch template.
         /// </para>
         /// </summary>
         public string ImageId
@@ -509,7 +514,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6AddressCount. 
         /// <para>
-        /// [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface.
+        /// [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface.
         /// Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify
         /// this option and the option to assign specific IPv6 addresses in the same request.
         /// You can specify this option if you've specified a minimum number of instances to launch.
@@ -703,7 +708,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
-        /// The monitoring for the instance.
+        /// Specifies whether detailed monitoring is enabled for the instance.
         /// </para>
         /// </summary>
         public bool Monitoring
@@ -721,11 +726,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// The network interfaces.
-        /// </para>
-        ///  
-        /// <para>
-        /// You cannot specify this option and the network interfaces option in the same request.
+        /// The network interfaces to associate with the instance.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
@@ -791,7 +792,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        /// The ID of the RAM disk.
+        /// The ID of the RAM disk to select. Some kernels require additional drivers at launch.
+        /// Check the kernel requirements for information about whether you need to specify a
+        /// RAM disk. To find kernel requirements, go to the AWS Resource Center and search for
+        /// the kernel ID.
         /// </para>
         ///  <important> 
         /// <para>
@@ -915,7 +919,7 @@ namespace Amazon.EC2.Model
         /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
         /// User Data</a> (Windows). If you are using a command line tool, base64-encoding is
         /// performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text.
+        /// base64-encoded text. User data is limited to 16 KB.
         /// </para>
         /// </summary>
         public string UserData

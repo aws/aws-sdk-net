@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSecurityGroupRuleDescriptionsEgress operation.
-    /// [EC2-VPC only] Updates the description of an egress (outbound) security group rule.
-    /// You can replace an existing description, or add a description to a rule that did not
-    /// have one previously.
+    /// [VPC only] Updates the description of an egress (outbound) security group rule. You
+    /// can replace an existing description, or add a description to a rule that did not have
+    /// one previously.
     /// 
     ///  
     /// <para>

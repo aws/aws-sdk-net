@@ -147,7 +147,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries.
+        /// The block device mapping entries.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings

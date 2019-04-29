@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFpgaImages operation.
-    /// Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs,
+    /// Describes the Amazon FPGA Images (AFIs) available to you. These include public AFIs,
     /// private AFIs that you own, and AFIs owned by other AWS accounts for which you have
     /// load permissions.
     /// </summary>
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FpgaImageIds. 
         /// <para>
-        /// One or more AFI IDs.
+        /// The AFI IDs.
         /// </para>
         /// </summary>
         public List<string> FpgaImageIds

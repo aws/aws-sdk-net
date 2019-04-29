@@ -63,19 +63,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number
-        /// (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-        /// Numbers</a>). 
+        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>)
+        /// or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// Numbers</a>).
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC only] Use <code>-1</code> to specify all protocols. When authorizing security
+        /// [VPC only] Use <code>-1</code> to specify all protocols. When authorizing security
         /// group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>,
-        /// <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on
-        /// all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>,
-        /// and <code>icmp</code>, you must specify a port range. For <code>58</code> (ICMPv6),
-        /// you can optionally specify a port range; if you don't, traffic for all types and codes
-        /// is allowed when authorizing rules. 
+        /// <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all
+        /// ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>,
+        /// and <code>icmp</code>, you must specify a port range. For <code>icmpv6</code>, the
+        /// port range is optional; if you omit the port range, traffic for all types and codes
+        /// is allowed.
         /// </para>
         /// </summary>
         public string IpProtocol
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Ranges. 
         /// <para>
-        /// [EC2-VPC only] The IPv6 ranges.
+        /// [VPC only] The IPv6 ranges.
         /// </para>
         /// </summary>
         public List<Ipv6Range> Ipv6Ranges
@@ -129,9 +129,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
-        /// this is the AWS service that you want to access through a VPC endpoint from instances
-        /// associated with the security group.
+        /// [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the
+        /// AWS service to access through a VPC endpoint from instances associated with the security
+        /// group.
         /// </para>
         /// </summary>
         public List<PrefixListId> PrefixListIds
@@ -150,8 +150,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value
-        /// of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified ICMP type. If
-        /// you specify all ICMP/ICMPv6 types, you must specify all codes.
+        /// of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6
+        /// types, you must specify all codes.
         /// </para>
         /// </summary>
         public int ToPort

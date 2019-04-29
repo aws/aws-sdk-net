@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScheduledInstances operation.
-    /// Describes one or more of your Scheduled Instances.
+    /// Describes the specified Scheduled Instances or all your Scheduled Instances.
     /// </summary>
     public partial class DescribeScheduledInstancesRequest : AmazonEC2Request
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ScheduledInstanceIds. 
         /// <para>
-        /// One or more Scheduled Instance IDs.
+        /// The Scheduled Instance IDs.
         /// </para>
         /// </summary>
         public List<string> ScheduledInstanceIds

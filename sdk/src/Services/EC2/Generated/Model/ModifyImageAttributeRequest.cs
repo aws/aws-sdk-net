@@ -169,8 +169,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// One or more DevPay product codes. After you add a product code to an AMI, it can't
-        /// be removed.
+        /// The DevPay product codes. After you add a product code to an AMI, it can't be removed.
         /// </para>
         /// </summary>
         public List<string> ProductCodes
@@ -188,8 +187,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// One or more user groups. This parameter can be used only when the <code>Attribute</code>
-        /// parameter is <code>launchPermission</code>.
+        /// The user groups. This parameter can be used only when the <code>Attribute</code> parameter
+        /// is <code>launchPermission</code>.
         /// </para>
         /// </summary>
         public List<string> UserGroups
@@ -207,7 +206,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code>
+        /// The AWS account IDs. This parameter can be used only when the <code>Attribute</code>
         /// parameter is <code>launchPermission</code>.
         /// </para>
         /// </summary>

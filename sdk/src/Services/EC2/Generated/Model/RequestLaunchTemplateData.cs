@@ -148,7 +148,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If set to <code>true</code>, you can't terminate the instance using the Amazon EC2
         /// console, CLI, or API. To change this attribute to <code>false</code> after launch,
-        /// use <a>ModifyInstanceAttribute</a>.
+        /// use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+        /// ModifyInstanceAttribute</a>.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -263,7 +264,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI, which you can get by using <a>DescribeImages</a>.
+        /// The ID of the AMI, which you can get by using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
         /// </para>
         /// </summary>
         public string ImageId
@@ -366,8 +367,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
-        /// <a>ImportKeyPair</a>.
+        /// The name of the key pair. You can create a key pair using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
         /// </para>
         ///  <important> 
         /// <para>

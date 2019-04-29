@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RequesterManaged. 
         /// <para>
-        /// Indicates whether the VPC Endpoint is being managed by its service.
+        /// Indicates whether the VPC endpoint is being managed by its service.
         /// </para>
         /// </summary>
         public bool RequesterManaged

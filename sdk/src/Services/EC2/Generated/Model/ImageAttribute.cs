@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries.
+        /// The block device mapping entries.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchPermissions. 
         /// <para>
-        /// One or more launch permissions.
+        /// The launch permissions.
         /// </para>
         /// </summary>
         public List<LaunchPermission> LaunchPermissions
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// One or more product codes.
+        /// The product codes.
         /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes

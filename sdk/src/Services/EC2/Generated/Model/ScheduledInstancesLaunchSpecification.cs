@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries.
+        /// The block device mapping entries.
         /// </para>
         /// </summary>
         public List<ScheduledInstancesBlockDeviceMapping> BlockDeviceMappings
@@ -208,7 +208,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces.
+        /// The network interfaces.
         /// </para>
         /// </summary>
         public List<ScheduledInstancesNetworkInterface> NetworkInterfaces
@@ -262,7 +262,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The IDs of one or more security groups.
+        /// The IDs of the security groups.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds

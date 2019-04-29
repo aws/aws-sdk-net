@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseScheduledInstances operation.
-    /// Purchases one or more Scheduled Instances with the specified schedule.
+    /// Purchases the Scheduled Instances with the specified schedule.
     /// 
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PurchaseRequests. 
         /// <para>
-        /// One or more purchase requests.
+        /// The purchase requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

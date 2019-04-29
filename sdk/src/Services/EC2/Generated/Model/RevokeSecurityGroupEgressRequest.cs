@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupEgress operation.
-    /// [EC2-VPC only] Removes the specified egress rules from a security group for EC2-VPC.
-    /// This action doesn't apply to security groups for use in EC2-Classic. To remove a rule,
+    /// [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This
+    /// action doesn't apply to security groups for use in EC2-Classic. To remove a rule,
     /// the values that you specify (for example, ports) must match the existing rule's values
     /// exactly.
     /// 

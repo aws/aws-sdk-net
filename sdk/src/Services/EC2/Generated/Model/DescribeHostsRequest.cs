@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHosts operation.
-    /// Describes one or more of your Dedicated Hosts.
+    /// Describes the specified Dedicated Hosts or all your Dedicated Hosts.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

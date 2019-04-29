@@ -29,27 +29,30 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// [EC2-VPC only] Adds the specified egress rules to a security group for use with a
-    /// VPC. Specifically, this action permits instances to send traffic to the specified
-    /// destination IPv4 or IPv6 CIDR address ranges, or to the specified destination security
-    /// groups for the same VPC. This action doesn't apply to security groups for use in EC2-Classic.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-    /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For
-    /// more information about security group limits, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-    /// VPC Limits</a>.
+    /// [VPC only] Adds the specified egress rules to a security group for use with a VPC.
     /// 
     ///  
     /// <para>
-    /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
-    /// a source group. For the TCP and UDP protocols, you must also specify the destination
-    /// port or port range. For the ICMP protocol, you must also specify the ICMP type and
-    /// code. You can use -1 for the type or code to mean all types or all codes. You can
-    /// optionally specify a description for the rule.
+    /// An outbound rule permits instances to send traffic to the specified destination IPv4
+    /// or IPv6 CIDR address ranges, or to the specified destination security groups for the
+    /// same VPC.
+    /// </para>
+    ///  
+    /// <para>
+    /// You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols,
+    /// you must also specify the destination port or port range. For the ICMP protocol, you
+    /// must also specify the ICMP type and code. You can use -1 for the type or code to mean
+    /// all types or all codes.
     /// </para>
     ///  
     /// <para>
     /// Rule changes are propagated to affected instances as quickly as possible. However,
     /// a small delay might occur.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+    /// VPC Limits</a>.
     /// </para>
     /// </summary>
     public partial class AuthorizeSecurityGroupEgressRequest : AmazonEC2Request

@@ -86,7 +86,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeliverLogsPermissionArn. 
         /// <para>
-        /// The ARN for the IAM role that's used to post flow logs to a log group.
+        /// The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch
+        /// Logs log group in your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
         /// </para>
         /// </summary>
         public string DeliverLogsPermissionArn
@@ -105,8 +111,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LogDestination. 
         /// <para>
         /// Specifies the destination to which the flow log data is to be published. Flow log
-        /// data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. The
-        /// value specified for this parameter depends on the value specified for LogDestinationType.
+        /// data can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The value
+        /// specified for this parameter depends on the value specified for <code>LogDestinationType</code>.
         /// </para>
         ///  
         /// <para>
@@ -145,6 +151,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
+        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>cloud-watch-logs</code> 
         /// </para>
         /// </summary>
@@ -163,7 +174,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group.
+        /// The name of a new or existing CloudWatch Logs log group where Amazon EC2 publishes
+        /// your flow logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -181,7 +198,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// One or more subnet, network interface, or VPC IDs.
+        /// The ID of the subnet, network interface, or VPC for which you want to create a flow
+        /// log.
         /// </para>
         ///  
         /// <para>
@@ -204,7 +222,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource on which to create the flow log.
+        /// The type of resource for which to create the flow log. For example, if you specified
+        /// a VPC ID for the <code>ResourceId</code> property, specify <code>VPC</code> for this
+        /// property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -223,7 +243,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TrafficType. 
         /// <para>
-        /// The type of traffic to log.
+        /// The type of traffic to log. You can log traffic that the resource accepts or rejects,
+        /// or all traffic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

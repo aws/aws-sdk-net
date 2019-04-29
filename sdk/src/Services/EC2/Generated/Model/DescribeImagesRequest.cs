@@ -37,12 +37,10 @@ namespace Amazon.EC2.Model
     /// The images available to you include public images, private images that you own, and
     /// private images owned by other AWS accounts for which you have explicit launch permissions.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// Deregistered images are included in the returned results for an unspecified interval
-    /// after deregistration.
+    /// Recently deregistered images might appear in the returned results for a short interval.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
     {
@@ -73,7 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -238,7 +236,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageIds. 
         /// <para>
-        /// One or more image IDs.
+        /// The image IDs.
         /// </para>
         ///  
         /// <para>

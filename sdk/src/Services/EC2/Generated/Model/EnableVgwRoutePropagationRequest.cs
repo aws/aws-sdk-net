@@ -40,7 +40,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The ID of the virtual private gateway that is attached to a VPC. The virtual private
+        /// gateway must be attached to the same VPC that the routing tables are associated with.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +61,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTableId. 
         /// <para>
-        /// The ID of the route table.
+        /// The ID of the route table. The routing table must be associated with the same VPC
+        /// that the virtual private gateway is attached to. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

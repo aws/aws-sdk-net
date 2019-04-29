@@ -34,9 +34,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// [EC2-Classic security groups only] If the values you specify do not match the existing
-    /// rule's values, no error is returned. Use <a>DescribeSecurityGroups</a> to verify that
-    /// the rule has been removed.
+    /// [EC2-Classic only] If the values you specify do not match the existing rule's values,
+    /// no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule has
+    /// been removed.
     /// </para>
     ///  </note> 
     /// <para>

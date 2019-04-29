@@ -147,7 +147,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InterfaceType. 
         /// <para>
-        /// The type of interface.
+        /// The type of network interface.
         /// </para>
         /// </summary>
         public NetworkInterfaceType InterfaceType

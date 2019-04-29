@@ -29,8 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConversionTasks operation.
-    /// Describes one or more of your conversion tasks. For more information, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM
-    /// Import/Export User Guide</a>.
+    /// Describes the specified conversion tasks or all your conversion tasks. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM Import/Export
+    /// User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConversionTaskIds. 
         /// <para>
-        /// One or more conversion task IDs.
+        /// The conversion task IDs.
         /// </para>
         /// </summary>
         public List<string> ConversionTaskIds

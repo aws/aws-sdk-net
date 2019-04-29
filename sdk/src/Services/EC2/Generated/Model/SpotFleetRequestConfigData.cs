@@ -194,7 +194,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchSpecifications. 
         /// <para>
-        /// The launch specifications for the Spot Fleet request.
+        /// The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
+        /// you can't specify <code>LaunchTemplateConfigs</code>.
         /// </para>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
@@ -212,7 +213,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateConfigs. 
         /// <para>
-        /// The launch template and overrides.
+        /// The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>,
+        /// you can't specify <code>LaunchSpecifications</code>.
         /// </para>
         /// </summary>
         public List<LaunchTemplateConfig> LaunchTemplateConfigs

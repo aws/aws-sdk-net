@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Placement with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Availability Zone of the instance.</param>
+        /// <param name="availabilityZone">The Availability Zone of the instance. If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the region.</param>
         public Placement(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -77,6 +77,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, an Availability Zone will be automatically chosen for you based
+        /// on the load balancing criteria for the region.
         /// </para>
         /// </summary>
         public string AvailabilityZone

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private int? _deviceIndex;
         private List<string> _groups = new List<string>();
+        private string _interfaceType;
         private int? _ipv6AddressCount;
         private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
         private string _networkInterfaceId;
@@ -133,6 +134,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroups()
         {
             return this._groups != null && this._groups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceType. 
+        /// <para>
+        /// The type of network interface.
+        /// </para>
+        /// </summary>
+        public string InterfaceType
+        {
+            get { return this._interfaceType; }
+            set { this._interfaceType = value; }
+        }
+
+        // Check to see if InterfaceType property is set
+        internal bool IsSetInterfaceType()
+        {
+            return this._interfaceType != null;
         }
 
         /// <summary>

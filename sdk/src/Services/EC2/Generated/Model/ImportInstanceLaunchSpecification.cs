@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupIds. 
         /// <para>
-        /// One or more security group IDs.
+        /// The security group IDs.
         /// </para>
         /// </summary>
         public List<string> GroupIds
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupNames. 
         /// <para>
-        /// One or more security group names.
+        /// The security group names.
         /// </para>
         /// </summary>
         public List<string> GroupNames

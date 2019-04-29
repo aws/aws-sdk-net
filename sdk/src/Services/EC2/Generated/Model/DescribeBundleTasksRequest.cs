@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BundleIds. 
         /// <para>
-        /// One or more bundle task IDs.
+        /// The bundle task IDs.
         /// </para>
         ///  
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

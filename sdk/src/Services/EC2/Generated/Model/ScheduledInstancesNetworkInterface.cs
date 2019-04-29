@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The IDs of one or more security groups.
+        /// The IDs of the security groups.
         /// </para>
         /// </summary>
         public List<string> Groups
@@ -161,7 +161,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// One or more specific IPv6 addresses from the subnet range.
+        /// The specific IPv6 addresses from the subnet range.
         /// </para>
         /// </summary>
         public List<ScheduledInstancesIpv6Address> Ipv6Addresses

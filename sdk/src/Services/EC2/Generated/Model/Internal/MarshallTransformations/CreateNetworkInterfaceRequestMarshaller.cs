@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetInterfaceType())
+                {
+                    request.Parameters.Add("InterfaceType", StringUtils.FromString(publicRequest.InterfaceType));
+                }
                 if(publicRequest.IsSetIpv6AddressCount())
                 {
                     request.Parameters.Add("Ipv6AddressCount", StringUtils.FromInt(publicRequest.Ipv6AddressCount));

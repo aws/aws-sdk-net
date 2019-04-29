@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Groups.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("interfaceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InterfaceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6AddressesSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceIpv6AddressUnmarshaller.Instance;

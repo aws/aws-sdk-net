@@ -2560,8 +2560,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM
-        /// Import/Export User Guide</a>.
+        /// Describes the specified conversion tasks or all your conversion tasks. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM Import/Export
+        /// User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -2700,7 +2701,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your export tasks.
+        /// Describes the specified export tasks or all your export tasks.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2958,12 +2959,10 @@ namespace Amazon.EC2
         /// The images available to you include public images, private images that you own, and
         /// private images owned by other AWS accounts for which you have explicit launch permissions.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// Deregistered images are included in the returned results for an unspecified interval
-        /// after deregistration.
+        /// Recently deregistered images might appear in the returned results for a short interval.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

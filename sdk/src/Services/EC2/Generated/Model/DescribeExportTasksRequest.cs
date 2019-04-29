@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportTasks operation.
-    /// Describes one or more of your export tasks.
+    /// Describes the specified export tasks or all your export tasks.
     /// </summary>
     public partial class DescribeExportTasksRequest : AmazonEC2Request
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExportTaskIds. 
         /// <para>
-        /// One or more export task IDs.
+        /// The export task IDs.
         /// </para>
         /// </summary>
         public List<string> ExportTaskIds

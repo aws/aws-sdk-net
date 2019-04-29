@@ -44,13 +44,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
         /// <para>
-        /// This is enabled by default. This property allows instances to be automatically placed
-        /// onto available Dedicated Hosts, when you are launching instances without specifying
-        /// a host ID.
+        /// Indicates whether the host accepts any untargeted instance launches that match its
+        /// instance type configuration, or if it only accepts Host tenancy instance launches
+        /// that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
+        /// Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide
+        /// for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>
-        /// Default: Enabled
+        /// Default: <code>on</code> 
         /// </para>
         /// </summary>
         public AutoPlacement AutoPlacement
@@ -68,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone for the Dedicated Hosts.
+        /// The Availability Zone in which to allocate the Dedicated Host.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,8 +109,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Specify the instance type for which to configure your Dedicated Hosts. When you specify
-        /// the instance type, that is the only instance type that you can launch onto that host.
+        /// Specifies the instance type for which to configure your Dedicated Hosts. When you
+        /// specify the instance type, that is the only instance type that you can launch onto
+        /// that host.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

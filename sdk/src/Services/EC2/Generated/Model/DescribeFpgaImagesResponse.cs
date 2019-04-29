@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FpgaImages. 
         /// <para>
-        /// Information about one or more FPGA images.
+        /// Information about the FPGA images.
         /// </para>
         /// </summary>
         public List<FpgaImage> FpgaImages

@@ -33,21 +33,13 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// A security group is for use with instances either in the EC2-Classic platform or in
-    /// a specific VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+    /// A security group acts as a virtual firewall for your instance to control inbound and
+    /// outbound traffic. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
     /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and
     /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
     /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
-    ///  <important> 
-    /// <para>
-    /// EC2-Classic: You can have up to 500 security groups.
-    /// </para>
     ///  
-    /// <para>
-    /// EC2-VPC: You can create up to 500 security groups per VPC.
-    /// </para>
-    ///  </important> 
     /// <para>
     /// When you create a security group, you specify a friendly name of your choice. You
     /// can have a security group for use in EC2-Classic with the same name as a security
@@ -66,6 +58,11 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can add or remove rules from your security groups using <a>AuthorizeSecurityGroupIngress</a>,
     /// <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupIngress</a>, and <a>RevokeSecurityGroupEgress</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+    /// VPC Limits</a>.
     /// </para>
     /// </summary>
     public partial class CreateSecurityGroupRequest : AmazonEC2Request
