@@ -1,3 +1,14 @@
+### 3.3.501.0 (2019-04-29 18:09 UTC)
+* EC2 (3.3.105.0)
+	* Adds support for Elastic Fabric Adapter (EFA) ENIs. 
+* Transfer (3.3.102.0)
+	* This release adds support for per-server host-key management. You can now specify the SSH RSA private key used by your SFTP server.
+* Core 3.3.101.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.500.0 (2019-04-26 19:02 UTC)
 * IdentityManagement (3.3.101.0)
 	* AWS Security Token Service (STS) enables you to request session tokens from the global STS endpoint that work in all AWS Regions. You can configure the global STS endpoint to vend session tokens that are compatible with all AWS Regions using the new IAM SetSecurityTokenServicePreferences API. 
