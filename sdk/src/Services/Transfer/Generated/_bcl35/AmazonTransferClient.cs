@@ -266,6 +266,9 @@ namespace Amazon.Transfer
         /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
         /// This exception is thrown when the client submits a malformed request.
         /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
         /// The request has failed because the AWS Transfer for SFTP service is not available.
         /// </exception>

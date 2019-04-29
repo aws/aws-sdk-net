@@ -37,6 +37,7 @@ namespace Amazon.Transfer.Model
         private string _arn;
         private EndpointDetails _endpointDetails;
         private EndpointType _endpointType;
+        private string _hostKeyFingerprint;
         private IdentityProviderDetails _identityProviderDetails;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
@@ -65,7 +66,11 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointDetails.
+        /// Gets and sets the property EndpointDetails. 
+        /// <para>
+        /// The virtual private cloud (VPC) endpoint settings that you configured for your SFTP
+        /// server.
+        /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
         {
@@ -80,7 +85,11 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointType.
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint that your SFTP server is connected to. If your SFTP server is
+        /// connected to a VPC endpoint, your server isn't accessible over the public internet.
+        /// </para>
         /// </summary>
         public EndpointType EndpointType
         {
@@ -92,6 +101,26 @@ namespace Amazon.Transfer.Model
         internal bool IsSetEndpointType()
         {
             return this._endpointType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostKeyFingerprint. 
+        /// <para>
+        /// This value contains the Message-Digest Algorithm (MD5) hash of the server's host key.
+        /// This value is equivalent to the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
+        /// command.
+        /// </para>
+        /// </summary>
+        public string HostKeyFingerprint
+        {
+            get { return this._hostKeyFingerprint; }
+            set { this._hostKeyFingerprint = value; }
+        }
+
+        // Check to see if HostKeyFingerprint property is set
+        internal bool IsSetHostKeyFingerprint()
+        {
+            return this._hostKeyFingerprint != null;
         }
 
         /// <summary>

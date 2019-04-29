@@ -179,7 +179,9 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// A unique string that identifies a user and is associated with a server as specified
-        /// by the <code>ServerId</code>.
+        /// by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum
+        /// of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+        /// and hyphen. The user name can't start with a hyphen.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

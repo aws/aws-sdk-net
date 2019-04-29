@@ -82,6 +82,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HostKeyFingerprint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostKeyFingerprint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityProviderDetails", targetDepth))
                 {
                     var unmarshaller = IdentityProviderDetailsUnmarshaller.Instance;

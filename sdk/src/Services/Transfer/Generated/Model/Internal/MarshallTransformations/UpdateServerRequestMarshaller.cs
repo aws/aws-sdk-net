@@ -85,6 +85,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointType);
                 }
 
+                if(publicRequest.IsSetHostKey())
+                {
+                    context.Writer.WritePropertyName("HostKey");
+                    context.Writer.Write(publicRequest.HostKey);
+                }
+
                 if(publicRequest.IsSetIdentityProviderDetails())
                 {
                     context.Writer.WritePropertyName("IdentityProviderDetails");

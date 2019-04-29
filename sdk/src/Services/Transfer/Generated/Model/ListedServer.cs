@@ -60,7 +60,11 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointType.
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of VPC endpoint that your SFTP server is connected to. If your SFTP server
+        /// is connected to a VPC endpoint, your server isn't accessible over the public internet.
+        /// </para>
         /// </summary>
         public EndpointType EndpointType
         {

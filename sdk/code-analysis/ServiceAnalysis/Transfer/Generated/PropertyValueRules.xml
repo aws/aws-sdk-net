@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CreateServerRequest.HostKey</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.CreateServerRequest.LoggingRole</property>
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
@@ -191,6 +195,10 @@
     <property>Amazon.Transfer.Model.UntagResourceRequest.Arn</property>
     <min>20</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateServerRequest.HostKey</property>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateServerRequest.LoggingRole</property>

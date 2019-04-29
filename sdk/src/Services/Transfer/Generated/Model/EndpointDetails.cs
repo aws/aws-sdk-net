@@ -28,14 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// 
+    /// The configuration settings for the virtual private cloud (VPC) endpoint for your SFTP
+    /// server.
     /// </summary>
     public partial class EndpointDetails
     {
         private string _vpcEndpointId;
 
         /// <summary>
-        /// Gets and sets the property VpcEndpointId.
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// The ID of the VPC endpoint.
+        /// </para>
         /// </summary>
         public string VpcEndpointId
         {
