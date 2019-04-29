@@ -169,8 +169,13 @@
     <Compile Include="Verifiers\DiagnosticVerifier.cs" />
     <Compile Include="Helpers\DiagnosticResult.cs" />
     <Compile Include="Helpers\DiagnosticVerifier.Helper.cs" />
+    <Compile Include="CSharpCodeFixVerifier`2+Test.cs" />
+    <Compile Include="CSharpCodeFixVerifier`2.cs" />
+    <Compile Include="CSharpVerifierHelper.cs" />
     <Compile Include="PropertyValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisualBasicCodeFixVerifier`2+Test.cs" />
+    <Compile Include="VisualBasicCodeFixVerifier`2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
