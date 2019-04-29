@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
+using Microsoft.CodeAnalysis.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
@@ -49,27 +50,40 @@ namespace Analyzer1.Test
     }";
             var expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 29).WithArguments("aa", "Name", "3");
 
-            await VerifyCS.VerifyAnalyzerAsync(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(
+                test,
+                expected,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 33, 16, 33).WithMessage("; expected"));
 
 
             test = test.Replace("\"aa\"", "\"aaa\"");
-            await VerifyCS.VerifyAnalyzerAsync(test);
+            await VerifyCS.VerifyAnalyzerAsync(
+                test,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 34, 16, 34).WithMessage("; expected"));
 
             test = test.Replace("\"aaa\"", "\"aaaaa\"");
-            await VerifyCS.VerifyAnalyzerAsync(test);
+            await VerifyCS.VerifyAnalyzerAsync(
+                test,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 36, 16, 36).WithMessage("; expected"));
 
             test = test.Replace("\"aaaaa\"", "\"aaaaaa\"");
 
             expected = VerifyCS.Diagnostic(Analyzer.MaxLengthRule).WithLocation(16, 29).WithArguments("aaaaaa", "Name", "5");
 
-            await VerifyCS.VerifyAnalyzerAsync(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(
+                test,
+                expected,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 37, 16, 37).WithMessage("; expected"));
 
 
             test = test.Replace("\"aaaaaa\"", "\"#aaa\"");
 
             expected = VerifyCS.Diagnostic(Analyzer.PatternRule).WithLocation(16, 29).WithArguments("#aaa", "[0-9a-z\\-_]+", "Name");
 
-            await VerifyCS.VerifyAnalyzerAsync(test, expected);
+            await VerifyCS.VerifyAnalyzerAsync(
+                test,
+                expected,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 35, 16, 35).WithMessage("; expected"));
         }
 
         [TestMethod]
@@ -156,7 +170,9 @@ namespace Analyzer1.Test
             await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
 
             testCode = test.Replace("expression", "(2*3)-someValue");
-            await VerifyCS.VerifyAnalyzerAsync(testCode);
+            await VerifyCS.VerifyAnalyzerAsync(
+                testCode,
+                DiagnosticResult.CompilerError("CS0103").WithSpan(16, 35, 16, 44).WithMessage("The name 'someValue' does not exist in the current context"));
 
             test = @"
     using System;
@@ -186,10 +202,15 @@ namespace Analyzer1.Test
             expected = VerifyCS.Diagnostic(Analyzer.MinLengthRule).WithLocation(16, 30).WithArguments("aa", "Name", "3");
 
             testCode = test.Replace("expression", @" ""a"" + ""a"" ");
-            await VerifyCS.VerifyAnalyzerAsync(testCode, expected);
+            await VerifyCS.VerifyAnalyzerAsync(
+                testCode,
+                expected,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 39, 16, 39).WithMessage("; expected"));
 
             testCode = test.Replace("expression", @"string.Format(""aa"")");
-            await VerifyCS.VerifyAnalyzerAsync(testCode);
+            await VerifyCS.VerifyAnalyzerAsync(
+                testCode,
+                DiagnosticResult.CompilerError("CS1002").WithSpan(16, 48, 16, 48).WithMessage("; expected"));
         }
     }
 }
