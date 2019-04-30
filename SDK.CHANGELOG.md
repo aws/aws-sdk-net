@@ -1,3 +1,22 @@
+### 3.3.502.0 (2019-04-30 18:24 UTC)
+* CodePipeline (3.3.101.0)
+	* This release contains an update to the PipelineContext object that includes the Pipeline ARN, and the Pipeline Execution Id. The ActionContext object is also updated to include the Action Execution Id.
+* DirectConnect (3.3.102.0)
+	* This release adds support for AWS Direct Connect customers to use AWS Transit Gateway with AWS Direct Connect gateway to route traffic between on-premise networks and their VPCs.
+* ManagedBlockchain (3.3.100.0)
+	* (New Service) Amazon Managed Blockchain is a fully managed service that makes it easy to create and manage scalable blockchain networks using popular open source frameworks.
+* Neptune (3.3.100.13)
+	* Adds a feature to allow customers to specify a custom parameter group when restoring a database cluster.
+* S3Control (3.3.101.0)
+	* Add support for Amazon S3 Batch Operations.
+* ServiceCatalog (3.3.102.0)
+	* Admin users can now associate/disassociate aws budgets with a portfolio or product in Service Catalog. End users can see the association by listing it or as part of the describe portfolio/product output. A new optional boolean parameter, "DisableTemplateValidation", is added to ProvisioningArtifactProperties data type. The purpose of the parameter is to enable or disable the CloudFormation template validtion when creating a product or a provisioning artifact.
+* Core 3.3.101.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.501.0 (2019-04-29 18:09 UTC)
 * EC2 (3.3.105.0)
 	* Adds support for Elastic Fabric Adapter (EFA) ENIs. 
