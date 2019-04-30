@@ -283,6 +283,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie](https://www.nuget.org/packages/AWSSDK.Macie/)
 	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
+* [AWSSDK.ManagedBlockchain](https://www.nuget.org/packages/AWSSDK.ManagedBlockchain/)
+	* (New Service) Amazon Managed Blockchain is a fully managed service that makes it easy to create and manage scalable blockchain networks using popular open source frameworks.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
 * [AWSSDK.MediaConnect](https://www.nuget.org/packages/AWSSDK.MediaConnect/)

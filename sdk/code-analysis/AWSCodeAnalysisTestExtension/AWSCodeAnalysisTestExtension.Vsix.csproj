@@ -468,6 +468,10 @@
       <Project>{73D8D7FB-FDE9-40C0-9D78-8A973EC0A763}</Project>
       <Name>AWSSDK.Macie.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ManagedBlockchain/AWSSDK.ManagedBlockchain.CodeAnalysis.csproj">
+      <Project>{E465FDEB-E1C8-4942-AD6B-7B91C4D5186A}</Project>
+      <Name>AWSSDK.ManagedBlockchain.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj">
       <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
       <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>
