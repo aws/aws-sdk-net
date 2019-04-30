@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeProduct operation
+    /// Response Unmarshaller for ListBudgetsForResource operation
     /// </summary>  
-    public class DescribeProductResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListBudgetsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeProductResponse response = new DescribeProductResponse();
+            ListBudgetsForResourceResponse response = new ListBudgetsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,16 +57,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     response.Budgets = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProductViewSummary", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth))
                 {
-                    var unmarshaller = ProductViewSummaryUnmarshaller.Instance;
-                    response.ProductViewSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisioningArtifacts", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ProvisioningArtifact, ProvisioningArtifactUnmarshaller>(ProvisioningArtifactUnmarshaller.Instance);
-                    response.ProvisioningArtifacts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextPageToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,9 +89,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             return new AmazonServiceCatalogException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeProductResponseUnmarshaller _instance = new DescribeProductResponseUnmarshaller();        
+        private static ListBudgetsForResourceResponseUnmarshaller _instance = new ListBudgetsForResourceResponseUnmarshaller();        
 
-        internal static DescribeProductResponseUnmarshaller GetInstance()
+        internal static ListBudgetsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +99,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeProductResponseUnmarshaller Instance
+        public static ListBudgetsForResourceResponseUnmarshaller Instance
         {
             get
             {

@@ -82,6 +82,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PortfolioShareToken
         {
             get { return this._portfolioShareToken; }

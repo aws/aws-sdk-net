@@ -32,9 +32,28 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribePortfolioResponse : AmazonWebServiceResponse
     {
+        private List<BudgetDetail> _budgets = new List<BudgetDetail>();
         private PortfolioDetail _portfolioDetail;
         private List<TagOptionDetail> _tagOptions = new List<TagOptionDetail>();
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property Budgets. 
+        /// <para>
+        /// Information about the associated budgets.
+        /// </para>
+        /// </summary>
+        public List<BudgetDetail> Budgets
+        {
+            get { return this._budgets; }
+            set { this._budgets = value; }
+        }
+
+        // Check to see if Budgets property is set
+        internal bool IsSetBudgets()
+        {
+            return this._budgets != null && this._budgets.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PortfolioDetail. 

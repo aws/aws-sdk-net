@@ -28,13 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeProduct operation.
+    /// This is the response object from the ListBudgetsForResource operation.
     /// </summary>
-    public partial class DescribeProductResponse : AmazonWebServiceResponse
+    public partial class ListBudgetsForResourceResponse : AmazonWebServiceResponse
     {
         private List<BudgetDetail> _budgets = new List<BudgetDetail>();
-        private ProductViewSummary _productViewSummary;
-        private List<ProvisioningArtifact> _provisioningArtifacts = new List<ProvisioningArtifact>();
+        private string _nextPageToken;
 
         /// <summary>
         /// Gets and sets the property Budgets. 
@@ -55,39 +54,23 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductViewSummary. 
+        /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// Summary information about the product view.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
-        public ProductViewSummary ProductViewSummary
+        [AWSProperty(Max=2024)]
+        public string NextPageToken
         {
-            get { return this._productViewSummary; }
-            set { this._productViewSummary = value; }
+            get { return this._nextPageToken; }
+            set { this._nextPageToken = value; }
         }
 
-        // Check to see if ProductViewSummary property is set
-        internal bool IsSetProductViewSummary()
+        // Check to see if NextPageToken property is set
+        internal bool IsSetNextPageToken()
         {
-            return this._productViewSummary != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProvisioningArtifacts. 
-        /// <para>
-        /// Information about the provisioning artifacts for the specified product.
-        /// </para>
-        /// </summary>
-        public List<ProvisioningArtifact> ProvisioningArtifacts
-        {
-            get { return this._provisioningArtifacts; }
-            set { this._provisioningArtifacts = value; }
-        }
-
-        // Check to see if ProvisioningArtifacts property is set
-        internal bool IsSetProvisioningArtifacts()
-        {
-            return this._provisioningArtifacts != null && this._provisioningArtifacts.Count > 0; 
+            return this._nextPageToken != null;
         }
 
     }

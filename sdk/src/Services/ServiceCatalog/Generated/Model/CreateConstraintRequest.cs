@@ -144,7 +144,7 @@ namespace Amazon.ServiceCatalog.Model
         ///  <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
         /// 
         /// </para>
-        ///  </dd> <dt>RESOUCE_UPDATE</dt> <dd> 
+        ///  </dd> <dt>RESOURCE_UPDATE</dt> <dd> 
         /// <para>
         /// Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
         /// </para>

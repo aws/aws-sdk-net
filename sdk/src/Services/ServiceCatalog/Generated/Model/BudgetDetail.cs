@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePortfolioShareStatus operation.
-    /// Gets the status of the specified portfolio share operation. This API can only be called
-    /// by the master account in the organization.
+    /// Information about a budget.
     /// </summary>
-    public partial class DescribePortfolioShareStatusRequest : AmazonServiceCatalogRequest
+    public partial class BudgetDetail
     {
-        private string _portfolioShareToken;
+        private string _budgetName;
 
         /// <summary>
-        /// Gets and sets the property PortfolioShareToken. 
+        /// Gets and sets the property BudgetName. 
         /// <para>
-        /// The token for the portfolio share operation. This token is returned either by CreatePortfolioShare
-        /// or by DeletePortfolioShare.
+        /// Name of the associated budget.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string PortfolioShareToken
+        [AWSProperty(Min=1, Max=100)]
+        public string BudgetName
         {
-            get { return this._portfolioShareToken; }
-            set { this._portfolioShareToken = value; }
+            get { return this._budgetName; }
+            set { this._budgetName = value; }
         }
 
-        // Check to see if PortfolioShareToken property is set
-        internal bool IsSetPortfolioShareToken()
+        // Check to see if BudgetName property is set
+        internal bool IsSetBudgetName()
         {
-            return this._portfolioShareToken != null;
+            return this._budgetName != null;
         }
 
     }

@@ -41,6 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// to an organization node.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string PortfolioShareToken
         {
             get { return this._portfolioShareToken; }
