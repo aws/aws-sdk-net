@@ -35,11 +35,60 @@ namespace Amazon.S3Control
     {
 
         
+        #region  CreateJob
+
+
+        /// <summary>
+        /// Creates an Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.IdempotencyException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        CreateJobResponse CreateJob(CreateJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
+        ///         operation.</returns>
+        IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
+        /// 
+        /// <returns>Returns a  CreateJobResult from S3Control.</returns>
+        CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
 
         /// <summary>
-        /// Removes the Public Access Block configuration for an Amazon Web Services account.
+        /// Deletes the block public access configuration for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -72,18 +121,66 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DescribeJob
+
+
+        /// <summary>
+        /// Retrieves the configuration parameters and status for a batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        DescribeJobResponse DescribeJob(DescribeJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeJobResult from S3Control.</returns>
+        DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
         /// <summary>
-        /// Retrieves the Public Access Block configuration for an Amazon Web Services account.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
-        /// This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against
-        /// an account that does not have a PublicAccessBlockConfiguration set.
+        /// 
         /// </exception>
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
@@ -113,12 +210,58 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  ListJobs
+
+
+        /// <summary>
+        /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+        /// making the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        ListJobsResponse ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
+        ///         operation.</returns>
+        IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
+        /// 
+        /// <returns>Returns a  ListJobsResult from S3Control.</returns>
+        ListJobsResponse EndListJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutPublicAccessBlock
 
 
         /// <summary>
-        /// Creates or modifies the Public Access Block configuration for an Amazon Web Services
-        /// account.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
@@ -148,6 +291,108 @@ namespace Amazon.S3Control
         /// 
         /// <returns>Returns a  PutPublicAccessBlockResult from S3Control.</returns>
         PutPublicAccessBlockResponse EndPutPublicAccessBlock(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateJobPriority
+
+
+        /// <summary>
+        /// Updates an existing job's priority.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJobPriority service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJobPriority operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobPriority
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateJobPriority(UpdateJobPriorityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJobPriority operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobPriority.</param>
+        /// 
+        /// <returns>Returns a  UpdateJobPriorityResult from S3Control.</returns>
+        UpdateJobPriorityResponse EndUpdateJobPriority(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateJobStatus
+
+
+        /// <summary>
+        /// Updates the status for the specified job. Use this operation to confirm that you want
+        /// to run a job or to cancel an existing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJobStatus service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.JobStatusException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJobStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobStatus
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateJobStatus(UpdateJobStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJobStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdateJobStatusResult from S3Control.</returns>
+        UpdateJobStatusResponse EndUpdateJobStatus(IAsyncResult asyncResult);
 
         #endregion
         

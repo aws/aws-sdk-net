@@ -248,11 +248,61 @@ namespace Amazon.S3Control
         #endregion
 
 
+        #region  CreateJob
+
+
+        /// <summary>
+        /// Creates an Amazon S3 batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.IdempotencyException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePublicAccessBlock
 
 
         /// <summary>
-        /// Removes the Public Access Block configuration for an Amazon Web Services account.
+        /// Deletes the block public access configuration for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -286,18 +336,67 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  DescribeJob
+
+
+        /// <summary>
+        /// Retrieves the configuration parameters and status for a batch operations job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPublicAccessBlock
 
 
         /// <summary>
-        /// Retrieves the Public Access Block configuration for an Amazon Web Services account.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
         /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
         /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
-        /// This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against
-        /// an account that does not have a PublicAccessBlockConfiguration set.
+        /// 
         /// </exception>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
@@ -328,12 +427,59 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  ListJobs
+
+
+        /// <summary>
+        /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+        /// making the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutPublicAccessBlock
 
 
         /// <summary>
-        /// Creates or modifies the Public Access Block configuration for an Amazon Web Services
-        /// account.
+        /// 
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
@@ -363,6 +509,110 @@ namespace Amazon.S3Control
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutPublicAccessBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateJobPriority
+
+
+        /// <summary>
+        /// Updates an existing job's priority.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJobPriority service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJobPriorityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJobPriority operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateJobPriorityResponse> UpdateJobPriorityAsync(UpdateJobPriorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateJobPriorityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateJobStatus
+
+
+        /// <summary>
+        /// Updates the status for the specified job. Use this operation to confirm that you want
+        /// to run a job or to cancel an existing job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJobStatus service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.JobStatusException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public virtual UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJobStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJobStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateJobStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

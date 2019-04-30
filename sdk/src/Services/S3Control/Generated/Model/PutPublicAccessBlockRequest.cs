@@ -29,8 +29,7 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPublicAccessBlock operation.
-    /// Creates or modifies the Public Access Block configuration for an Amazon Web Services
-    /// account.
+    /// 
     /// </summary>
     public partial class PutPublicAccessBlockRequest : AmazonS3ControlRequest
     {
@@ -38,13 +37,9 @@ namespace Amazon.S3Control.Model
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
-        /// <para>
-        /// The Account ID for the Amazon Web Services account whose Public Access Block configuration
-        /// you want to set.
-        /// </para>
+        /// Gets and sets the property AccountId.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=64)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -58,11 +53,7 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PublicAccessBlockConfiguration. 
-        /// <para>
-        /// The Public Access Block configuration that you want to apply to this Amazon Web Services
-        /// account.
-        /// </para>
+        /// Gets and sets the property PublicAccessBlockConfiguration.
         /// </summary>
         [AWSProperty(Required=true)]
         public PublicAccessBlockConfiguration PublicAccessBlockConfiguration
