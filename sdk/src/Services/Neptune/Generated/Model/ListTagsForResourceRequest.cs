@@ -58,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource
-        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
         /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>

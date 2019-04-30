@@ -28,12 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Neptune DB cluster. 
+    /// Contains the details of an Amazon Neptune DB cluster.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
-    /// 
     /// </para>
     /// </summary>
     public partial class DBCluster
@@ -579,7 +578,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -620,7 +619,7 @@ namespace Amazon.Neptune.Model
         /// connections across the Read Replicas that are available in a DB cluster. As clients
         /// request new connections to the reader endpoint, Neptune distributes the connection
         /// requests among the Read Replicas in the DB cluster. This functionality can help balance
-        /// your read workload across multiple Read Replicas in your DB cluster. 
+        /// your read workload across multiple Read Replicas in your DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -663,7 +662,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ReplicationSourceIdentifier. 
         /// <para>
-        /// Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier

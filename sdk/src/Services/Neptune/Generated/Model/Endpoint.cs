@@ -28,21 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the following actions:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeDBInstances</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteDBInstance</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// Specifies a connection endpoint.
     /// </summary>
     public partial class Endpoint
     {

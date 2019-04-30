@@ -33,12 +33,10 @@ namespace Amazon.Neptune.Model
     /// if you make certain modifications, or if you change the DB parameter group associated
     /// with the DB instance, you must reboot the instance for the changes to take effect.
     /// 
-    /// 
     ///  
     /// <para>
     /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
     /// results in a momentary outage, during which the DB instance status is set to rebooting.
-    /// 
     /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonNeptuneRequest
@@ -77,7 +75,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        ///  When <code>true</code>, the reboot is conducted through a MultiAZ failover. 
+        ///  When <code>true</code>, the reboot is conducted through a MultiAZ failover.
         /// </para>
         ///  
         /// <para>

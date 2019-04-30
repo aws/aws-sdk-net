@@ -152,7 +152,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// If this parameter is specified and the requested engine supports the <code>CharacterSetName</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// character sets for each engine version. 
+        /// character sets for each engine version.
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -172,7 +172,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// If this parameter is specified and the requested engine supports the <code>TimeZone</code>
         /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// time zones for each engine version. 
+        /// time zones for each engine version.
         /// </para>
         /// </summary>
         public bool ListSupportedTimezones
@@ -192,7 +192,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -212,7 +212,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
         /// value is available, a pagination token called a marker is included in the response
-        /// so that the following results can be retrieved. 
+        /// so that the following results can be retrieved.
         /// </para>
         ///  
         /// <para>

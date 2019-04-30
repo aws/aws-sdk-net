@@ -39,7 +39,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The customer identifier or the ARN of your DB instance. 
+        /// The customer identifier or the ARN of your DB instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

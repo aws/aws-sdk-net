@@ -44,7 +44,7 @@ namespace Amazon.Neptune.Model
     /// DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter
     /// group with a running DB cluster, you need to reboot the DB instances in the DB cluster
     /// without failover for the new DB cluster parameter group and associated settings to
-    /// take effect. 
+    /// take effect.
     /// </para>
     ///  <important> 
     /// <para>
@@ -142,7 +142,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the new DB cluster parameter group.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

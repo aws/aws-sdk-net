@@ -37,11 +37,7 @@ namespace Amazon.Neptune
     ///
     /// Amazon Neptune 
     /// <para>
-    ///  
-    /// </para>
-    ///  
-    /// <para>
-    ///  Amazon Neptune is a fast, reliable, fully-managed graph database service that makes
+    /// Amazon Neptune is a fast, reliable, fully-managed graph database service that makes
     /// it easy to build and run applications that work with highly connected datasets. The
     /// core of Amazon Neptune is a purpose-built, high-performance graph database engine
     /// optimized for storing billions of relationships and querying the graph with milliseconds
@@ -49,7 +45,7 @@ namespace Amazon.Neptune
     /// and their respective query languages Apache TinkerPop Gremlin and SPARQL, allowing
     /// you to easily build queries that efficiently navigate highly connected datasets. Neptune
     /// powers graph use cases such as recommendation engines, fraud detection, knowledge
-    /// graphs, drug discovery, and network security. 
+    /// graphs, drug discovery, and network security.
     /// </para>
     ///  
     /// <para>
@@ -60,10 +56,6 @@ namespace Amazon.Neptune
     /// reference, the parameter descriptions indicate whether a command is applied immediately,
     /// on the next instance reboot, or during the maintenance window. The reference structure
     /// is as follows, and we list following some related topics from the user guide.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Amazon Neptune API Reference</b> 
     /// </para>
     /// </summary>
     public partial class AmazonNeptuneClient : AmazonServiceClient, IAmazonNeptune
@@ -342,10 +334,10 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the AddSourceIdentifierToSubscription service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.SourceNotFoundException">
-        /// 
+        /// The source could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
-        /// 
+        /// The designated subscription could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
@@ -590,74 +582,7 @@ namespace Amazon.Neptune
         /// </para>
         ///  
         /// <para>
-        /// You can copy an encrypted DB cluster snapshot from another AWS Region. In that case,
-        /// the AWS Region where you call the <code>CopyDBClusterSnapshot</code> action is the
-        /// destination AWS Region for the encrypted DB cluster snapshot to be copied to. To copy
-        /// an encrypted DB cluster snapshot from another AWS Region, you must provide the following
-        /// values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for
-        /// the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS
-        /// Region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region
-        /// where the DB cluster snapshot is copied from. The pre-signed URL must be a valid request
-        /// for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the
-        /// source AWS Region that contains the encrypted DB cluster snapshot to be copied.
-        /// </para>
-        ///  
-        /// <para>
-        /// The pre-signed URL request must contain the following parameter values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier
-        /// for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination
-        /// AWS Region, and the action contained in the pre-signed URL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot
-        /// will be created in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
-        /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
-        /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:neptune-cluster1-snapshot-20161115</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-        /// Version 4 Signing Process</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
-        /// of the DB cluster snapshot in the destination AWS Region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
-        /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// ARN format for the source AWS Region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code>
-        /// in the pre-signed URL. 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To cancel the copy operation once it is in progress, delete the target DB cluster
-        /// snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB
-        /// cluster snapshot is in "copying" status.
+        /// You can't copy from one AWS Region to another.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
@@ -798,9 +723,7 @@ namespace Amazon.Neptune
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance. For
-        /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
-        /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
+        /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -923,7 +846,7 @@ namespace Amazon.Neptune
         /// DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter
         /// group with a running DB cluster, you need to reboot the DB instances in the DB cluster
         /// without failover for the new DB cluster parameter group and associated settings to
-        /// take effect. 
+        /// take effect.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1124,7 +1047,7 @@ namespace Amazon.Neptune
         /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
-        /// 
+        /// The designated option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
@@ -1189,13 +1112,13 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        ///  A DB parameter group is initially created with the default parameters for the database
+        /// A DB parameter group is initially created with the default parameters for the database
         /// engine used by the DB instance. To provide custom values for any of the parameters,
         /// you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once
         /// you've created a DB parameter group, you need to associate it with your DB instance
         /// using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a
         /// running DB instance, you need to reboot the DB instance without failover for the new
-        /// DB parameter group and associated settings to take effect. 
+        /// DB parameter group and associated settings to take effect.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1369,25 +1292,25 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the CreateEventSubscription service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.EventSubscriptionQuotaExceededException">
-        /// 
+        /// You have exceeded the number of events you can subscribe to.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSInvalidTopicException">
-        /// 
+        /// The SNS topic is invalid.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSNoAuthorizationException">
-        /// 
+        /// There is no SNS authorization.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSTopicArnNotFoundException">
-        /// 
+        /// The ARN of the SNS topic could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SourceNotFoundException">
-        /// 
+        /// The source could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionAlreadyExistException">
-        /// 
+        /// This subscription already exists.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionCategoryNotFoundException">
-        /// 
+        /// The designated subscription category could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
@@ -1649,7 +1572,7 @@ namespace Amazon.Neptune
         ///  If you request a final DB snapshot the status of the Amazon Neptune DB instance is
         /// <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code>
         /// is used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted. 
+        /// once submitted.
         /// </para>
         ///  
         /// <para>
@@ -1664,19 +1587,9 @@ namespace Amazon.Neptune
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The DB cluster is a Read Replica of another DB cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// The DB instance is the only instance in the DB cluster.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a>
-        /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
-        /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
-        /// instance in the DB cluster.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
@@ -1883,10 +1796,10 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the DeleteEventSubscription service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.InvalidEventSubscriptionStateException">
-        /// 
+        /// The event subscription is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
-        /// 
+        /// The designated subscription could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
@@ -2473,7 +2386,7 @@ namespace Amazon.Neptune
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
@@ -2766,7 +2679,7 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the DescribeEventSubscriptions service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
-        /// 
+        /// The designated subscription could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
@@ -3225,7 +3138,7 @@ namespace Amazon.Neptune
         /// Modifies the parameters of a DB cluster parameter group. To modify more than one
         /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <note> 
         /// <para>
@@ -3444,7 +3357,7 @@ namespace Amazon.Neptune
         /// users' change.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
-        /// 
+        /// The designated option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.ProvisionedIopsNotAvailableInAZException">
         /// Provisioned IOPS not available in the specified Availability Zone.
@@ -3508,7 +3421,7 @@ namespace Amazon.Neptune
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <note> 
         /// <para>
@@ -3678,22 +3591,22 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the ModifyEventSubscription service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.EventSubscriptionQuotaExceededException">
-        /// 
+        /// You have exceeded the number of events you can subscribe to.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSInvalidTopicException">
-        /// 
+        /// The SNS topic is invalid.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSNoAuthorizationException">
-        /// 
+        /// There is no SNS authorization.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SNSTopicArnNotFoundException">
-        /// 
+        /// The ARN of the SNS topic could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionCategoryNotFoundException">
-        /// 
+        /// The designated subscription category could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
-        /// 
+        /// The designated subscription could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
@@ -3744,7 +3657,7 @@ namespace Amazon.Neptune
         #region  PromoteReadReplicaDBCluster
 
         /// <summary>
-        /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+        /// Not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplicaDBCluster service method.</param>
         /// 
@@ -3808,12 +3721,10 @@ namespace Amazon.Neptune
         /// if you make certain modifications, or if you change the DB parameter group associated
         /// with the DB instance, you must reboot the instance for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
         /// results in a momentary outage, during which the DB instance status is set to rebooting.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
@@ -3944,10 +3855,10 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the RemoveSourceIdentifierFromSubscription service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.SourceNotFoundException">
-        /// 
+        /// The source could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
-        /// 
+        /// The designated subscription could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
@@ -4065,7 +3976,6 @@ namespace Amazon.Neptune
         /// reset specific parameters submit a list of the following: <code>ParameterName</code>
         /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
         /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
-        /// 
         /// 
         ///  
         /// <para>
@@ -4224,6 +4134,10 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBClusterAlreadyExistsException">
         /// User already has a DB cluster with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.DBClusterQuotaExceededException">
         /// User attempted to create a new DB cluster and the user has already reached the maximum
         /// allowed DB cluster quota.
@@ -4269,7 +4183,7 @@ namespace Amazon.Neptune
         /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
-        /// 
+        /// The designated option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across
@@ -4332,7 +4246,7 @@ namespace Amazon.Neptune
         /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
         /// days. The target DB cluster is created from the source DB cluster with the same configuration
         /// as the original DB cluster, except that the new DB cluster is created with the default
-        /// DB security group. 
+        /// DB security group.
         /// 
         ///  <note> 
         /// <para>
@@ -4352,6 +4266,10 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.DBClusterQuotaExceededException">
         /// User attempted to create a new DB cluster and the user has already reached the maximum
@@ -4395,7 +4313,7 @@ namespace Amazon.Neptune
         /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.OptionGroupNotFoundException">
-        /// 
+        /// The designated option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across

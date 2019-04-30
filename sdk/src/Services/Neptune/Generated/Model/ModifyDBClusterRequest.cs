@@ -278,7 +278,6 @@ namespace Amazon.Neptune.Model
         /// parameter is set to <code>true</code> for this request. If the parameter change results
         /// in an option group that enables OEM, this change can cause a brief (sub-second) period
         /// during which new connections are rejected but existing connections are not interrupted.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -328,12 +327,12 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter.
         /// </para>
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. 
+        /// for each AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -382,7 +381,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. 
+        /// for each AWS Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>

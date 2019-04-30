@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.
+    /// This is the response object from the DescribeDBClusters operation.
     /// </summary>
     public partial class DescribeDBClustersResponse : AmazonWebServiceResponse
     {

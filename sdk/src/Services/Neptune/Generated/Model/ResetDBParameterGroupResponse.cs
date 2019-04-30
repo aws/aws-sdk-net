@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a>
-    /// or <a>ResetDBParameterGroup</a> action.
+    /// This is the response object from the ResetDBParameterGroup operation.
     /// </summary>
     public partial class ResetDBParameterGroupResponse : AmazonWebServiceResponse
     {

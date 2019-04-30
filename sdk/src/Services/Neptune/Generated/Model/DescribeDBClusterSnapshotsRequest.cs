@@ -47,7 +47,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
         /// can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
-        /// This parameter is not case-sensitive. 
+        /// This parameter is not case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A specific DB cluster snapshot identifier to describe. This parameter can't be used
         /// in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is
-        /// stored as a lowercase string. 
+        /// stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -198,7 +198,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

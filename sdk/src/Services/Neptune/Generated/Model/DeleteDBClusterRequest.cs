@@ -71,12 +71,12 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
         ///  The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code>
-        /// is set to <code>false</code>. 
+        /// is set to <code>false</code>.
         /// </para>
         ///  <note> 
         /// <para>
         ///  Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
-        /// to true results in an error. 
+        /// to true results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.Neptune.Model
         ///  Determines whether a final DB cluster snapshot is created before the DB cluster is
         /// deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If
         /// <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster
-        /// is deleted. 
+        /// is deleted.
         /// </para>
         ///  <note> 
         /// <para>

@@ -39,7 +39,7 @@ namespace Amazon.Neptune.Model
     ///  If you request a final DB snapshot the status of the Amazon Neptune DB instance is
     /// <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code>
     /// is used to monitor the status of this operation. The action can't be canceled or reverted
-    /// once submitted. 
+    /// once submitted.
     /// </para>
     ///  
     /// <para>
@@ -54,19 +54,9 @@ namespace Amazon.Neptune.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The DB cluster is a Read Replica of another DB cluster.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// The DB instance is the only instance in the DB cluster.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a>
-    /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
-    /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
-    /// instance in the DB cluster.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonNeptuneRequest
     {
@@ -107,7 +97,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
         ///  The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is
-        /// set to <code>false</code>. 
+        /// set to <code>false</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -153,7 +143,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  Determines whether a final DB snapshot is created before the DB instance is deleted.
         /// If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code>
-        /// is specified, a DB snapshot is created before the DB instance is deleted. 
+        /// is specified, a DB snapshot is created before the DB instance is deleted.
         /// </para>
         ///  
         /// <para>

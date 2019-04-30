@@ -100,7 +100,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// An optional pagination token provided by a previous <a>DescribeDBClusters</a> request.
         /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>. 
+        /// up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -120,7 +120,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

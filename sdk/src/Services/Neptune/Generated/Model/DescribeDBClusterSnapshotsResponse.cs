@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Provides a list of DB cluster snapshots for the user as the result of a call to the
-    /// <a>DescribeDBClusterSnapshots</a> action.
+    /// This is the response object from the DescribeDBClusterSnapshots operation.
     /// </summary>
     public partial class DescribeDBClusterSnapshotsResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the PromoteReadReplicaDBCluster operation.
-    /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+    /// Not supported.
     /// </summary>
     public partial class PromoteReadReplicaDBClusterRequest : AmazonNeptuneRequest
     {
@@ -38,20 +38,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must match the identifier of an existing DBCluster Read Replica.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Example: <code>my-cluster-replica1</code> 
+        /// Not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -110,7 +110,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// included in the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>
@@ -138,7 +138,6 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  A value that indicates to return only parameters for a specific source. Parameter
         /// sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.
-        /// 
         /// </para>
         /// </summary>
         public string Source

@@ -48,6 +48,7 @@ namespace Amazon.Neptune.Model
         private List<string> _availabilityZones = new List<string>();
         private string _databaseName;
         private string _dbClusterIdentifier;
+        private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
@@ -81,7 +82,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The database name for the restored DB cluster.
+        /// Not supported.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -134,6 +135,33 @@ namespace Amazon.Neptune.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the DB cluster parameter group to associate with the new DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing DBClusterParameterGroup.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterParameterGroupName
+        {
+            get { return this._dbClusterParameterGroupName; }
+            set { this._dbClusterParameterGroupName = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupName property is set
+        internal bool IsSetDBClusterParameterGroupName()
+        {
+            return this._dbClusterParameterGroupName != null;
         }
 
         /// <summary>

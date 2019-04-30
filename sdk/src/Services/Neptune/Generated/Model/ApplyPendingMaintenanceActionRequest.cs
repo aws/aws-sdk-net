@@ -103,7 +103,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource that the pending maintenance action
-        /// applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
         /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>

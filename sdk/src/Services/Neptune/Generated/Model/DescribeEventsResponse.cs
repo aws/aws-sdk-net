@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeEvents</a> action.
+    /// This is the response object from the DescribeEvents operation.
     /// </summary>
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        ///  A list of <a>Event</a> instances. 
+        ///  A list of <a>Event</a> instances.
         /// </para>
         /// </summary>
         public List<Event> Events
@@ -58,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous Events request. If this parameter
         /// is specified, the response includes only records beyond the marker, up to the value
-        /// specified by <code>MaxRecords</code> . 
+        /// specified by <code>MaxRecords</code> .
         /// </para>
         /// </summary>
         public string Marker

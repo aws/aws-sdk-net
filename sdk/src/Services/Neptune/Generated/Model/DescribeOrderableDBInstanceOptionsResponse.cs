@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a>
-    /// action.
+    /// This is the response object from the DescribeOrderableDBInstanceOptions operation.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsResponse : AmazonWebServiceResponse
     {
@@ -41,7 +40,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous OrderableDBInstanceOptions request.
         /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code> . 
+        /// up to the value specified by <code>MaxRecords</code> .
         /// </para>
         /// </summary>
         public string Marker

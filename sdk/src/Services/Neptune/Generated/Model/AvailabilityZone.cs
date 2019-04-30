@@ -28,17 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains Availability Zone information.
-    /// 
-    ///  
-    /// <para>
-    ///  This data type is used as an element in the following data type:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>OrderableDBInstanceOption</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// Specifies an Availability Zone.
     /// </summary>
     public partial class AvailabilityZone
     {

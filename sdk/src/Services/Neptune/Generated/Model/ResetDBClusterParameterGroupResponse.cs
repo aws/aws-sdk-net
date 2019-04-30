@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ResetDBClusterParameterGroup operation.
     /// </summary>
     public partial class ResetDBClusterParameterGroupResponse : AmazonWebServiceResponse
     {

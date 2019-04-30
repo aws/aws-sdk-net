@@ -34,9 +34,7 @@ namespace Amazon.Neptune.Model
     ///  
     /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance. For
-    /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
-    /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
+    /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
     /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonNeptuneRequest
@@ -68,7 +66,6 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
-        /// 
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -196,7 +193,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, the default is used. 
+        /// this argument is omitted, the default is used.
         /// </para>
         ///  
         /// <para>
@@ -334,7 +331,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon
         /// Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon
-        /// Neptune will use your default encryption key. 
+        /// Neptune will use your default encryption key.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -473,12 +470,12 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled using the <code>BackupRetentionPeriod</code> parameter.
         /// </para>
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// for each AWS Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
         /// 
         /// </para>
@@ -530,7 +527,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+        /// available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
         /// 
         /// </para>
@@ -558,47 +555,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code>
-        /// action to be called in the source AWS Region where the DB cluster is replicated from.
-        /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region
-        /// replication from an encrypted DB cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API
-        /// action that can be executed in the source AWS Region that contains the encrypted DB
-        /// cluster to be copied.
-        /// </para>
-        ///  
-        /// <para>
-        /// The pre-signed URL request must contain the following parameter values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
-        /// the copy of the DB cluster in the destination AWS Region. This should refer to the
-        /// same KMS key for both the <code>CreateDBCluster</code> action that is called in the
-        /// destination AWS Region, and the action contained in the pre-signed URL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will
-        /// be created in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted
-        /// DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN)
-        /// format for the source AWS Region. For example, if you are copying an encrypted DB
-        /// cluster from the us-west-2 AWS Region, then your <code>ReplicationSourceIdentifier</code>
-        /// would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
-        /// Version 4 Signing Process</a>.
+        /// This parameter is not currently supported.
         /// </para>
         /// </summary>
         public string PreSignedUrl
@@ -651,7 +608,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the new DB cluster.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

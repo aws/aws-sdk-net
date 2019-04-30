@@ -96,7 +96,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PromotionTier. 
         /// <para>
         /// A value that specifies the order in which a Read Replica is promoted to the primary
-        /// instance after a failure of the existing primary instance. 
+        /// instance after a failure of the existing primary instance.
         /// </para>
         /// </summary>
         public int PromotionTier

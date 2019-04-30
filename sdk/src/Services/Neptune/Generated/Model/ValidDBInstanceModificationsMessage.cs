@@ -39,7 +39,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Valid storage options for your DB instance. 
+        /// Valid storage options for your DB instance.
         /// </para>
         /// </summary>
         public List<ValidStorageOptions> Storage

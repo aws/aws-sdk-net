@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     ///  
     /// <para>
     ///  This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class OrderableDBInstanceOption

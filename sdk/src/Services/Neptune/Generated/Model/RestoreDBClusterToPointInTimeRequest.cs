@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
     /// days. The target DB cluster is created from the source DB cluster with the same configuration
     /// as the original DB cluster, except that the new DB cluster is created with the default
-    /// DB security group. 
+    /// DB security group.
     /// 
     ///  <note> 
     /// <para>
@@ -48,6 +48,7 @@ namespace Amazon.Neptune.Model
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonNeptuneRequest
     {
         private string _dbClusterIdentifier;
+        private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _enableIAMDatabaseAuthentication;
         private string _kmsKeyId;
@@ -94,6 +95,33 @@ namespace Amazon.Neptune.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the DB cluster parameter group to associate with the new DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing DBClusterParameterGroup.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterParameterGroupName
+        {
+            get { return this._dbClusterParameterGroupName; }
+            set { this._dbClusterParameterGroupName = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupName property is set
+        internal bool IsSetDBClusterParameterGroupName()
+        {
+            return this._dbClusterParameterGroupName != null;
         }
 
         /// <summary>
@@ -290,27 +318,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property RestoreType. 
         /// <para>
-        /// The type of restore to be performed. You can specify one of the following values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
-        /// DB cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
-        /// DB cluster.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
-        /// the source DB cluster is earlier than 1.11.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
-        /// restored as a full copy of the source DB cluster.
+        /// The type of restore to be performed. The only type of restore currently supported
+        /// is <code>full-copy</code> (the default).
         /// </para>
         /// </summary>
         public string RestoreType
@@ -354,7 +363,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be applied to the restored DB cluster.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -372,7 +384,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
         /// A value that is set to <code>true</code> to restore the DB cluster to the latest restorable
-        /// backup time, and <code>false</code> otherwise. 
+        /// backup time, and <code>false</code> otherwise.
         /// </para>
         ///  
         /// <para>

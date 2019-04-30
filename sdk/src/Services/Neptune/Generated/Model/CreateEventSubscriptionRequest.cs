@@ -66,7 +66,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         ///  A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b>
-        /// to create the subscription but not active it. 
+        /// to create the subscription but not active it.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -86,7 +86,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  A list of event categories for a SourceType that you want to subscribe to. You can
         /// see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b>
-        /// action. 
+        /// action.
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -220,7 +220,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be applied to the new event subscription.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

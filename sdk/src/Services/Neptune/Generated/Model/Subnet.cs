@@ -28,8 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// Specifies a subnet.
+    /// 
+    ///  
+    /// <para>
+    ///  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
     /// action.
+    /// </para>
     /// </summary>
     public partial class Subnet
     {
@@ -38,7 +43,10 @@ namespace Amazon.Neptune.Model
         private string _subnetStatus;
 
         /// <summary>
-        /// Gets and sets the property SubnetAvailabilityZone.
+        /// Gets and sets the property SubnetAvailabilityZone. 
+        /// <para>
+        /// Specifies the EC2 Availability Zone that the subnet is in.
+        /// </para>
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
         {

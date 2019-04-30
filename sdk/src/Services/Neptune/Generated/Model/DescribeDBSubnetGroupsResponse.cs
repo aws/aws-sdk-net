@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a>
-    /// action.
+    /// This is the response object from the DescribeDBSubnetGroups operation.
     /// </summary>
     public partial class DescribeDBSubnetGroupsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroups. 
         /// <para>
-        ///  A list of <a>DBSubnetGroup</a> instances. 
+        ///  A list of <a>DBSubnetGroup</a> instances.
         /// </para>
         /// </summary>
         public List<DBSubnetGroup> DBSubnetGroups
@@ -59,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Neptune DB cluster parameter group. 
+    /// Contains the details of an Amazon Neptune DB cluster parameter group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBClusterParameterGroup

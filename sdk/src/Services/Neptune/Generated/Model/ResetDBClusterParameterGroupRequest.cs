@@ -34,7 +34,6 @@ namespace Amazon.Neptune.Model
     /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
     /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
     /// 
-    /// 
     ///  
     /// <para>
     ///  When resetting the entire group, dynamic parameters are updated immediately and static

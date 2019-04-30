@@ -41,9 +41,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SourceDBParameterGroupIdentifier. 
         /// <para>
-        ///  The identifier or ARN for the source DB parameter group. For information about creating
-        /// an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-        /// Constructing an Amazon Resource Name (ARN)</a>. 
+        /// The identifier or ARN for the source DB parameter group. For information about creating
+        /// an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         ///  
         /// <para>
@@ -74,7 +74,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the copied DB parameter group.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -118,19 +121,19 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Cannot be null, empty, or blank
+        /// Cannot be null, empty, or blank.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain from 1 to 255 letters, numbers, or hyphens
+        /// Must contain from 1 to 255 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// First character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>

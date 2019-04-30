@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Data returned from the <b>DescribePendingMaintenanceActions</b> action.
+    /// This is the response object from the DescribePendingMaintenanceActions operation.
     /// </summary>
     public partial class DescribePendingMaintenanceActionsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to a number of records specified by <code>MaxRecords</code>. 
+        /// the marker, up to a number of records specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

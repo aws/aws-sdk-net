@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Provides details about a DB cluster parameter group including the parameters in the
-    /// DB cluster parameter group.
+    /// This is the response object from the DescribeDBClusterParameters operation.
     /// </summary>
     public partial class DescribeDBClusterParametersResponse : AmazonWebServiceResponse
     {
@@ -41,7 +40,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous DescribeDBClusterParameters request.
         /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code> . 
+        /// up to the value specified by <code>MaxRecords</code> .
         /// </para>
         /// </summary>
         public string Marker

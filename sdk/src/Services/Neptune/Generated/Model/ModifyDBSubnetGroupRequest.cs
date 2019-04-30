@@ -60,7 +60,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         /// The name for the DB subnet group. This value is stored as a lowercase string. You
-        /// can't modify the default subnet group. 
+        /// can't modify the default subnet group.
         /// </para>
         ///  
         /// <para>

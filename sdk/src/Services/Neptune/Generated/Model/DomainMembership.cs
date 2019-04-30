@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// An Active Directory Domain membership record associated with the DB instance.
+    /// An Active Directory Domain membership record associated with a DB instance.
     /// </summary>
     public partial class DomainMembership
     {

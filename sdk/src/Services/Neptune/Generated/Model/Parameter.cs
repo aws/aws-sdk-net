@@ -28,14 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a>
-    /// and <a>ResetDBParameterGroup</a> actions. 
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a>
-    /// and <a>DescribeDBParameters</a> actions.
-    /// </para>
+    /// Specifies a parameter.
     /// </summary>
     public partial class Parameter
     {
@@ -145,7 +138,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
         /// be modified. Some parameters have security or operational implications that prevent
-        /// them from being changed. 
+        /// them from being changed.
         /// </para>
         /// </summary>
         public bool IsModifiable

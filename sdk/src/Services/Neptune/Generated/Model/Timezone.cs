@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// A time zone associated with a <a>DBInstance</a>. This data type is an element in the
-    /// response to the <a>DescribeDBInstances</a>, and the <a>DescribeDBEngineVersions</a>
-    /// actions.
+    /// A time zone associated with a <a>DBInstance</a>.
     /// </summary>
     public partial class Timezone
     {

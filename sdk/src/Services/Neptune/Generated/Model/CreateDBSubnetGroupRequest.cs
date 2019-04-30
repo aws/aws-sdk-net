@@ -106,7 +106,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to be assigned to the new DB subnet group.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

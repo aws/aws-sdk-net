@@ -28,17 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the following actions:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>ModifyDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RebootDBInstance</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// Specifies membership in a designated DB security group.
     /// </summary>
     public partial class DBSecurityGroupMembership
     {

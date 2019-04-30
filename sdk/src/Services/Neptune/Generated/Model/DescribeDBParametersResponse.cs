@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBParameters</a>
-    /// action.
+    /// This is the response object from the DescribeDBParameters operation.
     /// </summary>
     public partial class DescribeDBParametersResponse : AmazonWebServiceResponse
     {
@@ -39,9 +38,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous request. If this parameter is
+        /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -59,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  A list of <a>Parameter</a> values. 
+        /// A list of <a>Parameter</a> values.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

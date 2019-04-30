@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Neptune DB subnet group. 
+    /// Contains the details of an Amazon Neptune DB subnet group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBSubnetGroup
@@ -120,7 +120,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  Contains a list of <a>Subnet</a> elements. 
+        ///  Contains a list of <a>Subnet</a> elements.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+    /// Specifies a character set.
     /// </summary>
     public partial class CharacterSet
     {

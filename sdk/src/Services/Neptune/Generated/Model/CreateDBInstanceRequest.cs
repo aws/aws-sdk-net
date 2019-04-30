@@ -130,7 +130,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone that the DB instance is created in. 
+        ///  The EC2 Availability Zone that the DB instance is created in
         /// </para>
         ///  
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter
         /// is set to <code>true</code>. The specified Availability Zone must be in the same AWS
-        /// Region as the current endpoint. 
+        /// Region as the current endpoint.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -271,7 +271,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions. 
+        /// Not all DB instance classes are available in all AWS Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -329,11 +329,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The database name. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
+        /// Not supported.
         /// </para>
         /// </summary>
         public string DBName
@@ -508,7 +504,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// True to enable Performance Insights for the DB instance, and otherwise false. 
+        /// True to enable Performance Insights for the DB instance, and otherwise false.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -526,7 +522,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this instance. 
+        /// The name of the database engine to be used for this instance.
         /// </para>
         ///  
         /// <para>
@@ -568,7 +564,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. 
+        /// allocated for the DB instance.
         /// </para>
         /// </summary>
         public int Iops
@@ -669,7 +665,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  Not used. 
+        ///  Not used.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -833,7 +829,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The daily time range during which automated backups are created. 
+        ///  The daily time range during which automated backups are created.
         /// </para>
         ///  
         /// <para>
@@ -857,7 +853,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// The time range each week during which system maintenance can occur, in Universal Coordinated
-        /// Time (UTC). 
+        /// Time (UTC).
         /// </para>
         ///  
         /// <para>
@@ -866,7 +862,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. 
+        /// for each AWS Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>
@@ -919,7 +915,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// This parameter is not supported.
+        /// This flag should no longer be used.
         /// </para>
         /// </summary>
         [Obsolete("This parameter is not supported")]
@@ -985,7 +981,10 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to assign to the new instance.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -1038,7 +1037,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB instance. 
+        /// The time zone of the DB instance.
         /// </para>
         /// </summary>
         public string Timezone

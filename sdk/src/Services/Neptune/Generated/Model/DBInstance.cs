@@ -28,12 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Neptune DB instance. 
+    /// Contains the details of an Amazon Neptune DB instance.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
-    /// 
     /// </para>
     /// </summary>
     public partial class DBInstance
@@ -389,7 +388,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
         ///  Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code>
-        /// and <code>DBSecurityGroup.Status</code> subelements. 
+        /// and <code>DBSecurityGroup.Status</code> subelements.
         /// </para>
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
@@ -590,8 +589,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
-        /// DB instance. 
+        ///  Not supported: The encryption for DB instances is managed by the DB cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -795,7 +793,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -851,7 +849,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// This parameter is not supported.
+        /// This flag should no longer be used.
         /// </para>
         /// </summary>
         [Obsolete("This parameter is not supported")]
@@ -962,7 +960,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB instance is encrypted.
+        /// Not supported: The encryption for DB instances is managed by the DB cluster.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1016,7 +1014,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// Not supported. 
+        /// Not supported.
         /// </para>
         /// </summary>
         public string Timezone
