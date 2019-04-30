@@ -29,14 +29,14 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDirectConnectGatewayAssociationProposal operation.
-    /// Creates a proposal to associate the specified virtual private gateway with the specified
-    /// Direct Connect gateway.
+    /// Creates a proposal to associate the specified virtual private gateway or transit gateway
+    /// with the specified Direct Connect gateway.
     /// 
     ///  
     /// <para>
-    /// You can only associate a Direct Connect gateway and virtual private gateway when the
-    /// account that owns the Direct Connect gateway and the account that owns the virtual
-    /// private gateway have the same payer ID.
+    /// You can only associate a Direct Connect gateway and virtual private gateway or transit
+    /// gateway when the account that owns the Direct Connect gateway and the account that
+    /// owns the virtual private gateway or transit gateway have the same AWS Payer ID.
     /// </para>
     /// </summary>
     public partial class CreateDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
@@ -106,7 +106,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The ID of the virtual private gateway or transit gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

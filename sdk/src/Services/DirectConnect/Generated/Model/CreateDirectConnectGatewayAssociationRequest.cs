@@ -80,7 +80,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The ID of the virtual private gateway or transit gateway.
         /// </para>
         /// </summary>
         public string GatewayId

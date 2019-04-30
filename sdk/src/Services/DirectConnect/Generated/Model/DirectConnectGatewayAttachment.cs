@@ -33,6 +33,7 @@ namespace Amazon.DirectConnect.Model
     public partial class DirectConnectGatewayAttachment
     {
         private DirectConnectGatewayAttachmentState _attachmentState;
+        private DirectConnectGatewayAttachmentType _attachmentType;
         private string _directConnectGatewayId;
         private string _stateChangeError;
         private string _virtualInterfaceId;
@@ -76,6 +77,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAttachmentState()
         {
             return this._attachmentState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentType. 
+        /// <para>
+        /// The type of attachment.
+        /// </para>
+        /// </summary>
+        public DirectConnectGatewayAttachmentType AttachmentType
+        {
+            get { return this._attachmentType; }
+            set { this._attachmentType = value; }
+        }
+
+        // Check to see if AttachmentType property is set
+        internal bool IsSetAttachmentType()
+        {
+            return this._attachmentType != null;
         }
 
         /// <summary>

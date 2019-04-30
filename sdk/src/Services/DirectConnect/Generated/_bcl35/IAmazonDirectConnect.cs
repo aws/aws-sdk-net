@@ -46,8 +46,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts a proposal request to attach a virtual private gateway to a Direct Connect
-        /// gateway.
+        /// Accepts a proposal request to attach a virtual private gateway or transit gateway
+        /// to a Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptDirectConnectGatewayAssociationProposal service method.</param>
         /// 
@@ -327,6 +327,66 @@ namespace Amazon.DirectConnect
         /// <returns>Returns a  AllocatePublicVirtualInterfaceResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         AllocatePublicVirtualInterfaceResponse EndAllocatePublicVirtualInterface(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AllocateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Provisions a transit virtual interface to be owned by the specified AWS account. Use
+        /// this type of interface to connect a transit gateway to your Direct Connect gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a connection provisions a transit virtual interface to be owned by the
+        /// specified AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a transit virtual interface, it must be confirmed by the owner using
+        /// <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit
+        /// virtual interface is in the <code>requested</code> state and is not available to handle
+        /// traffic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the AllocateTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        AllocateTransitVirtualInterfaceResponse AllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateTransitVirtualInterface
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        IAsyncResult BeginAllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AllocateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateTransitVirtualInterface.</param>
+        /// 
+        /// <returns>Returns a  AllocateTransitVirtualInterfaceResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        AllocateTransitVirtualInterfaceResponse EndAllocateTransitVirtualInterface(IAsyncResult asyncResult);
 
         #endregion
         
@@ -671,6 +731,58 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ConfirmTransitVirtualInterface
+
+
+        /// <summary>
+        /// Accepts ownership of a transit virtual interface created by another AWS account.
+        /// 
+        ///  
+        /// <para>
+        ///  After the owner of the transit virtual interface makes this call, the specified transit
+        /// virtual interface is created and made available to handle traffic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the ConfirmTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        ConfirmTransitVirtualInterfaceResponse ConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmTransitVirtualInterface
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        IAsyncResult BeginConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfirmTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmTransitVirtualInterface.</param>
+        /// 
+        /// <returns>Returns a  ConfirmTransitVirtualInterfaceResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        ConfirmTransitVirtualInterfaceResponse EndConfirmTransitVirtualInterface(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateBGPPeer
 
 
@@ -909,14 +1021,14 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Creates a proposal to associate the specified virtual private gateway with the specified
-        /// Direct Connect gateway.
+        /// Creates a proposal to associate the specified virtual private gateway or transit gateway
+        /// with the specified Direct Connect gateway.
         /// 
         ///  
         /// <para>
-        /// You can only associate a Direct Connect gateway and virtual private gateway when the
-        /// account that owns the Direct Connect gateway and the account that owns the virtual
-        /// private gateway have the same payer ID.
+        /// You can only associate a Direct Connect gateway and virtual private gateway or transit
+        /// gateway when the account that owns the Direct Connect gateway and the account that
+        /// owns the virtual private gateway or transit gateway have the same AWS Payer ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal service method.</param>
@@ -1218,6 +1330,55 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Creates a transit virtual interface. A transit virtual interface is a VLAN that transports
+        /// traffic from a Direct Connect gateway to one or more transit gateways. A transit virtual
+        /// interface enables the connection of multiple VPCs attached to a transit gateway to
+        /// a Direct Connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        CreateTransitVirtualInterfaceResponse CreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitVirtualInterface
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        IAsyncResult BeginCreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitVirtualInterface.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitVirtualInterfaceResult from DirectConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        CreateTransitVirtualInterfaceResponse EndCreateTransitVirtualInterface(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBGPPeer
 
 
@@ -1423,7 +1584,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Deletes the association proposal request between the specified Direct Connect gateway
-        /// and virtual private gateway.
+        /// and virtual private gateway or transit gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociationProposal service method.</param>
         /// 
@@ -1796,7 +1957,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Describes one or more association proposals for connection between a virtual private
-        /// gateway and a Direct Connect gateway.
+        /// gateway or transit gateway and a Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociationProposals service method.</param>
         /// 

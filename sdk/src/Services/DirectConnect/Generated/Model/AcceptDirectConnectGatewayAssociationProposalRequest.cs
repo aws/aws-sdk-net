@@ -29,8 +29,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptDirectConnectGatewayAssociationProposal operation.
-    /// Accepts a proposal request to attach a virtual private gateway to a Direct Connect
-    /// gateway.
+    /// Accepts a proposal request to attach a virtual private gateway or transit gateway
+    /// to a Direct Connect gateway.
     /// </summary>
     public partial class AcceptDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the AWS account that owns the virtual private gateway.
+        /// The ID of the AWS account that owns the virtual private gateway or transit gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OverrideAllowedPrefixesToDirectConnectGateway. 
         /// <para>
-        /// Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+        /// Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
         /// </para>
         /// </summary>
         public List<RouteFilterPrefix> OverrideAllowedPrefixesToDirectConnectGateway

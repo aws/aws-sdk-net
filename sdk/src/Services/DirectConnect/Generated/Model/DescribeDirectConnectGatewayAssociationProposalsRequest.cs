@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the DescribeDirectConnectGatewayAssociationProposals operation.
     /// Describes one or more association proposals for connection between a virtual private
-    /// gateway and a Direct Connect gateway.
+    /// gateway or transit gateway and a Direct Connect gateway.
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationProposalsRequest : AmazonDirectConnectRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedGatewayId. 
         /// <para>
-        /// The ID of the associated virtual private gateway.
+        /// The ID of the associated gateway.
         /// </para>
         /// </summary>
         public string AssociatedGatewayId

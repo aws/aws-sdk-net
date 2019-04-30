@@ -70,6 +70,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("attachmentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("directConnectGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

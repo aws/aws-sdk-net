@@ -29,7 +29,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Information about a Direct Connect gateway, which enables you to connect virtual interfaces
-    /// and virtual private gateways.
+    /// and virtual private gateway or transit gateways.
     /// </summary>
     public partial class DirectConnectGateway
     {

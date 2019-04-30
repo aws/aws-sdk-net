@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Information about the proposal request to attach a virtual private gateway to a DDirect
+    /// Information about the proposal request to attach a virtual private gateway to a Direct
     /// Connect gateway.
     /// </summary>
     public partial class DirectConnectGatewayAssociationProposal
@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedGateway. 
         /// <para>
-        /// Information about the associated virtual private gateway.
+        /// Information about the associated gateway.
         /// </para>
         /// </summary>
         public AssociatedGateway AssociatedGateway

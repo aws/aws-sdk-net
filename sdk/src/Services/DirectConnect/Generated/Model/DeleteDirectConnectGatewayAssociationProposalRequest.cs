@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the DeleteDirectConnectGatewayAssociationProposal operation.
     /// Deletes the association proposal request between the specified Direct Connect gateway
-    /// and virtual private gateway.
+    /// and virtual private gateway or transit gateway.
     /// </summary>
     public partial class DeleteDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
     {

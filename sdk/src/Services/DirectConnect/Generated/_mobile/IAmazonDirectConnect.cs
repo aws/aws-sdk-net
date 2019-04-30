@@ -129,6 +129,23 @@ namespace Amazon.DirectConnect
 
         #endregion
                 
+        #region  AllocateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        Task<AllocateTransitVirtualInterfaceResponse> AllocateTransitVirtualInterfaceAsync(AllocateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssociateConnectionWithLag
 
 
@@ -228,6 +245,23 @@ namespace Amazon.DirectConnect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
         Task<ConfirmPublicVirtualInterfaceResponse> ConfirmPublicVirtualInterfaceAsync(ConfirmPublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ConfirmTransitVirtualInterface
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        Task<ConfirmTransitVirtualInterfaceResponse> ConfirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -381,6 +415,23 @@ namespace Amazon.DirectConnect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        Task<CreateTransitVirtualInterfaceResponse> CreateTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

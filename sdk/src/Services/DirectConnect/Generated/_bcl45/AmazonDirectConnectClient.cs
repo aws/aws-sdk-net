@@ -249,8 +249,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts a proposal request to attach a virtual private gateway to a Direct Connect
-        /// gateway.
+        /// Accepts a proposal request to attach a virtual private gateway or transit gateway
+        /// to a Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptDirectConnectGatewayAssociationProposal service method.</param>
         /// 
@@ -528,6 +528,66 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
             
             return InvokeAsync<AllocatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AllocateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Provisions a transit virtual interface to be owned by the specified AWS account. Use
+        /// this type of interface to connect a transit gateway to your Direct Connect gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a connection provisions a transit virtual interface to be owned by the
+        /// specified AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a transit virtual interface, it must be confirmed by the owner using
+        /// <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit
+        /// virtual interface is in the <code>requested</code> state and is not available to handle
+        /// traffic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the AllocateTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        public virtual AllocateTransitVirtualInterfaceResponse AllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<AllocateTransitVirtualInterfaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        public virtual Task<AllocateTransitVirtualInterfaceResponse> AllocateTransitVirtualInterfaceAsync(AllocateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AllocateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -873,6 +933,58 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ConfirmTransitVirtualInterface
+
+
+        /// <summary>
+        /// Accepts ownership of a transit virtual interface created by another AWS account.
+        /// 
+        ///  
+        /// <para>
+        ///  After the owner of the transit virtual interface makes this call, the specified transit
+        /// virtual interface is created and made available to handle traffic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the ConfirmTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        public virtual ConfirmTransitVirtualInterfaceResponse ConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<ConfirmTransitVirtualInterfaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        public virtual Task<ConfirmTransitVirtualInterfaceResponse> ConfirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfirmTransitVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBGPPeer
 
 
@@ -1111,14 +1223,14 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Creates a proposal to associate the specified virtual private gateway with the specified
-        /// Direct Connect gateway.
+        /// Creates a proposal to associate the specified virtual private gateway or transit gateway
+        /// with the specified Direct Connect gateway.
         /// 
         ///  
         /// <para>
-        /// You can only associate a Direct Connect gateway and virtual private gateway when the
-        /// account that owns the Direct Connect gateway and the account that owns the virtual
-        /// private gateway have the same payer ID.
+        /// You can only associate a Direct Connect gateway and virtual private gateway or transit
+        /// gateway when the account that owns the Direct Connect gateway and the account that
+        /// owns the virtual private gateway or transit gateway have the same AWS Payer ID.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal service method.</param>
@@ -1420,6 +1532,55 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateTransitVirtualInterface
+
+
+        /// <summary>
+        /// Creates a transit virtual interface. A transit virtual interface is a VLAN that transports
+        /// traffic from a Direct Connect gateway to one or more transit gateways. A transit virtual
+        /// interface enables the connection of multiple VPCs attached to a transit gateway to
+        /// a Direct Connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitVirtualInterface service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        public virtual CreateTransitVirtualInterfaceResponse CreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitVirtualInterfaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        public virtual Task<CreateTransitVirtualInterfaceResponse> CreateTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBGPPeer
 
 
@@ -1625,7 +1786,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Deletes the association proposal request between the specified Direct Connect gateway
-        /// and virtual private gateway.
+        /// and virtual private gateway or transit gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociationProposal service method.</param>
         /// 
@@ -2020,7 +2181,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Describes one or more association proposals for connection between a virtual private
-        /// gateway and a Direct Connect gateway.
+        /// gateway or transit gateway and a Direct Connect gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDirectConnectGatewayAssociationProposals service method.</param>
         /// 

@@ -188,6 +188,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DirectConnect")]
+        public void AllocateTransitVirtualInterfaceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AllocateTransitVirtualInterfaceRequest>();
+            var marshaller = new AllocateTransitVirtualInterfaceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AllocateTransitVirtualInterfaceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AllocateTransitVirtualInterface").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context)
+                as AllocateTransitVirtualInterfaceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
         public void AssociateConnectionWithLagMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<AssociateConnectionWithLagRequest>();
@@ -354,6 +383,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context)
                 as ConfirmPublicVirtualInterfaceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
+        public void ConfirmTransitVirtualInterfaceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ConfirmTransitVirtualInterfaceRequest>();
+            var marshaller = new ConfirmTransitVirtualInterfaceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ConfirmTransitVirtualInterfaceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ConfirmTransitVirtualInterface").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context)
+                as ConfirmTransitVirtualInterfaceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -615,6 +673,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreatePublicVirtualInterfaceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DirectConnect")]
+        public void CreateTransitVirtualInterfaceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateTransitVirtualInterfaceRequest>();
+            var marshaller = new CreateTransitVirtualInterfaceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<CreateTransitVirtualInterfaceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateTransitVirtualInterface").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTransitVirtualInterfaceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

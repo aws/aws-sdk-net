@@ -417,6 +417,39 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  AllocateTransitVirtualInterface
+
+        internal virtual AllocateTransitVirtualInterfaceResponse AllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<AllocateTransitVirtualInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
+        public virtual Task<AllocateTransitVirtualInterfaceResponse> AllocateTransitVirtualInterfaceAsync(AllocateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AllocateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateConnectionWithLag
 
         internal virtual AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
@@ -611,6 +644,39 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ConfirmPublicVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ConfirmTransitVirtualInterface
+
+        internal virtual ConfirmTransitVirtualInterfaceResponse ConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<ConfirmTransitVirtualInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
+        public virtual Task<ConfirmTransitVirtualInterfaceResponse> ConfirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConfirmTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -908,6 +974,39 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePublicVirtualInterfaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitVirtualInterface
+
+        internal virtual CreateTransitVirtualInterfaceResponse CreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitVirtualInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitVirtualInterface operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
+        public virtual Task<CreateTransitVirtualInterfaceResponse> CreateTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitVirtualInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

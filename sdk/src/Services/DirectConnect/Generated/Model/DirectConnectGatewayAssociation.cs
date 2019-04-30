@@ -29,7 +29,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Information about an association between a Direct Connect gateway and a virtual private
-    /// gateway.
+    /// gateway or transit gateway.
     /// </summary>
     public partial class DirectConnectGatewayAssociation
     {
@@ -65,7 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedGateway. 
         /// <para>
-        /// Information about the associated virtual private gateway.
+        /// Information about the associated gateway.
         /// </para>
         /// </summary>
         public AssociatedGateway AssociatedGateway
@@ -109,8 +109,8 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associated</code>: The Direct Connect gateway and virtual private gateway are
-        /// successfully associated and ready to pass traffic.
+        ///  <code>associated</code>: The Direct Connect gateway and virtual private gateway or
+        /// transit gateway are successfully associated and ready to pass traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,9 +118,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociated</code>: The virtual private gateway is disassociated from the
-        /// Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual
-        /// private gateway is stopped.
+        ///  <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated
+        /// from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
+        /// virtual private gateway or transit gateway is stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>

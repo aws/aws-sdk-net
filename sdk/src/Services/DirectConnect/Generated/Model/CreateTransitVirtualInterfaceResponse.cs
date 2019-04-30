@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteDirectConnectGatewayAssociationProposal operation.
+    /// This is the response object from the CreateTransitVirtualInterface operation.
     /// </summary>
-    public partial class DeleteDirectConnectGatewayAssociationProposalResponse : AmazonWebServiceResponse
+    public partial class CreateTransitVirtualInterfaceResponse : AmazonWebServiceResponse
     {
-        private DirectConnectGatewayAssociationProposal _directConnectGatewayAssociationProposal;
+        private VirtualInterface _virtualInterface;
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayAssociationProposal. 
-        /// <para>
-        /// The ID of the associated gateway.
-        /// </para>
+        /// Gets and sets the property VirtualInterface.
         /// </summary>
-        public DirectConnectGatewayAssociationProposal DirectConnectGatewayAssociationProposal
+        public VirtualInterface VirtualInterface
         {
-            get { return this._directConnectGatewayAssociationProposal; }
-            set { this._directConnectGatewayAssociationProposal = value; }
+            get { return this._virtualInterface; }
+            set { this._virtualInterface = value; }
         }
 
-        // Check to see if DirectConnectGatewayAssociationProposal property is set
-        internal bool IsSetDirectConnectGatewayAssociationProposal()
+        // Check to see if VirtualInterface property is set
+        internal bool IsSetVirtualInterface()
         {
-            return this._directConnectGatewayAssociationProposal != null;
+            return this._virtualInterface != null;
         }
 
     }
