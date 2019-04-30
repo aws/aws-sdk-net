@@ -70,6 +70,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pipelineArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -672,6 +672,14 @@
     <pattern>[a-zA-Z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineContext.PipelineArn</property>
+    <pattern>arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PipelineContext.PipelineExecutionId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineContext.PipelineName</property>
     <min>1</min>
     <max>100</max>

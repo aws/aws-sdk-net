@@ -29,10 +29,20 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Represents information about a pipeline to a job worker.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code>
+    /// for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code>
+    /// fields are not populated for ThirdParty action jobs.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PipelineContext
     {
         private ActionContext _action;
+        private string _pipelineArn;
+        private string _pipelineExecutionId;
         private string _pipelineName;
         private StageContext _stage;
 
@@ -52,6 +62,42 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineArn. 
+        /// <para>
+        /// The pipeline execution ID provided to the job worker.
+        /// </para>
+        /// </summary>
+        public string PipelineArn
+        {
+            get { return this._pipelineArn; }
+            set { this._pipelineArn = value; }
+        }
+
+        // Check to see if PipelineArn property is set
+        internal bool IsSetPipelineArn()
+        {
+            return this._pipelineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineExecutionId. 
+        /// <para>
+        /// The pipeline Amazon Resource Name (ARN) provided to the job worker.
+        /// </para>
+        /// </summary>
+        public string PipelineExecutionId
+        {
+            get { return this._pipelineExecutionId; }
+            set { this._pipelineExecutionId = value; }
+        }
+
+        // Check to see if PipelineExecutionId property is set
+        internal bool IsSetPipelineExecutionId()
+        {
+            return this._pipelineExecutionId != null;
         }
 
         /// <summary>

@@ -184,6 +184,12 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Represents information about a pipeline to a job worker.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
+        /// ThirdParty jobs.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PipelineContext PipelineContext
         {

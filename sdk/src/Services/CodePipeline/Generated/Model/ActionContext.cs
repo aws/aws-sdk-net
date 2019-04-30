@@ -32,7 +32,26 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionContext
     {
+        private string _actionExecutionId;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ActionExecutionId. 
+        /// <para>
+        /// The system-generated unique ID that corresponds to an action's execution.
+        /// </para>
+        /// </summary>
+        public string ActionExecutionId
+        {
+            get { return this._actionExecutionId; }
+            set { this._actionExecutionId = value; }
+        }
+
+        // Check to see if ActionExecutionId property is set
+        internal bool IsSetActionExecutionId()
+        {
+            return this._actionExecutionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
