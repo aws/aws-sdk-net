@@ -14678,6 +14678,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpnConnection
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpnConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
+        ModifyVpnConnectionResponse ModifyVpnConnection(ModifyVpnConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpnConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpnConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
+        IAsyncResult BeginModifyVpnConnection(ModifyVpnConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpnConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpnConnection.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpnConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
+        ModifyVpnConnectionResponse EndModifyVpnConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  MonitorInstances
 
 

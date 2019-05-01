@@ -5842,6 +5842,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyVpnConnection
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpnConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
+        Task<ModifyVpnConnectionResponse> ModifyVpnConnectionAsync(ModifyVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  MonitorInstances
 
 

@@ -10901,6 +10901,39 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpnConnection
+
+        internal virtual ModifyVpnConnectionResponse ModifyVpnConnection(ModifyVpnConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpnConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpnConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
+        public virtual Task<ModifyVpnConnectionResponse> ModifyVpnConnectionAsync(ModifyVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpnConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         internal virtual MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
