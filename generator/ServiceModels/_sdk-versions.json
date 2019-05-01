@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.502.0",
+    "ProductVersion" : "3.3.503.0",
     "CoreVersion"    : "3.3.101.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.105.1",
+            "Version" : "3.3.106.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.4"
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.101.11",
+            "Version" : "3.3.102.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.4"
@@ -689,7 +689,7 @@
             "InPreview"               : false
         },
         "XRay"                            : {
-            "Version" : "3.3.100.13",
+            "Version" : "3.3.101.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.101.4"
