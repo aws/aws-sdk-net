@@ -28,9 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the secret to expose to your container. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+    /// An object representing the secret to expose to your container. Secrets can be exposed
+    /// to a container in the following ways:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// To inject sensitive data into your containers as environment variables, use the <code>secrets</code>
+    /// container definition parameter.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To reference sensitive information in the log configuration of a container, use the
+    /// <code>secretOptions</code> container definition parameter.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
     /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Secret
     {
@@ -40,7 +55,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The value to set as the environment variable on the container.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,11 +74,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ValueFrom. 
         /// <para>
-        /// The secret to expose to the container. If your task is using the EC2 launch type,
-        /// then supported values are either the full ARN of the AWS Secrets Manager secret or
-        /// the full ARN of the parameter in the AWS Systems Manager Parameter Store. If your
-        /// task is using the Fargate launch type, then the only supported value is the full ARN
-        /// of the parameter in the AWS Systems Manager Parameter Store.
+        /// The secret to expose to the container. The supported values are either the full ARN
+        /// of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems
+        /// Manager Parameter Store.
         /// </para>
         ///  <note> 
         /// <para>

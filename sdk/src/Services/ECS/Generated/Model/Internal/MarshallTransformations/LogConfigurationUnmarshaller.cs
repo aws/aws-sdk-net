@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("secretOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
+                    unmarshalledObject.SecretOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

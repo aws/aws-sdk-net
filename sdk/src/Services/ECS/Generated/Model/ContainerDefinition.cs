@@ -188,10 +188,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Your Amazon ECS container instances require at least version 1.26.0 of the container
-        /// agent to enable container dependencies. However, we recommend using the latest container
-        /// agent version. For information about checking your agent version and updating to the
-        /// latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// For tasks using the EC2 launch type, the container instances require at least version
+        /// 1.26.0 of the container agent to enable container dependencies. However, we recommend
+        /// using the latest container agent version. For information about checking your agent
+        /// version and updating to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
@@ -199,6 +199,11 @@ namespace Amazon.ECS.Model
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2)
+        /// region only and the task or service requires platform version 1.3.0 or later.
         /// </para>
         /// </summary>
         public List<ContainerDependency> DependsOn
@@ -670,7 +675,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
+        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
+        /// and <code>splunk</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
+        /// <code>journald</code>, and <code>json-file</code>.
         /// </para>
         ///  
         /// <para>
@@ -1067,10 +1079,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Your Amazon ECS container instances require at least version 1.26.0 of the container
-        /// agent to enable a container start timeout value. However, we recommend using the latest
-        /// container agent version. For information about checking your agent version and updating
-        /// to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// For tasks using the EC2 launch type, the container instances require at least version
+        /// 1.26.0 of the container agent to enable a container start timeout value. However,
+        /// we recommend using the latest container agent version. For information about checking
+        /// your agent version and updating to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
@@ -1078,6 +1090,11 @@ namespace Amazon.ECS.Model
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2)
+        /// region only and the task or service requires platform version 1.3.0 or later.
         /// </para>
         /// </summary>
         public int StartTimeout
@@ -1096,13 +1113,16 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StopTimeout. 
         /// <para>
         /// Time duration to wait before the container is forcefully killed if it doesn't exit
-        /// normally on its own. The stop timeout value for the container takes precedence over
-        /// the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
-        /// if used.
+        /// normally on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code>
+        /// value is 2 minutes. This parameter is available for tasks using the Fargate launch
+        /// type in the Ohio (us-east-2) region only and the task or service requires platform
+        /// version 1.3.0 or later.
         /// </para>
         ///  
         /// <para>
-        /// Your Amazon ECS container instances require at least version 1.26.0 of the container
+        /// For tasks using the EC2 launch type, the stop timeout value for the container takes
+        /// precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
+        /// parameter, if used. Container instances require at least version 1.26.0 of the container
         /// agent to enable a container stop timeout value. However, we recommend using the latest
         /// container agent version. For information about checking your agent version and updating
         /// to the latest version, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating

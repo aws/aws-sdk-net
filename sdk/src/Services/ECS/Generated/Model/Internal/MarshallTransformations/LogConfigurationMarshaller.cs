@@ -65,6 +65,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecretOptions())
+            {
+                context.Writer.WritePropertyName("secretOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecretOptionsListValue in requestObject.SecretOptions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SecretMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSecretOptionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

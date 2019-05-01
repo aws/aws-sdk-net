@@ -34,14 +34,28 @@ namespace Amazon.ECS.Model
     {
         private LogDriver _logDriver;
         private Dictionary<string, string> _options = new Dictionary<string, string>();
+        private List<Secret> _secretOptions = new List<Secret>();
 
         /// <summary>
         /// Gets and sets the property LogDriver. 
         /// <para>
         /// The log driver to use for the container. The valid values listed for this parameter
         /// are log drivers that the Amazon ECS container agent can communicate with by default.
-        /// If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
-        /// For more information about using the <code>awslogs</code> driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code>
+        /// and <code>splunk</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+        /// <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>,
+        /// <code>journald</code>, and <code>json-file</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
         /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -94,6 +108,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetOptions()
         {
             return this._options != null && this._options.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretOptions. 
+        /// <para>
+        /// The secrets to pass to the log configuration.
+        /// </para>
+        /// </summary>
+        public List<Secret> SecretOptions
+        {
+            get { return this._secretOptions; }
+            set { this._secretOptions = value; }
+        }
+
+        // Check to see if SecretOptions property is set
+        internal bool IsSetSecretOptions()
+        {
+            return this._secretOptions != null && this._secretOptions.Count > 0; 
         }
 
     }
