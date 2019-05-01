@@ -628,6 +628,38 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetTimeSeriesServiceStatistics
+
+        internal virtual GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTimeSeriesServiceStatisticsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTimeSeriesServiceStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTimeSeriesServiceStatistics operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetTimeSeriesServiceStatisticsResponse> GetTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTimeSeriesServiceStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTraceGraph
 
         internal virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)

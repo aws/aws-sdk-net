@@ -936,6 +936,63 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetTimeSeriesServiceStatistics
+
+        /// <summary>
+        /// Get an aggregation of service statistics defined by a specific time range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTimeSeriesServiceStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetTimeSeriesServiceStatistics service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTimeSeriesServiceStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTimeSeriesServiceStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTimeSeriesServiceStatistics operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTimeSeriesServiceStatistics
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTimeSeriesServiceStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTimeSeriesServiceStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetTimeSeriesServiceStatisticsResult from XRay.</returns>
+        public virtual GetTimeSeriesServiceStatisticsResponse EndGetTimeSeriesServiceStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTimeSeriesServiceStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTraceGraph
 
         /// <summary>
@@ -1021,7 +1078,7 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// For a full list of indexed fields and keywords that you can use in filter expressions,
-        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
         /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
         /// </summary>

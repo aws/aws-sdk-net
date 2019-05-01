@@ -43,7 +43,6 @@ namespace Amazon.XRay.Model
         /// The updated filter expression defining criteria by which to group traces.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
         public string FilterExpression
         {
             get { return this._filterExpression; }

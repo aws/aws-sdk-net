@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTraceSummaries Request Marshaller
+    /// GetTimeSeriesServiceStatistics Request Marshaller
     /// </summary>       
-    public class GetTraceSummariesRequestMarshaller : IMarshaller<IRequest, GetTraceSummariesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetTimeSeriesServiceStatisticsRequestMarshaller : IMarshaller<IRequest, GetTimeSeriesServiceStatisticsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTraceSummariesRequest)input);
+            return this.Marshall((GetTimeSeriesServiceStatisticsRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTraceSummariesRequest publicRequest)
+        public IRequest Marshall(GetTimeSeriesServiceStatisticsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/TraceSummaries";
+            string uriResourcePath = "/TimeSeriesServiceStatistics";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -72,10 +72,22 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndTime);
                 }
 
-                if(publicRequest.IsSetFilterExpression())
+                if(publicRequest.IsSetEntitySelectorExpression())
                 {
-                    context.Writer.WritePropertyName("FilterExpression");
-                    context.Writer.Write(publicRequest.FilterExpression);
+                    context.Writer.WritePropertyName("EntitySelectorExpression");
+                    context.Writer.Write(publicRequest.EntitySelectorExpression);
+                }
+
+                if(publicRequest.IsSetGroupARN())
+                {
+                    context.Writer.WritePropertyName("GroupARN");
+                    context.Writer.Write(publicRequest.GroupARN);
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("GroupName");
+                    context.Writer.Write(publicRequest.GroupName);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -84,33 +96,16 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetSampling())
+                if(publicRequest.IsSetPeriod())
                 {
-                    context.Writer.WritePropertyName("Sampling");
-                    context.Writer.Write(publicRequest.Sampling);
-                }
-
-                if(publicRequest.IsSetSamplingStrategy())
-                {
-                    context.Writer.WritePropertyName("SamplingStrategy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SamplingStrategyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SamplingStrategy, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("Period");
+                    context.Writer.Write(publicRequest.Period);
                 }
 
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
                     context.Writer.Write(publicRequest.StartTime);
-                }
-
-                if(publicRequest.IsSetTimeRangeType())
-                {
-                    context.Writer.WritePropertyName("TimeRangeType");
-                    context.Writer.Write(publicRequest.TimeRangeType);
                 }
 
         
@@ -122,9 +117,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTraceSummariesRequestMarshaller _instance = new GetTraceSummariesRequestMarshaller();        
+        private static GetTimeSeriesServiceStatisticsRequestMarshaller _instance = new GetTimeSeriesServiceStatisticsRequestMarshaller();        
 
-        internal static GetTraceSummariesRequestMarshaller GetInstance()
+        internal static GetTimeSeriesServiceStatisticsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +127,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTraceSummariesRequestMarshaller Instance
+        public static GetTimeSeriesServiceStatisticsRequestMarshaller Instance
         {
             get
             {

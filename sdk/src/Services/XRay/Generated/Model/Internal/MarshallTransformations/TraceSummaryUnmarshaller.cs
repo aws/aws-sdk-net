@@ -142,6 +142,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MatchedEventTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.MatchedEventTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceARNs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceARNDetail, ResourceARNDetailUnmarshaller>(ResourceARNDetailUnmarshaller.Instance);

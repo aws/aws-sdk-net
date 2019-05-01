@@ -54,7 +54,7 @@ namespace Amazon.XRay.Model
     ///  
     /// <para>
     /// For a full list of indexed fields and keywords that you can use in filter expressions,
-    /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
+    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
     /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -64,7 +64,9 @@ namespace Amazon.XRay.Model
         private string _filterExpression;
         private string _nextToken;
         private bool? _sampling;
+        private SamplingStrategy _samplingStrategy;
         private DateTime? _startTime;
+        private TimeRangeType _timeRangeType;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -92,7 +94,6 @@ namespace Amazon.XRay.Model
         /// meet certain requirements.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
         public string FilterExpression
         {
             get { return this._filterExpression; }
@@ -143,6 +144,25 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SamplingStrategy. 
+        /// <para>
+        /// A paramater to indicate whether to enable sampling on trace summaries. Input parameters
+        /// are Name and Value.
+        /// </para>
+        /// </summary>
+        public SamplingStrategy SamplingStrategy
+        {
+            get { return this._samplingStrategy; }
+            set { this._samplingStrategy = value; }
+        }
+
+        // Check to see if SamplingStrategy property is set
+        internal bool IsSetSamplingStrategy()
+        {
+            return this._samplingStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start of the time frame for which to retrieve traces.
@@ -159,6 +179,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeRangeType. 
+        /// <para>
+        /// A parameter to indicate whether to query trace summaries by TraceId or Event time.
+        /// </para>
+        /// </summary>
+        public TimeRangeType TimeRangeType
+        {
+            get { return this._timeRangeType; }
+            set { this._timeRangeType = value; }
+        }
+
+        // Check to see if TimeRangeType property is set
+        internal bool IsSetTimeRangeType()
+        {
+            return this._timeRangeType != null;
         }
 
     }

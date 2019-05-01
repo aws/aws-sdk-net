@@ -45,6 +45,7 @@ namespace Amazon.XRay.Model
         private string _id;
         private List<InstanceIdDetail> _instanceIds = new List<InstanceIdDetail>();
         private bool? _isPartial;
+        private DateTime? _matchedEventTime;
         private List<ResourceARNDetail> _resourceARNs = new List<ResourceARNDetail>();
         private double? _responseTime;
         private List<ResponseTimeRootCause> _responseTimeRootCauses = new List<ResponseTimeRootCause>();
@@ -286,6 +287,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetIsPartial()
         {
             return this._isPartial.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchedEventTime. 
+        /// <para>
+        /// The matched time stamp of a defined event.
+        /// </para>
+        /// </summary>
+        public DateTime MatchedEventTime
+        {
+            get { return this._matchedEventTime.GetValueOrDefault(); }
+            set { this._matchedEventTime = value; }
+        }
+
+        // Check to see if MatchedEventTime property is set
+        internal bool IsSetMatchedEventTime()
+        {
+            return this._matchedEventTime.HasValue; 
         }
 
         /// <summary>

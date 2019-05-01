@@ -782,6 +782,50 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetTimeSeriesServiceStatistics
+
+
+        /// <summary>
+        /// Get an aggregation of service statistics defined by a specific time range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTimeSeriesServiceStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetTimeSeriesServiceStatistics service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTimeSeriesServiceStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTimeSeriesServiceStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTimeSeriesServiceStatistics operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetTimeSeriesServiceStatisticsResponse> GetTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTimeSeriesServiceStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTraceGraph
 
 
@@ -855,7 +899,7 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// For a full list of indexed fields and keywords that you can use in filter expressions,
-        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
         /// Filter Expressions</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
         /// </summary>

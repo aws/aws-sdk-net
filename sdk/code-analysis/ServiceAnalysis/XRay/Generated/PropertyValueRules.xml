@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.XRay.Model.CreateGroupRequest.FilterExpression</property>
-    <min>1</min>
-    <max>2000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.XRay.Model.CreateGroupRequest.GroupName</property>
     <min>1</min>
     <max>32</max>
@@ -46,9 +41,19 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.XRay.Model.GetTraceSummariesRequest.FilterExpression</property>
+    <property>Amazon.XRay.Model.GetTimeSeriesServiceStatisticsRequest.EntitySelectorExpression</property>
     <min>1</min>
-    <max>2000</max>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetTimeSeriesServiceStatisticsRequest.GroupARN</property>
+    <min>1</min>
+    <max>400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.XRay.Model.GetTimeSeriesServiceStatisticsRequest.GroupName</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.PutEncryptionConfigRequest.KeyId</property>
@@ -66,11 +71,6 @@
   <property-value-rule>
     <property>Amazon.XRay.Model.PutTelemetryRecordsRequest.ResourceARN</property>
     <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.XRay.Model.UpdateGroupRequest.FilterExpression</property>
-    <min>1</min>
-    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.UpdateGroupRequest.GroupARN</property>

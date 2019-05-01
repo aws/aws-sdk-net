@@ -28,50 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateGroup operation.
-    /// Creates a group resource with a name and a filter expression.
+    /// The name and value of a sampling rule to apply to a trace summary.
     /// </summary>
-    public partial class CreateGroupRequest : AmazonXRayRequest
+    public partial class SamplingStrategy
     {
-        private string _filterExpression;
-        private string _groupName;
+        private SamplingStrategyName _name;
+        private double? _value;
 
         /// <summary>
-        /// Gets and sets the property FilterExpression. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The filter expression defining criteria by which to group traces.
+        /// The name of a sampling rule.
         /// </para>
         /// </summary>
-        public string FilterExpression
+        public SamplingStrategyName Name
         {
-            get { return this._filterExpression; }
-            set { this._filterExpression = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if FilterExpression property is set
-        internal bool IsSetFilterExpression()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._filterExpression != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The case-sensitive name of the new group. Default is a reserved name and names must
-        /// be unique.
+        /// The value of a sampling rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string GroupName
+        public double Value
         {
-            get { return this._groupName; }
-            set { this._groupName = value; }
+            get { return this._value.GetValueOrDefault(); }
+            set { this._value = value; }
         }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._groupName != null;
+            return this._value.HasValue; 
         }
 
     }
