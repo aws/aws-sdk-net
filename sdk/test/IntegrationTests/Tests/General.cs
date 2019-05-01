@@ -210,7 +210,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        
+        [TestMethod]
+        [TestCategory("General")]
+        public void TestAnonymousCredentialsGetThroughPipeline()
+        {
+            using (var client = new Amazon.DynamoDBv2.AmazonDynamoDBClient(new AnonymousAWSCredentials()))
+            {
+                try
+                {
+                    client.ListTables();
+                }
+                catch(AmazonServiceException e)
+                {
+                    if(e.StatusCode != HttpStatusCode.BadRequest)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+
+
         [TestMethod]
         [TestCategory("General")]
         public void TestSerializaingObjects()

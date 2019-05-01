@@ -171,7 +171,7 @@ namespace Amazon.Runtime.Internal
         private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
         {            
             var options = requestContext.Options;
-            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null)
+            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && requestContext.ImmutableCredentials != null)
             {
                 //Endpoint discovery is supported by this operation and we have an endpoint operation available to use                
                 var endpointDiscoveryData = options.EndpointDiscoveryMarshaller.Marshall(requestContext.OriginalRequest);
