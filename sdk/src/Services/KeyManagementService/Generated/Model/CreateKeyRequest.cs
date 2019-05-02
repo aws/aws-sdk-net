@@ -29,38 +29,27 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKey operation.
-    /// Creates a customer master key (CMK) in the caller's AWS account.
+    /// Creates a customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
+    /// master key</a> (CMK) in your AWS account.
     /// 
     ///  
     /// <para>
-    /// You can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but CMKs
-    /// are more commonly used to encrypt data keys, which are used to encrypt raw data. For
-    /// more information about data keys and the difference between CMKs and data keys, see
-    /// the following:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The <a>GenerateDataKey</a> operation
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-    /// Key Management Service Concepts</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If you plan to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">import
-    /// key material</a>, use the <code>Origin</code> parameter with a value of <code>EXTERNAL</code>
-    /// to create a CMK with no key material.
+    /// You can use a CMK to encrypt small amounts of data (up to 4096 bytes) directly. But
+    /// CMKs are more commonly used to encrypt the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+    /// keys</a> that are used to encrypt data.
     /// </para>
     ///  
     /// <para>
-    /// To create a CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
-    /// key store</a>, use <code>CustomKeyStoreId</code> parameter to specify the custom key
-    /// store. You must also use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
+    /// To create a CMK for imported key material, use the <code>Origin</code> parameter with
+    /// a value of <code>EXTERNAL</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// key store</a>, use the <code>CustomKeyStoreId</code> parameter to specify the custom
+    /// key store. You must also use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
     /// The AWS CloudHSM cluster that is associated with the custom key store must have at
-    /// least two active HSMs, each in a different Availability Zone in the Region.
+    /// least two active HSMs in different Availability Zones in the AWS Region.
     /// </para>
     ///  
     /// <para>
@@ -89,8 +78,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
+        /// For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+        /// Key Policy</a> section in the <i> <i>AWS Key Management Service Developer Guide</i>
+        /// </i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -118,7 +108,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
-        /// Creates the CMK in the specified <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Creates the CMK in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a> and the key material in its associated AWS CloudHSM cluster. To create
         /// a CMK in a custom key store, you must also specify the <code>Origin</code> parameter
         /// with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster that is associated
@@ -135,7 +125,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
@@ -179,11 +169,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The intended use of the CMK.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use CMKs only for symmetric encryption and decryption.
+        /// The cryptographic operations for which you can use the CMK. The only valid value is
+        /// <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt
+        /// data.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage
@@ -201,8 +189,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The source of the CMK's key material. You cannot change the origin after you create
-        /// the CMK.
+        /// The source of the key material for the CMK. You cannot change the origin after you
+        /// create the CMK.
         /// </para>
         ///  
         /// <para>
@@ -213,13 +201,13 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
         /// material so that you can import key material from your existing key management infrastructure.
-        /// For more information about importing key material into AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// For more information about importing key material into AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in
-        /// a AWS KMS <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// an AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a> and creates its key material in the associated AWS CloudHSM cluster.
         /// You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom
         /// key store.
@@ -251,8 +239,9 @@ namespace Amazon.KeyManagementService.Model
         /// If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>CreateKey</code> request to make
         /// a subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the risk that the
-        /// CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.
+        /// CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+        /// Key Policy</a> section of the <i> <i>AWS Key Management Service Developer Guide</i>
+        /// </i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -260,14 +249,14 @@ namespace Amazon.KeyManagementService.Model
         /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS
         /// principal (for example, an IAM user or role), you might need to enforce a delay before
         /// including the new principal in a key policy because the new principal might not be
-        /// immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+        /// immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
         /// that I make are not always immediately visible</a> in the <i>AWS Identity and Access
         /// Management User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK.
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
         /// Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  

@@ -33,8 +33,8 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// If you use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
-    /// with no key ID, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+    /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+    /// with no key ID. When you do, AWS KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
     /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
     /// </para>
     ///  
@@ -55,7 +55,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -80,14 +80,14 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates
-        /// the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
         /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
         /// </para>
         ///  
         /// <para>
         /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different
-        /// AWS account, you must use the key ARN or alias ARN.
+        /// ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a
+        /// CMK in a different AWS account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>

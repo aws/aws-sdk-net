@@ -44,13 +44,13 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+    /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
     /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>

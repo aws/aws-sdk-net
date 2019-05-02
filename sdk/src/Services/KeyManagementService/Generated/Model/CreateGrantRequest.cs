@@ -29,21 +29,27 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGrant operation.
-    /// Adds a grant to a customer master key (CMK). The grant specifies who can use the CMK
-    /// and under what conditions. When setting permissions, grants are an alternative to
-    /// key policies. 
+    /// Adds a grant to a customer master key (CMK). The grant allows the grantee principal
+    /// to use the CMK when the conditions specified in the grant are met. When setting permissions,
+    /// grants are an alternative to key policies. 
     /// 
+    ///  
+    /// <para>
+    /// To create a grant that allows a cryptographic operation only when the encryption context
+    /// in the operation request matches or includes a specified encryption context, use the
+    /// <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
+    /// </para>
     ///  
     /// <para>
     /// To perform this operation on a CMK in a different AWS account, specify the key ARN
     /// in the value of the <code>KeyId</code> parameter. For more information about grants,
-    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-    /// in the <i>AWS Key Management Service Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+    /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
@@ -61,10 +67,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// A structure that you can use to allow certain operations in the grant only when the
-        /// desired encryption context is present. For more information about encryption context,
-        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-        /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Allows a cryptographic operation only when the encryption context matches or includes
+        /// the encryption context specified in this structure. For more information about encryption
+        /// context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -86,10 +92,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify the principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
         /// (root), IAM users, IAM roles, federated users, and assumed role users. For examples
-        /// of the ARN syntax to use for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// of the ARN syntax to use for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS
         /// General Reference</i>.
         /// </para>
@@ -114,7 +120,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -175,8 +181,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name for identifying the grant. Use this value to prevent unintended creation
-        /// of duplicate grants when retrying this request.
+        /// A friendly name for identifying the grant. Use this value to prevent the unintended
+        /// creation of duplicate grants when retrying this request.
         /// </para>
         ///  
         /// <para>
@@ -234,10 +240,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify the principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
         /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
-        /// syntax to use for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// syntax to use for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS
         /// General Reference</i>.
         /// </para>

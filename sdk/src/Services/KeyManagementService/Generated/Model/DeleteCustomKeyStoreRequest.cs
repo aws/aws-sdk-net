@@ -29,19 +29,19 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomKeyStore operation.
-    /// Deletes a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key store</a>. This operation does not delete the AWS CloudHSM cluster that is associated
     /// with the custom key store, or affect any users or keys in the cluster.
     /// 
     ///  
     /// <para>
-    /// The custom key store that you delete cannot contain any AWS KMS <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
+    /// The custom key store that you delete cannot contain any AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
     /// master keys (CMKs)</a>. Before deleting the key store, verify that you will never
     /// need to use any of the CMKs in the key store for any cryptographic operations. Then,
     /// use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer master keys (CMKs) from
     /// the key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code>
     /// operation deletes the CMKs. Then it makes a best effort to delete the key material
-    /// from the associated cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+    /// from the associated cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
     /// the orphaned key material</a> from the cluster and its backups.
     /// </para>
     ///  
@@ -62,7 +62,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+    /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
     /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
     /// integration of AWS KMS with the isolation and control of a single-tenant key store.
     /// </para>

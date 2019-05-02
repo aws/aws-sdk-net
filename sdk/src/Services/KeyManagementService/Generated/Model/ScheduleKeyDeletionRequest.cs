@@ -45,10 +45,10 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
     /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-    /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+    /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
     /// the orphaned key material</a> from the cluster and its backups.
     /// </para>
     ///  
@@ -57,13 +57,13 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+    /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
     /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>

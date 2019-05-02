@@ -43,16 +43,16 @@ namespace Amazon.KeyManagementService.Model
     /// Unlike other operations, <code>ReEncrypt</code> is authorized twice, once as <code>ReEncryptFrom</code>
     /// on the source CMK and once as <code>ReEncryptTo</code> on the destination CMK. We
     /// recommend that you include the <code>"kms:ReEncrypt*"</code> permission in your <a
-    /// href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
     /// policies</a> to permit reencryption from or to the CMK. This permission is automatically
-    /// included in the key policy when you create a CMK through the console, but you must
+    /// included in the key policy when you create a CMK through the console. But you must
     /// include it manually when you create a CMK programmatically or when you set a key policy
     /// with the <a>PutKeyPolicy</a> operation.
     /// </para>
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
@@ -110,8 +110,8 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different
-        /// AWS account, you must use the key ARN or alias ARN.
+        /// ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a
+        /// CMK in a different AWS account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

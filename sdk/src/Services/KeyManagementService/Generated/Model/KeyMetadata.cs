@@ -57,7 +57,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+        /// The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
         /// Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
         /// Reference</i>.
         /// </para>
@@ -97,7 +97,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CloudHsmClusterId. 
         /// <para>
         /// The cluster ID of the AWS CloudHSM cluster that contains the key material for the
-        /// CMK. When you create a CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// CMK. When you create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, AWS KMS creates the key material for the CMK in the associated AWS
         /// CloudHSM cluster. This value is present only when the CMK is created in a custom key
         /// store.
@@ -137,7 +137,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
-        /// A unique identifier for the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a> that contains the CMK. This value is present only when the CMK is created
         /// in a custom key store.
         /// </para>
@@ -253,8 +253,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information
-        /// about the difference, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
+        /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -277,7 +277,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
         /// Service Developer Guide</i>.
         /// </para>
@@ -297,9 +297,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The cryptographic operations for which you can use the CMK. Currently the only allowed
-        /// value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a>
-        /// and <a>Decrypt</a> operations.
+        /// The cryptographic operations for which you can use the CMK. The only valid value is
+        /// <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt
+        /// data.
         /// </para>
         /// </summary>
         public KeyUsageType KeyUsage

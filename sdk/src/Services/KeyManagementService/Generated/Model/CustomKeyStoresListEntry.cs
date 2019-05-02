@@ -78,6 +78,12 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>INTERNAL_ERROR</code> - AWS KMS could not complete the request due to an internal
+        /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect
+        /// the custom key store before trying to connect again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>INVALID_CREDENTIALS</code> - AWS KMS does not have the correct password for
         /// the <code>kmsuser</code> crypto user in the AWS CloudHSM cluster.
         /// </para>
@@ -96,7 +102,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For help with connection failures, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// For help with connection failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
         /// Custom Key Stores</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -133,7 +139,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful.
-        /// For help resolving a connection failure, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
         /// a Custom Key Store</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -208,7 +214,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TrustAnchorCertificate. 
         /// <para>
-        /// The trust anchor certificate of the associated AWS CloudHSM cluster. When you <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
+        /// The trust anchor certificate of the associated AWS CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
         /// the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
         /// file.
         /// </para>

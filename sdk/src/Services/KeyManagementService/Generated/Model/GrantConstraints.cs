@@ -28,21 +28,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// A structure that you can use to allow certain operations in the grant only when the
-    /// desired encryption context is present. For more information about encryption context,
-    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Use this structure to allow cryptographic operations in the grant only when the operation
+    /// request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+    /// context</a>.
     /// 
     ///  
     /// <para>
-    /// Grant constraints apply only to operations that accept encryption context as input.
-    /// For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption
-    /// context as input. A grant that allows the <code>DescribeKey</code> operation does
-    /// so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code>
-    /// operation accepts encryption context as input. A grant that allows the <code>Encrypt</code>
-    /// operation does so only when the encryption context of the <code>Encrypt</code> operation
-    /// satisfies the grant constraints.
+    /// AWS KMS applies the grant constraints only when the grant allows a cryptographic operation
+    /// that accepts an encryption context as input, such as the following.
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>Encrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>Decrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyWithoutPlaintext</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ReEncrypt</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// AWS KMS does not apply the grant constraints to other operations, such as <a>DescribeKey</a>
+    /// or <a>ScheduleKeyDeletion</a>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// In a cryptographic operation, the encryption context in the decryption operation must
+    /// be an exact, case-sensitive match for the keys and values in the encryption context
+    /// of the encryption operation. Only the order of the pairs can vary.
+    /// </para>
+    ///  
+    /// <para>
+    /// However, in a grant constraint, the key in each key-value pair is not case sensitive,
+    /// but the value is case sensitive.
+    /// </para>
+    ///  
+    /// <para>
+    /// To avoid confusion, do not use multiple encryption context pairs that differ only
+    /// by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code>
+    /// and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For
+    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
+    /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GrantConstraints
     {
@@ -52,10 +91,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
         /// <para>
-        /// A list of key-value pairs that must be present in the encryption context of certain
-        /// subsequent operations that the grant allows. When certain subsequent operations allowed
-        /// by the grant include encryption context that matches this list, the grant allows the
-        /// operation. Otherwise, the grant does not allow the operation.
+        /// A list of key-value pairs that must match the encryption context in the cryptographic
+        /// operation request. The grant allows the operation only when the encryption context
+        /// in the request is the same as the encryption context specified in this constraint.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextEquals
@@ -73,11 +111,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextSubset. 
         /// <para>
-        /// A list of key-value pairs, all of which must be present in the encryption context
-        /// of certain subsequent operations that the grant allows. When certain subsequent operations
-        /// allowed by the grant include encryption context that matches this list or is a superset
-        /// of this list, the grant allows the operation. Otherwise, the grant does not allow
-        /// the operation.
+        /// A list of key-value pairs that must be included in the encryption context of the cryptographic
+        /// operation request. The grant allows the cryptographic operation only when the encryption
+        /// context in the request includes the key-value pairs specified in this constraint,
+        /// although it can include additional key-value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextSubset

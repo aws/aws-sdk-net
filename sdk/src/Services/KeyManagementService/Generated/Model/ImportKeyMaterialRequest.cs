@@ -32,7 +32,7 @@ namespace Amazon.KeyManagementService.Model
     /// Imports key material into an existing AWS KMS customer master key (CMK) that was created
     /// without key material. You cannot perform this operation on a CMK in a different AWS
     /// account. For more information about creating CMKs with no key material and then importing
-    /// key material, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
     /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// 
     ///  
@@ -83,7 +83,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>

@@ -98,10 +98,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
         /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
-        /// syntax for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon
         /// Web Services General Reference</i>.
         /// </para>

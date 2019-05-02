@@ -29,12 +29,12 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCustomKeyStores operation.
-    /// Gets information about <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key stores</a> in the account and region.
     /// 
     ///  
     /// <para>
-    /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+    /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
     /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
     /// integration of AWS KMS with the isolation and control of a single-tenant key store.
     /// </para>
@@ -63,7 +63,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    ///  For help repairing your custom key store, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore-html">Troubleshooting
+    ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
     /// Custom Key Stores</a> topic in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     /// </summary>

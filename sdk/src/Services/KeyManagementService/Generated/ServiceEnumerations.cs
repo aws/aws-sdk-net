@@ -93,6 +93,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly ConnectionErrorCodeType INSUFFICIENT_CLOUDHSM_HSMS = new ConnectionErrorCodeType("INSUFFICIENT_CLOUDHSM_HSMS");
         /// <summary>
+        /// Constant INTERNAL_ERROR for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType INTERNAL_ERROR = new ConnectionErrorCodeType("INTERNAL_ERROR");
+        /// <summary>
         /// Constant INVALID_CREDENTIALS for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType INVALID_CREDENTIALS = new ConnectionErrorCodeType("INVALID_CREDENTIALS");

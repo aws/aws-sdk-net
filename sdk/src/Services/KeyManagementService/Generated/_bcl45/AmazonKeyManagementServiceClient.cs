@@ -42,7 +42,7 @@ namespace Amazon.KeyManagementService
     /// <para>
     /// AWS Key Management Service (AWS KMS) is an encryption and key management web service.
     /// This guide describes the AWS KMS operations that you can call programmatically. For
-    /// general information about AWS KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">
+    /// general information about AWS KMS, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/">
     /// <i>AWS Key Management Service Developer Guide</i> </a>.
     /// </para>
     ///  <note> 
@@ -75,12 +75,12 @@ namespace Amazon.KeyManagementService
     /// Requests must be signed by using an access key ID and a secret access key. We strongly
     /// recommend that you <i>do not</i> use your AWS account (root) access key ID and secret
     /// key for everyday work with AWS KMS. Instead, use the access key ID and secret access
-    /// key for an IAM user, or you can use the AWS Security Token Service to generate temporary
+    /// key for an IAM user. You can also use the AWS Security Token Service to generate temporary
     /// security credentials that you can use to sign requests.
     /// </para>
     ///  
     /// <para>
-    /// All AWS KMS operations require <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// All AWS KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>.
     /// </para>
     ///  
@@ -94,8 +94,8 @@ namespace Amazon.KeyManagementService
     /// using the information collected by CloudTrail, you can determine what requests were
     /// made to AWS KMS, who made the request, when it was made, and so on. To learn more
     /// about CloudTrail, including how to turn it on and find your log files, see the <a
-    /// href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User
-    /// Guide</a>.
+    /// href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail
+    /// User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -107,31 +107,31 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-    /// Security Credentials</a> - This topic provides general information about the of credentials
-    /// used for accessing AWS.
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
+    /// Security Credentials</a> - This topic provides general information about the types
+    /// of credentials used for accessing AWS.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
     /// Security Credentials</a> - This section of the <i>IAM User Guide</i> describes how
     /// to create and use temporary security credentials.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a> - This set of topics walks you through the process of
     /// signing a request using an access key ID and a secret access key.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Commonly Used APIs</b> 
+    ///  <b>Commonly Used API Operations</b> 
     /// </para>
     ///  
     /// <para>
-    /// Of the APIs discussed in this guide, the following will prove the most useful for
-    /// most applications. You will likely perform actions other than these, such as creating
-    /// keys and assigning policies, by using the console.
+    /// Of the API operations discussed in this guide, the following will prove the most useful
+    /// for most applications. You will likely perform operations other than these, such as
+    /// creating keys and assigning policies, by using the console.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -359,13 +359,13 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling and canceling deletion of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -377,7 +377,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -389,7 +390,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -413,13 +414,13 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling and canceling deletion of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -431,7 +432,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -443,7 +445,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -469,13 +471,13 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling and canceling deletion of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -490,7 +492,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -502,7 +505,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -543,7 +546,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Connects or reconnects a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a> to its associated AWS CloudHSM cluster.
         /// 
         ///  
@@ -555,8 +558,8 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To connect a custom key store, its associated AWS CloudHSM cluster must have at least
-        /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters">DescribeClusters</a>
-        /// operation. To add HSMs to the cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm">CreateHsm</a>
+        /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
         /// operation.
         /// </para>
         ///  
@@ -572,7 +575,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated
         /// with the custom key store, creates the connection infrastructure, connects to the
-        /// cluster, logs into the AWS CloudHSM client as the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// cluster, logs into the AWS CloudHSM client as the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
         /// <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
         /// </para>
         ///  
@@ -589,7 +592,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// If you are having trouble connecting or disconnecting a custom key store, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// If you are having trouble connecting or disconnecting a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
         /// a Custom Key Store</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -598,10 +601,30 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the ConnectCustomKeyStore service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated AWS CloudHSM cluster did not meet
-        /// the configuration requirements for a custom key store. The cluster must be configured
-        /// with private subnets in at least two different Availability Zones in the Region. Also,
-        /// it must contain at least as many HSMs as the operation requires.
+        /// the configuration requirements for a custom key store.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The cluster must be configured with private subnets in at least two different Availability
+        /// Zones in the Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security
+        /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
+        /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
+        /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
+        /// security group ID. These rules are set by default when you create the cluster. Do
+        /// not delete or change them. To get information about a particular security group, use
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
+        /// use the AWS CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// operation.
+        /// </para>
         ///  
         /// <para>
         /// For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a>
@@ -609,19 +632,21 @@ namespace Amazon.KeyManagementService
         /// different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the AWS
         /// CloudHSM must contain at least one active HSM.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// For information about creating a private subnet for a AWS CloudHSM cluster, see <a
-        /// href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
-        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. To add HSMs, use the AWS
-        /// CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// For information about the requirements for an AWS CloudHSM cluster that is associated
+        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the Prerequisites</a> in the <i>AWS Key Management Service Developer Guide</i>. For
+        /// information about creating a private subnet for an AWS CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
+        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. For information about
+        /// cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure
+        /// a Default Security Group</a> in the <i> <i>AWS CloudHSM User Guide</i> </i>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
         /// The request was rejected because the AWS CloudHSM cluster that is associated with
         /// the custom key store is not active. Initialize and activate the cluster and try the
-        /// command again. For detailed instructions, see <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>AWS CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
@@ -696,8 +721,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -715,10 +741,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
-        /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
@@ -732,13 +759,13 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
-        /// <param name="targetKeyId">Identifies the CMK for which you are creating the alias. This value cannot be an alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.</param>
+        /// <param name="targetKeyId">Identifies the CMK to which the alias refers. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.AlreadyExistsException">
@@ -760,14 +787,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -784,8 +811,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -803,10 +831,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
-        /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
@@ -820,7 +849,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -847,14 +876,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -872,8 +901,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -891,10 +921,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
-        /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
@@ -908,13 +939,13 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
-        /// <param name="targetKeyId">Identifies the CMK for which you are creating the alias. This value cannot be an alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.</param>
+        /// <param name="targetKeyId">Identifies the CMK to which the alias refers. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -939,14 +970,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -986,95 +1017,36 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
-        /// key store</a> that is associated with an <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">AWS
+        /// Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a> that is associated with an <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">AWS
         /// CloudHSM cluster</a> that you own and manage.
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
         /// <para>
+        /// Before you create the custom key store, you must assemble the required elements, including
+        /// an AWS CloudHSM cluster that fulfills the requirements for a custom key store. For
+        /// details about the required elements, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the Prerequisites</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// When the operation completes successfully, it returns the ID of the new custom key
         /// store. Before you can use your new custom key store, you need to use the <a>ConnectCustomKeyStore</a>
-        /// operation to connect the new key store to its AWS CloudHSM cluster.
+        /// operation to connect the new key store to its AWS CloudHSM cluster. Even if you are
+        /// not going to use your custom key store immediately, you might want to connect it to
+        /// verify that all settings are correct and then disconnect it until you are ready to
+        /// use it.
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateCustomKeyStore</code> operation requires the following elements.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// You must specify an active AWS CloudHSM cluster in the same account and AWS Region
-        /// as the custom key store. You can use an existing cluster or <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/create-cluster.html">create
-        /// and activate a new AWS CloudHSM cluster</a> for the key store. AWS KMS does not require
-        /// exclusive use of the cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You must include the content of the <i>trust anchor certificate</i> for the cluster.
-        /// You created this certificate, and saved it in the <code>customerCA.crt</code> file,
-        /// when you <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialized
-        /// the cluster</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You must provide the password of the dedicated <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user</a> (CU) account in the cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// Before you create the custom key store, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/cloudhsm_mgmt_util-createUser.html">createUser</a>
-        /// command in <code>cloudhsm_mgmt_util</code> to create <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">a
-        /// crypto user (CU) named <code>kmsuser</code> </a>in specified AWS CloudHSM cluster.
-        /// AWS KMS uses the <code>kmsuser</code> CU account to create and manage key material
-        /// on your behalf. For instructions, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Create
-        /// the kmsuser Crypto User</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The AWS CloudHSM cluster that you specify must meet the following requirements.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The cluster must be active and be in the same AWS account and Region as the custom
-        /// key store.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Each custom key store must be associated with a different AWS CloudHSM cluster. The
-        /// cluster cannot be associated with another custom key store or have the same cluster
-        /// certificate as a cluster that is associated with another custom key store. To view
-        /// the cluster certificate, use the AWS CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
-        /// operation. Clusters that share a backup history have the same cluster certificate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The cluster must be configured with subnets in at least two different Availability
-        /// Zones in the Region. Because AWS CloudHSM is not supported in all Availability Zones,
-        /// we recommend that the cluster have subnets in all Availability Zones in the Region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The cluster must contain at least two active HSMs, each in a different Availability
-        /// Zone.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// New custom key stores are not automatically connected. After you create your custom
-        /// key store, use the <a>ConnectCustomKeyStore</a> operation to connect the custom key
-        /// store to its associated AWS CloudHSM cluster. Even if you are not going to use your
-        /// custom key store immediately, you might want to connect it to verify that all settings
-        /// are correct and then disconnect it until you are ready to use it.
-        /// </para>
-        ///  
-        /// <para>
-        /// If this operation succeeds, it returns the ID of the new custom key store. For help
-        /// with failures, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshoot
-        /// a Custom Key Store</a> in the <i>AWS KMS Developer Guide</i>.
+        /// For help with failures, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+        /// a Custom Key Store</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomKeyStore service method.</param>
@@ -1089,16 +1061,36 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Clusters that share a backup history have the same cluster certificate. To view the
-        /// cluster certificate of a cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated AWS CloudHSM cluster did not meet
-        /// the configuration requirements for a custom key store. The cluster must be configured
-        /// with private subnets in at least two different Availability Zones in the Region. Also,
-        /// it must contain at least as many HSMs as the operation requires.
+        /// the configuration requirements for a custom key store.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The cluster must be configured with private subnets in at least two different Availability
+        /// Zones in the Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security
+        /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
+        /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
+        /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
+        /// security group ID. These rules are set by default when you create the cluster. Do
+        /// not delete or change them. To get information about a particular security group, use
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
+        /// use the AWS CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// operation.
+        /// </para>
         ///  
         /// <para>
         /// For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a>
@@ -1106,19 +1098,21 @@ namespace Amazon.KeyManagementService
         /// different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the AWS
         /// CloudHSM must contain at least one active HSM.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// For information about creating a private subnet for a AWS CloudHSM cluster, see <a
-        /// href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
-        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. To add HSMs, use the AWS
-        /// CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// For information about the requirements for an AWS CloudHSM cluster that is associated
+        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the Prerequisites</a> in the <i>AWS Key Management Service Developer Guide</i>. For
+        /// information about creating a private subnet for an AWS CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
+        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. For information about
+        /// cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure
+        /// a Default Security Group</a> in the <i> <i>AWS CloudHSM User Guide</i> </i>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
         /// The request was rejected because the AWS CloudHSM cluster that is associated with
         /// the custom key store is not active. Initialize and activate the cluster and try the
-        /// command again. For detailed instructions, see <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>AWS CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotFoundException">
@@ -1136,7 +1130,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// When you <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
+        /// When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
         /// the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code>
         /// file.
         /// </para>
@@ -1180,21 +1174,27 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds a grant to a customer master key (CMK). The grant specifies who can use the CMK
-        /// and under what conditions. When setting permissions, grants are an alternative to
-        /// key policies. 
+        /// Adds a grant to a customer master key (CMK). The grant allows the grantee principal
+        /// to use the CMK when the conditions specified in the grant are met. When setting permissions,
+        /// grants are an alternative to key policies. 
         /// 
+        ///  
+        /// <para>
+        /// To create a grant that allows a cryptographic operation only when the encryption context
+        /// in the operation request matches or includes a specified encryption context, use the
+        /// <code>Constraints</code> parameter. For details, see <a>GrantConstraints</a>.
+        /// </para>
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// in the value of the <code>KeyId</code> parameter. For more information about grants,
-        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+        /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1209,7 +1209,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
         /// The request was rejected because the specified grant token is not valid.
@@ -1224,14 +1225,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1272,38 +1273,27 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a customer master key (CMK) in the caller's AWS account.
+        /// Creates a customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
+        /// master key</a> (CMK) in your AWS account.
         /// 
         ///  
         /// <para>
-        /// You can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but CMKs
-        /// are more commonly used to encrypt data keys, which are used to encrypt raw data. For
-        /// more information about data keys and the difference between CMKs and data keys, see
-        /// the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <a>GenerateDataKey</a> operation
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-        /// Key Management Service Concepts</a> in the <i>AWS Key Management Service Developer
-        /// Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you plan to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">import
-        /// key material</a>, use the <code>Origin</code> parameter with a value of <code>EXTERNAL</code>
-        /// to create a CMK with no key material.
+        /// You can use a CMK to encrypt small amounts of data (up to 4096 bytes) directly. But
+        /// CMKs are more commonly used to encrypt the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+        /// keys</a> that are used to encrypt data.
         /// </para>
         ///  
         /// <para>
-        /// To create a CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
-        /// key store</a>, use <code>CustomKeyStoreId</code> parameter to specify the custom key
-        /// store. You must also use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
+        /// To create a CMK for imported key material, use the <code>Origin</code> parameter with
+        /// a value of <code>EXTERNAL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store</a>, use the <code>CustomKeyStoreId</code> parameter to specify the custom
+        /// key store. You must also use the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>.
         /// The AWS CloudHSM cluster that is associated with the custom key store must have at
-        /// least two active HSMs, each in a different Availability Zone in the Region.
+        /// least two active HSMs in different Availability Zones in the AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -1315,10 +1305,30 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the CreateKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated AWS CloudHSM cluster did not meet
-        /// the configuration requirements for a custom key store. The cluster must be configured
-        /// with private subnets in at least two different Availability Zones in the Region. Also,
-        /// it must contain at least as many HSMs as the operation requires.
+        /// the configuration requirements for a custom key store.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The cluster must be configured with private subnets in at least two different Availability
+        /// Zones in the Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security
+        /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
+        /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
+        /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
+        /// security group ID. These rules are set by default when you create the cluster. Do
+        /// not delete or change them. To get information about a particular security group, use
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
+        /// use the AWS CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// operation.
+        /// </para>
         ///  
         /// <para>
         /// For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a>
@@ -1326,13 +1336,15 @@ namespace Amazon.KeyManagementService
         /// different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the AWS
         /// CloudHSM must contain at least one active HSM.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// For information about creating a private subnet for a AWS CloudHSM cluster, see <a
-        /// href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
-        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. To add HSMs, use the AWS
-        /// CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// For information about the requirements for an AWS CloudHSM cluster that is associated
+        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the Prerequisites</a> in the <i>AWS Key Management Service Developer Guide</i>. For
+        /// information about creating a private subnet for an AWS CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
+        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. For information about
+        /// cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure
+        /// a Default Security Group</a> in the <i> <i>AWS CloudHSM User Guide</i> </i>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
@@ -1372,7 +1384,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1380,7 +1393,7 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -1446,19 +1459,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that if a caller has been granted access permissions to all keys (through, for
-        /// example, IAM user policies that grant <code>Decrypt</code> permission on all resources),
-        /// then ciphertext encrypted by using keys in other accounts where the key grants access
-        /// to the caller can be decrypted. To remedy this, we recommend that you do not grant
-        /// <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code>
-        /// access only in key policies. If you must grant <code>Decrypt</code> access in an IAM
-        /// user policy, you should scope the resource to specific keys or to specific trusted
-        /// accounts.
+        /// Whenever possible, use key policies to give users permission to call the Decrypt operation
+        /// on the CMK, instead of IAM policies. Otherwise, you might create an IAM user policy
+        /// that gives the user Decrypt permission on all CMKs. This user could decrypt ciphertext
+        /// that was encrypted by CMKs in other accounts if the key policy for the cross-account
+        /// CMK permits it. If you must use an IAM policy for <code>Decrypt</code> permissions,
+        /// limit the user to particular CMKs or particular trusted accounts.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1494,7 +1505,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1554,7 +1565,7 @@ namespace Amazon.KeyManagementService
         /// an existing alias with a different customer master key (CMK), call <a>UpdateAlias</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
+        /// <param name="aliasName">The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
         /// 
         /// <returns>The response from the DeleteAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -1570,7 +1581,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1621,7 +1632,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1658,7 +1669,7 @@ namespace Amazon.KeyManagementService
         /// an existing alias with a different customer master key (CMK), call <a>UpdateAlias</a>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">The alias to be deleted. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
+        /// <param name="aliasName">The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1677,7 +1688,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1718,19 +1729,19 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>. This operation does not delete the AWS CloudHSM cluster that is associated
         /// with the custom key store, or affect any users or keys in the cluster.
         /// 
         ///  
         /// <para>
-        /// The custom key store that you delete cannot contain any AWS KMS <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
+        /// The custom key store that you delete cannot contain any AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">customer
         /// master keys (CMKs)</a>. Before deleting the key store, verify that you will never
         /// need to use any of the CMKs in the key store for any cryptographic operations. Then,
         /// use <a>ScheduleKeyDeletion</a> to delete the AWS KMS customer master keys (CMKs) from
         /// the key store. When the scheduled waiting period expires, the <code>ScheduleKeyDeletion</code>
         /// operation deletes the CMKs. Then it makes a best effort to delete the key material
-        /// from the associated cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -1751,7 +1762,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
@@ -1839,7 +1850,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Deletes key material that you previously imported. This operation makes the specified
         /// customer master key (CMK) unusable. For more information about importing key material
-        /// into AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// into AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. You cannot
         /// perform this operation on a CMK in a different AWS account.
         /// 
@@ -1856,7 +1867,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1868,7 +1879,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1880,7 +1892,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -1927,12 +1939,12 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets information about <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key stores</a> in the account and region.
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
@@ -1961,7 +1973,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  For help repairing your custom key store, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore-html">Troubleshooting
+        ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
         /// Custom Key Stores</a> topic in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2015,8 +2027,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// If you use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
-        /// with no key ID, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
         /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
         /// </para>
         ///  
@@ -2025,14 +2037,15 @@ namespace Amazon.KeyManagementService
         /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2055,8 +2068,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// If you use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
-        /// with no key ID, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
         /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
         /// </para>
         ///  
@@ -2072,7 +2085,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2097,8 +2111,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// If you use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
-        /// with no key ID, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
         /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
         /// </para>
         ///  
@@ -2107,7 +2121,7 @@ namespace Amazon.KeyManagementService
         /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2117,7 +2131,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2165,14 +2180,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i> <i>AWS Key Management
+        /// Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2184,7 +2199,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2196,7 +2212,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2220,14 +2236,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i> <i>AWS Key Management
+        /// Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2239,7 +2255,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2251,7 +2268,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2277,14 +2294,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i> <i>AWS Key Management
+        /// Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2299,7 +2316,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2311,7 +2329,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2352,14 +2370,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2374,7 +2392,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2386,7 +2405,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2408,14 +2427,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2430,7 +2449,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2442,7 +2462,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2466,14 +2486,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2491,7 +2511,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2503,7 +2524,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2548,7 +2569,7 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disconnects the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// Disconnects the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a> from its associated AWS CloudHSM cluster. While a custom key store is
         /// disconnected, you can manage the custom key store and its customer master keys (CMKs),
         /// but you cannot create or use CMKs in the custom key store. You can reconnect the custom
@@ -2571,7 +2592,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
@@ -2658,7 +2679,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2670,7 +2691,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2682,14 +2704,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2712,7 +2734,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2724,7 +2746,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2736,14 +2759,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2768,7 +2791,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2783,7 +2806,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2795,14 +2819,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2841,20 +2865,20 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// You cannot enable automatic rotation of CMKs with imported key material or CMKs in
-        /// a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2869,7 +2893,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2881,7 +2906,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2903,20 +2928,20 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// You cannot enable automatic rotation of CMKs with imported key material or CMKs in
-        /// a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2931,7 +2956,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2943,7 +2969,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2967,20 +2993,20 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
         /// You cannot enable automatic rotation of CMKs with imported key material or CMKs in
-        /// a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -2998,7 +3024,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3010,7 +3037,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3065,35 +3092,34 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To move encrypted data from one AWS region to another, you can use this operation
-        /// to encrypt in the new region the plaintext data key that was used to encrypt the data
-        /// in the original region. This provides you with an encrypted copy of the data key that
-        /// can be decrypted in the new region and used there to decrypt the encrypted data.
+        /// You can use the <code>Encrypt</code> operation to move encrypted data from one AWS
+        /// region to another. In the first region, generate a data key and use the plaintext
+        /// key to encrypt the data. Then, in the new region, call the <code>Encrypt</code> method
+        /// on same plaintext data key. Now, you can safely move the encrypted data and encrypted
+        /// data key to the new region, and decrypt in the new region when necessary.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// or alias ARN in the value of the KeyId parameter.
+        /// You don't need use this operation to encrypt a data key within a region. The <a>GenerateDataKey</a>
+        /// and <a>GenerateDataKeyWithoutPlaintext</a> operations return an encrypted data key.
         /// </para>
         ///  
         /// <para>
-        /// Unless you are moving encrypted data from one region to another, you don't use this
-        /// operation to encrypt a generated data key within a region. To get data keys that are
-        /// already encrypted, call the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a>
-        /// operation. Data keys don't need to be encrypted again by calling <code>Encrypt</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To encrypt data locally in your application, use the <a>GenerateDataKey</a> operation
-        /// to return a plaintext data encryption key and a copy of the key encrypted under the
-        /// CMK of your choosing.
+        /// Also, you don't need to use this operation to encrypt data in your application. You
+        /// can use the plaintext and encrypted data keys that the <code>GenerateDataKey</code>
+        /// operation returns.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To perform this operation on a CMK in a different AWS account, specify the key ARN
+        /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Encrypt service method.</param>
@@ -3125,7 +3151,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3168,24 +3194,30 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns a data encryption key that you can use in your application to encrypt data
-        /// locally. 
+        /// Generates a unique data key. This operation returns a plaintext copy of the data key
+        /// and a copy that is encrypted under a customer master key (CMK) that you specify. You
+        /// can use the plaintext key to encrypt your data outside of KMS and store the encrypted
+        /// data key with the encrypted data.
         /// 
         ///  
         /// <para>
-        /// You must specify the customer master key (CMK) under which to generate the data key.
-        /// You must also specify the length of the data key using either the <code>KeySpec</code>
-        /// or <code>NumberOfBytes</code> field. You must specify one field or the other, but
-        /// not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend
-        /// that you use <code>KeySpec</code>. To perform this operation on a CMK in a different
-        /// AWS account, specify the key ARN or alias ARN in the value of the KeyId parameter.
+        ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
+        /// in the key are not related to the caller or CMK that is used to encrypt the data key.
         /// </para>
         ///  
         /// <para>
-        /// This operation returns a plaintext copy of the data key in the <code>Plaintext</code>
-        /// field of the response, and an encrypted copy of the data key in the <code>CiphertextBlob</code>
-        /// field. The data key is encrypted under the CMK specified in the <code>KeyId</code>
-        /// field of the request. 
+        /// To generate a data key, you need to specify the customer master key (CMK) that will
+        /// be used to encrypt the data key. You must also specify the length of the data key
+        /// using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field (but not
+        /// both). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that
+        /// you use <code>KeySpec</code>. To perform this operation on a CMK in a different AWS
+        /// account, specify the key ARN or alias ARN in the value of the KeyId parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will find the plaintext copy of the data key in the <code>Plaintext</code> field
+        /// of the response, and the encrypted copy of the data key in the <code>CiphertextBlob</code>
+        /// field.
         /// </para>
         ///  
         /// <para>
@@ -3193,12 +3225,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use this operation (<code>GenerateDataKey</code>) to get a data encryption key.
+        /// Use the <code>GenerateDataKey</code> operation to get a data encryption key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the plaintext data encryption key (returned in the <code>Plaintext</code> field
-        /// of the response) to encrypt data locally, then erase the plaintext data key from memory.
+        /// Use the plaintext data key (returned in the <code>Plaintext</code> field of the response)
+        /// to encrypt data locally, then erase the plaintext data key from memory.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3211,8 +3243,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the <a>Decrypt</a> operation to decrypt the encrypted data key into a plaintext
-        /// copy of the data key.
+        /// Use the <a>Decrypt</a> operation to decrypt the encrypted data key. The operation
+        /// returns a plaintext copy of the data key.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3221,22 +3253,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>.
-        /// To return a random byte string that is cryptographically secure, use <a>GenerateRandom</a>.
+        /// To get only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>.
+        /// To get a cryptographically secure random byte string, use <a>GenerateRandom</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you use the optional <code>EncryptionContext</code> field, you must store at least
-        /// enough information to be able to reconstruct the full encryption context when you
-        /// later send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to
-        /// choose an encryption context that you can reconstruct on the fly to better secure
-        /// the ciphertext. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-        /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// You can use the optional encryption context to add additional security to your encryption
+        /// operation. When you specify an <code>EncryptionContext</code> in the <code>GenerateDataKey</code>
+        /// operation, you must specify the same encryption context (a case-sensitive exact match)
+        /// in your request to <a>Decrypt</a> the data key. Otherwise, the request to decrypt
+        /// fails with an <code>InvalidCiphertextException</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3270,7 +3303,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3313,33 +3346,37 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns a data encryption key encrypted under a customer master key (CMK). This operation
-        /// is identical to <a>GenerateDataKey</a> but returns only the encrypted copy of the
-        /// data key. 
+        /// Generates a unique data key. This operation returns a data key that is encrypted under
+        /// a customer master key (CMK) that you specify. <code>GenerateDataKeyWithoutPlaintext</code>
+        /// is identical to <a>GenerateDataKey</a> except that returns only the encrypted copy
+        /// of the data key.
         /// 
         ///  
         /// <para>
-        /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// or alias ARN in the value of the KeyId parameter.
+        /// Like <code>GenerateDataKey</code>, <code>GenerateDataKeyWithoutPlaintext</code> returns
+        /// a unique data key for each request. The bytes in the key are not related to the caller
+        /// or CMK that is used to encrypt the data key.
         /// </para>
         ///  
         /// <para>
-        /// This operation is useful in a system that has multiple components with different degrees
-        /// of trust. For example, consider a system that stores encrypted data in containers.
-        /// Each container stores the encrypted data and an encrypted copy of the data key. One
-        /// component of the system, called the <i>control plane</i>, creates new containers.
-        /// When it creates a new container, it uses this operation (<code>GenerateDataKeyWithoutPlaintext</code>)
-        /// to get an encrypted data key and then stores it in the container. Later, a different
-        /// component of the system, called the <i>data plane</i>, puts encrypted data into the
-        /// containers. To do this, it passes the encrypted data key to the <a>Decrypt</a> operation,
-        /// then uses the returned plaintext data key to encrypt data, and finally stores the
-        /// encrypted data in the container. In this system, the control plane never sees the
-        /// plaintext data key.
+        /// This operation is useful for systems that need to encrypt data at some point, but
+        /// not immediately. When you need to encrypt the data, you call the <a>Decrypt</a> operation
+        /// on the encrypted copy of the key.
+        /// </para>
+        ///  
+        /// <para>
+        /// It's also useful in distributed systems with different levels of trust. For example,
+        /// you might store encrypted data in containers. One component of your system creates
+        /// new containers and stores an encrypted data key with each container. Then, a different
+        /// component puts the data into the containers. That component first decrypts the data
+        /// key, uses the plaintext data key to encrypt data, puts the encrypted data into the
+        /// container, and then destroys the plaintext data key. In this system, the component
+        /// that creates the containers never sees the plaintext data key.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3373,7 +3410,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3421,7 +3458,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// By default, the random byte string is generated in AWS KMS. To generate the byte string
-        /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// in the AWS CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
         /// </para>
         ///  
@@ -3488,7 +3525,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// By default, the random byte string is generated in AWS KMS. To generate the byte string
-        /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// in the AWS CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
         /// </para>
         ///  
@@ -3557,7 +3594,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// By default, the random byte string is generated in AWS KMS. To generate the byte string
-        /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// in the AWS CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
         /// </para>
         ///  
@@ -3656,7 +3693,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3668,7 +3706,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3697,7 +3735,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3709,7 +3748,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3743,7 +3782,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3755,7 +3795,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3797,14 +3837,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> is enabled for the specified customer master key
         /// (CMK).
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3832,7 +3872,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3844,7 +3885,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3866,14 +3907,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> is enabled for the specified customer master key
         /// (CMK).
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3901,7 +3942,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3913,7 +3955,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3937,14 +3979,14 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
         /// rotation of the key material</a> is enabled for the specified customer master key
         /// (CMK).
         /// 
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -3975,7 +4017,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3987,7 +4030,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4034,7 +4077,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Returns the items you need in order to import key material into AWS KMS from your
         /// existing key management infrastructure. For more information about importing key material
-        /// into AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// into AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// 
         ///  
@@ -4057,7 +4100,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4069,7 +4112,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -4081,7 +4125,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4131,7 +4175,7 @@ namespace Amazon.KeyManagementService
         /// Imports key material into an existing AWS KMS customer master key (CMK) that was created
         /// without key material. You cannot perform this operation on a CMK in a different AWS
         /// account. For more information about creating CMKs with no key material and then importing
-        /// key material, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// 
         ///  
@@ -4182,7 +4226,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4203,7 +4247,8 @@ namespace Amazon.KeyManagementService
         /// same key material that was previously imported into this customer master key (CMK).
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// The request was rejected because the specified ciphertext, or additional authenticated
@@ -4224,7 +4269,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4271,21 +4316,28 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a list of all aliases in the caller's AWS account and region. You cannot list
-        /// aliases in other accounts. For more information about aliases, see <a>CreateAlias</a>.
+        /// Gets a list of aliases in the caller's AWS account and region. You cannot list aliases
+        /// in other accounts. For more information about aliases, see <a>CreateAlias</a>.
         /// 
         ///  
         /// <para>
-        /// By default, the <code>ListAliases</code> command returns all aliases in the account
-        /// and region. To get only the aliases that point to a particular customer master key
-        /// (CMK), use the <code>KeyId</code> parameter.
+        /// By default, the ListAliases command returns all aliases in the account and region.
+        /// To get only the aliases that point to a particular customer master key (CMK), use
+        /// the <code>KeyId</code> parameter.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ListAliases</code> response might include several aliases have no <code>TargetKeyId</code>
-        /// field. These are predefined aliases that AWS has created but has not yet associated
-        /// with a CMK. Aliases that AWS creates in your account, including predefined aliases,
-        /// do not count against your <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+        /// The <code>ListAliases</code> response can include aliases that you created and associated
+        /// with your customer managed CMKs, and aliases that AWS created and associated with
+        /// AWS managed CMKs in your account. You can recognize AWS aliases because their names
+        /// have the format <code>aws/&lt;service-name&gt;</code>, such as <code>aws/dynamodb</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response might also include aliases that have no <code>TargetKeyId</code> field.
+        /// These are predefined aliases that AWS has created but has not yet associated with
+        /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
+        /// not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
         /// KMS aliases limit</a>.
         /// </para>
         /// </summary>
@@ -4296,7 +4348,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4359,7 +4412,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4375,7 +4429,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4430,7 +4484,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -4442,7 +4497,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -4547,7 +4602,8 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the ListResourceTags service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4604,14 +4660,15 @@ namespace Amazon.KeyManagementService
         /// use <a>RetireGrant</a>.
         /// </para>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4649,7 +4706,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4687,7 +4745,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4721,7 +4780,7 @@ namespace Amazon.KeyManagementService
         /// use <a>RetireGrant</a>.
         /// </para>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4731,7 +4790,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4772,7 +4832,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
@@ -4822,12 +4883,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about key policies, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+        /// For more information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
         /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -4835,7 +4896,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -4847,14 +4909,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -4885,7 +4947,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about key policies, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+        /// For more information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
         /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4896,7 +4958,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -4908,14 +4971,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -4946,12 +5009,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about key policies, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+        /// For more information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
         /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4962,7 +5025,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -4974,14 +5038,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.MalformedPolicyDocumentException">
@@ -5044,16 +5108,16 @@ namespace Amazon.KeyManagementService
         /// Unlike other operations, <code>ReEncrypt</code> is authorized twice, once as <code>ReEncryptFrom</code>
         /// on the source CMK and once as <code>ReEncryptTo</code> on the destination CMK. We
         /// recommend that you include the <code>"kms:ReEncrypt*"</code> permission in your <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
         /// policies</a> to permit reencryption from or to the CMK. This permission is automatically
-        /// included in the key policy when you create a CMK through the console, but you must
+        /// included in the key policy when you create a CMK through the console. But you must
         /// include it manually when you create a CMK programmatically or when you set a key policy
         /// with the <a>PutKeyPolicy</a> operation.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5092,7 +5156,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5167,7 +5231,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5185,7 +5250,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5235,7 +5300,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5253,7 +5319,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5308,7 +5374,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5326,7 +5393,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5384,7 +5451,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5399,7 +5467,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5434,7 +5502,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5449,7 +5518,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5489,7 +5558,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -5504,7 +5574,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5562,10 +5632,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
         /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -5574,13 +5644,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5592,7 +5662,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -5604,7 +5675,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5638,10 +5709,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
         /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -5650,13 +5721,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5669,7 +5740,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -5681,7 +5753,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5716,10 +5788,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
         /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -5728,13 +5800,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5746,7 +5818,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -5758,7 +5831,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5794,10 +5867,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
         /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -5806,13 +5879,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5827,7 +5900,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -5839,7 +5913,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5873,10 +5947,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// If you schedule deletion of a CMK from a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
         /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
-        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
         /// the orphaned key material</a> from the cluster and its backups.
         /// </para>
         ///  
@@ -5885,13 +5959,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+        /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5907,7 +5981,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -5919,7 +5994,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5976,13 +6051,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+        /// For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
         /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -5991,7 +6066,8 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the TagResource service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -6003,14 +6079,14 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
         /// The request was rejected because a limit was exceeded. For more information, see <a
-        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -6065,7 +6141,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6074,7 +6150,8 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>The response from the UntagResource service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -6086,7 +6163,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6151,23 +6228,22 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). An alias must start with the word <code>alias</code> followed
-        /// by a forward slash (<code>alias/</code>). The alias name can contain only alphanumeric
-        /// characters, forward slashes (/), underscores (_), and dashes (-). Alias names cannot
-        /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-        /// (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
-        /// <param name="targetKeyId">Unique identifier of the customer master key to be mapped to the alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.</param>
+        /// <param name="aliasName">Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation completes, the alias will point to this CMK. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -6183,7 +6259,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6221,17 +6297,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). An alias must start with the word <code>alias</code> followed
-        /// by a forward slash (<code>alias/</code>). The alias name can contain only alphanumeric
-        /// characters, forward slashes (/), underscores (_), and dashes (-). Alias names cannot
-        /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-        /// (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6252,7 +6327,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6291,23 +6366,22 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). An alias must start with the word <code>alias</code> followed
-        /// by a forward slash (<code>alias/</code>). The alias name can contain only alphanumeric
-        /// characters, forward slashes (/), underscores (_), and dashes (-). Alias names cannot
-        /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-        /// (AWS).
+        /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+        /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMKs</a>. 
         /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
-        /// <param name="targetKeyId">Unique identifier of the customer master key to be mapped to the alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.</param>
+        /// <param name="aliasName">Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</param>
+        /// <param name="targetKeyId">Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation completes, the alias will point to this CMK. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6326,7 +6400,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6381,52 +6455,37 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>NewCustomKeyStoreName</code> parameter to change the friendly name of
-        /// the custom key store to the value that you specify.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use the <code>KeyStorePassword</code> parameter tell AWS KMS the current password
-        /// of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-        /// <code>kmsuser</code> crypto user (CU)</a> in the associated AWS CloudHSM cluster.
-        /// You can use this parameter to fix connection failures that occur when AWS KMS cannot
-        /// log into the associated cluster because the <code>kmsuser</code> password has changed.
-        /// This value does not change the password in the AWS CloudHSM cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use the <code>CloudHsmClusterId</code> parameter to associate the custom key store
-        /// with a related AWS CloudHSM cluster, that is, a cluster that shares a backup history
-        /// with the original cluster. You can use this parameter to repair a custom key store
-        /// if its AWS CloudHSM cluster becomes corrupted or is deleted, or when you need to create
-        /// or restore a cluster from a backup.
-        /// </para>
-        ///  
-        /// <para>
-        /// The cluster ID must identify a AWS CloudHSM cluster with the following requirements.
+        /// Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore settings.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The cluster must be active and be in the same AWS account and Region as the custom
-        /// key store.
+        /// Use the <b>NewCustomKeyStoreName</b> parameter to change the friendly name of the
+        /// custom key store to the value that you specify.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must have the same cluster certificate as the original cluster. You cannot
-        /// use this parameter to associate the custom key store with an unrelated cluster. To
-        /// view the cluster certificate, use the AWS CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
-        /// operation. Clusters that share a backup history have the same cluster certificate.
+        /// Use the <b>KeyStorePassword</b> parameter tell AWS KMS the current password of the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// <code>kmsuser</code> crypto user (CU)</a> in the associated AWS CloudHSM cluster.
+        /// You can use this parameter to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-password">fix
+        /// connection failures</a> that occur when AWS KMS cannot log into the associated cluster
+        /// because the <code>kmsuser</code> password has changed. This value does not change
+        /// the password in the AWS CloudHSM cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The cluster must be configured with subnets in at least two different Availability
-        /// Zones in the Region. Because AWS CloudHSM is not supported in all Availability Zones,
-        /// we recommend that the cluster have subnets in all Availability Zones in the Region.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The cluster must contain at least two active HSMs, each in a different Availability
-        /// Zone.
+        /// Use the <b>CloudHsmClusterId</b> parameter to associate the custom key store with
+        /// a different, but related, AWS CloudHSM cluster. You can use this parameter to repair
+        /// a custom key store if its AWS CloudHSM cluster becomes corrupted or is deleted, or
+        /// when you need to create or restore a cluster from a backup. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6434,7 +6493,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
         /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
         /// integration of AWS KMS with the isolation and control of a single-tenant key store.
         /// </para>
@@ -6444,10 +6503,30 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the UpdateCustomKeyStore service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterInvalidConfigurationException">
         /// The request was rejected because the associated AWS CloudHSM cluster did not meet
-        /// the configuration requirements for a custom key store. The cluster must be configured
-        /// with private subnets in at least two different Availability Zones in the Region. Also,
-        /// it must contain at least as many HSMs as the operation requires.
+        /// the configuration requirements for a custom key store.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The cluster must be configured with private subnets in at least two different Availability
+        /// Zones in the Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security
+        /// group for the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include
+        /// inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b>
+        /// in the inbound rules and the <b>Destination</b> in the outbound rules must match the
+        /// security group ID. These rules are set by default when you create the cluster. Do
+        /// not delete or change them. To get information about a particular security group, use
+        /// the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a>
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The cluster must contain at least as many HSMs as the operation requires. To add HSMs,
+        /// use the AWS CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+        /// operation.
+        /// </para>
         ///  
         /// <para>
         /// For the <a>CreateCustomKeyStore</a>, <a>UpdateCustomKeyStore</a>, and <a>CreateKey</a>
@@ -6455,19 +6534,21 @@ namespace Amazon.KeyManagementService
         /// different Availability Zone. For the <a>ConnectCustomKeyStore</a> operation, the AWS
         /// CloudHSM must contain at least one active HSM.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// For information about creating a private subnet for a AWS CloudHSM cluster, see <a
-        /// href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
-        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. To add HSMs, use the AWS
-        /// CloudHSM <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-        /// operation.
+        /// For information about the requirements for an AWS CloudHSM cluster that is associated
+        /// with a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble
+        /// the Prerequisites</a> in the <i>AWS Key Management Service Developer Guide</i>. For
+        /// information about creating a private subnet for an AWS CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create
+        /// a Private Subnet</a> in the <i>AWS CloudHSM User Guide</i>. For information about
+        /// cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure
+        /// a Default Security Group</a> in the <i> <i>AWS CloudHSM User Guide</i> </i>. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotActiveException">
         /// The request was rejected because the AWS CloudHSM cluster that is associated with
         /// the custom key store is not active. Initialize and activate the cluster and try the
-        /// command again. For detailed instructions, see <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
+        /// command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting
         /// Started</a> in the <i>AWS CloudHSM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.CloudHsmClusterNotFoundException">
@@ -6488,7 +6569,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Clusters that share a backup history have the same cluster certificate. To view the
-        /// cluster certificate of a cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+        /// cluster certificate of a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
         /// operation.
         /// </para>
         /// </exception>
@@ -6564,8 +6645,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
@@ -6574,7 +6655,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6587,7 +6668,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -6599,7 +6681,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6618,8 +6700,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
@@ -6628,7 +6710,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6640,7 +6722,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -6652,7 +6735,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6672,8 +6755,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
@@ -6682,7 +6765,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>
@@ -6698,7 +6781,8 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
-        /// The request was rejected because a specified ARN was not valid.
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -6710,7 +6794,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
         /// Developer Guide</i>.
         /// </para>

@@ -94,7 +94,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently only 1 policy can be attached to a key.
+        /// Only one policy can be attached to a key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

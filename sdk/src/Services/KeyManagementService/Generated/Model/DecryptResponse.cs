@@ -58,7 +58,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+        /// Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
         /// Otherwise, it is not encoded.
         /// </para>
         /// </summary>

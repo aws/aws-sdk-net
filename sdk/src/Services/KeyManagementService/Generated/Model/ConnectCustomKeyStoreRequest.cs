@@ -29,7 +29,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ConnectCustomKeyStore operation.
-    /// Connects or reconnects a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key store</a> to its associated AWS CloudHSM cluster.
     /// 
     ///  
@@ -41,8 +41,8 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To connect a custom key store, its associated AWS CloudHSM cluster must have at least
-    /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters">DescribeClusters</a>
-    /// operation. To add HSMs to the cluster, use the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm">CreateHsm</a>
+    /// one active HSM. To get the number of active HSMs in a cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+    /// operation. To add HSMs to the cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
     /// operation.
     /// </para>
     ///  
@@ -58,7 +58,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated
     /// with the custom key store, creates the connection infrastructure, connects to the
-    /// cluster, logs into the AWS CloudHSM client as the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+    /// cluster, logs into the AWS CloudHSM client as the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
     /// <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
     /// </para>
     ///  
@@ -75,7 +75,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are having trouble connecting or disconnecting a custom key store, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
+    /// If you are having trouble connecting or disconnecting a custom key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
     /// a Custom Key Store</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     /// </summary>

@@ -48,17 +48,16 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
-    /// (_), and dashes (-). An alias must start with the word <code>alias</code> followed
-    /// by a forward slash (<code>alias/</code>). The alias name can contain only alphanumeric
-    /// characters, forward slashes (/), underscores (_), and dashes (-). Alias names cannot
-    /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-    /// (AWS).
+    /// The alias name must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+    /// It can contain only alphanumeric characters, forward slashes (/), underscores (_),
+    /// and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
+    /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+    /// managed CMKs</a>. 
     /// </para>
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
@@ -71,9 +70,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// String that contains the name of the alias to be modified. The name must start with
-        /// the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws"
-        /// are reserved.
+        /// Specifies the name of the alias to change. This value must begin with <code>alias/</code>
+        /// followed by the alias name, such as <code>alias/ExampleAlias</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -92,7 +90,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// Unique identifier of the customer master key to be mapped to the alias.
+        /// Unique identifier of the customer master key (CMK) to be mapped to the alias. When
+        /// the update operation completes, the alias will point to this CMK.
         /// </para>
         ///  
         /// <para>

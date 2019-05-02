@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// By default, the random byte string is generated in AWS KMS. To generate the byte string
-    /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// in the AWS CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key store</a>, specify the custom key store ID.
     /// </para>
     ///  
@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CustomKeyStoreId. 
         /// <para>
         /// Generates the random byte string in the AWS CloudHSM cluster that is associated with
-        /// the specified <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
         /// operation.
         /// </para>

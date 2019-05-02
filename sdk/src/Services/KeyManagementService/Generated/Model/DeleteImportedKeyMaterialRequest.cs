@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the DeleteImportedKeyMaterial operation.
     /// Deletes key material that you previously imported. This operation makes the specified
     /// customer master key (CMK) unusable. For more information about importing key material
-    /// into AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// into AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
     /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. You cannot
     /// perform this operation on a CMK in a different AWS account.
     /// 
@@ -48,7 +48,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// The result of this operation varies with the key state of the CMK. For details, see
-    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
@@ -60,8 +60,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the CMK whose key material to delete. The CMK's <code>Origin</code>
-        /// must be <code>EXTERNAL</code>.
+        /// Identifies the CMK from which you are deleting imported key material. The <code>Origin</code>
+        /// of the CMK must be <code>EXTERNAL</code>.
         /// </para>
         ///  
         /// <para>
