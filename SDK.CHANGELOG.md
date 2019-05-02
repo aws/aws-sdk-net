@@ -1,3 +1,14 @@
+### 3.3.504.0 (2019-05-02 19:45 UTC)
+* AlexaForBusiness (3.3.102.0)
+	* This release allows developers and customers to send text and audio announcements to rooms.
+* KeyManagementService (3.3.101.0)
+	* AWS Key Management Service (KMS) can return an INTERNAL_ERROR connection error code if it cannot connect a custom key store to its AWS CloudHSM cluster. INTERNAL_ERROR is one of several connection error codes that help you to diagnose and fix a problem with your custom key store.
+* Core 3.3.101.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.503.0 (2019-05-01 18:10 UTC)
 * EC2 (3.3.106.0)
 	* This release adds an API for the modification of a VPN Connection, enabling migration from a Virtual Private Gateway (VGW) to a Transit Gateway (TGW), while preserving the VPN endpoint IP addresses on the AWS side as well as the tunnel options.
