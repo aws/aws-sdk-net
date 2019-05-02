@@ -792,6 +792,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SendAnnouncementRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SendAnnouncementRequest.TimeToLiveInSeconds</property>
+    <min>1</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SendAnnouncementResponse.AnnouncementArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SendInvitationRequest.UserArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -1019,6 +1034,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Audio.Location</property>
+    <min>0</min>
+    <max>1200</max>
+    <pattern>https://([A-Za-z0-9_.-]+)?(s3-[A-Za-z0-9-]+|s3\.([A-Za-z0-9-])+|s3|s3.dualstack\.([A-Za-z0-9-])+)+.amazonaws.com/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.BusinessReportRecurrence.StartDate</property>
@@ -1462,6 +1483,12 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Ssml.Value</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -1472,6 +1499,12 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Text.Value</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UserData.Email</property>

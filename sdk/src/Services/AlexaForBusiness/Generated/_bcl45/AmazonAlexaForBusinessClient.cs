@@ -3341,6 +3341,53 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SendAnnouncement
+
+
+        /// <summary>
+        /// Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple
+        /// rooms, identified by a search, such as filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAnnouncement service method.</param>
+        /// 
+        /// <returns>The response from the SendAnnouncement service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">REST API Reference for SendAnnouncement Operation</seealso>
+        public virtual SendAnnouncementResponse SendAnnouncement(SendAnnouncementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAnnouncementResponseUnmarshaller.Instance;
+
+            return Invoke<SendAnnouncementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendAnnouncement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendAnnouncement operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">REST API Reference for SendAnnouncement Operation</seealso>
+        public virtual Task<SendAnnouncementResponse> SendAnnouncementAsync(SendAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAnnouncementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendAnnouncementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendInvitation
 
 
