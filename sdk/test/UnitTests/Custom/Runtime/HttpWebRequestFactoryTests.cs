@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using System.Net;
-
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -74,11 +74,54 @@ namespace AWSSDK.UnitTests
 
             Assert.Fail("An OperationCanceledException was not thrown");
         }
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestHttpResponseCancellation()
+        {
+            var cts = new CancellationTokenSource();
+            var token = cts.Token;
+            try
+            {
+                var request = CreateHttpRequest(token, out var requestContext, TimeSpan.FromMilliseconds(1));
+
+                var testContent = _fixture.Create<string>();
+                var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
+                var destinationStream = new MemoryStream();
+                request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
+                
+                request.GetResponseAsync(token).GetAwaiter().GetResult();
+            }
+            catch (OperationCanceledException exception)
+            {
+                Assert.AreNotEqual(token, exception.CancellationToken);
+                Assert.AreEqual(true, exception.CancellationToken.IsCancellationRequested);
+                return;
+            }
+
+            Assert.Fail("An WebException was not thrown");
+        }
 #endif
 
         public void TestHttpRequest(CancellationToken cancellationToken)
         {
-            //Create Web Request
+            var request = CreateHttpRequest(cancellationToken, out var requestContext);
+
+            var testContent = _fixture.Create<string>();
+
+            var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
+            var destinationStream = new MemoryStream();
+            request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
+
+            var sourceContent = Encoding.UTF8.GetBytes(testContent);
+            destinationStream = new MemoryStream();
+            request.WriteToRequestBody(destinationStream, sourceContent, null);
+        }
+
+        private IHttpRequest<Stream> CreateHttpRequest(CancellationToken cancellationToken, out RequestContext requestContext, TimeSpan? requestTimeout = null)
+        {
+//Create Web Request
             var targetUri = _fixture.Create<Uri>();
             var sut = _fixture.Create<HttpWebRequestFactory>();
             var request = sut.CreateHttpRequest(targetUri);
@@ -94,7 +137,7 @@ namespace AWSSDK.UnitTests
             // Request Context
             var proxyCreds = _fixture.Create<NetworkCredential>();
             var proxyHost = _fixture.Create<string>();
-            var timeout = TimeSpan.FromSeconds(40);
+            var timeout = requestTimeout ?? TimeSpan.FromSeconds(40);
             var readWriteTimeout = TimeSpan.FromSeconds(20);
             var maxIdleTime = _fixture.Create<int>();
             var proxyPort = _fixture.Create<int>();
@@ -121,21 +164,21 @@ namespace AWSSDK.UnitTests
                 .Without(context => context.CSMCallEvent)
             );
 
-            var requestContext = _fixture.Create<RequestContext>();
+            requestContext = _fixture.Create<RequestContext>();
 
             request.ConfigureRequest(requestContext);
 
             Assert.IsInstanceOfType(httpWebRequest.Proxy, typeof(WebProxy));
             Assert.AreEqual(new Uri($"http://{proxyHost}:{proxyPort}"), ((WebProxy) httpWebRequest.Proxy).Address);
             Assert.AreEqual(proxyCreds, httpWebRequest.Proxy.Credentials);
-            Assert.AreEqual(timeout.Seconds * 1000, httpWebRequest.Timeout);
-            Assert.AreEqual(readWriteTimeout.Seconds * 1000, httpWebRequest.ReadWriteTimeout);
+            Assert.AreEqual(timeout.TotalMilliseconds, httpWebRequest.Timeout);
+            Assert.AreEqual(readWriteTimeout.TotalMilliseconds, httpWebRequest.ReadWriteTimeout);
             Assert.AreEqual(maxIdleTime, httpWebRequest.ServicePoint.MaxIdleTime);
             Assert.AreEqual(useNagleAlgorithm, httpWebRequest.ServicePoint.UseNagleAlgorithm);
 
             var acceptHeader = _fixture.Create<string>();
             var contentTypeHeader = _fixture.Create<string>();
-            var contentLength = _fixture.Create<int>();
+            var contentLength = 0;
             var userAgentHeader = _fixture.Create<string>();
             var date = DateTime.Now.ToUniversalTime();
             var rangeHeader = _fixture.Create<string>();
@@ -167,16 +210,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(rangeHeader, httpWebRequest.Headers["Range"]);
             Assert.AreEqual(contentRangeHeader, httpWebRequest.Headers["Content-Range"]);
             Assert.AreEqual(nonStandardHeader, httpWebRequest.Headers["NonStandardHeader"]);
-
-            var testContent = _fixture.Create<string>();
-
-            var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
-            var destinationStream = new MemoryStream();
-            request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
-
-            var sourceContent = Encoding.UTF8.GetBytes(testContent);
-            destinationStream = new MemoryStream();
-            request.WriteToRequestBody(destinationStream, sourceContent, null);
+            return request;
         }
 
         #endregion
