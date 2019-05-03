@@ -94,6 +94,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequireUppercase = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemporaryPasswordValidityDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TemporaryPasswordValidityDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

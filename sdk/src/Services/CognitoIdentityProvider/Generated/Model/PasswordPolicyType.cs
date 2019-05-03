@@ -37,6 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private bool? _requireNumbers;
         private bool? _requireSymbols;
         private bool? _requireUppercase;
+        private int? _temporaryPasswordValidityDays;
 
         /// <summary>
         /// Gets and sets the property MinimumLength. 
@@ -131,6 +132,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetRequireUppercase()
         {
             return this._requireUppercase.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemporaryPasswordValidityDays.
+        /// </summary>
+        [AWSProperty(Min=0, Max=365)]
+        public int TemporaryPasswordValidityDays
+        {
+            get { return this._temporaryPasswordValidityDays.GetValueOrDefault(); }
+            set { this._temporaryPasswordValidityDays = value; }
+        }
+
+        // Check to see if TemporaryPasswordValidityDays property is set
+        internal bool IsSetTemporaryPasswordValidityDays()
+        {
+            return this._temporaryPasswordValidityDays.HasValue; 
         }
 
     }

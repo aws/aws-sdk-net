@@ -319,6 +319,24 @@
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserPasswordRequest.Password</property>
+    <min>6</min>
+    <max>256</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserPasswordRequest.Username</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserPasswordRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserSettingsRequest.Username</property>
     <min>1</min>
     <max>128</max>
@@ -1696,6 +1714,11 @@
     <property>Amazon.CognitoIdentityProvider.Model.PasswordPolicyType.MinimumLength</property>
     <min>6</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.PasswordPolicyType.TemporaryPasswordValidityDays</property>
+    <min>0</min>
+    <max>365</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ProviderDescription.ProviderName</property>

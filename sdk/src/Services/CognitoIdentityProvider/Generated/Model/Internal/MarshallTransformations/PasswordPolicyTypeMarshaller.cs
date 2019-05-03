@@ -75,6 +75,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RequireUppercase);
             }
 
+            if(requestObject.IsSetTemporaryPasswordValidityDays())
+            {
+                context.Writer.WritePropertyName("TemporaryPasswordValidityDays");
+                context.Writer.Write(requestObject.TemporaryPasswordValidityDays);
+            }
+
         }
 
         /// <summary>
