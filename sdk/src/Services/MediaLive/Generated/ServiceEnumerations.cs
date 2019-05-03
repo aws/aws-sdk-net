@@ -1732,6 +1732,14 @@ namespace Amazon.MediaLive
         /// Constant STOPPING for ChannelState
         /// </summary>
         public static readonly ChannelState STOPPING = new ChannelState("STOPPING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ChannelState
+        /// </summary>
+        public static readonly ChannelState UPDATE_FAILED = new ChannelState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ChannelState
+        /// </summary>
+        public static readonly ChannelState UPDATING = new ChannelState("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
