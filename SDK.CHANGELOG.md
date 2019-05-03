@@ -1,3 +1,18 @@
+### 3.3.505.0 (2019-05-03 18:07 UTC)
+* CognitoIdentityProvider (3.3.102.0)
+	* This release of Amazon Cognito User Pools introduces the new AdminSetUserPassword API that allows administrators of a user pool to change a user's password. The new password can be temporary or permanent.
+* MediaConvert (3.3.103.0)
+	* DASH output groups using DRM encryption can now enable a playback device compatibility mode to correct problems with playback on older devices. 
+* MediaLive (3.3.103.0)
+	* You can now switch the channel mode of your channels from standard to single pipeline and from single pipeline to standard. In order to switch a channel from single pipeline to standard all inputs attached to the channel must support two encoder pipelines.
+* WorkMail (3.3.101.0)
+	* Amazon WorkMail is releasing two new actions: 'GetMailboxDetails' and 'UpdateMailboxQuota'. They add insight into how much space is used by a given mailbox (size) and what its limit is (quota). A mailbox quota can be updated, but lowering the value will not influence WorkMail per user charges. For a closer look at the actions please visit https://docs.aws.amazon.com/workmail/latest/APIReference/API_Operations.html
+* Core 3.3.101.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.504.0 (2019-05-02 19:45 UTC)
 * AlexaForBusiness (3.3.102.0)
 	* This release allows developers and customers to send text and audio announcements to rooms.
