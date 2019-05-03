@@ -54,8 +54,8 @@ namespace Amazon.MediaConvert.Model
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AccelerationSettings. Accelerated transcoding is currently
-        /// in private preview. Contact AWS for more information.
+        /// Gets and sets the property AccelerationSettings. Accelerated transcoding can significantly
+        /// speed up jobs with long, visually complex content.
         /// </summary>
         public AccelerationSettings AccelerationSettings
         {

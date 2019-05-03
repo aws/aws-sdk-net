@@ -2823,6 +2823,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DashIsoPlaybackDeviceCompatibility.
+    /// </summary>
+    public class DashIsoPlaybackDeviceCompatibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CENC_V1 for DashIsoPlaybackDeviceCompatibility
+        /// </summary>
+        public static readonly DashIsoPlaybackDeviceCompatibility CENC_V1 = new DashIsoPlaybackDeviceCompatibility("CENC_V1");
+        /// <summary>
+        /// Constant UNENCRYPTED_SEI for DashIsoPlaybackDeviceCompatibility
+        /// </summary>
+        public static readonly DashIsoPlaybackDeviceCompatibility UNENCRYPTED_SEI = new DashIsoPlaybackDeviceCompatibility("UNENCRYPTED_SEI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoPlaybackDeviceCompatibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoPlaybackDeviceCompatibility FindValue(string value)
+        {
+            return FindValue<DashIsoPlaybackDeviceCompatibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoPlaybackDeviceCompatibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashIsoSegmentControl.
     /// </summary>
     public class DashIsoSegmentControl : ConstantClass

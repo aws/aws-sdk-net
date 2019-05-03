@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Accelerated transcoding is currently in private preview. Contact AWS for more information.
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex
+    /// content. Outputs that use this feature incur pro-tier pricing. For information about
+    /// feature limitations, see the AWS Elemental MediaConvert User Guide.
     /// </summary>
     public partial class AccelerationSettings
     {

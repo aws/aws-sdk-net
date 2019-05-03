@@ -69,9 +69,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AntiAlias. The anti-alias filter is automatically applied
-        /// to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If
-        /// you specify that in your job, the service will ignore the setting.
+        /// Gets and sets the property AntiAlias. The service automatically applies the anti-alias
+        /// filter to all outputs. The service no longer accepts the value DISABLED for AntiAlias.
+        /// If you specify that in your job, the service will ignore the setting.
         /// </summary>
         public AntiAlias AntiAlias
         {
