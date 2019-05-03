@@ -1374,6 +1374,57 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMailboxDetails
+
+
+        /// <summary>
+        /// Requests a user's mailbox details for a specified organization and user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMailboxDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetMailboxDetails service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual GetMailboxDetailsResponse GetMailboxDetails(GetMailboxDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMailboxDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMailboxDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMailboxDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual Task<GetMailboxDetailsResponse> GetMailboxDetailsAsync(GetMailboxDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMailboxDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAliases
 
 
@@ -2018,6 +2069,64 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = ResetPasswordResponseUnmarshaller.Instance;
             
             return InvokeAsync<ResetPasswordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMailboxQuota
+
+
+        /// <summary>
+        /// Updates a user's current mailbox quota for a specified organization and user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMailboxQuota service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMailboxQuota service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual UpdateMailboxQuotaResponse UpdateMailboxQuota(UpdateMailboxQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMailboxQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMailboxQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMailboxQuota operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual Task<UpdateMailboxQuotaResponse> UpdateMailboxQuotaAsync(UpdateMailboxQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMailboxQuotaResponse>(request, options, cancellationToken);
         }
 
         #endregion

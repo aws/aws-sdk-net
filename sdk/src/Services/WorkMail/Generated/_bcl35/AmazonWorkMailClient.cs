@@ -1624,6 +1624,71 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMailboxDetails
+
+        /// <summary>
+        /// Requests a user's mailbox details for a specified organization and user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMailboxDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetMailboxDetails service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual GetMailboxDetailsResponse GetMailboxDetails(GetMailboxDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMailboxDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMailboxDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMailboxDetails operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMailboxDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetMailboxDetails(GetMailboxDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMailboxDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMailboxDetails.</param>
+        /// 
+        /// <returns>Returns a  GetMailboxDetailsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual GetMailboxDetailsResponse EndGetMailboxDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMailboxDetailsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAliases
 
         /// <summary>
@@ -2422,6 +2487,78 @@ namespace Amazon.WorkMail
         public virtual ResetPasswordResponse EndResetPassword(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetPasswordResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMailboxQuota
+
+        /// <summary>
+        /// Updates a user's current mailbox quota for a specified organization and user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMailboxQuota service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMailboxQuota service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual UpdateMailboxQuotaResponse UpdateMailboxQuota(UpdateMailboxQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMailboxQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMailboxQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMailboxQuota operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMailboxQuota
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMailboxQuota(UpdateMailboxQuotaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMailboxQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMailboxQuota.</param>
+        /// 
+        /// <returns>Returns a  UpdateMailboxQuotaResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual UpdateMailboxQuotaResponse EndUpdateMailboxQuota(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMailboxQuotaResponse>(asyncResult);
         }
 
         #endregion

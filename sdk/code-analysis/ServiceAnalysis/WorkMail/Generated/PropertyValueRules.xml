@@ -301,6 +301,23 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.UserId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailboxDetailsResponse.MailboxQuota</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMailboxDetailsResponse.MailboxSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAliasesRequest.EntityId</property>
     <min>12</min>
     <max>256</max>
@@ -508,6 +525,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ResetPasswordRequest.UserId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.MailboxQuota</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.UserId</property>
     <min>12</min>
     <max>256</max>
   </property-value-rule>

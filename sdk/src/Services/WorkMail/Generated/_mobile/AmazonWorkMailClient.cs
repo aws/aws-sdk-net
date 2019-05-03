@@ -875,6 +875,39 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMailboxDetails
+
+        internal virtual GetMailboxDetailsResponse GetMailboxDetails(GetMailboxDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMailboxDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMailboxDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMailboxDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
+        public virtual Task<GetMailboxDetailsResponse> GetMailboxDetailsAsync(GetMailboxDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMailboxDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAliases
 
         internal virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
@@ -1234,6 +1267,39 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetPasswordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMailboxQuota
+
+        internal virtual UpdateMailboxQuotaResponse UpdateMailboxQuota(UpdateMailboxQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMailboxQuotaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMailboxQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMailboxQuota operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
+        public virtual Task<UpdateMailboxQuotaResponse> UpdateMailboxQuotaAsync(UpdateMailboxQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMailboxQuotaResponse>(request, options, cancellationToken);
         }
 
         #endregion
