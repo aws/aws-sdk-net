@@ -49,8 +49,8 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Although Source and Approval are listed as valid values, they are not currently functional.
-        /// These values are reserved for future use.
+        /// Although <code>Source</code> and <code>Approval</code> are listed as valid values,
+        /// they are not currently functional. These values are reserved for future use.
         /// </para>
         ///  </note>
         /// </summary>
@@ -154,7 +154,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Returns information about the settings for an action type.
+        /// URLs that provide users information about this custom action.
         /// </para>
         /// </summary>
         public ActionTypeSettings Settings

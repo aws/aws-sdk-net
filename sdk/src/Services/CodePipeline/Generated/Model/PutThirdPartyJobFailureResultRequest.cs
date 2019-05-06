@@ -80,7 +80,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+        /// The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

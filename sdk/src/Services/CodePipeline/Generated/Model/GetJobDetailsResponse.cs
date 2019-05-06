@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a GetJobDetails action.
+    /// Represents the output of a <code>GetJobDetails</code> action.
     /// </summary>
     public partial class GetJobDetailsResponse : AmazonWebServiceResponse
     {
@@ -41,8 +41,8 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If AWSSessionCredentials is used, a long-running job can call GetJobDetails again
-        /// to obtain new credentials.
+        /// If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code>
+        /// again to obtain new credentials.
         /// </para>
         ///  </note>
         /// </summary>

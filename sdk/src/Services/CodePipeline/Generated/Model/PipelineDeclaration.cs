@@ -61,13 +61,14 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactStores. 
         /// <para>
-        /// A mapping of artifactStore objects and their corresponding regions. There must be
-        /// an artifact store for the pipeline region and for each cross-region action within
-        /// the pipeline. You can only use either artifactStore or artifactStores, not both.
+        /// A mapping of <code>artifactStore</code> objects and their corresponding regions. There
+        /// must be an artifact store for the pipeline region and for each cross-region action
+        /// within the pipeline. You can only use either <code>artifactStore</code> or <code>artifactStores</code>,
+        /// not both.
         /// </para>
         ///  
         /// <para>
-        /// If you create a cross-region action in your pipeline, you must use artifactStores.
+        /// If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, ArtifactStore> ArtifactStores
@@ -105,7 +106,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions
-        /// with no actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+        /// with no <code>actionRoleArn</code>, or to use to assume roles for actions with an
+        /// <code>actionRoleArn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

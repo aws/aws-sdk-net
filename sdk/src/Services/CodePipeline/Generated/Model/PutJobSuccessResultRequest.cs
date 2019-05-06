@@ -103,7 +103,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The unique system-generated ID of the job that succeeded. This is the same ID returned
-        /// from PollForJobs.
+        /// from <code>PollForJobs</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

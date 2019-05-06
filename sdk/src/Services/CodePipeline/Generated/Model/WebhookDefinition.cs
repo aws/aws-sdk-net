@@ -46,7 +46,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  GITHUB_HMAC implements the authentication scheme described here: https://developer.github.com/webhooks/securing/
+        /// For information about the authentication scheme implemented by GITHUB_HMAC, see <a
+        /// href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a>
+        /// on the GitHub Developer website.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -77,8 +79,9 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Properties that configure the authentication applied to incoming webhook trigger requests.
         /// The required properties depend on the authentication type. For GITHUB_HMAC, only the
-        /// SecretToken property must be set. For IP, only the AllowedIPRange property must be
-        /// set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.
+        /// <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange
+        /// </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties
+        /// can be set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

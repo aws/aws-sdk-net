@@ -62,8 +62,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that was returned from the previous ListPipelineExecutions call, which can
-        /// be used to return the next set of pipeline executions in the list.
+        /// The token that was returned from the previous <code>ListPipelineExecutions</code>
+        /// call, which can be used to return the next set of pipeline executions in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

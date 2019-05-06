@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a PutActionRevision action.
+    /// Represents the output of a <code>PutActionRevision</code> action.
     /// </summary>
     public partial class PutActionRevisionResponse : AmazonWebServiceResponse
     {

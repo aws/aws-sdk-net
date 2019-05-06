@@ -33,8 +33,8 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-    /// information, such as the commit ID, for the current state.
+    /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
+    /// indicate the source revision information, such as the commit ID, for the current state.
     /// </para>
     ///  </note>
     /// </summary>

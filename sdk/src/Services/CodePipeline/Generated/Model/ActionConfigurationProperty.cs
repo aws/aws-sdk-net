@@ -100,9 +100,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Queryable. 
         /// <para>
-        /// Indicates that the property will be used in conjunction with PollForJobs. When creating
-        /// a custom action, an action can have up to one queryable property. If it has one, that
-        /// property must be both required and not secret.
+        /// Indicates that the property will be used in conjunction with <code>PollForJobs</code>.
+        /// When creating a custom action, an action can have up to one queryable property. If
+        /// it has one, that property must be both required and not secret.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Secret. 
         /// <para>
         /// Whether the configuration property is secret. Secrets are hidden from all calls except
-        /// for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+        /// for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>,
+        /// and <code>PollForThirdPartyJobs</code>.
         /// </para>
         ///  
         /// <para>

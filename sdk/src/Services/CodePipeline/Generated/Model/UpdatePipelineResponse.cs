@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of an UpdatePipeline action.
+    /// Represents the output of an <code>UpdatePipeline</code> action.
     /// </summary>
     public partial class UpdatePipelineResponse : AmazonWebServiceResponse
     {

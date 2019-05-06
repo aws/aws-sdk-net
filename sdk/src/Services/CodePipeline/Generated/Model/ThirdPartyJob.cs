@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// A response to a PollForThirdPartyJobs request returned by AWS CodePipeline when there
-    /// is a job to be worked upon by a partner action.
+    /// A response to a <code>PollForThirdPartyJobs </code>request returned by AWS CodePipeline
+    /// when there is a job to be worked upon by a partner action.
     /// </summary>
     public partial class ThirdPartyJob
     {
@@ -39,8 +39,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The clientToken portion of the clientId and clientToken pair used to verify that the
-        /// calling entity is allowed access to the job and its details.
+        /// The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code>
+        /// pair used to verify that the calling entity is allowed access to the job and its details.
         /// </para>
         /// </summary>
         public string ClientId

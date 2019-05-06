@@ -67,7 +67,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineArn. 
         /// <para>
-        /// The pipeline execution ID provided to the job worker.
+        /// The Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineArn
@@ -85,7 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The pipeline Amazon Resource Name (ARN) provided to the job worker.
+        /// The execution ID of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineExecutionId

@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Represents an AWS session credentials object. These credentials are temporary credentials
         /// that are issued by AWS Secure Token Service (STS). They can be used to access input
-        /// and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline
+        /// and output artifacts in the Amazon S3 bucket used to store artifacts for the pipeline
         /// in AWS CodePipeline.
         /// </para>
         /// </summary>

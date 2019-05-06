@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a PollForThirdPartyJobs action.
+    /// Represents the output of a <code>PollForThirdPartyJobs</code> action.
     /// </summary>
     public partial class PollForThirdPartyJobsResponse : AmazonWebServiceResponse
     {

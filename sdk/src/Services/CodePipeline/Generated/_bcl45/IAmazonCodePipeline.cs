@@ -81,6 +81,13 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>ListActionExecutions</a>, which returns action-level details for past executions.
+    /// The details include full stage and action-level details, including individual action
+    /// duration, status, any errors which occurred during the execution, and input and output
+    /// artifact location details.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with
     /// your account.
     /// </para>
@@ -565,8 +572,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Marks a custom action as deleted. PollForJobs for the custom action will fail after
-        /// the action is marked for deletion. Only used for custom actions.
+        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will
+        /// fail after the action is marked for deletion. Only used for custom actions.
         /// 
         ///  <important> 
         /// <para>
@@ -1064,8 +1071,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-        /// information, such as the commit ID, for the current state.
+        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
+        /// indicate the source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1086,8 +1093,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-        /// information, such as the commit ID, for the current state.
+        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
+        /// indicate the source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1109,8 +1116,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the revisionId and revisionUrl fields indicate the source revision
-        /// information, such as the commit ID, for the current state.
+        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
+        /// indicate the source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1543,9 +1550,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is
-        /// only valid for action types with "Custom" in the owner field. If the action type contains
-        /// "AWS" or "ThirdParty" in the owner field, the PollForJobs action returns an error.
+        /// Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code>
+        /// is only valid for action types with "Custom" in the owner field. If the action type
+        /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
+        /// returns an error.
         /// 
         ///  <important> 
         /// <para>
@@ -1717,7 +1725,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a job as returned to the pipeline by a job worker. Only
         /// used for custom actions.
         /// </summary>
-        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.</param>
+        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</param>
         /// <param name="failureDetails">The details about the failure of a job.</param>
         /// 
         /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
@@ -1757,7 +1765,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a job as returned to the pipeline by a job worker. Only
         /// used for custom actions.
         /// </summary>
-        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.</param>
+        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</param>
         /// <param name="failureDetails">The details about the failure of a job.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1834,7 +1842,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
         /// Only used for partner actions.
         /// </summary>
-        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.</param>
+        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="failureDetails">Represents information about failure details.</param>
         /// 
@@ -1881,7 +1889,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
         /// Only used for partner actions.
         /// </summary>
-        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.</param>
+        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="failureDetails">Represents information about failure details.</param>
         /// <param name="cancellationToken">
@@ -2160,9 +2168,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with UpdatePipeline to provide the full
-        /// structure of the pipeline. Updating the pipeline increases the version number of the
-        /// pipeline by 1.
+        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
+        /// the full structure of the pipeline. Updating the pipeline increases the version number
+        /// of the pipeline by 1.
         /// </summary>
         /// <param name="pipeline">The name of the pipeline to be updated.</param>
         /// 
@@ -2191,9 +2199,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with UpdatePipeline to provide the full
-        /// structure of the pipeline. Updating the pipeline increases the version number of the
-        /// pipeline by 1.
+        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
+        /// the full structure of the pipeline. Updating the pipeline increases the version number
+        /// of the pipeline by 1.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 
@@ -2223,9 +2231,9 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure in conjunction with UpdatePipeline to provide the full
-        /// structure of the pipeline. Updating the pipeline increases the version number of the
-        /// pipeline by 1.
+        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
+        /// the full structure of the pipeline. Updating the pipeline increases the version number
+        /// of the pipeline by 1.
         /// </summary>
         /// <param name="pipeline">The name of the pipeline to be updated.</param>
         /// <param name="cancellationToken">

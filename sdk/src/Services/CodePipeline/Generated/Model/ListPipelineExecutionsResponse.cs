@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a ListPipelineExecutions action.
+    /// Represents the output of a <code>ListPipelineExecutions</code> action.
     /// </summary>
     public partial class ListPipelineExecutionsResponse : AmazonWebServiceResponse
     {
@@ -38,9 +38,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that can be used in the next ListPipelineExecutions call. To view all items
-        /// in the list, continue to call this operation with each subsequent token until no more
-        /// nextToken values are returned.
+        /// A token that can be used in the next <code>ListPipelineExecutions</code> call. To
+        /// view all items in the list, continue to call this operation with each subsequent token
+        /// until no more nextToken values are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

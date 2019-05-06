@@ -41,7 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactRevisions. 
         /// <para>
-        /// A list of ArtifactRevision objects included in a pipeline execution.
+        /// A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
         /// </para>
         /// </summary>
         public List<ArtifactRevision> ArtifactRevisions
