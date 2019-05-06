@@ -60,6 +60,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The policy document.
         /// </para>
+        ///  
+        /// <para>
+        /// IAM stores policies in JSON format. However, resources that were created using AWS
+        /// CloudFormation templates can be formatted in YAML. AWS CloudFormation always converts
+        /// a YAML policy to JSON format before submitting it to IAM.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]
         public string PolicyDocument

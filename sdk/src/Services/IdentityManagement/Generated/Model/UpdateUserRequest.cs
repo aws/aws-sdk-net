@@ -103,9 +103,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
+        /// IAM user, group, role, and policy names must be unique within the account. Names are
+        /// not distinguished by case. For example, you cannot create resources named both "MyResource"
+        /// and "myresource".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group to create. Do not include the path in this value. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".</param>
+        /// <param name="groupName">The name of the group to create. Do not include the path in this value. IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</param>
         public CreateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -63,11 +63,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: _+=,.@-.
-        /// The group name must be unique within the account. Group names are not distinguished
-        /// by case. For example, you cannot create groups named both "ADMINS" and "admins".
+        /// IAM user, group, role, and policy names must be unique within the account. Names are
+        /// not distinguished by case. For example, you cannot create resources named both "MyResource"
+        /// and "myresource".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

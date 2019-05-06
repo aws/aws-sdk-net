@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateUserRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user to create. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users named both "TESTUSER" and "testuser".</param>
+        /// <param name="userName">The name of the user to create. IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</param>
         public CreateUserRequest(string userName)
         {
             _userName = userName;
@@ -145,11 +145,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
-        /// characters with no spaces. You can also include any of the following characters: _+=,.@-.
-        /// User names are not distinguished by case. For example, you cannot create users named
-        /// both "TESTUSER" and "testuser".
+        /// IAM user, group, role, and policy names must be unique within the account. Names are
+        /// not distinguished by case. For example, you cannot create resources named both "MyResource"
+        /// and "myresource".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
