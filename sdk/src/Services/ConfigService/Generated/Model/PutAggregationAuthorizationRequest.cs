@@ -36,6 +36,7 @@ namespace Amazon.ConfigService.Model
     {
         private string _authorizedAccountId;
         private string _authorizedAwsRegion;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AuthorizedAccountId. 
@@ -73,6 +74,22 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetAuthorizedAwsRegion()
         {
             return this._authorizedAwsRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

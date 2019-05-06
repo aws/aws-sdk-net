@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// This object contains regions to setup the aggregator and an IAM role to retrieve organization
-    /// details.
+    /// This object contains regions to set up the aggregator and an IAM role to retrieve
+    /// organization details.
     /// </summary>
     public partial class OrganizationAggregationSource
     {
@@ -77,7 +77,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role used to retreive AWS Organization details associated with the
+        /// ARN of the IAM role used to retrieve AWS Organization details associated with the
         /// aggregator account.
         /// </para>
         /// </summary>
