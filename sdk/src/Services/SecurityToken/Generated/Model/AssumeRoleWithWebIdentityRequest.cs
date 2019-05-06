@@ -30,22 +30,23 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the AssumeRoleWithWebIdentity operation.
     /// Returns a set of temporary security credentials for users who have been authenticated
-    /// in a mobile or web application with a web identity provider, such as Amazon Cognito,
-    /// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.
+    /// in a mobile or web application with a web identity provider. Example providers include
+    /// Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible
+    /// identity provider.
     /// 
     ///  <note> 
     /// <para>
     /// For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon
-    /// Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
-    /// the <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a> to uniquely
-    /// identify a user and supply the user with a consistent identity throughout the lifetime
-    /// of an application.
+    /// Cognito with the <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS Developer
+    /// Guide</a> and the <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android
+    /// Developer Guide</a> to uniquely identify a user. You can also supply the user with
+    /// a consistent identity throughout the lifetime of an application.
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Amazon Cognito, see <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
+    /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
     /// Cognito Overview</a> in the <i>AWS SDK for Android Developer Guide</i> guide and <a
-    /// href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
+    /// href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
     /// Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.
     /// </para>
     ///  </note> 
@@ -53,18 +54,18 @@ namespace Amazon.SecurityToken.Model
     /// Calling <code>AssumeRoleWithWebIdentity</code> does not require the use of AWS security
     /// credentials. Therefore, you can distribute an application (for example, on mobile
     /// devices) that requests temporary security credentials without including long-term
-    /// AWS credentials in the application, and without deploying server-based proxy services
-    /// that use long-term AWS credentials. Instead, the identity of the caller is validated
-    /// by using a token from the web identity provider. For a comparison of <code>AssumeRoleWithWebIdentity</code>
-    /// with the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
+    /// AWS credentials in the application. You also don't need to deploy server-based proxy
+    /// services that use long-term AWS credentials. Instead, the identity of the caller is
+    /// validated by using a token from the web identity provider. For a comparison of <code>AssumeRoleWithWebIdentity</code>
+    /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The temporary security credentials returned by this API consist of an access key ID,
     /// a secret access key, and a security token. Applications can use these temporary security
-    /// credentials to sign calls to AWS service APIs.
+    /// credentials to sign calls to AWS service API operations.
     /// </para>
     ///  
     /// <para>
@@ -73,35 +74,32 @@ namespace Amazon.SecurityToken.Model
     /// parameter to specify the duration of your session. You can provide a value from 900
     /// seconds (15 minutes) up to the maximum session duration setting for the role. This
     /// setting can have a value from 1 hour to 12 hours. To learn how to view the maximum
-    /// value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+    /// value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
     /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
     /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
-    /// API operations or the <code>assume-role*</code> CLI operations but does not apply
-    /// when you use those operations to create a console URL. For more information, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-    /// Roles</a> in the <i>IAM User Guide</i>. 
+    /// API operations or the <code>assume-role*</code> CLI commands. However the limit does
+    /// not apply when you use those operations to create a console URL. For more information,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+    /// IAM Roles</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
     /// The temporary security credentials created by <code>AssumeRoleWithWebIdentity</code>
     /// can be used to make API calls to any AWS service with the following exception: you
     /// cannot call the STS service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
-    /// APIs.
+    /// API operations.
     /// </para>
     ///  
     /// <para>
-    /// Optionally, you can pass an IAM access policy to this operation. If you choose not
-    /// to pass a policy, the temporary security credentials that are returned by the operation
-    /// have the permissions that are defined in the access policy of the role that is being
-    /// assumed. If you pass a policy to this operation, the temporary security credentials
-    /// that are returned by the operation have the permissions that are allowed by both the
-    /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
-    /// you pass. This gives you a way to further restrict the permissions for the resulting
-    /// temporary security credentials. You cannot use the passed policy to grant permissions
-    /// that are in excess of those allowed by the access policy of the role that is being
-    /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
-    /// User Guide</i>.
+    /// (Optional) You can pass an IAM permissions policy to this operation. If you pass a
+    /// policy to this operation, the resulting temporary credentials have the permissions
+    /// of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+    /// restrict the permissions for the resulting temporary security credentials. You cannot
+    /// use the passed policy to grant permissions that are in excess of those allowed by
+    /// the permissions policy of the role that is being assumed. For more information, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+    /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+    /// in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -127,24 +125,24 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
-    /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
+    /// Web Identity Federation API Operations for Mobile Apps</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
-    /// Web Identity Federation Playground</a>. This interactive website lets you walk through
-    /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
-    /// temporary security credentials, and then using those credentials to make a request
-    /// to AWS. 
+    /// Web Identity Federation Playground</a>. Walk through the process of authenticating
+    /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
+    /// and then using those credentials to make a request to AWS. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a href="http://aws.amazon.com/sdkforandroid/">AWS
-    /// SDK for Android</a>. These toolkits contain sample apps that show how to invoke the
-    /// identity providers, and then how to use the information from these providers to get
-    /// and use temporary security credentials. 
+    ///  <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS Developer Guide</a> and
+    /// <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android Developer Guide</a>.
+    /// These toolkits contain sample apps that show how to invoke the identity providers,
+    /// and then how to use the information from these providers to get and use temporary
+    /// security credentials. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -172,12 +170,12 @@ namespace Amazon.SecurityToken.Model
         /// can have a value from 1 hour to 12 hours. If you specify a value higher than this
         /// setting, the operation fails. For example, if you specify a session duration of 12
         /// hours, but your administrator set the maximum session duration to 6 hours, your operation
-        /// fails. To learn how to view the maximum value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
         /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, the value is set to 3600 seconds. 
+        /// By default, the value is set to <code>3600</code> seconds. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -185,7 +183,7 @@ namespace Amazon.SecurityToken.Model
         /// session that you might request using the returned credentials. The request to the
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more information,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
         /// a URL that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.
         /// </para>
@@ -211,14 +209,14 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The policy parameter is optional. If you pass a policy, the temporary security credentials
-        /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
-        /// you pass. This gives you a way to further restrict the permissions for the resulting
+        /// The policy parameter is optional. If you pass a policy to this operation, the resulting
+        /// temporary credentials have the permissions of the assumed role <i>and</i> the policy
+        /// that you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
-        /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>. 
+        /// that are in excess of those allowed by the permissions policy of the role that is
+        /// being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+        /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+        /// in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -229,10 +227,10 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The policy plain text must be 2048 bytes or shorter. However, an internal conversion
-        /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
+        /// The policy plaintext must be 2048 bytes or shorter. However, an internal conversion
+        /// compresses it into a packed binary format with a separate limit. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size.
+        /// is, where 100 percent is the maximum allowed size.
         /// </para>
         ///  </note>
         /// </summary>

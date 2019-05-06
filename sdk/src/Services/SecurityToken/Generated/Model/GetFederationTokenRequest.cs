@@ -32,40 +32,38 @@ namespace Amazon.SecurityToken.Model
     /// Returns a set of temporary security credentials (consisting of an access key ID, a
     /// secret access key, and a security token) for a federated user. A typical use is in
     /// a proxy application that gets temporary security credentials on behalf of distributed
-    /// applications inside a corporate network. Because you must call the <code>GetFederationToken</code>
-    /// action using the long-term security credentials of an IAM user, this call is appropriate
-    /// in contexts where those credentials can be safely stored, usually in a server-based
-    /// application. For a comparison of <code>GetFederationToken</code> with the other APIs
-    /// that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
+    /// applications inside a corporate network. You must call the <code>GetFederationToken</code>
+    /// operation using the long-term security credentials of an IAM user. As a result, this
+    /// call is appropriate in contexts where those credentials can be safely stored, usually
+    /// in a server-based application. For a comparison of <code>GetFederationToken</code>
+    /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
     ///  <note> 
     /// <para>
-    /// If you are creating a mobile-based or browser-based app that can authenticate users
-    /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
-    /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
+    /// You can create a mobile-based or browser-based app that can authenticate users using
+    /// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID Connect-compatible
+    /// identity provider. In this case, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
     /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>GetFederationToken</code> action must be called by using the long-term AWS
-    /// security credentials of an IAM user. You can also call <code>GetFederationToken</code>
-    /// using the security credentials of an AWS root account, but we do not recommended it.
-    /// Instead, we recommend that you create an IAM user for the purpose of the proxy application
-    /// and then attach a policy to the IAM user that limits federated users to only the actions
-    /// and resources that they need access to. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+    /// You can also call <code>GetFederationToken</code> using the security credentials of
+    /// an AWS account root user, but we do not recommend it. Instead, we recommend that you
+    /// create an IAM user for the purpose of the proxy application. Then attach a policy
+    /// to the IAM user that limits federated users to only the actions and resources that
+    /// they need to access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
     /// Best Practices</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
-    /// The temporary security credentials that are obtained by using the long-term credentials
-    /// of an IAM user are valid for the specified duration, from 900 seconds (15 minutes)
-    /// up to a maximium of 129600 seconds (36 hours). The default is 43200 seconds (12 hours).
-    /// Temporary credentials that are obtained by using AWS root account credentials have
-    /// a maximum duration of 3600 seconds (1 hour).
+    /// The temporary credentials are valid for the specified duration, from 900 seconds (15
+    /// minutes) up to a maximum of 129,600 seconds (36 hours). The default is 43,200 seconds
+    /// (12 hours). Temporary credentials that are obtained by using AWS account root user
+    /// credentials have a maximum duration of 3,600 seconds (1 hour).
     /// </para>
     ///  
     /// <para>
@@ -74,11 +72,11 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You cannot use these credentials to call any IAM APIs.
+    /// You cannot use these credentials to call any IAM API operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot call any STS APIs except <code>GetCallerIdentity</code>.
+    /// You cannot call any STS API operations except <code>GetCallerIdentity</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -86,50 +84,16 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// The permissions for the temporary security credentials returned by <code>GetFederationToken</code>
-    /// are determined by a combination of the following: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The policy or policies that are attached to the IAM user whose credentials are used
-    /// to call <code>GetFederationToken</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The policy that is passed as a parameter in the call.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// The passed policy is attached to the temporary security credentials that result from
-    /// the <code>GetFederationToken</code> API call--that is, to the <i>federated user</i>.
-    /// When the federated user makes an AWS request, AWS evaluates the policy attached to
-    /// the federated user in combination with the policy or policies attached to the IAM
-    /// user whose credentials were used to call <code>GetFederationToken</code>. AWS allows
-    /// the federated user's request only when both the federated user <i> <b>and</b> </i>
-    /// the IAM user are explicitly allowed to perform the requested action. The passed policy
-    /// cannot grant more permissions than those that are defined in the IAM user policy.
-    /// </para>
-    ///  
-    /// <para>
-    /// A typical use case is that the permissions of the IAM user whose credentials are used
-    /// to call <code>GetFederationToken</code> are designed to allow access to all the actions
-    /// and resources that any federated user will need. Then, for individual users, you pass
-    /// a policy to the operation that scopes down the permissions to a level that's appropriate
-    /// to that individual user, using a policy that allows only a subset of permissions that
-    /// are granted to the IAM user. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If you do not pass a policy, the resulting temporary security credentials have no
-    /// effective permissions. The only exception is when the temporary security credentials
-    /// are used to access a resource that has a resource-based policy that specifically allows
-    /// the federated user to access the resource.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
+    /// You must pass an IAM permissions policy to <code>GetFederationToken</code>. When you
+    /// pass a policy to this operation, the resulting temporary credentials are defined by
+    /// the intersection of your IAM user policies and the passed policy . The passed policy
+    /// defines the permissions of the <i>federated user</i>. AWS allows the federated user's
+    /// request only when both the attached policy and the IAM user policy explicitly allow
+    /// the federated user to perform the requested action. The passed policy cannot grant
+    /// more permissions than those that are defined in the IAM user policy. For more information
+    /// about how permissions work, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
     /// for GetFederationToken</a>. For information about using <code>GetFederationToken</code>
-    /// to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+    /// to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
     /// Through a Custom Identity Broker</a>. 
     /// </para>
     /// </summary>
@@ -157,11 +121,11 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// The duration, in seconds, that the session should last. Acceptable durations for federation
-        /// sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200
-        /// seconds (12 hours) as the default. Sessions obtained using AWS account (root) credentials
-        /// are restricted to a maximum of 3600 seconds (one hour). If the specified duration
-        /// is longer than one hour, the session obtained by using AWS account (root) credentials
-        /// defaults to one hour.
+        /// sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200
+        /// seconds (12 hours) as the default. Sessions obtained using AWS account root user credentials
+        /// are restricted to a maximum of 3,600 seconds (one hour). If the specified duration
+        /// is longer than one hour, the session obtained by using root user credentials defaults
+        /// to one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=129600)]
@@ -207,21 +171,13 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// An IAM policy in JSON format that is passed with the <code>GetFederationToken</code>
-        /// call and evaluated along with the policy or policies that are attached to the IAM
-        /// user whose credentials are used to call <code>GetFederationToken</code>. The passed
-        /// policy is used to scope down the permissions that are available to the IAM user, by
-        /// allowing only a subset of the permissions that are granted to the IAM user. The passed
-        /// policy cannot grant more permissions than those granted to the IAM user. The final
-        /// permissions for the federated user are the most restrictive set based on the intersection
-        /// of the passed policy and the IAM user policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not pass a policy, the resulting temporary security credentials have no
-        /// effective permissions. The only exception is when the temporary security credentials
-        /// are used to access a resource that has a resource-based policy that specifically allows
-        /// the federated user to access the resource.
+        /// An IAM policy in JSON format. You must pass an IAM permissions policy to <code>GetFederationToken</code>.
+        /// When you pass a policy to this operation, the resulting temporary credentials are
+        /// defined by the intersection of your IAM user policies and the policy that you pass.
+        /// The passed policy defines the permissions of the <i>federated user</i>. AWS allows
+        /// the federated user's request only when both the attached policy and the IAM user policy
+        /// explicitly allow the federated user to perform the requested action. The passed policy
+        /// cannot grant more permissions than those that are defined in the IAM user policy.
         /// </para>
         ///  
         /// <para>
@@ -232,14 +188,14 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The policy plain text must be 2048 bytes or shorter. However, an internal conversion
-        /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
+        /// The policy plaintext must be 2048 bytes or shorter. However, an internal conversion
+        /// compresses it into a packed binary format with a separate limit. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size.
+        /// is, where 100 percent is the maximum allowed size.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
+        /// For more information about how permissions work, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
         /// for GetFederationToken</a>.
         /// </para>
         /// </summary>

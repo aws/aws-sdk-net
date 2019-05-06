@@ -33,9 +33,9 @@ namespace Amazon.SecurityToken.Model
     /// via a SAML authentication response. This operation provides a mechanism for tying
     /// an enterprise identity store or directory to role-based AWS access without user-specific
     /// credentials or configuration. For a comparison of <code>AssumeRoleWithSAML</code>
-    /// with the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
+    /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -52,44 +52,40 @@ namespace Amazon.SecurityToken.Model
     /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter. You can provide
     /// a <code>DurationSeconds</code> value from 900 seconds (15 minutes) up to the maximum
     /// session duration setting for the role. This setting can have a value from 1 hour to
-    /// 12 hours. To learn how to view the maximum value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+    /// 12 hours. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
     /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
     /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
-    /// API operations or the <code>assume-role*</code> CLI operations but does not apply
-    /// when you use those operations to create a console URL. For more information, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-    /// Roles</a> in the <i>IAM User Guide</i>.
+    /// API operations or the <code>assume-role*</code> CLI commands. However the limit does
+    /// not apply when you use those operations to create a console URL. For more information,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+    /// IAM Roles</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The temporary security credentials created by <code>AssumeRoleWithSAML</code> can
     /// be used to make API calls to any AWS service with the following exception: you cannot
     /// call the STS service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
-    /// APIs.
+    /// API operations.
     /// </para>
     ///  
     /// <para>
-    /// Optionally, you can pass an IAM access policy to this operation. If you choose not
-    /// to pass a policy, the temporary security credentials that are returned by the operation
-    /// have the permissions that are defined in the access policy of the role that is being
-    /// assumed. If you pass a policy to this operation, the temporary security credentials
-    /// that are returned by the operation have the permissions that are allowed by the intersection
-    /// of both the access policy of the role that is being assumed, <i> <b>and</b> </i> the
-    /// policy that you pass. This means that both policies must grant the permission for
-    /// the action to be allowed. This gives you a way to further restrict the permissions
-    /// for the resulting temporary security credentials. You cannot use the passed policy
-    /// to grant permissions that are in excess of those allowed by the access policy of the
-    /// role that is being assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
-    /// User Guide</i>.
+    /// Optionally, you can pass an IAM permissions policy to this operation. If you pass
+    /// a policy to this operation, the resulting temporary credentials have the permissions
+    /// of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+    /// restrict the permissions for the resulting temporary security credentials. You cannot
+    /// use the passed policy to grant permissions that are in excess of those allowed by
+    /// the permissions policy of the role that is being assumed. For more information, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+    /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+    /// in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// Before your application can call <code>AssumeRoleWithSAML</code>, you must configure
     /// your SAML identity provider (IdP) to issue the claims required by AWS. Additionally,
     /// you must use AWS Identity and Access Management (IAM) to create a SAML provider entity
-    /// in your AWS account that represents your identity provider, and create an IAM role
-    /// that specifies this SAML provider in its trust policy. 
+    /// in your AWS account that represents your identity provider. You must also create an
+    /// IAM role that specifies this SAML provider in its trust policy. 
     /// </para>
     ///  
     /// <para>
@@ -111,22 +107,22 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
     /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
     /// SAML Identity Providers</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
     /// a Relying Party and Claims</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
     /// a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  </li> </ul>
@@ -150,12 +146,12 @@ namespace Amazon.SecurityToken.Model
         /// setting can have a value from 1 hour to 12 hours. If you specify a value higher than
         /// this setting, the operation fails. For example, if you specify a session duration
         /// of 12 hours, but your administrator set the maximum session duration to 6 hours, your
-        /// operation fails. To learn how to view the maximum value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
         /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, the value is set to 3600 seconds. 
+        /// By default, the value is set to <code>3600</code> seconds. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -163,7 +159,7 @@ namespace Amazon.SecurityToken.Model
         /// session that you might request using the returned credentials. The request to the
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more information,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
         /// a URL that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.
         /// </para>
@@ -189,15 +185,14 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The policy parameter is optional. If you pass a policy, the temporary security credentials
-        /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
-        /// you pass. This gives you a way to further restrict the permissions for the resulting
+        /// The policy parameter is optional. If you pass a policy to this operation, the resulting
+        /// temporary credentials have the permissions of the assumed role <i>and</i> the policy
+        /// that you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
-        /// that are in excess of those allowed by the access policy of the role that is being
-        /// assumed. For more information, <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-        /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
-        /// User Guide</i>. 
+        /// that are in excess of those allowed by the permissions policy of the role that is
+        /// being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+        /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
+        /// in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -208,10 +203,10 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The policy plain text must be 2048 bytes or shorter. However, an internal conversion
-        /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
+        /// The policy plaintext must be 2048 bytes or shorter. However, an internal conversion
+        /// compresses it into a packed binary format with a separate limit. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size.
+        /// is, where 100 percent is the maximum allowed size.
         /// </para>
         ///  </note>
         /// </summary>
@@ -273,8 +268,8 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
-        /// a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
+        /// a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=100000)]
