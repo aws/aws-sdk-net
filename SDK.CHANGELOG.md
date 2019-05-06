@@ -1,3 +1,13 @@
+### 3.3.505.1 (2019-05-06 19:13 UTC)
+* CodePipeline (3.3.101.3)
+	* Documentation updates for codepipeline
+* ConfigService (3.3.100.16)
+	* AWS Config now supports tagging on PutConfigRule, PutConfigurationAggregator and PutAggregationAuthorization APIs.
+* IdentityManagement (3.3.101.5)
+	* Documentation updates for iam
+* SecurityToken (3.3.100.16)
+	* Documentation updates for sts
+
 ### 3.3.505.0 (2019-05-03 18:07 UTC)
 * CognitoIdentityProvider (3.3.102.0)
 	* This release of Amazon Cognito User Pools introduces the new AdminSetUserPassword API that allows administrators of a user pool to change a user's password. The new password can be temporary or permanent.
