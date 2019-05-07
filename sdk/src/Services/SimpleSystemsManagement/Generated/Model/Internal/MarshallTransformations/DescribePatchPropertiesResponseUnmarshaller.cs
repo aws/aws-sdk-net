@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDeployablePatchSnapshotForInstance operation
+    /// Response Unmarshaller for DescribePatchProperties operation
     /// </summary>  
-    public class GetDeployablePatchSnapshotForInstanceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribePatchPropertiesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDeployablePatchSnapshotForInstanceResponse response = new GetDeployablePatchSnapshotForInstanceResponse();
+            DescribePatchPropertiesResponse response = new DescribePatchPropertiesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceId", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceId = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Product", targetDepth))
+                if (context.TestExpression("Properties", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Product = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnapshotDownloadUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SnapshotDownloadUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnapshotId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SnapshotId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    response.Properties = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,20 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedFeatureRequiredException"))
-            {
-                return new UnsupportedFeatureRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperatingSystem"))
-            {
-                return new UnsupportedOperatingSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetDeployablePatchSnapshotForInstanceResponseUnmarshaller _instance = new GetDeployablePatchSnapshotForInstanceResponseUnmarshaller();        
+        private static DescribePatchPropertiesResponseUnmarshaller _instance = new DescribePatchPropertiesResponseUnmarshaller();        
 
-        internal static GetDeployablePatchSnapshotForInstanceResponseUnmarshaller GetInstance()
+        internal static DescribePatchPropertiesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDeployablePatchSnapshotForInstanceResponseUnmarshaller Instance
+        public static DescribePatchPropertiesResponseUnmarshaller Instance
         {
             get
             {

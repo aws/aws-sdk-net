@@ -93,6 +93,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.InstancesWithNotApplicablePatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.InstancesWithUnreportedNotApplicablePatches = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

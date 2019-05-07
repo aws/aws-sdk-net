@@ -2881,6 +2881,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly PatchFilterKey PATCH_ID = new PatchFilterKey("PATCH_ID");
         /// <summary>
+        /// Constant PATCH_SET for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey PATCH_SET = new PatchFilterKey("PATCH_SET");
+        /// <summary>
         /// Constant PRIORITY for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey PRIORITY = new PatchFilterKey("PRIORITY");
@@ -2888,6 +2892,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant PRODUCT for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey PRODUCT = new PatchFilterKey("PRODUCT");
+        /// <summary>
+        /// Constant PRODUCT_FAMILY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey PRODUCT_FAMILY = new PatchFilterKey("PRODUCT_FAMILY");
         /// <summary>
         /// Constant SECTION for PatchFilterKey
         /// </summary>
@@ -2976,6 +2984,122 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PatchOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchProperty.
+    /// </summary>
+    public class PatchProperty : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIFICATION for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty CLASSIFICATION = new PatchProperty("CLASSIFICATION");
+        /// <summary>
+        /// Constant MSRC_SEVERITY for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty MSRC_SEVERITY = new PatchProperty("MSRC_SEVERITY");
+        /// <summary>
+        /// Constant PRIORITY for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty PRIORITY = new PatchProperty("PRIORITY");
+        /// <summary>
+        /// Constant PRODUCT for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty PRODUCT = new PatchProperty("PRODUCT");
+        /// <summary>
+        /// Constant PRODUCT_FAMILY for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty PRODUCT_FAMILY = new PatchProperty("PRODUCT_FAMILY");
+        /// <summary>
+        /// Constant SEVERITY for PatchProperty
+        /// </summary>
+        public static readonly PatchProperty SEVERITY = new PatchProperty("SEVERITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchProperty(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchProperty FindValue(string value)
+        {
+            return FindValue<PatchProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchSet.
+    /// </summary>
+    public class PatchSet : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION for PatchSet
+        /// </summary>
+        public static readonly PatchSet APPLICATION = new PatchSet("APPLICATION");
+        /// <summary>
+        /// Constant OS for PatchSet
+        /// </summary>
+        public static readonly PatchSet OS = new PatchSet("OS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchSet(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchSet FindValue(string value)
+        {
+            return FindValue<PatchSet>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchSet(string value)
         {
             return FindValue(value);
         }

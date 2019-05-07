@@ -4489,6 +4489,101 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchProperties
+
+        /// <summary>
+        /// Lists the properties of available patches organized by product, product family, classification,
+        /// severity, and other properties of available patches. You can use the reported properties
+        /// in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>,
+        /// <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The following section lists the properties that can be used in filters for each major
+        /// operating system type:
+        /// </para>
+        ///  <dl> <dt>WINDOWS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+        /// </para>
+        ///  </dd> <dt>AMAZON_LINUX</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>AMAZON_LINUX_2</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>UBUNTU </dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, PRIORITY
+        /// </para>
+        ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>SUSE</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>CENTOS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchProperties service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchProperties service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">REST API Reference for DescribePatchProperties Operation</seealso>
+        public virtual DescribePatchPropertiesResponse DescribePatchProperties(DescribePatchPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchPropertiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchProperties operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">REST API Reference for DescribePatchProperties Operation</seealso>
+        public virtual IAsyncResult BeginDescribePatchProperties(DescribePatchPropertiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePatchPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePatchPropertiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePatchProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchProperties.</param>
+        /// 
+        /// <returns>Returns a  DescribePatchPropertiesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">REST API Reference for DescribePatchProperties Operation</seealso>
+        public virtual DescribePatchPropertiesResponse EndDescribePatchProperties(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePatchPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSessions
 
         /// <summary>
@@ -4839,6 +4934,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported

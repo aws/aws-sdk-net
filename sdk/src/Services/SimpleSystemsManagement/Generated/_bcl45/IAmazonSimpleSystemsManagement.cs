@@ -3269,6 +3269,74 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchProperties
+
+
+        /// <summary>
+        /// Lists the properties of available patches organized by product, product family, classification,
+        /// severity, and other properties of available patches. You can use the reported properties
+        /// in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>,
+        /// <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The following section lists the properties that can be used in filters for each major
+        /// operating system type:
+        /// </para>
+        ///  <dl> <dt>WINDOWS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+        /// </para>
+        ///  </dd> <dt>AMAZON_LINUX</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>AMAZON_LINUX_2</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>UBUNTU </dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, PRIORITY
+        /// </para>
+        ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>SUSE</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> <dt>CENTOS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchProperties service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchProperties service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">REST API Reference for DescribePatchProperties Operation</seealso>
+        DescribePatchPropertiesResponse DescribePatchProperties(DescribePatchPropertiesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchProperties operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">REST API Reference for DescribePatchProperties Operation</seealso>
+        Task<DescribePatchPropertiesResponse> DescribePatchPropertiesAsync(DescribePatchPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSessions
 
 
@@ -3485,6 +3553,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedFeatureRequiredException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperatingSystemException">
         /// The operating systems you specified is not supported, or the operation is not supported

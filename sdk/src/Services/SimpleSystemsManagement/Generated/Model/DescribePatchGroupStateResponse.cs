@@ -39,6 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _instancesWithInstalledRejectedPatches;
         private int? _instancesWithMissingPatches;
         private int? _instancesWithNotApplicablePatches;
+        private int? _instancesWithUnreportedNotApplicablePatches;
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -172,6 +173,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstancesWithNotApplicablePatches()
         {
             return this._instancesWithNotApplicablePatches.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithUnreportedNotApplicablePatches. 
+        /// <para>
+        /// The number of instances with <code>NotApplicable</code> patches beyond the supported
+        /// limit, which are not reported by name to Systems Manager Inventory.
+        /// </para>
+        /// </summary>
+        public int InstancesWithUnreportedNotApplicablePatches
+        {
+            get { return this._instancesWithUnreportedNotApplicablePatches.GetValueOrDefault(); }
+            set { this._instancesWithUnreportedNotApplicablePatches = value; }
+        }
+
+        // Check to see if InstancesWithUnreportedNotApplicablePatches property is set
+        internal bool IsSetInstancesWithUnreportedNotApplicablePatches()
+        {
+            return this._instancesWithUnreportedNotApplicablePatches.HasValue; 
         }
 
     }

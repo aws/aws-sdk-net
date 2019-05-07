@@ -49,6 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _ownerInformation;
         private string _patchGroup;
         private string _snapshotId;
+        private int? _unreportedNotApplicableCount;
 
         /// <summary>
         /// Gets and sets the property BaselineId. 
@@ -222,7 +223,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property NotApplicableCount. 
         /// <para>
         /// The number of patches from the patch baseline that aren't applicable for the instance
-        /// and hence aren't installed on the instance.
+        /// and therefore aren't installed on the instance. This number may be truncated if the
+        /// list of patch names is very large. The number of patches beyond this limit are reported
+        /// in <code>UnreportedNotApplicableCount</code>.
         /// </para>
         /// </summary>
         public int NotApplicableCount
@@ -352,6 +355,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnreportedNotApplicableCount. 
+        /// <para>
+        /// The number of patches beyond the supported limit of <code>NotApplicableCount</code>
+        /// that are not reported by name to Systems Manager Inventory.
+        /// </para>
+        /// </summary>
+        public int UnreportedNotApplicableCount
+        {
+            get { return this._unreportedNotApplicableCount.GetValueOrDefault(); }
+            set { this._unreportedNotApplicableCount = value; }
+        }
+
+        // Check to see if UnreportedNotApplicableCount property is set
+        internal bool IsSetUnreportedNotApplicableCount()
+        {
+            return this._unreportedNotApplicableCount.HasValue; 
         }
 
     }

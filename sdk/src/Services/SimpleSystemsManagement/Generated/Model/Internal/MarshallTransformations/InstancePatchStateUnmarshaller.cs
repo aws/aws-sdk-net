@@ -154,6 +154,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnreportedNotApplicableCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.UnreportedNotApplicableCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
