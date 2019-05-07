@@ -51,6 +51,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class CreateSMBFileShareRequest : AmazonStorageGatewayRequest
     {
+        private List<string> _adminUserList = new List<string>();
         private string _authentication;
         private string _clientToken;
         private string _defaultStorageClass;
@@ -67,6 +68,27 @@ namespace Amazon.StorageGateway.Model
         private bool? _smbaclEnabled;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _validUserList = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AdminUserList. 
+        /// <para>
+        /// A list of users or groups in the Active Directory that have administrator rights to
+        /// the file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> AdminUserList
+        {
+            get { return this._adminUserList; }
+            set { this._adminUserList = value; }
+        }
+
+        // Check to see if AdminUserList property is set
+        internal bool IsSetAdminUserList()
+        {
+            return this._adminUserList != null && this._adminUserList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Authentication. 

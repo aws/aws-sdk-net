@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdminUserList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdminUserList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Authentication", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
