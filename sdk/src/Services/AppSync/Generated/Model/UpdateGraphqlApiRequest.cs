@@ -33,12 +33,31 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class UpdateGraphqlApiRequest : AmazonAppSyncRequest
     {
+        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private string _apiId;
         private AuthenticationType _authenticationType;
         private LogConfig _logConfig;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
         private UserPoolConfig _userPoolConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAuthenticationProviders. 
+        /// <para>
+        /// A list of additional authentication providers for the <code>GraphqlApi</code> API.
+        /// </para>
+        /// </summary>
+        public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders
+        {
+            get { return this._additionalAuthenticationProviders; }
+            set { this._additionalAuthenticationProviders = value; }
+        }
+
+        // Check to see if AdditionalAuthenticationProviders property is set
+        internal bool IsSetAdditionalAuthenticationProviders()
+        {
+            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApiId. 

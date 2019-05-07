@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the GetSchemaCreationStatus operation.
+    /// Container for the parameters to the UntagResource operation.
+    /// Untags a resource.
     /// </summary>
-    public partial class GetSchemaCreationStatusResponse : AmazonWebServiceResponse
+    public partial class UntagResourceRequest : AmazonAppSyncRequest
     {
-        private string _details;
-        private SchemaStatus _status;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Details. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Detailed information about the status of the schema creation operation.
+        /// The <code>GraphqlApi</code> ARN.
         /// </para>
         /// </summary>
-        public string Details
+        [AWSProperty(Required=true, Min=70, Max=75)]
+        public string ResourceArn
         {
-            get { return this._details; }
-            set { this._details = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Details property is set
-        internal bool IsSetDetails()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._details != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE).
-        /// When the schema is in the ACTIVE state, you can add data.
+        /// A list of <code>TagKey</code> objects.
         /// </para>
         /// </summary>
-        public SchemaStatus Status
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> TagKeys
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._status != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

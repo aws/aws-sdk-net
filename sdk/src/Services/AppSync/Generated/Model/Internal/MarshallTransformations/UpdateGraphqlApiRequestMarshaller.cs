@@ -69,6 +69,22 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalAuthenticationProviders())
+                {
+                    context.Writer.WritePropertyName("additionalAuthenticationProviders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalAuthenticationProvidersListValue in publicRequest.AdditionalAuthenticationProviders)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdditionalAuthenticationProviderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalAuthenticationProvidersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAuthenticationType())
                 {
                     context.Writer.WritePropertyName("authenticationType");

@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the GetSchemaCreationStatus operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Tags a resource with user-supplied tags.
     /// </summary>
-    public partial class GetSchemaCreationStatusResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonAppSyncRequest
     {
-        private string _details;
-        private SchemaStatus _status;
+        private string _resourceArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Details. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Detailed information about the status of the schema creation operation.
+        /// The <code>GraphqlApi</code> ARN.
         /// </para>
         /// </summary>
-        public string Details
+        [AWSProperty(Required=true, Min=70, Max=75)]
+        public string ResourceArn
         {
-            get { return this._details; }
-            set { this._details = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Details property is set
-        internal bool IsSetDetails()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._details != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE).
-        /// When the schema is in the ACTIVE state, you can add data.
+        /// A <code>TagMap</code> object.
         /// </para>
         /// </summary>
-        public SchemaStatus Status
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._status != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

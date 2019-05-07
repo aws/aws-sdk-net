@@ -163,6 +163,12 @@
     <pattern>[\\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>70</min>
+    <max>75</max>
+    <pattern>^arn:aws:appsync:[A-Za-z0-9_/.-]{0,63}:\d{12}:apis/[0-9A-Za-z_-]{26}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesRequest.MaxResults</property>
     <min>0</min>
     <max>25</max>
@@ -174,6 +180,18 @@
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesResponse.NextToken</property>
     <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.TagResourceRequest.ResourceArn</property>
+    <min>70</min>
+    <max>75</max>
+    <pattern>^arn:aws:appsync:[A-Za-z0-9_/.-]{0,63}:\d{12}:apis/[0-9A-Za-z_-]{26}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UntagResourceRequest.ResourceArn</property>
+    <min>70</min>
+    <max>75</max>
+    <pattern>^arn:aws:appsync:[A-Za-z0-9_/.-]{0,63}:\d{12}:apis/[0-9A-Za-z_-]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateDataSourceRequest.Name</property>

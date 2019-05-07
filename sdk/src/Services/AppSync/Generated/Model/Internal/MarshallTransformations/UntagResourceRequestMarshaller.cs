@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetIntrospectionSchema Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class GetIntrospectionSchemaRequestMarshaller : IMarshaller<IRequest, GetIntrospectionSchemaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetIntrospectionSchemaRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,30 +52,27 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetIntrospectionSchemaRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/v1/apis/{apiId}/schema";
-            if (!publicRequest.IsSetApiId())
-                throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
+            string uriResourcePath = "/v1/tags/{resourceArn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonAppSyncException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             
-            if (publicRequest.IsSetFormat())
-                request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
-            
-            if (publicRequest.IsSetIncludeDirectives())
-                request.Parameters.Add("includeDirectives", StringUtils.FromBool(publicRequest.IncludeDirectives));
+            if (publicRequest.IsSetTagKeys())
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetIntrospectionSchemaRequestMarshaller _instance = new GetIntrospectionSchemaRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static GetIntrospectionSchemaRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +80,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetIntrospectionSchemaRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {

@@ -33,16 +33,36 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class CreateGraphqlApiRequest : AmazonAppSyncRequest
     {
+        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private AuthenticationType _authenticationType;
         private LogConfig _logConfig;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private UserPoolConfig _userPoolConfig;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAuthenticationProviders. 
+        /// <para>
+        /// A list of additional authentication providers for the <code>GraphqlApi</code> API.
+        /// </para>
+        /// </summary>
+        public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders
+        {
+            get { return this._additionalAuthenticationProviders; }
+            set { this._additionalAuthenticationProviders = value; }
+        }
+
+        // Check to see if AdditionalAuthenticationProviders property is set
+        internal bool IsSetAdditionalAuthenticationProviders()
+        {
+            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
+        /// The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,6 +131,25 @@ namespace Amazon.AppSync.Model
         internal bool IsSetOpenIDConnectConfig()
         {
             return this._openidConnectConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A <code>TagMap</code> object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

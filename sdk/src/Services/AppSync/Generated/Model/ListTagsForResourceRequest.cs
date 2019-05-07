@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the StartSchemaCreation operation.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags for a resource.
     /// </summary>
-    public partial class StartSchemaCreationResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceRequest : AmazonAppSyncRequest
     {
-        private SchemaStatus _status;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE).
-        /// When the schema is in the ACTIVE state, you can add data.
+        /// The <code>GraphqlApi</code> ARN.
         /// </para>
         /// </summary>
-        public SchemaStatus Status
+        [AWSProperty(Required=true, Min=70, Max=75)]
+        public string ResourceArn
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._status != null;
+            return this._resourceArn != null;
         }
 
     }

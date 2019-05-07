@@ -459,9 +459,21 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly SchemaStatus DELETING = new SchemaStatus("DELETING");
         /// <summary>
+        /// Constant FAILED for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus FAILED = new SchemaStatus("FAILED");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus NOT_APPLICABLE = new SchemaStatus("NOT_APPLICABLE");
+        /// <summary>
         /// Constant PROCESSING for SchemaStatus
         /// </summary>
         public static readonly SchemaStatus PROCESSING = new SchemaStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCESS for SchemaStatus
+        /// </summary>
+        public static readonly SchemaStatus SUCCESS = new SchemaStatus("SUCCESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

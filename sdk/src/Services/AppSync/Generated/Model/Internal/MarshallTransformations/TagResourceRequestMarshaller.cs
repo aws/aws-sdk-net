@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGraphqlApi Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateGraphqlApiRequestMarshaller : IMarshaller<IRequest, CreateGraphqlApiRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGraphqlApiRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,70 +52,23 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGraphqlApiRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/apis";
+            string uriResourcePath = "/v1/tags/{resourceArn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonAppSyncException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resourceArn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalAuthenticationProviders())
-                {
-                    context.Writer.WritePropertyName("additionalAuthenticationProviders");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalAuthenticationProvidersListValue in publicRequest.AdditionalAuthenticationProviders)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AdditionalAuthenticationProviderMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAdditionalAuthenticationProvidersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetAuthenticationType())
-                {
-                    context.Writer.WritePropertyName("authenticationType");
-                    context.Writer.Write(publicRequest.AuthenticationType);
-                }
-
-                if(publicRequest.IsSetLogConfig())
-                {
-                    context.Writer.WritePropertyName("logConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOpenIDConnectConfig())
-                {
-                    context.Writer.WritePropertyName("openIDConnectConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OpenIDConnectConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -130,17 +83,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetUserPoolConfig())
-                {
-                    context.Writer.WritePropertyName("userPoolConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserPoolConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UserPoolConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -150,9 +92,9 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateGraphqlApiRequestMarshaller _instance = new CreateGraphqlApiRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateGraphqlApiRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -160,7 +102,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphqlApiRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
