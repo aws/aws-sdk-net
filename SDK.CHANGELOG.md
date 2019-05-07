@@ -1,3 +1,18 @@
+### 3.3.506.0 (2019-05-07 18:30 UTC)
+* AlexaForBusiness (3.3.103.0)
+	* This release adds an API allowing authorized users to delete a shared device's history of voice recordings and associated response data.
+* AppSync (3.3.101.0)
+	* AWS AppSync now supports the ability to add additional authentication providers to your AWS AppSync GraphQL API as well as the ability to retrieve directives configured against fields or object type definitions during schema introspection.
+* SimpleSystemsManagement (3.3.102.0)
+	* Patch Manager adds support for Microsoft Application Patching.
+* StorageGateway (3.3.104.0)
+	* Add optional field AdminUserList to CreateSMBFileShare and UpdateSMBFileShare APIs.
+* Core 3.3.101.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.505.1 (2019-05-06 19:13 UTC)
 * CodePipeline (3.3.101.3)
 	* Documentation updates for codepipeline
