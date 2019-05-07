@@ -28,16 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// The audio message. There is a 1 MB limit on the audio file input, and the only supported
-    /// format is MP3. You must convert audio files to an Alexa-friendly format. 
+    /// The audio message. There is a 1 MB limit on the audio file input and the only supported
+    /// format is MP3. To convert your MP3 audio files to an Alexa-friendly, 
     /// 
     ///  
     /// <para>
-    /// You might need to use converter software to convert your MP3 files to the required
-    /// codec version (MPEG version 2) and bit rate (48 kbps). One option for this is a command-line
-    /// tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>.
-    /// The following command converts the provided &lt;input-file&gt; to an MP3 file that
-    /// will be played in the announcement:
+    /// required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter
+    /// software. One option for this is a command-line tool, FFmpeg. For more information,
+    /// see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the
+    /// provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
     /// </para>
     ///  
     /// <para>
@@ -73,7 +72,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
-        /// comprised of safe character are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe
+        /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe
         /// Characters</a>.
         /// </para>
         /// </summary>

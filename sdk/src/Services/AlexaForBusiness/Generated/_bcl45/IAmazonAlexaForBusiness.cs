@@ -717,6 +717,46 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteDeviceUsageData
+
+
+        /// <summary>
+        /// When this action is called for a specified shared device, it allows authorized users
+        /// to delete the device's entire previous history of voice input data and associated
+        /// response data. This action can be called once every 24 hours for a specific shared
+        /// device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDeviceUsageData service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        DeleteDeviceUsageDataResponse DeleteDeviceUsageData(DeleteDeviceUsageDataRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDeviceUsageData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        Task<DeleteDeviceUsageDataResponse> DeleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteGatewayGroup
 
 
@@ -2234,8 +2274,8 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple
-        /// rooms, identified by a search, such as filter.
+        /// Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms
+        /// that are identified by a search or filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendAnnouncement service method.</param>
         /// 

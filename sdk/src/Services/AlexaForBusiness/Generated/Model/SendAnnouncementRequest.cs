@@ -29,8 +29,8 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the SendAnnouncement operation.
-    /// Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple
-    /// rooms, identified by a search, such as filter.
+    /// Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms
+    /// that are identified by a search or filter.
     /// </summary>
     public partial class SendAnnouncementRequest : AmazonAlexaForBusinessRequest
     {
@@ -102,8 +102,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property TimeToLiveInSeconds. 
         /// <para>
-        /// The time to live for an announcement. If delivery doesn't occur within this time,
-        /// the announcement will not be delivered.
+        /// The time to live for an announcement. Default is 300. If delivery doesn't occur within
+        /// this time, the announcement is not delivered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]

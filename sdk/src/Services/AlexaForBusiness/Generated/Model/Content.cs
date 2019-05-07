@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// The content definition. It can contain only one text, SSML, or audio list object.
+    /// The content definition. This can contain only one text, SSML, or audio list object.
     /// </summary>
     public partial class Content
     {

@@ -911,6 +911,39 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteDeviceUsageData
+
+        internal virtual DeleteDeviceUsageDataResponse DeleteDeviceUsageData(DeleteDeviceUsageDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeviceUsageDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeviceUsageDataResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeviceUsageDataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDeviceUsageData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        public virtual Task<DeleteDeviceUsageDataResponse> DeleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeviceUsageDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeviceUsageDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDeviceUsageDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGatewayGroup
 
         internal virtual DeleteGatewayGroupResponse DeleteGatewayGroup(DeleteGatewayGroupRequest request)

@@ -533,6 +533,22 @@ namespace Amazon.AlexaForBusiness
     {
 
         /// <summary>
+        /// Constant ASSOCIATION_REJECTION for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode ASSOCIATION_REJECTION = new DeviceStatusDetailCode("ASSOCIATION_REJECTION");
+        /// <summary>
+        /// Constant AUTHENTICATION_FAILURE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode AUTHENTICATION_FAILURE = new DeviceStatusDetailCode("AUTHENTICATION_FAILURE");
+        /// <summary>
+        /// Constant CERTIFICATE_ISSUING_LIMIT_EXCEEDED for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode CERTIFICATE_ISSUING_LIMIT_EXCEEDED = new DeviceStatusDetailCode("CERTIFICATE_ISSUING_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant CREDENTIALS_ACCESS_FAILURE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode CREDENTIALS_ACCESS_FAILURE = new DeviceStatusDetailCode("CREDENTIALS_ACCESS_FAILURE");
+        /// <summary>
         /// Constant DEVICE_SOFTWARE_UPDATE_NEEDED for DeviceStatusDetailCode
         /// </summary>
         public static readonly DeviceStatusDetailCode DEVICE_SOFTWARE_UPDATE_NEEDED = new DeviceStatusDetailCode("DEVICE_SOFTWARE_UPDATE_NEEDED");
@@ -540,6 +556,42 @@ namespace Amazon.AlexaForBusiness
         /// Constant DEVICE_WAS_OFFLINE for DeviceStatusDetailCode
         /// </summary>
         public static readonly DeviceStatusDetailCode DEVICE_WAS_OFFLINE = new DeviceStatusDetailCode("DEVICE_WAS_OFFLINE");
+        /// <summary>
+        /// Constant DHCP_FAILURE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode DHCP_FAILURE = new DeviceStatusDetailCode("DHCP_FAILURE");
+        /// <summary>
+        /// Constant DNS_FAILURE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode DNS_FAILURE = new DeviceStatusDetailCode("DNS_FAILURE");
+        /// <summary>
+        /// Constant INTERNET_UNAVAILABLE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode INTERNET_UNAVAILABLE = new DeviceStatusDetailCode("INTERNET_UNAVAILABLE");
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_AUTHORITY for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode INVALID_CERTIFICATE_AUTHORITY = new DeviceStatusDetailCode("INVALID_CERTIFICATE_AUTHORITY");
+        /// <summary>
+        /// Constant INVALID_PASSWORD_STATE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode INVALID_PASSWORD_STATE = new DeviceStatusDetailCode("INVALID_PASSWORD_STATE");
+        /// <summary>
+        /// Constant NETWORK_PROFILE_NOT_FOUND for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode NETWORK_PROFILE_NOT_FOUND = new DeviceStatusDetailCode("NETWORK_PROFILE_NOT_FOUND");
+        /// <summary>
+        /// Constant PASSWORD_NOT_FOUND for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode PASSWORD_NOT_FOUND = new DeviceStatusDetailCode("PASSWORD_NOT_FOUND");
+        /// <summary>
+        /// Constant TLS_VERSION_MISMATCH for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode TLS_VERSION_MISMATCH = new DeviceStatusDetailCode("TLS_VERSION_MISMATCH");
+        /// <summary>
+        /// Constant UNKNOWN_FAILURE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode UNKNOWN_FAILURE = new DeviceStatusDetailCode("UNKNOWN_FAILURE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -570,6 +622,52 @@ namespace Amazon.AlexaForBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceStatusDetailCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceUsageType.
+    /// </summary>
+    public class DeviceUsageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VOICE for DeviceUsageType
+        /// </summary>
+        public static readonly DeviceUsageType VOICE = new DeviceUsageType("VOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceUsageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceUsageType FindValue(string value)
+        {
+            return FindValue<DeviceUsageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceUsageType(string value)
         {
             return FindValue(value);
         }
