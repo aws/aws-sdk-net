@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes the number of in-application streams to create for a given streaming source.
-    /// For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
-    /// Application Input</a>.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class InputParallelism
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private int? _count;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Count. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// Number of in-application streams to create. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
-        /// 
+        /// The key-value tags assigned to the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public int Count
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._count.GetValueOrDefault(); }
-            set { this._count = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Count property is set
-        internal bool IsSetCount()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._count.HasValue; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

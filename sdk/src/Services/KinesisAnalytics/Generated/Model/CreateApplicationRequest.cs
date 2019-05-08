@@ -29,12 +29,21 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an Amazon Kinesis Analytics application. You can configure each application
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Creates an Amazon Kinesis Analytics application. You can configure each application
     /// with one streaming source as input, application code to process the input, and up
     /// to three destinations where you want Amazon Kinesis Analytics to write the output
-    /// data from your application. For an overview, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
+    /// data from your application. For an overview, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
     /// it Works</a>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// In the input configuration, you map the streaming source to an in-application stream,
@@ -63,7 +72,7 @@ namespace Amazon.KinesisAnalytics.Model
     ///  
     /// <para>
     ///  For introductory exercises to create an Amazon Kinesis Analytics application, see
-    /// <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting
+    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting
     /// Started</a>. 
     /// </para>
     /// </summary>
@@ -75,6 +84,7 @@ namespace Amazon.KinesisAnalytics.Model
         private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
         private List<Input> _inputs = new List<Input>();
         private List<Output> _outputs = new List<Output>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ApplicationCode. 
@@ -83,7 +93,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// For example, you can write a SQL statement that reads data from one in-application
         /// stream, generates a running average of the number of advertisement clicks by vendor,
         /// and insert resulting rows in another in-application stream using pumps. For more information
-        /// about the typical pattern, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+        /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
         /// Code</a>. 
         /// </para>
         ///  
@@ -155,7 +165,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
         /// Use this parameter to configure a CloudWatch log stream to monitor application configuration
-        /// errors. For more information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+        /// errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
         /// with Amazon CloudWatch Logs</a>.
         /// </para>
         /// </summary>
@@ -245,6 +255,29 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetOutputs()
         {
             return this._outputs != null && this._outputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of one or more tags to assign to the application. A tag is a key-value pair
+        /// that identifies an application. Note that the maximum number of application tags includes
+        /// system tags. The maximum number of user-defined application tags is 50. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

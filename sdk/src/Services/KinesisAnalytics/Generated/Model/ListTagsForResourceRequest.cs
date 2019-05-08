@@ -28,23 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS
-    /// Lambda</a> function that is used to preprocess records in the stream, and the ARN
-    /// of the IAM role that is used to access the AWS Lambda expression.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Retrieves the list of key-value tags assigned to the application.
     /// </summary>
-    public partial class InputLambdaProcessorDescription
+    public partial class ListTagsForResourceRequest : AmazonKinesisAnalyticsRequest
     {
         private string _resourceARN;
-        private string _roleARN;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
-        /// that is used to preprocess the records in the stream.
+        /// The ARN of the application for which to retrieve tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -55,25 +52,6 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetResourceARN()
         {
             return this._resourceARN != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RoleARN. 
-        /// <para>
-        /// The ARN of the IAM role that is used to access the AWS Lambda function.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string RoleARN
-        {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
-        }
-
-        // Check to see if RoleARN property is set
-        internal bool IsSetRoleARN()
-        {
-            return this._roleARN != null;
         }
 
     }

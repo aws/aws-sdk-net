@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// When updating an output configuration using the <a>UpdateApplication</a> operation,
-    /// provides information about an Amazon Kinesis Firehose delivery stream configured as
-    /// the destination.
+    /// When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a>
+    /// operation, provides information about an Amazon Kinesis Firehose delivery stream configured
+    /// as the destination.
     /// </summary>
     public partial class KinesisFirehoseOutputUpdate
     {

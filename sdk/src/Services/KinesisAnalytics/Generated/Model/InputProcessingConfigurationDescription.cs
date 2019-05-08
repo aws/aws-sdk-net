@@ -29,8 +29,7 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Provides configuration information about an input processor. Currently, the only input
-    /// processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS
-    /// Lambda</a>.
+    /// processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
     /// </summary>
     public partial class InputProcessingConfigurationDescription
     {
@@ -39,7 +38,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputLambdaProcessorDescription. 
         /// <para>
-        /// Provides configuration information about the associated <a>InputLambdaProcessorDescription</a>.
+        /// Provides configuration information about the associated <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessorDescription.html">InputLambdaProcessorDescription</a>.
         /// </para>
         /// </summary>
         public InputLambdaProcessorDescription InputLambdaProcessorDescription

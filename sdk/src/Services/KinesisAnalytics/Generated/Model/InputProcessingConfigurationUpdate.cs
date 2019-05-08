@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes updates to an <a>InputProcessingConfiguration</a>.
+    /// Describes updates to an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>.
     /// </summary>
     public partial class InputProcessingConfigurationUpdate
     {
@@ -37,7 +37,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputLambdaProcessorUpdate. 
         /// <para>
-        /// Provides update information for an <a>InputLambdaProcessor</a>.
+        /// Provides update information for an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

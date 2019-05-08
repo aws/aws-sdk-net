@@ -34,8 +34,8 @@ namespace Amazon.KinesisAnalytics.Model
     ///  
     /// <para>
     /// An Amazon Kinesis Analytics application loads reference data only once. If the data
-    /// changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
-    /// into your application.
+    /// changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a>
+    /// operation to trigger reloading of data into your application.
     /// </para>
     /// </summary>
     public partial class S3ReferenceDataSource

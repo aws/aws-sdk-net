@@ -29,13 +29,22 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationReferenceDataSource operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes a reference data source configuration from the specified application configuration.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If the application is running, Amazon Kinesis Analytics immediately removes the in-application
-    /// table that you created using the <a>AddApplicationReferenceDataSource</a> operation.
-    /// 
+    /// table that you created using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+    /// operation. 
     /// </para>
     ///  
     /// <para>
@@ -71,9 +80,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// Version of the application. You can use the <a>DescribeApplication</a> operation to
-        /// get the current application version. If the version specified is not the current version,
-        /// the <code>ConcurrentModificationException</code> is returned.
+        /// Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the current application version. If the version specified is not
+        /// the current version, the <code>ConcurrentModificationException</code> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -93,9 +102,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property ReferenceId. 
         /// <para>
         /// ID of the reference data source. When you add a reference data source to your application
-        /// using the <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns
-        /// an ID. You can use the <a>DescribeApplication</a> operation to get the reference ID.
-        /// 
+        /// using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>,
+        /// Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the reference ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

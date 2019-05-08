@@ -29,10 +29,19 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationOutput operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes output destination configuration from your application configuration. Amazon
     /// Kinesis Analytics will no longer write data from the corresponding in-application
     /// stream to the external output destination.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplicationOutput</code>
@@ -67,7 +76,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// Amazon Kinesis Analytics application version. You can use the <a>DescribeApplication</a>
+        /// Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get the current application version. If the version specified is not
         /// the current version, the <code>ConcurrentModificationException</code> is returned.
         /// 
@@ -90,11 +99,11 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property OutputId. 
         /// <para>
         /// The ID of the configuration to delete. Each output configuration that is added to
-        /// the application, either when the application is created or later using the <a>AddApplicationOutput</a>
+        /// the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a>
         /// operation, has a unique ID. You need to provide the ID to uniquely identify the output
         /// configuration that you want to delete from the application configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
-        /// 
+        /// use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the specific <code>OutputId</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

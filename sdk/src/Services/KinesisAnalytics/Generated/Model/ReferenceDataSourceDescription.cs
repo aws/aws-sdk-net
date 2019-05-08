@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property ReferenceId. 
         /// <para>
         /// ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns
-        /// when you add the reference data source to your application using the <a>AddApplicationReferenceDataSource</a>
+        /// when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
         /// operation.
         /// </para>
         /// </summary>

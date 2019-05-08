@@ -28,32 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes the data format when records are written to the destination. For more information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
-    /// Application Output</a>.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class DestinationSchema
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private RecordFormatType _recordFormatType;
-
-        /// <summary>
-        /// Gets and sets the property RecordFormatType. 
-        /// <para>
-        /// Specifies the format of the records on the output stream.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public RecordFormatType RecordFormatType
-        {
-            get { return this._recordFormatType; }
-            set { this._recordFormatType = value; }
-        }
-
-        // Check to see if RecordFormatType property is set
-        internal bool IsSetRecordFormatType()
-        {
-            return this._recordFormatType != null;
-        }
 
     }
 }

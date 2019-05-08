@@ -36,7 +36,7 @@ namespace Amazon.KinesisAnalytics.Model
     ///   
     /// <para>
     /// For limits on how many destinations an application can write and other limitations,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
     /// 
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property DestinationSchema. 
         /// <para>
         /// Describes the data format when records are written to the destination. For more information,
-        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
         /// Application Output</a>.
         /// </para>
         /// </summary>

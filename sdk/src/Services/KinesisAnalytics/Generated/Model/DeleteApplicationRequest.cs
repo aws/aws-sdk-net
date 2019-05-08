@@ -29,10 +29,19 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Deletes the specified application. Amazon Kinesis Analytics halts application execution
     /// and deletes the application, including any application artifacts (such as in-application
     /// streams, reference table, and application code).
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplication</code>

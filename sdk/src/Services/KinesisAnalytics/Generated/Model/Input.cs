@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// <summary>
     /// When you configure the application input, you specify the streaming source, the in-application
     /// stream name that is created, and the mapping between the two. For more information,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
     /// Application Input</a>.
     /// </summary>
     public partial class Input
@@ -53,7 +53,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        ///  (see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+        ///  (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
         /// Application Input</a>.
         /// </para>
         /// </summary>
@@ -72,9 +72,10 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputProcessingConfiguration. 
         /// <para>
-        /// The <a>InputProcessingConfiguration</a> for the input. An input processor transforms
-        /// records as they are received from the stream, before the application's SQL code executes.
-        /// Currently, the only input processing configuration available is <a>InputLambdaProcessor</a>.
+        /// The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+        /// for the input. An input processor transforms records as they are received from the
+        /// stream, before the application's SQL code executes. Currently, the only input processing
+        /// configuration available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.
         /// </para>
         /// </summary>
         public InputProcessingConfiguration InputProcessingConfiguration

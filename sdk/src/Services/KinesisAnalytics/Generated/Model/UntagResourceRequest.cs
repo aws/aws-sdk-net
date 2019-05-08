@@ -28,23 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS
-    /// Lambda</a> function that is used to preprocess records in the stream, and the ARN
-    /// of the IAM role that is used to access the AWS Lambda expression.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes one or more tags from a Kinesis Analytics application.
     /// </summary>
-    public partial class InputLambdaProcessorDescription
+    public partial class UntagResourceRequest : AmazonKinesisAnalyticsRequest
     {
         private string _resourceARN;
-        private string _roleARN;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
-        /// that is used to preprocess the records in the stream.
+        /// The ARN of the Kinesis Analytics application from which to remove the tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -58,22 +56,22 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The ARN of the IAM role that is used to access the AWS Lambda function.
+        /// A list of keys of tags to remove from the specified application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string RoleARN
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if RoleARN property is set
-        internal bool IsSetRoleARN()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._roleARN != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

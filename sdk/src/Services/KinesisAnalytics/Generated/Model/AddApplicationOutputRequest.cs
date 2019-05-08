@@ -29,8 +29,17 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationOutput operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Adds an external destination to your Amazon Kinesis Analytics application.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If you want Amazon Kinesis Analytics to deliver data from an in-application stream
@@ -44,19 +53,19 @@ namespace Amazon.KinesisAnalytics.Model
     /// <para>
     ///  You can use one of the output configurations to deliver data from your in-application
     /// error stream to an external destination so that you can analyze the errors. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
+    /// information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
     /// Application Output (Destination)</a>. 
     /// </para>
     ///  
     /// <para>
     ///  Any configuration update, including adding a streaming source using this operation,
-    /// results in a new version of the application. You can use the <a>DescribeApplication</a>
+    /// results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
     /// operation to find the current application version.
     /// </para>
     ///  
     /// <para>
     /// For the limits on the number of application inputs and outputs you can configure,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
     /// </para>
     ///  
     /// <para>
@@ -93,9 +102,10 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
         /// Version of the application to which you want to add the output configuration. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the <code>ConcurrentModificationException</code>
-        /// is returned. 
+        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the current application version. If the version specified is not
+        /// the current version, the <code>ConcurrentModificationException</code> is returned.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

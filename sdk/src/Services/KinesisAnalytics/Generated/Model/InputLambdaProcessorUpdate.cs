@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess
-    /// the records in the stream.
+    /// Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>
+    /// that is used to preprocess the records in the stream.
     /// </summary>
     public partial class InputLambdaProcessorUpdate
     {
@@ -39,9 +39,17 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARNUpdate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
+        /// The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS
         /// Lambda</a> function that is used to preprocess the records in the stream.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify an earlier version of the Lambda function than the latest, include the
+        /// Lambda function version in the Lambda function ARN. For more information about Lambda
+        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs: AWS Lambda</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string ResourceARNUpdate

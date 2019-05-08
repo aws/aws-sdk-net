@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// When updating an output configuration using the <a>UpdateApplication</a> operation,
-    /// provides information about an AWS Lambda function configured as the destination.
+    /// When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a>
+    /// operation, provides information about an AWS Lambda function configured as the destination.
     /// </summary>
     public partial class LambdaOutputUpdate
     {
@@ -41,6 +41,14 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Amazon Resource Name (ARN) of the destination Lambda function.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify an earlier version of the Lambda function than the latest, include the
+        /// Lambda function version in the Lambda function ARN. For more information about Lambda
+        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs: AWS Lambda</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string ResourceARNUpdate

@@ -29,7 +29,18 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationInputProcessingConfiguration operation.
-    /// Deletes an <a>InputProcessingConfiguration</a> from an input.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Deletes an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+    /// from an input.
+    /// </para>
     /// </summary>
     public partial class DeleteApplicationInputProcessingConfigurationRequest : AmazonKinesisAnalyticsRequest
     {
@@ -79,7 +90,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property InputId. 
         /// <para>
         /// The ID of the input configuration from which to delete the input processing configuration.
-        /// You can get a list of the input IDs for an application by using the <a>DescribeApplication</a>
+        /// You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation.
         /// </para>
         /// </summary>

@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property DestinationSchemaUpdate. 
         /// <para>
         /// Describes the data format when records are written to the destination. For more information,
-        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
         /// Application Output</a>.
         /// </para>
         /// </summary>

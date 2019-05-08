@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
+    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS
     /// Lambda</a> function that is used to preprocess records in the stream, and the ARN
     /// of the IAM role that is used to access the AWS Lambda function.
     /// </summary>
@@ -40,9 +40,17 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
-        /// function that operates on records in the stream.
+        /// The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
+        /// that operates on records in the stream.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify an earlier version of the Lambda function than the latest, include the
+        /// Lambda function version in the Lambda function ARN. For more information about Lambda
+        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs: AWS Lambda</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN

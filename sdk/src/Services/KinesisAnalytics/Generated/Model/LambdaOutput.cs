@@ -42,6 +42,14 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Amazon Resource Name (ARN) of the destination Lambda function to write to.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify an earlier version of the Lambda function than the latest, include the
+        /// Lambda function version in the Lambda function ARN. For more information about Lambda
+        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs: AWS Lambda</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN

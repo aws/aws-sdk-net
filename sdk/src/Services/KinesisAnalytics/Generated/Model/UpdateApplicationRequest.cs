@@ -29,9 +29,18 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Updates an existing Amazon Kinesis Analytics application. Using this API, you can
     /// update application code, input configuration, and output configuration. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code>
@@ -90,8 +99,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The current application version ID. You can use the <a>DescribeApplication</a> operation
-        /// to get this value.
+        /// The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

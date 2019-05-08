@@ -45,7 +45,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property Mapping. 
         /// <para>
-        /// Reference to the data element in the streaming input of the reference data source.
+        /// Reference to the data element in the streaming input or the reference data source.
+        /// This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a>
+        /// is <code>JSON</code>.
         /// </para>
         /// </summary>
         public string Mapping

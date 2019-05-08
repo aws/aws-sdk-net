@@ -28,23 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS
-    /// Lambda</a> function that is used to preprocess records in the stream, and the ARN
-    /// of the IAM role that is used to access the AWS Lambda expression.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
+    /// maximum number of application tags includes system tags. The maximum number of user-defined
+    /// application tags is 50.
     /// </summary>
-    public partial class InputLambdaProcessorDescription
+    public partial class TagResourceRequest : AmazonKinesisAnalyticsRequest
     {
         private string _resourceARN;
-        private string _roleARN;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
-        /// that is used to preprocess the records in the stream.
+        /// The ARN of the application to assign the tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
         {
             get { return this._resourceARN; }
@@ -58,22 +58,22 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The ARN of the IAM role that is used to access the AWS Lambda function.
+        /// The key-value tags to assign to the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string RoleARN
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<Tag> Tags
         {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if RoleARN property is set
-        internal bool IsSetRoleARN()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._roleARN != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

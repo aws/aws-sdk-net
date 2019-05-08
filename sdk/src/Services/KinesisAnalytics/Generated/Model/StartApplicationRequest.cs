@@ -29,9 +29,18 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartApplication operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Starts the specified Amazon Kinesis Analytics application. After creating an application,
     /// you must exclusively call this operation to start your application.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// After the application starts, it begins consuming the input data, processes it, and
@@ -40,13 +49,14 @@ namespace Amazon.KinesisAnalytics.Model
     ///  
     /// <para>
     ///  The application status must be <code>READY</code> for you to start an application.
-    /// You can get the application status in the console or using the <a>DescribeApplication</a>
+    /// You can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
     /// operation.
     /// </para>
     ///  
     /// <para>
     /// After you start the application, you can stop the application from processing the
-    /// input by calling the <a>StopApplication</a> operation.
+    /// input by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html">StopApplication</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>

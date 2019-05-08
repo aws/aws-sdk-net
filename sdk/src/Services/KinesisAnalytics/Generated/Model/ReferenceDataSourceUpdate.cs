@@ -44,7 +44,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// ID of the reference data source being updated. You can use the <a>DescribeApplication</a>
+        /// ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get this value.
         /// </para>
         /// </summary>

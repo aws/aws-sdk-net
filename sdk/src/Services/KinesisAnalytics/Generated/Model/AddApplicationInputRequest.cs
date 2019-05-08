@@ -29,20 +29,29 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationInput operation.
-    /// Adds a streaming source to your Amazon Kinesis application. For conceptual information,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Adds a streaming source to your Amazon Kinesis application. For conceptual information,
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
     /// Application Input</a>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can add a streaming source either when you create an application or you can use
     /// this operation to add a streaming source after you create an application. For more
-    /// information, see <a>CreateApplication</a>.
+    /// information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html">CreateApplication</a>.
     /// </para>
     ///  
     /// <para>
     /// Any configuration update, including adding a streaming source using this operation,
-    /// results in a new version of the application. You can use the <a>DescribeApplication</a>
+    /// results in a new version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
     /// operation to find the current application version. 
     /// </para>
     ///  
@@ -80,7 +89,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
+        /// Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to find the current application version.
         /// </para>
         /// </summary>
@@ -100,7 +109,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The <a>Input</a> to add.
+        /// The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+        /// to add.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

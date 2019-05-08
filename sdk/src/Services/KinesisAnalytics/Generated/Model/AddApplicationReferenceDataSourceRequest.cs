@@ -29,8 +29,17 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationReferenceDataSource operation.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Adds a reference data source to an existing application.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Kinesis Analytics reads reference data (that is, an Amazon S3 object) and creates
@@ -41,9 +50,9 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+    ///  For conceptual information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
     /// Application Input</a>. For the limits on data sources you can add to your application,
-    /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
     /// 
     /// </para>
     ///  
@@ -81,9 +90,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
         /// Version of the application for which you are adding the reference data source. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the <code>ConcurrentModificationException</code>
-        /// is returned.
+        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the current application version. If the version specified is not
+        /// the current version, the <code>ConcurrentModificationException</code> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

@@ -29,10 +29,20 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationInputProcessingConfiguration operation.
-    /// Adds an <a>InputProcessingConfiguration</a> to an application. An input processor
-    /// preprocesses records on the input stream before the application's SQL code executes.
-    /// Currently, the only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS
-    /// Lambda</a>.
+    /// <note> 
+    /// <para>
+    /// This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which
+    /// only supports SQL applications. Version 2 of the API supports SQL and Java applications.
+    /// For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon
+    /// Kinesis Data Analytics API V2 Documentation</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Adds an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+    /// to an application. An input processor preprocesses records on the input stream before
+    /// the application's SQL code executes. Currently, the only input processor available
+    /// is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
+    /// </para>
     /// </summary>
     public partial class AddApplicationInputProcessingConfigurationRequest : AmazonKinesisAnalyticsRequest
     {
@@ -64,9 +74,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
         /// Version of the application to which you want to add the input processing configuration.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the <code>ConcurrentModificationException</code>
-        /// is returned.
+        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+        /// operation to get the current application version. If the version specified is not
+        /// the current version, the <code>ConcurrentModificationException</code> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -86,7 +96,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property InputId. 
         /// <para>
         /// The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a>
+        /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -106,7 +116,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputProcessingConfiguration. 
         /// <para>
-        /// The <a>InputProcessingConfiguration</a> to add to the application.
+        /// The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+        /// to add to the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
