@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The API server endpoint and certificate authority data are not available until the
+    /// The API server endpoint and certificate authority data aren't available until the
     /// cluster reaches the <code>ACTIVE</code> state.
     /// </para>
     ///  </note>

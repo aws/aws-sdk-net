@@ -42,12 +42,12 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of update results returned by <code>ListUpdates</code> in paginated
-        /// output. When this parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListUpdates</code>
+        /// output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. You
+        /// can see the remaining results of the initial request by sending another <code>ListUpdates</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns up
-        /// to 100 results and a <code>nextToken</code> value if applicable.
+        /// 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to
+        /// 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -66,7 +66,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon EKS cluster for which to list updates.
+        /// The name of the Amazon EKS cluster to list updates for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

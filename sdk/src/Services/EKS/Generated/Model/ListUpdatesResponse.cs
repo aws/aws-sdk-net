@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request.
         /// When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// you can use this value to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.
         /// </para>
         /// </summary>

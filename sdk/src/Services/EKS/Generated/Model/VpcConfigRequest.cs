@@ -42,7 +42,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Set this value to <code>true</code> to enable private access for your cluster's Kubernetes
         /// API server endpoint. If you enable private access, Kubernetes API requests from within
-        /// your cluster's VPC will use the private VPC endpoint. The default value for this parameter
+        /// your cluster's VPC use the private VPC endpoint. The default value for this parameter
         /// is <code>false</code>, which disables private access for your Kubernetes API server.
         /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
@@ -65,7 +65,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Set this value to <code>false</code> to disable public access for your cluster's Kubernetes
         /// API server endpoint. If you disable public access, your cluster's Kubernetes API server
-        /// can only receive requests from within the cluster VPC. The default value for this
+        /// can receive only requests from within the cluster VPC. The default value for this
         /// parameter is <code>true</code>, which enables public access for your Kubernetes API
         /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
@@ -88,8 +88,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Specify one or more security groups for the cross-account elastic network interfaces
         /// that Amazon EKS creates to use to allow communication between your worker nodes and
-        /// the Kubernetes control plane. If you do not specify a security group, the default
-        /// security group for your VPC is used.
+        /// the Kubernetes control plane. If you don't specify a security group, the default security
+        /// group for your VPC is used.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds

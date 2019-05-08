@@ -43,7 +43,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// This parameter indicates whether the Amazon EKS private API server endpoint is enabled.
         /// If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests
-        /// that originate from within your cluster's VPC will use the private VPC endpoint instead
+        /// that originate from within your cluster's VPC use the private VPC endpoint instead
         /// of traversing the internet.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// This parameter indicates whether the Amazon EKS public API server endpoint is enabled.
         /// If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes
-        /// API server can only receive requests that originate from within the cluster VPC. 
+        /// API server can receive only requests that originate from within the cluster VPC. 
         /// </para>
         /// </summary>
         public bool EndpointPublicAccess

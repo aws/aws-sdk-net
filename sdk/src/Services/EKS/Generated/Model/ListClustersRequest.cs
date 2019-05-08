@@ -40,12 +40,12 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of cluster results returned by <code>ListClusters</code> in paginated
-        /// output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListClusters</code>
+        /// output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. You
+        /// can see the remaining results of the initial request by sending another <code>ListClusters</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up
-        /// to 100 results and a <code>nextToken</code> value if applicable.
+        /// 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to
+        /// 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -71,7 +71,7 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// This token should be treated as an opaque identifier that is used only to retrieve
         /// the next items in a list and not for other programmatic purposes.
         /// </para>
         ///  </note>

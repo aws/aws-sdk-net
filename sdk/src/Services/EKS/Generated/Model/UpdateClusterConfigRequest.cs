@@ -35,17 +35,9 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// You can use this API operation to enable or disable public and private access to your
-    /// cluster's Kubernetes API server endpoint. By default, public access is enabled and
-    /// private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-    /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also use this API operation to enable or disable exporting the Kubernetes
-    /// control plane logs for your cluster to CloudWatch Logs. By default, cluster control
-    /// plane logs are not exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+    /// You can use this API operation to enable or disable exporting the Kubernetes control
+    /// plane logs for your cluster to CloudWatch Logs. By default, cluster control plane
+    /// logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
     /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// </para>
     ///  <note> 
@@ -55,6 +47,19 @@ namespace Amazon.EKS.Model
     /// CloudWatch Pricing</a>.
     /// </para>
     ///  </note> 
+    /// <para>
+    /// You can also use this API operation to enable or disable public and private access
+    /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
+    /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+    /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+    /// 
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// At this time, you can not update the subnets or security group IDs for an existing
+    /// cluster.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Cluster updates are asynchronous, and they should finish within a few minutes. During
     /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
@@ -92,7 +97,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Logging. 
         /// <para>
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs are not exported to CloudWatch
+        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
         /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
         /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>

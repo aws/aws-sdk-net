@@ -43,13 +43,12 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>SubnetNotFound</b>: One of the subnets associated with the cluster could not be
-        /// found.
+        ///  <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>SecurityGroupNotFound</b>: One of the security groups associated with the cluster
-        /// could not be found.
+        ///  <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated
+        /// with the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -58,21 +57,21 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>IpNotAvailable</b>: A subnet associated with the cluster does not have any free
+        ///  <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free
         /// IP addresses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AccessDenied</b>: You do not have permissions to perform the specified operation.
+        ///  <b>AccessDenied</b>: You don't have permissions to perform the specified operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>OperationNotPermitted</b>: The service role associated with the cluster does not
+        ///  <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't
         /// have the required access permissions for Amazon EKS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be found.
+        ///  <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

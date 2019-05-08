@@ -34,10 +34,10 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
-    /// software, like <code>etcd</code> and the API server. The control plane runs in an
-    /// account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server
-    /// endpoint. Each Amazon EKS cluster control plane is single-tenant and unique, and runs
-    /// on its own set of Amazon EC2 instances.
+    /// software, such as <code>etcd</code> and the API server. The control plane runs in
+    /// an account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API
+    /// server endpoint. Each Amazon EKS cluster control plane is single-tenant and unique
+    /// and runs on its own set of Amazon EC2 instances.
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.EKS.Model
     /// <para>
     /// You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
     /// parameters to enable or disable public and private access to your cluster's Kubernetes
-    /// API server endpoint. By default, public access is enabled and private access is disabled.
+    /// API server endpoint. By default, public access is enabled, and private access is disabled.
     /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
     /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// 
@@ -66,8 +66,8 @@ namespace Amazon.EKS.Model
     /// <para>
     /// You can use the <code>logging</code> parameter to enable or disable exporting the
     /// Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster
-    /// control plane logs are not exported to CloudWatch Logs. For more information, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+    /// control plane logs aren't exported to CloudWatch Logs. For more information, see <a
+    /// href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
     /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// </para>
     ///  <note> 
@@ -117,7 +117,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Logging. 
         /// <para>
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs are not exported to CloudWatch
+        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
         /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
         /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
@@ -168,7 +168,7 @@ namespace Amazon.EKS.Model
         /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
         /// VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
         /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify
-        /// at least two subnets. You may specify up to five security groups, but we recommend
+        /// at least two subnets. You can specify up to five security groups, but we recommend
         /// that you use a dedicated security group for your cluster control plane.
         /// </para>
         /// </summary>
@@ -210,7 +210,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The desired Kubernetes version for your cluster. If you do not specify a value here,
+        /// The desired Kubernetes version for your cluster. If you don't specify a value here,
         /// the latest version available in Amazon EKS is used.
         /// </para>
         /// </summary>

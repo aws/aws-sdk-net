@@ -37,7 +37,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The base64 encoded certificate data required to communicate with your cluster. Add
+        /// The Base64-encoded certificate data required to communicate with your cluster. Add
         /// this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code>
         /// file for your cluster.
         /// </para>
