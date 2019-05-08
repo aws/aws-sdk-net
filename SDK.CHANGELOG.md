@@ -1,3 +1,20 @@
+### 3.3.507.0 (2019-05-08 18:12 UTC)
+* EKS (3.3.101.13)
+	* Documentation update for Amazon EKS to clarify allowed parameters in update-cluster-config.
+* KinesisAnalytics (3.3.101.0)
+	* Kinesis Data Analytics APIs now support tagging on applications.
+* KinesisAnalyticsV2 (3.3.101.0)
+	* Kinesis Data Analytics APIs now support tagging on applications.
+* SageMaker (3.3.101.0)
+	* Workteams now supports notification configurations. Neo now supports Jetson Nano as a target device and NumberOfHumanWorkersPerDataObject is now included in the ListLabelingJobsForWorkteam response.
+* ServiceCatalog (3.3.103.0)
+	* Adds "Parameters" field in UpdateConstraint API, which will allow Admin user to update "Parameters" in created Constraints.
+* Core 3.3.101.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.506.0 (2019-05-07 18:30 UTC)
 * AlexaForBusiness (3.3.103.0)
 	* This release adds an API allowing authorized users to delete a shared device's history of voice recordings and associated response data.
