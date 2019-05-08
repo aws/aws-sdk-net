@@ -46,7 +46,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property Mapping. 
         /// <para>
-        /// A reference to the data element in the streaming input of the reference data source.
+        /// A reference to the data element in the streaming input or the reference data source.
         /// </para>
         /// </summary>
         public string Mapping

@@ -37,12 +37,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you
     /// update your application. 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-    /// will result in an error.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonKinesisAnalyticsV2Request
     {

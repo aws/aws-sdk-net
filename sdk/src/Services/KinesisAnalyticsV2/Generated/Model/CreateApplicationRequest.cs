@@ -30,15 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// Creates an Amazon Kinesis Data Analytics application. For information about creating
-    /// a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating
-    /// an Application</a>. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// SQL is not enabled for this private beta release. Using SQL parameters (such as <a>SqlApplicationConfiguration</a>)
-    /// will result in an error.
-    /// </para>
-    ///  </note>
+    /// a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+    /// an Application</a>.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
@@ -48,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
         private RuntimeEnvironment _runtimeEnvironment;
         private string _serviceExecutionRole;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ApplicationConfiguration. 
@@ -127,7 +121,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// The runtime environment for the application (<code>SQL-1.0</code> or <code>JAVA-8-FLINK-1.5</code>).
+        /// The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,6 +155,29 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetServiceExecutionRole()
         {
             return this._serviceExecutionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of one or more tags to assign to the application. A tag is a key-value pair
+        /// that identifies an application. Note that the maximum number of application tags includes
+        /// system tags. The maximum number of user-defined application tags is 50. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

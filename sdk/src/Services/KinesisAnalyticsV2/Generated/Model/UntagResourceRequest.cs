@@ -28,28 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, an object that contains
-    /// the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess
-    /// records in the stream.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes one or more tags from a Kinesis Analytics application.
     /// </summary>
-    public partial class InputLambdaProcessorDescription
+    public partial class UntagResourceRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _resourceARN;
-        private string _roleARN;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the AWS Lambda function that is used to preprocess the records in the stream.
+        /// The ARN of the Kinesis Analytics application from which to remove the tags.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// To specify an earlier version of the Lambda function than the latest, include the
-        /// Lambda function version in the Lambda function ARN. For more information about Lambda
-        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-        /// ARNs: AWS Lambda</a> 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN
@@ -65,29 +56,22 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The ARN of the IAM role that is used to access the AWS Lambda function.
+        /// A list of keys of tags to remove from the specified application.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Provided for backward compatibility. Applications that are created with the current
-        /// API version have an application-level service execution role rather than a resource-level
-        /// role.
-        /// </para>
-        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string RoleARN
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if RoleARN property is set
-        internal bool IsSetRoleARN()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._roleARN != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

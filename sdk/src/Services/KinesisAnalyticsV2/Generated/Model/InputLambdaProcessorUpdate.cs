@@ -41,6 +41,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The Amazon Resource Name (ARN) of the new AWS Lambda function that is used to preprocess
         /// the records in the stream.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify an earlier version of the Lambda function than the latest, include the
+        /// Lambda function version in the Lambda function ARN. For more information about Lambda
+        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+        /// ARNs: AWS Lambda</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARNUpdate

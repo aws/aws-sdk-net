@@ -28,27 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// When you configure an SQL-based Amazon Kinesis Data Analytics application's output,
-    /// identifies an AWS Lambda function as the destination. You provide the function Amazon
-    /// Resource Name (ARN) of the Lambda function.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Retrieves the list of key-value tags assigned to the application.
     /// </summary>
-    public partial class LambdaOutput
+    public partial class ListTagsForResourceRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _resourceARN;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the destination Lambda function to write to.
+        /// The ARN of the application for which to retrieve tags.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// To specify an earlier version of the Lambda function than the latest, include the
-        /// Lambda function version in the Lambda function ARN. For more information about Lambda
-        /// ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-        /// ARNs: AWS Lambda</a> 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceARN

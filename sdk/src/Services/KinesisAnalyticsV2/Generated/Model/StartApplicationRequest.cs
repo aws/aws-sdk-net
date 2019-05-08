@@ -31,13 +31,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// Container for the parameters to the StartApplication operation.
     /// Starts the specified Amazon Kinesis Data Analytics application. After creating an
     /// application, you must exclusively call this operation to start your application.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// SQL is not enabled for this private beta. Using SQL parameters (such as <a>RunConfiguration$SqlRunConfigurations</a>)
-    /// will result in an error.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class StartApplicationRequest : AmazonKinesisAnalyticsV2Request
     {

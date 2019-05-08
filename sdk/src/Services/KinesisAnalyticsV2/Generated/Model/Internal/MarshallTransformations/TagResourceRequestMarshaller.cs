@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApplication Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest, CreateApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApplicationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApplicationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisAnalyticsV2");
-            string target = "KinesisAnalytics_20180523.CreateApplication";
+            string target = "KinesisAnalytics_20180523.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-23";            
@@ -68,55 +68,10 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplicationConfiguration())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("ApplicationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ApplicationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApplicationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetApplicationDescription())
-                {
-                    context.Writer.WritePropertyName("ApplicationDescription");
-                    context.Writer.Write(publicRequest.ApplicationDescription);
-                }
-
-                if(publicRequest.IsSetApplicationName())
-                {
-                    context.Writer.WritePropertyName("ApplicationName");
-                    context.Writer.Write(publicRequest.ApplicationName);
-                }
-
-                if(publicRequest.IsSetCloudWatchLoggingOptions())
-                {
-                    context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCloudWatchLoggingOptionsListValue in publicRequest.CloudWatchLoggingOptions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CloudWatchLoggingOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestCloudWatchLoggingOptionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRuntimeEnvironment())
-                {
-                    context.Writer.WritePropertyName("RuntimeEnvironment");
-                    context.Writer.Write(publicRequest.RuntimeEnvironment);
-                }
-
-                if(publicRequest.IsSetServiceExecutionRole())
-                {
-                    context.Writer.WritePropertyName("ServiceExecutionRole");
-                    context.Writer.Write(publicRequest.ServiceExecutionRole);
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -144,9 +99,9 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateApplicationRequestMarshaller _instance = new CreateApplicationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateApplicationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +109,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApplicationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

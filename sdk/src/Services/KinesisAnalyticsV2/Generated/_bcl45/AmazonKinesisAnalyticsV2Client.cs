@@ -38,7 +38,10 @@ namespace Amazon.KinesisAnalyticsV2
     /// <summary>
     /// Implementation for accessing KinesisAnalyticsV2
     ///
-    /// Documentation for Kinesis Data Analytics API v2
+    /// Amazon Kinesis Data Analytics is a fully managed service that you can use to process
+    /// and analyze streaming data using SQL or Java. The service enables you to quickly author
+    /// and run SQL or Java code against streaming sources to perform time series analytics,
+    /// feed real-time dashboards, and create real-time metrics.
     /// </summary>
     public partial class AmazonKinesisAnalyticsV2Client : AmazonServiceClient, IAmazonKinesisAnalyticsV2
     {
@@ -251,6 +254,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// Exception thrown as a result of concurrent modifications to an application. This error
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -580,15 +586,8 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Creates an Amazon Kinesis Data Analytics application. For information about creating
-        /// a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating
-        /// an Application</a>. 
-        /// 
-        ///  <note> 
-        /// <para>
-        /// SQL is not enabled for this private beta release. Using SQL parameters (such as <a>SqlApplicationConfiguration</a>)
-        /// will result in an error.
-        /// </para>
-        ///  </note>
+        /// a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+        /// an Application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -596,6 +595,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.CodeValidationException">
         /// The user-provided application code (query) is not valid. This can be a simple syntax
         /// error.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -608,6 +612,11 @@ namespace Amazon.KinesisAnalyticsV2
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
         /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -714,6 +723,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
@@ -770,6 +782,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// Exception thrown as a result of concurrent modifications to an application. This error
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
@@ -1323,19 +1338,63 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Retrieves the list of key-value tags assigned to the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartApplication
 
 
         /// <summary>
         /// Starts the specified Amazon Kinesis Data Analytics application. After creating an
         /// application, you must exclusively call this operation to start your application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// SQL is not enabled for this private beta. Using SQL parameters (such as <a>RunConfiguration$SqlRunConfigurations</a>)
-        /// will result in an error.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartApplication service method.</param>
         /// 
@@ -1397,6 +1456,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
         /// 
         /// <returns>The response from the StopApplication service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
         /// </exception>
@@ -1440,6 +1502,126 @@ namespace Amazon.KinesisAnalyticsV2
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds one or more key-value tags to a Kinesis Analytics application. Note that the
+        /// maximum number of application tags includes system tags. The maximum number of user-defined
+        /// application tags is 50.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from a Kinesis Analytics application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by KinesisAnalyticsV2.</returns>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ConcurrentModificationException">
+        /// Exception thrown as a result of concurrent modifications to an application. This error
+        /// can be the result of attempting to modify an application without using the current
+        /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
+        /// The specified input parameter value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceInUseException">
+        /// The application is not available for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceNotFoundException">
+        /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.TooManyTagsException">
+        /// Application created with too many tags, or too many tags added to an application.
+        /// Note that the maximum number of application tags includes system tags. The maximum
+        /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApplication
 
 
@@ -1452,12 +1634,6 @@ namespace Amazon.KinesisAnalyticsV2
         /// Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you
         /// update your application. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-        /// will result in an error.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -1470,6 +1646,9 @@ namespace Amazon.KinesisAnalyticsV2
         /// Exception thrown as a result of concurrent modifications to an application. This error
         /// can be the result of attempting to modify an application without using the current
         /// application ID.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidApplicationConfigurationException">
+        /// The user-provided application configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.InvalidArgumentException">
         /// The specified input parameter value is not valid.
