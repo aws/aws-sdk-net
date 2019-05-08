@@ -122,7 +122,6 @@ namespace Amazon.SageMaker.Model
         /// output data configuration, resource configuration, and stopping condition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public HyperParameterTrainingJobDefinition TrainingJobDefinition
         {
             get { return this._trainingJobDefinition; }

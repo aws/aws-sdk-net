@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _description;
         private List<MemberDefinition> _memberDefinitions = new List<MemberDefinition>();
+        private NotificationConfiguration _notificationConfiguration;
         private string _workteamName;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMemberDefinitions()
         {
             return this._memberDefinitions != null && this._memberDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationConfiguration. 
+        /// <para>
+        /// Configures SNS topic notifications for available or expiring work items
+        /// </para>
+        /// </summary>
+        public NotificationConfiguration NotificationConfiguration
+        {
+            get { return this._notificationConfiguration; }
+            set { this._notificationConfiguration = value; }
+        }
+
+        // Check to see if NotificationConfiguration property is set
+        internal bool IsSetNotificationConfiguration()
+        {
+            return this._notificationConfiguration != null;
         }
 
         /// <summary>

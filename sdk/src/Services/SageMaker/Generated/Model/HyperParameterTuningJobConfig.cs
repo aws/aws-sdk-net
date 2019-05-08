@@ -45,7 +45,6 @@ namespace Amazon.SageMaker.Model
         /// for this tuning job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public HyperParameterTuningJobObjective HyperParameterTuningJobObjective
         {
             get { return this._hyperParameterTuningJobObjective; }
@@ -65,7 +64,6 @@ namespace Amazon.SageMaker.Model
         /// this tuning job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ParameterRanges ParameterRanges
         {
             get { return this._parameterRanges; }

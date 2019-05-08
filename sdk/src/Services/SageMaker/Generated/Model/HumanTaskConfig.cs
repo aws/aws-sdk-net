@@ -224,6 +224,30 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
         /// 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Sydney (ap-southeast-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]

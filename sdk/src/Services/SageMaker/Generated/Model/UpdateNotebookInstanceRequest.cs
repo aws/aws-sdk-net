@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the UpdateNotebookInstance operation.
     /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
     /// the ML compute instance used for your notebook instance to accommodate changes in
-    /// your workload requirements. You can also update the VPC security groups.
+    /// your workload requirements.
     /// </summary>
     public partial class UpdateNotebookInstanceRequest : AmazonSageMakerRequest
     {
@@ -124,6 +124,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisassociateAcceleratorTypes. 
         /// <para>
         /// A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+        /// This operation is idempotent. If you specify an accelerator type that is not associated
+        /// with the notebook instance when you call this method, it does not throw an error.
         /// </para>
         /// </summary>
         public bool DisassociateAcceleratorTypes
@@ -142,7 +144,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisassociateAdditionalCodeRepositories. 
         /// <para>
         /// A list of names or URLs of the default Git repositories to remove from this notebook
-        /// instance.
+        /// instance. This operation is idempotent. If you specify a Git repository that is not
+        /// associated with the notebook instance when you call this method, it does not throw
+        /// an error.
         /// </para>
         /// </summary>
         public bool DisassociateAdditionalCodeRepositories
@@ -161,6 +165,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisassociateDefaultCodeRepository. 
         /// <para>
         /// The name or URL of the default Git repository to remove from this notebook instance.
+        /// This operation is idempotent. If you specify a Git repository that is not associated
+        /// with the notebook instance when you call this method, it does not throw an error.
         /// </para>
         /// </summary>
         public bool DisassociateDefaultCodeRepository
@@ -179,7 +185,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisassociateLifecycleConfig. 
         /// <para>
         /// Set to <code>true</code> to remove the notebook instance lifecycle configuration currently
-        /// associated with the notebook instance.
+        /// associated with the notebook instance. This operation is idempotent. If you specify
+        /// a lifecycle configuration that is not associated with the notebook instance when you
+        /// call this method, it does not throw an error.
         /// </para>
         /// </summary>
         public bool DisassociateLifecycleConfig

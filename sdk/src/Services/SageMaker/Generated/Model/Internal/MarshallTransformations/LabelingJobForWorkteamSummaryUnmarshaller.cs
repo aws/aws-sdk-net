@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LabelingJobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NumberOfHumanWorkersPerDataObject", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfHumanWorkersPerDataObject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkRequesterAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

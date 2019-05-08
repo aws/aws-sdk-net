@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _jobReferenceCode;
         private LabelCountersForWorkteam _labelCounters;
         private string _labelingJobName;
+        private int? _numberOfHumanWorkersPerDataObject;
         private string _workRequesterAccountId;
 
         /// <summary>
@@ -112,6 +113,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLabelingJobName()
         {
             return this._labelingJobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfHumanWorkersPerDataObject. 
+        /// <para>
+        /// The configured number of workers per data object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=9)]
+        public int NumberOfHumanWorkersPerDataObject
+        {
+            get { return this._numberOfHumanWorkersPerDataObject.GetValueOrDefault(); }
+            set { this._numberOfHumanWorkersPerDataObject = value; }
+        }
+
+        // Check to see if NumberOfHumanWorkersPerDataObject property is set
+        internal bool IsSetNumberOfHumanWorkersPerDataObject()
+        {
+            return this._numberOfHumanWorkersPerDataObject.HasValue; 
         }
 
         /// <summary>

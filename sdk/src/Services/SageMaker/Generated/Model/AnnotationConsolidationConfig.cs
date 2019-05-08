@@ -72,6 +72,11 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+        /// 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>Image classification</i> - Uses a variant of the Expectation Maximization approach
@@ -96,6 +101,11 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -128,6 +138,11 @@ namespace Amazon.SageMaker.Model
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+        /// 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>Text classification</i> - Uses a variant of the Expectation Maximization approach
@@ -152,6 +167,11 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
         /// 
         /// </para>
         ///  </li> </ul> 

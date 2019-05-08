@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the AddTags operation.
     /// Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You
-    /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, models,
-    /// endpoint configurations, and endpoints.
+    /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch
+    /// transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
     /// 
     ///  
     /// <para>

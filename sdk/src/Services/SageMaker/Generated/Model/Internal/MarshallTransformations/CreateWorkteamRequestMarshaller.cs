@@ -90,6 +90,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetNotificationConfiguration())
+                {
+                    context.Writer.WritePropertyName("NotificationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

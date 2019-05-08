@@ -42,8 +42,10 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You cannot update an endpoint with the current <code>EndpointConfig</code>. To update
-    /// an endpoint, you must create a new <code>EndpointConfig</code>.
+    /// You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live
+    /// or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
+    /// are being performed on the endpoint. To update an endpoint, you must create a new
+    /// <code>EndpointConfig</code>.
     /// </para>
     ///  </note>
     /// </summary>

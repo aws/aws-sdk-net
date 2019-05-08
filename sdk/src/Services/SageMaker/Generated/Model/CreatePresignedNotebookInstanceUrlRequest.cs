@@ -45,6 +45,13 @@ namespace Amazon.SageMaker.Model
     /// to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
     /// Access to a Notebook Instance by IP Address</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The URL that you get from a call to is valid only for 5 minutes. If you try to use
+    /// the URL after the 5-minute limit expires, you are directed to the AWS console sign-in
+    /// page.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePresignedNotebookInstanceUrlRequest : AmazonSageMakerRequest
     {

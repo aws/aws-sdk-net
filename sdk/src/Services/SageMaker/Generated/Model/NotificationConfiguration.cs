@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Describes the location of the channel data.
+    /// Configures SNS notifications of available or expiring work items for work teams.
     /// </summary>
-    public partial class DataSource
+    public partial class NotificationConfiguration
     {
-        private S3DataSource _s3DataSource;
+        private string _notificationTopicArn;
 
         /// <summary>
-        /// Gets and sets the property S3DataSource. 
+        /// Gets and sets the property NotificationTopicArn. 
         /// <para>
-        /// The S3 location of the data source that is associated with a channel.
+        /// The ARN for the SNS topic to which notifications should be published.
         /// </para>
         /// </summary>
-        public S3DataSource S3DataSource
+        public string NotificationTopicArn
         {
-            get { return this._s3DataSource; }
-            set { this._s3DataSource = value; }
+            get { return this._notificationTopicArn; }
+            set { this._notificationTopicArn = value; }
         }
 
-        // Check to see if S3DataSource property is set
-        internal bool IsSetS3DataSource()
+        // Check to see if NotificationTopicArn property is set
+        internal bool IsSetNotificationTopicArn()
         {
-            return this._s3DataSource != null;
+            return this._notificationTopicArn != null;
         }
 
     }

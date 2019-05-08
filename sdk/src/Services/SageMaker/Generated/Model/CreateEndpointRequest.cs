@@ -38,6 +38,13 @@ namespace Amazon.SageMaker.Model
     /// <para>
     ///  Use this API only for hosting models using Amazon SageMaker hosting services. 
     /// </para>
+    ///  
+    /// <para>
+    ///  You must not delete an <code>EndpointConfig</code> in use by an endpoint that is
+    /// live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
+    /// are being performed on the endpoint. To update an endpoint, you must create a new
+    /// <code>EndpointConfig</code>.
+    /// </para>
     ///  </note> 
     /// <para>
     /// The endpoint name must be unique within an AWS Region in your AWS account. 

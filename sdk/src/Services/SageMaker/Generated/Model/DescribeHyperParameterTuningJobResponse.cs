@@ -265,7 +265,6 @@ namespace Amazon.SageMaker.Model
         /// of the training jobs that this tuning job launches.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public HyperParameterTrainingJobDefinition TrainingJobDefinition
         {
             get { return this._trainingJobDefinition; }

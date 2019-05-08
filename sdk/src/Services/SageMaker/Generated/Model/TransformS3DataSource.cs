@@ -48,6 +48,15 @@ namespace Amazon.SageMaker.Model
         /// is a manifest file containing a list of object keys that you want Amazon SageMaker
         /// to use for batch transform. 
         /// </para>
+        ///  
+        /// <para>
+        /// The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following value is not compatible: <code>AugmentedManifestFile</code> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public S3DataType S3DataType

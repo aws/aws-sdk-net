@@ -41,7 +41,20 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContainerHostname. 
         /// <para>
-        /// This parameter is ignored.
+        /// This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>ContainerDefinition</code> is part of an inference pipeline, the value
+        /// of ths parameter uniquely identifies the container for the purposes of logging and
+        /// metrics. For information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+        /// Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value
+        /// for this parameter for a <code>ContainerDefinition</code> that is part of an inference
+        /// pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code>
+        /// in the pipeline. If you specify a value for the <code>ContainerHostName</code> for
+        /// any <code>ContainerDefinition</code> that is part of an inference pipeline, you must
+        /// specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code>
+        /// in that pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -106,7 +119,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ModelDataUrl. 
         /// <para>
         /// The S3 path where the model artifacts, which result from model training, are stored.
-        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix). 
+        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix). The
+        /// S3 path is required for Amazon SageMaker built-in algorithms, but not if you use your
+        /// own algorithms. For more information on built-in algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+        /// Parameters</a>. 
         /// </para>
         ///  
         /// <para>
@@ -117,6 +133,12 @@ namespace Amazon.SageMaker.Model
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
         /// User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you use a built-in algorithm to create a model, Amazon SageMaker requires that
+        /// you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Max=1024)]
         public string ModelDataUrl

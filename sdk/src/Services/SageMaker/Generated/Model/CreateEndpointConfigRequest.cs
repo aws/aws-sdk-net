@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
+        /// An list of <code>ProductionVariant</code> objects, one for each model that you want
         /// to host at this endpoint.
         /// </para>
         /// </summary>
@@ -127,8 +127,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// A list of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+        /// Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
         /// 
         /// </para>
         /// </summary>

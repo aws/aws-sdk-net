@@ -42,8 +42,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You
-        /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, models,
-        /// endpoint configurations, and endpoints.
+        /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch
+        /// transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
         /// 
         ///  
         /// <para>
@@ -238,6 +238,13 @@ namespace Amazon.SageMaker
         ///  <note> 
         /// <para>
         ///  Use this API only for hosting models using Amazon SageMaker hosting services. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must not delete an <code>EndpointConfig</code> in use by an endpoint that is
+        /// live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
+        /// are being performed on the endpoint. To update an endpoint, you must create a new
+        /// <code>EndpointConfig</code>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -737,6 +744,13 @@ namespace Amazon.SageMaker
         /// to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
         /// Access to a Notebook Instance by IP Address</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The URL that you get from a call to is valid only for 5 minutes. If you try to use
+        /// the URL after the 5-minute limit expires, you are directed to the AWS console sign-in
+        /// page.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePresignedNotebookInstanceUrl service method.</param>
         /// 
@@ -2475,7 +2489,8 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker
         /// disconnects the ML storage volume from it. Amazon SageMaker preserves the ML storage
-        /// volume. 
+        /// volume. Amazon SageMaker stops charging you for the ML compute instance when you call
+        /// <code>StopNotebookInstance</code>.
         /// 
         ///  
         /// <para>
@@ -2627,8 +2642,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot update an endpoint with the current <code>EndpointConfig</code>. To update
-        /// an endpoint, you must create a new <code>EndpointConfig</code>.
+        /// You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live
+        /// or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
+        /// are being performed on the endpoint. To update an endpoint, you must create a new
+        /// <code>EndpointConfig</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2699,7 +2716,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates a notebook instance. NotebookInstance updates include upgrading or downgrading
         /// the ML compute instance used for your notebook instance to accommodate changes in
-        /// your workload requirements. You can also update the VPC security groups.
+        /// your workload requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstance service method.</param>
         /// 

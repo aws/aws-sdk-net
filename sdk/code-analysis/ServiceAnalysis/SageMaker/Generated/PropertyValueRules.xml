@@ -1694,6 +1694,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.LabelingJobForWorkteamSummary.NumberOfHumanWorkersPerDataObject</property>
+    <min>1</min>
+    <max>9</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobForWorkteamSummary.WorkRequesterAccountId</property>
     <pattern>^\d+$</pattern>
   </property-value-rule>
@@ -1783,6 +1788,7 @@
     <property>Amazon.SageMaker.Model.MetricDefinition.Regex</property>
     <min>1</min>
     <max>500</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelArtifacts.S3ModelArtifacts</property>
@@ -1900,6 +1906,10 @@
     <property>Amazon.SageMaker.Model.NotebookInstanceSummary.NotebookInstanceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.NotificationConfiguration.NotificationTopicArn</property>
+    <pattern>arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ObjectiveStatusCounters.Failed</property>

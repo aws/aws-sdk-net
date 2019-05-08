@@ -3205,6 +3205,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Deeplens = new TargetDevice("deeplens");
         /// <summary>
+        /// Constant Jetson_nano for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Jetson_nano = new TargetDevice("jetson_nano");
+        /// <summary>
         /// Constant Jetson_tx1 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Jetson_tx1 = new TargetDevice("jetson_tx1");
@@ -3212,6 +3216,10 @@ namespace Amazon.SageMaker
         /// Constant Jetson_tx2 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Jetson_tx2 = new TargetDevice("jetson_tx2");
+        /// <summary>
+        /// Constant Lambda for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Lambda = new TargetDevice("lambda");
         /// <summary>
         /// Constant Ml_c4 for TargetDevice
         /// </summary>

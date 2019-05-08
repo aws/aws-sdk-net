@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MemberDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationConfiguration", targetDepth))
+                {
+                    var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NotificationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductListingIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
