@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _acceptLanguage;
         private string _description;
         private string _id;
+        private string _parameters;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -105,6 +106,94 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The constraint parameters, in JSON format. The syntax depends on the constraint type
+        /// as follows:
+        /// </para>
+        ///  <dl> <dt>LAUNCH</dt> <dd> 
+        /// <para>
+        /// Specify the <code>RoleArn</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+        /// </para>
+        ///  
+        /// <para>
+        /// You also cannot have more than one <code>LAUNCH</code> constraint on a product and
+        /// portfolio.
+        /// </para>
+        ///  </dd> <dt>NOTIFICATION</dt> <dd> 
+        /// <para>
+        /// Specify the <code>NotificationArns</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+        /// 
+        /// </para>
+        ///  </dd> <dt>RESOURCE_UPDATE</dt> <dd> 
+        /// <para>
+        /// Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of
+        /// <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.
+        /// </para>
+        ///  </dd> <dt>STACKSET</dt> <dd> 
+        /// <para>
+        /// Specify the <code>Parameters</code> property as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList":
+        /// [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
+        /// </para>
+        ///  
+        /// <para>
+        /// You also cannot have more than one <code>STACKSET</code> constraint on a product and
+        /// portfolio.
+        /// </para>
+        ///  
+        /// <para>
+        /// Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation
+        /// stack set.
+        /// </para>
+        ///  </dd> <dt>TEMPLATE</dt> <dd> 
+        /// <para>
+        /// Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+        /// Constraint Rules</a>.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public string Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null;
         }
 
     }

@@ -86,6 +86,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Id);
                 }
 
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("Parameters");
+                    context.Writer.Write(publicRequest.Parameters);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
