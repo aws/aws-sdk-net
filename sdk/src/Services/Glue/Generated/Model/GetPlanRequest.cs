@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// Parameters for the mapping.
+        /// The parameters for the mapping.
         /// </para>
         /// </summary>
         public Location Location

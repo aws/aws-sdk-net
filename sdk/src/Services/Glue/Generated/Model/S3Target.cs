@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a data store in Amazon S3.
+    /// Specifies a data store in Amazon Simple Storage Service (Amazon S3).
     /// </summary>
     public partial class S3Target
     {

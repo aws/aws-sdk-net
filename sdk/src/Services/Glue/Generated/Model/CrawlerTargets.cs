@@ -32,14 +32,33 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CrawlerTargets
     {
+        private List<CatalogTarget> _catalogTargets = new List<CatalogTarget>();
         private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
         private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
         private List<S3Target> _s3Targets = new List<S3Target>();
 
         /// <summary>
+        /// Gets and sets the property CatalogTargets. 
+        /// <para>
+        /// Specifies AWS Glue Data Catalog targets.
+        /// </para>
+        /// </summary>
+        public List<CatalogTarget> CatalogTargets
+        {
+            get { return this._catalogTargets; }
+            set { this._catalogTargets = value; }
+        }
+
+        // Check to see if CatalogTargets property is set
+        internal bool IsSetCatalogTargets()
+        {
+            return this._catalogTargets != null && this._catalogTargets.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DynamoDBTargets. 
         /// <para>
-        /// Specifies DynamoDB targets.
+        /// Specifies Amazon DynamoDB targets.
         /// </para>
         /// </summary>
         public List<DynamoDBTarget> DynamoDBTargets
@@ -75,7 +94,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3Targets. 
         /// <para>
-        /// Specifies Amazon S3 targets.
+        /// Specifies Amazon Simple Storage Service (Amazon S3) targets.
         /// </para>
         /// </summary>
         public List<S3Target> S3Targets

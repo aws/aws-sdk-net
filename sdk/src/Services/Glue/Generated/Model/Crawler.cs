@@ -55,7 +55,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Classifiers. 
         /// <para>
-        /// A list of custom classifiers associated with the crawler.
+        /// A list of UTF-8 strings that specify the custom classifiers that are associated with
+        /// the crawler.
         /// </para>
         /// </summary>
         public List<string> Classifiers
@@ -111,7 +112,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerSecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used by this Crawler.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -130,7 +131,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the crawler was created.
+        /// The time that the crawler was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -148,7 +149,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The database where metadata is written by this crawler.
+        /// The name of the database in which the crawler's output is stored.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -203,7 +204,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The time the crawler was last updated.
+        /// The time that the crawler was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -221,7 +222,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The crawler name.
+        /// The name of the crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -240,8 +241,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role (or ARN of an IAM role) used to access customer resources, such as data
-        /// in Amazon S3.
+        /// The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
+        /// such as Amazon Simple Storage Service (Amazon S3) data.
         /// </para>
         /// </summary>
         public string Role
@@ -277,7 +278,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaChangePolicy. 
         /// <para>
-        /// Sets the behavior when the crawler finds a changed or deleted object.
+        /// The policy that specifies update and delete behaviors for the crawler.
         /// </para>
         /// </summary>
         public SchemaChangePolicy SchemaChangePolicy

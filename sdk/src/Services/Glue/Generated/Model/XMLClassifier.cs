@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time this classifier was registered.
+        /// The time that this classifier was registered.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The time this classifier was last updated.
+        /// The time that this classifier was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -117,7 +117,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RowTag. 
         /// <para>
         /// The XML tag designating the element that contains each record in an XML document being
-        /// parsed. Note that this cannot identify a self-closing element (closed by <code>/&gt;</code>).
+        /// parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>).
         /// An empty row element that contains only attributes can be parsed as long as it ends
         /// with a closing tag (for example, <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code>
         /// is okay, but <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).

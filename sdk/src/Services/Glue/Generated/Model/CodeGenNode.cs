@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The type of node this is.
+        /// The type of node that this is.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

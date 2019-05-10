@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a DynamoDB table to crawl.
+    /// Specifies an Amazon DynamoDB table to crawl.
     /// </summary>
     public partial class DynamoDBTarget
     {

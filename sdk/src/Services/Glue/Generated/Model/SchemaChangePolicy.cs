@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Crawler policy for update and deletion behavior.
+    /// A policy that specifies update and deletion behaviors for the crawler.
     /// </summary>
     public partial class SchemaChangePolicy
     {

@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ScalaCode. 
         /// <para>
-        /// Scala code to perform the mapping.
+        /// The Scala code to perform the mapping.
         /// </para>
         /// </summary>
         public string ScalaCode

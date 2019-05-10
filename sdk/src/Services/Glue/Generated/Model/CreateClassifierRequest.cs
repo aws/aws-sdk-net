@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClassifier operation.
-    /// Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>,
+    /// Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>,
     /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
     /// depending on which field of the request is present.
     /// </summary>

@@ -69,8 +69,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+        /// The crawler configuration information. This versioned JSON string allows users to
+        /// specify aspects of a crawler's behavior. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
         /// a Crawler</a>.
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerSecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used by this Crawler.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -164,7 +164,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+        /// The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new
+        /// crawler to access customer resources.
         /// </para>
         /// </summary>
         public string Role
@@ -182,9 +183,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule (see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <code>cron</code> expression used to specify the schedule. For more information,
+        /// see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
-        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
+        /// UTC, specify <code>cron(15 12 * * ? *)</code>.
         /// </para>
         /// </summary>
         public string Schedule
@@ -202,7 +204,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaChangePolicy. 
         /// <para>
-        /// Policy for the crawler's update and deletion behavior.
+        /// The policy for the crawler's update and deletion behavior.
         /// </para>
         /// </summary>
         public SchemaChangePolicy SchemaChangePolicy

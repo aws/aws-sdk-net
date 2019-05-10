@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DynamoDB. 
         /// <para>
-        /// A DynamoDB Table location.
+        /// An Amazon DynamoDB table location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// An Amazon S3 location.
+        /// An Amazon Simple Storage Service (Amazon S3) location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -63,7 +63,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time this classifier was registered.
+        /// The time that this classifier was registered.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -83,7 +83,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Optional custom grok patterns defined by this classifier. For more information, see
         /// custom patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
-        /// Custom Classifers</a>.
+        /// Custom Classifiers</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16000)]
@@ -104,7 +104,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The grok pattern applied to a data store by this classifier. For more information,
         /// see built-in patterns in <a href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
-        /// Custom Classifers</a>.
+        /// Custom Classifiers</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -123,7 +123,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The time this classifier was last updated.
+        /// The time that this classifier was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

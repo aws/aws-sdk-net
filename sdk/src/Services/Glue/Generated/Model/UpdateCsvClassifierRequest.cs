@@ -154,8 +154,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property QuoteSymbol. 
         /// <para>
-        /// A custom symbol to denote what combines content into a single column value. Must be
-        /// different from the column delimiter.
+        /// A custom symbol to denote what combines content into a single column value. It must
+        /// be different from the column delimiter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

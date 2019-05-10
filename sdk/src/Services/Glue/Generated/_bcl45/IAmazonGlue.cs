@@ -490,7 +490,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>,
+        /// Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>,
         /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
         /// depending on which field of the request is present.
         /// </summary>
@@ -571,8 +571,8 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Creates a new crawler with specified targets, role, configuration, and optional schedule.
-        /// At least one crawl target must be specified, in the <i>s3Targets</i> field, the <i>jdbcTargets</i>
-        /// field, or the <i>DynamoDBTargets</i> field.
+        /// At least one crawl target must be specified, in the <code>s3Targets</code> field,
+        /// the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCrawler service method.</param>
         /// 
@@ -1091,7 +1091,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
+        /// Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state
+        /// is <code>RUNNING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler service method.</param>
         /// 

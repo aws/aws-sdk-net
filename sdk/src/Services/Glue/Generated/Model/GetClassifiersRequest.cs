@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Size of the list to return (optional).
+        /// The size of the list to return (optional).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

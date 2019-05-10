@@ -82,7 +82,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time this classifier was registered.
+        /// The time that this classifier was registered.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -120,7 +120,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property DisableValueTrimming. 
         /// <para>
         /// Specifies not to trim values before identifying the type of column values. The default
-        /// value is true.
+        /// value is <code>true</code>.
         /// </para>
         /// </summary>
         public bool DisableValueTrimming
@@ -156,7 +156,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The time this classifier was last updated.
+        /// The time that this classifier was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -193,8 +193,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property QuoteSymbol. 
         /// <para>
-        /// A custom symbol to denote what combines content into a single column value. Must be
-        /// different from the column delimiter.
+        /// A custom symbol to denote what combines content into a single column value. It must
+        /// be different from the column delimiter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CrawlerTargets Object
+    /// Response Unmarshaller for CatalogTarget Object
     /// </summary>  
-    public class CrawlerTargetsUnmarshaller : IUnmarshaller<CrawlerTargets, XmlUnmarshallerContext>, IUnmarshaller<CrawlerTargets, JsonUnmarshallerContext>
+    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CrawlerTargets IUnmarshaller<CrawlerTargets, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CrawlerTargets Unmarshall(JsonUnmarshallerContext context)
+        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CrawlerTargets unmarshalledObject = new CrawlerTargets();
+            CatalogTarget unmarshalledObject = new CatalogTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CatalogTargets", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CatalogTarget, CatalogTargetUnmarshaller>(CatalogTargetUnmarshaller.Instance);
-                    unmarshalledObject.CatalogTargets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DynamoDBTargets", targetDepth))
+                if (context.TestExpression("Tables", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DynamoDBTarget, DynamoDBTargetUnmarshaller>(DynamoDBTargetUnmarshaller.Instance);
-                    unmarshalledObject.DynamoDBTargets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JdbcTargets", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<JdbcTarget, JdbcTargetUnmarshaller>(JdbcTargetUnmarshaller.Instance);
-                    unmarshalledObject.JdbcTargets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Targets", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<S3Target, S3TargetUnmarshaller>(S3TargetUnmarshaller.Instance);
-                    unmarshalledObject.S3Targets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CrawlerTargetsUnmarshaller _instance = new CrawlerTargetsUnmarshaller();        
+        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CrawlerTargetsUnmarshaller Instance
+        public static CatalogTargetUnmarshaller Instance
         {
             get
             {

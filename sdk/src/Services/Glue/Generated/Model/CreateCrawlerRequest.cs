@@ -30,8 +30,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the CreateCrawler operation.
     /// Creates a new crawler with specified targets, role, configuration, and optional schedule.
-    /// At least one crawl target must be specified, in the <i>s3Targets</i> field, the <i>jdbcTargets</i>
-    /// field, or the <i>DynamoDBTargets</i> field.
+    /// At least one crawl target must be specified, in the <code>s3Targets</code> field,
+    /// the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.
     /// </summary>
     public partial class CreateCrawlerRequest : AmazonGlueRequest
     {
@@ -71,8 +71,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+        /// The crawler configuration information. This versioned JSON string allows users to
+        /// specify aspects of a crawler's behavior. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
         /// a Crawler</a>.
         /// </para>
         /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerSecurityConfiguration. 
         /// <para>
-        /// The name of the SecurityConfiguration structure to be used by this Crawler.
+        /// The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -113,7 +113,6 @@ namespace Amazon.Glue.Model
         /// The AWS Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -167,7 +166,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+        /// The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler
+        /// to access customer resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -186,9 +186,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule (see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <code>cron</code> expression used to specify the schedule. For more information,
+        /// see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
-        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
+        /// UTC, specify <code>cron(15 12 * * ? *)</code>.
         /// </para>
         /// </summary>
         public string Schedule
@@ -206,7 +207,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaChangePolicy. 
         /// <para>
-        /// Policy for the crawler's update and deletion behavior.
+        /// The policy for the crawler's update and deletion behavior.
         /// </para>
         /// </summary>
         public SchemaChangePolicy SchemaChangePolicy
@@ -243,9 +244,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in AWS Glue, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
-        /// Tags in AWS Glue</a> in the developer guide.
+        /// The tags to use with this crawler request. You can use tags to limit access to the
+        /// crawler. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// Tags in AWS Glue</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

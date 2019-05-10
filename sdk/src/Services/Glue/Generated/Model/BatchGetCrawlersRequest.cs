@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerNames. 
         /// <para>
-        /// A list of crawler names, which may be the names returned from the <code>ListCrawlers</code>
+        /// A list of crawler names, which might be the names returned from the <code>ListCrawlers</code>
         /// operation.
         /// </para>
         /// </summary>

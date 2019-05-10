@@ -29,15 +29,15 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Classifiers are triggered during a crawl task. A classifier checks whether a given
-    /// file is in a format it can handle, and if it is, the classifier creates a schema in
-    /// the form of a <code>StructType</code> object that matches that data format.
+    /// file is in a format it can handle. If it is, the classifier creates a schema in the
+    /// form of a <code>StructType</code> object that matches that data format.
     /// 
     ///  
     /// <para>
-    /// You can use the standard classifiers that AWS Glue supplies, or you can write your
+    /// You can use the standard classifiers that AWS Glue provides, or you can write your
     /// own classifiers to best categorize your data sources and specify the appropriate schemas
     /// to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code>
-    /// classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier
+    /// classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier,
     /// as specified in one of the fields in the <code>Classifier</code> object.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CsvClassifier. 
         /// <para>
-        /// A <code>CSVClassifier</code> object.
+        /// A classifier for comma-separated values (CSV).
         /// </para>
         /// </summary>
         public CsvClassifier CsvClassifier
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
         /// <para>
-        /// A <code>GrokClassifier</code> object.
+        /// A classifier that uses <code>grok</code>.
         /// </para>
         /// </summary>
         public GrokClassifier GrokClassifier
@@ -87,7 +87,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JsonClassifier. 
         /// <para>
-        /// A <code>JsonClassifier</code> object.
+        /// A classifier for JSON content.
         /// </para>
         /// </summary>
         public JsonClassifier JsonClassifier
@@ -105,7 +105,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property XMLClassifier. 
         /// <para>
-        /// An <code>XMLClassifier</code> object.
+        /// A classifier for XML content.
         /// </para>
         /// </summary>
         public XMLClassifier XMLClassifier

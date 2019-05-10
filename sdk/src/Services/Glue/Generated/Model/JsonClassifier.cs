@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time this classifier was registered.
+        /// The time that this classifier was registered.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property JsonPath. 
         /// <para>
         /// A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// AWS Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
+        /// AWS Glue supports a subset of <code>JsonPath</code>, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
         /// JsonPath Custom Classifiers</a>.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The time this classifier was last updated.
+        /// The time that this classifier was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

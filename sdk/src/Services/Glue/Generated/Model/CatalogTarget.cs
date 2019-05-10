@@ -28,31 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteCrawler operation.
-    /// Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state
-    /// is <code>RUNNING</code>.
+    /// Specifies an AWS Glue Data Catalog target.
     /// </summary>
-    public partial class DeleteCrawlerRequest : AmazonGlueRequest
+    public partial class CatalogTarget
     {
-        private string _name;
+        private string _databaseName;
+        private List<string> _tables = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the crawler to remove.
+        /// The name of the database to be synchronized.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        public string DatabaseName
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
         {
-            return this._name != null;
+            return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tables. 
+        /// <para>
+        /// A list of the tables to be synchronized.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public List<string> Tables
+        {
+            get { return this._tables; }
+            set { this._tables = value; }
+        }
+
+        // Check to see if Tables property is set
+        internal bool IsSetTables()
+        {
+            return this._tables != null && this._tables.Count > 0; 
         }
 
     }
