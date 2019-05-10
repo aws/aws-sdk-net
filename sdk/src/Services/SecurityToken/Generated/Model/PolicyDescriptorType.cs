@@ -28,36 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>GetSessionToken</a> request, including temporary
-    /// AWS credentials that can be used to make AWS requests.
+    /// A reference to the IAM managed policy that is passed as a session policy for a role
+    /// session or a federated user session.
     /// </summary>
-    public partial class GetSessionTokenResponse : AmazonWebServiceResponse
+    public partial class PolicyDescriptorType
     {
-        private Credentials _credentials;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Credentials. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The temporary security credentials, which include an access key ID, a secret access
-        /// key, and a security (or session) token.
+        /// The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
+        /// for the role. For more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The size of the security token that STS API operations return is not fixed. We strongly
-        /// recommend that you make no assumptions about the maximum size.
-        /// </para>
-        ///  </note>
         /// </summary>
-        public Credentials Credentials
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
         {
-            get { return this._credentials; }
-            set { this._credentials = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Credentials property is set
-        internal bool IsSetCredentials()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._credentials != null;
+            return this._arn != null;
         }
 
     }

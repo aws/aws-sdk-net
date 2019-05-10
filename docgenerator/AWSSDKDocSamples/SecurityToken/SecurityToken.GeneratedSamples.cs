@@ -20,7 +20,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             {
                 DurationSeconds = 3600,
                 ExternalId = "123ABC",
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:*\",\"Resource\":\"*\"}]}",
+                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
                 RoleArn = "arn:aws:iam::123456789012:role/demo",
                 RoleSessionName = "Bob"
             });
@@ -39,6 +39,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             var response = client.AssumeRoleWithWebIdentity(new AssumeRoleWithWebIdentityRequest 
             {
                 DurationSeconds = 3600,
+                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}",
                 ProviderId = "www.amazon.com",
                 RoleArn = "arn:aws:iam::123456789012:role/FederatedWebIdentityRole",
                 RoleSessionName = "app1",
@@ -122,7 +123,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             {
                 DurationSeconds = 3600,
                 Name = "Bob",
-                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:*\",\"Resource\":\"*\"}]}"
+                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Stmt1\",\"Effect\":\"Allow\",\"Action\":\"s3:ListAllMyBuckets\",\"Resource\":\"*\"}]}"
             });
 
             Credentials credentials = response.Credentials;

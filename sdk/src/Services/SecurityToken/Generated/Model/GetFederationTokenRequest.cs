@@ -84,15 +84,24 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// You must pass an IAM permissions policy to <code>GetFederationToken</code>. When you
-    /// pass a policy to this operation, the resulting temporary credentials are defined by
-    /// the intersection of your IAM user policies and the passed policy . The passed policy
-    /// defines the permissions of the <i>federated user</i>. AWS allows the federated user's
-    /// request only when both the attached policy and the IAM user policy explicitly allow
-    /// the federated user to perform the requested action. The passed policy cannot grant
-    /// more permissions than those that are defined in the IAM user policy. For more information
-    /// about how permissions work, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
-    /// for GetFederationToken</a>. For information about using <code>GetFederationToken</code>
+    /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
+    /// policy</a> to this operation. You can pass a single JSON policy document to use as
+    /// an inline session policy. You can also specify up to 10 managed policies to use as
+    /// managed session policies. The plain text that you use for both inline and managed
+    /// session policies shouldn't exceed 2048 characters.
+    /// </para>
+    ///  
+    /// <para>
+    /// Though the session policy parameters are optional, if you do not pass a policy, then
+    /// the resulting federated user session has no permissions. The only exception is when
+    /// the credentials are used to access a resource that has a resource-based policy that
+    /// specifically references the federated user session in the <code>Principal</code> element
+    /// of the policy. When you pass session policies, the session permissions are the intersection
+    /// of the IAM user policies and the session policies that you pass. This gives you a
+    /// way to further restrict the permissions for a federated user. You cannot use session
+    /// policies to grant more permissions than those that are defined in the permissions
+    /// policy of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code>
     /// to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
     /// Through a Custom Identity Broker</a>. 
     /// </para>
@@ -102,6 +111,7 @@ namespace Amazon.SecurityToken.Model
         private int? _durationSeconds;
         private string _name;
         private string _policy;
+        private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -171,33 +181,49 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// An IAM policy in JSON format. You must pass an IAM permissions policy to <code>GetFederationToken</code>.
-        /// When you pass a policy to this operation, the resulting temporary credentials are
-        /// defined by the intersection of your IAM user policies and the policy that you pass.
-        /// The passed policy defines the permissions of the <i>federated user</i>. AWS allows
-        /// the federated user's request only when both the attached policy and the IAM user policy
-        /// explicitly allow the federated user to perform the requested action. The passed policy
-        /// cannot grant more permissions than those that are defined in the IAM user policy.
+        /// An IAM policy in JSON format that you want to use as an inline session policy.
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter, as described by its regex pattern, is a string of characters
-        /// up to 2048 characters in length. The characters can be any ASCII character from the
-        /// space character to the end of the valid character list (\u0020-\u00FF). It can also
-        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
+        /// policy</a> to this operation. You can pass a single JSON policy document to use as
+        /// an inline session policy. You can also specify up to 10 managed policies to use as
+        /// managed session policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. However, if you do not pass any session policies, then
+        /// the resulting federated user session has no permissions. The only exception is when
+        /// the credentials are used to access a resource that has a resource-based policy that
+        /// specifically references the federated user session in the <code>Principal</code> element
+        /// of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you pass session policies, the session permissions are the intersection of the
+        /// IAM user policies and the session policies that you pass. This gives you a way to
+        /// further restrict the permissions for a federated user. You cannot use session policies
+        /// to grant more permissions than those that are defined in the permissions policy of
+        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The plain text that you use for both inline and managed session policies shouldn't
+        /// exceed 2048 characters. The JSON policy characters can be any ASCII character from
+        /// the space character to the end of the valid character list (\u0020 through \u00FF).
+        /// It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+        /// characters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The policy plaintext must be 2048 bytes or shorter. However, an internal conversion
-        /// compresses it into a packed binary format with a separate limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, where 100 percent is the maximum allowed size.
+        /// The characters in this parameter count towards the 2048 character session policy guideline.
+        /// However, an AWS conversion compresses the session policies into a packed binary format
+        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policy is to the upper size
+        /// limit.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information about how permissions work, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
-        /// for GetFederationToken</a>.
-        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string Policy
@@ -210,6 +236,62 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use
+        /// as a managed session policy. The policies must exist in the same account as the IAM
+        /// user that is requesting federated access.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
+        /// policy</a> to this operation. You can pass a single JSON policy document to use as
+        /// an inline session policy. You can also specify up to 10 managed policies to use as
+        /// managed session policies. The plain text that you use for both inline and managed
+        /// session policies shouldn't exceed 2048 characters. You can provide up to 10 managed
+        /// policy ARNs. For more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. However, if you do not pass any session policies, then
+        /// the resulting federated user session has no permissions. The only exception is when
+        /// the credentials are used to access a resource that has a resource-based policy that
+        /// specifically references the federated user session in the <code>Principal</code> element
+        /// of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you pass session policies, the session permissions are the intersection of the
+        /// IAM user policies and the session policies that you pass. This gives you a way to
+        /// further restrict the permissions for a federated user. You cannot use session policies
+        /// to grant more permissions than those that are defined in the permissions policy of
+        /// the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The characters in this parameter count towards the 2048 character session policy guideline.
+        /// However, an AWS conversion compresses the session policies into a packed binary format
+        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policy is to the upper size
+        /// limit.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<PolicyDescriptorType> PolicyArns
+        {
+            get { return this._policyArns; }
+            set { this._policyArns = value; }
+        }
+
+        // Check to see if PolicyArns property is set
+        internal bool IsSetPolicyArns()
+        {
+            return this._policyArns != null && this._policyArns.Count > 0; 
         }
 
     }

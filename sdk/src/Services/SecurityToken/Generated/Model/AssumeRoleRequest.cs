@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken.Model
     /// Returns a set of temporary security credentials that you can use to access AWS resources
     /// that you might not normally have access to. These temporary credentials consist of
     /// an access key ID, a secret access key, and a security token. Typically, you use <code>AssumeRole</code>
-    /// for cross-account access or federation. For a comparison of <code>AssumeRole</code>
+    /// within your account or for cross-account access. For a comparison of <code>AssumeRole</code>
     /// with other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the AWS STS API operations</a> in the <i>IAM User Guide</i>.
@@ -48,21 +48,10 @@ namespace Amazon.SecurityToken.Model
     /// resources in each account. You could create long-term credentials in each account
     /// to access those resources. However, managing all those credentials and remembering
     /// which one can access which account can be time consuming. Instead, you can create
-    /// one set of long-term credentials in one account and then use temporary security credentials
+    /// one set of long-term credentials in one account. Then use temporary security credentials
     /// to access all the other accounts by assuming roles in those accounts. For more information
-    /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-    /// Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For federation, you can, for example, grant single sign-on access to the AWS Management
-    /// Console. If you already have an identity and authentication system in your network,
-    /// you don't have to recreate identities in AWS in order to grant them access to AWS.
-    /// Instead, after a user has been authenticated, you call <code>AssumeRole</code> (and
-    /// specify the role with the appropriate permissions) to get temporary security credentials
-    /// for that user. With those temporary security credentials, you construct a sign-in
-    /// URL from which users can access the console. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
-    /// Scenarios for Temporary Credentials</a> in the <i>IAM User Guide</i>.
+    /// about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// Roles</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
@@ -83,38 +72,41 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// The temporary security credentials created by <code>AssumeRole</code> can be used
     /// to make API calls to any AWS service with the following exception: You cannot call
-    /// the AWS STS service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
-    /// API operations.
+    /// the AWS STS <code>GetFederationToken</code> or <code>GetSessionToken</code> API operations.
     /// </para>
     ///  
     /// <para>
-    /// (Optional) You can pass an IAM permissions policy to this operation. If you pass a
-    /// policy to this operation, the resulting temporary credentials have the permissions
-    /// of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
-    /// restrict the permissions for the resulting temporary security credentials. You cannot
-    /// use the passed policy to grant permissions that are in excess of those allowed by
-    /// the permissions policy of the role that is being assumed. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
-    /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
-    /// in the <i>IAM User Guide</i>.
+    /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
+    /// policies</a> to this operation. You can pass a single JSON policy document to use
+    /// as an inline session policy. You can also specify up to 10 managed policies to use
+    /// as managed session policies. The plain text that you use for both inline and managed
+    /// session policies shouldn't exceed 2048 characters. Passing policies to this operation
+    /// returns new temporary credentials. The resulting session's permissions are the intersection
+    /// of the role's identity-based policy and the session policies. You can use the role's
+    /// temporary credentials in subsequent AWS API calls to access resources in the account
+    /// that owns the role. You cannot use session policies to grant more permissions than
+    /// those allowed by the identity-based policy of the role that is being assumed. For
+    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// To assume a role, your AWS account must be trusted by the role. The trust relationship
-    /// is defined in the role's trust policy when the role is created. That trust policy
-    /// states which accounts are allowed to delegate access to this account's role. 
+    /// To assume a role from a different account, your AWS account must be trusted by the
+    /// role. The trust relationship is defined in the role's trust policy when the role is
+    /// created. That trust policy states which accounts are allowed to delegate that access
+    /// to users in the account. 
     /// </para>
     ///  
     /// <para>
-    /// The user who wants to access the role must also have permissions delegated from the
-    /// role's administrator. If the user and the role are in a different account, then the
-    /// user's administrator must attach a policy. That attached policy must allow the user
-    /// to call <code>AssumeRole</code> for the ARN of the role in the other account. If the
-    /// user is in the same account as the role, then you can do either of the following:
+    /// A user who wants to access a role in a different account must also have permissions
+    /// that are delegated from the user account administrator. The administrator must attach
+    /// a policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
+    /// in the other account. If the user is in the same account as the role, then you can
+    /// do either of the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Attach a policy to the user (identical to the previous user in a different account)
+    /// Attach a policy to the user (identical to the previous user in a different account).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -122,9 +114,9 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// In this case, the trust policy acts as the only resource-based policy in IAM. Users
-    /// in the same account as the role do not need explicit permission to assume the role.
-    /// For more information about trust policies and resource-based policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+    /// In this case, the trust policy acts as an IAM resource-based policy. Users in the
+    /// same account as the role do not need explicit permission to assume the role. For more
+    /// information about trust policies and resource-based policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -134,12 +126,12 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// (Optional) You can include multi-factor authentication (MFA) information when you
-    /// call <code>AssumeRole</code>. This is useful for cross-account scenarios in which
-    /// you want to make sure that the user who is assuming the role has been authenticated
-    /// using an AWS MFA device. In that scenario, the trust policy of the role being assumed
-    /// includes a condition that tests for MFA authentication. If the caller does not include
-    /// valid MFA information, the request to assume the role is denied. The condition in
-    /// a trust policy that tests for MFA authentication might look like the following example.
+    /// call <code>AssumeRole</code>. This is useful for cross-account scenarios to ensure
+    /// that the user that assumes the role has been authenticated with an AWS MFA device.
+    /// In that scenario, the trust policy of the role being assumed includes a condition
+    /// that tests for MFA authentication. If the caller does not include valid MFA information,
+    /// the request to assume the role is denied. The condition in a trust policy that tests
+    /// for MFA authentication might look like the following example.
     /// </para>
     ///  
     /// <para>
@@ -163,6 +155,7 @@ namespace Amazon.SecurityToken.Model
         private int? _durationSeconds;
         private string _externalId;
         private string _policy;
+        private List<PolicyDescriptorType> _policyArns = new List<PolicyDescriptorType>();
         private string _roleArn;
         private string _roleSessionName;
         private string _serialNumber;
@@ -214,11 +207,11 @@ namespace Amazon.SecurityToken.Model
         /// A unique identifier that might be required when you assume a role in another account.
         /// If the administrator of the account to which the role belongs provided you with an
         /// external ID, then provide that value in the <code>ExternalId</code> parameter. This
-        /// value can be any string, such as a passphrase or account number. Because a cross-account
-        /// role is usually set up to trust everyone in an account, the administrator of the trusting
-        /// account might send an external ID to the administrator of the trusted account. That
-        /// way, only someone with the ID can assume the role, rather than everyone in the account.
-        /// For more information about the external ID, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+        /// value can be any string, such as a passphrase or account number. A cross-account role
+        /// is usually set up to trust everyone in an account. Therefore, the administrator of
+        /// the trusting account might send an external ID to the administrator of the trusted
+        /// account. That way, only someone with the ID can assume the role, rather than everyone
+        /// in the account. For more information about the external ID, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
         /// to Use an External ID When Granting Access to Your AWS Resources to a Third Party</a>
         /// in the <i>IAM User Guide</i>.
         /// </para>
@@ -245,32 +238,34 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// An IAM policy in JSON format.
+        /// An IAM policy in JSON format that you want to use as an inline session policy.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you pass a policy to this operation, the resulting
-        /// temporary credentials have the permissions of the assumed role <i>and</i> the policy
-        /// that you pass. This gives you a way to further restrict the permissions for the resulting
-        /// temporary security credentials. You cannot use the passed policy to grant permissions
-        /// that are in excess of those allowed by the permissions policy of the role that is
-        /// being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
-        /// Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a>
-        /// in the <i>IAM User Guide</i>.
+        /// This parameter is optional. Passing policies to this operation returns new temporary
+        /// credentials. The resulting session's permissions are the intersection of the role's
+        /// identity-based policy and the session policies. You can use the role's temporary credentials
+        /// in subsequent AWS API calls to access resources in the account that owns the role.
+        /// You cannot use session policies to grant more permissions than those allowed by the
+        /// identity-based policy of the role that is being assumed. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter, as described by its regex pattern, is a string of characters
-        /// up to 2048 characters in length. The characters can be any ASCII character from the
-        /// space character to the end of the valid character list (\u0020-\u00FF). It can also
-        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// The plain text that you use for both inline and managed session policies shouldn't
+        /// exceed 2048 characters. The JSON policy characters can be any ASCII character from
+        /// the space character to the end of the valid character list (\u0020 through \u00FF).
+        /// It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+        /// characters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The policy plaintext must be 2048 bytes or shorter. However, an internal conversion
-        /// compresses it into a packed binary format with a separate limit. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, where 100 percent is the maximum allowed size.
+        /// The characters in this parameter count towards the 2048 character session policy guideline.
+        /// However, an AWS conversion compresses the session policies into a packed binary format
+        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policy is to the upper size
+        /// limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -285,6 +280,50 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use
+        /// as managed session policies. The policies must exist in the same account as the role.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. You can provide up to 10 managed policy ARNs. However,
+        /// the plain text that you use for both inline and managed session policies shouldn't
+        /// exceed 2048 characters. For more information about ARNs, see <a href="general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The characters in this parameter count towards the 2048 character session policy guideline.
+        /// However, an AWS conversion compresses the session policies into a packed binary format
+        /// that has a separate limit. This is the enforced limit. The <code>PackedPolicySize</code>
+        /// response element indicates by percentage how close the policy is to the upper size
+        /// limit.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Passing policies to this operation returns new temporary credentials. The resulting
+        /// session's permissions are the intersection of the role's identity-based policy and
+        /// the session policies. You can use the role's temporary credentials in subsequent AWS
+        /// API calls to access resources in the account that owns the role. You cannot use session
+        /// policies to grant more permissions than those allowed by the identity-based policy
+        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<PolicyDescriptorType> PolicyArns
+        {
+            get { return this._policyArns; }
+            set { this._policyArns = value; }
+        }
+
+        // Check to see if PolicyArns property is set
+        internal bool IsSetPolicyArns()
+        {
+            return this._policyArns != null && this._policyArns.Count > 0; 
         }
 
         /// <summary>

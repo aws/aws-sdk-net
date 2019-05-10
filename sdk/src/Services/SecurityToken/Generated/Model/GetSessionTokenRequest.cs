@@ -45,12 +45,12 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// The <code>GetSessionToken</code> operation must be called by using the long-term AWS
-    /// security credentials of the AWS account or an IAM user. Credentials that are created
-    /// by IAM users are valid for the duration that you specify. This duration can range
-    /// from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with
-    /// a default of 43,200 seconds (12 hours). Credentials that are created by using account
-    /// credentials can range from 900 seconds (15 minutes) up to a maximum of 3,600 seconds
-    /// (1 hour), with a default of 1 hour. 
+    /// security credentials of the AWS account root user or an IAM user. Credentials that
+    /// are created by IAM users are valid for the duration that you specify. This duration
+    /// can range from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours),
+    /// with a default of 43,200 seconds (12 hours). Credentials based on account credentials
+    /// can range from 900 seconds (15 minutes) up to 3,600 seconds (1 hour), with a default
+    /// of 1 hour. 
     /// </para>
     ///  
     /// <para>
@@ -75,12 +75,12 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
-    /// are based on the permissions associated with account or IAM user whose credentials
-    /// are used to call the operation. If <code>GetSessionToken</code> is called using AWS
-    /// account root user credentials, the temporary credentials have root user permissions.
-    /// Similarly, if <code>GetSessionToken</code> is called using the credentials of an IAM
-    /// user, the temporary credentials have the same permissions as the IAM user. 
+    /// The credentials that are returned by <code>GetSessionToken</code> are based on permissions
+    /// associated with the user whose credentials were used to call the operation. If <code>GetSessionToken</code>
+    /// is called using AWS account root user credentials, the temporary credentials have
+    /// root user permissions. Similarly, if <code>GetSessionToken</code> is called using
+    /// the credentials of an IAM user, the temporary credentials have the same permissions
+    /// as the IAM user. 
     /// </para>
     ///  
     /// <para>
