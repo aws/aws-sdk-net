@@ -1,3 +1,14 @@
+### 3.3.508.0 (2019-05-10 19:45 UTC)
+* Glue (3.3.103.0)
+	* AWS Glue now supports specifying existing catalog tables for a crawler to examine as a data source. A new parameter CatalogTargets is added to the CrawlerTargets data type. 
+* SecurityToken (3.3.101.0)
+	* AWS Security Token Service (STS) now supports passing IAM Managed Policy ARNs as session policies when you programmatically create temporary sessions for a role or federated user. The Managed Policy ARNs can be passed via the PolicyArns parameter, which is now available in the AssumeRole, AssumeRoleWithWebIdentity, AssumeRoleWithSAML, and GetFederationToken APIs. The session policies referenced by the PolicyArn parameter will only further restrict the existing permissions of an IAM User or Role for individual sessions.
+* Core 3.3.101.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.507.0 (2019-05-08 18:12 UTC)
 * EKS (3.3.101.13)
 	* Documentation update for Amazon EKS to clarify allowed parameters in update-cluster-config.
