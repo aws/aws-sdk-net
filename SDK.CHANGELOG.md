@@ -1,3 +1,11 @@
+### 3.3.509.0 (2019-05-13 18:28 UTC)
+* DataSync (3.3.101.0)
+	* AWS DataSync now enables exclude and include filters to control what files and directories will be copied as part of a task execution.
+* IoTAnalytics (3.3.102.0)
+	* ContentDeliveryRule to support sending dataset to S3 and glue
+* Lambda (3.3.102.0)
+	* AWS Lambda now supports Node.js v10
+
 ### 3.3.508.0 (2019-05-10 19:45 UTC)
 * Glue (3.3.103.0)
 	* AWS Glue now supports specifying existing catalog tables for a crawler to examine as a data source. A new parameter CatalogTargets is added to the CrawlerTargets data type. 
