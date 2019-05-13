@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatasetContentDeliveryDestination Object
+    /// Response Unmarshaller for S3DestinationConfiguration Object
     /// </summary>  
-    public class DatasetContentDeliveryDestinationUnmarshaller : IUnmarshaller<DatasetContentDeliveryDestination, XmlUnmarshallerContext>, IUnmarshaller<DatasetContentDeliveryDestination, JsonUnmarshallerContext>
+    public class S3DestinationConfigurationUnmarshaller : IUnmarshaller<S3DestinationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3DestinationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatasetContentDeliveryDestination IUnmarshaller<DatasetContentDeliveryDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3DestinationConfiguration IUnmarshaller<S3DestinationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatasetContentDeliveryDestination Unmarshall(JsonUnmarshallerContext context)
+        public S3DestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetContentDeliveryDestination unmarshalledObject = new DatasetContentDeliveryDestination();
+            S3DestinationConfiguration unmarshalledObject = new S3DestinationConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("iotEventsDestinationConfiguration", targetDepth))
+                if (context.TestExpression("bucket", targetDepth))
                 {
-                    var unmarshaller = IotEventsDestinationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IotEventsDestinationConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3DestinationConfiguration", targetDepth))
+                if (context.TestExpression("glueConfiguration", targetDepth))
                 {
-                    var unmarshaller = S3DestinationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GlueConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GlueConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("key", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("roleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatasetContentDeliveryDestinationUnmarshaller _instance = new DatasetContentDeliveryDestinationUnmarshaller();        
+        private static S3DestinationConfigurationUnmarshaller _instance = new S3DestinationConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatasetContentDeliveryDestinationUnmarshaller Instance
+        public static S3DestinationConfigurationUnmarshaller Instance
         {
             get
             {

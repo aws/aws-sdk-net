@@ -33,6 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DatasetContentDeliveryDestination
     {
         private IotEventsDestinationConfiguration _iotEventsDestinationConfiguration;
+        private S3DestinationConfiguration _s3DestinationConfiguration;
 
         /// <summary>
         /// Gets and sets the property IotEventsDestinationConfiguration. 
@@ -50,6 +51,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetIotEventsDestinationConfiguration()
         {
             return this._iotEventsDestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DestinationConfiguration. 
+        /// <para>
+        /// Configuration information for delivery of data set contents to Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3DestinationConfiguration S3DestinationConfiguration
+        {
+            get { return this._s3DestinationConfiguration; }
+            set { this._s3DestinationConfiguration = value; }
+        }
+
+        // Check to see if S3DestinationConfiguration property is set
+        internal bool IsSetS3DestinationConfiguration()
+        {
+            return this._s3DestinationConfiguration != null;
         }
 
     }

@@ -404,6 +404,16 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.GlueConfiguration.DatabaseName</property>
+    <min>1</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.GlueConfiguration.TableName</property>
+    <min>1</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.IotEventsDestinationConfiguration.InputName</property>
     <min>1</min>
     <max>128</max>
@@ -499,6 +509,23 @@
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.RetentionPeriod.NumberOfDays</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.S3DestinationConfiguration.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9.\-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.S3DestinationConfiguration.Key</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9!_.*'()/{}:-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.S3DestinationConfiguration.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.SelectAttributesActivity.Name</property>

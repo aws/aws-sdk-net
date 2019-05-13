@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DatasetContentDeliveryDestination Marshaller
+    /// GlueConfiguration Marshaller
     /// </summary>       
-    public class DatasetContentDeliveryDestinationMarshaller : IRequestMarshaller<DatasetContentDeliveryDestination, JsonMarshallerContext> 
+    public class GlueConfigurationMarshaller : IRequestMarshaller<GlueConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DatasetContentDeliveryDestination requestObject, JsonMarshallerContext context)
+        public void Marshall(GlueConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetIotEventsDestinationConfiguration())
+            if(requestObject.IsSetDatabaseName())
             {
-                context.Writer.WritePropertyName("iotEventsDestinationConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = IotEventsDestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.IotEventsDestinationConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("databaseName");
+                context.Writer.Write(requestObject.DatabaseName);
             }
 
-            if(requestObject.IsSetS3DestinationConfiguration())
+            if(requestObject.IsSetTableName())
             {
-                context.Writer.WritePropertyName("s3DestinationConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3DestinationConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("tableName");
+                context.Writer.Write(requestObject.TableName);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DatasetContentDeliveryDestinationMarshaller Instance = new DatasetContentDeliveryDestinationMarshaller();
+        public readonly static GlueConfigurationMarshaller Instance = new GlueConfigurationMarshaller();
 
     }
 }

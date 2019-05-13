@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// 
+    /// Information about the versioning of data set contents.
     /// </summary>
     public partial class VersioningConfiguration
     {

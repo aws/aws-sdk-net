@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// 
+    /// Information about the action which automatically creates the data set's contents.
     /// </summary>
     public partial class DatasetActionSummary
     {

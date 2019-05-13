@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatasetContentDeliveryDestination Object
+    /// Response Unmarshaller for GlueConfiguration Object
     /// </summary>  
-    public class DatasetContentDeliveryDestinationUnmarshaller : IUnmarshaller<DatasetContentDeliveryDestination, XmlUnmarshallerContext>, IUnmarshaller<DatasetContentDeliveryDestination, JsonUnmarshallerContext>
+    public class GlueConfigurationUnmarshaller : IUnmarshaller<GlueConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GlueConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatasetContentDeliveryDestination IUnmarshaller<DatasetContentDeliveryDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GlueConfiguration IUnmarshaller<GlueConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatasetContentDeliveryDestination Unmarshall(JsonUnmarshallerContext context)
+        public GlueConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetContentDeliveryDestination unmarshalledObject = new DatasetContentDeliveryDestination();
+            GlueConfiguration unmarshalledObject = new GlueConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("iotEventsDestinationConfiguration", targetDepth))
+                if (context.TestExpression("databaseName", targetDepth))
                 {
-                    var unmarshaller = IotEventsDestinationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IotEventsDestinationConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3DestinationConfiguration", targetDepth))
+                if (context.TestExpression("tableName", targetDepth))
                 {
-                    var unmarshaller = S3DestinationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatasetContentDeliveryDestinationUnmarshaller _instance = new DatasetContentDeliveryDestinationUnmarshaller();        
+        private static GlueConfigurationUnmarshaller _instance = new GlueConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatasetContentDeliveryDestinationUnmarshaller Instance
+        public static GlueConfigurationUnmarshaller Instance
         {
             get
             {
