@@ -38,6 +38,7 @@ namespace Amazon.DataSync.Model
         private string _destinationLocationArn;
         private string _errorCode;
         private string _errorDetail;
+        private List<FilterRule> _excludes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private string _sourceLocationArn;
@@ -48,8 +49,12 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property CloudWatchLogGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
-        /// monitor and log events in the task. For more information on these groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-        /// with Log Groups and Log Streams</a> in the <i>Amazon CloudWatch User Guide.</i> 
+        /// monitor and log events in the task.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on these groups, see "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+        /// (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch UserGuide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -160,6 +165,27 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Excludes.  
+        /// <para>
+        /// Specifies that the task excludes files in the transfer based on the specified pattern
+        /// in the filter. Transfers all files in the task’s subdirectory, except files that match
+        /// the filter that is set. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Excludes
+        {
+            get { return this._excludes; }
+            set { this._excludes = value; }
+        }
+
+        // Check to see if Excludes property is set
+        internal bool IsSetExcludes()
+        {
+            return this._excludes != null && this._excludes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the task that was described.
@@ -226,9 +252,12 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the task that was described. For detailed information about sync statuses,
-        /// see <a href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-        /// Sync Task Statuses</a>.
+        /// The status of the task that was described.
+        /// </para>
+        ///  
+        /// <para>
+        /// For detailed information about task execution statuses, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+        /// (Understanding Task Statuses).
         /// </para>
         /// </summary>
         public TaskStatus Status

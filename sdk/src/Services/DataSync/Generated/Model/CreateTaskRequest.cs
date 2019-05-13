@@ -30,32 +30,31 @@ namespace Amazon.DataSync.Model
     /// <summary>
     /// Container for the parameters to the CreateTask operation.
     /// Creates a task. A task is a set of two locations (source and destination) and a set
-    /// of default <code>OverrideOptions</code> that you use to control the behavior of a
-    /// task. If you don't specify default values for <code>Options</code> when you create
-    /// a task, AWS DataSync populates them with safe service defaults.
+    /// of Options that you use to control the behavior of a task. If you don't specify Options
+    /// when you create a task, AWS DataSync populates them with service defaults.
     /// 
     ///  
     /// <para>
-    /// When you initially create a task, it enters the INITIALIZING status and then the CREATING
-    /// status. In CREATING status, AWS DataSync attempts to mount the source Network File
-    /// System (NFS) location. The task transitions to the AVAILABLE status without waiting
-    /// for the destination location to mount. Instead, AWS DataSync mounts a destination
-    /// before every task execution and then unmounts it after every task execution. 
+    /// When you create a task, it first enters the CREATING state. During CREATING AWS DataSync
+    /// attempts to mount the on-premises Network File System (NFS) location. The task transitions
+    /// to the AVAILABLE state without waiting for the AWS location to become mounted. If
+    /// required, AWS DataSync mounts the AWS location before each task execution.
     /// </para>
     ///  
     /// <para>
     /// If an agent that is associated with a source (NFS) location goes offline, the task
     /// transitions to the UNAVAILABLE status. If the status of the task remains in the CREATING
     /// status for more than a few minutes, it means that your agent might be having trouble
-    /// mounting the source NFS file system. Check the task's <code>ErrorCode</code> and <code>ErrorDetail</code>.
-    /// Mount issues are often caused by either a misconfigured firewall or a mistyped NFS
-    /// server host name.
+    /// mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail. Mount
+    /// issues are often caused by either a misconfigured firewall or a mistyped NFS server
+    /// host name.
     /// </para>
     /// </summary>
     public partial class CreateTaskRequest : AmazonDataSyncRequest
     {
         private string _cloudWatchLogGroupArn;
         private string _destinationLocationArn;
+        private List<FilterRule> _excludes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private string _sourceLocationArn;
@@ -65,13 +64,17 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property CloudWatchLogGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
-        /// monitor and log events in the task. For more information on these groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
-        /// with Log Groups and Log Streams</a> in the <i>Amazon CloudWatch User Guide. </i> 
+        /// monitor and log events in the task. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to useCloudWatchLogs with DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring
-        /// Your Task</a>.
+        /// For more information on these groups, see "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+        /// (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to useCloudWatchLogs with DataSync, see "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
+        /// (Monitoring Your Task)
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -104,6 +107,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetDestinationLocationArn()
         {
             return this._destinationLocationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Excludes.  
+        /// <para>
+        /// A filter that determines which files to exclude from a task based on the specified
+        /// pattern. Transfers all files in the task’s subdirectory, except files that match the
+        /// filter that is set. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Excludes
+        {
+            get { return this._excludes; }
+            set { this._excludes = value; }
+        }
+
+        // Check to see if Excludes property is set
+        internal bool IsSetExcludes()
+        {
+            return this._excludes != null && this._excludes.Count > 0; 
         }
 
         /// <summary>

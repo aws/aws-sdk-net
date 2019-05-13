@@ -80,6 +80,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DestinationLocationArn);
                 }
 
+                if(publicRequest.IsSetExcludes())
+                {
+                    context.Writer.WritePropertyName("Excludes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludesListValue in publicRequest.Excludes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

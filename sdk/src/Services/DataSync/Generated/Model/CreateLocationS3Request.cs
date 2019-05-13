@@ -37,8 +37,11 @@ namespace Amazon.DataSync.Model
     /// Management (IAM) role that has the required permissions. You can set up the required
     /// permissions by creating an IAM policy that grants the required permissions and attaching
     /// the policy to the role. An example of such a policy is shown in the examples section.
-    /// For more information, see <a href="https://docs.aws.amazon.com/sync-service/latest/userguide/configuring-s3-locations.html">Configuring
-    /// Amazon S3 Location Settings</a> in the <i>AWS DataSync User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+    /// (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLocationS3Request : AmazonDataSyncRequest
@@ -90,7 +93,7 @@ namespace Amazon.DataSync.Model
         /// read data from the S3 source location or write data to the S3 destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Max=4096)]
         public string Subdirectory
         {
             get { return this._subdirectory; }

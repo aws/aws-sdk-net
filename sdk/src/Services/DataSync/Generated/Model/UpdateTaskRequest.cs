@@ -33,9 +33,51 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class UpdateTaskRequest : AmazonDataSyncRequest
     {
+        private string _cloudWatchLogGroupArn;
+        private List<FilterRule> _excludes = new List<FilterRule>();
         private string _name;
         private Options _options;
         private string _taskArn;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=562)]
+        public string CloudWatchLogGroupArn
+        {
+            get { return this._cloudWatchLogGroupArn; }
+            set { this._cloudWatchLogGroupArn = value; }
+        }
+
+        // Check to see if CloudWatchLogGroupArn property is set
+        internal bool IsSetCloudWatchLogGroupArn()
+        {
+            return this._cloudWatchLogGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Excludes.  
+        /// <para>
+        /// A filter that determines which files to exclude from a task based on the specified
+        /// pattern in the filter. Transfers all files in the task’s subdirectory, except files
+        /// that match the filter that is set. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Excludes
+        {
+            get { return this._excludes; }
+            set { this._excludes = value; }
+        }
+
+        // Check to see if Excludes property is set
+        internal bool IsSetExcludes()
+        {
+            return this._excludes != null && this._excludes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

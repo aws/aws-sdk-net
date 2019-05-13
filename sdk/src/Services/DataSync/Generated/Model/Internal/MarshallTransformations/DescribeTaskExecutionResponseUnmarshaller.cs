@@ -75,10 +75,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.EstimatedFilesToTransfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Excludes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
+                    response.Excludes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilesTransferred", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.FilesTransferred = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Includes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
+                    response.Includes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Options", targetDepth))
@@ -126,6 +138,10 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
+            {
+                return new InternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

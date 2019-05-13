@@ -68,6 +68,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludes())
+                {
+                    context.Writer.WritePropertyName("Includes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIncludesListValue in publicRequest.Includes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIncludesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetOverrideOptions())
                 {
                     context.Writer.WritePropertyName("OverrideOptions");

@@ -34,61 +34,59 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTask operation
+    /// Response Unmarshaller for NfsMountOptions Object
     /// </summary>  
-    public class UpdateTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class NfsMountOptionsUnmarshaller : IUnmarshaller<NfsMountOptions, XmlUnmarshallerContext>, IUnmarshaller<NfsMountOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        NfsMountOptions IUnmarshaller<NfsMountOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTaskResponse response = new UpdateTaskResponse();
-
-
-            return response;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public NfsMountOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            NfsMountOptions unmarshalledObject = new NfsMountOptions();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                return new InternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-            {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            return new AmazonDataSyncException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          
+            return unmarshalledObject;
         }
 
-        private static UpdateTaskResponseUnmarshaller _instance = new UpdateTaskResponseUnmarshaller();        
 
-        internal static UpdateTaskResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static NfsMountOptionsUnmarshaller _instance = new NfsMountOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTaskResponseUnmarshaller Instance
+        public static NfsMountOptionsUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

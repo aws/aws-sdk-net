@@ -28,41 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code>
-    /// returns an array that contains a list of tasks when the <a>ListTagsForResource</a>
-    /// operation is called.
+    /// A pattern that determines which files to include in the transfer or which files to
+    /// exclude.
     /// </summary>
-    public partial class TagListEntry
+    public partial class FilterRule
     {
-        private string _key;
+        private FilterType _filterType;
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property FilterType.  
         /// <para>
-        /// The key for an AWS resource tag.
+        /// Specifies the type of filter rule pattern to apply. DataSync only supports the SIMPLE_PATTERN
+        /// rule type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Key
+        [AWSProperty(Max=128)]
+        public FilterType FilterType
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._filterType; }
+            set { this._filterType = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if FilterType property is set
+        internal bool IsSetFilterType()
         {
-            return this._key != null;
+            return this._filterType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property Value.  
         /// <para>
-        /// The value for an AWS resource tag.
+        /// A pattern that defines the filter. The filter might include or exclude files is a
+        /// transfer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Max=409600)]
         public string Value
         {
             get { return this._value; }

@@ -36,7 +36,9 @@ namespace Amazon.DataSync.Model
         private long? _bytesWritten;
         private long? _estimatedBytesToTransfer;
         private long? _estimatedFilesToTransfer;
+        private List<FilterRule> _excludes = new List<FilterRule>();
         private long? _filesTransferred;
+        private List<FilterRule> _includes = new List<FilterRule>();
         private Options _options;
         private TaskExecutionResultDetail _result;
         private DateTime? _startTime;
@@ -120,6 +122,27 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Excludes.  
+        /// <para>
+        /// Specifies that the task execution excludes files from the transfer based on the specified
+        /// pattern in the filter. Transfers all files in the task’s subdirectory, except files
+        /// that match the filter that is set. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Excludes
+        {
+            get { return this._excludes; }
+            set { this._excludes = value; }
+        }
+
+        // Check to see if Excludes property is set
+        internal bool IsSetExcludes()
+        {
+            return this._excludes != null && this._excludes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FilesTransferred. 
         /// <para>
         /// The actual number of files that was transferred over the network. This value is calculated
@@ -144,6 +167,27 @@ namespace Amazon.DataSync.Model
         internal bool IsSetFilesTransferred()
         {
             return this._filesTransferred.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Includes.  
+        /// <para>
+        /// Specifies that the task execution excludes files in the transfer based on the specified
+        /// pattern in the filter. When multiple include filters are set, they are interpreted
+        /// as an OR. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilterRule> Includes
+        {
+            get { return this._includes; }
+            set { this._includes = value; }
+        }
+
+        // Check to see if Includes property is set
+        internal bool IsSetIncludes()
+        {
+            return this._includes != null && this._includes.Count > 0; 
         }
 
         /// <summary>
@@ -200,8 +244,12 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the task. For detailed information about sync statuses, see <a href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-        /// Sync Task Statuses</a>.
+        /// The status of the task execution. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For detailed information about task execution statuses, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+        /// (Understanding Task Statuses).
         /// </para>
         /// </summary>
         public TaskExecutionStatus Status
@@ -225,8 +273,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-        /// executed the task with the ARN <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+        /// For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+        /// executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
         /// 
         /// </para>
         /// </summary>

@@ -28,34 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAgent operation.
-    /// Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-    /// of the agent in your request. The operation disassociates the agent from your AWS
-    /// account. However, it doesn't delete the agent virtual machine (VM) from your on-premises
-    /// environment.
+    /// Represents the mount options that are available for DataSync to access an NFS location.
     /// </summary>
-    public partial class DeleteAgentRequest : AmazonDataSyncRequest
+    public partial class NfsMountOptions
     {
-        private string _agentArn;
+        private NfsVersion _version;
 
         /// <summary>
-        /// Gets and sets the property AgentArn. 
+        /// Gets and sets the property Version. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
-        /// operation to return a list of agents for your account and AWS Region.
+        /// The specific NFS version that you want DataSync to use to mount your NFS share. If
+        /// you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is,
+        /// DataSync automatically selects a version based on negotiation with the NFS server.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string AgentArn
+        public NfsVersion Version
         {
-            get { return this._agentArn; }
-            set { this._agentArn = value; }
+            get { return this._version; }
+            set { this._version = value; }
         }
 
-        // Check to see if AgentArn property is set
-        internal bool IsSetAgentArn()
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
         {
-            return this._agentArn != null;
+            return this._version != null;
         }
 
     }

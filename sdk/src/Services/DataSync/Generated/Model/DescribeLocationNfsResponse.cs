@@ -35,6 +35,7 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
+        private NfsMountOptions _mountOptions;
         private OnPremConfig _onPremConfig;
 
         /// <summary>
@@ -90,6 +91,24 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLocationUri()
         {
             return this._locationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MountOptions. 
+        /// <para>
+        /// The NFS mount options that DataSync used to mount your NFS share.
+        /// </para>
+        /// </summary>
+        public NfsMountOptions MountOptions
+        {
+            get { return this._mountOptions; }
+            set { this._mountOptions = value; }
+        }
+
+        // Check to see if MountOptions property is set
+        internal bool IsSetMountOptions()
+        {
+            return this._mountOptions != null;
         }
 
         /// <summary>

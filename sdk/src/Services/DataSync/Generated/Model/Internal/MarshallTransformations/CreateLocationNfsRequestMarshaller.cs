@@ -68,6 +68,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMountOptions())
+                {
+                    context.Writer.WritePropertyName("MountOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NfsMountOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MountOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOnPremConfig())
                 {
                     context.Writer.WritePropertyName("OnPremConfig");

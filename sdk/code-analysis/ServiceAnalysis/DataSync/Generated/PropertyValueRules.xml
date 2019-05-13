@@ -14,7 +14,7 @@
     <property>Amazon.DataSync.Model.CreateAgentRequest.AgentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateAgentResponse.AgentArn</property>
@@ -29,7 +29,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsRequest.Subdirectory</property>
     <max>4096</max>
-    <pattern>^[a-zA-Z0-9_\-\./]+$</pattern>
+    <pattern>^[a-zA-Z0-9_\-\./]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationEfsResponse.LocationArn</property>
@@ -59,7 +59,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Request.Subdirectory</property>
     <max>4096</max>
-    <pattern>^[a-zA-Z0-9_\-\./]+$</pattern>
+    <pattern>^[a-zA-Z0-9_\-\./]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Response.LocationArn</property>
@@ -80,7 +80,7 @@
     <property>Amazon.DataSync.Model.CreateTaskRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskRequest.SourceLocationArn</property>
@@ -121,7 +121,7 @@
     <property>Amazon.DataSync.Model.DescribeAgentResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsRequest.LocationArn</property>
@@ -189,7 +189,7 @@
     <property>Amazon.DataSync.Model.DescribeTaskResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.SourceLocationArn</property>
@@ -325,13 +325,18 @@
     <property>Amazon.DataSync.Model.UpdateAgentRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateTaskRequest.CloudWatchLogGroupArn</property>
+    <max>562</max>
+    <pattern>^arn:(aws|aws-cn):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.TaskArn</property>
@@ -347,12 +352,22 @@
     <property>Amazon.DataSync.Model.AgentListEntry.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Ec2Config.SubnetArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.FilterRule.FilterType</property>
+    <max>128</max>
+    <pattern>^[A-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.FilterRule.Value</property>
+    <max>409600</max>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.LocationListEntry.LocationArn</property>
@@ -376,13 +391,13 @@
     <property>Amazon.DataSync.Model.TagListEntry.Key</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,128}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TagListEntry.Value</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskExecutionListEntry.TaskExecutionArn</property>
@@ -405,7 +420,7 @@
     <property>Amazon.DataSync.Model.TaskListEntry.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[a-zA-Z0-9\s+=._:/-]{1,256}$</pattern>
+    <pattern>^[a-zA-Z0-9\s+=._:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskListEntry.TaskArn</property>

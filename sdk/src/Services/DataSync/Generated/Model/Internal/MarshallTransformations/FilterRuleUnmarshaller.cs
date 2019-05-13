@@ -34,61 +34,65 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTask operation
+    /// Response Unmarshaller for FilterRule Object
     /// </summary>  
-    public class UpdateTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class FilterRuleUnmarshaller : IUnmarshaller<FilterRule, XmlUnmarshallerContext>, IUnmarshaller<FilterRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        FilterRule IUnmarshaller<FilterRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTaskResponse response = new UpdateTaskResponse();
-
-
-            return response;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public FilterRule Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            FilterRule unmarshalledObject = new FilterRule();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
-                return new InternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                if (context.TestExpression("FilterType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
-            {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            return new AmazonDataSyncException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          
+            return unmarshalledObject;
         }
 
-        private static UpdateTaskResponseUnmarshaller _instance = new UpdateTaskResponseUnmarshaller();        
 
-        internal static UpdateTaskResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+        private static FilterRuleUnmarshaller _instance = new FilterRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTaskResponseUnmarshaller Instance
+        public static FilterRuleUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

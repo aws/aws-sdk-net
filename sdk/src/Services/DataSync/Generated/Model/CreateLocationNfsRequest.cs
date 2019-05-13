@@ -33,10 +33,29 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
+        private NfsMountOptions _mountOptions;
         private OnPremConfig _onPremConfig;
         private string _serverHostname;
         private string _subdirectory;
         private List<TagListEntry> _tags = new List<TagListEntry>();
+
+        /// <summary>
+        /// Gets and sets the property MountOptions. 
+        /// <para>
+        /// The NFS mount options that DataSync can use to mount your NFS share.
+        /// </para>
+        /// </summary>
+        public NfsMountOptions MountOptions
+        {
+            get { return this._mountOptions; }
+            set { this._mountOptions = value; }
+        }
+
+        // Check to see if MountOptions property is set
+        internal bool IsSetMountOptions()
+        {
+            return this._mountOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OnPremConfig. 
@@ -103,11 +122,14 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// To transfer all the data in the folder you specified, DataSync needs to have permissions
         /// to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code>
-        /// or ensure that the permissions for all of the files that you want sync allow read
+        /// or ensure that the permissions for all of the files that you want DataSync allow read
         /// access for all users. Doing either enables the agent to read the files. For the agent
-        /// to access directories, you must additionally enable all execute access. For information
-        /// about NFS export configuration, see <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
-        /// The /etc/exports Configuration File</a> in the Centos documentation. 
+        /// to access directories, you must additionally enable all execute access.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about NFS export configuration, see "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
+        /// (18.7. The /etc/exports Configuration File).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=4096)]

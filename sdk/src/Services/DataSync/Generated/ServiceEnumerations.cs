@@ -125,6 +125,52 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type FilterType.
+    /// </summary>
+    public class FilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SIMPLE_PATTERN for FilterType
+        /// </summary>
+        public static readonly FilterType SIMPLE_PATTERN = new FilterType("SIMPLE_PATTERN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterType FindValue(string value)
+        {
+            return FindValue<FilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Gid.
     /// </summary>
     public class Gid : ConstantClass
@@ -226,6 +272,64 @@ namespace Amazon.DataSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NfsVersion.
+    /// </summary>
+    public class NfsVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion AUTOMATIC = new NfsVersion("AUTOMATIC");
+        /// <summary>
+        /// Constant NFS3 for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion NFS3 = new NfsVersion("NFS3");
+        /// <summary>
+        /// Constant NFS4_0 for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion NFS4_0 = new NfsVersion("NFS4_0");
+        /// <summary>
+        /// Constant NFS4_1 for NfsVersion
+        /// </summary>
+        public static readonly NfsVersion NFS4_1 = new NfsVersion("NFS4_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NfsVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NfsVersion FindValue(string value)
+        {
+            return FindValue<NfsVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NfsVersion(string value)
         {
             return FindValue(value);
         }
