@@ -259,6 +259,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs = new Runtime("nodejs");
         /// <summary>
+        /// Constant Nodejs10X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs10X = new Runtime("nodejs10.x");
+        /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
