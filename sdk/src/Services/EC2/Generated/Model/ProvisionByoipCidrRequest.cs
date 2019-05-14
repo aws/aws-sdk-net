@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The public IPv4 address range, in CIDR notation. The most specific prefix that you
         /// can specify is /24. The address range cannot overlap with another address range that
-        /// you've brought to this or another region.
+        /// you've brought to this or another Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

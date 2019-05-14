@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Blackhole. 
         /// <para>
-        /// Indicates whether to drop traffic if the target isn't available.
+        /// Indicates whether to drop traffic that matches this route.
         /// </para>
         /// </summary>
         public bool Blackhole

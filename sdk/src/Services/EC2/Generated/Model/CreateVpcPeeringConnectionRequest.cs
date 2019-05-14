@@ -84,12 +84,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PeerRegion. 
         /// <para>
-        /// The region code for the accepter VPC, if the accepter VPC is located in a region other
-        /// than the region in which you make the request.
+        /// The Region code for the accepter VPC, if the accepter VPC is located in a Region other
+        /// than the Region in which you make the request.
         /// </para>
         ///  
         /// <para>
-        /// Default: The region in which you make the request.
+        /// Default: The Region in which you make the request.
         /// </para>
         /// </summary>
         public string PeerRegion

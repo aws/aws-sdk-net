@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyIdFormat operation.
-    /// Modifies the ID format for the specified resource on a per-region basis. You can specify
+    /// Modifies the ID format for the specified resource on a per-Region basis. You can specify
     /// that resources should receive longer IDs (17-character IDs) when they are created.
     /// 
     ///  

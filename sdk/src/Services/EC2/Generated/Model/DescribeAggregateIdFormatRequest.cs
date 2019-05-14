@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAggregateIdFormat operation.
-    /// Describes the longer ID format settings for all resource types in a specific region.
+    /// Describes the longer ID format settings for all resource types in a specific Region.
     /// This request is useful for performing a quick audit to determine whether a specific
-    /// region is fully opted in for longer IDs (17-character IDs).
+    /// Region is fully opted in for longer IDs (17-character IDs).
     /// 
     ///  
     /// <para>

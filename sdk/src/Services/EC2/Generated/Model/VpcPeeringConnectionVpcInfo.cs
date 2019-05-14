@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The region in which the VPC is located.
+        /// The Region in which the VPC is located.
         /// </para>
         /// </summary>
         public string Region

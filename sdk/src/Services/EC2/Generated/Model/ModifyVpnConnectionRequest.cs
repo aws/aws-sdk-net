@@ -29,7 +29,70 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnection operation.
+    /// Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration
+    /// options are available:
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// An existing virtual private gateway to a new virtual private gateway
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An existing virtual private gateway to a transit gateway
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An existing transit gateway to a new transit gateway
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An existing transit gateway to a virtual private gateway
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Before you perform the migration to the new gateway, you must configure the new gateway.
+    /// Use <a>CreateVpnGateway</a> to create a virtual private gateway, or <a>CreateTransitGateway</a>
+    /// to create a transit gateway.
+    /// </para>
+    ///  
+    /// <para>
+    /// This step is required when you migrate from a virtual private gateway with static
+    /// routes to a transit gateway. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must delete the static routes before you migrate to the new gateway.
+    /// </para>
+    ///  
+    /// <para>
+    /// Keep a copy of the static route before you delete it. You will need to add back these
+    /// routes to the transit gateway after the VPN connection migration is complete.
+    /// </para>
+    ///  
+    /// <para>
+    /// After you migrate to the new gateway, you might need to modify your VPC route table.
+    /// Use <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
+    /// href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
+    /// Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS Site-to-Site
+    /// VPN User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  When the new gateway is a transit gateway, modify the transit gateway route table
+    /// to allow traffic between the VPC and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a>
+    /// to add the routes.
+    /// </para>
+    ///  
+    /// <para>
+    ///  If you deleted VPN static routes, you must add the static routes to the transit gateway
+    /// route table.
+    /// </para>
+    ///  
+    /// <para>
+    /// After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side
+    /// and the tunnel options remain intact. Your s2slong; connection will be temporarily
+    /// unavailable for approximately 10 minutes while we provision the new endpoints 
+    /// </para>
     /// </summary>
     public partial class ModifyVpnConnectionRequest : AmazonEC2Request
     {
@@ -38,7 +101,10 @@ namespace Amazon.EC2.Model
         private string _vpnGatewayId;
 
         /// <summary>
-        /// Gets and sets the property TransitGatewayId.
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of the transit gateway.
+        /// </para>
         /// </summary>
         public string TransitGatewayId
         {
@@ -53,7 +119,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpnConnectionId.
+        /// Gets and sets the property VpnConnectionId. 
+        /// <para>
+        /// The ID of the VPN connection.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VpnConnectionId
@@ -69,7 +138,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpnGatewayId.
+        /// Gets and sets the property VpnGatewayId. 
+        /// <para>
+        /// The ID of the virtual private gateway at the AWS side of the VPN connection.
+        /// </para>
         /// </summary>
         public string VpnGatewayId
         {

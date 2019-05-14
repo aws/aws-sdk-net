@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InterfaceType. 
         /// <para>
         /// Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify
-        /// this parameter to create an EFA. For more information, see <a href="AWSEC2/latest/UserGuide/efa.html">Elastic
+        /// this parameter to create an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
         /// Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

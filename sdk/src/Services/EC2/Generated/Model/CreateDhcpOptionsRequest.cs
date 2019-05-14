@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>,
-    /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another region,
+    /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region,
     /// specify <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>).
     /// Otherwise, specify a domain name (for example, <code>MyCompany.com</code>). This value
     /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating

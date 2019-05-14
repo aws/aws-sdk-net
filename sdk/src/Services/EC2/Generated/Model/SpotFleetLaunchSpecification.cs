@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the launch specification for one or more Spot Instances.
+    /// Describes the launch specification for one or more Spot Instances. If you include
+    /// On-Demand capacity in your fleet request, you can't use <code>SpotFleetLaunchSpecification</code>;
+    /// you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {
@@ -72,10 +74,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries. You can't specify both a snapshot ID and
-        /// an encryption value. This is because only blank volumes can be encrypted on creation.
-        /// If a snapshot is the basis for a volume, it is not blank and its encryption status
-        /// is used for the volume encryption status.
+        /// One or more block devices that are mapped to the Spot instances. You can't specify
+        /// both a snapshot ID and an encryption value. This is because only blank volumes can
+        /// be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+        /// and its encryption status is used for the volume encryption status.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -263,7 +265,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        /// The ID of the RAM disk.
+        /// The ID of the RAM disk. Some kernels require additional drivers at launch. Check the
+        /// kernel requirements for information about whether you need to specify a RAM disk.
+        /// To find kernel requirements, refer to the AWS Resource Center and search for the kernel
+        /// ID.
         /// </para>
         /// </summary>
         public string RamdiskId
@@ -358,7 +363,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data to make available to the instances.
+        /// The Base64-encoded user data that instances use when starting up.
         /// </para>
         /// </summary>
         public string UserData
@@ -377,14 +382,14 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
         /// The number of units provided by the specified instance type. These are the same units
-        /// that you chose to set the target capacity in terms (instances or a performance characteristic
-        /// such as vCPUs, memory, or I/O).
+        /// that you chose to set the target capacity in terms of instances, or a performance
+        /// characteristic such as vCPUs, memory, or I/O.
         /// </para>
         ///  
         /// <para>
-        /// If the target capacity divided by this value is not a whole number, we round the number
-        /// of instances to the next whole number. If this value is not specified, the default
-        /// is 1.
+        /// If the target capacity divided by this value is not a whole number, Amazon EC2 rounds
+        /// the number of instances to the next whole number. If this value is not specified,
+        /// the default is 1.
         /// </para>
         /// </summary>
         public double WeightedCapacity

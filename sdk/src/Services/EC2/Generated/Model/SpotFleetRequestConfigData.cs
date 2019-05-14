@@ -96,8 +96,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 
         /// <para>
-        /// Indicates whether running Spot Instances should be terminated if the target capacity
-        /// of the Spot Fleet request is decreased below the current size of the Spot Fleet.
+        /// Indicates whether running Spot Instances should be terminated if you decrease the
+        /// target capacity of the Spot Fleet request below the current size of the Spot Fleet.
         /// </para>
         /// </summary>
         public ExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy
@@ -134,9 +134,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IamFleetRole. 
         /// <para>
-        /// Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you
-        /// cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot
-        /// Fleet request expires, if you set <code>terminateInstancesWithExpiration</code>.
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that grants the Spot Fleet the permission to request, launch, terminate, and tag instances
+        /// on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
+        /// Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot
+        /// Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request
+        /// using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you
+        /// set <code>TerminateInstancesWithExpiration</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -195,7 +199,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LaunchSpecifications. 
         /// <para>
         /// The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
-        /// you can't specify <code>LaunchTemplateConfigs</code>.
+        /// you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity
+        /// in your request, you must use <code>LaunchTemplateConfigs</code>.
         /// </para>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
@@ -214,7 +219,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LaunchTemplateConfigs. 
         /// <para>
         /// The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>,
-        /// you can't specify <code>LaunchSpecifications</code>.
+        /// you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity
+        /// in your request, you must use <code>LaunchTemplateConfigs</code>.
         /// </para>
         /// </summary>
         public List<LaunchTemplateConfig> LaunchTemplateConfigs
@@ -358,9 +364,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacity. 
         /// <para>
-        /// The number of units to request. You can choose to set the target capacity in terms
-        /// of instances or a performance characteristic that is important to your application
-        /// workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
+        /// The number of units to request for the Spot Fleet. You can choose to set the target
+        /// capacity in terms of instances or a performance characteristic that is important to
+        /// your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
         /// you can specify a target capacity of 0 and add capacity later.
         /// </para>
         /// </summary>
@@ -380,8 +386,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TerminateInstancesWithExpiration. 
         /// <para>
-        /// Indicates whether running Spot Instances should be terminated when the Spot Fleet
-        /// request expires.
+        /// Indicates whether running Spot Instances are terminated when the Spot Fleet request
+        /// expires.
         /// </para>
         /// </summary>
         public bool TerminateInstancesWithExpiration
@@ -424,8 +430,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidFromUtc. 
         /// <para>
-        /// The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// The default is to start fulfilling the request immediately.
+        /// The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// By default, Amazon EC2 starts fulfilling the request immediately.
         /// </para>
         /// </summary>
         public DateTime ValidFromUtc
@@ -443,9 +449,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidUntilUtc. 
         /// <para>
-        /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// At this point, no new Spot Instance requests are placed or able to fulfill the request.
-        /// If no value is specified, the Spot Fleet request remains until you cancel it.
+        /// The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// After the end date and time, no new Spot Instance requests are placed or able to fulfill
+        /// the request. If no value is specified, the Spot Fleet request remains until you cancel
+        /// it.
         /// </para>
         /// </summary>
         public DateTime ValidUntilUtc
@@ -476,8 +483,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// The default is to start fulfilling the request immediately.
+        /// The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// By default, Amazon EC2 starts fulfilling the request immediately.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -506,9 +513,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// At this point, no new Spot Instance requests are placed or able to fulfill the request.
-        /// If no value is specified, the Spot Fleet request remains until you cancel it.
+        /// The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// After the end date and time, no new Spot Instance requests are placed or able to fulfill
+        /// the request. If no value is specified, the Spot Fleet request remains until you cancel
+        /// it.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

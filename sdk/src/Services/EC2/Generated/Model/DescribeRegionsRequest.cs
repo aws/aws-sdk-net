@@ -29,12 +29,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegions operation.
-    /// Describes the regions that are currently available to you.
+    /// Describes the Regions that are currently available to you. The API returns a list
+    /// of all the Regions, including Regions that are disabled for your account. For information
+    /// about enabling Regions for your account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
+    /// and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// For a list of the regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
-    /// and Endpoints</a>.
+    /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
+    /// Regions and Endpoints</a>.
     /// </para>
     /// </summary>
     public partial class DescribeRegionsRequest : AmazonEC2Request
@@ -49,11 +52,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+        ///  <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+        ///  <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -72,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RegionNames. 
         /// <para>
-        /// The names of the regions.
+        /// The names of the Regions.
         /// </para>
         /// </summary>
         public List<string> RegionNames

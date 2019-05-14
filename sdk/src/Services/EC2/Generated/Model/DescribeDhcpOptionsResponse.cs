@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeDhcpOptionsResponse : AmazonWebServiceResponse
     {
         private List<DhcpOptions> _dhcpOptions = new List<DhcpOptions>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property DhcpOptions. 
@@ -50,6 +51,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDhcpOptions()
         {
             return this._dhcpOptions != null && this._dhcpOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

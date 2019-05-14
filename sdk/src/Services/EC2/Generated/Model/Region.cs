@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a region.
+    /// Describes a Region.
     /// </summary>
     public partial class Region
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The region service endpoint.
+        /// The Region service endpoint.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the region.
+        /// The name of the Region.
         /// </para>
         /// </summary>
         public string RegionName

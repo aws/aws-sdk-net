@@ -154,19 +154,19 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed
-        /// by the region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
+        /// by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
         /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed
-        /// by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
+        /// by the Region of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
         /// namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace,
-        /// followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
+        /// followed by the Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
         /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
         /// 
         /// </para>
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified CMK must exist in the region that the snapshot is being copied to. 
+        /// The specified CMK must exist in the Region that the snapshot is being copied to.
         /// </para>
         /// </summary>
         public string KmsKeyId

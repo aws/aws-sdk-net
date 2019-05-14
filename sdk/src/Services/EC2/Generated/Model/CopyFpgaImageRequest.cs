@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyFpgaImage operation.
-    /// Copies the specified Amazon FPGA Image (AFI) to the current region.
+    /// Copies the specified Amazon FPGA Image (AFI) to the current Region.
     /// </summary>
     public partial class CopyFpgaImageRequest : AmazonEC2Request
     {
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The region that contains the source AFI.
+        /// The Region that contains the source AFI.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

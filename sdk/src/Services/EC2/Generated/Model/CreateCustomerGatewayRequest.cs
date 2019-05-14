@@ -45,8 +45,8 @@ namespace Amazon.EC2.Model
     ///  <note> 
     /// <para>
     /// Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception
-    /// of 7224, which is reserved in the <code>us-east-1</code> region, and 9059, which is
-    /// reserved in the <code>eu-west-1</code> region.
+    /// of 7224, which is reserved in the <code>us-east-1</code> Region, and 9059, which is
+    /// reserved in the <code>eu-west-1</code> Region.
     /// </para>
     ///  </note> 
     /// <para>

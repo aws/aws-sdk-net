@@ -488,8 +488,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
-        /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
-        /// Elastic IP addresses for EC2-VPC per region.
+        /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5
+        /// Elastic IP addresses for EC2-VPC per Region.
         /// </para>
         ///  
         /// <para>
@@ -4630,7 +4630,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Availability Zones that are available to you. The results include zones
-        /// only for the region you're currently using. If there is an event impacting an Availability
+        /// only for the Region you're currently using. If there is an event impacting an Availability
         /// Zone, you can use this request to view the state and any provided message for that
         /// Availability Zone.
         /// 
@@ -5748,7 +5748,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Recently deregistered images might appear in the returned results for a short interval.
+        /// Recently deregistered images appear in the returned results for a short interval and
+        /// then return empty results. After all instances that reference a deregistered AMI are
+        /// terminated, specifying the ID of the image results in an error indicating that the
+        /// AMI ID cannot be found.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -6658,12 +6661,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the regions that are currently available to you.
+        /// Describes the Regions that are currently available to you. The API returns a list
+        /// of all the Regions, including Regions that are disabled for your account. For information
+        /// about enabling Regions for your account, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
+        /// and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// For a list of the regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
-        /// and Endpoints</a>.
+        /// For a list of the Regions supported by Amazon EC2, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
+        /// Regions and Endpoints</a>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

@@ -428,7 +428,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces.
+        /// One or more network interfaces. If you specify a network interface, you must specify
+        /// any security groups as part of the network interface.
         /// </para>
         /// </summary>
         public List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> NetworkInterfaces
@@ -489,7 +490,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+        /// One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
         /// You cannot specify both a security group ID and security name in the same request.
         /// </para>
         /// </summary>
@@ -530,7 +531,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tags to apply to the resources during launch. You can only tag instances and volumes
         /// on launch. The specified tags are applied to all instances or volumes that are created
-        /// during launch. To tag a resource after it has been created, see <a>CreateTags</a>.
+        /// during launch. To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
         /// </para>
         /// </summary>
         public List<LaunchTemplateTagSpecificationRequest> TagSpecifications

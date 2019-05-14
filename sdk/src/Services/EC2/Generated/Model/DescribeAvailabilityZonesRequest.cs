@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityZones operation.
     /// Describes the Availability Zones that are available to you. The results include zones
-    /// only for the region you're currently using. If there is an event impacting an Availability
+    /// only for the Region you're currently using. If there is an event impacting an Availability
     /// Zone, you can use this request to view the state and any provided message for that
     /// Availability Zone.
     /// 
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>region-name</code> - The name of the region for the Availability Zone (for
+        ///  <code>region-name</code> - The name of the Region for the Availability Zone (for
         /// example, <code>us-east-1</code>).
         /// </para>
         ///  </li> <li> 

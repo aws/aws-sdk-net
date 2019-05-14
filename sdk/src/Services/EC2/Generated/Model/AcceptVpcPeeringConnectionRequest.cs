@@ -36,8 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For an inter-region VPC peering connection request, you must accept the VPC peering
-    /// connection in the region of the accepter VPC.
+    /// For an inter-Region VPC peering connection request, you must accept the VPC peering
+    /// connection in the Region of the accepter VPC.
     /// </para>
     /// </summary>
     public partial class AcceptVpcPeeringConnectionRequest : AmazonEC2Request

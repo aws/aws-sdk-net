@@ -118,6 +118,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeDhcpOptionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -192,6 +197,11 @@
     <property>Amazon.EC2.Model.DescribeStaleSecurityGroupsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSubnetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayAttachmentsRequest.MaxResults</property>

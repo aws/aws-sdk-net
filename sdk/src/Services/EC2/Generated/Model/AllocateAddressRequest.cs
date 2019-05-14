@@ -52,8 +52,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
-    /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
-    /// Elastic IP addresses for EC2-VPC per region.
+    /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5
+    /// Elastic IP addresses for EC2-VPC per Region.
     /// </para>
     ///  
     /// <para>

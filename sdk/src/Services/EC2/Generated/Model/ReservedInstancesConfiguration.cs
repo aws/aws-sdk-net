@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Whether the Reserved Instance is applied to instances in a region or instances in
+        /// Whether the Reserved Instance is applied to instances in a Region or instances in
         /// a specific Availability Zone.
         /// </para>
         /// </summary>

@@ -39,7 +39,10 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// Recently deregistered images might appear in the returned results for a short interval.
+    /// Recently deregistered images appear in the returned results for a short interval and
+    /// then return empty results. After all instances that reference a deregistered AMI are
+    /// terminated, specifying the ID of the image results in an error indicating that the
+    /// AMI ID cannot be found.
     /// </para>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
