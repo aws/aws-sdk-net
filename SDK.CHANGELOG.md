@@ -1,3 +1,13 @@
+### 3.3.510.0 (2019-05-14 18:18 UTC)
+* Chime (3.3.101.0)
+	* Amazon Chime private bots GA release.
+* Comprehend (3.3.104.0)
+	* With this release AWS Comprehend now supports Virtual Private Cloud for Asynchronous Batch Processing jobs
+* EC2 (3.3.107.0)
+	* Pagination support for ec2.DescribeSubnets, ec2.DescribeDhcpOptions 
+* StorageGateway (3.3.105.0)
+	* Add Tags parameter to CreateSnapshot and UpdateSnapshotSchedule APIs, used for creating tags on create for one off snapshots and scheduled snapshots.
+
 ### 3.3.509.0 (2019-05-13 18:28 UTC)
 * DataSync (3.3.101.0)
 	* AWS DataSync now enables exclude and include filters to control what files and directories will be copied as part of a task execution.
