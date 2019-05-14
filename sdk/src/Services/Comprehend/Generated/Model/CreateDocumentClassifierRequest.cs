@@ -44,6 +44,7 @@ namespace Amazon.Comprehend.Model
         private DocumentClassifierOutputDataConfig _outputDataConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _volumeKmsKeyId;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -212,6 +213,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetVolumeKmsKeyId()
         {
             return this._volumeKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
+        /// the resources you are using for your custom classifier. For more information, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. 
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }
