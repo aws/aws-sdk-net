@@ -95,7 +95,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -144,7 +144,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -200,7 +200,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -245,7 +245,7 @@ namespace Amazon.Chime
         /// 
         ///  
         /// <para>
-        /// Users suspended from a <code>Team</code> account are dissociated from the account,
+        /// Users suspended from a <code>Team</code> account are dissasociated from the account,
         /// but they can continue to use Amazon Chime as free users. To remove the suspension
         /// from suspended <code>Team</code> account users, invite them to the <code>Team</code>
         /// account again. You can use the <a>InviteUsers</a> action to do so.
@@ -270,7 +270,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -329,7 +329,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -379,7 +379,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -430,7 +430,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -482,7 +482,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -517,6 +517,55 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateBot
+
+
+        /// <summary>
+        /// Creates a bot for an Amazon Chime Enterprise account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBot service method.</param>
+        /// 
+        /// <returns>The response from the CreateBot service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">REST API Reference for CreateBot Operation</seealso>
+        CreateBotResponse CreateBot(CreateBotRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">REST API Reference for CreateBot Operation</seealso>
+        Task<CreateBotResponse> CreateBotAsync(CreateBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreatePhoneNumberOrder
 
 
@@ -532,7 +581,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -581,7 +630,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -647,7 +696,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -685,6 +734,52 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  DeleteEventsConfiguration
+
+
+        /// <summary>
+        /// Deletes the events configuration that allows a bot to receive outgoing events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventsConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">REST API Reference for DeleteEventsConfiguration Operation</seealso>
+        DeleteEventsConfigurationResponse DeleteEventsConfiguration(DeleteEventsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">REST API Reference for DeleteEventsConfiguration Operation</seealso>
+        Task<DeleteEventsConfigurationResponse> DeleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePhoneNumber
 
 
@@ -707,7 +802,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -757,7 +852,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -806,7 +901,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -855,7 +950,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -905,7 +1000,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -955,7 +1050,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1004,7 +1099,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1054,7 +1149,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1105,7 +1200,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1140,6 +1235,103 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  GetBot
+
+
+        /// <summary>
+        /// Retrieves details for the specified bot, such as bot email address, bot type, status,
+        /// and display name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBot service method.</param>
+        /// 
+        /// <returns>The response from the GetBot service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">REST API Reference for GetBot Operation</seealso>
+        GetBotResponse GetBot(GetBotRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">REST API Reference for GetBot Operation</seealso>
+        Task<GetBotResponse> GetBotAsync(GetBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetEventsConfiguration
+
+
+        /// <summary>
+        /// Gets details for an events configuration that allows a bot to receive outgoing events,
+        /// such as an HTTPS endpoint or Lambda function ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetEventsConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">REST API Reference for GetEventsConfiguration Operation</seealso>
+        GetEventsConfigurationResponse GetEventsConfiguration(GetEventsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">REST API Reference for GetEventsConfiguration Operation</seealso>
+        Task<GetEventsConfigurationResponse> GetEventsConfigurationAsync(GetEventsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetGlobalSettings
 
 
@@ -1155,7 +1347,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1202,7 +1394,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1252,7 +1444,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1308,7 +1500,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1358,7 +1550,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1408,7 +1600,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1457,7 +1649,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1506,7 +1698,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1556,7 +1748,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1607,7 +1799,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1658,7 +1850,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1693,6 +1885,53 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  ListBots
+
+
+        /// <summary>
+        /// Lists the bots associated with the administrator's Amazon Chime Enterprise account
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBots service method.</param>
+        /// 
+        /// <returns>The response from the ListBots service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">REST API Reference for ListBots Operation</seealso>
+        ListBotsResponse ListBots(ListBotsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">REST API Reference for ListBots Operation</seealso>
+        Task<ListBotsResponse> ListBotsAsync(ListBotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPhoneNumberOrders
 
 
@@ -1707,7 +1946,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1754,7 +1993,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1801,7 +2040,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1850,7 +2089,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -1896,7 +2135,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1945,7 +2184,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -1980,6 +2219,57 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  PutEventsConfiguration
+
+
+        /// <summary>
+        /// Creates an events configuration that allows a bot to receive outgoing events sent
+        /// by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more
+        /// information, see <a>Bot</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEventsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEventsConfiguration service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">REST API Reference for PutEventsConfiguration Operation</seealso>
+        PutEventsConfigurationResponse PutEventsConfiguration(PutEventsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">REST API Reference for PutEventsConfiguration Operation</seealso>
+        Task<PutEventsConfigurationResponse> PutEventsConfigurationAsync(PutEventsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutVoiceConnectorOrigination
 
 
@@ -1994,7 +2284,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2043,7 +2333,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2092,7 +2382,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2127,6 +2417,52 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  RegenerateSecurityToken
+
+
+        /// <summary>
+        /// Regenerates the security token for a bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegenerateSecurityToken service method.</param>
+        /// 
+        /// <returns>The response from the RegenerateSecurityToken service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">REST API Reference for RegenerateSecurityToken Operation</seealso>
+        RegenerateSecurityTokenResponse RegenerateSecurityToken(RegenerateSecurityTokenRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegenerateSecurityToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegenerateSecurityToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">REST API Reference for RegenerateSecurityToken Operation</seealso>
+        Task<RegenerateSecurityTokenResponse> RegenerateSecurityTokenAsync(RegenerateSecurityTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ResetPersonalPIN
 
 
@@ -2142,7 +2478,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2191,7 +2527,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2240,7 +2576,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -2287,7 +2623,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2343,7 +2679,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2378,6 +2714,53 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  UpdateBot
+
+
+        /// <summary>
+        /// Updates the status of the specified bot, such as starting or stopping the bot from
+        /// running in your Amazon Chime Enterprise account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBot service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBot service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request. For example, when a user
+        /// tries to create an account from an unsupported Region.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">REST API Reference for UpdateBot Operation</seealso>
+        UpdateBotResponse UpdateBot(UpdateBotRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">REST API Reference for UpdateBot Operation</seealso>
+        Task<UpdateBotResponse> UpdateBotAsync(UpdateBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateGlobalSettings
 
 
@@ -2393,7 +2776,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -2440,7 +2823,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2490,7 +2873,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2539,7 +2922,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.
@@ -2588,7 +2971,7 @@ namespace Amazon.Chime
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request. For example, when a user
-        /// tries to create an account from an unsupported region.
+        /// tries to create an account from an unsupported Region.
         /// </exception>
         /// <exception cref="Amazon.Chime.Model.NotFoundException">
         /// One or more of the resources in the request does not exist in the system.

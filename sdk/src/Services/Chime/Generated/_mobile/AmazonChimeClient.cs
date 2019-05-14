@@ -551,6 +551,39 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  CreateBot
+
+        internal virtual CreateBotResponse CreateBot(CreateBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">REST API Reference for CreateBot Operation</seealso>
+        public virtual Task<CreateBotResponse> CreateBotAsync(CreateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePhoneNumberOrder
 
         internal virtual CreatePhoneNumberOrderResponse CreatePhoneNumberOrder(CreatePhoneNumberOrderRequest request)
@@ -646,6 +679,39 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = DeleteAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventsConfiguration
+
+        internal virtual DeleteEventsConfigurationResponse DeleteEventsConfiguration(DeleteEventsConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">REST API Reference for DeleteEventsConfiguration Operation</seealso>
+        public virtual Task<DeleteEventsConfigurationResponse> DeleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -943,6 +1009,72 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBot
+
+        internal virtual GetBotResponse GetBot(GetBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBotResponseUnmarshaller.Instance;
+
+            return Invoke<GetBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">REST API Reference for GetBot Operation</seealso>
+        public virtual Task<GetBotResponse> GetBotAsync(GetBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventsConfiguration
+
+        internal virtual GetEventsConfigurationResponse GetEventsConfiguration(GetEventsConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">REST API Reference for GetEventsConfiguration Operation</seealso>
+        public virtual Task<GetEventsConfigurationResponse> GetEventsConfigurationAsync(GetEventsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1310,6 +1442,39 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  ListBots
+
+        internal virtual ListBotsResponse ListBots(ListBotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">REST API Reference for ListBots Operation</seealso>
+        public virtual Task<ListBotsResponse> ListBotsAsync(ListBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPhoneNumberOrders
 
         internal virtual ListPhoneNumberOrdersResponse ListPhoneNumberOrders(ListPhoneNumberOrdersRequest request)
@@ -1508,6 +1673,39 @@ namespace Amazon.Chime
 
         #endregion
         
+        #region  PutEventsConfiguration
+
+        internal virtual PutEventsConfigurationResponse PutEventsConfiguration(PutEventsConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">REST API Reference for PutEventsConfiguration Operation</seealso>
+        public virtual Task<PutEventsConfigurationResponse> PutEventsConfigurationAsync(PutEventsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEventsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEventsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEventsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutVoiceConnectorOrigination
 
         internal virtual PutVoiceConnectorOriginationResponse PutVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request)
@@ -1603,6 +1801,39 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = PutVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutVoiceConnectorTerminationCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegenerateSecurityToken
+
+        internal virtual RegenerateSecurityTokenResponse RegenerateSecurityToken(RegenerateSecurityTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegenerateSecurityTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegenerateSecurityTokenResponseUnmarshaller.Instance;
+
+            return Invoke<RegenerateSecurityTokenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegenerateSecurityToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegenerateSecurityToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">REST API Reference for RegenerateSecurityToken Operation</seealso>
+        public virtual Task<RegenerateSecurityTokenResponse> RegenerateSecurityTokenAsync(RegenerateSecurityTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegenerateSecurityTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegenerateSecurityTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegenerateSecurityTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1768,6 +1999,39 @@ namespace Amazon.Chime
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBot
+
+        internal virtual UpdateBotResponse UpdateBot(UpdateBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBotResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">REST API Reference for UpdateBot Operation</seealso>
+        public virtual Task<UpdateBotResponse> UpdateBotAsync(UpdateBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBotResponse>(request, options, cancellationToken);
         }
 
         #endregion
