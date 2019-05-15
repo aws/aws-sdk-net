@@ -335,6 +335,10 @@ namespace Amazon.MediaPackage
     {
 
         /// <summary>
+        /// Constant NUMBER_WITH_DURATION for SegmentTemplateFormat
+        /// </summary>
+        public static readonly SegmentTemplateFormat NUMBER_WITH_DURATION = new SegmentTemplateFormat("NUMBER_WITH_DURATION");
+        /// <summary>
         /// Constant NUMBER_WITH_TIMELINE for SegmentTemplateFormat
         /// </summary>
         public static readonly SegmentTemplateFormat NUMBER_WITH_TIMELINE = new SegmentTemplateFormat("NUMBER_WITH_TIMELINE");
