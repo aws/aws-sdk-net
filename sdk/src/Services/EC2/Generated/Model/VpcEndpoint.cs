@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _serviceName;
         private State _state;
         private List<string> _subnetIds = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpointId;
         private VpcEndpointType _vpcEndpointType;
         private string _vpcId;
@@ -245,6 +246,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the VPC endpoint.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

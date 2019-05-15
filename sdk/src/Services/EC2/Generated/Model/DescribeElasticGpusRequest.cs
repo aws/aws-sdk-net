@@ -109,6 +109,7 @@ namespace Amazon.EC2.Model
         /// can be between 5 and 1000.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

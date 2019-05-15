@@ -43,6 +43,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -123,6 +128,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeElasticGpusRequest.MaxResults</property>
+    <min>10</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFpgaImagesRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -168,6 +178,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeLaunchTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -175,6 +190,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeNetworkAclsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInterfacePermissionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInterfacesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -187,6 +212,16 @@
     <property>Amazon.EC2.Model.DescribePublicIpv4PoolsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeRouteTablesRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeStaleSecurityGroupsRequest.MaxResults</property>

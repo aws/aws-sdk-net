@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _serviceName;
         private ServiceState _serviceState;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
@@ -223,6 +224,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceType()
         {
             return this._serviceType != null && this._serviceType.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the service.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

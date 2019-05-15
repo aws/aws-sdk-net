@@ -38,8 +38,10 @@ namespace Amazon.EC2.Model
         private bool? _managesVpcEndpoints;
         private string _owner;
         private string _privateDnsName;
+        private string _serviceId;
         private string _serviceName;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
+        private List<Tag> _tags = new List<Tag>();
         private bool? _vpcEndpointPolicySupported;
 
         /// <summary>
@@ -153,6 +155,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceId. 
+        /// <para>
+        /// The ID of the endpoint service.
+        /// </para>
+        /// </summary>
+        public string ServiceId
+        {
+            get { return this._serviceId; }
+            set { this._serviceId = value; }
+        }
+
+        // Check to see if ServiceId property is set
+        internal bool IsSetServiceId()
+        {
+            return this._serviceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service.
@@ -186,6 +206,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceType()
         {
             return this._serviceType != null && this._serviceType.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the service.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

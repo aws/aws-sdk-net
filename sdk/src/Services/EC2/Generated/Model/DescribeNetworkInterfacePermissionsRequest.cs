@@ -88,6 +88,7 @@ namespace Amazon.EC2.Model
         /// parameter is not specified, up to 50 results are returned by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=255)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
