@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element to <a>DescribeDBLogFiles</a>.
+    /// This data type is used as a response element to <code>DescribeDBLogFiles</code>.
     /// </summary>
     public partial class DescribeDBLogFilesDetails
     {

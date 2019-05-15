@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a>
+    /// Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code>
     /// action.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsResponse : AmazonWebServiceResponse
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OrderableDBInstanceOptions. 
         /// <para>
-        /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable
+        /// An <code>OrderableDBInstanceOption</code> structure containing information about orderable
         /// options for the DB instance.
         /// </para>
         /// </summary>

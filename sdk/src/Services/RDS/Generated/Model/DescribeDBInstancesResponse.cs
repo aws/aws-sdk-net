@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBInstances</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBInstances</code>
     /// action.
     /// </summary>
     public partial class DescribeDBInstancesResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstances. 
         /// <para>
-        ///  A list of <a>DBInstance</a> instances. 
+        ///  A list of <code>DBInstance</code> instances. 
         /// </para>
         /// </summary>
         public List<DBInstance> DBInstances

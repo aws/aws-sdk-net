@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a>
+    /// Contains the result of a successful invocation of the <code>DescribeReservedDBInstancesOfferings</code>
     /// action.
     /// </summary>
     public partial class DescribeReservedDBInstancesOfferingsResponse : AmazonWebServiceResponse

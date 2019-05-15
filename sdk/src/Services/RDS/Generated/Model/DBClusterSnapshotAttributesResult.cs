@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a>
+    /// Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
     /// API action.
     /// 
     ///  
     /// <para>
     /// Manual DB cluster snapshot attributes are used to authorize other AWS accounts to
-    /// copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a>
+    /// copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
     /// API action.
     /// </para>
     /// </summary>

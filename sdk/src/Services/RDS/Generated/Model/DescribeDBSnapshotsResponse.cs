@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code>
     /// action.
     /// </summary>
     public partial class DescribeDBSnapshotsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshots. 
         /// <para>
-        ///  A list of <a>DBSnapshot</a> instances. 
+        ///  A list of <code>DBSnapshot</code> instances. 
         /// </para>
         /// </summary>
         public List<DBSnapshot> DBSnapshots

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBSecurityGroups</code>
     /// action.
     /// </summary>
     public partial class DescribeDBSecurityGroupsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
-        ///  A list of <a>DBSecurityGroup</a> instances. 
+        ///  A list of <code>DBSecurityGroup</code> instances. 
         /// </para>
         /// </summary>
         public List<DBSecurityGroup> DBSecurityGroups

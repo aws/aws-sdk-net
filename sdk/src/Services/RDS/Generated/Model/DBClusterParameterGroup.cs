@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a>
+    /// This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code>
     /// action. 
     /// </para>
     /// </summary>

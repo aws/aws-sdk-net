@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBInstanceAutomatedBackups</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code>
     /// action.
     /// </summary>
     public partial class DescribeDBInstanceAutomatedBackupsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceAutomatedBackups. 
         /// <para>
-        ///  A list of <a>DBInstanceAutomatedBackup</a> instances. 
+        ///  A list of <code>DBInstanceAutomatedBackup</code> instances. 
         /// </para>
         /// </summary>
         public List<DBInstanceAutomatedBackup> DBInstanceAutomatedBackups

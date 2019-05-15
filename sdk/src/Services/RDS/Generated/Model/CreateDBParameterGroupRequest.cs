@@ -175,7 +175,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to assign to the DB parameter group.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

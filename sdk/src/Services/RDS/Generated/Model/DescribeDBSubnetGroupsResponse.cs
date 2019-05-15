@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBSubnetGroups</code>
     /// action.
     /// </summary>
     public partial class DescribeDBSubnetGroupsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroups. 
         /// <para>
-        ///  A list of <a>DBSubnetGroup</a> instances. 
+        ///  A list of <code>DBSubnetGroup</code> instances. 
         /// </para>
         /// </summary>
         public List<DBSubnetGroup> DBSubnetGroups

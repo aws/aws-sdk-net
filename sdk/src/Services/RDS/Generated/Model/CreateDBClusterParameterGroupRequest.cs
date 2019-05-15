@@ -39,12 +39,12 @@ namespace Amazon.RDS.Model
     /// <para>
     ///  A DB cluster parameter group is initially created with the default parameters for
     /// the database engine used by instances in the DB cluster. To provide custom values
-    /// for any of the parameters, you must modify the group after creating it using <a>ModifyDBClusterParameterGroup</a>.
+    /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
     /// Once you've created a DB cluster parameter group, you need to associate it with your
-    /// DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter
-    /// group with a running DB cluster, you need to reboot the DB instances in the DB cluster
-    /// without failover for the new DB cluster parameter group and associated settings to
-    /// take effect. 
+    /// DB cluster using <code>ModifyDBCluster</code>. When you associate a new DB cluster
+    /// parameter group with a running DB cluster, you need to reboot the DB instances in
+    /// the DB cluster without failover for the new DB cluster parameter group and associated
+    /// settings to take effect. 
     /// </para>
     ///  <important> 
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.RDS.Model
     /// database for a DB cluster, such as the character set for the default database defined
     /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
     /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-    /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
-    /// DB cluster parameter group has been created or modified.
+    /// console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
+    /// your DB cluster parameter group has been created or modified.
     /// </para>
     ///  </important> 
     /// <para>
@@ -167,7 +167,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to assign to the DB cluster parameter group.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

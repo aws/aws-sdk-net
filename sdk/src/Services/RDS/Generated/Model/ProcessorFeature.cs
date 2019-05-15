@@ -43,29 +43,29 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateDBInstance</a> 
+    ///  <code>CreateDBInstance</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ModifyDBInstance</a> 
+    ///  <code>ModifyDBInstance</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RestoreDBInstanceFromDBSnapshot</a> 
+    ///  <code>RestoreDBInstanceFromDBSnapshot</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RestoreDBInstanceFromS3</a> 
+    ///  <code>RestoreDBInstanceFromS3</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RestoreDBInstanceToPointInTime</a> 
+    ///  <code>RestoreDBInstanceToPointInTime</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// You can view the valid processor values for a particular instance class by calling
-    /// the <a>DescribeOrderableDBInstanceOptions</a> action and specifying the instance class
-    /// for the <code>DBInstanceClass</code> parameter.
+    /// the <code>DescribeOrderableDBInstanceOptions</code> action and specifying the instance
+    /// class for the <code>DBInstanceClass</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -73,15 +73,15 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeDBInstances</a> 
+    ///  <code>DescribeDBInstances</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDBSnapshots</a> 
+    ///  <code>DescribeDBSnapshots</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeValidDBInstanceModifications</a> 
+    ///  <code>DescribeValidDBInstanceModifications</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

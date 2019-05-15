@@ -33,19 +33,19 @@ namespace Amazon.RDS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateDBInstance</a> 
+    ///  <code>CreateDBInstance</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDBInstances</a> 
+    ///  <code>DescribeDBInstances</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteDBInstance</a> 
+    ///  <code>DeleteDBInstance</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the data structure that represents Amazon Aurora DB cluster endpoints, see <a>DBClusterEndpoint</a>.
+    /// For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.
     /// </para>
     /// </summary>
     public partial class Endpoint

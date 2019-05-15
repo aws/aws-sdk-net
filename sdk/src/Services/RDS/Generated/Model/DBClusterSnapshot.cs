@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a>
+    /// This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code>
     /// action. 
     /// </para>
     /// </summary>
@@ -80,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot
-        /// can be restored in.
+        /// Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot
+        /// can be restored.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones

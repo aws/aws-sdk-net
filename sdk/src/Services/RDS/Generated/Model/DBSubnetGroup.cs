@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
     /// action. 
     /// </para>
     /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  Contains a list of <a>Subnet</a> elements. 
+        ///  Contains a list of <code>Subnet</code> elements. 
         /// </para>
         /// </summary>
         public List<Subnet> Subnets

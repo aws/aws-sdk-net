@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a>
-    /// and <a>ResetDBParameterGroup</a> actions. 
+    /// This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code>
+    /// and <code>ResetDBParameterGroup</code> actions. 
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a>
-    /// and <a>DescribeDBParameters</a> actions.
+    /// This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code>
+    /// and <code>DescribeDBParameters</code> actions.
     /// </para>
     /// </summary>
     public partial class Parameter

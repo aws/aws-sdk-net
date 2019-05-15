@@ -161,8 +161,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// The Multi-AZ filter value. Specify this parameter to show only those reservations
-        /// matching the specified Multi-AZ parameter.
+        /// A value that indicates whether to show only those reservations that support Multi-AZ.
         /// </para>
         /// </summary>
         public bool MultiAZ

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The version for an option. Option group option versions are returned by the <a>DescribeOptionGroupOptions</a>
+    /// The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code>
     /// action.
     /// </summary>
     public partial class OptionVersion

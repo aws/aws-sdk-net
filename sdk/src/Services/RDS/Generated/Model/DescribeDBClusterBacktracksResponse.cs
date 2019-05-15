@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBClusterBacktracks</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code>
     /// action.
     /// </summary>
     public partial class DescribeDBClusterBacktracksResponse : AmazonWebServiceResponse
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a subsequent <a>DescribeDBClusterBacktracks</a>
+        /// A pagination token that can be used in a subsequent <code>DescribeDBClusterBacktracks</code>
         /// request.
         /// </para>
         /// </summary>

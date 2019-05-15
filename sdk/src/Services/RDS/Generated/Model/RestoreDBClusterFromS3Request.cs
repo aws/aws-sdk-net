@@ -76,8 +76,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of EC2 Availability Zones that instances in the restored DB cluster can be
-        /// created in.
+        /// A list of Availability Zones (AZs) where instances in the restored DB cluster can
+        /// be created.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -178,8 +178,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
-        /// cluster, and otherwise false. The default is false.
+        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
+        /// of the restored DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -309,8 +309,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB cluster should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. 
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -349,12 +350,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -440,8 +437,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-        /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
+        /// If the StorageEncrypted parameter is enabled, and you do not specify a value for the
+        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
         /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
         /// has a different default encryption key for each AWS Region.
         /// </para>
@@ -764,7 +761,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the restored DB cluster is encrypted.
+        /// A value that indicates whether the restored DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

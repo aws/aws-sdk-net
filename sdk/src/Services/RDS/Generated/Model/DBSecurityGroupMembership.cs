@@ -32,19 +32,19 @@ namespace Amazon.RDS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ModifyDBInstance</a> 
+    ///  <code>ModifyDBInstance</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RebootDBInstance</a> 
+    ///  <code>RebootDBInstance</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RestoreDBInstanceFromDBSnapshot</a> 
+    ///  <code>RestoreDBInstanceFromDBSnapshot</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RestoreDBInstanceToPointInTime</a> 
+    ///  <code>RestoreDBInstanceToPointInTime</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

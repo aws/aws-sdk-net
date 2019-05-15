@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBParameters</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBParameters</code>
     /// action.
     /// </summary>
     public partial class DescribeDBParametersResponse : AmazonWebServiceResponse
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  A list of <a>Parameter</a> values. 
+        ///  A list of <code>Parameter</code> values. 
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

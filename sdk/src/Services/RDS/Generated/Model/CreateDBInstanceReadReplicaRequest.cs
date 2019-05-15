@@ -100,8 +100,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor engine upgrades are applied automatically to the Read Replica
-        /// during the maintenance window.
+        /// A value that indicates whether minor engine upgrades are applied automatically to
+        /// the Read Replica during the maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Amazon EC2 Availability Zone that the Read Replica is created in.
+        /// The Availability Zone (AZ) where the Read Replica will be created.
         /// </para>
         ///  
         /// <para>
@@ -149,8 +149,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the Read Replica to snapshots of the Read Replica, and
-        /// otherwise false. The default is false.
+        /// A value that indicates whether to copy all tags from the Read Replica to snapshots
+        /// of the Read Replica. By default, tags are not copied.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -271,9 +271,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB instance should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// A value that indicates whether the DB instance has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -312,8 +312,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -331,10 +331,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Aurora MySQL 5.6 or higher
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: <code>false</code> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -351,7 +348,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// True to enable Performance Insights for the Read Replica, and otherwise false. 
+        /// A value that indicates whether to enable Performance Insights for the Read Replica.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -485,7 +483,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies whether the Read Replica is in a Multi-AZ deployment. 
+        /// A value that indicates whether the Read Replica is in a Multi-AZ deployment. 
         /// </para>
         ///  
         /// <para>
@@ -532,6 +530,13 @@ namespace Amazon.RDS.Model
         /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
         /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
         /// the KMS encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
+        /// RDS uses your default encryption key. AWS KMS creates the default encryption key for
+        /// your AWS account. Your AWS account has a different default encryption key for each
+        /// AWS Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -683,10 +688,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies
-        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
-        /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+        /// A value that indicates whether the DB instance is publicly accessible. When the DB
+        /// instance is publicly accessible, it is an Internet-facing instance with a publicly
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
+        /// not publicly accessible, it is an internal instance with a DNS name that resolves
+        /// to a private IP address. For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -778,7 +784,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>standard</code> 
+        /// <code>gp2</code> 
         /// </para>
         /// </summary>
         public string StorageType
@@ -811,7 +817,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseDefaultProcessorFeatures. 
         /// <para>
-        /// A value that specifies that the DB instance class of the DB instance uses its default
+        /// A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.
         /// </para>
         /// </summary>

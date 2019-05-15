@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a>
+    /// Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code>
     /// action.
     /// </summary>
     public partial class SourceRegion

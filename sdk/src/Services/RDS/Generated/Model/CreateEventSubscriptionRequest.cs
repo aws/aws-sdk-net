@@ -65,8 +65,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b>
-        /// to create the subscription but not active it. 
+        ///  A value that indicates whether to activate the subscription. If the event notification
+        /// subscription is not activated, the subscription is created but not active. 
         /// </para>
         /// </summary>
         public bool Enabled

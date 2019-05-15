@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// <para>
     ///  When resetting the entire group, dynamic parameters are updated immediately and static
     /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
-    /// restart or <a>RebootDBInstance</a> request. You must call <a>RebootDBInstance</a>
+    /// restart or <code>RebootDBInstance</code> request. You must call <code>RebootDBInstance</code>
     /// for every DB instance in your DB cluster that you want the updated static parameter
     /// to apply to.
     /// </para>
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of parameter names in the DB cluster parameter group to reset to the default
         /// values. You can't use this parameter if the <code>ResetAllParameters</code> parameter
-        /// is set to <code>true</code>.
+        /// is enabled.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -102,10 +102,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// A value that is set to <code>true</code> to reset all parameters in the DB cluster
-        /// parameter group to their default values, and <code>false</code> otherwise. You can't
-        /// use this parameter if there is a list of parameter names specified for the <code>Parameters</code>
-        /// parameter.
+        /// A value that indicates whether to reset all parameters in the DB cluster parameter
+        /// group to their default values. You can't use this parameter if there is a list of
+        /// parameter names specified for the <code>Parameters</code> parameter.
         /// </para>
         /// </summary>
         public bool ResetAllParameters

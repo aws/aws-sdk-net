@@ -32,8 +32,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
-    /// 
+    /// This data type is used as a response element in the <code>DescribeDBSnapshots</code>
+    /// action. 
     /// </para>
     /// </summary>
     public partial class DBSnapshot

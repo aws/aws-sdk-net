@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+    /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
     /// action.
     /// </summary>
     public partial class Subnet

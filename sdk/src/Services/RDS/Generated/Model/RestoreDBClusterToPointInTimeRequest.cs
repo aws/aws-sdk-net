@@ -38,8 +38,8 @@ namespace Amazon.RDS.Model
     ///  <note> 
     /// <para>
     /// This action only restores the DB cluster, not the DB instances for that DB cluster.
-    /// You must invoke the <a>CreateDBInstance</a> action to create DB instances for the
-    /// restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
+    /// You must invoke the <code>CreateDBInstance</code> action to create DB instances for
+    /// the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
     /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
     /// action has completed and the DB cluster is available.
     /// </para>
@@ -109,8 +109,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
-        /// cluster, and otherwise false. The default is false.
+        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
+        /// of the restored DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -231,8 +231,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB cluster should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. 
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -271,12 +272,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -409,11 +406,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -517,12 +514,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that is set to <code>true</code> to restore the DB cluster to the latest restorable
-        /// backup time, and <code>false</code> otherwise. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// A value that indicates whether to restore the DB cluster to the latest restorable
+        /// backup time. By default, the DB cluster is not restored to the latest restorable backup
+        /// time. 
         /// </para>
         ///  
         /// <para>
@@ -594,11 +588,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
         /// 
         /// </para>
         ///  </li> </ul> 

@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Provides a list of DB cluster snapshots for the user as the result of a call to the
-    /// <a>DescribeDBClusterSnapshots</a> action.
+    /// <code>DescribeDBClusterSnapshots</code> action.
     /// </summary>
     public partial class DescribeDBClusterSnapshotsResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <a>DescribeDBClusterSnapshots</a>
+        ///  An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code>
         /// request. If this parameter is specified, the response includes only records beyond
         /// the marker, up to the value specified by <code>MaxRecords</code>. 
         /// </para>

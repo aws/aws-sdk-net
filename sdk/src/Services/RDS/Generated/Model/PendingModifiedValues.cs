@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>ModifyDBInstance</a> action.
+    /// This data type is used as a response element in the <code>ModifyDBInstance</code>
+    /// action.
     /// </summary>
     public partial class PendingModifiedValues
     {

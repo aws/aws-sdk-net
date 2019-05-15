@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature for the DB instance that the IAM role is to be disassociated
-        /// from. For the list of supported feature names, see <a>DBEngineVersion</a>. 
+        /// from. For the list of supported feature names, see <code>DBEngineVersion</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// To add or remove access for an AWS account to copy or restore a manual DB cluster
-    /// snapshot, or to make the manual DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a>
+    /// snapshot, or to make the manual DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code>
     /// API action.
     /// </para>
     ///  <note> 

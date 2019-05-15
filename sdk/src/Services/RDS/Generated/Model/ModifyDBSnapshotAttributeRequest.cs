@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
-    /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
+    /// whether a manual DB snapshot public or private, use the <code>DescribeDBSnapshotAttributes</code>
     /// API action.
     /// </para>
     /// </summary>

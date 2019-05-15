@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// Manual DB snapshot attributes are used to authorize other AWS accounts to restore
-    /// a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a>
+    /// a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
     /// API.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The attribute named <code>restore</code> refers to the list of AWS accounts that have
         /// permission to copy or restore the manual DB cluster snapshot. For more information,
-        /// see the <a>ModifyDBSnapshotAttribute</a> API action.
+        /// see the <code>ModifyDBSnapshotAttribute</code> API action.
         /// </para>
         /// </summary>
         public string AttributeName

@@ -91,8 +91,8 @@ namespace Amazon.RDS.Model
         /// <param name="allocatedStorage">The amount of storage (in gibibytes) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 32768. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
         /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every AWS Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se1</code>  </li> <li>  <code>oracle-se</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
-        /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.   <b>MariaDB</b>  Constraints: <ul> <li> Required for MariaDB. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Required for SQL Server. </li> <li> Must be 1 to 128 letters or numbers. </li> <li> The first character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Required for MySQL. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Required for Oracle. </li> <li> Must be 1 to 30 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Required for PostgreSQL. </li> <li> Must be 1 to 63 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
-        /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
+        /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.   <b>MariaDB</b>  Constraints: <ul> <li> Required for MariaDB. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Required for SQL Server. </li> <li> Must be 1 to 128 letters or numbers. </li> <li> The first character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Required for MySQL. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Required for Oracle. </li> <li> Must be 1 to 30 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Required for PostgreSQL. </li> <li> Must be 1 to 63 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
+        /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -263,12 +263,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor engine upgrades are applied automatically to the DB instance
-        /// during the maintenance window.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code> 
+        /// A value that indicates whether minor engine upgrades are applied automatically to
+        /// the DB instance during the maintenance window. By default, minor engine upgrades are
+        /// applied automatically.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -286,7 +283,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone that the DB instance is created in. For information on
+        ///  The Availability Zone (AZ) where the database will be created. For information on
         /// AWS Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>. 
         /// </para>
@@ -300,9 +297,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter
-        /// is set to <code>true</code>. The specified Availability Zone must be in the same AWS
-        /// Region as the current endpoint. 
+        ///  Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
+        /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
+        /// same AWS Region as the current endpoint. 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -331,7 +328,6 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The retention period for automated backups is managed by the DB cluster.
-        /// For more information, see <a>CreateDBCluster</a>.
         /// </para>
         ///  
         /// <para>
@@ -376,7 +372,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The character set is managed by the DB cluster. For more information,
-        /// see <a>CreateDBCluster</a>.
+        /// see <code>CreateDBCluster</code>.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -394,8 +390,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise
-        /// false. The default is false.
+        /// A value that indicates whether to copy tags from the DB instance to snapshots of the
+        /// DB instance. By default, tags are not copied.
         /// </para>
         ///  
         /// <para>
@@ -404,8 +400,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
-        /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
-        /// information, see <a>CreateDBCluster</a>.
+        /// value for an Aurora DB instance has no effect on the DB cluster setting.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -424,14 +419,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster that the instance will belong to.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information on creating a DB cluster, see <a>CreateDBCluster</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -512,10 +499,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBName. 
         /// <para>
         /// The meaning of this parameter differs according to the database engine you use.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         ///  
         /// <para>
@@ -733,9 +716,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB instance should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// A value that indicates whether the DB instance has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -754,7 +737,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory Domain to create the instance in.
+        /// For an Amazon RDS DB instance that's running Microsoft SQL Server, this parameter
+        /// specifies the Active Directory directory ID to create the instance in. Amazon RDS
+        /// uses Windows Authentication to authenticate users that connect to the DB instance.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
+        /// Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a>
+        /// in the <i>Amazon RDS User Guide</i>. 
         /// </para>
         /// </summary>
         public string Domain
@@ -813,8 +801,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false. 
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -827,7 +815,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
-        /// cluster. For more information, see <a>CreateDBCluster</a>.
+        /// cluster.
         /// </para>
         ///  
         /// <para>
@@ -841,10 +829,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: <code>false</code> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -861,7 +846,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
-        /// True to enable Performance Insights for the DB instance, and otherwise false. 
+        /// A value that indicates whether to enable Performance Insights for the DB instance.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -973,7 +959,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, call <a>DescribeDBEngineVersions</a>.
+        /// For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -988,7 +975,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The version number of the database engine to be used by the DB instance
-        /// is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
+        /// is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1094,12 +1081,12 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The KMS key identifier is managed by the DB cluster. For more information,
-        /// see <a>CreateDBCluster</a>.
+        /// see <code>CreateDBCluster</code>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-        /// for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
+        /// If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
         /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
         /// has a different default encryption key for each AWS Region.
         /// </para>
@@ -1150,8 +1137,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. The name for the master user is managed by the DB cluster. For more
-        /// information, see <a>CreateDBCluster</a>. 
+        /// Not applicable. The name for the master user is managed by the DB cluster. 
         /// </para>
         ///  
         /// <para>
@@ -1295,8 +1281,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. The password for the master user is managed by the DB cluster. For
-        /// more information, see <a>CreateDBCluster</a>.
+        /// Not applicable. The password for the master user is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1409,8 +1394,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that specifies whether the DB instance is a Multi-AZ deployment. You can't
-        /// set the AvailabilityZone parameter if the MultiAZ parameter is set to true.
+        /// A value that indicates whether the DB instance is a Multi-AZ deployment. You can't
+        /// set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -1455,6 +1440,13 @@ namespace Amazon.RDS.Model
         /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
         /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
         /// the KMS encryption key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
+        /// RDS uses your default encryption key. AWS KMS creates the default encryption key for
+        /// your AWS account. Your AWS account has a different default encryption key for each
+        /// AWS Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1611,7 +1603,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The daily time range for creating automated backups is managed by
-        /// the DB cluster. For more information, see <a>CreateDBCluster</a>.
+        /// the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1743,10 +1735,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the accessibility options for the DB instance. A value of true specifies
-        /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
-        /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address.
+        /// A value that indicates whether the DB instance is publicly accessible. When the DB
+        /// instance is publicly accessible, it is an Internet-facing instance with a publicly
+        /// resolvable DNS name, which resolves to a public IP address. When the DB instance is
+        /// not publicly accessible, it is an internal instance with a DNS name that resolves
+        /// to a private IP address.
         /// </para>
         ///  
         /// <para>
@@ -1800,7 +1793,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB instance is encrypted.
+        /// A value that indicates whether the DB instance is encrypted. By default, it is not
+        /// encrypted.
         /// </para>
         ///  
         /// <para>
@@ -1808,12 +1802,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. The encryption for DB instances is managed by the DB cluster. For
-        /// more information, see <a>CreateDBCluster</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: false
+        /// Not applicable. The encryption for DB instances is managed by the DB cluster.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -1845,7 +1834,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>standard</code> 
+        /// <code>gp2</code> 
         /// </para>
         /// </summary>
         public string StorageType
@@ -1861,7 +1850,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to assign to the DB instance.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -1943,7 +1935,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The associated list of EC2 VPC security groups is managed by the DB
-        /// cluster. For more information, see <a>CreateDBCluster</a>.
+        /// cluster.
         /// </para>
         ///  
         /// <para>

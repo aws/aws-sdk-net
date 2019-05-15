@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         ///  The deletion protection setting for the new global database. The global database
-        /// can't be deleted when this value is set to true. 
+        /// can't be deleted when deletion protection is enabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection

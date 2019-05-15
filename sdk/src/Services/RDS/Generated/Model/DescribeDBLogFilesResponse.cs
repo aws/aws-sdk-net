@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The response from a call to <a>DescribeDBLogFiles</a>.
+    /// The response from a call to <code>DescribeDBLogFiles</code>.
     /// </summary>
     public partial class DescribeDBLogFilesResponse : AmazonWebServiceResponse
     {

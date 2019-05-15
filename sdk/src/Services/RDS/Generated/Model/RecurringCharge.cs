@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeReservedDBInstances</a>
-    /// and <a>DescribeReservedDBInstancesOfferings</a> actions.
+    /// This data type is used as a response element in the <code>DescribeReservedDBInstances</code>
+    /// and <code>DescribeReservedDBInstancesOfferings</code> actions.
     /// </summary>
     public partial class RecurringCharge
     {

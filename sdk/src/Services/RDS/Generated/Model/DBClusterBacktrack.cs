@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>DescribeDBClusterBacktracks</a>
+    /// This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code>
     /// action.
     /// </summary>
     public partial class DBClusterBacktrack

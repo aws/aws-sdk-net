@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A time zone associated with a <a>DBInstance</a> or a <a>DBSnapshot</a>. This data
-    /// type is an element in the response to the <a>DescribeDBInstances</a>, the <a>DescribeDBSnapshots</a>,
-    /// and the <a>DescribeDBEngineVersions</a> actions.
+    /// A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>.
+    /// This data type is an element in the response to the <code>DescribeDBInstances</code>,
+    /// the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code>
+    /// actions.
     /// </summary>
     public partial class Timezone
     {

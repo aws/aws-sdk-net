@@ -37,8 +37,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AccountQuotas. 
         /// <para>
-        /// A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a
-        /// count of usage toward the quota maximum, and a maximum value for the quota.
+        /// A list of <code>AccountQuota</code> objects. Within this list, each quota has a name,
+        /// a count of usage toward the quota maximum, and a maximum value for the quota.
         /// </para>
         /// </summary>
         public List<AccountQuota> AccountQuotas

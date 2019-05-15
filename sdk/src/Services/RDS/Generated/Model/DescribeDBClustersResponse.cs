@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.
+    /// Contains the result of a successful invocation of the <code>DescribeDBClusters</code>
+    /// action.
     /// </summary>
     public partial class DescribeDBClustersResponse : AmazonWebServiceResponse
     {

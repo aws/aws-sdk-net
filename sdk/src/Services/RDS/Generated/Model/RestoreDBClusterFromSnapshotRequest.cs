@@ -79,8 +79,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Provides the list of Amazon EC2 Availability Zones that instances in the restored
-        /// DB cluster can be created in.
+        /// Provides the list of Availability Zones (AZs) where instances in the restored DB cluster
+        /// can be created.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -130,8 +130,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the restored DB cluster to snapshots of the restored DB
-        /// cluster, and otherwise false. The default is false.
+        /// A value that indicates whether to copy all tags from the restored DB cluster to snapshots
+        /// of the restored DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -274,8 +274,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB cluster should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. 
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -314,12 +315,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication

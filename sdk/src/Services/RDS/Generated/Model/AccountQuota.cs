@@ -28,7 +28,117 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Describes a quota for an AWS account, for example, the number of DB instances allowed.
+    /// Describes a quota for an AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// The following are account quotas:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>AllocatedStorage</code> - The total allocated storage per account, in GiB.
+    /// The used value is the total allocated storage in the account, in GiB.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB
+    /// security group. The used value is the highest number of ingress rules in a DB security
+    /// group in the account. Other DB security groups in the account might have a lower number
+    /// of ingress rules.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB
+    /// cluster. The used value is the highest number of custom endpoints in a DB clusters
+    /// in the account. Other DB clusters in the account might have a lower number of custom
+    /// endpoints.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups
+    /// per account, excluding default parameter groups. The used value is the count of nondefault
+    /// DB cluster parameter groups in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management
+    /// (IAM) roles per DB cluster. The used value is the highest number of associated IAM
+    /// roles for a DB cluster in the account. Other DB clusters in the account might have
+    /// a lower number of associated IAM roles.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBClusters</code> - The number of DB clusters per account. The used value is
+    /// the count of DB clusters in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance.
+    /// The used value is the highest number of associated IAM roles for a DB instance in
+    /// the account. Other DB instances in the account might have a lower number of associated
+    /// IAM roles.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBInstances</code> - The number of DB instances per account. The used value
+    /// is the count of the DB instances in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding
+    /// default parameter groups. The used value is the count of nondefault DB parameter groups
+    /// in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security
+    /// groups) per account, excluding the default security group. The used value is the count
+    /// of nondefault DB security groups in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used
+    /// value is the count of the DB subnet groups in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>EventSubscriptions</code> - The number of event subscriptions per account.
+    /// The used value is the count of the event subscriptions in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The
+    /// used value is the count of the manual DB snapshots in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>OptionGroups</code> - The number of DB option groups per account, excluding
+    /// default option groups. The used value is the count of nondefault DB option groups
+    /// in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB instance.
+    /// The used value is the highest number of Read Replicas for a DB instance in the account.
+    /// Other DB instances in the account might have a lower number of Read Replicas.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ReservedDBInstances</code> - The number of reserved DB instances per account.
+    /// The used value is the count of the active reserved DB instances in the account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group.
+    /// The used value is highest number of subnets for a DB subnet group in the account.
+    /// Other DB subnet groups in the account might have a lower number of subnets.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Limits</a>
+    /// in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Limits</a>
+    /// in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AccountQuota
     {

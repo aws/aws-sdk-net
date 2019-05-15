@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBEngineVersions</code>
     /// action.
     /// </summary>
     public partial class DescribeDBEngineVersionsResponse : AmazonWebServiceResponse

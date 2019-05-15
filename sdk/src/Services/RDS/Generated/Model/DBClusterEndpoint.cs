@@ -33,23 +33,23 @@ namespace Amazon.RDS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateDBClusterEndpoint</a> 
+    ///  <code>CreateDBClusterEndpoint</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDBClusterEndpoints</a> 
+    ///  <code>DescribeDBClusterEndpoints</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ModifyDBClusterEndpoint</a> 
+    ///  <code>ModifyDBClusterEndpoint</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteDBClusterEndpoint</a> 
+    ///  <code>DeleteDBClusterEndpoint</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the data structure that represents Amazon RDS DB instance endpoints, see <a>Endpoint</a>.
+    /// For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     /// </para>
     /// </summary>
     public partial class DBClusterEndpoint

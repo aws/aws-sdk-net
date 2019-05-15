@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the results of a successful call to the <a>DescribeDBSnapshotAttributes</a>
+    /// Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
     /// API action.
     /// 
     ///  
     /// <para>
     /// Manual DB snapshot attributes are used to authorize other AWS accounts to copy or
-    /// restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a>
+    /// restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
     /// API action.
     /// </para>
     /// </summary>

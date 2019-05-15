@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a>
+    /// Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code>
     /// action.
     /// </summary>
     public partial class DescribeDBParameterGroupsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroups. 
         /// <para>
-        ///  A list of <a>DBParameterGroup</a> instances. 
+        ///  A list of <code>DBParameterGroup</code> instances. 
         /// </para>
         /// </summary>
         public List<DBParameterGroup> DBParameterGroups

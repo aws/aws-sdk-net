@@ -82,12 +82,12 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
         ///  The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code>
-        /// is set to <code>false</code>. 
+        /// is disabled. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
-        /// to true results in an error. 
+        ///  Specifying this parameter and also skipping the creation of a final DB cluster snapshot
+        /// with the <code>SkipFinalShapshot</code> parameter results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -122,20 +122,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
-        ///  Determines whether a final DB cluster snapshot is created before the DB cluster is
-        /// deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If
-        /// <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster
-        /// is deleted. 
+        /// A value that indicates whether to skip the creation of a final DB cluster snapshot
+        /// before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
+        /// created. If skip is not specified, a DB cluster snapshot is created before the DB
+        /// cluster is deleted. By default, skip is not specified, and the DB cluster snapshot
+        /// is created. By default, this parameter is disabled.
         /// </para>
         ///  <note> 
         /// <para>
         /// You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code>
-        /// is <code>false</code>.
+        /// is disabled.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// Default: <code>false</code> 
-        /// </para>
+        ///  </note>
         /// </summary>
         public bool SkipFinalSnapshot
         {

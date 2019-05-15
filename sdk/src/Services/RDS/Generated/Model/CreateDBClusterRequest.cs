@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
+        /// A list of Availability Zones (AZs) where instances in the DB cluster can be created.
         /// For information on AWS Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
         /// the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>. 
         /// </para>
@@ -136,8 +136,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// The number of days for which automated backups are retained. You must specify a minimum
-        /// value of 1.
+        /// The number of days for which automated backups are retained.
         /// </para>
         ///  
         /// <para>
@@ -187,8 +186,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        /// True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise
-        /// false. The default is false.
+        /// A value that indicates whether to copy all tags from the DB cluster to snapshots of
+        /// the DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -318,8 +317,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Indicates if the DB cluster should have deletion protection enabled. The database
-        /// can't be deleted when this value is set to true. The default is false. 
+        /// A value that indicates whether the DB cluster has deletion protection enabled. The
+        /// database can't be deleted when deletion protection is enabled. By default, deletion
+        /// protection is disabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -358,12 +358,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// A value that indicates whether to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -498,7 +494,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code>
+        /// If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
         /// is not specified, then Amazon RDS will use your default encryption key.
         /// </para>
         ///  </li> </ul> 
@@ -815,7 +811,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB cluster is encrypted.
+        /// A value that indicates whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -831,7 +827,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags to assign to the DB cluster.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {

@@ -32,15 +32,15 @@ namespace Amazon.RDS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>AuthorizeDBSecurityGroupIngress</a> 
+    ///  <code>AuthorizeDBSecurityGroupIngress</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDBSecurityGroups</a> 
+    ///  <code>DescribeDBSecurityGroups</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>RevokeDBSecurityGroupIngress</a> 
+    ///  <code>RevokeDBSecurityGroupIngress</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

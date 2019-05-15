@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
     ///  <note> 
     /// <para>
     ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters,
-    /// use <a>StartDBCluster</a> instead. 
+    /// use <code>StartDBCluster</code> instead. 
     /// </para>
     ///  </note>
     /// </summary>

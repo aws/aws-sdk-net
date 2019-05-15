@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
+    /// This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.
     /// </summary>
     public partial class DownloadDBLogFilePortionResponse : AmazonWebServiceResponse
     {
