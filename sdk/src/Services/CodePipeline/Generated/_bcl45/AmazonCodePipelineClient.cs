@@ -686,9 +686,18 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomActionType service method.</param>
         /// 
         /// <returns>The response from the CreateCustomActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
         /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -733,6 +742,9 @@ namespace Amazon.CodePipeline
         /// <param name="pipeline">Represents the structure of actions and stages to be performed in the pipeline. </param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
         /// The specified action declaration was specified in an invalid format.
         /// </exception>
@@ -745,12 +757,18 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -770,6 +788,9 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
         /// The specified action declaration was specified in an invalid format.
         /// </exception>
@@ -782,12 +803,18 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -812,6 +839,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
         /// The specified action declaration was specified in an invalid format.
         /// </exception>
@@ -824,12 +854,18 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -882,6 +918,9 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomActionType service method.</param>
         /// 
         /// <returns>The response from the DeleteCustomActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -925,6 +964,9 @@ namespace Amazon.CodePipeline
         /// <param name="name">The name of the pipeline to be deleted.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -943,6 +985,9 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -966,6 +1011,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -1011,6 +1059,9 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// 
         /// <returns>The response from the DeleteWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -2108,6 +2159,59 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Gets the set of key/value pairs (metadata) that are used to manage the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWebhooks
 
 
@@ -2726,6 +2830,12 @@ namespace Amazon.CodePipeline
         /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
         /// 
         /// <returns>The response from the PutWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookAuthenticationParametersException">
         /// The specified authentication type is in an invalid format.
         /// </exception>
@@ -2738,6 +2848,9 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2968,6 +3081,120 @@ namespace Amazon.CodePipeline
             options.ResponseUnmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartPipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
+        /// used to manage a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from an AWS resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

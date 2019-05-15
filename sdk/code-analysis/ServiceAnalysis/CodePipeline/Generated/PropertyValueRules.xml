@@ -209,6 +209,25 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListTagsForResourceRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListTagsForResourceRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListWebhooksRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -354,6 +373,14 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.StartPipelineExecutionResponse.PipelineExecutionId</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.TagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.UntagResourceRequest.ResourceArn</property>
+    <pattern>arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionConfigurationProperty.Description</property>
@@ -579,6 +606,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ConcurrentModificationException.Message</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.CurrentRevision.ChangeIdentifier</property>
     <min>1</min>
     <max>100</max>
@@ -633,6 +665,16 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.InvalidArnException.Message</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.InvalidTagsException.Message</property>
+    <min>1</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.Job.AccountId</property>
@@ -786,6 +828,16 @@
     <pattern>[A-Za-z0-9.@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ThirdPartyJob.ClientId</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
@@ -807,6 +859,11 @@
     <property>Amazon.CodePipeline.Model.ThirdPartyJobDetails.Nonce</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.TooManyTagsException.Message</property>
+    <min>1</min>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.TransitionState.DisabledReason</property>

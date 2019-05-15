@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateCustomActionType</code> operation.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes tags from an AWS resource.
     /// </summary>
-    public partial class CreateCustomActionTypeResponse : AmazonWebServiceResponse
+    public partial class UntagResourceRequest : AmazonCodePipelineRequest
     {
-        private ActionType _actionType;
-        private List<Tag> _tags = new List<Tag>();
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ActionType. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Returns information about the details of an action type.
+        ///  The Amazon Resource Name (ARN) of the resource to remove tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ActionType ActionType
+        public string ResourceArn
         {
-            get { return this._actionType; }
-            set { this._actionType = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ActionType property is set
-        internal bool IsSetActionType()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._actionType != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Specifies the tags applied to the custom action.
+        /// The list of keys for the tags to be removed from the resource.
         /// </para>
         /// </summary>
-        public List<Tag> Tags
+        [AWSProperty(Required=true)]
+        public List<string> TagKeys
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

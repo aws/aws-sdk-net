@@ -33,6 +33,7 @@ namespace Amazon.CodePipeline.Model
     public partial class CreatePipelineResponse : AmazonWebServiceResponse
     {
         private PipelineDeclaration _pipeline;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Pipeline. 
@@ -50,6 +51,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipeline()
         {
             return this._pipeline != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specifies the tags applied to the pipeline.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

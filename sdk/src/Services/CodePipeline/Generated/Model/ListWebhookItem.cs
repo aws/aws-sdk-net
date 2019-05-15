@@ -38,6 +38,7 @@ namespace Amazon.CodePipeline.Model
         private string _errorCode;
         private string _errorMessage;
         private DateTime? _lastTriggered;
+        private List<Tag> _tags = new List<Tag>();
         private string _url;
 
         /// <summary>
@@ -130,6 +131,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetLastTriggered()
         {
             return this._lastTriggered.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specifies the tags applied to the webhook.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

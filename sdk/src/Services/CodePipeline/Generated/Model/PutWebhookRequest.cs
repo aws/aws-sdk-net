@@ -39,7 +39,26 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class PutWebhookRequest : AmazonCodePipelineRequest
     {
+        private List<Tag> _tags = new List<Tag>();
         private WebhookDefinition _webhook;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the webhook.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Webhook. 

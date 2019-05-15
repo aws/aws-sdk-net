@@ -28,38 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateCustomActionType</code> operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
+    /// used to manage a resource.
     /// </summary>
-    public partial class CreateCustomActionTypeResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonCodePipelineRequest
     {
-        private ActionType _actionType;
+        private string _resourceArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ActionType. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Returns information about the details of an action type.
+        /// The Amazon Resource Name (ARN) of the resource you want to add tags to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ActionType ActionType
+        public string ResourceArn
         {
-            get { return this._actionType; }
-            set { this._actionType = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ActionType property is set
-        internal bool IsSetActionType()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._actionType != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags applied to the custom action.
+        /// The tags you want to modify or add to the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tags
         {
             get { return this._tags; }

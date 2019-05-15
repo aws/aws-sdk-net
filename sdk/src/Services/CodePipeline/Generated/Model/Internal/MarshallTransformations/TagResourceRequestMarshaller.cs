@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCustomActionType Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateCustomActionTypeRequestMarshaller : IMarshaller<IRequest, CreateCustomActionTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateCustomActionTypeRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateCustomActionTypeRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.CreateCustomActionType";
+            string target = "CodePipeline_20150709.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
@@ -68,65 +68,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCategory())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("category");
-                    context.Writer.Write(publicRequest.Category);
-                }
-
-                if(publicRequest.IsSetConfigurationProperties())
-                {
-                    context.Writer.WritePropertyName("configurationProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationPropertiesListValue in publicRequest.ConfigurationProperties)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ActionConfigurationPropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationPropertiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetInputArtifactDetails())
-                {
-                    context.Writer.WritePropertyName("inputArtifactDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArtifactDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputArtifactDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputArtifactDetails())
-                {
-                    context.Writer.WritePropertyName("outputArtifactDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArtifactDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputArtifactDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProvider())
-                {
-                    context.Writer.WritePropertyName("provider");
-                    context.Writer.Write(publicRequest.Provider);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionTypeSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -145,12 +90,6 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -160,9 +99,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateCustomActionTypeRequestMarshaller _instance = new CreateCustomActionTypeRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateCustomActionTypeRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -170,7 +109,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCustomActionTypeRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

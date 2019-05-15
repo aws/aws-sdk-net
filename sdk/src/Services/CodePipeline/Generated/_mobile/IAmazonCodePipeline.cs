@@ -362,6 +362,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
         /// The specified action declaration was specified in an invalid format.
         /// </exception>
@@ -374,12 +377,18 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
         /// The number of pipelines associated with the AWS account has exceeded the limit allowed
         /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
         /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -430,6 +439,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -859,6 +871,23 @@ namespace Amazon.CodePipeline
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListWebhooks
 
 
@@ -1146,6 +1175,40 @@ namespace Amazon.CodePipeline
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

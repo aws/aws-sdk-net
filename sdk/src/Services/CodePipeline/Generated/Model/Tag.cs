@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateCustomActionType</code> operation.
+    /// A tag is a key/value pair that is used to manage the resource.
     /// </summary>
-    public partial class CreateCustomActionTypeResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private ActionType _actionType;
-        private List<Tag> _tags = new List<Tag>();
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property ActionType. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// Returns information about the details of an action type.
+        /// The tag's key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ActionType ActionType
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._actionType; }
-            set { this._actionType = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if ActionType property is set
-        internal bool IsSetActionType()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._actionType != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// Specifies the tags applied to the custom action.
+        /// The tag's value.
         /// </para>
         /// </summary>
-        public List<Tag> Tags
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._value != null;
         }
 
     }

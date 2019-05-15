@@ -28,36 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateCustomActionType</code> operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateCustomActionTypeResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private ActionType _actionType;
+        private string _nextToken;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ActionType. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// Returns information about the details of an action type.
+        /// If the amount of returned information is significantly large, an identifier is also
+        /// returned and can be used in a subsequent API call to return the next page of the list.
+        /// However, the ListTagsforResource call lists all available tags in one call and does
+        /// not use pagination.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ActionType ActionType
+        [AWSProperty(Min=1, Max=2048)]
+        public string NextToken
         {
-            get { return this._actionType; }
-            set { this._actionType = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ActionType property is set
-        internal bool IsSetActionType()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._actionType != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags applied to the custom action.
+        /// The tags for the resource.
         /// </para>
         /// </summary>
         public List<Tag> Tags

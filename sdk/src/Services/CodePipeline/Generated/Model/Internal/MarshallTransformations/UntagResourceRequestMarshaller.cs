@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutWebhook Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class PutWebhookRequestMarshaller : IMarshaller<IRequest, PutWebhookRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutWebhookRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutWebhookRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.PutWebhook";
+            string target = "CodePipeline_20150709.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
@@ -68,31 +68,21 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetWebhook())
+                if(publicRequest.IsSetTagKeys())
                 {
-                    context.Writer.WritePropertyName("webhook");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WebhookDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Webhook, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("tagKeys");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
+                    {
+                            context.Writer.Write(publicRequestTagKeysListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -104,9 +94,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutWebhookRequestMarshaller _instance = new PutWebhookRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static PutWebhookRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +104,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutWebhookRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {
