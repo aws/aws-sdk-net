@@ -1,3 +1,20 @@
+### 3.3.511.0 (2019-05-15 18:09 UTC)
+* CodePipeline (3.3.102.0)
+	* This feature includes new APIs to add, edit, remove and view tags for pipeline, custom action type and webhook resources. You can also add tags while creating these resources.
+* EC2 (3.3.108.0)
+	* Adding tagging support for VPC Endpoints and VPC Endpoint Services.
+* MediaPackage (3.3.101.0)
+	* Adds optional configuration for DASH SegmentTemplateFormat to refer to segments by Number with Duration, rather than Number or Time with SegmentTimeline.
+* RDS (3.3.102.11)
+	* In the RDS API and CLI documentation, corrections to the descriptions for Boolean parameters to avoid references to TRUE and FALSE. The RDS CLI does not allow TRUE and FALSE values values for Boolean parameters.
+* TranscribeService (3.3.104.0)
+	* Amazon Transcribe - support transcriptions from audio sources in Indian English (en-IN) and Hindi (hi-IN).
+* Core 3.3.101.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.510.0 (2019-05-14 18:18 UTC)
 * Chime (3.3.101.0)
 	* Amazon Chime private bots GA release.
