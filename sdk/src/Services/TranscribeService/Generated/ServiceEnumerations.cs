@@ -43,6 +43,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode EnGB = new LanguageCode("en-GB");
         /// <summary>
+        /// Constant EnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnIN = new LanguageCode("en-IN");
+        /// <summary>
         /// Constant EnUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnUS = new LanguageCode("en-US");
@@ -62,6 +66,10 @@ namespace Amazon.TranscribeService
         /// Constant FrFR for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+        /// <summary>
+        /// Constant HiIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HiIN = new LanguageCode("hi-IN");
         /// <summary>
         /// Constant ItIT for LanguageCode
         /// </summary>
