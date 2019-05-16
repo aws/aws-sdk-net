@@ -31,6 +31,7 @@ namespace Amazon.S3.Model
     {
         private string bucketName;
         private ReplicationConfiguration configuration;
+        private string token;
 
         /// <summary>
         /// The name of the bucket to have the replication configuration applied.
@@ -62,6 +63,20 @@ namespace Amazon.S3.Model
             return this.configuration != null;
         }
 
+        /// <summary>
+        /// Gets and sets the property Token.
+        /// </summary>
+        public string Token
+        {
+            get { return this.token; }
+            set { this.token = value; }
+        }
+
+        // Check to see if Token property is set
+        internal bool IsSetToken()
+        {
+            return this.token != null;
+        }
     }
 }
 

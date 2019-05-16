@@ -49,6 +49,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.AddSubResource("replication");
 
+            if (putBucketreplicationRequest.IsSetToken())
+                request.Headers.Add("x-amz-bucket-object-lock-token", putBucketreplicationRequest.Token);
+
             var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {

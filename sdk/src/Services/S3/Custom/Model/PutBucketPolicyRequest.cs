@@ -29,7 +29,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
     {
-        private bool confirmRemoveSelfBucketAccess;
+        private bool? confirmRemoveSelfBucketAccess;
         /// <summary>
         /// The name of the bucket.
         /// </summary>
@@ -72,13 +72,19 @@ namespace Amazon.S3.Model
         /// </summary>
         public bool ConfirmRemoveSelfBucketAccess
         {
-            get { return this.confirmRemoveSelfBucketAccess; }
-            set { this.confirmRemoveSelfBucketAccess = value; }
+            get
+            {
+                return this.confirmRemoveSelfBucketAccess.GetValueOrDefault();
+            }
+            set
+            {
+                this.confirmRemoveSelfBucketAccess = value;
+            }
         }
         // Check to see if ConfirmRemoveSelfBucketAccess property is set
         internal bool IsSetConfirmRemoveSelfBucketAccess()
         {
-            return this.ConfirmRemoveSelfBucketAccess != null;
+            return this.confirmRemoveSelfBucketAccess.HasValue;
         }
 
         /// <summary>
