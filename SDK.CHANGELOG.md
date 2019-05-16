@@ -1,3 +1,7 @@
+### 3.3.512.0 (2019-05-16 18:42 UTC)
+* S3 (3.3.102.0)
+	* This release updates the Amazon S3 PUT Bucket replication API to include a new optional field named token, which allows you to add a replication configuration to an S3 bucket that has Object Lock enabled.
+
 ### 3.3.511.0 (2019-05-15 18:09 UTC)
 * CodePipeline (3.3.102.0)
 	* This feature includes new APIs to add, edit, remove and view tags for pipeline, custom action type and webhook resources. You can also add tags while creating these resources.
