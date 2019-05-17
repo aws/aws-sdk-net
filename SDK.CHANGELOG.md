@@ -1,3 +1,12 @@
+### 3.3.513.0 (2019-05-17 18:26 UTC)
+* AppStream (3.3.101.0)
+	* Includes APIs for managing subscriptions to AppStream 2.0 usage reports and configuring idle disconnect timeouts on AppStream 2.0 fleets.
+* Core 3.3.101.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.512.0 (2019-05-16 18:42 UTC)
 * S3 (3.3.102.0)
 	* This release updates the Amazon S3 PUT Bucket replication API to include a new optional field named token, which allows you to add a replication configuration to an S3 bucket that has Object Lock enabled.
