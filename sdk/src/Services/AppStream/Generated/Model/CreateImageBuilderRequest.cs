@@ -231,6 +231,15 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
+        /// Generally allowed characters are: letters, numbers, and spaces representable in UTF-8,
+        /// and the following special characters: 
+        /// </para>
+        ///  
+        /// <para>
+        /// _ . : / = + \ - @
+        /// </para>
+        ///  
+        /// <para>
         /// If you do not specify a value, the value is set to an empty string.
         /// </para>
         ///  

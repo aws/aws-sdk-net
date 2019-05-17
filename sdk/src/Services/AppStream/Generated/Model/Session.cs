@@ -46,9 +46,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication method. The user is authenticated using a streaming URL (<code>API</code>),
-        /// SAML 2.0 federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>).
-        /// The default is to authenticate users using a streaming URL. 
+        /// The authentication method. The user is authenticated using a streaming URL (<code>API</code>)
+        /// or SAML 2.0 federation (<code>SAML</code>).
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -66,7 +65,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ConnectionState. 
         /// <para>
-        /// Specifies whether a user is connected to the streaming session. 
+        /// Specifies whether a user is connected to the streaming session.
         /// </para>
         /// </summary>
         public SessionConnectionState ConnectionState
@@ -183,7 +182,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time when a streaming instance is dedicated for the user. 
+        /// The time when a streaming instance is dedicated for the user.
         /// </para>
         /// </summary>
         public DateTime StartTime

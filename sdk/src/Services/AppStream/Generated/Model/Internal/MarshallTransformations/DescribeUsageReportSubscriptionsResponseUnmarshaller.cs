@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateStack operation
+    /// Response Unmarshaller for DescribeUsageReportSubscriptions operation
     /// </summary>  
-    public class UpdateStackResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeUsageReportSubscriptionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateStackResponse response = new UpdateStackResponse();
+            DescribeUsageReportSubscriptionsResponse response = new DescribeUsageReportSubscriptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Stack", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
-                    var unmarshaller = StackUnmarshaller.Instance;
-                    response.Stack = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsageReportSubscriptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UsageReportSubscription, UsageReportSubscriptionUnmarshaller>(UsageReportSubscriptionUnmarshaller.Instance);
+                    response.UsageReportSubscriptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,37 +78,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-            {
-                return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleImageException"))
-            {
-                return new IncompatibleImageException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAccountStatusException"))
             {
                 return new InvalidAccountStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
-            {
-                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
-            {
-                return new InvalidRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
-            {
-                return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-            {
-                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -111,9 +89,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateStackResponseUnmarshaller _instance = new UpdateStackResponseUnmarshaller();        
+        private static DescribeUsageReportSubscriptionsResponseUnmarshaller _instance = new DescribeUsageReportSubscriptionsResponseUnmarshaller();        
 
-        internal static UpdateStackResponseUnmarshaller GetInstance()
+        internal static DescribeUsageReportSubscriptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +99,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateStackResponseUnmarshaller Instance
+        public static DescribeUsageReportSubscriptionsResponseUnmarshaller Instance
         {
             get
             {

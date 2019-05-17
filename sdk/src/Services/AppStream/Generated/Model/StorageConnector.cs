@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes a connector to enable persistent storage for users.
+    /// Describes a connector that enables persistent storage for users.
     /// </summary>
     public partial class StorageConnector
     {

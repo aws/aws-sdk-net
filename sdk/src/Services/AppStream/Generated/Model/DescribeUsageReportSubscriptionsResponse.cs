@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeUserStackAssociations operation.
+    /// This is the response object from the DescribeUsageReportSubscriptions operation.
     /// </summary>
-    public partial class DescribeUserStackAssociationsResponse : AmazonWebServiceResponse
+    public partial class DescribeUsageReportSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserStackAssociation> _userStackAssociations = new List<UserStackAssociation>();
+        private List<UsageReportSubscription> _usageReportSubscriptions = new List<UsageReportSubscription>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -56,22 +56,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserStackAssociations. 
+        /// Gets and sets the property UsageReportSubscriptions. 
         /// <para>
-        /// The UserStackAssociation objects.
+        /// Information about the usage report subscription.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
-        public List<UserStackAssociation> UserStackAssociations
+        public List<UsageReportSubscription> UsageReportSubscriptions
         {
-            get { return this._userStackAssociations; }
-            set { this._userStackAssociations = value; }
+            get { return this._usageReportSubscriptions; }
+            set { this._usageReportSubscriptions = value; }
         }
 
-        // Check to see if UserStackAssociations property is set
-        internal bool IsSetUserStackAssociations()
+        // Check to see if UsageReportSubscriptions property is set
+        internal bool IsSetUsageReportSubscriptions()
         {
-            return this._userStackAssociations != null && this._userStackAssociations.Count > 0; 
+            return this._usageReportSubscriptions != null && this._usageReportSubscriptions.Count > 0; 
         }
 
     }

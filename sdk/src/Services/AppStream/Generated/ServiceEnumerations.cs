@@ -1121,6 +1121,106 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type UsageReportExecutionErrorCode.
+    /// </summary>
+    public class UsageReportExecutionErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for UsageReportExecutionErrorCode
+        /// </summary>
+        public static readonly UsageReportExecutionErrorCode ACCESS_DENIED = new UsageReportExecutionErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant INTERNAL_SERVICE_ERROR for UsageReportExecutionErrorCode
+        /// </summary>
+        public static readonly UsageReportExecutionErrorCode INTERNAL_SERVICE_ERROR = new UsageReportExecutionErrorCode("INTERNAL_SERVICE_ERROR");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for UsageReportExecutionErrorCode
+        /// </summary>
+        public static readonly UsageReportExecutionErrorCode RESOURCE_NOT_FOUND = new UsageReportExecutionErrorCode("RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageReportExecutionErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageReportExecutionErrorCode FindValue(string value)
+        {
+            return FindValue<UsageReportExecutionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageReportExecutionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UsageReportSchedule.
+    /// </summary>
+    public class UsageReportSchedule : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAILY for UsageReportSchedule
+        /// </summary>
+        public static readonly UsageReportSchedule DAILY = new UsageReportSchedule("DAILY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageReportSchedule(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageReportSchedule FindValue(string value)
+        {
+            return FindValue<UsageReportSchedule>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageReportSchedule(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UserStackAssociationErrorCode.
     /// </summary>
     public class UserStackAssociationErrorCode : ConstantClass

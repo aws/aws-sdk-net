@@ -61,6 +61,14 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The email address of the user.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Users' email addresses are case-sensitive. During login, if they specify an email
+        /// address that doesn't use the same capitalization as the email address specified when
+        /// their user pool account was created, a "user does not exist" error message displays.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string UserName

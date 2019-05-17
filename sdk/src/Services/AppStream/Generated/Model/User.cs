@@ -197,6 +197,11 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The email address of the user.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Users' email addresses are case-sensitive.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string UserName

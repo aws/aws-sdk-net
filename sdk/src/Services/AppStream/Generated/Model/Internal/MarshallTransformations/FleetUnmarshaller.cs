@@ -124,6 +124,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdleDisconnectTimeoutInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IdleDisconnectTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

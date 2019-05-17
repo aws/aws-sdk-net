@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes the credentials for the service account used by the streaming instance to
-    /// connect to the directory.
+    /// Describes the credentials for the service account used by the fleet or image builder
+    /// to connect to the directory.
     /// </summary>
     public partial class ServiceAccountCredentials
     {

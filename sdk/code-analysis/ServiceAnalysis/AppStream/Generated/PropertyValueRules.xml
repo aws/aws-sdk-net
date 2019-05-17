@@ -137,6 +137,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateUsageReportSubscriptionResponse.S3BucketName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateUserRequest.FirstName</property>
     <max>2048</max>
     <pattern>^[A-Za-z0-9_\-\s]+$</pattern>
@@ -267,6 +271,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeStacksResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeUsageReportSubscriptionsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeUsageReportSubscriptionsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -564,6 +576,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.LastReportGenerationExecutionError.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.NetworkAccessConfiguration.EniId</property>
     <min>1</min>
   </property-value-rule>
@@ -635,6 +651,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.StorageConnector.ResourceIdentifier</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UsageReportSubscription.S3BucketName</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

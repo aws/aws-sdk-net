@@ -120,6 +120,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetType);
                 }
 
+                if(publicRequest.IsSetIdleDisconnectTimeoutInSeconds())
+                {
+                    context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");
+                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInSeconds);
+                }
+
                 if(publicRequest.IsSetImageArn())
                 {
                     context.Writer.WritePropertyName("ImageArn");

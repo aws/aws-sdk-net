@@ -28,42 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDirectoryConfigs operation.
-    /// Retrieves a list that describes one or more specified Directory Config objects for
-    /// AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory
-    /// Config objects in the account are described. These objects include the configuration
-    /// information required to join fleets and image builders to Microsoft Active Directory
-    /// domains. 
-    /// 
-    ///  
-    /// <para>
-    /// Although the response syntax in this topic includes the account password, this password
-    /// is not returned in the actual response.
-    /// </para>
+    /// Container for the parameters to the DescribeUsageReportSubscriptions operation.
+    /// Retrieves a list that describes one or more usage report subscriptions.
     /// </summary>
-    public partial class DescribeDirectoryConfigsRequest : AmazonAppStreamRequest
+    public partial class DescribeUsageReportSubscriptionsRequest : AmazonAppStreamRequest
     {
-        private List<string> _directoryNames = new List<string>();
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property DirectoryNames. 
-        /// <para>
-        /// The directory names.
-        /// </para>
-        /// </summary>
-        public List<string> DirectoryNames
-        {
-            get { return this._directoryNames; }
-            set { this._directoryNames = value; }
-        }
-
-        // Check to see if DirectoryNames property is set
-        internal bool IsSetDirectoryNames()
-        {
-            return this._directoryNames != null && this._directoryNames.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

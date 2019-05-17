@@ -40,11 +40,11 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions
-    /// and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0
-    /// is a fully managed application streaming service. You centrally manage your desktop
-    /// applications on AppStream 2.0 and securely deliver them to any computer. AppStream
-    /// 2.0 manages the AWS resources required to host and run your applications, scales automatically,
+    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and
+    /// syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a
+    /// fully managed application streaming service. You centrally manage your desktop applications
+    /// on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
+    /// the AWS resources required to host and run your applications, scales automatically,
     /// and provides access to your users on demand.
     /// </para>
     ///  
@@ -596,6 +596,39 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateUsageReportSubscription
+
+        internal virtual CreateUsageReportSubscriptionResponse CreateUsageReportSubscription(CreateUsageReportSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUsageReportSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUsageReportSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsageReportSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">REST API Reference for CreateUsageReportSubscription Operation</seealso>
+        public virtual Task<CreateUsageReportSubscriptionResponse> CreateUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUsageReportSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUsageReportSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUsageReportSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
@@ -823,6 +856,39 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsageReportSubscription
+
+        internal virtual DeleteUsageReportSubscriptionResponse DeleteUsageReportSubscription(DeleteUsageReportSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUsageReportSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUsageReportSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsageReportSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">REST API Reference for DeleteUsageReportSubscription Operation</seealso>
+        public virtual Task<DeleteUsageReportSubscriptionResponse> DeleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUsageReportSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUsageReportSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUsageReportSubscriptionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1087,6 +1153,39 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUsageReportSubscriptions
+
+        internal virtual DescribeUsageReportSubscriptionsResponse DescribeUsageReportSubscriptions(DescribeUsageReportSubscriptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsageReportSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsageReportSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUsageReportSubscriptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsageReportSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageReportSubscriptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">REST API Reference for DescribeUsageReportSubscriptions Operation</seealso>
+        public virtual Task<DescribeUsageReportSubscriptionsResponse> DescribeUsageReportSubscriptionsAsync(DescribeUsageReportSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsageReportSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsageReportSubscriptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUsageReportSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

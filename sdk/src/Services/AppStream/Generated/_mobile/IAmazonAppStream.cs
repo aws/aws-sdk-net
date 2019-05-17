@@ -33,11 +33,11 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions
-    /// and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0
-    /// is a fully managed application streaming service. You centrally manage your desktop
-    /// applications on AppStream 2.0 and securely deliver them to any computer. AppStream
-    /// 2.0 manages the AWS resources required to host and run your applications, scales automatically,
+    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and
+    /// syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a
+    /// fully managed application streaming service. You centrally manage your desktop applications
+    /// on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
+    /// the AWS resources required to host and run your applications, scales automatically,
     /// and provides access to your users on demand.
     /// </para>
     ///  
@@ -229,6 +229,23 @@ namespace Amazon.AppStream
 
         #endregion
                 
+        #region  CreateUsageReportSubscription
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">REST API Reference for CreateUsageReportSubscription Operation</seealso>
+        Task<CreateUsageReportSubscriptionResponse> CreateUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateUser
 
 
@@ -345,6 +362,23 @@ namespace Amazon.AppStream
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteUsageReportSubscription
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">REST API Reference for DeleteUsageReportSubscription Operation</seealso>
+        Task<DeleteUsageReportSubscriptionResponse> DeleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -481,6 +515,23 @@ namespace Amazon.AppStream
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeUsageReportSubscriptions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsageReportSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageReportSubscriptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">REST API Reference for DescribeUsageReportSubscriptions Operation</seealso>
+        Task<DescribeUsageReportSubscriptionsResponse> DescribeUsageReportSubscriptionsAsync(DescribeUsageReportSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

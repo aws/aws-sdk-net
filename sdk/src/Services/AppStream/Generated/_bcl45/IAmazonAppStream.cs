@@ -33,11 +33,11 @@ namespace Amazon.AppStream
     ///
     /// Amazon AppStream 2.0 
     /// <para>
-    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions
-    /// and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0
-    /// is a fully managed application streaming service. You centrally manage your desktop
-    /// applications on AppStream 2.0 and securely deliver them to any computer. AppStream
-    /// 2.0 manages the AWS resources required to host and run your applications, scales automatically,
+    /// This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and
+    /// syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a
+    /// fully managed application streaming service. You centrally manage your desktop applications
+    /// on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
+    /// the AWS resources required to host and run your applications, scales automatically,
     /// and provides access to your users on demand.
     /// </para>
     ///  
@@ -215,8 +215,9 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a Directory Config object in AppStream 2.0. This object includes the information
-        /// required to join streaming instances to an Active Directory domain.
+        /// Creates a Directory Config object in AppStream 2.0. This object includes the configuration
+        /// information required to join fleets and image builders to Microsoft Active Directory
+        /// domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectoryConfig service method.</param>
         /// 
@@ -495,6 +496,37 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateUsageReportSubscription
+
+
+        /// <summary>
+        /// Creates a usage report subscription. Usage reports are generated daily.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageReportSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsageReportSubscription service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">REST API Reference for CreateUsageReportSubscription Operation</seealso>
+        CreateUsageReportSubscriptionResponse CreateUsageReportSubscription(CreateUsageReportSubscriptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">REST API Reference for CreateUsageReportSubscription Operation</seealso>
+        Task<CreateUsageReportSubscriptionResponse> CreateUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateUser
 
 
@@ -757,6 +789,40 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteUsageReportSubscription
+
+
+        /// <summary>
+        /// Disables usage report generation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageReportSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsageReportSubscription service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">REST API Reference for DeleteUsageReportSubscription Operation</seealso>
+        DeleteUsageReportSubscriptionResponse DeleteUsageReportSubscription(DeleteUsageReportSubscriptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsageReportSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsageReportSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">REST API Reference for DeleteUsageReportSubscription Operation</seealso>
+        Task<DeleteUsageReportSubscriptionResponse> DeleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteUser
 
 
@@ -793,8 +859,9 @@ namespace Amazon.AppStream
         /// <summary>
         /// Retrieves a list that describes one or more specified Directory Config objects for
         /// AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory
-        /// Config objects in the account are described. These objects include the information
-        /// required to join streaming instances to an Active Directory domain. 
+        /// Config objects in the account are described. These objects include the configuration
+        /// information required to join fleets and image builders to Microsoft Active Directory
+        /// domains. 
         /// 
         ///  
         /// <para>
@@ -957,10 +1024,10 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Retrieves a list that describes the active streaming sessions for a specified stack
-        /// and fleet. If a value for <code>UserId</code> is provided for the stack and fleet,
-        /// only streaming sessions for that user are described. If an authentication type is
-        /// not provided, the default is to authenticate users using a streaming URL.
+        /// Retrieves a list that describes the streaming sessions for a specified stack and fleet.
+        /// If a UserId is provided for the stack and fleet, only streaming sessions for that
+        /// user are described. If an authentication type is not provided, the default is to authenticate
+        /// users using a streaming URL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
@@ -1014,6 +1081,40 @@ namespace Amazon.AppStream
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeUsageReportSubscriptions
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more usage report subscriptions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageReportSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsageReportSubscriptions service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">REST API Reference for DescribeUsageReportSubscriptions Operation</seealso>
+        DescribeUsageReportSubscriptionsResponse DescribeUsageReportSubscriptions(DescribeUsageReportSubscriptionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsageReportSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsageReportSubscriptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">REST API Reference for DescribeUsageReportSubscriptions Operation</seealso>
+        Task<DescribeUsageReportSubscriptionsResponse> DescribeUsageReportSubscriptionsAsync(DescribeUsageReportSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1566,7 +1667,8 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Updates the specified Directory Config object in AppStream 2.0. This object includes
-        /// the information required to join streaming instances to an Active Directory domain.
+        /// the configuration information required to join fleets and image builders to Microsoft
+        /// Active Directory domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDirectoryConfig service method.</param>
         /// 
@@ -1608,8 +1710,10 @@ namespace Amazon.AppStream
         /// <para>
         /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
         /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
-        /// the <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the fleet
-        /// is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
+        /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+        /// <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If
+        /// the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
+        /// update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
@@ -1709,6 +1813,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
         /// 
         /// <returns>The response from the UpdateStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
         /// The image does not support storage connectors.
         /// </exception>

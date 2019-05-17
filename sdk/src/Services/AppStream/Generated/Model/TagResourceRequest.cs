@@ -82,6 +82,15 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// If you do not specify a value, the value is set to an empty string.
         /// </para>
+        ///  
+        /// <para>
+        /// Generally allowed characters are: letters, numbers, and spaces representable in UTF-8,
+        /// and the following special characters: 
+        /// </para>
+        ///  
+        /// <para>
+        /// _ . : / = + \ - @
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
