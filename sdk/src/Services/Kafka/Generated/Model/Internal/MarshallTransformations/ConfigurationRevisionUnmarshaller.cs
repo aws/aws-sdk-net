@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BrokerSoftwareInfo Object
+    /// Response Unmarshaller for ConfigurationRevision Object
     /// </summary>  
-    public class BrokerSoftwareInfoUnmarshaller : IUnmarshaller<BrokerSoftwareInfo, XmlUnmarshallerContext>, IUnmarshaller<BrokerSoftwareInfo, JsonUnmarshallerContext>
+    public class ConfigurationRevisionUnmarshaller : IUnmarshaller<ConfigurationRevision, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationRevision, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BrokerSoftwareInfo IUnmarshaller<BrokerSoftwareInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConfigurationRevision IUnmarshaller<ConfigurationRevision, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BrokerSoftwareInfo Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationRevision Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BrokerSoftwareInfo unmarshalledObject = new BrokerSoftwareInfo();
+            ConfigurationRevision unmarshalledObject = new ConfigurationRevision();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configurationArn", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("configurationRevision", targetDepth))
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revision", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("kafkaVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KafkaVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static BrokerSoftwareInfoUnmarshaller _instance = new BrokerSoftwareInfoUnmarshaller();        
+        private static ConfigurationRevisionUnmarshaller _instance = new ConfigurationRevisionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BrokerSoftwareInfoUnmarshaller Instance
+        public static ConfigurationRevisionUnmarshaller Instance
         {
             get
             {

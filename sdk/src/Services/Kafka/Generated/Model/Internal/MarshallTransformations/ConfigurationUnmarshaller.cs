@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BrokerSoftwareInfo Object
+    /// Response Unmarshaller for Configuration Object
     /// </summary>  
-    public class BrokerSoftwareInfoUnmarshaller : IUnmarshaller<BrokerSoftwareInfo, XmlUnmarshallerContext>, IUnmarshaller<BrokerSoftwareInfo, JsonUnmarshallerContext>
+    public class ConfigurationUnmarshaller : IUnmarshaller<Configuration, XmlUnmarshallerContext>, IUnmarshaller<Configuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BrokerSoftwareInfo IUnmarshaller<BrokerSoftwareInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Configuration IUnmarshaller<Configuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,51 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BrokerSoftwareInfo Unmarshall(JsonUnmarshallerContext context)
+        public Configuration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BrokerSoftwareInfo unmarshalledObject = new BrokerSoftwareInfo();
+            Configuration unmarshalledObject = new Configuration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configurationArn", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("configurationRevision", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationRevision = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("kafkaVersion", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KafkaVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kafkaVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KafkaVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestRevision", targetDepth))
+                {
+                    var unmarshaller = ConfigurationRevisionUnmarshaller.Instance;
+                    unmarshalledObject.LatestRevision = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +106,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static BrokerSoftwareInfoUnmarshaller _instance = new BrokerSoftwareInfoUnmarshaller();        
+        private static ConfigurationUnmarshaller _instance = new ConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BrokerSoftwareInfoUnmarshaller Instance
+        public static ConfigurationUnmarshaller Instance
         {
             get
             {

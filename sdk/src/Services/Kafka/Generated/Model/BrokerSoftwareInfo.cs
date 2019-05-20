@@ -33,7 +33,7 @@ namespace Amazon.Kafka.Model
     public partial class BrokerSoftwareInfo
     {
         private string _configurationArn;
-        private string _configurationRevision;
+        private long? _configurationRevision;
         private string _kafkaVersion;
 
         /// <summary>
@@ -60,16 +60,16 @@ namespace Amazon.Kafka.Model
         /// The revision of the configuration to use.
         /// </para>
         /// </summary>
-        public string ConfigurationRevision
+        public long ConfigurationRevision
         {
-            get { return this._configurationRevision; }
+            get { return this._configurationRevision.GetValueOrDefault(); }
             set { this._configurationRevision = value; }
         }
 
         // Check to see if ConfigurationRevision property is set
         internal bool IsSetConfigurationRevision()
         {
-            return this._configurationRevision != null;
+            return this._configurationRevision.HasValue; 
         }
 
         /// <summary>

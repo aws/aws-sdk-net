@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// CreateConfiguration Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateConfigurationRequestMarshaller : IMarshaller<IRequest, CreateConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((CreateConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,75 +52,47 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(CreateConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kafka");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/clusters";
+            string uriResourcePath = "/v1/configurations";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBrokerNodeGroupInfo())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("brokerNodeGroupInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BrokerNodeGroupInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.BrokerNodeGroupInfo, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetClusterName())
+                if(publicRequest.IsSetKafkaVersions())
                 {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
+                    context.Writer.WritePropertyName("kafkaVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestKafkaVersionsListValue in publicRequest.KafkaVersions)
+                    {
+                            context.Writer.Write(publicRequestKafkaVersionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetConfigurationInfo())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("configurationInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConfigurationInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfigurationInfo, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetEncryptionInfo())
+                if(publicRequest.IsSetServerProperties())
                 {
-                    context.Writer.WritePropertyName("encryptionInfo");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionInfoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionInfo, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnhancedMonitoring())
-                {
-                    context.Writer.WritePropertyName("enhancedMonitoring");
-                    context.Writer.Write(publicRequest.EnhancedMonitoring);
-                }
-
-                if(publicRequest.IsSetKafkaVersion())
-                {
-                    context.Writer.WritePropertyName("kafkaVersion");
-                    context.Writer.Write(publicRequest.KafkaVersion);
-                }
-
-                if(publicRequest.IsSetNumberOfBrokerNodes())
-                {
-                    context.Writer.WritePropertyName("numberOfBrokerNodes");
-                    context.Writer.Write(publicRequest.NumberOfBrokerNodes);
+                    context.Writer.WritePropertyName("serverProperties");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerProperties));
                 }
 
         
@@ -132,9 +104,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static CreateConfigurationRequestMarshaller _instance = new CreateConfigurationRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static CreateConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +114,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static CreateConfigurationRequestMarshaller Instance
         {
             get
             {

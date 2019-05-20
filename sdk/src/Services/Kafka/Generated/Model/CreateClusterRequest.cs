@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     {
         private BrokerNodeGroupInfo _brokerNodeGroupInfo;
         private string _clusterName;
+        private ConfigurationInfo _configurationInfo;
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private string _kafkaVersion;
@@ -76,6 +77,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationInfo. 
+        /// <para>
+        /// Comprises of the Configuration to be used on Kafka brokers in a cluster.
+        /// </para>
+        /// </summary>
+        public ConfigurationInfo ConfigurationInfo
+        {
+            get { return this._configurationInfo; }
+            set { this._configurationInfo = value; }
+        }
+
+        // Check to see if ConfigurationInfo property is set
+        internal bool IsSetConfigurationInfo()
+        {
+            return this._configurationInfo != null;
         }
 
         /// <summary>
