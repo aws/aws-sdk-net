@@ -492,6 +492,10 @@
       <Project>{86608C3C-298D-4C85-9C7A-94EDA605878F}</Project>
       <Name>AWSSDK.MediaPackage.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaPackageVod/AWSSDK.MediaPackageVod.CodeAnalysis.csproj">
+      <Project>{A87B8F79-FAF8-4DAC-B788-D8A8CA97F516}</Project>
+      <Name>AWSSDK.MediaPackageVod.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MediaStore/AWSSDK.MediaStore.CodeAnalysis.csproj">
       <Project>{28DEC6BE-0B58-4B06-98CF-DDF9E13397AB}</Project>
       <Name>AWSSDK.MediaStore.CodeAnalysis</Name>
