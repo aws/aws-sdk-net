@@ -132,6 +132,7 @@
       <Directory>$(ProjectDir)/src/Services/mediaconvert/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/medialive/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediapackage/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediapackagevod/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastore/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastoredata/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediatailor/bin/Release/net45/</Directory>
@@ -307,6 +308,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaConvert.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaLive.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaPackage.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaPackageVod.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaStore.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaStoreData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MediaTailor.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -1,3 +1,16 @@
+### 3.3.514.0 (2019-05-20 18:14 UTC)
+* AWSMarketplaceMetering (3.3.100.21)
+	* Documentation updates for meteringmarketplace
+* Kafka (3.3.102.0)
+	* Updated APIs for the Managed Streaming for Kafka service that let customers create clusters with custom Kafka configuration. 
+* MediaPackageVod (3.3.100.0)
+	* AWS Elemental MediaPackage now supports Video-on-Demand (VOD) workflows.  These new features allow you to easily deliver a vast library of source video Assets stored in your own S3 buckets using a small set of simple to set up Packaging Configurations and Packaging Groups.
+* Core 3.3.101.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.513.0 (2019-05-17 18:26 UTC)
 * AppStream (3.3.101.0)
 	* Includes APIs for managing subscriptions to AppStream 2.0 usage reports and configuring idle disconnect timeouts on AppStream 2.0 fleets.
