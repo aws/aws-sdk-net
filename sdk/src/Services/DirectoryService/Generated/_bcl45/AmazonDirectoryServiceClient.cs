@@ -290,15 +290,31 @@ namespace Amazon.DirectoryService
             return Invoke<AcceptSharedDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AcceptSharedDirectory operation.
+        /// Accepts a directory sharing request that was sent from the directory owner account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AcceptSharedDirectory operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptSharedDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AcceptSharedDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
+        /// The specified directory has already been shared with this AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         public virtual Task<AcceptSharedDirectoryResponse> AcceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -364,15 +380,50 @@ namespace Amazon.DirectoryService
             return Invoke<AddIpRoutesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AddIpRoutes operation.
-        /// </summary>
+        /// If the DNS server for your on-premises domain uses a publicly addressable IP address,
+        /// you must add a CIDR address block to correctly route traffic to and from your Microsoft
+        /// AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also
+        /// use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from
+        /// your Microsoft AD on AWS to a peer VPC. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes operation.</param>
+        ///  
+        /// <para>
+        /// Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have
+        /// been explicitly granted through a policy. For details about what permissions are required
+        /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AddIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.IpRouteLimitExceededException">
+        /// The maximum allowed number of IP addresses was exceeded. The default limit is 100
+        /// IP address blocks.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -421,15 +472,33 @@ namespace Amazon.DirectoryService
             return Invoke<AddTagsToResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// Adds or overwrites one or more tags for the specified directory. Each directory can
+        /// have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys
+        /// must be unique to each resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AddTagsToResource service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.TagLimitExceededException">
+        /// The maximum allowed number of tags was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -473,15 +542,28 @@ namespace Amazon.DirectoryService
             return Invoke<CancelSchemaExtensionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CancelSchemaExtension operation.
+        /// Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema
+        /// extension has started replicating to all domain controllers, the task can no longer
+        /// be canceled. A schema extension can be canceled during any of the following states;
+        /// <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CancelSchemaExtension service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual Task<CancelSchemaExtensionResponse> CancelSchemaExtensionAsync(CancelSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -534,15 +616,37 @@ namespace Amazon.DirectoryService
             return Invoke<ConnectDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ConnectDirectory operation.
-        /// </summary>
+        /// Creates an AD Connector to connect to an on-premises directory.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ConnectDirectory operation.</param>
+        ///  
+        /// <para>
+        /// Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConnectDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ConnectDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual Task<ConnectDirectoryResponse> ConnectDirectoryAsync(ConnectDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -597,15 +701,39 @@ namespace Amazon.DirectoryService
             return Invoke<CreateAliasResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAlias operation.
-        /// </summary>
+        /// Creates an alias for a directory and assigns the alias to the directory. The alias
+        /// is used to construct the access URL for the directory, such as <code>http://&lt;alias&gt;.awsapps.com</code>.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAlias operation.</param>
+        ///  <important> 
+        /// <para>
+        /// After an alias has been created, it cannot be deleted or reused, so this operation
+        /// should only be used when absolutely necessary.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAlias service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -662,15 +790,41 @@ namespace Amazon.DirectoryService
             return Invoke<CreateComputerResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateComputer operation.
+        /// Creates a computer account in the specified directory, and joins the computer to the
+        /// directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateComputer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateComputer service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
+        /// An authentication error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual Task<CreateComputerResponse> CreateComputerAsync(CreateComputerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -725,15 +879,39 @@ namespace Amazon.DirectoryService
             return Invoke<CreateConditionalForwarderResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConditionalForwarder operation.
+        /// Creates a conditional forwarder associated with your AWS directory. Conditional forwarders
+        /// are required in order to set up a trust relationship with another domain. The conditional
+        /// forwarder points to the trusted domain.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual Task<CreateConditionalForwarderResponse> CreateConditionalForwarderAsync(CreateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -786,15 +964,37 @@ namespace Amazon.DirectoryService
             return Invoke<CreateDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDirectory operation.
-        /// </summary>
+        /// Creates a Simple AD directory.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDirectory operation.</param>
+        ///  
+        /// <para>
+        /// Before you call <code>CreateDirectory</code>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -845,15 +1045,35 @@ namespace Amazon.DirectoryService
             return Invoke<CreateLogSubscriptionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateLogSubscription operation.
+        /// Creates a subscription to forward real time Directory Service domain controller security
+        /// logs to the specified CloudWatch log group in your AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateLogSubscription service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
+        /// The account does not have sufficient permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
         public virtual Task<CreateLogSubscriptionResponse> CreateLogSubscriptionAsync(CreateLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -909,15 +1129,40 @@ namespace Amazon.DirectoryService
             return Invoke<CreateMicrosoftADResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateMicrosoftAD operation.
-        /// </summary>
+        /// Creates an AWS Managed Microsoft AD directory.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD operation.</param>
+        ///  
+        /// <para>
+        /// Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateMicrosoftAD service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryLimitExceededException">
+        /// The maximum number of directories in the region has been reached. You can use the
+        /// <a>GetDirectoryLimits</a> operation to determine your directory limits in the region.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual Task<CreateMicrosoftADResponse> CreateMicrosoftADAsync(CreateMicrosoftADRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -972,15 +1217,39 @@ namespace Amazon.DirectoryService
             return Invoke<CreateSnapshotResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateSnapshot operation.
-        /// </summary>
+        /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot operation.</param>
+        ///  <note> 
+        /// <para>
+        /// You cannot take snapshots of AD Connector directories.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateSnapshot service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
+        /// The maximum number of manual snapshots for the directory has been reached. You can
+        /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
+        /// directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1041,15 +1310,45 @@ namespace Amazon.DirectoryService
             return Invoke<CreateTrustResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateTrust operation.
-        /// </summary>
+        /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
+        /// relationships. For example, you can establish a trust between your AWS Managed Microsoft
+        /// AD directory, and your existing on-premises Microsoft Active Directory. This would
+        /// allow you to provide users and groups access to resources in either domain, with a
+        /// single set of credentials.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTrust operation.</param>
+        ///  
+        /// <para>
+        /// This action initiates the creation of the AWS side of a trust relationship between
+        /// an AWS Managed Microsoft AD directory and an external domain. You can create either
+        /// a forest trust or an external trust.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrust service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual Task<CreateTrustResponse> CreateTrustAsync(CreateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1099,15 +1398,34 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteConditionalForwarderResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConditionalForwarder operation.
+        /// Deletes a conditional forwarder that has been set up for your AWS directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual Task<DeleteConditionalForwarderResponse> DeleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1156,15 +1474,33 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDirectory operation.
-        /// </summary>
+        /// Deletes an AWS Directory Service directory.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory operation.</param>
+        ///  
+        /// <para>
+        /// Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <code>DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1208,15 +1544,28 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteLogSubscriptionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLogSubscription operation.
+        /// Deletes the specified log subscription.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLogSubscription operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogSubscription service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteLogSubscription service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
         public virtual Task<DeleteLogSubscriptionResponse> DeleteLogSubscriptionAsync(DeleteLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1260,15 +1609,28 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteSnapshotResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteSnapshot operation.
+        /// Deletes a directory snapshot.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteSnapshot service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1316,15 +1678,32 @@ namespace Amazon.DirectoryService
             return Invoke<DeleteTrustResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTrust operation.
+        /// Deletes an existing trust relationship between your AWS Managed Microsoft AD directory
+        /// and an external domain.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrust service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual Task<DeleteTrustResponse> DeleteTrustAsync(DeleteTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1368,15 +1747,28 @@ namespace Amazon.DirectoryService
             return Invoke<DeregisterEventTopicResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterEventTopic operation.
+        /// Removes the specified directory as a publisher to the specified SNS topic.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeregisterEventTopic service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1432,15 +1824,40 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeConditionalForwardersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeConditionalForwarders operation.
-        /// </summary>
+        /// Obtains information about the conditional forwarders for this account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeConditionalForwarders operation.</param>
+        ///  
+        /// <para>
+        /// If no input parameters are provided for RemoteDomainNames, this request describes
+        /// all conditional forwarders for the specified directory ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConditionalForwarders service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeConditionalForwarders service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual Task<DescribeConditionalForwardersResponse> DescribeConditionalForwardersAsync(DescribeConditionalForwardersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1600,15 +2017,50 @@ namespace Amazon.DirectoryService
         {
             return DescribeDirectoriesAsync(new DescribeDirectoriesRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDirectories operation.
-        /// </summary>
+        /// Obtains information about the directories that belong to this account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectories operation.</param>
+        ///  
+        /// <para>
+        /// You can retrieve information about specific directories by passing the directory identifiers
+        /// in the <code>DirectoryIds</code> parameter. Otherwise, all directories that belong
+        /// to the current account are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <code>NextToken</code> request
+        /// and response parameters. If more results are available, the <code>DescribeDirectoriesResult.NextToken</code>
+        /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
+        /// to retrieve the next set of items.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify a maximum number of return results with the <code>Limit</code>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectories service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDirectories service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual Task<DescribeDirectoriesResponse> DescribeDirectoriesAsync(DescribeDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1658,15 +2110,34 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeDomainControllersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDomainControllers operation.
+        /// Provides information about any domain controllers in your directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainControllers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainControllers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDomainControllers service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual Task<DescribeDomainControllersResponse> DescribeDomainControllersAsync(DescribeDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1717,15 +2188,35 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeEventTopicsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventTopics operation.
-        /// </summary>
+        /// Obtains information about which SNS topics receive status messages from the specified
+        /// directory.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTopics operation.</param>
+        ///  
+        /// <para>
+        /// If no input parameters are provided, such as DirectoryId or TopicName, this request
+        /// describes all of the associations in the account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTopics service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEventTopics service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1775,15 +2266,34 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeSharedDirectoriesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeSharedDirectories operation.
+        /// Returns the shared directories in your account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeSharedDirectories operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSharedDirectories service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeSharedDirectories service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">REST API Reference for DescribeSharedDirectories Operation</seealso>
         public virtual Task<DescribeSharedDirectoriesResponse> DescribeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1842,15 +2352,43 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeSnapshotsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeSnapshots operation.
-        /// </summary>
+        /// Obtains information about the directory snapshots that belong to this account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots operation.</param>
+        ///  
+        /// <para>
+        /// This operation supports pagination with the use of the <i>NextToken</i> request and
+        /// response parameters. If more results are available, the <i>DescribeSnapshots.NextToken</i>
+        /// member contains a token that you pass in the next call to <a>DescribeSnapshots</a>
+        /// to retrieve the next set of items.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1906,15 +2444,40 @@ namespace Amazon.DirectoryService
             return Invoke<DescribeTrustsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeTrusts operation.
-        /// </summary>
+        /// Obtains information about the trust relationships for this account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts operation.</param>
+        ///  
+        /// <para>
+        /// If no input parameters are provided, such as DirectoryId or TrustIds, this request
+        /// describes all the trust relationships belonging to the account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrusts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeTrusts service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual Task<DescribeTrustsResponse> DescribeTrustsAsync(DescribeTrustsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1956,15 +2519,26 @@ namespace Amazon.DirectoryService
             return Invoke<DisableRadiusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableRadius operation.
+        /// Disables multi-factor authentication (MFA) with the Remote Authentication Dial In
+        /// User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableRadius operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableRadius service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableRadius service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual Task<DisableRadiusResponse> DisableRadiusAsync(DisableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2011,15 +2585,31 @@ namespace Amazon.DirectoryService
             return Invoke<DisableSsoResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableSso operation.
+        /// Disables single-sign on for a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableSso operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSso service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableSso service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
+        /// An authentication error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
+        /// The account does not have sufficient permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2067,15 +2657,32 @@ namespace Amazon.DirectoryService
             return Invoke<EnableRadiusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableRadius operation.
+        /// Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User
+        /// Service (RADIUS) server for an AD Connector or Microsoft AD directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableRadius operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableRadius service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableRadius service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual Task<EnableRadiusResponse> EnableRadiusAsync(EnableRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2122,15 +2729,31 @@ namespace Amazon.DirectoryService
             return Invoke<EnableSsoResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableSso operation.
+        /// Enables single sign-on for a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableSso operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSso service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableSso service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AuthenticationFailedException">
+        /// An authentication error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
+        /// The account does not have sufficient permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual Task<EnableSsoResponse> EnableSsoAsync(EnableSsoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2215,15 +2838,25 @@ namespace Amazon.DirectoryService
         {
             return GetDirectoryLimitsAsync(new GetDirectoryLimitsRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDirectoryLimits operation.
+        /// Obtains directory limit information for the current region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDirectoryLimits operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDirectoryLimits service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDirectoryLimits service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual Task<GetDirectoryLimitsResponse> GetDirectoryLimitsAsync(GetDirectoryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2264,15 +2897,25 @@ namespace Amazon.DirectoryService
             return Invoke<GetSnapshotLimitsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSnapshotLimits operation.
+        /// Obtains the manual snapshot limits for a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSnapshotLimits operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshotLimits service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSnapshotLimits service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual Task<GetSnapshotLimitsResponse> GetSnapshotLimitsAsync(GetSnapshotLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2319,15 +2962,31 @@ namespace Amazon.DirectoryService
             return Invoke<ListIpRoutesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListIpRoutes operation.
+        /// Lists the address blocks that you have added to a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListIpRoutes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListIpRoutes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2371,15 +3030,28 @@ namespace Amazon.DirectoryService
             return Invoke<ListLogSubscriptionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListLogSubscriptions operation.
+        /// Lists the active log subscriptions for the AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListLogSubscriptions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         public virtual Task<ListLogSubscriptionsResponse> ListLogSubscriptionsAsync(ListLogSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2423,15 +3095,28 @@ namespace Amazon.DirectoryService
             return Invoke<ListSchemaExtensionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListSchemaExtensions operation.
+        /// Lists all schema extensions applied to a Microsoft AD Directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListSchemaExtensions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaExtensions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListSchemaExtensions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual Task<ListSchemaExtensionsResponse> ListSchemaExtensionsAsync(ListSchemaExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2478,15 +3163,31 @@ namespace Amazon.DirectoryService
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Lists all tags on a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2534,15 +3235,32 @@ namespace Amazon.DirectoryService
             return Invoke<RegisterEventTopicResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RegisterEventTopic operation.
+        /// Associates a directory with an SNS topic. This establishes the directory as a publisher
+        /// to the specified SNS topic. You can then receive email or text (SMS) messages when
+        /// the status of your directory changes. You get notified if your directory goes from
+        /// an Active status to an Impaired or Inoperable status. You also receive a notification
+        /// when the directory returns to an Active status.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RegisterEventTopic service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2589,15 +3307,31 @@ namespace Amazon.DirectoryService
             return Invoke<RejectSharedDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RejectSharedDirectory operation.
+        /// Rejects a directory sharing request that was sent from the directory owner account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RejectSharedDirectory operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RejectSharedDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RejectSharedDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
+        /// The specified directory has already been shared with this AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         public virtual Task<RejectSharedDirectoryResponse> RejectSharedDirectoryAsync(RejectSharedDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2644,15 +3378,31 @@ namespace Amazon.DirectoryService
             return Invoke<RemoveIpRoutesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RemoveIpRoutes operation.
+        /// Removes IP address blocks from a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveIpRoutes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveIpRoutes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RemoveIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2696,15 +3446,28 @@ namespace Amazon.DirectoryService
             return Invoke<RemoveTagsFromResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// Removes tags from a directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2758,15 +3521,38 @@ namespace Amazon.DirectoryService
             return Invoke<ResetUserPasswordResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ResetUserPassword operation.
+        /// Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ResetUserPassword service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidPasswordException">
+        /// The new password provided by the user does not meet the password complexity requirements
+        /// defined in your directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UserDoesNotExistException">
+        /// The user provided a username that does not exist in your directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
         public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2823,15 +3609,41 @@ namespace Amazon.DirectoryService
             return Invoke<RestoreFromSnapshotResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RestoreFromSnapshot operation.
-        /// </summary>
+        /// Restores a directory using an existing directory snapshot.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestoreFromSnapshot operation.</param>
+        ///  
+        /// <para>
+        /// When you restore a directory from a snapshot, any changes made to the directory after
+        /// the snapshot date are overwritten.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action returns as soon as the restore operation is initiated. You can monitor
+        /// the progress of the restore operation by calling the <a>DescribeDirectories</a> operation
+        /// with the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes
+        /// to <code>Active</code>, the restore operation is complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreFromSnapshot service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RestoreFromSnapshot service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2916,15 +3728,69 @@ namespace Amazon.DirectoryService
             return Invoke<ShareDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ShareDirectory operation.
-        /// </summary>
+        /// Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory
+        /// owner) with another AWS account (directory consumer). With this operation you can
+        /// use your directory from any AWS account and from any Amazon VPC within an AWS Region.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ShareDirectory operation.</param>
+        ///  
+        /// <para>
+        /// When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates
+        /// a shared directory in the directory consumer account. This shared directory contains
+        /// the metadata to provide access to the directory within the directory owner account.
+        /// The shared directory is visible in all VPCs in the directory consumer account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ShareMethod</code> parameter determines whether the specified directory
+        /// can be shared between AWS accounts inside the same AWS organization (<code>ORGANIZATIONS</code>).
+        /// It also determines whether you can share the directory with any other AWS account
+        /// either inside or outside of the organization (<code>HANDSHAKE</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is
+        /// called, which sends a directory sharing request to the directory consumer. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ShareDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ShareDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadySharedException">
+        /// The specified directory has already been shared with this AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidTargetException">
+        /// The specified shared target is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.OrganizationsException">
+        /// Exception encountered while trying to access your AWS organization.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ShareLimitExceededException">
+        /// The maximum number of AWS accounts that you can share with this directory has been
+        /// reached.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory">REST API Reference for ShareDirectory Operation</seealso>
         public virtual Task<ShareDirectoryResponse> ShareDirectoryAsync(ShareDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2976,15 +3842,36 @@ namespace Amazon.DirectoryService
             return Invoke<StartSchemaExtensionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartSchemaExtension operation.
+        /// Applies a schema extension to a Microsoft AD directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartSchemaExtension operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaExtension service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartSchemaExtension service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
+        /// The maximum number of manual snapshots for the directory has been reached. You can
+        /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
+        /// directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual Task<StartSchemaExtensionResponse> StartSchemaExtensionAsync(StartSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3031,15 +3918,31 @@ namespace Amazon.DirectoryService
             return Invoke<UnshareDirectoryResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UnshareDirectory operation.
+        /// Stops the directory sharing between the directory owner and consumer accounts.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UnshareDirectory operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UnshareDirectory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UnshareDirectory service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryNotSharedException">
+        /// The specified directory has not been shared with this AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidTargetException">
+        /// The specified shared target is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         public virtual Task<UnshareDirectoryResponse> UnshareDirectoryAsync(UnshareDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3089,15 +3992,34 @@ namespace Amazon.DirectoryService
             return Invoke<UpdateConditionalForwarderResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConditionalForwarder operation.
+        /// Updates a conditional forwarder that has been set up for your AWS directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual Task<UpdateConditionalForwarderResponse> UpdateConditionalForwarderAsync(UpdateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3155,15 +4077,42 @@ namespace Amazon.DirectoryService
             return Invoke<UpdateNumberOfDomainControllersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateNumberOfDomainControllers operation.
+        /// Adds or removes domain controllers to or from the directory. Based on the difference
+        /// between current value and new value (provided through this API call), domain controllers
+        /// will be added or removed. It may take up to 45 minutes for any new domain controllers
+        /// to become fully active once the requested number of domain controllers is updated.
+        /// During this time, you cannot make another update request.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateNumberOfDomainControllers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNumberOfDomainControllers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateNumberOfDomainControllers service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DomainControllerLimitExceededException">
+        /// The maximum allowed number of domain controllers per directory was exceeded. The default
+        /// limit per directory is 20 domain controllers.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual Task<UpdateNumberOfDomainControllersResponse> UpdateNumberOfDomainControllersAsync(UpdateNumberOfDomainControllersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3208,15 +4157,29 @@ namespace Amazon.DirectoryService
             return Invoke<UpdateRadiusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRadius operation.
+        /// Updates the Remote Authentication Dial In User Service (RADIUS) server information
+        /// for an AD Connector or Microsoft AD directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRadius operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRadius service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRadius service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3261,15 +4224,29 @@ namespace Amazon.DirectoryService
             return Invoke<UpdateTrustResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTrust operation.
+        /// Updates the trust that has been set up between your AWS Managed Microsoft AD directory
+        /// and an on-premises Active Directory.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         public virtual Task<UpdateTrustResponse> UpdateTrustAsync(UpdateTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3323,15 +4300,38 @@ namespace Amazon.DirectoryService
             return Invoke<VerifyTrustResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the VerifyTrust operation.
-        /// </summary>
+        /// AWS Directory Service for Microsoft Active Directory allows you to configure and verify
+        /// trust relationships.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust operation.</param>
+        ///  
+        /// <para>
+        /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
+        /// and an external domain.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyTrust service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the VerifyTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual Task<VerifyTrustResponse> VerifyTrustAsync(VerifyTrustRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

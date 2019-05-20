@@ -106,15 +106,32 @@ namespace Amazon.AWSHealth
         #region  DescribeAffectedEntities
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAffectedEntities operation.
-        /// </summary>
+        /// Returns a list of entities that have been affected by the specified events, based
+        /// on the specified filter criteria. Entities can refer to individual customer resources,
+        /// groups of customer resources, or any other construct, depending on the AWS service.
+        /// Events that have impact beyond that of the affected entities, or where the extent
+        /// of impact is unknown, include at least one entity indicating this.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAffectedEntities operation.</param>
+        ///  
+        /// <para>
+        /// At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code>
+        /// of the entity, starting with the most recent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAffectedEntities service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAffectedEntities service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         Task<DescribeAffectedEntitiesResponse> DescribeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -123,15 +140,17 @@ namespace Amazon.AWSHealth
         #region  DescribeEntityAggregates
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEntityAggregates operation.
+        /// Returns the number of entities that are affected by each of the specified events.
+        /// If no events are specified, the counts of all affected entities are returned.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEntityAggregates service method, as returned by AWSHealth.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         Task<DescribeEntityAggregatesResponse> DescribeEntityAggregatesAsync(DescribeEntityAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -140,15 +159,21 @@ namespace Amazon.AWSHealth
         #region  DescribeEventAggregates
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventAggregates operation.
+        /// Returns the number of events of each event type (issue, scheduled change, and account
+        /// notification). If no filter is specified, the counts of all events in each category
+        /// are returned.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEventAggregates operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventAggregates service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEventAggregates service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         Task<DescribeEventAggregatesResponse> DescribeEventAggregatesAsync(DescribeEventAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -157,15 +182,28 @@ namespace Amazon.AWSHealth
         #region  DescribeEventDetails
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventDetails operation.
-        /// </summary>
+        /// Returns detailed information about one or more specified events. Information includes
+        /// standard event data (region, service, etc., as returned by <a>DescribeEvents</a>),
+        /// a detailed event description, and possible additional metadata that depends upon the
+        /// nature of the event. Affected entities are not included; to retrieve those, use the
+        /// <a>DescribeAffectedEntities</a> operation.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEventDetails operation.</param>
+        ///  
+        /// <para>
+        /// If a specified event cannot be retrieved, an error message is returned for that event.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventDetails service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEventDetails service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         Task<DescribeEventDetailsResponse> DescribeEventDetailsAsync(DescribeEventDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -174,15 +212,32 @@ namespace Amazon.AWSHealth
         #region  DescribeEvents
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// </summary>
+        /// Returns information about events that meet the specified filter criteria. Events are
+        /// returned in a summary form and do not include the detailed description, any additional
+        /// metadata that depends on the event type, or any affected resources. To retrieve that
+        /// information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a>
+        /// operations.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation.</param>
+        ///  
+        /// <para>
+        /// If no filter criteria are specified, all events are returned. Results are sorted by
+        /// <code>lastModifiedTime</code>, starting with the most recent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -191,15 +246,23 @@ namespace Amazon.AWSHealth
         #region  DescribeEventTypes
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEventTypes operation.
+        /// Returns the event types that meet the specified filter criteria. If no filter criteria
+        /// are specified, all event types are returned, in no particular order.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTypes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTypes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEventTypes service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
+        /// The specified locale is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         Task<DescribeEventTypesResponse> DescribeEventTypesAsync(DescribeEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

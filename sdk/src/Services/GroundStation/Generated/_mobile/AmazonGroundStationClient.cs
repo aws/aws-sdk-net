@@ -258,15 +258,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CancelContact operation.
+        /// Cancels a contact with a specified contact ID.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelContact operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelContact service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CancelContact service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CancelContact">REST API Reference for CancelContact Operation</seealso>
         public virtual Task<CancelContactResponse> CancelContactAsync(CancelContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -291,15 +301,30 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConfig operation.
-        /// </summary>
+        /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConfig operation.</param>
+        ///          
+        /// <para>
+        /// Only one type of <code>configData</code> can be specified.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfig service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConfig service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateConfig">REST API Reference for CreateConfig Operation</seealso>
         public virtual Task<CreateConfigResponse> CreateConfigAsync(CreateConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -324,15 +349,37 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDataflowEndpointGroup operation.
-        /// </summary>
+        /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
+        /// objects.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup operation.</param>
+        ///          
+        /// <para>
+        /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
+        ///          to specify which endpoints to use during a contact.
+        /// </para>
+        ///           
+        /// <para>
+        /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
+        ///          must match a <code>DataflowEndpoint</code> in the same group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDataflowEndpointGroup service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroup">REST API Reference for CreateDataflowEndpointGroup Operation</seealso>
         public virtual Task<CreateDataflowEndpointGroupResponse> CreateDataflowEndpointGroupAsync(CreateDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -357,15 +404,31 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateMissionProfile operation.
-        /// </summary>
+        /// Creates a mission profile.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile operation.</param>
+        ///          
+        /// <para>
+        ///             <code>dataflowEdges</code> is a list of lists of strings. Each lower level
+        /// list of strings         has two elements: a <i>from ARN</i> and a <i>to ARN</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateMissionProfile service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateMissionProfile">REST API Reference for CreateMissionProfile Operation</seealso>
         public virtual Task<CreateMissionProfileResponse> CreateMissionProfileAsync(CreateMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -390,15 +453,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConfig operation.
+        /// Deletes a <code>Config</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConfig operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfig service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConfig service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteConfig">REST API Reference for DeleteConfig Operation</seealso>
         public virtual Task<DeleteConfigResponse> DeleteConfigAsync(DeleteConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -423,15 +496,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDataflowEndpointGroup operation.
+        /// Deletes a dataflow endpoint group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDataflowEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataflowEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDataflowEndpointGroup service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteDataflowEndpointGroup">REST API Reference for DeleteDataflowEndpointGroup Operation</seealso>
         public virtual Task<DeleteDataflowEndpointGroupResponse> DeleteDataflowEndpointGroupAsync(DeleteDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -456,15 +539,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteMissionProfile operation.
+        /// Deletes a mission profile.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMissionProfile operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMissionProfile service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteMissionProfile service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteMissionProfile">REST API Reference for DeleteMissionProfile Operation</seealso>
         public virtual Task<DeleteMissionProfileResponse> DeleteMissionProfileAsync(DeleteMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -489,15 +582,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeContact operation.
+        /// Describes an existing contact.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeContact operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeContact service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
         public virtual Task<DescribeContactResponse> DescribeContactAsync(DescribeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -522,15 +625,30 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetConfig operation.
-        /// </summary>
+        /// Returns <code>Config</code> information.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetConfig operation.</param>
+        ///          
+        /// <para>
+        /// Only one <code>Config</code> response can be returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfig service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetConfig service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetConfig">REST API Reference for GetConfig Operation</seealso>
         public virtual Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -555,15 +673,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDataflowEndpointGroup operation.
+        /// Returns the dataflow endpoint group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDataflowEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataflowEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDataflowEndpointGroup service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetDataflowEndpointGroup">REST API Reference for GetDataflowEndpointGroup Operation</seealso>
         public virtual Task<GetDataflowEndpointGroupResponse> GetDataflowEndpointGroupAsync(GetDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -588,15 +716,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMinuteUsage operation.
+        /// Returns the number of minutes used by account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMinuteUsage service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsage">REST API Reference for GetMinuteUsage Operation</seealso>
         public virtual Task<GetMinuteUsageResponse> GetMinuteUsageAsync(GetMinuteUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -621,15 +759,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMissionProfile operation.
+        /// Returns a mission profile.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMissionProfile operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMissionProfile service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMissionProfile service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMissionProfile">REST API Reference for GetMissionProfile Operation</seealso>
         public virtual Task<GetMissionProfileResponse> GetMissionProfileAsync(GetMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -654,15 +802,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSatellite operation.
+        /// Returns a satellite.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSatellite operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSatellite service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSatellite service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetSatellite">REST API Reference for GetSatellite Operation</seealso>
         public virtual Task<GetSatelliteResponse> GetSatelliteAsync(GetSatelliteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -687,15 +845,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListConfigs operation.
+        /// Returns a list of <code>Config</code> objects.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListConfigs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListConfigs service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListConfigs">REST API Reference for ListConfigs Operation</seealso>
         public virtual Task<ListConfigsResponse> ListConfigsAsync(ListConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -720,15 +888,31 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListContacts operation.
-        /// </summary>
+        /// Returns a list of contacts.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListContacts operation.</param>
+        ///          
+        /// <para>
+        /// If <code>statusList</code> contains AVAILABLE, the request must include      <code>groundstation</code>,
+        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>.      
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListContacts service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContacts">REST API Reference for ListContacts Operation</seealso>
         public virtual Task<ListContactsResponse> ListContactsAsync(ListContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -753,15 +937,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDataflowEndpointGroups operation.
+        /// Returns a list of <code>DataflowEndpoint</code> groups.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDataflowEndpointGroups operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataflowEndpointGroups service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDataflowEndpointGroups service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListDataflowEndpointGroups">REST API Reference for ListDataflowEndpointGroups Operation</seealso>
         public virtual Task<ListDataflowEndpointGroupsResponse> ListDataflowEndpointGroupsAsync(ListDataflowEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -786,15 +980,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListGroundStations operation.
+        /// Returns a list of ground stations.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListGroundStations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroundStations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListGroundStations service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStations">REST API Reference for ListGroundStations Operation</seealso>
         public virtual Task<ListGroundStationsResponse> ListGroundStationsAsync(ListGroundStationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -819,15 +1023,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListMissionProfiles operation.
+        /// Returns a list of mission profiles.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMissionProfiles operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListMissionProfiles service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListMissionProfiles service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListMissionProfiles">REST API Reference for ListMissionProfiles Operation</seealso>
         public virtual Task<ListMissionProfilesResponse> ListMissionProfilesAsync(ListMissionProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -852,15 +1066,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListSatellites operation.
+        /// Returns a list of satellites.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListSatellites operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListSatellites service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListSatellites service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListSatellites">REST API Reference for ListSatellites Operation</seealso>
         public virtual Task<ListSatellitesResponse> ListSatellitesAsync(ListSatellitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -885,15 +1109,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Returns a list of tags or a specified resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -918,15 +1152,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ReserveContact operation.
+        /// Reserves a contact using specified parameters.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ReserveContact operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ReserveContact service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ReserveContact service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ReserveContact">REST API Reference for ReserveContact Operation</seealso>
         public virtual Task<ReserveContactResponse> ReserveContactAsync(ReserveContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -951,15 +1195,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Assigns a tag to a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -984,15 +1238,25 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Deassigns a resource tag.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1017,15 +1281,31 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConfig operation.
-        /// </summary>
+        /// Updates the <code>Config</code> used when scheduling contacts.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConfig operation.</param>
+        ///          
+        /// <para>
+        /// Updating a <code>Config</code> will not update the execution parameters         for
+        /// existing future contacts scheduled with this <code>Config</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfig service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConfig service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfig">REST API Reference for UpdateConfig Operation</seealso>
         public virtual Task<UpdateConfigResponse> UpdateConfigAsync(UpdateConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1050,15 +1330,31 @@ namespace Amazon.GroundStation
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateMissionProfile operation.
-        /// </summary>
+        /// Updates a mission profile.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateMissionProfile operation.</param>
+        ///          
+        /// <para>
+        /// Updating a mission profile will not update the execution parameters         for existing
+        /// future contacts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMissionProfile service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateMissionProfile service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateMissionProfile">REST API Reference for UpdateMissionProfile Operation</seealso>
         public virtual Task<UpdateMissionProfileResponse> UpdateMissionProfileAsync(UpdateMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

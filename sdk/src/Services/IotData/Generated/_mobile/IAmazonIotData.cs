@@ -46,15 +46,46 @@ namespace Amazon.IotData
         #region  DeleteThingShadow
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteThingShadow operation.
-        /// </summary>
+        /// Deletes the thing shadow for the specified thing.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteThingShadow operation.</param>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a>
+        /// in the <i>AWS IoT Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingShadow service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteThingShadow service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
+        /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
+        /// The document encoding is not supported.
+        /// </exception>
         Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -62,15 +93,46 @@ namespace Amazon.IotData
         #region  GetThingShadow
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetThingShadow operation.
-        /// </summary>
+        /// Gets the thing shadow for the specified thing.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetThingShadow operation.</param>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a>
+        /// in the <i>AWS IoT Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThingShadow service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetThingShadow service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
+        /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
+        /// The document encoding is not supported.
+        /// </exception>
         Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -78,15 +140,34 @@ namespace Amazon.IotData
         #region  Publish
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the Publish operation.
-        /// </summary>
+        /// Publishes state information.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the Publish operation.</param>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
+        /// Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Publish service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the Publish service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
+        /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -94,15 +175,49 @@ namespace Amazon.IotData
         #region  UpdateThingShadow
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateThingShadow operation.
-        /// </summary>
+        /// Updates the thing shadow for the specified thing.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateThingShadow operation.</param>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a>
+        /// in the <i>AWS IoT Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingShadow service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateThingShadow service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ConflictException">
+        /// The specified version does not match the version of the document.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.MethodNotAllowedException">
+        /// The specified combination of HTTP verb and URI is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.RequestEntityTooLargeException">
+        /// The payload exceeds the maximum size allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnsupportedDocumentEncodingException">
+        /// The document encoding is not supported.
+        /// </exception>
         Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

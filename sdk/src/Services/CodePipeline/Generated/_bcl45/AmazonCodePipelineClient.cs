@@ -538,15 +538,26 @@ namespace Amazon.CodePipeline
             return AcknowledgeJobAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AcknowledgeJob operation.
+        /// Returns information about a specified job and whether that job has been received by
+        /// the job worker. Only used for custom actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AcknowledgeJob service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
+        /// The specified nonce was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         public virtual Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -655,15 +666,28 @@ namespace Amazon.CodePipeline
             return AcknowledgeThirdPartyJobAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AcknowledgeThirdPartyJob operation.
+        /// Confirms a job worker has received the specified job. Only used for partner actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeThirdPartyJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeThirdPartyJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AcknowledgeThirdPartyJob service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNonceException">
+        /// The specified nonce was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         public virtual Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -712,15 +736,33 @@ namespace Amazon.CodePipeline
             return Invoke<CreateCustomActionTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateCustomActionType operation.
+        /// Creates a new custom action that can be used in all pipelines associated with the
+        /// AWS account. Only used for custom actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateCustomActionType operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomActionType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateCustomActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         public virtual Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -878,15 +920,47 @@ namespace Amazon.CodePipeline
             return CreatePipelineAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePipeline operation.
+        /// Creates a pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
+        /// The specified action declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
+        /// Reserved for future use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
+        /// The specified stage declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
+        /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNameInUseException">
+        /// The specified pipeline name is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -934,15 +1008,32 @@ namespace Amazon.CodePipeline
             return Invoke<DeleteCustomActionTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCustomActionType operation.
-        /// </summary>
+        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will
+        /// fail after the action is marked for deletion. Only used for custom actions.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomActionType operation.</param>
+        ///  <important> 
+        /// <para>
+        /// To re-create a custom action after it has been deleted you must use a string in the
+        /// version field that has never been used before. This string can be an incremented version
+        /// number, for example. To restore a deleted custom action, use a JSON file that is identical
+        /// to the deleted action, including the original string in the version field.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomActionType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteCustomActionType service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         public virtual Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1025,15 +1116,22 @@ namespace Amazon.CodePipeline
             return DeletePipelineAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePipeline operation.
+        /// Deletes the specified pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1075,15 +1173,26 @@ namespace Amazon.CodePipeline
             return Invoke<DeleteWebhookResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
+        /// from starting a pipeline every time an external event occurs. The API will return
+        /// successfully when trying to delete a webhook that is already deleted. If a deleted
+        /// webhook is re-created by calling PutWebhook with the same name, it will have a different
+        /// URL.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1123,15 +1232,24 @@ namespace Amazon.CodePipeline
             return Invoke<DeregisterWebhookWithThirdPartyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterWebhookWithThirdParty operation.
+        /// Removes the connection between the webhook that was created by CodePipeline and the
+        /// external tool with events to be detected. Currently only supported for webhooks that
+        /// target an action type of GitHub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeregisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
         public virtual Task<DeregisterWebhookWithThirdPartyResponse> DeregisterWebhookWithThirdPartyAsync(DeregisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1172,15 +1290,25 @@ namespace Amazon.CodePipeline
             return Invoke<DisableStageTransitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableStageTransition operation.
+        /// Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableStageTransition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableStageTransition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableStageTransition service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The specified stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         public virtual Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1221,15 +1349,25 @@ namespace Amazon.CodePipeline
             return Invoke<EnableStageTransitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableStageTransition operation.
+        /// Enables artifacts in a pipeline to transition to a stage in a pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableStageTransition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableStageTransition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableStageTransition service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The specified stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         public virtual Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1339,15 +1477,31 @@ namespace Amazon.CodePipeline
             return GetJobDetailsAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJobDetails operation.
-        /// </summary>
+        /// Returns information about a job. Only used for custom actions.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJobDetails operation.</param>
+        ///  <important> 
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
+        /// any secret values defined for the action.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobDetails service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJobDetails service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         public virtual Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1504,15 +1658,27 @@ namespace Amazon.CodePipeline
             return GetPipelineAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPipeline operation.
+        /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to
+        /// return the entire structure of a pipeline in JSON format, which can then be modified
+        /// and used to update the pipeline structure with <a>UpdatePipeline</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPipeline operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPipeline service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineVersionNotFoundException">
+        /// The specified pipeline version was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1555,15 +1721,27 @@ namespace Amazon.CodePipeline
             return Invoke<GetPipelineExecutionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPipelineExecution operation.
+        /// Returns information about an execution of a pipeline, including details about artifacts,
+        /// the pipeline execution ID, and the name, version, and status of the pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         public virtual Task<GetPipelineExecutionResponse> GetPipelineExecutionAsync(GetPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1667,15 +1845,29 @@ namespace Amazon.CodePipeline
             return GetPipelineStateAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPipelineState operation.
-        /// </summary>
+        /// Returns information about the state of a pipeline, including the stages and actions.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPipelineState operation.</param>
+        ///  <note> 
+        /// <para>
+        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
+        /// indicate the source revision information, such as the commit ID, for the current state.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineState service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPipelineState service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         public virtual Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1807,15 +1999,37 @@ namespace Amazon.CodePipeline
             return GetThirdPartyJobDetailsAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetThirdPartyJobDetails operation.
-        /// </summary>
+        /// Requests the details of a job for a third party action. Only used for partner actions.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyJobDetails operation.</param>
+        ///  <important> 
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
+        /// any secret values defined for the action.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThirdPartyJobDetails service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetThirdPartyJobDetails service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         public virtual Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1861,15 +2075,30 @@ namespace Amazon.CodePipeline
             return Invoke<ListActionExecutionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListActionExecutions operation.
+        /// Lists the action executions that have occurred in a pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListActionExecutions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListActionExecutions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListActionExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">REST API Reference for ListActionExecutions Operation</seealso>
         public virtual Task<ListActionExecutionsResponse> ListActionExecutionsAsync(ListActionExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1998,15 +2227,23 @@ namespace Amazon.CodePipeline
             return ListActionTypesAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListActionTypes operation.
+        /// Gets a summary of all AWS CodePipeline action types associated with your account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListActionTypes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListActionTypes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListActionTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         public virtual Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2048,15 +2285,26 @@ namespace Amazon.CodePipeline
             return Invoke<ListPipelineExecutionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPipelineExecutions operation.
+        /// Gets a summary of the most recent executions for a pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPipelineExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2138,15 +2386,23 @@ namespace Amazon.CodePipeline
             return ListPipelinesAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPipelines operation.
+        /// Gets a summary of all of the pipelines associated with your account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPipelines operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2191,15 +2447,29 @@ namespace Amazon.CodePipeline
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Gets the set of key/value pairs (metadata) that are used to manage the resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2240,15 +2510,25 @@ namespace Amazon.CodePipeline
             return Invoke<ListWebhooksResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListWebhooks operation.
+        /// Gets a listing of all the webhooks in this region for this account. The output lists
+        /// all webhooks and includes the webhook URL and ARN, as well the configuration for each
+        /// webhook.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         public virtual Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2298,15 +2578,34 @@ namespace Amazon.CodePipeline
             return Invoke<PollForJobsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PollForJobs operation.
-        /// </summary>
+        /// Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code>
+        /// is only valid for action types with "Custom" in the owner field. If the action type
+        /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
+        /// returns an error.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PollForJobs operation.</param>
+        ///  <important> 
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
+        /// any secret values defined for the action.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PollForJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PollForJobs service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         public virtual Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2353,15 +2652,31 @@ namespace Amazon.CodePipeline
             return Invoke<PollForThirdPartyJobsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PollForThirdPartyJobs operation.
-        /// </summary>
+        /// Determines whether there are any third party jobs for a job worker to act on. Only
+        /// used for partner actions.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PollForThirdPartyJobs operation.</param>
+        ///  <important> 
+        /// <para>
+        /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
+        /// S3 bucket used to store artifacts for the pipeline, if the action requires access
+        /// to that Amazon S3 bucket for input or output artifacts.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PollForThirdPartyJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PollForThirdPartyJobs service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionTypeNotFoundException">
+        /// The specified action type cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         public virtual Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2405,15 +2720,28 @@ namespace Amazon.CodePipeline
             return Invoke<PutActionRevisionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutActionRevision operation.
+        /// Provides information to AWS CodePipeline about new revisions to a source.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutActionRevision operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutActionRevision service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutActionRevision service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionNotFoundException">
+        /// The specified action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The specified stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         public virtual Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2464,15 +2792,35 @@ namespace Amazon.CodePipeline
             return Invoke<PutApprovalResultResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutApprovalResult operation.
+        /// Provides the response to a manual approval request to AWS CodePipeline. Valid responses
+        /// include Approved and Rejected.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutApprovalResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ActionNotFoundException">
+        /// The specified action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ApprovalAlreadyCompletedException">
+        /// The approval action has already been approved or rejected.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidApprovalTokenException">
+        /// The approval request already received a response or has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The specified stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         public virtual Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2571,15 +2919,26 @@ namespace Amazon.CodePipeline
             return PutJobFailureResultAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutJobFailureResult operation.
+        /// Represents the failure of a job as returned to the pipeline by a job worker. Only
+        /// used for custom actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutJobFailureResult operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobFailureResult service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutJobFailureResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         public virtual Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2621,15 +2980,26 @@ namespace Amazon.CodePipeline
             return Invoke<PutJobSuccessResultResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutJobSuccessResult operation.
+        /// Represents the success of a job as returned to the pipeline by a job worker. Only
+        /// used for custom actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutJobSuccessResult operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutJobSuccessResult service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutJobSuccessResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         public virtual Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2741,15 +3111,29 @@ namespace Amazon.CodePipeline
             return PutThirdPartyJobFailureResultAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutThirdPartyJobFailureResult operation.
+        /// Represents the failure of a third party job as returned to the pipeline by a job worker.
+        /// Only used for partner actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobFailureResult operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobFailureResult service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutThirdPartyJobFailureResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         public virtual Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2794,15 +3178,29 @@ namespace Amazon.CodePipeline
             return Invoke<PutThirdPartyJobSuccessResultResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutThirdPartyJobSuccessResult operation.
+        /// Represents the success of a third party job as returned to the pipeline by a job worker.
+        /// Only used for partner actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobSuccessResult operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyJobSuccessResult service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutThirdPartyJobSuccessResult service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidClientTokenException">
+        /// The client token was specified in an invalid format
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidJobStateException">
+        /// The specified job state was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.JobNotFoundException">
+        /// The specified job was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         public virtual Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2865,15 +3263,47 @@ namespace Amazon.CodePipeline
             return Invoke<PutWebhookResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutWebhook operation.
+        /// Defines a webhook and returns a unique webhook URL generated by CodePipeline. This
+        /// URL can be supplied to third party source hosting providers to call every time there's
+        /// a code change. When CodePipeline receives a POST request on this URL, the pipeline
+        /// defined in the webhook is started as long as the POST request satisfied the authentication
+        /// and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
+        /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported
+        /// third parties to call the generated webhook URL.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutWebhook operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookAuthenticationParametersException">
+        /// The specified authentication type is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookFilterPatternException">
+        /// The specified event filter rule is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
         public virtual Task<PutWebhookResponse> PutWebhookAsync(PutWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2912,15 +3342,23 @@ namespace Amazon.CodePipeline
             return Invoke<RegisterWebhookWithThirdPartyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RegisterWebhookWithThirdParty operation.
+        /// Configures a connection between the webhook that was created and the external tool
+        /// with events to be detected.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RegisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
         public virtual Task<RegisterWebhookWithThirdPartyResponse> RegisterWebhookWithThirdPartyAsync(RegisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2970,15 +3408,34 @@ namespace Amazon.CodePipeline
             return Invoke<RetryStageExecutionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RetryStageExecution operation.
+        /// Resumes the pipeline execution by retrying the last failed actions in a stage.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
+        /// The stage has failed in a later run of the pipeline and the pipelineExecutionId associated
+        /// with the request is out of date.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The specified stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotRetryableException">
+        /// The specified stage can't be retried because the pipeline structure or stage state
+        /// changed after the stage was not completed; the stage contains no failed actions; one
+        /// or more actions are still in progress; or another retry attempt is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         public virtual Task<RetryStageExecutionResponse> RetryStageExecutionAsync(RetryStageExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3064,15 +3521,23 @@ namespace Amazon.CodePipeline
             return StartPipelineExecutionAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartPipelineExecution operation.
+        /// Starts the specified pipeline. Specifically, it begins processing the latest commit
+        /// to the source location specified as part of the pipeline.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3123,15 +3588,35 @@ namespace Amazon.CodePipeline
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
+        /// used to manage a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.TooManyTagsException">
+        /// The tags limit for a resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3178,15 +3663,31 @@ namespace Amazon.CodePipeline
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes tags from an AWS resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentModificationException">
+        /// Unable to modify the tag due to a simultaneous update request.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidArnException">
+        /// The specified resource ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidTagsException">
+        /// The specified resource tags are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ResourceNotFoundException">
+        /// The specified resource was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -3317,15 +3818,38 @@ namespace Amazon.CodePipeline
             return UpdatePipelineAsync(request, cancellationToken);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdatePipeline operation.
+        /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
+        /// with the pipeline structure in conjunction with <code>UpdatePipeline</code> to provide
+        /// the full structure of the pipeline. Updating the pipeline increases the version number
+        /// of the pipeline by 1.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdatePipeline service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidActionDeclarationException">
+        /// The specified action declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidBlockerDeclarationException">
+        /// Reserved for future use.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStageDeclarationException">
+        /// The specified stage declaration was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
+        /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

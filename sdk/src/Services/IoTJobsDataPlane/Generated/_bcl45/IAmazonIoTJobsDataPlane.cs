@@ -89,15 +89,36 @@ namespace Amazon.IoTJobsDataPlane
         DescribeJobExecutionResponse DescribeJobExecution(DescribeJobExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeJobExecution operation.
+        /// Gets details of a job execution.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeJobExecution service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
+        /// The contents of the request were invalid. For example, this code is returned when
+        /// an UpdateJobExecution request contains invalid status details. The message contains
+        /// details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.TerminalStateException">
+        /// The job is in a terminal state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         Task<DescribeJobExecutionResponse> DescribeJobExecutionAsync(DescribeJobExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -133,15 +154,33 @@ namespace Amazon.IoTJobsDataPlane
         GetPendingJobExecutionsResponse GetPendingJobExecutions(GetPendingJobExecutionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPendingJobExecutions operation.
+        /// Gets the list of all jobs for a thing that are not in a terminal status.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPendingJobExecutions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPendingJobExecutions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPendingJobExecutions service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
+        /// The contents of the request were invalid. For example, this code is returned when
+        /// an UpdateJobExecution request contains invalid status details. The message contains
+        /// details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">REST API Reference for GetPendingJobExecutions Operation</seealso>
         Task<GetPendingJobExecutionsResponse> GetPendingJobExecutionsAsync(GetPendingJobExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -178,15 +217,34 @@ namespace Amazon.IoTJobsDataPlane
         StartNextPendingJobExecutionResponse StartNextPendingJobExecution(StartNextPendingJobExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartNextPendingJobExecution operation.
+        /// Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for
+        /// a thing.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartNextPendingJobExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartNextPendingJobExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartNextPendingJobExecution service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
+        /// The contents of the request were invalid. For example, this code is returned when
+        /// an UpdateJobExecution request contains invalid status details. The message contains
+        /// details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">REST API Reference for StartNextPendingJobExecution Operation</seealso>
         Task<StartNextPendingJobExecutionResponse> StartNextPendingJobExecutionAsync(StartNextPendingJobExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -228,15 +286,39 @@ namespace Amazon.IoTJobsDataPlane
         UpdateJobExecutionResponse UpdateJobExecution(UpdateJobExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJobExecution operation.
+        /// Updates the status of a job execution.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJobExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJobExecution service method, as returned by IoTJobsDataPlane.</returns>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidRequestException">
+        /// The contents of the request were invalid. For example, this code is returned when
+        /// an UpdateJobExecution request contains invalid status details. The message contains
+        /// details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.InvalidStateTransitionException">
+        /// An update attempted to change the job execution to a state that is invalid because
+        /// of the job execution's current state (for example, an attempt to change a request
+        /// in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message
+        /// also contains the executionState field.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTJobsDataPlane.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">REST API Reference for UpdateJobExecution Operation</seealso>
         Task<UpdateJobExecutionResponse> UpdateJobExecutionAsync(UpdateJobExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

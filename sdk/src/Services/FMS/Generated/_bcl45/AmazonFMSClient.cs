@@ -289,15 +289,41 @@ namespace Amazon.FMS
             return Invoke<AssociateAdminAccountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateAdminAccount operation.
-        /// </summary>
+        /// Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be
+        /// associated with the master account your AWS organization or associated with a member
+        /// account that has the appropriate permissions. If the account ID that you submit is
+        /// not an AWS Organizations master account, AWS Firewall Manager will set the appropriate
+        /// permissions for the given member account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount operation.</param>
+        ///  
+        /// <para>
+        /// The account that you associate with AWS Firewall Manager is called the AWS Firewall
+        /// Manager administrator account. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual Task<AssociateAdminAccountResponse> AssociateAdminAccountAsync(AssociateAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -342,15 +368,29 @@ namespace Amazon.FMS
             return Invoke<DeleteNotificationChannelResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteNotificationChannel operation.
+        /// Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple
+        /// Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationChannel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationChannel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteNotificationChannel service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual Task<DeleteNotificationChannelResponse> DeleteNotificationChannelAsync(DeleteNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -394,15 +434,28 @@ namespace Amazon.FMS
             return Invoke<DeletePolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePolicy operation.
+        /// Permanently deletes an AWS Firewall Manager policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -448,15 +501,30 @@ namespace Amazon.FMS
             return Invoke<DisassociateAdminAccountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateAdminAccount operation.
+        /// Disassociates the account that has been set as the AWS Firewall Manager administrator
+        /// account. To set a different account as the administrator account, you must submit
+        /// an <code>AssociateAdminAccount</code> request .
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual Task<DisassociateAdminAccountResponse> DisassociateAdminAccountAsync(DisassociateAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -501,15 +569,29 @@ namespace Amazon.FMS
             return Invoke<GetAdminAccountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAdminAccount operation.
+        /// Returns the AWS Organizations master account that is associated with AWS Firewall
+        /// Manager as the AWS Firewall Manager administrator.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAdminAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual Task<GetAdminAccountResponse> GetAdminAccountAsync(GetAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -550,15 +632,25 @@ namespace Amazon.FMS
             return Invoke<GetComplianceDetailResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetComplianceDetail operation.
+        /// Returns detailed compliance information about the specified member account. Details
+        /// include resources that are in and out of compliance with the specified policy. Resources
+        /// are considered non-compliant if the specified policy has not been applied to them.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetComplianceDetail service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual Task<GetComplianceDetailResponse> GetComplianceDetailAsync(GetComplianceDetailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -603,15 +695,29 @@ namespace Amazon.FMS
             return Invoke<GetNotificationChannelResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetNotificationChannel operation.
+        /// Returns information about the Amazon Simple Notification Service (SNS) topic that
+        /// is used to record AWS Firewall Manager SNS logs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetNotificationChannel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotificationChannel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetNotificationChannel service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual Task<GetNotificationChannelResponse> GetNotificationChannelAsync(GetNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -658,15 +764,31 @@ namespace Amazon.FMS
             return Invoke<GetPolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// Returns information about the specified AWS Firewall Manager policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
+        /// The value of the <code>Type</code> parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -709,15 +831,27 @@ namespace Amazon.FMS
             return Invoke<GetProtectionStatusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetProtectionStatus operation.
+        /// If you created a Shield Advanced policy, returns policy-level attack summary information
+        /// in the event of a potential DDoS attack.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetProtectionStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectionStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetProtectionStatus service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
         public virtual Task<GetProtectionStatusResponse> GetProtectionStatusAsync(GetProtectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -758,15 +892,25 @@ namespace Amazon.FMS
             return Invoke<ListComplianceStatusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListComplianceStatus operation.
+        /// Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
+        /// <code>PolicyComplianceStatus</code> to get a summary of which member accounts are
+        /// protected by the specified policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListComplianceStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListComplianceStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListComplianceStatus service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual Task<ListComplianceStatusResponse> ListComplianceStatusAsync(ListComplianceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -812,15 +956,30 @@ namespace Amazon.FMS
             return Invoke<ListMemberAccountsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListMemberAccounts operation.
-        /// </summary>
+        /// Returns a <code>MemberAccounts</code> object that lists the member accounts in the
+        /// administrator's AWS organization.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts operation.</param>
+        ///  
+        /// <para>
+        /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
+        /// the AWS Firewall Manager administrator.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListMemberAccounts service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual Task<ListMemberAccountsResponse> ListMemberAccountsAsync(ListMemberAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -869,15 +1028,33 @@ namespace Amazon.FMS
             return Invoke<ListPoliciesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPolicies operation.
+        /// Returns an array of <code>PolicySummary</code> objects in the response.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPolicies operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -922,15 +1099,29 @@ namespace Amazon.FMS
             return Invoke<PutNotificationChannelResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutNotificationChannel operation.
+        /// Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS
+        /// Firewall Manager uses to record SNS logs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutNotificationChannel service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual Task<PutNotificationChannelResponse> PutNotificationChannelAsync(PutNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1001,15 +1192,55 @@ namespace Amazon.FMS
             return Invoke<PutPolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutPolicy operation.
-        /// </summary>
+        /// Creates an AWS Firewall Manager policy.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutPolicy operation.</param>
+        ///  
+        /// <para>
+        /// Firewall Manager provides two types of policies: A Shield Advanced policy, which applies
+        /// Shield Advanced protection to specified accounts and resources, or a WAF policy, which
+        /// contains a rule group and defines which resources are to be protected by that rule
+        /// group. A policy is specific to either WAF or Shield Advanced. If you want to enforce
+        /// both WAF rules and Shield Advanced protection across accounts, you can create multiple
+        /// policies. You can create one or more policies for WAF rules, and one or more policies
+        /// for Shield Advanced.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must be subscribed to Shield Advanced to create a Shield Advanced policy. For
+        /// more information on subscribing to Shield Advanced, see <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do. For example, you might have
+        /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
+        /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
+        /// The value of the <code>Type</code> parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

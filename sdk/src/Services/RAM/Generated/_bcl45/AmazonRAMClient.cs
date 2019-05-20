@@ -305,15 +305,40 @@ namespace Amazon.RAM
             return Invoke<AcceptResourceShareInvitationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AcceptResourceShareInvitation operation.
+        /// Accepts an invitation to a resource share from another AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AcceptResourceShareInvitation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptResourceShareInvitation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AcceptResourceShareInvitation service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
+        /// The invitation was already accepted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
+        /// The invitation was already rejected.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
+        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
+        /// The invitation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">REST API Reference for AcceptResourceShareInvitation Operation</seealso>
         public virtual Task<AcceptResourceShareInvitationResponse> AcceptResourceShareInvitationAsync(AcceptResourceShareInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -382,15 +407,53 @@ namespace Amazon.RAM
             return Invoke<AssociateResourceShareResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateResourceShare operation.
+        /// Associates the specified resource share with the specified principals and resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceShare operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateResourceShare service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateResourceShare service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
+        /// The requested resource share exceeds the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">REST API Reference for AssociateResourceShare Operation</seealso>
         public virtual Task<AssociateResourceShareResponse> AssociateResourceShareAsync(AssociateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -453,15 +516,47 @@ namespace Amazon.RAM
             return Invoke<CreateResourceShareResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateResourceShare operation.
+        /// Creates a resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateResourceShare operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceShare service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateResourceShare service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
+        /// The requested resource share exceeds the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">REST API Reference for CreateResourceShare Operation</seealso>
         public virtual Task<CreateResourceShareResponse> CreateResourceShareAsync(CreateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -521,15 +616,44 @@ namespace Amazon.RAM
             return Invoke<DeleteResourceShareResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteResourceShare operation.
+        /// Deletes the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceShare operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceShare service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteResourceShare service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">REST API Reference for DeleteResourceShare Operation</seealso>
         public virtual Task<DeleteResourceShareResponse> DeleteResourceShareAsync(DeleteResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -592,15 +716,47 @@ namespace Amazon.RAM
             return Invoke<DisassociateResourceShareResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateResourceShare operation.
+        /// Disassociates the specified principals or resources from the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceShare operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceShare service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateResourceShare service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The requested state transition is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
+        /// The requested resource share exceeds the limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceShare">REST API Reference for DisassociateResourceShare Operation</seealso>
         public virtual Task<DisassociateResourceShareResponse> DisassociateResourceShareAsync(DisassociateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -641,15 +797,25 @@ namespace Amazon.RAM
             return Invoke<EnableSharingWithAwsOrganizationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableSharingWithAwsOrganization operation.
+        /// Enables resource sharing within your organization.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableSharingWithAwsOrganization operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSharingWithAwsOrganization service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableSharingWithAwsOrganization service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">REST API Reference for EnableSharingWithAwsOrganization Operation</seealso>
         public virtual Task<EnableSharingWithAwsOrganizationResponse> EnableSharingWithAwsOrganizationAsync(EnableSharingWithAwsOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -696,15 +862,31 @@ namespace Amazon.RAM
             return Invoke<GetResourcePoliciesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourcePolicies operation.
+        /// Gets the policies for the specifies resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -757,15 +939,37 @@ namespace Amazon.RAM
             return Invoke<GetResourceShareAssociationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourceShareAssociations operation.
+        /// Gets the associations for the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourceShareAssociations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">REST API Reference for GetResourceShareAssociations Operation</seealso>
         public virtual Task<GetResourceShareAssociationsResponse> GetResourceShareAssociationsAsync(GetResourceShareAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -818,15 +1022,37 @@ namespace Amazon.RAM
             return Invoke<GetResourceShareInvitationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourceShareInvitations operation.
+        /// Gets the specified invitations for resource sharing.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourceShareInvitations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidMaxResultsException">
+        /// The specified value for MaxResults is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
+        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">REST API Reference for GetResourceShareInvitations Operation</seealso>
         public virtual Task<GetResourceShareInvitationsResponse> GetResourceShareInvitationsAsync(GetResourceShareInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -876,15 +1102,34 @@ namespace Amazon.RAM
             return Invoke<GetResourceSharesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourceShares operation.
+        /// Gets the specified resource shares or all of your resource shares.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourceShares operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceShares service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourceShares service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">REST API Reference for GetResourceShares Operation</seealso>
         public virtual Task<GetResourceSharesResponse> GetResourceSharesAsync(GetResourceSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -934,15 +1179,34 @@ namespace Amazon.RAM
             return Invoke<ListPrincipalsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPrincipals operation.
+        /// Lists the principals with access to the specified resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPrincipals operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPrincipals service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">REST API Reference for ListPrincipals Operation</seealso>
         public virtual Task<ListPrincipalsResponse> ListPrincipalsAsync(ListPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -995,15 +1259,37 @@ namespace Amazon.RAM
             return Invoke<ListResourcesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListResources operation.
+        /// Lists the resources that the specified principal can access.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListResources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListResources service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for NextToken is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidResourceTypeException">
+        /// The specified resource type is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1059,15 +1345,40 @@ namespace Amazon.RAM
             return Invoke<RejectResourceShareInvitationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RejectResourceShareInvitation operation.
+        /// Rejects an invitation to a resource share from another AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RejectResourceShareInvitation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RejectResourceShareInvitation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RejectResourceShareInvitation service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
+        /// The invitation was already accepted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
+        /// The invitation was already rejected.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
+        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
+        /// The invitation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/RejectResourceShareInvitation">REST API Reference for RejectResourceShareInvitation Operation</seealso>
         public virtual Task<RejectResourceShareInvitationResponse> RejectResourceShareInvitationAsync(RejectResourceShareInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1117,15 +1428,34 @@ namespace Amazon.RAM
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Adds the specified tags to the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
+        /// An Amazon Resource Name (ARN) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.TagLimitExceededException">
+        /// The requested tags exceed the limit for your account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1166,15 +1496,25 @@ namespace Amazon.RAM
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes the specified tags from the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1234,15 +1574,44 @@ namespace Amazon.RAM
             return Invoke<UpdateResourceShareResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateResourceShare operation.
+        /// Updates the specified resource share.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceShare operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceShare service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateResourceShare service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// A client token input parameter was reused with an operation, but at least one of the
+        /// other input parameters is different from the previous call to the operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// A client token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// A required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">REST API Reference for UpdateResourceShare Operation</seealso>
         public virtual Task<UpdateResourceShareResponse> UpdateResourceShareAsync(UpdateResourceShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

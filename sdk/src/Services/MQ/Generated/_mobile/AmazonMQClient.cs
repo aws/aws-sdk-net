@@ -258,15 +258,31 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateBroker operation.
+        /// Creates a broker. Note: This API is asynchronous.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateBroker operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBroker service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateBroker service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">REST API Reference for CreateBroker Operation</seealso>
         public virtual Task<CreateBrokerResponse> CreateBrokerAsync(CreateBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -291,15 +307,29 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConfiguration operation.
+        /// Creates a new configuration for the specified configuration name. Amazon MQ uses the
+        /// default configuration (the engine type and version).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConfiguration service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -324,15 +354,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// Add a tag to a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateTags service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -357,15 +400,31 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateUser operation.
+        /// Creates an ActiveMQ user.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateUser operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -390,15 +449,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBroker operation.
+        /// Deletes a broker. Note: This API is asynchronous.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBroker operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBroker service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteBroker service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">REST API Reference for DeleteBroker Operation</seealso>
         public virtual Task<DeleteBrokerResponse> DeleteBrokerAsync(DeleteBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -423,15 +495,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// Removes a tag from a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTags service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -456,15 +541,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteUser operation.
+        /// Deletes an ActiveMQ user.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -489,15 +587,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeBroker operation.
+        /// Returns information about the specified broker.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeBroker operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBroker service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeBroker service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">REST API Reference for DescribeBroker Operation</seealso>
         public virtual Task<DescribeBrokerResponse> DescribeBrokerAsync(DescribeBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -522,15 +633,25 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeBrokerEngineTypes operation.
+        /// Describe available engine types and versions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerEngineTypes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeBrokerEngineTypes service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
         public virtual Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -555,15 +676,25 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeBrokerInstanceOptions operation.
+        /// Describe available broker instance options.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBrokerInstanceOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeBrokerInstanceOptions service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
         public virtual Task<DescribeBrokerInstanceOptionsResponse> DescribeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -588,15 +719,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeConfiguration operation.
+        /// Returns information about the specified configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeConfiguration service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual Task<DescribeConfigurationResponse> DescribeConfigurationAsync(DescribeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -621,15 +765,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeConfigurationRevision operation.
+        /// Returns the specified configuration revision for the specified configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationRevision operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationRevision service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeConfigurationRevision service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual Task<DescribeConfigurationRevisionResponse> DescribeConfigurationRevisionAsync(DescribeConfigurationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -654,15 +811,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeUser operation.
+        /// Returns information about an ActiveMQ user.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeUser operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeUser service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -687,15 +857,25 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBrokers operation.
+        /// Returns a list of all brokers.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBrokers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBrokers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListBrokers service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">REST API Reference for ListBrokers Operation</seealso>
         public virtual Task<ListBrokersResponse> ListBrokersAsync(ListBrokersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -720,15 +900,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListConfigurationRevisions operation.
+        /// Returns a list of all revisions for the specified configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationRevisions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListConfigurationRevisions service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(ListConfigurationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -753,15 +946,25 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListConfigurations operation.
+        /// Returns a list of all configurations.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -786,15 +989,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTags operation.
+        /// Lists tags for a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTags service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -819,15 +1035,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListUsers operation.
+        /// Returns a list of all ActiveMQ users.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListUsers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListUsers service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -852,15 +1081,28 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RebootBroker operation.
+        /// Reboots a broker. Note: This API is asynchronous.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RebootBroker operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RebootBroker service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RebootBroker service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual Task<RebootBrokerResponse> RebootBrokerAsync(RebootBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -885,15 +1127,31 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateBroker operation.
+        /// Adds a pending configuration change to a broker.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateBroker operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBroker service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateBroker service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">REST API Reference for UpdateBroker Operation</seealso>
         public virtual Task<UpdateBrokerResponse> UpdateBrokerAsync(UpdateBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -918,15 +1176,31 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConfiguration operation.
+        /// Updates the specified configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConfiguration service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -951,15 +1225,31 @@ namespace Amazon.MQ
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateUser operation.
+        /// Updates the information for an ActiveMQ user.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateUser operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateUser service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

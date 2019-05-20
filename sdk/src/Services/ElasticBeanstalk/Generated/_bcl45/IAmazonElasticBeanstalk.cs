@@ -76,15 +76,19 @@ namespace Amazon.ElasticBeanstalk
         AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AbortEnvironmentUpdate operation.
+        /// Cancels in-progress environment configuration update or application version deployment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AbortEnvironmentUpdate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
         Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -111,15 +115,24 @@ namespace Amazon.ElasticBeanstalk
         ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ApplyEnvironmentManagedAction operation.
+        /// Applies a scheduled managed action immediately. A managed action can be applied only
+        /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
+        /// action with <a>DescribeEnvironmentManagedActions</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ApplyEnvironmentManagedAction service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ManagedActionInvalidStateException">
+        /// Cannot modify the managed action in its current state.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
         Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -138,15 +151,16 @@ namespace Amazon.ElasticBeanstalk
         CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CheckDNSAvailability operation.
+        /// Checks if the specified CNAME is available.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CheckDNSAvailability service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
         Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -176,15 +190,27 @@ namespace Amazon.ElasticBeanstalk
         ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ComposeEnvironments operation.
+        /// Create or update a group of environments that each run a separate component of a single
+        /// application. Takes a list of version labels that specify application source bundles
+        /// for each of the environments to create or update. The name of each environment and
+        /// other required information must be included in the source bundles in an environment
+        /// manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// Environments</a> for details.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
         Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -207,15 +233,20 @@ namespace Amazon.ElasticBeanstalk
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// Creates an application that has one configuration template named <code>default</code>
+        /// and no application versions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -292,15 +323,74 @@ namespace Amazon.ElasticBeanstalk
         CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApplicationVersion operation.
-        /// </summary>
+        /// Creates an application version for the specified application. You can create an application
+        /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
+        /// of an AWS CodeBuild build as follows:
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion operation.</param>
+        ///  
+        /// <para>
+        /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
+        /// the default sample application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Once you create an application version with a specified Amazon S3 bucket and key location,
+        /// you cannot change that Amazon S3 location. If you change the Amazon S3 location, you
+        /// receive an exception when you attempt to launch an environment from the application
+        /// version.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
+        /// AWS CodeBuild is not available in the specified region.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
+        /// The specified account has reached its limit of applications.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationVersionsException">
+        /// The specified account has reached its limit of application versions.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -353,15 +443,50 @@ namespace Amazon.ElasticBeanstalk
         CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConfigurationTemplate operation.
-        /// </summary>
+        /// Creates a configuration template. Templates are associated with a specific application
+        /// and are used to deploy different versions of the application with the same configuration
+        /// settings.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate operation.</param>
+        ///  
+        /// <para>
+        /// Templates aren't associated with any environment. The <code>EnvironmentName</code>
+        /// response element is always <code>null</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationSettings</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ListAvailableSolutionStacks</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
+        /// The specified account has reached its limit of configuration templates.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
         Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -386,15 +511,22 @@ namespace Amazon.ElasticBeanstalk
         CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateEnvironment operation.
+        /// Launches an environment for the specified application using the specified configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
+        /// The specified account has reached its limit of environments.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -422,15 +554,25 @@ namespace Amazon.ElasticBeanstalk
         CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePlatformVersion operation.
+        /// Create a new version of your custom platform.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
+        /// You have exceeded the maximum number of allowed platforms associated with the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
         Task<CreatePlatformVersionResponse> CreatePlatformVersionAsync(CreatePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -509,15 +651,29 @@ namespace Amazon.ElasticBeanstalk
         Task<CreateStorageLocationResponse> CreateStorageLocationAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateStorageLocation operation.
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+        /// does not create a new bucket.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
+        /// The specified account does not have a subscription to Amazon S3.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
         Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -547,15 +703,27 @@ namespace Amazon.ElasticBeanstalk
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApplication operation.
-        /// </summary>
+        /// Deletes the specified application along with all associated versions and configurations.
+        /// The application versions will not be deleted from your Amazon S3 bucket.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation.</param>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application that has a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -609,15 +777,51 @@ namespace Amazon.ElasticBeanstalk
         DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApplicationVersion operation.
-        /// </summary>
+        /// Deletes the specified version from the specified application.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion operation.</param>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an application version that is associated with a running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
+        /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException">
+        /// Unable to delete the Amazon S3 source bundle associated with the application version.
+        /// The application version was deleted successfully.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
         Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -648,15 +852,28 @@ namespace Amazon.ElasticBeanstalk
         DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConfigurationTemplate operation.
-        /// </summary>
+        /// Deletes the specified configuration template.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate operation.</param>
+        ///  <note> 
+        /// <para>
+        /// When you launch an environment using a configuration template, the environment gets
+        /// a copy of the template. You can delete or modify the environment's copy of the template
+        /// without affecting the running environment.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
         Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -685,15 +902,26 @@ namespace Amazon.ElasticBeanstalk
         DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteEnvironmentConfiguration operation.
-        /// </summary>
+        /// Deletes the draft configuration associated with the running environment.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration operation.</param>
+        ///  
+        /// <para>
+        /// Updating a running environment with any configuration changes creates a draft configuration
+        /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+        /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+        /// for the draft configuration indicates whether the deployment is in process or has
+        /// failed. The draft configuration remains in existence until it is deleted with this
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentConfiguration service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
         Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -726,15 +954,30 @@ namespace Amazon.ElasticBeanstalk
         DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePlatformVersion operation.
+        /// Deletes the specified version of a custom platform.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.PlatformVersionStillReferencedException">
+        /// You cannot delete the platform version because there are still environments running
+        /// on it.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
         Task<DeletePlatformVersionResponse> DeletePlatformVersionAsync(DeletePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -762,15 +1005,25 @@ namespace Amazon.ElasticBeanstalk
         DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
-        /// </summary>
+        /// Returns attributes related to AWS Elastic Beanstalk that are associated with the calling
+        /// AWS account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes operation.</param>
+        ///  
+        /// <para>
+        /// The result currently has one set of attributes—resource quotas.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -810,15 +1063,16 @@ namespace Amazon.ElasticBeanstalk
         Task<DescribeApplicationsResponse> DescribeApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeApplications operation.
+        /// Returns the descriptions of existing applications.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
         Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -858,15 +1112,16 @@ namespace Amazon.ElasticBeanstalk
         Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeApplicationVersions operation.
+        /// Retrieve a list of application versions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
         Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -924,15 +1179,22 @@ namespace Amazon.ElasticBeanstalk
         Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeConfigurationOptions operation.
+        /// Describes the configuration options that are used in a particular configuration template
+        /// or environment, or that a specified solution stack defines. The description includes
+        /// the values the options, their default values, and an indication of the required action
+        /// on a running environment if an option value is changed.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
         Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -973,15 +1235,38 @@ namespace Amazon.ElasticBeanstalk
         DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeConfigurationSettings operation.
-        /// </summary>
+        /// Returns a description of the settings for the specified configuration set, that is,
+        /// either a configuration template or the configuration set associated with a running
+        /// environment.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings operation.</param>
+        ///  
+        /// <para>
+        /// When describing the settings for the configuration set associated with a running environment,
+        /// it is possible to receive two sets of setting descriptions. One is the deployed configuration
+        /// set, and the other is a draft configuration of an environment that is either in the
+        /// process of deployment or that failed to deploy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DeleteEnvironmentConfiguration</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
         Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1008,15 +1293,24 @@ namespace Amazon.ElasticBeanstalk
         DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEnvironmentHealth operation.
+        /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
         Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1038,15 +1332,19 @@ namespace Amazon.ElasticBeanstalk
         DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActionHistory operation.
+        /// Lists an environment's completed and failed managed actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActionHistory service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
         Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1068,15 +1366,19 @@ namespace Amazon.ElasticBeanstalk
         DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActions operation.
+        /// Lists an environment's upcoming and in-progress managed actions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
         Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1098,15 +1400,19 @@ namespace Amazon.ElasticBeanstalk
         DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEnvironmentResources operation.
+        /// Returns AWS resources for this environment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
         Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1146,15 +1452,16 @@ namespace Amazon.ElasticBeanstalk
         Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEnvironments operation.
+        /// Returns descriptions for existing environments.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
         Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1212,15 +1519,22 @@ namespace Amazon.ElasticBeanstalk
         Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEvents operation.
-        /// </summary>
+        /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents operation.</param>
+        ///  <note> 
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1248,15 +1562,25 @@ namespace Amazon.ElasticBeanstalk
         DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeInstancesHealth operation.
+        /// Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
+        /// This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// health reporting</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeInstancesHealth service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InvalidRequestException">
+        /// One or more input parameters is not valid. Please correct the input parameters and
+        /// try the operation again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
         Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1281,15 +1605,22 @@ namespace Amazon.ElasticBeanstalk
         DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribePlatformVersion operation.
+        /// Describes the version of the platform.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
         Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1332,15 +1663,17 @@ namespace Amazon.ElasticBeanstalk
         Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAvailableSolutionStacks operation.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
         Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1365,15 +1698,22 @@ namespace Amazon.ElasticBeanstalk
         ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPlatformVersions operation.
+        /// Lists the available platforms.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPlatformVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
         Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1409,15 +1749,33 @@ namespace Amazon.ElasticBeanstalk
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
-        /// </summary>
+        /// Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains
+        /// a list of tag key-value pairs.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
+        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1440,15 +1798,20 @@ namespace Amazon.ElasticBeanstalk
         RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RebuildEnvironment operation.
+        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
+        /// load balancer, etc.) for a specified environment and forces a restart.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
         Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1493,15 +1856,42 @@ namespace Amazon.ElasticBeanstalk
         RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RequestEnvironmentInfo operation.
-        /// </summary>
+        /// Initiates a request to compile the specified type of information of the deployed environment.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo operation.</param>
+        ///  
+        /// <para>
+        ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
+        /// the application server log files of every Amazon EC2 instance in your environment.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
+        /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
+        /// and .NET containers do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RetrieveEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RequestEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
         Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1521,15 +1911,17 @@ namespace Amazon.ElasticBeanstalk
         RestartAppServerResponse RestartAppServer(RestartAppServerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RestartAppServer operation.
+        /// Causes the environment to restart the application container server running on each
+        /// Amazon EC2 instance.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestartAppServer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RestartAppServer service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
         Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1558,15 +1950,26 @@ namespace Amazon.ElasticBeanstalk
         RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RetrieveEnvironmentInfo operation.
-        /// </summary>
+        /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo operation.</param>
+        ///  
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RequestEnvironmentInfo</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
         Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1585,15 +1988,16 @@ namespace Amazon.ElasticBeanstalk
         SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
+        /// Swaps the CNAMEs of two environments.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SwapEnvironmentCNAMEs service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
         Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1615,15 +2019,19 @@ namespace Amazon.ElasticBeanstalk
         TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TerminateEnvironment operation.
+        /// Terminates the specified environment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
         Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1649,15 +2057,23 @@ namespace Amazon.ElasticBeanstalk
         UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApplication operation.
-        /// </summary>
+        /// Updates the specified application to have the specified properties.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation.</param>
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// unchanged. To clear these properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1679,15 +2095,19 @@ namespace Amazon.ElasticBeanstalk
         UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApplicationResourceLifecycle operation.
+        /// Modifies lifecycle settings for an application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationResourceLifecycle operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationResourceLifecycle service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApplicationResourceLifecycle service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
         Task<UpdateApplicationResourceLifecycleResponse> UpdateApplicationResourceLifecycleAsync(UpdateApplicationResourceLifecycleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1713,15 +2133,23 @@ namespace Amazon.ElasticBeanstalk
         UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApplicationVersion operation.
-        /// </summary>
+        /// Updates the specified application version to have the specified properties.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion operation.</param>
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// unchanged. To clear properties, specify an empty string.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
         Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1762,15 +2190,38 @@ namespace Amazon.ElasticBeanstalk
         UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConfigurationTemplate operation.
-        /// </summary>
+        /// Updates the specified configuration template to have the specified properties or configuration
+        /// option values.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate operation.</param>
+        ///  <note> 
+        /// <para>
+        /// If a property (for example, <code>ApplicationName</code>) is not provided, its value
+        /// remains unchanged. To clear such properties, specify an empty string.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related Topics
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeConfigurationOptions</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
         Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1810,15 +2261,37 @@ namespace Amazon.ElasticBeanstalk
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateEnvironment operation.
-        /// </summary>
+        /// Updates the environment description, deploys a new application version, updates the
+        /// configuration settings to an entirely new configuration template, or updates select
+        /// configuration option values in the running environment.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment operation.</param>
+        ///  
+        /// <para>
+        ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
+        /// Beanstalk returns an <code>InvalidParameterCombination</code> error. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  When updating the configuration settings to a new template or individual settings,
+        /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+        /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
+        /// values. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1888,15 +2361,67 @@ namespace Amazon.ElasticBeanstalk
         UpdateTagsForResourceResponse UpdateTagsForResource(UpdateTagsForResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTagsForResource operation.
-        /// </summary>
+        /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
+        /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource operation.</param>
+        ///  
+        /// <para>
+        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// For details about environment tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
+        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a custom IAM user policy to control permission to this operation, specify
+        /// one of the following two virtual actions (or both) instead of the API operation name:
+        /// </para>
+        ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+        /// tags to add in the <code>TagsToAdd</code> parameter.
+        /// </para>
+        ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+        /// tag keys to remove in the <code>TagsToRemove</code> parameter.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating
+        /// a Custom User Policy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceTypeNotSupportedException">
+        /// The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyTagsException">
+        /// The number of tags in the resource would exceed the number of tags that each resource
+        /// can have.
+        /// 
+        ///  
+        /// <para>
+        /// To calculate this, the operation considers both the number of tags the resource already
+        /// has and the tags this operation would add if it succeeded.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
         Task<UpdateTagsForResourceResponse> UpdateTagsForResourceAsync(UpdateTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1928,15 +2453,29 @@ namespace Amazon.ElasticBeanstalk
         ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ValidateConfigurationSettings operation.
-        /// </summary>
+        /// Takes a set of configuration settings and either a configuration template or environment,
+        /// and determines whether those values are valid.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings operation.</param>
+        ///  
+        /// <para>
+        /// This action returns a list of messages indicating any errors or warnings associated
+        /// with the selection of option values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
         Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

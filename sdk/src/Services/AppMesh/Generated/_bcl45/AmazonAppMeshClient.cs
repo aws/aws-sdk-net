@@ -316,15 +316,52 @@ namespace Amazon.AppMesh
             return Invoke<CreateMeshResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateMesh operation.
-        /// </summary>
+        /// Creates a service mesh. A service mesh is a logical boundary for network traffic 
+        ///        between the services that reside within it.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateMesh operation.</param>
+        ///          
+        /// <para>
+        /// After you create your service mesh, you can create virtual services, virtual nodes,
+        ///         virtual routers, and routes to distribute traffic between the applications
+        /// in your         mesh.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMesh service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateMesh service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         public virtual Task<CreateMeshResponse> CreateMeshAsync(CreateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -397,15 +434,57 @@ namespace Amazon.AppMesh
             return Invoke<CreateRouteResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateRoute operation.
-        /// </summary>
+        /// Creates a route that is associated with a virtual router.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateRoute operation.</param>
+        ///          
+        /// <para>
+        /// You can use the <code>prefix</code> parameter in your route specification for path-based
+        ///         routing of requests. For example, if your virtual service name is        
+        ///    <code>my-service.local</code> and you want the route to match requests to     
+        ///       <code>my-service.local/metrics</code>, your prefix should be         <code>/metrics</code>.
+        /// </para>
+        ///          
+        /// <para>
+        /// If your route matches a request, you can distribute traffic to one or more target
+        ///         virtual nodes with relative weighting.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -495,15 +574,74 @@ namespace Amazon.AppMesh
             return Invoke<CreateVirtualNodeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateVirtualNode operation.
-        /// </summary>
+        /// Creates a virtual node within a service mesh.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualNode operation.</param>
+        ///          
+        /// <para>
+        /// A virtual node acts as a logical pointer to a particular task group, such as an Amazon
+        /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
+        /// must specify the         DNS service discovery hostname for your task group.
+        /// </para>
+        ///          
+        /// <para>
+        /// Any inbound traffic that your virtual node expects should be specified as a      
+        ///      <code>listener</code>. Any outbound traffic that your virtual node expects to
+        /// reach         should be specified as a <code>backend</code>.
+        /// </para>
+        ///          
+        /// <para>
+        /// The response metadata for your new virtual node contains the <code>arn</code> that
+        /// is         associated with the virtual node. Set this value (either the full ARN or
+        /// the truncated         resource name: for example, <code>mesh/default/virtualNode/simpleapp</code>)
+        /// as the            <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for
+        /// your task group's Envoy         proxy container in your task definition or pod spec.
+        /// This is then mapped to the            <code>node.id</code> and <code>node.cluster</code>
+        /// Envoy parameters.
+        /// </para>
+        ///          <note>            
+        /// <para>
+        /// If you require your Envoy stats or tracing to use a different name, you can override
+        ///            the <code>node.cluster</code> value that is set by               <code>APPMESH_VIRTUAL_NODE_NAME</code>
+        /// with the               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
+        /// </para>
+        ///          </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualNode service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateVirtualNode service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         public virtual Task<CreateVirtualNodeResponse> CreateVirtualNodeAsync(CreateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -575,15 +713,56 @@ namespace Amazon.AppMesh
             return Invoke<CreateVirtualRouterResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateVirtualRouter operation.
-        /// </summary>
+        /// Creates a virtual router within a service mesh.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualRouter operation.</param>
+        ///          
+        /// <para>
+        /// Any inbound traffic that your virtual router expects should be specified as a    
+        ///        <code>listener</code>. 
+        /// </para>
+        ///          
+        /// <para>
+        /// Virtual routers handle traffic for one or more virtual services within your mesh.
+        /// After         you create your virtual router, create and associate routes for your
+        /// virtual router that         direct incoming requests to different virtual nodes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualRouter service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateVirtualRouter service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         public virtual Task<CreateVirtualRouterResponse> CreateVirtualRouterAsync(CreateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -652,15 +831,53 @@ namespace Amazon.AppMesh
             return Invoke<CreateVirtualServiceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateVirtualService operation.
-        /// </summary>
+        /// Creates a virtual service within a service mesh.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualService operation.</param>
+        ///          
+        /// <para>
+        /// A virtual service is an abstraction of a real service that is provided by a      
+        ///   virtual node directly or indirectly by means of a virtual router. Dependent services
+        /// call         your virtual service by its <code>virtualServiceName</code>, and those
+        /// requests are routed         to the virtual node or virtual router that is specified
+        /// as the provider for the virtual         service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVirtualService service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateVirtualService service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">REST API Reference for CreateVirtualService Operation</seealso>
         public virtual Task<CreateVirtualServiceResponse> CreateVirtualServiceAsync(CreateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -722,15 +939,46 @@ namespace Amazon.AppMesh
             return Invoke<DeleteMeshResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteMesh operation.
-        /// </summary>
+        /// Deletes an existing service mesh.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMesh operation.</param>
+        ///          
+        /// <para>
+        /// You must delete all resources (virtual services, routes, virtual routers, and virtual
+        /// nodes)         in the service mesh before you can delete the mesh itself.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMesh service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteMesh service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         public virtual Task<DeleteMeshResponse> DeleteMeshAsync(DeleteMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -786,15 +1034,40 @@ namespace Amazon.AppMesh
             return Invoke<DeleteRouteResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRoute operation.
+        /// Deletes an existing route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -856,15 +1129,46 @@ namespace Amazon.AppMesh
             return Invoke<DeleteVirtualNodeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteVirtualNode operation.
-        /// </summary>
+        /// Deletes an existing virtual node.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualNode operation.</param>
+        ///          
+        /// <para>
+        /// You must delete any virtual services that list a virtual node as a service provider
+        ///         before you can delete the virtual node itself.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualNode service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteVirtualNode service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         public virtual Task<DeleteVirtualNodeResponse> DeleteVirtualNodeAsync(DeleteVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -926,15 +1230,46 @@ namespace Amazon.AppMesh
             return Invoke<DeleteVirtualRouterResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteVirtualRouter operation.
-        /// </summary>
+        /// Deletes an existing virtual router.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualRouter operation.</param>
+        ///          
+        /// <para>
+        /// You must delete any routes associated with the virtual router before you can delete
+        /// the         router itself.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualRouter service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteVirtualRouter service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ResourceInUseException">
+        /// You can't delete the specified resource because it's in use or required by another
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         public virtual Task<DeleteVirtualRouterResponse> DeleteVirtualRouterAsync(DeleteVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -986,15 +1321,36 @@ namespace Amazon.AppMesh
             return Invoke<DeleteVirtualServiceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteVirtualService operation.
+        /// Deletes an existing virtual service.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualService operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualService service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteVirtualService service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService">REST API Reference for DeleteVirtualService Operation</seealso>
         public virtual Task<DeleteVirtualServiceResponse> DeleteVirtualServiceAsync(DeleteVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1046,15 +1402,36 @@ namespace Amazon.AppMesh
             return Invoke<DescribeMeshResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeMesh operation.
+        /// Describes an existing service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeMesh operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMesh service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeMesh service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         public virtual Task<DescribeMeshResponse> DescribeMeshAsync(DescribeMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1106,15 +1483,36 @@ namespace Amazon.AppMesh
             return Invoke<DescribeRouteResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeRoute operation.
+        /// Describes an existing route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         public virtual Task<DescribeRouteResponse> DescribeRouteAsync(DescribeRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1166,15 +1564,36 @@ namespace Amazon.AppMesh
             return Invoke<DescribeVirtualNodeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeVirtualNode operation.
+        /// Describes an existing virtual node.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualNode operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualNode service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeVirtualNode service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         public virtual Task<DescribeVirtualNodeResponse> DescribeVirtualNodeAsync(DescribeVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1226,15 +1645,36 @@ namespace Amazon.AppMesh
             return Invoke<DescribeVirtualRouterResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeVirtualRouter operation.
+        /// Describes an existing virtual router.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualRouter operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualRouter service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeVirtualRouter service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         public virtual Task<DescribeVirtualRouterResponse> DescribeVirtualRouterAsync(DescribeVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1286,15 +1726,36 @@ namespace Amazon.AppMesh
             return Invoke<DescribeVirtualServiceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeVirtualService operation.
+        /// Describes an existing virtual service.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualService operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualService service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeVirtualService service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService">REST API Reference for DescribeVirtualService Operation</seealso>
         public virtual Task<DescribeVirtualServiceResponse> DescribeVirtualServiceAsync(DescribeVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1346,15 +1807,36 @@ namespace Amazon.AppMesh
             return Invoke<ListMeshesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListMeshes operation.
+        /// Returns a list of existing service meshes.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMeshes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListMeshes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListMeshes service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         public virtual Task<ListMeshesResponse> ListMeshesAsync(ListMeshesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1406,15 +1888,36 @@ namespace Amazon.AppMesh
             return Invoke<ListRoutesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListRoutes operation.
+        /// Returns a list of existing routes in a service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListRoutes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListRoutes service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual Task<ListRoutesResponse> ListRoutesAsync(ListRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1458,15 +1961,28 @@ namespace Amazon.AppMesh
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// List the tags for an App Mesh resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1518,15 +2034,36 @@ namespace Amazon.AppMesh
             return Invoke<ListVirtualNodesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListVirtualNodes operation.
+        /// Returns a list of existing virtual nodes.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListVirtualNodes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualNodes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListVirtualNodes service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         public virtual Task<ListVirtualNodesResponse> ListVirtualNodesAsync(ListVirtualNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1578,15 +2115,36 @@ namespace Amazon.AppMesh
             return Invoke<ListVirtualRoutersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListVirtualRouters operation.
+        /// Returns a list of existing virtual routers in a service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListVirtualRouters operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualRouters service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListVirtualRouters service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         public virtual Task<ListVirtualRoutersResponse> ListVirtualRoutersAsync(ListVirtualRoutersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1638,15 +2196,36 @@ namespace Amazon.AppMesh
             return Invoke<ListVirtualServicesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListVirtualServices operation.
+        /// Returns a list of existing virtual services in a service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListVirtualServices operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualServices service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListVirtualServices service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices">REST API Reference for ListVirtualServices Operation</seealso>
         public virtual Task<ListVirtualServicesResponse> ListVirtualServicesAsync(ListVirtualServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1698,15 +2277,36 @@ namespace Amazon.AppMesh
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Associates the specified tags to a resource with the specified         <code>resourceArn</code>.
+        /// If existing tags on a resource aren't specified in the         request parameters,
+        /// they aren't changed. When a resource is deleted, the tags         associated with
+        /// that resource are also deleted.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyTagsException">
+        /// The request exceeds the maximum allowed number of tags allowed per resource. The current
+        ///         limit is 50 user tags per resource. You must reduce the number of tags in
+        /// the request. None         of the tags in this request were applied.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1750,15 +2350,28 @@ namespace Amazon.AppMesh
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Deletes specified tags from a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1814,15 +2427,40 @@ namespace Amazon.AppMesh
             return Invoke<UpdateMeshResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateMesh operation.
+        /// Updates an existing service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateMesh operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMesh service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateMesh service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
         public virtual Task<UpdateMeshResponse> UpdateMeshAsync(UpdateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1882,15 +2520,44 @@ namespace Amazon.AppMesh
             return Invoke<UpdateRouteResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRoute operation.
+        /// Updates an existing route for a specified service mesh and virtual router.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRoute service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1950,15 +2617,44 @@ namespace Amazon.AppMesh
             return Invoke<UpdateVirtualNodeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateVirtualNode operation.
+        /// Updates an existing virtual node in a specified service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualNode operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualNode service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateVirtualNode service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         public virtual Task<UpdateVirtualNodeResponse> UpdateVirtualNodeAsync(UpdateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2018,15 +2714,44 @@ namespace Amazon.AppMesh
             return Invoke<UpdateVirtualRouterResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateVirtualRouter operation.
+        /// Updates an existing virtual router in a specified service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualRouter operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualRouter service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateVirtualRouter service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         public virtual Task<UpdateVirtualRouterResponse> UpdateVirtualRouterAsync(UpdateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2086,15 +2811,44 @@ namespace Amazon.AppMesh
             return Invoke<UpdateVirtualServiceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateVirtualService operation.
+        /// Updates an existing virtual service in a specified service mesh.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualService operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualService service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateVirtualService service method, as returned by AppMesh.</returns>
+        /// <exception cref="Amazon.AppMesh.Model.BadRequestException">
+        /// The request syntax was malformed. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ConflictException">
+        /// The request contains a client token that was used for a previous update resource call
+        ///         with different specifications. Try the request again with a new client token.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ForbiddenException">
+        /// You don't have permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.InternalServerErrorException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
+        /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service
+        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
+        /// The specified resource doesn't exist. Check your request syntax and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppMesh.Model.TooManyRequestsException">
+        /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
+        ///         account. For best results, use an increasing or variable sleep interval between
+        /// requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService">REST API Reference for UpdateVirtualService Operation</seealso>
         public virtual Task<UpdateVirtualServiceResponse> UpdateVirtualServiceAsync(UpdateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

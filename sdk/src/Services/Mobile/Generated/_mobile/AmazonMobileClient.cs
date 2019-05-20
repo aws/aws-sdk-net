@@ -257,15 +257,43 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateProject operation.
+        /// Creates an AWS Mobile Hub project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.LimitExceededException">
+        /// There are too many AWS Mobile Hub projects in the account or the account has exceeded
+        /// the maximum number of resources in some AWS service. You should create another sub-account
+        /// using AWS Organizations or remove some resources and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -290,15 +318,34 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteProject operation.
+        /// Delets a project in AWS Mobile Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -323,15 +370,38 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeBundle operation.
+        /// Get the bundle details for the requested bundle id.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeBundle operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBundle service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeBundle service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
         public virtual Task<DescribeBundleResponse> DescribeBundleAsync(DescribeBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -356,15 +426,38 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeProject operation.
+        /// Gets details about a project in AWS Mobile Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeProject service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -389,15 +482,39 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ExportBundle operation.
+        /// Generates customized software development kit (SDK) and or tool packages used to
+        /// integrate mobile web or mobile app clients with backend AWS resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ExportBundle operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ExportBundle service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ExportBundle service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
         public virtual Task<ExportBundleResponse> ExportBundleAsync(ExportBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -422,15 +539,40 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ExportProject operation.
+        /// Exports project configuration to a snapshot which can be downloaded and shared. Note
+        /// that mobile app push credentials are encrypted in exported projects, so they can only
+        /// be shared successfully within the same AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ExportProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ExportProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ExportProject service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
         public virtual Task<ExportProjectResponse> ExportProjectAsync(ExportProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -455,15 +597,35 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBundles operation.
+        /// List all available bundles.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBundles operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBundles service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListBundles service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
         public virtual Task<ListBundlesResponse> ListBundlesAsync(ListBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -488,15 +650,35 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListProjects operation.
+        /// Lists projects in AWS Mobile Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListProjects operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -521,15 +703,46 @@ namespace Amazon.Mobile
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// Update an existing project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by Mobile.</returns>
+        /// <exception cref="Amazon.Mobile.Model.AccountActionRequiredException">
+        /// Account Action is required in order to continue the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.BadRequestException">
+        /// The request cannot be processed because some parameter is not valid or the project
+        /// state prevents the operation from being performed.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.InternalFailureException">
+        /// The service has encountered an unexpected error condition which prevents it from
+        /// servicing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.LimitExceededException">
+        /// There are too many AWS Mobile Hub projects in the account or the account has exceeded
+        /// the maximum number of resources in some AWS service. You should create another sub-account
+        /// using AWS Organizations or remove some resources and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.NotFoundException">
+        /// No entity can be found with the specified identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable. The request should be retried after some
+        /// time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.TooManyRequestsException">
+        /// Too many requests have been received for this AWS account in too short a time. The
+        /// request should be retried after some time delay.
+        /// </exception>
+        /// <exception cref="Amazon.Mobile.Model.UnauthorizedException">
+        /// Credentials of the caller are insufficient to authorize the request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

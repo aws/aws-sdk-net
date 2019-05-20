@@ -286,15 +286,22 @@ namespace Amazon.CostAndUsageReport
             return Invoke<DeleteReportDefinitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteReportDefinition operation.
+        /// Deletes the specified report.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteReportDefinition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReportDefinition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteReportDefinition service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -329,15 +336,19 @@ namespace Amazon.CostAndUsageReport
             return Invoke<DescribeReportDefinitionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeReportDefinitions operation.
+        /// Lists the AWS Cost and Usage reports available to this account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeReportDefinitions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReportDefinitions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeReportDefinitions service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -383,15 +394,30 @@ namespace Amazon.CostAndUsageReport
             return Invoke<PutReportDefinitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutReportDefinition operation.
+        /// Creates a new report using the description that you provide.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutReportDefinition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutReportDefinition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutReportDefinition service method, as returned by CostAndUsageReport.</returns>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.DuplicateReportNameException">
+        /// A report with the specified name already exists in the account. Specify a different
+        /// report name.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ReportLimitReachedException">
+        /// This account already has five reports defined. To define a new report, you must delete
+        /// an existing report.
+        /// </exception>
+        /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

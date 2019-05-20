@@ -72,15 +72,37 @@ namespace Amazon.IoTEvents
         CreateDetectorModelResponse CreateDetectorModel(CreateDetectorModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDetectorModel operation.
+        /// Creates a detector model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDetectorModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDetectorModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDetectorModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateDetectorModel">REST API Reference for CreateDetectorModel Operation</seealso>
         Task<CreateDetectorModelResponse> CreateDetectorModelAsync(CreateDetectorModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -114,15 +136,31 @@ namespace Amazon.IoTEvents
         CreateInputResponse CreateInput(CreateInputRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateInput operation.
+        /// Creates an input.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateInput operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInput service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateInput service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateInput">REST API Reference for CreateInput Operation</seealso>
         Task<CreateInputResponse> CreateInputAsync(CreateInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -159,15 +197,34 @@ namespace Amazon.IoTEvents
         DeleteDetectorModelResponse DeleteDetectorModel(DeleteDetectorModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDetectorModel operation.
+        /// Deletes a detector model. Any active instances of the detector model are also deleted.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDetectorModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteDetectorModel">REST API Reference for DeleteDetectorModel Operation</seealso>
         Task<DeleteDetectorModelResponse> DeleteDetectorModelAsync(DeleteDetectorModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -204,15 +261,34 @@ namespace Amazon.IoTEvents
         DeleteInputResponse DeleteInput(DeleteInputRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteInput operation.
+        /// Deletes an input.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInput operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInput service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteInput service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         Task<DeleteInputResponse> DeleteInputAsync(DeleteInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -247,15 +323,32 @@ namespace Amazon.IoTEvents
         DescribeDetectorModelResponse DescribeDetectorModel(DescribeDetectorModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDetectorModel operation.
+        /// Describes a detector model. If the <code>version</code> parameter is not specified,
+        /// information about the latest version is returned.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDetectorModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">REST API Reference for DescribeDetectorModel Operation</seealso>
         Task<DescribeDetectorModelResponse> DescribeDetectorModelAsync(DescribeDetectorModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -289,15 +382,31 @@ namespace Amazon.IoTEvents
         DescribeInputResponse DescribeInput(DescribeInputRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeInput operation.
+        /// Describes an input.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInput operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInput service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeInput service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         Task<DescribeInputResponse> DescribeInputAsync(DescribeInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -334,15 +443,34 @@ namespace Amazon.IoTEvents
         DescribeLoggingOptionsResponse DescribeLoggingOptions(DescribeLoggingOptionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLoggingOptions operation.
+        /// Retrieves the current settings of the AWS IoT Events logging options.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingOptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoggingOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeLoggingOptions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.UnsupportedOperationException">
+        /// The requested operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         Task<DescribeLoggingOptionsResponse> DescribeLoggingOptionsAsync(DescribeLoggingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -374,15 +502,29 @@ namespace Amazon.IoTEvents
         ListDetectorModelsResponse ListDetectorModels(ListDetectorModelsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDetectorModels operation.
+        /// Lists the detector models you have created. Only the metadata associated with each
+        /// detector model is returned.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDetectorModels operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectorModels service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDetectorModels service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModels">REST API Reference for ListDetectorModels Operation</seealso>
         Task<ListDetectorModelsResponse> ListDetectorModelsAsync(ListDetectorModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -417,15 +559,32 @@ namespace Amazon.IoTEvents
         ListDetectorModelVersionsResponse ListDetectorModelVersions(ListDetectorModelVersionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDetectorModelVersions operation.
+        /// Lists all the versions of a detector model. Only the metadata associated with each
+        /// detector model version is returned.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDetectorModelVersions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectorModelVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDetectorModelVersions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModelVersions">REST API Reference for ListDetectorModelVersions Operation</seealso>
         Task<ListDetectorModelVersionsResponse> ListDetectorModelVersionsAsync(ListDetectorModelVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -456,15 +615,28 @@ namespace Amazon.IoTEvents
         ListInputsResponse ListInputs(ListInputsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListInputs operation.
+        /// Lists the inputs you have created.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListInputs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListInputs service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputs">REST API Reference for ListInputs Operation</seealso>
         Task<ListInputsResponse> ListInputsAsync(ListInputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -498,15 +670,31 @@ namespace Amazon.IoTEvents
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Lists the tags (metadata) you have assigned to the resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -551,15 +739,42 @@ namespace Amazon.IoTEvents
         PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutLoggingOptions operation.
-        /// </summary>
+        /// Sets or updates the AWS IoT Events logging options.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions operation.</param>
+        ///  
+        /// <para>
+        /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
+        /// up to one minute for the change to take effect. Also, if you change the policy attached
+        /// to the role you specified in the roleArn field (for example, to correct an invalid
+        /// policy) it takes up to five minutes for that change to take effect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutLoggingOptions service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.UnsupportedOperationException">
+        /// The requested operation is not supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         Task<PutLoggingOptionsResponse> PutLoggingOptionsAsync(PutLoggingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -597,15 +812,35 @@ namespace Amazon.IoTEvents
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Add to or modifies the tags of the given resource. Tags are metadata which can be
+        /// used to manage a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -639,15 +874,31 @@ namespace Amazon.IoTEvents
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes the given tags (metadata) from the resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -685,15 +936,35 @@ namespace Amazon.IoTEvents
         UpdateDetectorModelResponse UpdateDetectorModel(UpdateDetectorModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDetectorModel operation.
+        /// Updates a detector model. Detectors (instances) spawned by the previous version will
+        /// be deleted and re-created as new inputs arrive.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDetectorModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDetectorModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDetectorModel service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">REST API Reference for UpdateDetectorModel Operation</seealso>
         Task<UpdateDetectorModelResponse> UpdateDetectorModelAsync(UpdateDetectorModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -730,15 +1001,34 @@ namespace Amazon.IoTEvents
         UpdateInputResponse UpdateInput(UpdateInputRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateInput operation.
+        /// Updates an input.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateInput operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInput service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateInput service method, as returned by IoTEvents.</returns>
+        /// <exception cref="Amazon.IoTEvents.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceInUseException">
+        /// The resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEvents.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         Task<UpdateInputResponse> UpdateInputAsync(UpdateInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

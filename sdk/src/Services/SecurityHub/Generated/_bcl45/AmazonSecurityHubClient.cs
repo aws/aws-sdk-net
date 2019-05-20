@@ -285,15 +285,33 @@ namespace Amazon.SecurityHub
             return Invoke<AcceptInvitationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AcceptInvitation operation.
+        /// Accepts the invitation to be monitored by a Security Hub master account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AcceptInvitation service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -342,15 +360,33 @@ namespace Amazon.SecurityHub
             return Invoke<BatchDisableStandardsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDisableStandards operation.
+        /// Disables the standards specified by the standards subscription ARNs. In the context
+        /// of Security Hub, supported standards (for example, CIS AWS Foundations) are automated
+        /// and continuous checks that help determine your compliance status against security
+        /// industry (including AWS) best practices.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisableStandards service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDisableStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">REST API Reference for BatchDisableStandards Operation</seealso>
         public virtual Task<BatchDisableStandardsResponse> BatchDisableStandardsAsync(BatchDisableStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -399,15 +435,33 @@ namespace Amazon.SecurityHub
             return Invoke<BatchEnableStandardsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchEnableStandards operation.
+        /// Enables the standards specified by the standards ARNs. In the context of Security
+        /// Hub, supported standards (for example, CIS AWS Foundations) are automated and continuous
+        /// checks that help determine your compliance status against security industry (including
+        /// AWS) best practices.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchEnableStandards service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchEnableStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         public virtual Task<BatchEnableStandardsResponse> BatchEnableStandardsAsync(BatchEnableStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -454,15 +508,31 @@ namespace Amazon.SecurityHub
             return Invoke<BatchImportFindingsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchImportFindings operation.
+        /// Imports security findings generated from an integrated third-party product into Security
+        /// Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchImportFindings service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">REST API Reference for BatchImportFindings Operation</seealso>
         public virtual Task<BatchImportFindingsResponse> BatchImportFindingsAsync(BatchImportFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -512,15 +582,34 @@ namespace Amazon.SecurityHub
             return Invoke<CreateInsightResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateInsight operation.
+        /// Creates an insight, which is a consolidation of findings that identifies a security
+        /// area that requires attention or intervention.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateInsight operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInsight service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateInsight service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateInsight">REST API Reference for CreateInsight Operation</seealso>
         public virtual Task<CreateInsightResponse> CreateInsightAsync(CreateInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -571,15 +660,35 @@ namespace Amazon.SecurityHub
             return Invoke<CreateMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateMembers operation.
+        /// Creates Security Hub member accounts associated with the account used for this action,
+        /// which becomes the Security Hub Master account. Security Hub must be enabled in the
+        /// account used to make this request.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual Task<CreateMembersResponse> CreateMembersAsync(CreateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -625,15 +734,30 @@ namespace Amazon.SecurityHub
             return Invoke<DeclineInvitationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeclineInvitations operation.
+        /// Declines invitations that are sent to this AWS account (invitee) from the AWS accounts
+        /// (inviters) that are specified by the provided <code>AccountIds</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeclineInvitations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -682,15 +806,33 @@ namespace Amazon.SecurityHub
             return Invoke<DeleteInsightResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteInsight operation.
+        /// Deletes the insight specified by the <code>InsightArn</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteInsight service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         public virtual Task<DeleteInsightResponse> DeleteInsightAsync(DeleteInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -740,15 +882,34 @@ namespace Amazon.SecurityHub
             return Invoke<DeleteInvitationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteInvitations operation.
+        /// Deletes invitations that were sent to theis AWS account (invitee) by the AWS accounts
+        /// (inviters) that are specified by their account IDs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteInvitations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -797,15 +958,33 @@ namespace Amazon.SecurityHub
             return Invoke<DeleteMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteMembers operation.
+        /// Deletes the Security Hub member accounts that the account IDs specify.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual Task<DeleteMembersResponse> DeleteMembersAsync(DeleteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -851,15 +1030,30 @@ namespace Amazon.SecurityHub
             return Invoke<DescribeProductsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeProducts operation.
+        /// Returns information about the products available that you can subscribe to.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProducts operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProducts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeProducts service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">REST API Reference for DescribeProducts Operation</seealso>
         public virtual Task<DescribeProductsResponse> DescribeProductsAsync(DescribeProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -909,15 +1103,34 @@ namespace Amazon.SecurityHub
             return Invoke<DisableImportFindingsForProductResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableImportFindingsForProduct operation.
+        /// Cancels the subscription that allows a findings-generating solution (product) to import
+        /// its findings into Security Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableImportFindingsForProduct service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableImportFindingsForProduct service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct">REST API Reference for DisableImportFindingsForProduct Operation</seealso>
         public virtual Task<DisableImportFindingsForProductResponse> DisableImportFindingsForProductAsync(DisableImportFindingsForProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -962,15 +1175,29 @@ namespace Amazon.SecurityHub
             return Invoke<DisableSecurityHubResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableSecurityHub operation.
+        /// Disables the Security Hub service.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSecurityHub service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableSecurityHub service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">REST API Reference for DisableSecurityHub Operation</seealso>
         public virtual Task<DisableSecurityHubResponse> DisableSecurityHubAsync(DisableSecurityHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1019,15 +1246,33 @@ namespace Amazon.SecurityHub
             return Invoke<DisassociateFromMasterAccountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateFromMasterAccount operation.
+        /// Disassociates the current Security Hub member account from its master account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateFromMasterAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1077,15 +1322,34 @@ namespace Amazon.SecurityHub
             return Invoke<DisassociateMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateMembers operation.
+        /// Disassociates the Security Hub member accounts that are specified by the account IDs
+        /// from their master account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         public virtual Task<DisassociateMembersResponse> DisassociateMembersAsync(DisassociateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1135,15 +1399,34 @@ namespace Amazon.SecurityHub
             return Invoke<EnableImportFindingsForProductResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableImportFindingsForProduct operation.
+        /// Sets up the subscription that enables a findings-generating solution (product) to
+        /// import its findings into Security Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableImportFindingsForProduct service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableImportFindingsForProduct service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">REST API Reference for EnableImportFindingsForProduct Operation</seealso>
         public virtual Task<EnableImportFindingsForProductResponse> EnableImportFindingsForProductAsync(EnableImportFindingsForProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1191,15 +1474,32 @@ namespace Amazon.SecurityHub
             return Invoke<EnableSecurityHubResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableSecurityHub operation.
+        /// Enables the Security Hub service.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSecurityHub service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableSecurityHub service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">REST API Reference for EnableSecurityHub Operation</seealso>
         public virtual Task<EnableSecurityHubResponse> EnableSecurityHubAsync(EnableSecurityHubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1245,15 +1545,30 @@ namespace Amazon.SecurityHub
             return Invoke<GetEnabledStandardsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetEnabledStandards operation.
+        /// Lists and describes enabled standards.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetEnabledStandards operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledStandards service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetEnabledStandards service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">REST API Reference for GetEnabledStandards Operation</seealso>
         public virtual Task<GetEnabledStandardsResponse> GetEnabledStandardsAsync(GetEnabledStandardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1299,15 +1614,30 @@ namespace Amazon.SecurityHub
             return Invoke<GetFindingsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetFindings operation.
+        /// Lists and describes Security Hub-aggregated findings that filter attributes specify.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetFindings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetFindings service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1356,15 +1686,33 @@ namespace Amazon.SecurityHub
             return Invoke<GetInsightResultsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetInsightResults operation.
+        /// Lists the results of the Security Hub insight that the insight ARN specifies.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetInsightResults operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightResults service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetInsightResults service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">REST API Reference for GetInsightResults Operation</seealso>
         public virtual Task<GetInsightResultsResponse> GetInsightResultsAsync(GetInsightResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1413,15 +1761,33 @@ namespace Amazon.SecurityHub
             return Invoke<GetInsightsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetInsights operation.
+        /// Lists and describes insights that insight ARNs specify.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetInsights operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsights service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetInsights service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">REST API Reference for GetInsights Operation</seealso>
         public virtual Task<GetInsightsResponse> GetInsightsAsync(GetInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1468,15 +1834,31 @@ namespace Amazon.SecurityHub
             return Invoke<GetInvitationsCountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetInvitationsCount operation.
+        /// Returns the count of all Security Hub membership invitations that were sent to the
+        /// current member account, not including the currently accepted invitation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetInvitationsCount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvitationsCount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetInvitationsCount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1525,15 +1907,33 @@ namespace Amazon.SecurityHub
             return Invoke<GetMasterAccountResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMasterAccount operation.
+        /// Provides the details for the Security Hub master account to the current member account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMasterAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1582,15 +1982,33 @@ namespace Amazon.SecurityHub
             return Invoke<GetMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMembers operation.
+        /// Returns the details on the Security Hub member accounts that the account IDs specify.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1641,15 +2059,35 @@ namespace Amazon.SecurityHub
             return Invoke<InviteMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the InviteMembers operation.
+        /// Invites other AWS accounts to enable Security Hub and become Security Hub member accounts.
+        /// When an account accepts the invitation and becomes a member account, the master account
+        /// can view Security Hub findings of the member account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the InviteMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the InviteMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         public virtual Task<InviteMembersResponse> InviteMembersAsync(InviteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1692,15 +2130,27 @@ namespace Amazon.SecurityHub
             return Invoke<ListEnabledProductsForImportResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListEnabledProductsForImport operation.
+        /// Lists all findings-generating solutions (products) whose findings you have subscribed
+        /// to receive in Security Hub.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListEnabledProductsForImport operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnabledProductsForImport service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListEnabledProductsForImport service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">REST API Reference for ListEnabledProductsForImport Operation</seealso>
         public virtual Task<ListEnabledProductsForImportResponse> ListEnabledProductsForImportAsync(ListEnabledProductsForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1746,15 +2196,30 @@ namespace Amazon.SecurityHub
             return Invoke<ListInvitationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListInvitations operation.
+        /// Lists all Security Hub membership invitations that were sent to the current AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListInvitations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListInvitations service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1800,15 +2265,30 @@ namespace Amazon.SecurityHub
             return Invoke<ListMembersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListMembers operation.
+        /// Lists details about all member accounts for the current Security Hub master account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMembers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListMembers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1853,15 +2333,29 @@ namespace Amazon.SecurityHub
             return Invoke<ListProductSubscribersResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListProductSubscribers operation.
+        /// Returns a list of account IDs that are subscribed to the product.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListProductSubscribers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductSubscribers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListProductSubscribers service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">REST API Reference for ListProductSubscribers Operation</seealso>
         public virtual Task<ListProductSubscribersResponse> ListProductSubscribersAsync(ListProductSubscribersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1912,15 +2406,35 @@ namespace Amazon.SecurityHub
             return Invoke<UpdateFindingsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateFindings operation.
+        /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
+        /// findings that the filter attributes specify. Any member account that can view the
+        /// finding also sees the update to the finding.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateFindings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateFindings service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">REST API Reference for UpdateFindings Operation</seealso>
         public virtual Task<UpdateFindingsResponse> UpdateFindingsAsync(UpdateFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1969,15 +2483,33 @@ namespace Amazon.SecurityHub
             return Invoke<UpdateInsightResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateInsight operation.
+        /// Updates the Security Hub insight that the insight ARN specifies.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateInsight operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInsight service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateInsight service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">REST API Reference for UpdateInsight Operation</seealso>
         public virtual Task<UpdateInsightResponse> UpdateInsightAsync(UpdateInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

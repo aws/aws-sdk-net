@@ -35,28 +35,6 @@
 <#+
     }
 
-    // Generates documentation for async calls based on the operation name
-	public void AddAsyncDocumentation(Operation operation)
-    {
-#>
-        /// <summary>
-        /// Initiates the asynchronous execution of the <#=operation.Name#> operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-<#+
-        if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
-        {
-#>
-        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
-<#+
-        }
-    }
-
 	// Generates documentation for async calls for unity based on the operation name
 	public void AddUnityAsyncDocumentation(Operation operation, bool isSupportedOnlyByUnityWebRequest = false)
     {
@@ -243,16 +221,6 @@
 #>
         /// </summary>
 <#+
-    if (isAsync && !isUnity)
-    {
-
-	  // follows Async Pattern but is not unity
-#>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-<#+
-    }
 	if(isUnity)
 	{
 		if(isAsync)
@@ -274,6 +242,16 @@
     {
 #>
         /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> service method.</param>
+<#+
+    }
+    if (isAsync && !isUnity)
+    {
+
+	  // follows Async Pattern but is not unity
+#>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
 <#+
     }
 #>

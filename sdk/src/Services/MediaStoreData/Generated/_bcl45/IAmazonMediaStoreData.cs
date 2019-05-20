@@ -61,15 +61,25 @@ namespace Amazon.MediaStoreData
         DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteObject operation.
+        /// Deletes an object at the specified path.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteObject service method, as returned by MediaStoreData.</returns>
+        /// <exception cref="Amazon.MediaStoreData.Model.ContainerNotFoundException">
+        /// The specified container was not found for the specified account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.ObjectNotFoundException">
+        /// Could not perform an operation on an object that does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -97,15 +107,25 @@ namespace Amazon.MediaStoreData
         DescribeObjectResponse DescribeObject(DescribeObjectRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeObject operation.
+        /// Gets the headers for an object at the specified path.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeObject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeObject service method, as returned by MediaStoreData.</returns>
+        /// <exception cref="Amazon.MediaStoreData.Model.ContainerNotFoundException">
+        /// The specified container was not found for the specified account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.ObjectNotFoundException">
+        /// Could not perform an operation on an object that does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">REST API Reference for DescribeObject Operation</seealso>
         Task<DescribeObjectResponse> DescribeObjectAsync(DescribeObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -138,15 +158,30 @@ namespace Amazon.MediaStoreData
         GetObjectResponse GetObject(GetObjectRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetObject operation.
+        /// Downloads the object at the specified path. If the object’s upload availability is
+        /// set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
+        /// if it’s still uploading the object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetObject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by MediaStoreData.</returns>
+        /// <exception cref="Amazon.MediaStoreData.Model.ContainerNotFoundException">
+        /// The specified container was not found for the specified account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.ObjectNotFoundException">
+        /// Could not perform an operation on an object that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.RequestedRangeNotSatisfiableException">
+        /// The requested content range is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">REST API Reference for GetObject Operation</seealso>
         Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -171,15 +206,22 @@ namespace Amazon.MediaStoreData
         ListItemsResponse ListItems(ListItemsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListItems operation.
+        /// Provides a list of metadata entries about folders and objects in the specified folder.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListItems operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListItems service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListItems service method, as returned by MediaStoreData.</returns>
+        /// <exception cref="Amazon.MediaStoreData.Model.ContainerNotFoundException">
+        /// The specified container was not found for the specified account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">REST API Reference for ListItems Operation</seealso>
         Task<ListItemsResponse> ListItemsAsync(ListItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -205,15 +247,23 @@ namespace Amazon.MediaStoreData
         PutObjectResponse PutObject(PutObjectRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutObject operation.
+        /// Uploads an object to the specified path. Object sizes are limited to 25 MB for standard
+        /// upload availability and 10 MB for streaming upload availability.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutObject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutObject service method, as returned by MediaStoreData.</returns>
+        /// <exception cref="Amazon.MediaStoreData.Model.ContainerNotFoundException">
+        /// The specified container was not found for the specified account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStoreData.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">REST API Reference for PutObject Operation</seealso>
         Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

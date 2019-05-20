@@ -285,15 +285,43 @@ namespace Amazon.AppSync
             return Invoke<CreateApiKeyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApiKey operation.
+        /// Creates a unique key that you can distribute to clients who are executing your API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApiKey service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ApiKeyLimitExceededException">
+        /// The API key exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
+        /// The API key expiration must be set to a value between 1 and 365 days from creation
+        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -343,15 +371,34 @@ namespace Amazon.AppSync
             return Invoke<CreateDataSourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDataSource operation.
+        /// Creates a <code>DataSource</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDataSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDataSource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -403,15 +450,36 @@ namespace Amazon.AppSync
             return Invoke<CreateFunctionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateFunction operation.
-        /// </summary>
+        /// Creates a <code>Function</code> object.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation.</param>
+        ///  
+        /// <para>
+        /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+        /// logic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -463,15 +531,36 @@ namespace Amazon.AppSync
             return Invoke<CreateGraphqlApiResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateGraphqlApi operation.
+        /// Creates a <code>GraphqlApi</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateGraphqlApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGraphqlApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ApiLimitExceededException">
+        /// The GraphQL API exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         public virtual Task<CreateGraphqlApiResponse> CreateGraphqlApiAsync(CreateGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -523,15 +612,36 @@ namespace Amazon.AppSync
             return Invoke<CreateResolverResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateResolver operation.
-        /// </summary>
+        /// Creates a <code>Resolver</code> object.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateResolver operation.</param>
+        ///  
+        /// <para>
+        /// A resolver converts incoming requests into a format that a data source can understand
+        /// and converts the data source's responses into GraphQL.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResolver service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         public virtual Task<CreateResolverResponse> CreateResolverAsync(CreateResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -581,15 +691,34 @@ namespace Amazon.AppSync
             return Invoke<CreateTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateType operation.
+        /// Creates a <code>Type</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateType operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateType service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         public virtual Task<CreateTypeResponse> CreateTypeAsync(CreateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -635,15 +764,30 @@ namespace Amazon.AppSync
             return Invoke<DeleteApiKeyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApiKey operation.
+        /// Deletes an API key.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApiKey service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -693,15 +837,34 @@ namespace Amazon.AppSync
             return Invoke<DeleteDataSourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDataSource operation.
+        /// Deletes a <code>DataSource</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDataSource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -747,15 +910,30 @@ namespace Amazon.AppSync
             return Invoke<DeleteFunctionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// Deletes a <code>Function</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -808,15 +986,37 @@ namespace Amazon.AppSync
             return Invoke<DeleteGraphqlApiResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteGraphqlApi operation.
+        /// Deletes a <code>GraphqlApi</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteGraphqlApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGraphqlApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         public virtual Task<DeleteGraphqlApiResponse> DeleteGraphqlApiAsync(DeleteGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -862,15 +1062,30 @@ namespace Amazon.AppSync
             return Invoke<DeleteResolverResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteResolver operation.
+        /// Deletes a <code>Resolver</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResolver operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResolver service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         public virtual Task<DeleteResolverResponse> DeleteResolverAsync(DeleteResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -920,15 +1135,34 @@ namespace Amazon.AppSync
             return Invoke<DeleteTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteType operation.
+        /// Deletes a <code>Type</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteType operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteType service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         public virtual Task<DeleteTypeResponse> DeleteTypeAsync(DeleteTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -978,15 +1212,34 @@ namespace Amazon.AppSync
             return Invoke<GetDataSourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDataSource operation.
+        /// Retrieves a <code>DataSource</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDataSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDataSource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1029,15 +1282,27 @@ namespace Amazon.AppSync
             return Invoke<GetFunctionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetFunction operation.
+        /// Get a <code>Function</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1086,15 +1351,33 @@ namespace Amazon.AppSync
             return Invoke<GetGraphqlApiResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetGraphqlApi operation.
+        /// Retrieves a <code>GraphqlApi</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetGraphqlApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetGraphqlApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         public virtual Task<GetGraphqlApiResponse> GetGraphqlApiAsync(GetGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1139,15 +1422,29 @@ namespace Amazon.AppSync
             return Invoke<GetIntrospectionSchemaResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntrospectionSchema operation.
+        /// Retrieves the introspection schema for a GraphQL API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntrospectionSchema operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntrospectionSchema service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntrospectionSchema service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.GraphQLSchemaException">
+        /// The GraphQL schema is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         public virtual Task<GetIntrospectionSchemaResponse> GetIntrospectionSchemaAsync(GetIntrospectionSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1190,15 +1487,27 @@ namespace Amazon.AppSync
             return Invoke<GetResolverResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResolver operation.
+        /// Retrieves a <code>Resolver</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResolver operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolver service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         public virtual Task<GetResolverResponse> GetResolverAsync(GetResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1244,15 +1553,30 @@ namespace Amazon.AppSync
             return Invoke<GetSchemaCreationStatusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSchemaCreationStatus operation.
+        /// Retrieves the current status of a schema creation operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSchemaCreationStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaCreationStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSchemaCreationStatus service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         public virtual Task<GetSchemaCreationStatusResponse> GetSchemaCreationStatusAsync(GetSchemaCreationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1302,15 +1626,34 @@ namespace Amazon.AppSync
             return Invoke<GetTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetType operation.
+        /// Retrieves a <code>Type</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetType operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetType service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         public virtual Task<GetTypeResponse> GetTypeAsync(GetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1365,15 +1708,39 @@ namespace Amazon.AppSync
             return Invoke<ListApiKeysResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApiKeys operation.
-        /// </summary>
+        /// Lists the API keys for a given API.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApiKeys operation.</param>
+        ///  <note> 
+        /// <para>
+        /// API keys are deleted automatically sometime after they expire. However, they may still
+        /// be included in the response until they have actually been deleted. You can safely
+        /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
+        /// deleted.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApiKeys service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListApiKeys service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         public virtual Task<ListApiKeysResponse> ListApiKeysAsync(ListApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1419,15 +1786,30 @@ namespace Amazon.AppSync
             return Invoke<ListDataSourcesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDataSources operation.
+        /// Lists the data sources for a given API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDataSources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDataSources service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1473,15 +1855,30 @@ namespace Amazon.AppSync
             return Invoke<ListFunctionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListFunctions operation.
+        /// List multiple functions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1523,15 +1920,26 @@ namespace Amazon.AppSync
             return Invoke<ListGraphqlApisResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListGraphqlApis operation.
+        /// Lists your GraphQL APIs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListGraphqlApis operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListGraphqlApis service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListGraphqlApis service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         public virtual Task<ListGraphqlApisResponse> ListGraphqlApisAsync(ListGraphqlApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1577,15 +1985,30 @@ namespace Amazon.AppSync
             return Invoke<ListResolversResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListResolvers operation.
+        /// Lists the resolvers for a given API and type.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListResolvers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolvers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListResolvers service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         public virtual Task<ListResolversResponse> ListResolversAsync(ListResolversRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1631,15 +2054,30 @@ namespace Amazon.AppSync
             return Invoke<ListResolversByFunctionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListResolversByFunction operation.
+        /// List the resolvers that are associated with a specific function.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListResolversByFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolversByFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListResolversByFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         public virtual Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(ListResolversByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1691,15 +2129,36 @@ namespace Amazon.AppSync
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Lists the tags for a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1749,15 +2208,34 @@ namespace Amazon.AppSync
             return Invoke<ListTypesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTypes operation.
+        /// Lists the types for a given API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTypes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1812,15 +2290,39 @@ namespace Amazon.AppSync
             return Invoke<StartSchemaCreationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartSchemaCreation operation.
-        /// </summary>
+        /// Adds a new schema to your GraphQL API.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartSchemaCreation operation.</param>
+        ///  
+        /// <para>
+        /// This operation is asynchronous. Use to determine when it has completed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaCreation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartSchemaCreation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         public virtual Task<StartSchemaCreationResponse> StartSchemaCreationAsync(StartSchemaCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1872,15 +2374,36 @@ namespace Amazon.AppSync
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Tags a resource with user-supplied tags.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1932,15 +2455,36 @@ namespace Amazon.AppSync
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Untags a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1993,15 +2537,37 @@ namespace Amazon.AppSync
             return Invoke<UpdateApiKeyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApiKey operation.
+        /// Updates an API key.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApiKey service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
+        /// The API key expiration must be set to a value between 1 and 365 days from creation
+        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2051,15 +2617,34 @@ namespace Amazon.AppSync
             return Invoke<UpdateDataSourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDataSource operation.
+        /// Updates a <code>DataSource</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDataSource service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2105,15 +2690,30 @@ namespace Amazon.AppSync
             return Invoke<UpdateFunctionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateFunction operation.
+        /// Updates a <code>Function</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2166,15 +2766,37 @@ namespace Amazon.AppSync
             return Invoke<UpdateGraphqlApiResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateGraphqlApi operation.
+        /// Updates a <code>GraphqlApi</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateGraphqlApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGraphqlApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You do not have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         public virtual Task<UpdateGraphqlApiResponse> UpdateGraphqlApiAsync(UpdateGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2220,15 +2842,30 @@ namespace Amazon.AppSync
             return Invoke<UpdateResolverResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateResolver operation.
+        /// Updates a <code>Resolver</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateResolver operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolver service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         public virtual Task<UpdateResolverResponse> UpdateResolverAsync(UpdateResolverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2278,15 +2915,34 @@ namespace Amazon.AppSync
             return Invoke<UpdateTypeResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateType operation.
+        /// Updates a <code>Type</code> object.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateType operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateType service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         public virtual Task<UpdateTypeResponse> UpdateTypeAsync(UpdateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

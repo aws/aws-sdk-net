@@ -45,15 +45,38 @@ namespace Amazon.APIGateway
         #region  CreateApiKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApiKey operation.
-        /// </summary>
+        /// Create an <a>ApiKey</a> resource. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApiKey operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -61,15 +84,35 @@ namespace Amazon.APIGateway
         #region  CreateAuthorizer
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
-        /// </summary>
+        /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -77,15 +120,32 @@ namespace Amazon.APIGateway
         #region  CreateBasePathMapping
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateBasePathMapping operation.
+        /// Creates a new <a>BasePathMapping</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateBasePathMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBasePathMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateBasePathMappingResponse> CreateBasePathMappingAsync(CreateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -93,15 +153,40 @@ namespace Amazon.APIGateway
         #region  CreateDeployment
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDeployment operation.
+        /// Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a> callable
+        /// over the internet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -109,15 +194,35 @@ namespace Amazon.APIGateway
         #region  CreateDocumentationPart
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -125,15 +230,35 @@ namespace Amazon.APIGateway
         #region  CreateDocumentationVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -141,15 +266,29 @@ namespace Amazon.APIGateway
         #region  CreateDomainName
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDomainName operation.
+        /// Creates a new domain name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -157,15 +296,35 @@ namespace Amazon.APIGateway
         #region  CreateModel
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateModel operation.
+        /// Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -173,15 +332,32 @@ namespace Amazon.APIGateway
         #region  CreateRequestValidator
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateRequestValidator operation.
+        /// Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -189,15 +365,35 @@ namespace Amazon.APIGateway
         #region  CreateResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateResource operation.
+        /// Creates a <a>Resource</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -205,15 +401,29 @@ namespace Amazon.APIGateway
         #region  CreateRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateRestApi operation.
+        /// Creates a new <a>RestApi</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateRestApiResponse> CreateRestApiAsync(CreateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -221,15 +431,36 @@ namespace Amazon.APIGateway
         #region  CreateStage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateStage operation.
+        /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
+        /// for the API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -237,15 +468,36 @@ namespace Amazon.APIGateway
         #region  CreateUsagePlan
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateUsagePlan operation.
+        /// Creates a usage plan with the throttle and quota limits, as well as the associated
+        /// API stages, specified in the payload.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -253,15 +505,32 @@ namespace Amazon.APIGateway
         #region  CreateUsagePlanKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateUsagePlanKey operation.
+        /// Creates a usage plan key for adding an existing API key to a usage plan.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -269,15 +538,28 @@ namespace Amazon.APIGateway
         #region  CreateVpcLink
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateVpcLink operation.
+        /// Creates a VPC link, under the caller's account in a selected region, in an asynchronous
+        /// operation that typically takes 2-4 minutes to complete and become operational. The
+        /// caller must have permissions to create and update VPC Endpoint services.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcLink service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<CreateVpcLinkResponse> CreateVpcLinkAsync(CreateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -285,15 +567,25 @@ namespace Amazon.APIGateway
         #region  DeleteApiKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApiKey operation.
+        /// Deletes the <a>ApiKey</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -301,15 +593,35 @@ namespace Amazon.APIGateway
         #region  DeleteAuthorizer
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
-        /// </summary>
+        /// Deletes an existing <a>Authorizer</a> resource.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -317,15 +629,32 @@ namespace Amazon.APIGateway
         #region  DeleteBasePathMapping
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBasePathMapping operation.
+        /// Deletes the <a>BasePathMapping</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBasePathMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBasePathMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteBasePathMappingResponse> DeleteBasePathMappingAsync(DeleteBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -333,15 +662,29 @@ namespace Amazon.APIGateway
         #region  DeleteClientCertificate
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteClientCertificate operation.
+        /// Deletes the <a>ClientCertificate</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteClientCertificate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientCertificate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteClientCertificateResponse> DeleteClientCertificateAsync(DeleteClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -349,15 +692,30 @@ namespace Amazon.APIGateway
         #region  DeleteDeployment
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDeployment operation.
+        /// Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed if there
+        /// are no <a>Stage</a> resources associated with it.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -365,15 +723,32 @@ namespace Amazon.APIGateway
         #region  DeleteDocumentationPart
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -381,15 +756,32 @@ namespace Amazon.APIGateway
         #region  DeleteDocumentationVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -397,15 +789,25 @@ namespace Amazon.APIGateway
         #region  DeleteDomainName
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDomainName operation.
+        /// Deletes the <a>DomainName</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -413,15 +815,33 @@ namespace Amazon.APIGateway
         #region  DeleteGatewayResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteGatewayResponse operation.
+        /// Clears any customization of a <a>GatewayResponse</a> of a specified response type
+        /// on the given <a>RestApi</a> and resets it with the default settings.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteGatewayResponseResponse> DeleteGatewayResponseAsync(DeleteGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -429,15 +849,28 @@ namespace Amazon.APIGateway
         #region  DeleteIntegration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIntegration operation.
+        /// Represents a delete integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -445,15 +878,32 @@ namespace Amazon.APIGateway
         #region  DeleteIntegrationResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIntegrationResponse operation.
+        /// Represents a delete integration response.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -461,15 +911,28 @@ namespace Amazon.APIGateway
         #region  DeleteMethod
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteMethod operation.
+        /// Deletes an existing <a>Method</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMethod operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMethod service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteMethodResponse> DeleteMethodAsync(DeleteMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -477,15 +940,32 @@ namespace Amazon.APIGateway
         #region  DeleteMethodResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteMethodResponse operation.
+        /// Deletes an existing <a>MethodResponse</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteMethodResponseResponse> DeleteMethodResponseAsync(DeleteMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -493,15 +973,32 @@ namespace Amazon.APIGateway
         #region  DeleteModel
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteModel operation.
+        /// Deletes a model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -509,15 +1006,32 @@ namespace Amazon.APIGateway
         #region  DeleteRequestValidator
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRequestValidator operation.
+        /// Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -525,15 +1039,32 @@ namespace Amazon.APIGateway
         #region  DeleteResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteResource operation.
+        /// Deletes a <a>Resource</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -541,15 +1072,29 @@ namespace Amazon.APIGateway
         #region  DeleteRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRestApi operation.
+        /// Deletes the specified API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteRestApiResponse> DeleteRestApiAsync(DeleteRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -557,15 +1102,29 @@ namespace Amazon.APIGateway
         #region  DeleteStage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteStage operation.
+        /// Deletes a <a>Stage</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -573,15 +1132,29 @@ namespace Amazon.APIGateway
         #region  DeleteUsagePlan
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteUsagePlan operation.
+        /// Deletes a usage plan of a given plan Id.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -589,15 +1162,33 @@ namespace Amazon.APIGateway
         #region  DeleteUsagePlanKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteUsagePlanKey operation.
+        /// Deletes a usage plan key and remove the underlying API key from the associated usage
+        /// plan.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -605,15 +1196,29 @@ namespace Amazon.APIGateway
         #region  DeleteVpcLink
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteVpcLink operation.
+        /// Deletes an existing <a>VpcLink</a> of a specified identifier.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<DeleteVpcLinkResponse> DeleteVpcLinkAsync(DeleteVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -621,15 +1226,29 @@ namespace Amazon.APIGateway
         #region  FlushStageAuthorizersCache
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the FlushStageAuthorizersCache operation.
+        /// Flushes all authorizer cache entries on a stage.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the FlushStageAuthorizersCache service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -637,15 +1256,29 @@ namespace Amazon.APIGateway
         #region  FlushStageCache
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the FlushStageCache operation.
+        /// Flushes a stage's cache.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the FlushStageCache operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageCache service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the FlushStageCache service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<FlushStageCacheResponse> FlushStageCacheAsync(FlushStageCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -653,15 +1286,25 @@ namespace Amazon.APIGateway
         #region  GenerateClientCertificate
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GenerateClientCertificate operation.
+        /// Generates a <a>ClientCertificate</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GenerateClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GenerateClientCertificateResponse> GenerateClientCertificateAsync(GenerateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -669,15 +1312,25 @@ namespace Amazon.APIGateway
         #region  GetAccount
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAccount operation.
+        /// Gets information about the current <a>Account</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAccount service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -685,15 +1338,25 @@ namespace Amazon.APIGateway
         #region  GetApiKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApiKey operation.
+        /// Gets information about the current <a>ApiKey</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetApiKeyResponse> GetApiKeyAsync(GetApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -701,15 +1364,26 @@ namespace Amazon.APIGateway
         #region  GetApiKeys
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApiKeys operation.
+        /// Gets information about the current <a>ApiKeys</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApiKeys operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiKeys service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetApiKeysResponse> GetApiKeysAsync(GetApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -717,15 +1391,28 @@ namespace Amazon.APIGateway
         #region  GetAuthorizer
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAuthorizer operation.
-        /// </summary>
+        /// Describe an existing <a>Authorizer</a> resource.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -733,15 +1420,32 @@ namespace Amazon.APIGateway
         #region  GetAuthorizers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAuthorizers operation.
-        /// </summary>
+        /// Describe an existing <a>Authorizers</a> resource.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAuthorizers service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -749,15 +1453,25 @@ namespace Amazon.APIGateway
         #region  GetBasePathMapping
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBasePathMapping operation.
+        /// Describe a <a>BasePathMapping</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBasePathMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetBasePathMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetBasePathMappingResponse> GetBasePathMappingAsync(GetBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -765,15 +1479,25 @@ namespace Amazon.APIGateway
         #region  GetBasePathMappings
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBasePathMappings operation.
+        /// Represents a collection of <a>BasePathMapping</a> resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBasePathMappings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetBasePathMappings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetBasePathMappings service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetBasePathMappingsResponse> GetBasePathMappingsAsync(GetBasePathMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -781,15 +1505,25 @@ namespace Amazon.APIGateway
         #region  GetClientCertificate
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetClientCertificate operation.
+        /// Gets information about the current <a>ClientCertificate</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetClientCertificateResponse> GetClientCertificateAsync(GetClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -797,15 +1531,26 @@ namespace Amazon.APIGateway
         #region  GetClientCertificates
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetClientCertificates operation.
+        /// Gets a collection of <a>ClientCertificate</a> resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetClientCertificates service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetClientCertificatesResponse> GetClientCertificatesAsync(GetClientCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -813,15 +1558,29 @@ namespace Amazon.APIGateway
         #region  GetDeployment
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDeployment operation.
+        /// Gets information about a <a>Deployment</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -829,15 +1588,30 @@ namespace Amazon.APIGateway
         #region  GetDeployments
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDeployments operation.
+        /// Gets information about a <a>Deployments</a> collection.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDeployments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDeployments service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -845,15 +1619,25 @@ namespace Amazon.APIGateway
         #region  GetDocumentationPart
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -861,15 +1645,29 @@ namespace Amazon.APIGateway
         #region  GetDocumentationParts
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -877,15 +1675,25 @@ namespace Amazon.APIGateway
         #region  GetDocumentationVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -893,15 +1701,29 @@ namespace Amazon.APIGateway
         #region  GetDocumentationVersions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -909,15 +1731,30 @@ namespace Amazon.APIGateway
         #region  GetDomainName
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDomainName operation.
+        /// Represents a domain name that is contained in a simpler, more intuitive URL that can
+        /// be called.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -925,15 +1762,26 @@ namespace Amazon.APIGateway
         #region  GetDomainNames
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDomainNames operation.
+        /// Represents a collection of <a>DomainName</a> resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDomainNames operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainNames service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDomainNames service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -941,15 +1789,32 @@ namespace Amazon.APIGateway
         #region  GetExport
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetExport operation.
+        /// Exports a deployed version of a <a>RestApi</a> in a specified format.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetExport operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetExport service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -957,15 +1822,25 @@ namespace Amazon.APIGateway
         #region  GetGatewayResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetGatewayResponse operation.
+        /// Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetGatewayResponseResponse> GetGatewayResponseAsync(GetGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -973,15 +1848,32 @@ namespace Amazon.APIGateway
         #region  GetGatewayResponses
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetGatewayResponses operation.
+        /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
+        /// developer has not added any definitions for gateway responses, the result will be
+        /// the API Gateway-generated default <a>GatewayResponses</a> collection for the supported
+        /// response types.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetGatewayResponses service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetGatewayResponsesResponse> GetGatewayResponsesAsync(GetGatewayResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -989,15 +1881,25 @@ namespace Amazon.APIGateway
         #region  GetIntegration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegration operation.
+        /// Get the integration settings.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1005,15 +1907,25 @@ namespace Amazon.APIGateway
         #region  GetIntegrationResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegrationResponse operation.
+        /// Represents a get integration response.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1021,15 +1933,25 @@ namespace Amazon.APIGateway
         #region  GetMethod
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMethod operation.
+        /// Describe an existing <a>Method</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMethod operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMethod service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetMethodResponse> GetMethodAsync(GetMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1037,15 +1959,25 @@ namespace Amazon.APIGateway
         #region  GetMethodResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMethodResponse operation.
+        /// Describes a <a>MethodResponse</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMethodResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMethodResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetMethodResponseResponse> GetMethodResponseAsync(GetMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1053,15 +1985,25 @@ namespace Amazon.APIGateway
         #region  GetModel
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModel operation.
+        /// Describes an existing model defined for a <a>RestApi</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1069,15 +2011,29 @@ namespace Amazon.APIGateway
         #region  GetModels
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModels operation.
+        /// Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModels operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModels service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1085,15 +2041,30 @@ namespace Amazon.APIGateway
         #region  GetModelTemplate
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModelTemplate operation.
+        /// Generates a sample mapping template that can be used to transform a payload into the
+        /// structure of a model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModelTemplate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModelTemplate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1101,15 +2072,25 @@ namespace Amazon.APIGateway
         #region  GetRequestValidator
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRequestValidator operation.
+        /// Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1117,15 +2098,29 @@ namespace Amazon.APIGateway
         #region  GetRequestValidators
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRequestValidators operation.
+        /// Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRequestValidators service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1133,15 +2128,25 @@ namespace Amazon.APIGateway
         #region  GetResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResource operation.
+        /// Lists information about a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1149,15 +2154,29 @@ namespace Amazon.APIGateway
         #region  GetResources
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResources operation.
+        /// Lists information about a collection of <a>Resource</a> resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResources service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1165,15 +2184,25 @@ namespace Amazon.APIGateway
         #region  GetRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRestApi operation.
+        /// Lists the <a>RestApi</a> resource in the collection.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetRestApiResponse> GetRestApiAsync(GetRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1181,15 +2210,26 @@ namespace Amazon.APIGateway
         #region  GetRestApis
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRestApis operation.
+        /// Lists the <a>RestApis</a> resources for your collection.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRestApis operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRestApis service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRestApis service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetRestApisResponse> GetRestApisAsync(GetRestApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1197,15 +2237,32 @@ namespace Amazon.APIGateway
         #region  GetSdk
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSdk operation.
+        /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSdk operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdk service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSdk service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetSdkResponse> GetSdkAsync(GetSdkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1213,15 +2270,25 @@ namespace Amazon.APIGateway
         #region  GetSdkType
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSdkType operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSdkType operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1229,15 +2296,22 @@ namespace Amazon.APIGateway
         #region  GetSdkTypes
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSdkTypes operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1245,15 +2319,25 @@ namespace Amazon.APIGateway
         #region  GetStage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStage operation.
+        /// Gets information about a <a>Stage</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1261,15 +2345,25 @@ namespace Amazon.APIGateway
         #region  GetStages
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStages operation.
+        /// Gets information about one or more <a>Stage</a> resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStages operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStages service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetStages service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1277,15 +2371,32 @@ namespace Amazon.APIGateway
         #region  GetTags
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTags operation.
+        /// Gets the <a>Tags</a> collection for a given resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTags service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1293,15 +2404,29 @@ namespace Amazon.APIGateway
         #region  GetUsage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUsage operation.
+        /// Gets the usage data of a usage plan in a specified time interval.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUsage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1309,15 +2434,29 @@ namespace Amazon.APIGateway
         #region  GetUsagePlan
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUsagePlan operation.
+        /// Gets a usage plan of a given plan identifier.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1325,15 +2464,29 @@ namespace Amazon.APIGateway
         #region  GetUsagePlanKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUsagePlanKey operation.
+        /// Gets a usage plan key of a given key identifier.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1341,15 +2494,30 @@ namespace Amazon.APIGateway
         #region  GetUsagePlanKeys
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUsagePlanKeys operation.
+        /// Gets all the usage plan keys representing the API keys added to a specified usage
+        /// plan.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUsagePlanKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1357,15 +2525,32 @@ namespace Amazon.APIGateway
         #region  GetUsagePlans
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUsagePlans operation.
+        /// Gets all the usage plans of the caller's account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUsagePlans service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1373,15 +2558,25 @@ namespace Amazon.APIGateway
         #region  GetVpcLink
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetVpcLink operation.
+        /// Gets a specified VPC link under the caller's account in a region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLink service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetVpcLinkResponse> GetVpcLinkAsync(GetVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1389,15 +2584,26 @@ namespace Amazon.APIGateway
         #region  GetVpcLinks
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetVpcLinks operation.
+        /// Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetVpcLinks service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<GetVpcLinksResponse> GetVpcLinksAsync(GetVpcLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1405,15 +2611,35 @@ namespace Amazon.APIGateway
         #region  ImportApiKeys
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ImportApiKeys operation.
+        /// Import API keys from an external source, such as a CSV-formatted file.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ImportApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1421,15 +2647,32 @@ namespace Amazon.APIGateway
         #region  ImportDocumentationParts
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1437,15 +2680,33 @@ namespace Amazon.APIGateway
         #region  ImportRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ImportRestApi operation.
+        /// A feature of the API Gateway control service for creating a new API from an external
+        /// API definition file.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1453,15 +2714,33 @@ namespace Amazon.APIGateway
         #region  PutGatewayResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutGatewayResponse operation.
+        /// Creates a customization of a <a>GatewayResponse</a> of a specified response type and
+        /// status code on the given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutGatewayResponseResponse> PutGatewayResponseAsync(PutGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1469,15 +2748,32 @@ namespace Amazon.APIGateway
         #region  PutIntegration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutIntegration operation.
+        /// Sets up a method's integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1485,15 +2781,35 @@ namespace Amazon.APIGateway
         #region  PutIntegrationResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutIntegrationResponse operation.
+        /// Represents a put integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutIntegrationResponseResponse> PutIntegrationResponseAsync(PutIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1501,15 +2817,35 @@ namespace Amazon.APIGateway
         #region  PutMethod
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutMethod operation.
+        /// Add a method to an existing <a>Resource</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutMethod operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutMethod service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutMethodResponse> PutMethodAsync(PutMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1517,15 +2853,35 @@ namespace Amazon.APIGateway
         #region  PutMethodResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutMethodResponse operation.
+        /// Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutMethodResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutMethodResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1533,15 +2889,37 @@ namespace Amazon.APIGateway
         #region  PutRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutRestApi operation.
+        /// A feature of the API Gateway control service for updating an existing API with an
+        /// input of external API definitions. The update can take the form of merging the supplied
+        /// definition into the existing API or overwriting the existing API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1549,15 +2927,35 @@ namespace Amazon.APIGateway
         #region  TagResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Adds or updates a tag on a given resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1565,15 +2963,33 @@ namespace Amazon.APIGateway
         #region  TestInvokeAuthorizer
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TestInvokeAuthorizer operation.
-        /// </summary>
+        /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
+        /// parameters, and an incoming request body.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer operation.</param>
+        ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+        /// custom authorizers</a> </div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TestInvokeAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1581,15 +2997,30 @@ namespace Amazon.APIGateway
         #region  TestInvokeMethod
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TestInvokeMethod operation.
+        /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
+        /// and an incoming request body.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TestInvokeMethod operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeMethod service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TestInvokeMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<TestInvokeMethodResponse> TestInvokeMethodAsync(TestInvokeMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1597,15 +3028,32 @@ namespace Amazon.APIGateway
         #region  UntagResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes a tag from a given resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1613,15 +3061,29 @@ namespace Amazon.APIGateway
         #region  UpdateAccount
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAccount operation.
+        /// Changes information about the current <a>Account</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAccount operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccount service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAccount service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1629,15 +3091,32 @@ namespace Amazon.APIGateway
         #region  UpdateApiKey
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApiKey operation.
+        /// Changes information about an <a>ApiKey</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApiKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1645,15 +3124,32 @@ namespace Amazon.APIGateway
         #region  UpdateAuthorizer
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
-        /// </summary>
+        /// Updates an existing <a>Authorizer</a> resource.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation.</param>
+        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+        /// CLI</a></div>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1661,15 +3157,32 @@ namespace Amazon.APIGateway
         #region  UpdateBasePathMapping
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateBasePathMapping operation.
+        /// Changes information about the <a>BasePathMapping</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateBasePathMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBasePathMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateBasePathMapping service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateBasePathMappingResponse> UpdateBasePathMappingAsync(UpdateBasePathMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1677,15 +3190,29 @@ namespace Amazon.APIGateway
         #region  UpdateClientCertificate
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateClientCertificate operation.
+        /// Changes information about an <a>ClientCertificate</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateClientCertificate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClientCertificate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateClientCertificate service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateClientCertificateResponse> UpdateClientCertificateAsync(UpdateClientCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1693,15 +3220,33 @@ namespace Amazon.APIGateway
         #region  UpdateDeployment
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDeployment operation.
+        /// Changes information about a <a>Deployment</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
+        /// The requested service is not available. For details see the accompanying error message.
+        /// Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1709,15 +3254,35 @@ namespace Amazon.APIGateway
         #region  UpdateDocumentationPart
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1725,15 +3290,32 @@ namespace Amazon.APIGateway
         #region  UpdateDocumentationVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1741,15 +3323,32 @@ namespace Amazon.APIGateway
         #region  UpdateDomainName
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDomainName operation.
+        /// Changes information about the <a>DomainName</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDomainName service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1757,15 +3356,29 @@ namespace Amazon.APIGateway
         #region  UpdateGatewayResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateGatewayResponse operation.
+        /// Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateGatewayResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateGatewayResponseResponse> UpdateGatewayResponseAsync(UpdateGatewayResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1773,15 +3386,32 @@ namespace Amazon.APIGateway
         #region  UpdateIntegration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIntegration operation.
+        /// Represents an update integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1789,15 +3419,32 @@ namespace Amazon.APIGateway
         #region  UpdateIntegrationResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIntegrationResponse operation.
+        /// Represents an update integration response.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1805,15 +3452,32 @@ namespace Amazon.APIGateway
         #region  UpdateMethod
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateMethod operation.
+        /// Updates an existing <a>Method</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateMethod operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMethod service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateMethodResponse> UpdateMethodAsync(UpdateMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1821,15 +3485,35 @@ namespace Amazon.APIGateway
         #region  UpdateMethodResponse
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateMethodResponse operation.
+        /// Updates an existing <a>MethodResponse</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateMethodResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMethodResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// The request exceeded the rate limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateMethodResponseResponse> UpdateMethodResponseAsync(UpdateMethodResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1837,15 +3521,32 @@ namespace Amazon.APIGateway
         #region  UpdateModel
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateModel operation.
+        /// Changes information about a model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateModel service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1853,15 +3554,29 @@ namespace Amazon.APIGateway
         #region  UpdateRequestValidator
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRequestValidator operation.
+        /// Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1869,15 +3584,32 @@ namespace Amazon.APIGateway
         #region  UpdateResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateResource operation.
+        /// Changes information about a <a>Resource</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateResource service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1885,15 +3617,32 @@ namespace Amazon.APIGateway
         #region  UpdateRestApi
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRestApi operation.
+        /// Changes information about the specified API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRestApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRestApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateRestApiResponse> UpdateRestApiAsync(UpdateRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1901,15 +3650,32 @@ namespace Amazon.APIGateway
         #region  UpdateStage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateStage operation.
+        /// Changes information about a <a>Stage</a> resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1917,15 +3683,30 @@ namespace Amazon.APIGateway
         #region  UpdateUsage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateUsage operation.
+        /// Grants a temporary extension to the remaining quota of a usage plan associated with
+        /// a specified API key.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1933,15 +3714,32 @@ namespace Amazon.APIGateway
         #region  UpdateUsagePlan
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateUsagePlan operation.
+        /// Updates a usage plan of a given plan Id.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1949,15 +3747,32 @@ namespace Amazon.APIGateway
         #region  UpdateVpcLink
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateVpcLink operation.
+        /// Updates an existing <a>VpcLink</a> of a specified identifier.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateVpcLink service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// The submitted request is not valid, for example, the input is incomplete or incorrect.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// The request has reached its throttling limit. Retry after the specified time period.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// The request is denied because the caller has insufficient permissions.
+        /// </exception>
         Task<UpdateVpcLinkResponse> UpdateVpcLinkAsync(UpdateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

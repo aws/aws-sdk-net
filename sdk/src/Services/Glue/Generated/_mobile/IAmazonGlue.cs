@@ -42,15 +42,37 @@ namespace Amazon.Glue
         #region  BatchCreatePartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchCreatePartition operation.
+        /// Creates one or more partitions in a batch operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchCreatePartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreatePartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchCreatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">REST API Reference for BatchCreatePartition Operation</seealso>
         Task<BatchCreatePartitionResponse> BatchCreatePartitionAsync(BatchCreatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -59,15 +81,22 @@ namespace Amazon.Glue
         #region  BatchDeleteConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDeleteConnection operation.
+        /// Deletes a list of connection definitions from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDeleteConnection service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteConnection">REST API Reference for BatchDeleteConnection Operation</seealso>
         Task<BatchDeleteConnectionResponse> BatchDeleteConnectionAsync(BatchDeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -76,15 +105,28 @@ namespace Amazon.Glue
         #region  BatchDeletePartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDeletePartition operation.
+        /// Deletes one or more partitions in a batch operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeletePartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeletePartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeletePartition">REST API Reference for BatchDeletePartition Operation</seealso>
         Task<BatchDeletePartitionResponse> BatchDeletePartitionAsync(BatchDeletePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -93,15 +135,42 @@ namespace Amazon.Glue
         #region  BatchDeleteTable
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDeleteTable operation.
-        /// </summary>
+        /// Deletes multiple tables at once.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTable operation.</param>
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the table versions
+        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTable service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">REST API Reference for BatchDeleteTable Operation</seealso>
         Task<BatchDeleteTableResponse> BatchDeleteTableAsync(BatchDeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -110,15 +179,28 @@ namespace Amazon.Glue
         #region  BatchDeleteTableVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDeleteTableVersion operation.
+        /// Deletes a specified batch of versions of a table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDeleteTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
         Task<BatchDeleteTableVersionResponse> BatchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -127,15 +209,25 @@ namespace Amazon.Glue
         #region  BatchGetCrawlers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetCrawlers operation.
+        /// Returns a list of resource metadata for a given list of crawler names. After calling
+        /// the <code>ListCrawlers</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCrawlers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetCrawlers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">REST API Reference for BatchGetCrawlers Operation</seealso>
         Task<BatchGetCrawlersResponse> BatchGetCrawlersAsync(BatchGetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -144,15 +236,31 @@ namespace Amazon.Glue
         #region  BatchGetDevEndpoints
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetDevEndpoints operation.
+        /// Returns a list of resource metadata for a given list of DevEndpoint names. After calling
+        /// the <code>ListDevEndpoints</code> operation, you can call this operation to access
+        /// the data to which you have been granted permissions. This operation supports all IAM
+        /// permissions, including permission conditions that uses tags.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDevEndpoints service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetDevEndpoints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">REST API Reference for BatchGetDevEndpoints Operation</seealso>
         Task<BatchGetDevEndpointsResponse> BatchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -161,15 +269,28 @@ namespace Amazon.Glue
         #region  BatchGetJobs
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetJobs operation.
+        /// Returns a list of resource metadata for a given list of job names. After calling the
+        /// <code>ListJobs</code> operation, you can call this operation to access the data to
+        /// which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetJobs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetJobs">REST API Reference for BatchGetJobs Operation</seealso>
         Task<BatchGetJobsResponse> BatchGetJobsAsync(BatchGetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -178,15 +299,31 @@ namespace Amazon.Glue
         #region  BatchGetPartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetPartition operation.
+        /// Retrieves partitions in a batch request.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetPartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetPartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
         Task<BatchGetPartitionResponse> BatchGetPartitionAsync(BatchGetPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -195,15 +332,28 @@ namespace Amazon.Glue
         #region  BatchGetTriggers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetTriggers operation.
+        /// Returns a list of resource metadata for a given list of trigger names. After calling
+        /// the <code>ListTriggers</code> operation, you can call this operation to access the
+        /// data to which you have been granted permissions. This operation supports all IAM permissions,
+        /// including permission conditions that uses tags.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetTriggers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTriggers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetTriggers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTriggers">REST API Reference for BatchGetTriggers Operation</seealso>
         Task<BatchGetTriggersResponse> BatchGetTriggersAsync(BatchGetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -212,15 +362,25 @@ namespace Amazon.Glue
         #region  BatchStopJobRun
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchStopJobRun operation.
+        /// Stops one or more job runs for a specified job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchStopJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
         Task<BatchStopJobRunResponse> BatchStopJobRunAsync(BatchStopJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -229,15 +389,27 @@ namespace Amazon.Glue
         #region  CreateClassifier
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateClassifier operation.
+        /// Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>,
+        /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
+        /// depending on which field of the request is present.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateClassifier operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClassifier service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateClassifier service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">REST API Reference for CreateClassifier Operation</seealso>
         Task<CreateClassifierResponse> CreateClassifierAsync(CreateClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -246,15 +418,31 @@ namespace Amazon.Glue
         #region  CreateConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConnection operation.
+        /// Creates a connection definition in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConnection service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -263,15 +451,30 @@ namespace Amazon.Glue
         #region  CreateCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateCrawler operation.
+        /// Creates a new crawler with specified targets, role, configuration, and optional schedule.
+        /// At least one crawl target must be specified, in the <code>s3Targets</code> field,
+        /// the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">REST API Reference for CreateCrawler Operation</seealso>
         Task<CreateCrawlerResponse> CreateCrawlerAsync(CreateCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -280,15 +483,34 @@ namespace Amazon.Glue
         #region  CreateDatabase
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDatabase operation.
+        /// Creates a new database in a Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatabase operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatabase service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDatabase service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
         Task<CreateDatabaseResponse> CreateDatabaseAsync(CreateDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -297,15 +519,40 @@ namespace Amazon.Glue
         #region  CreateDevEndpoint
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDevEndpoint operation.
+        /// Creates a new DevEndpoint.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDevEndpoint operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDevEndpoint service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDevEndpoint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
         Task<CreateDevEndpointResponse> CreateDevEndpointAsync(CreateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -314,15 +561,37 @@ namespace Amazon.Glue
         #region  CreateJob
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// Creates a new job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -331,15 +600,37 @@ namespace Amazon.Glue
         #region  CreatePartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePartition operation.
+        /// Creates a new partition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
         Task<CreatePartitionResponse> CreatePartitionAsync(CreatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -348,15 +639,25 @@ namespace Amazon.Glue
         #region  CreateScript
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateScript operation.
+        /// Transforms a directed acyclic graph (DAG) into code.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateScript operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateScript service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateScript service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">REST API Reference for CreateScript Operation</seealso>
         Task<CreateScriptResponse> CreateScriptAsync(CreateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -365,15 +666,31 @@ namespace Amazon.Glue
         #region  CreateSecurityConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// Creates a new security configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -382,15 +699,37 @@ namespace Amazon.Glue
         #region  CreateTable
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateTable operation.
+        /// Creates a new table definition in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTable operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable">REST API Reference for CreateTable Operation</seealso>
         Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -399,15 +738,37 @@ namespace Amazon.Glue
         #region  CreateTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateTrigger operation.
+        /// Creates a new trigger.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
         Task<CreateTriggerResponse> CreateTriggerAsync(CreateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -416,15 +777,37 @@ namespace Amazon.Glue
         #region  CreateUserDefinedFunction
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateUserDefinedFunction operation.
+        /// Creates a new function definition in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateUserDefinedFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserDefinedFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateUserDefinedFunction service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
         Task<CreateUserDefinedFunctionResponse> CreateUserDefinedFunctionAsync(CreateUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -433,15 +816,22 @@ namespace Amazon.Glue
         #region  DeleteClassifier
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteClassifier operation.
+        /// Removes a classifier from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteClassifier operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClassifier service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteClassifier service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">REST API Reference for DeleteClassifier Operation</seealso>
         Task<DeleteClassifierResponse> DeleteClassifierAsync(DeleteClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -450,15 +840,22 @@ namespace Amazon.Glue
         #region  DeleteConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConnection operation.
+        /// Deletes a connection from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -467,15 +864,29 @@ namespace Amazon.Glue
         #region  DeleteCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCrawler operation.
+        /// Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state
+        /// is <code>RUNNING</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.CrawlerRunningException">
+        /// The operation cannot be performed because the crawler is already running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerTransitioningException">
+        /// The specified scheduler is transitioning.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">REST API Reference for DeleteCrawler Operation</seealso>
         Task<DeleteCrawlerResponse> DeleteCrawlerAsync(DeleteCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -484,15 +895,45 @@ namespace Amazon.Glue
         #region  DeleteDatabase
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDatabase operation.
-        /// </summary>
+        /// Removes a specified Database from a Data Catalog.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatabase operation.</param>
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the tables (and
+        /// all table versions and partitions that might belong to the tables) and the user-defined
+        /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
+        /// in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
+        /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources
+        /// that belong to the database.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatabase service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDatabase service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
         Task<DeleteDatabaseResponse> DeleteDatabaseAsync(DeleteDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -501,15 +942,28 @@ namespace Amazon.Glue
         #region  DeleteDevEndpoint
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDevEndpoint operation.
+        /// Deletes a specified DevEndpoint.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDevEndpoint operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevEndpoint service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDevEndpoint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
         Task<DeleteDevEndpointResponse> DeleteDevEndpointAsync(DeleteDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -518,15 +972,26 @@ namespace Amazon.Glue
         #region  DeleteJob
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// Deletes a specified job definition. If the job definition is not found, no exception
+        /// is thrown.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -535,15 +1000,28 @@ namespace Amazon.Glue
         #region  DeletePartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePartition operation.
+        /// Deletes a specified partition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartition">REST API Reference for DeletePartition Operation</seealso>
         Task<DeletePartitionResponse> DeletePartitionAsync(DeletePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -552,15 +1030,31 @@ namespace Amazon.Glue
         #region  DeleteResourcePolicy
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// Deletes a specified policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConditionCheckFailureException">
+        /// A specified condition was not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -569,15 +1063,28 @@ namespace Amazon.Glue
         #region  DeleteSecurityConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// Deletes a specified security configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -586,15 +1093,42 @@ namespace Amazon.Glue
         #region  DeleteTable
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTable operation.
-        /// </summary>
+        /// Removes a table definition from the Data Catalog.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTable operation.</param>
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the table versions
+        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -603,15 +1137,28 @@ namespace Amazon.Glue
         #region  DeleteTableVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTableVersion operation.
+        /// Deletes a specified version of a table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTableVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
         Task<DeleteTableVersionResponse> DeleteTableVersionAsync(DeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -620,15 +1167,28 @@ namespace Amazon.Glue
         #region  DeleteTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTrigger operation.
+        /// Deletes a specified trigger. If the trigger is not found, no exception is thrown.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
         Task<DeleteTriggerResponse> DeleteTriggerAsync(DeleteTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -637,15 +1197,28 @@ namespace Amazon.Glue
         #region  DeleteUserDefinedFunction
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteUserDefinedFunction operation.
+        /// Deletes an existing function definition from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteUserDefinedFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserDefinedFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteUserDefinedFunction service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUserDefinedFunction">REST API Reference for DeleteUserDefinedFunction Operation</seealso>
         Task<DeleteUserDefinedFunctionResponse> DeleteUserDefinedFunctionAsync(DeleteUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -654,15 +1227,22 @@ namespace Amazon.Glue
         #region  GetCatalogImportStatus
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCatalogImportStatus operation.
+        /// Retrieves the status of a migration operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCatalogImportStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCatalogImportStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCatalogImportStatus service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
         Task<GetCatalogImportStatusResponse> GetCatalogImportStatusAsync(GetCatalogImportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -671,15 +1251,22 @@ namespace Amazon.Glue
         #region  GetClassifier
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetClassifier operation.
+        /// Retrieve a classifier by name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetClassifier operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetClassifier service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetClassifier service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">REST API Reference for GetClassifier Operation</seealso>
         Task<GetClassifierResponse> GetClassifierAsync(GetClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -688,15 +1275,19 @@ namespace Amazon.Glue
         #region  GetClassifiers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetClassifiers operation.
+        /// Lists all classifier objects in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetClassifiers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetClassifiers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetClassifiers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">REST API Reference for GetClassifiers Operation</seealso>
         Task<GetClassifiersResponse> GetClassifiersAsync(GetClassifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -705,15 +1296,28 @@ namespace Amazon.Glue
         #region  GetConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetConnection operation.
+        /// Retrieves a connection definition from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">REST API Reference for GetConnection Operation</seealso>
         Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -722,15 +1326,28 @@ namespace Amazon.Glue
         #region  GetConnections
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetConnections operation.
+        /// Retrieves a list of connection definitions from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetConnections operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnections service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetConnections service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">REST API Reference for GetConnections Operation</seealso>
         Task<GetConnectionsResponse> GetConnectionsAsync(GetConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -739,15 +1356,22 @@ namespace Amazon.Glue
         #region  GetCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCrawler operation.
+        /// Retrieves metadata for a specified crawler.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">REST API Reference for GetCrawler Operation</seealso>
         Task<GetCrawlerResponse> GetCrawlerAsync(GetCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -756,15 +1380,19 @@ namespace Amazon.Glue
         #region  GetCrawlerMetrics
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCrawlerMetrics operation.
+        /// Retrieves metrics about specified crawlers.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCrawlerMetrics operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCrawlerMetrics service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCrawlerMetrics service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">REST API Reference for GetCrawlerMetrics Operation</seealso>
         Task<GetCrawlerMetricsResponse> GetCrawlerMetricsAsync(GetCrawlerMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -773,15 +1401,19 @@ namespace Amazon.Glue
         #region  GetCrawlers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCrawlers operation.
+        /// Retrieves metadata for all crawlers defined in the customer account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCrawlers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCrawlers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCrawlers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">REST API Reference for GetCrawlers Operation</seealso>
         Task<GetCrawlersResponse> GetCrawlersAsync(GetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -790,15 +1422,31 @@ namespace Amazon.Glue
         #region  GetDatabase
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDatabase operation.
+        /// Retrieves the definition of a specified database.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatabase operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatabase service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDatabase service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         Task<GetDatabaseResponse> GetDatabaseAsync(GetDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -807,15 +1455,28 @@ namespace Amazon.Glue
         #region  GetDatabases
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDatabases operation.
+        /// Retrieves all Databases defined in a given Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatabases operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatabases service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDatabases service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">REST API Reference for GetDatabases Operation</seealso>
         Task<GetDatabasesResponse> GetDatabasesAsync(GetDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -824,15 +1485,25 @@ namespace Amazon.Glue
         #region  GetDataCatalogEncryptionSettings
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDataCatalogEncryptionSettings operation.
+        /// Retrieves the security configuration for a specified catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDataCatalogEncryptionSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
         Task<GetDataCatalogEncryptionSettingsResponse> GetDataCatalogEncryptionSettingsAsync(GetDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -841,15 +1512,25 @@ namespace Amazon.Glue
         #region  GetDataflowGraph
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDataflowGraph operation.
+        /// Transforms a Python script into a directed acyclic graph (DAG).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDataflowGraph operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataflowGraph service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDataflowGraph service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">REST API Reference for GetDataflowGraph Operation</seealso>
         Task<GetDataflowGraphResponse> GetDataflowGraphAsync(GetDataflowGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -858,15 +1539,37 @@ namespace Amazon.Glue
         #region  GetDevEndpoint
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDevEndpoint operation.
-        /// </summary>
+        /// Retrieves information about a specified DevEndpoint.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDevEndpoint operation.</param>
+        ///  <note> 
+        /// <para>
+        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
+        /// returns only a private IP address, and the public IP address field is not populated.
+        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
+        /// address.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDevEndpoint service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDevEndpoint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">REST API Reference for GetDevEndpoint Operation</seealso>
         Task<GetDevEndpointResponse> GetDevEndpointAsync(GetDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -875,15 +1578,37 @@ namespace Amazon.Glue
         #region  GetDevEndpoints
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDevEndpoints operation.
-        /// </summary>
+        /// Retrieves all the DevEndpoints in this AWS account.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDevEndpoints operation.</param>
+        ///  <note> 
+        /// <para>
+        /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
+        /// returns only a private IP address and the public IP address field is not populated.
+        /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
+        /// address.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDevEndpoints service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDevEndpoints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">REST API Reference for GetDevEndpoints Operation</seealso>
         Task<GetDevEndpointsResponse> GetDevEndpointsAsync(GetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -892,15 +1617,28 @@ namespace Amazon.Glue
         #region  GetJob
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJob operation.
+        /// Retrieves an existing job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJob service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">REST API Reference for GetJob Operation</seealso>
         Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -909,15 +1647,28 @@ namespace Amazon.Glue
         #region  GetJobRun
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJobRun operation.
+        /// Retrieves the metadata for a given job run.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJobRun operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobRun service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
         Task<GetJobRunResponse> GetJobRunAsync(GetJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -926,15 +1677,28 @@ namespace Amazon.Glue
         #region  GetJobRuns
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJobRuns operation.
+        /// Retrieves metadata for all runs of a given job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJobRuns operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobRuns service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJobRuns service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">REST API Reference for GetJobRuns Operation</seealso>
         Task<GetJobRunsResponse> GetJobRunsAsync(GetJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -943,15 +1707,28 @@ namespace Amazon.Glue
         #region  GetJobs
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJobs operation.
+        /// Retrieves all current job definitions.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJobs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">REST API Reference for GetJobs Operation</seealso>
         Task<GetJobsResponse> GetJobsAsync(GetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -960,15 +1737,28 @@ namespace Amazon.Glue
         #region  GetMapping
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMapping operation.
+        /// Creates mappings.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMapping service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
         Task<GetMappingResponse> GetMappingAsync(GetMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -977,15 +1767,31 @@ namespace Amazon.Glue
         #region  GetPartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPartition operation.
+        /// Retrieves information about a specified partition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">REST API Reference for GetPartition Operation</seealso>
         Task<GetPartitionResponse> GetPartitionAsync(GetPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -994,15 +1800,31 @@ namespace Amazon.Glue
         #region  GetPartitions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPartitions operation.
+        /// Retrieves information about the partitions in a table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPartitions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPartitions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPartitions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">REST API Reference for GetPartitions Operation</seealso>
         Task<GetPartitionsResponse> GetPartitionsAsync(GetPartitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1011,15 +1833,25 @@ namespace Amazon.Glue
         #region  GetPlan
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPlan operation.
+        /// Gets code to perform a specified mapping.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPlan operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlan service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPlan service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">REST API Reference for GetPlan Operation</seealso>
         Task<GetPlanResponse> GetPlanAsync(GetPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1028,15 +1860,28 @@ namespace Amazon.Glue
         #region  GetResourcePolicy
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// Retrieves a specified resource policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1045,15 +1890,28 @@ namespace Amazon.Glue
         #region  GetSecurityConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSecurityConfiguration operation.
+        /// Retrieves a specified security configuration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration">REST API Reference for GetSecurityConfiguration Operation</seealso>
         Task<GetSecurityConfigurationResponse> GetSecurityConfigurationAsync(GetSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1062,15 +1920,28 @@ namespace Amazon.Glue
         #region  GetSecurityConfigurations
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetSecurityConfigurations operation.
+        /// Retrieves a list of all security configurations.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfigurations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfigurations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetSecurityConfigurations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">REST API Reference for GetSecurityConfigurations Operation</seealso>
         Task<GetSecurityConfigurationsResponse> GetSecurityConfigurationsAsync(GetSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1079,15 +1950,31 @@ namespace Amazon.Glue
         #region  GetTable
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTable operation.
+        /// Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTable operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">REST API Reference for GetTable Operation</seealso>
         Task<GetTableResponse> GetTableAsync(GetTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1096,15 +1983,31 @@ namespace Amazon.Glue
         #region  GetTables
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTables operation.
+        /// Retrieves the definitions of some or all of the tables in a given <code>Database</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTables operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTables service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTables service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables">REST API Reference for GetTables Operation</seealso>
         Task<GetTablesResponse> GetTablesAsync(GetTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1113,15 +2016,31 @@ namespace Amazon.Glue
         #region  GetTableVersion
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTableVersion operation.
+        /// Retrieves a specified version of a table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTableVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
         Task<GetTableVersionResponse> GetTableVersionAsync(GetTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1130,15 +2049,31 @@ namespace Amazon.Glue
         #region  GetTableVersions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTableVersions operation.
+        /// Retrieves a list of strings that identify available versions of a specified table.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTableVersions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTableVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions">REST API Reference for GetTableVersions Operation</seealso>
         Task<GetTableVersionsResponse> GetTableVersionsAsync(GetTableVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1147,15 +2082,28 @@ namespace Amazon.Glue
         #region  GetTags
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTags operation.
+        /// Retrieves a list of tags associated with a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTags service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTags">REST API Reference for GetTags Operation</seealso>
         Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1164,15 +2112,28 @@ namespace Amazon.Glue
         #region  GetTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTrigger operation.
+        /// Retrieves the definition of a trigger.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
         Task<GetTriggerResponse> GetTriggerAsync(GetTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1181,15 +2142,28 @@ namespace Amazon.Glue
         #region  GetTriggers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTriggers operation.
+        /// Gets all the triggers associated with a job.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTriggers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTriggers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTriggers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">REST API Reference for GetTriggers Operation</seealso>
         Task<GetTriggersResponse> GetTriggersAsync(GetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1198,15 +2172,31 @@ namespace Amazon.Glue
         #region  GetUserDefinedFunction
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUserDefinedFunction operation.
+        /// Retrieves a specified function definition from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUserDefinedFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserDefinedFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUserDefinedFunction service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">REST API Reference for GetUserDefinedFunction Operation</seealso>
         Task<GetUserDefinedFunctionResponse> GetUserDefinedFunctionAsync(GetUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1215,15 +2205,31 @@ namespace Amazon.Glue
         #region  GetUserDefinedFunctions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetUserDefinedFunctions operation.
+        /// Retrieves a multiple function definitions from the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetUserDefinedFunctions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserDefinedFunctions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetUserDefinedFunctions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">REST API Reference for GetUserDefinedFunctions Operation</seealso>
         Task<GetUserDefinedFunctionsResponse> GetUserDefinedFunctionsAsync(GetUserDefinedFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1232,15 +2238,22 @@ namespace Amazon.Glue
         #region  ImportCatalogToGlue
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ImportCatalogToGlue operation.
+        /// Imports an existing Athena Data Catalog to AWS Glue
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportCatalogToGlue operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCatalogToGlue service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ImportCatalogToGlue service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">REST API Reference for ImportCatalogToGlue Operation</seealso>
         Task<ImportCatalogToGlueResponse> ImportCatalogToGlueAsync(ImportCatalogToGlueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1249,15 +2262,28 @@ namespace Amazon.Glue
         #region  ListCrawlers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListCrawlers operation.
-        /// </summary>
+        /// Retrieves the names of all crawler resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListCrawlers operation.</param>
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawlers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListCrawlers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">REST API Reference for ListCrawlers Operation</seealso>
         Task<ListCrawlersResponse> ListCrawlersAsync(ListCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1266,15 +2292,37 @@ namespace Amazon.Glue
         #region  ListDevEndpoints
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDevEndpoints operation.
-        /// </summary>
+        /// Retrieves the names of all DevEndpoint resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints operation.</param>
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEndpoints service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDevEndpoints service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
         Task<ListDevEndpointsResponse> ListDevEndpointsAsync(ListDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1283,15 +2331,37 @@ namespace Amazon.Glue
         #region  ListJobs
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListJobs operation.
-        /// </summary>
+        /// Retrieves the names of all job resources in this AWS account, or the resources with
+        /// the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1300,15 +2370,37 @@ namespace Amazon.Glue
         #region  ListTriggers
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTriggers operation.
-        /// </summary>
+        /// Retrieves the names of all trigger resources in this AWS account, or the resources
+        /// with the specified tag. This operation allows you to see which resources are available
+        /// in your account, and their names.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTriggers operation.</param>
+        ///  
+        /// <para>
+        /// This operation takes the optional <code>Tags</code> field which you can use as a filter
+        /// on the response so that tagged resources can be retrieved as a group. If you choose
+        /// to use tags filtering, only resources with the tag will be retrieved.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTriggers service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
         Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1317,15 +2409,26 @@ namespace Amazon.Glue
         #region  PutDataCatalogEncryptionSettings
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutDataCatalogEncryptionSettings operation.
+        /// Sets the security configuration for a specified catalog. After the configuration has
+        /// been set, the specified encryption is applied to every catalog write thereafter.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutDataCatalogEncryptionSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
         Task<PutDataCatalogEncryptionSettingsResponse> PutDataCatalogEncryptionSettingsAsync(PutDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1334,15 +2437,31 @@ namespace Amazon.Glue
         #region  PutResourcePolicy
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// Sets the Data Catalog resource policy for access control.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConditionCheckFailureException">
+        /// A specified condition was not satisfied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1351,15 +2470,28 @@ namespace Amazon.Glue
         #region  ResetJobBookmark
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ResetJobBookmark operation.
+        /// Resets a bookmark entry.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ResetJobBookmark operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ResetJobBookmark service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ResetJobBookmark service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">REST API Reference for ResetJobBookmark Operation</seealso>
         Task<ResetJobBookmarkResponse> ResetJobBookmarkAsync(ResetJobBookmarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1368,15 +2500,26 @@ namespace Amazon.Glue
         #region  StartCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartCrawler operation.
+        /// Starts a crawl using the specified crawler, regardless of what is scheduled. If the
+        /// crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.CrawlerRunningException">
+        /// The operation cannot be performed because the crawler is already running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">REST API Reference for StartCrawler Operation</seealso>
         Task<StartCrawlerResponse> StartCrawlerAsync(StartCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1385,15 +2528,32 @@ namespace Amazon.Glue
         #region  StartCrawlerSchedule
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartCrawlerSchedule operation.
+        /// Changes the schedule state of the specified crawler to <code>SCHEDULED</code>, unless
+        /// the crawler is already running or the schedule state is already <code>SCHEDULED</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartCrawlerSchedule operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartCrawlerSchedule service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartCrawlerSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.NoScheduleException">
+        /// There is no applicable schedule.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerRunningException">
+        /// The specified scheduler is already running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerTransitioningException">
+        /// The specified scheduler is transitioning.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawlerSchedule">REST API Reference for StartCrawlerSchedule Operation</seealso>
         Task<StartCrawlerScheduleResponse> StartCrawlerScheduleAsync(StartCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1402,15 +2562,34 @@ namespace Amazon.Glue
         #region  StartJobRun
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartJobRun operation.
+        /// Starts a job run using a job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartJobRun operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartJobRun service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         Task<StartJobRunResponse> StartJobRunAsync(StartJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1419,15 +2598,35 @@ namespace Amazon.Glue
         #region  StartTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartTrigger operation.
+        /// Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+        /// Jobs</a> for information about how different types of trigger are started.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentRunsExceededException">
+        /// Too many jobs are being run concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">REST API Reference for StartTrigger Operation</seealso>
         Task<StartTriggerResponse> StartTriggerAsync(StartTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1436,15 +2635,28 @@ namespace Amazon.Glue
         #region  StopCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopCrawler operation.
+        /// If the specified crawler is running, stops the crawl.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.CrawlerNotRunningException">
+        /// The specified crawler is not running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.CrawlerStoppingException">
+        /// The specified crawler is stopping.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">REST API Reference for StopCrawler Operation</seealso>
         Task<StopCrawlerResponse> StopCrawlerAsync(StopCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1453,15 +2665,29 @@ namespace Amazon.Glue
         #region  StopCrawlerSchedule
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopCrawlerSchedule operation.
+        /// Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but
+        /// does not stop the crawler if it is already running.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopCrawlerSchedule operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopCrawlerSchedule service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopCrawlerSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerNotRunningException">
+        /// The specified scheduler is not running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerTransitioningException">
+        /// The specified scheduler is transitioning.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
         Task<StopCrawlerScheduleResponse> StopCrawlerScheduleAsync(StopCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1470,15 +2696,31 @@ namespace Amazon.Glue
         #region  StopTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopTrigger operation.
+        /// Stops a specified trigger.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger">REST API Reference for StopTrigger Operation</seealso>
         Task<StopTriggerResponse> StopTriggerAsync(StopTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1487,15 +2729,31 @@ namespace Amazon.Glue
         #region  TagResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS
+        /// Glue, you can tag only certain resources. For information about what resources you
+        /// can tag, see <a href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS
+        /// Tags in AWS Glue</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1504,15 +2762,28 @@ namespace Amazon.Glue
         #region  UntagResource
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes tags from a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1521,15 +2792,30 @@ namespace Amazon.Glue
         #region  UpdateClassifier
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateClassifier operation.
+        /// Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>,
+        /// a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+        /// field is present).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateClassifier operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClassifier service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateClassifier service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.VersionMismatchException">
+        /// There was a version conflict.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">REST API Reference for UpdateClassifier Operation</seealso>
         Task<UpdateClassifierResponse> UpdateClassifierAsync(UpdateClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1538,15 +2824,31 @@ namespace Amazon.Glue
         #region  UpdateConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConnection operation.
+        /// Updates a connection definition in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConnection service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1555,15 +2857,32 @@ namespace Amazon.Glue
         #region  UpdateCrawler
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateCrawler operation.
+        /// Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code>
+        /// before updating it.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateCrawler operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCrawler service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateCrawler service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.CrawlerRunningException">
+        /// The operation cannot be performed because the crawler is already running.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.VersionMismatchException">
+        /// There was a version conflict.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">REST API Reference for UpdateCrawler Operation</seealso>
         Task<UpdateCrawlerResponse> UpdateCrawlerAsync(UpdateCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1572,15 +2891,31 @@ namespace Amazon.Glue
         #region  UpdateCrawlerSchedule
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateCrawlerSchedule operation.
+        /// Updates the schedule of a crawler using a <code>cron</code> expression.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateCrawlerSchedule operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCrawlerSchedule service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateCrawlerSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.SchedulerTransitioningException">
+        /// The specified scheduler is transitioning.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.VersionMismatchException">
+        /// There was a version conflict.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
         Task<UpdateCrawlerScheduleResponse> UpdateCrawlerScheduleAsync(UpdateCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1589,15 +2924,31 @@ namespace Amazon.Glue
         #region  UpdateDatabase
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDatabase operation.
+        /// Updates an existing database definition in a Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatabase operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatabase service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDatabase service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
         Task<UpdateDatabaseResponse> UpdateDatabaseAsync(UpdateDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1606,15 +2957,31 @@ namespace Amazon.Glue
         #region  UpdateDevEndpoint
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDevEndpoint operation.
+        /// Updates a specified DevEndpoint.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDevEndpoint operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevEndpoint service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDevEndpoint service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
         Task<UpdateDevEndpointResponse> UpdateDevEndpointAsync(UpdateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1623,15 +2990,31 @@ namespace Amazon.Glue
         #region  UpdateJob
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJob operation.
+        /// Updates an existing job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJob service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1640,15 +3023,31 @@ namespace Amazon.Glue
         #region  UpdatePartition
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdatePartition operation.
+        /// Updates a partition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePartition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
         Task<UpdatePartitionResponse> UpdatePartitionAsync(UpdatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1657,15 +3056,37 @@ namespace Amazon.Glue
         #region  UpdateTable
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTable operation.
+        /// Updates a metadata table in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTable operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1674,15 +3095,31 @@ namespace Amazon.Glue
         #region  UpdateTrigger
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTrigger operation.
+        /// Updates a trigger definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
         Task<UpdateTriggerResponse> UpdateTriggerAsync(UpdateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1691,15 +3128,31 @@ namespace Amazon.Glue
         #region  UpdateUserDefinedFunction
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateUserDefinedFunction operation.
+        /// Updates an existing function definition in the Data Catalog.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateUserDefinedFunction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserDefinedFunction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateUserDefinedFunction service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction">REST API Reference for UpdateUserDefinedFunction Operation</seealso>
         Task<UpdateUserDefinedFunctionResponse> UpdateUserDefinedFunctionAsync(UpdateUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

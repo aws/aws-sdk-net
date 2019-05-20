@@ -87,7 +87,7 @@ this.FormatOperationDocumentationSync(operation, true);
 #>
 
 <#
-			AddAsyncDocumentation(operation);
+			this.FormatOperationDocumentationAsync(operation, true);
 			if(operation.IsDeprecated)
 			{
 #>

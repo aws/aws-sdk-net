@@ -392,7 +392,7 @@ namespace <#=this.Config.Namespace#>
 #>
 
 <#
-		AddAsyncDocumentation(operation);
+		this.FormatOperationDocumentationAsync(operation, true);
 		if(operation.IsDeprecated)
 		{
 #>

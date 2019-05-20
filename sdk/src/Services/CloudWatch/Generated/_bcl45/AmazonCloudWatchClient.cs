@@ -277,15 +277,19 @@ namespace Amazon.CloudWatch
             return Invoke<DeleteAlarmsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAlarms operation.
+        /// Deletes the specified alarms. In the event of an error, no alarms are deleted.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public virtual Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -327,15 +331,26 @@ namespace Amazon.CloudWatch
             return Invoke<DeleteDashboardsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDashboards operation.
+        /// Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete.
+        /// If there is an error during this call, no dashboards are deleted.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
+        /// The specified dashboard does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
         public virtual Task<DeleteDashboardsResponse> DeleteDashboardsAsync(DeleteDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -423,15 +438,26 @@ namespace Amazon.CloudWatch
         {
             return DescribeAlarmHistoryAsync(new DescribeAlarmHistoryRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAlarmHistory operation.
-        /// </summary>
+        /// Retrieves the history for the specified alarm. You can filter the results by date
+        /// range or item type. If an alarm name is not specified, the histories for all alarms
+        /// are returned.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory operation.</param>
+        ///  
+        /// <para>
+        /// CloudWatch retains the history of an alarm even if you delete the alarm.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public virtual Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -504,15 +530,21 @@ namespace Amazon.CloudWatch
         {
             return DescribeAlarmsAsync(new DescribeAlarmsRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAlarms operation.
+        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+        /// or a prefix for any action.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public virtual Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -545,15 +577,17 @@ namespace Amazon.CloudWatch
             return Invoke<DescribeAlarmsForMetricResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAlarmsForMetric operation.
+        /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
+        /// period, or unit.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAlarmsForMetric service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public virtual Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -586,15 +620,17 @@ namespace Amazon.CloudWatch
             return Invoke<DisableAlarmActionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisableAlarmActions operation.
+        /// Disables the actions for the specified alarms. When an alarm's actions are disabled,
+        /// the alarm actions do not execute when the alarm state changes.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisableAlarmActions service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public virtual Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -626,15 +662,16 @@ namespace Amazon.CloudWatch
             return Invoke<EnableAlarmActionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableAlarmActions operation.
+        /// Enables the actions for the specified alarms.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the EnableAlarmActions service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public virtual Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -682,15 +719,32 @@ namespace Amazon.CloudWatch
             return Invoke<GetDashboardResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDashboard operation.
-        /// </summary>
+        /// Displays the details of the dashboard that you specify.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDashboard operation.</param>
+        ///  
+        /// <para>
+        /// To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data
+        /// returned within <code>DashboardBody</code> as the template for the new dashboard when
+        /// you call <code>PutDashboard</code> to create the copy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDashboard service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
+        /// The specified dashboard does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -771,15 +825,65 @@ namespace Amazon.CloudWatch
             return Invoke<GetMetricDataResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMetricData operation.
-        /// </summary>
+        /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
+        /// metrics in a single request, with a total of as many as 100,800 datapoints. You can
+        /// also optionally perform math expressions on the values of the returned statistics,
+        /// to create new time series that represent new insights into your data. For example,
+        /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
+        /// to get an error rate time series. For more information about metric math expressions,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMetricData operation.</param>
+        ///  
+        /// <para>
+        /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
+        /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
+        /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch retains metric data as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data points with a period of less than 60 seconds are available for 3 hours. These
+        /// data points are high-resolution metrics and are available only for custom metrics
+        /// that have been defined with a <code>StorageResolution</code> of 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 60 seconds (1-minute) are available for 15 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 300 seconds (5-minute) are available for 63 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 3600 seconds (1 hour) are available for 455 days (15
+        /// months).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data points that are initially published with a shorter period are aggregated together
+        /// for long-term storage. For example, if you collect data using a period of 1 minute,
+        /// the data remains available for 15 days with 1-minute resolution. After 15 days, this
+        /// data is still available, but is aggregated and retrievable only with a resolution
+        /// of 5 minutes. After 63 days, the data is further aggregated and is available with
+        /// a resolution of 1 hour.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMetricData service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -901,15 +1005,106 @@ namespace Amazon.CloudWatch
             return Invoke<GetMetricStatisticsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMetricStatistics operation.
-        /// </summary>
+        /// Gets statistics for the specified metric.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics operation.</param>
+        ///  
+        /// <para>
+        /// The maximum number of data points returned from a single call is 1,440. If you request
+        /// more than 1,440 data points, CloudWatch returns an error. To reduce the number of
+        /// data points, you can narrow the specified time range and make multiple requests across
+        /// adjacent time ranges, or you can increase the specified period. Data points are not
+        /// returned in chronological order.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch aggregates data points based on the length of the period that you specify.
+        /// For example, if you request statistics with a one-hour period, CloudWatch aggregates
+        /// all data points with time stamps that fall within each one-hour period. Therefore,
+        /// the number of values aggregated by CloudWatch is larger than the number of data points
+        /// returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+        /// data using a statistic set instead, you can only retrieve percentile statistics for
+        /// this data if one of the following conditions is true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The SampleCount value of the statistic set is 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Min and the Max values of the statistic set are equal.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Percentile statistics are not available for metrics when any of the metric values
+        /// are negative numbers.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch retains metric data as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data points with a period of less than 60 seconds are available for 3 hours. These
+        /// data points are high-resolution metrics and are available only for custom metrics
+        /// that have been defined with a <code>StorageResolution</code> of 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 60 seconds (1-minute) are available for 15 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 300 seconds (5-minute) are available for 63 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 3600 seconds (1 hour) are available for 455 days (15
+        /// months).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data points that are initially published with a shorter period are aggregated together
+        /// for long-term storage. For example, if you collect data using a period of 1 minute,
+        /// the data remains available for 15 days with 1-minute resolution. After 15 days, this
+        /// data is still available, but is aggregated and retrievable only with a resolution
+        /// of 5 minutes. After 63 days, the data is further aggregated and is available with
+        /// a resolution of 1 hour.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about metrics and dimensions supported by AWS services, see the <a
+        /// href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+        /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMetricStatistics service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public virtual Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -965,15 +1160,40 @@ namespace Amazon.CloudWatch
             return Invoke<GetMetricWidgetImageResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetMetricWidgetImage operation.
-        /// </summary>
+        /// You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph
+        /// of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this
+        /// image into your services and products, such as wiki pages, reports, and documents.
+        /// You could also retrieve images regularly, such as every minute, and create your own
+        /// custom live dashboard.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage operation.</param>
+        ///  
+        /// <para>
+        /// The graph you retrieve can include all CloudWatch metric graph features, including
+        /// metric math and horizontal and vertical annotations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code>
+        /// action has the following limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// As many as 100 metrics in the graph.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Up to 100 KB uncompressed payload.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetMetricWidgetImage service method, as returned by CloudWatch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
         public virtual Task<GetMetricWidgetImageResponse> GetMetricWidgetImageAsync(GetMetricWidgetImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1021,15 +1241,32 @@ namespace Amazon.CloudWatch
             return Invoke<ListDashboardsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDashboards operation.
-        /// </summary>
+        /// Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>,
+        /// only those dashboards with names starting with the prefix are listed. Otherwise, all
+        /// dashboards in your account are listed. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDashboards operation.</param>
+        ///  
+        /// <para>
+        ///  <code>ListDashboards</code> returns up to 1000 results on one page. If there are
+        /// more than 1000 dashboards, you can call <code>ListDashboards</code> again and include
+        /// the value you received for <code>NextToken</code> in the first call, to receive the
+        /// next 1000 results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDashboards service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1144,15 +1381,35 @@ namespace Amazon.CloudWatch
         {
             return ListMetricsAsync(new ListMetricsRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListMetrics operation.
-        /// </summary>
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a> to obtain statistical data.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListMetrics operation.</param>
+        ///  
+        /// <para>
+        /// Up to 500 results are returned for any one call. To retrieve additional results, use
+        /// the returned token with subsequent calls.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a metric, allow up to fifteen minutes before the metric appears.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1193,15 +1450,25 @@ namespace Amazon.CloudWatch
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Displays the tags associated with a CloudWatch resource. Alarms support tagging.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1264,15 +1531,47 @@ namespace Amazon.CloudWatch
             return Invoke<PutDashboardResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutDashboard operation.
-        /// </summary>
+        /// Creates a dashboard if it does not already exist, or updates an existing dashboard.
+        /// If you update a dashboard, the entire contents are replaced with what you specify
+        /// here.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutDashboard operation.</param>
+        ///  
+        /// <para>
+        /// There is no limit to the number of dashboards in your account. All dashboards in your
+        /// account are global, not region-specific.
+        /// </para>
+        ///  
+        /// <para>
+        /// A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing
+        /// dashboard. To copy an existing dashboard using the console, you can load the dashboard
+        /// and then use the View/edit source command in the Actions menu to display the JSON
+        /// block for that dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>,
+        /// and then use the data returned within <code>DashboardBody</code> as the template for
+        /// the new dashboard when you call <code>PutDashboard</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a dashboard with <code>PutDashboard</code>, a good practice is to
+        /// add a text widget at the top of the dashboard with a message that the dashboard was
+        /// created by script and should not be changed in the console. This message could also
+        /// point console users to the location of the <code>DashboardBody</code> script or the
+        /// CloudFormation template used to create the dashboard.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDashboard service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutDashboard service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.DashboardInvalidInputErrorException">
+        /// Some part of the dashboard data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
         public virtual Task<PutDashboardResponse> PutDashboardAsync(PutDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1372,15 +1671,84 @@ namespace Amazon.CloudWatch
             return Invoke<PutMetricAlarmResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutMetricAlarm operation.
-        /// </summary>
+        /// Creates or updates an alarm and associates it with the specified metric or metric
+        /// math expression.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm operation.</param>
+        ///  
+        /// <para>
+        /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+        /// with the new state are then executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update an existing alarm, its state is left unchanged, but the update completely
+        /// overwrites the previous configuration of the alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
+        /// all alarms on EC2 instance status metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:StopInstances</code> for alarms with stop actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No specific permissions are needed for alarms with recover actions
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
+        /// can still create an alarm, but the stop or terminate actions are not performed. However,
+        /// if you are later granted the required permissions, the alarm actions that you created
+        /// earlier are performed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using an IAM role (for example, an EC2 instance profile), you cannot stop
+        /// or terminate the instance using alarm actions. However, you can still see the alarm
+        /// state and perform any other actions such as Amazon SNS notifications or Auto Scaling
+        /// policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using temporary security credentials granted using AWS STS, you cannot
+        /// stop or terminate an EC2 instance using alarm actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
+        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
+        /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+        /// service-linked role</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutMetricAlarm service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public virtual Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1480,15 +1848,84 @@ namespace Amazon.CloudWatch
             return Invoke<PutMetricDataResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutMetricData operation.
-        /// </summary>
+        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
+        /// points with the specified metric. If the specified metric does not exist, CloudWatch
+        /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
+        /// for the metric to appear in calls to <a>ListMetrics</a>.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutMetricData operation.</param>
+        ///  
+        /// <para>
+        /// You can publish either individual data points in the <code>Value</code> field, or
+        /// arrays of values and the number of times each value occurred during the period by
+        /// using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code>
+        /// structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+        /// to publish up to 150 values per metric with one <code>PutMetricData</code> request,
+        /// and supports retrieving percentile statistics on this data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
+        /// requests. You can send a payload compressed by gzip. Each request is also limited
+        /// to no more than 20 different metrics.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
+        /// CloudWatch rejects values that are either too small or too large. Values must be in
+        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
+        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use up to 10 dimensions per metric to further clarify what data the metric
+        /// collects. Each dimension consists of a Name and Value pair. For more information about
+        /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
+        /// to become available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the
+        /// time they are submitted.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+        /// data using a statistic set instead, you can only retrieve percentile statistics for
+        /// this data if one of the following conditions is true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,
+        /// <code>Max</code>, and <code>Sum</code> are all equal.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal
+        /// to <code>Min</code> multiplied by <code>SampleCount</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutMetricData service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public virtual Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1532,15 +1969,28 @@ namespace Amazon.CloudWatch
             return Invoke<SetAlarmStateResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SetAlarmState operation.
+        /// Temporarily sets the state of an alarm for testing purposes. When the updated state
+        /// differs from the previous value, the action configured for the appropriate state is
+        /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
+        /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
+        /// sends an SNS message. The alarm returns to its actual state (often within seconds).
+        /// Because the alarm state change happens quickly, it is typically only visible in the
+        /// alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SetAlarmState operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SetAlarmState service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidFormatException">
+        /// Data was not syntactically valid JSON.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public virtual Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1605,15 +2055,49 @@ namespace Amazon.CloudWatch
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
-        /// </summary>
+        /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Tags
+        /// can help you organize and categorize your resources. You can also use them to scope
+        /// user permissions, by granting a user permission to access or change only resources
+        /// with certain tag values. In CloudWatch, alarms can be tagged.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to AWS and are interpreted strictly as strings
+        /// of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> action with a resource that already has tags.
+        /// If you specify a new tag key for the resource, this tag is appended to the list of
+        /// tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value that you specify replaces the previous value
+        /// for that tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
+        /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1657,15 +2141,28 @@ namespace Amazon.CloudWatch
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes one or more tags from the specified resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConcurrentModificationException">
+        /// More than one process tried to modify a resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
+        /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

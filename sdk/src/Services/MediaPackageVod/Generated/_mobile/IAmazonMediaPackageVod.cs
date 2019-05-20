@@ -39,15 +39,34 @@ namespace Amazon.MediaPackageVod
         #region  CreateAsset
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAsset operation.
+        /// Creates a new MediaPackage VOD Asset resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAsset operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAsset service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         Task<CreateAssetResponse> CreateAssetAsync(CreateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -56,15 +75,34 @@ namespace Amazon.MediaPackageVod
         #region  CreatePackagingConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePackagingConfiguration operation.
+        /// Creates a new MediaPackage VOD PackagingConfiguration resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePackagingConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackagingConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePackagingConfiguration service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingConfiguration">REST API Reference for CreatePackagingConfiguration Operation</seealso>
         Task<CreatePackagingConfigurationResponse> CreatePackagingConfigurationAsync(CreatePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -73,15 +111,34 @@ namespace Amazon.MediaPackageVod
         #region  CreatePackagingGroup
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePackagingGroup operation.
+        /// Creates a new MediaPackage VOD PackagingGroup resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePackagingGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackagingGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingGroup">REST API Reference for CreatePackagingGroup Operation</seealso>
         Task<CreatePackagingGroupResponse> CreatePackagingGroupAsync(CreatePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -90,15 +147,34 @@ namespace Amazon.MediaPackageVod
         #region  DeleteAsset
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAsset operation.
+        /// Deletes an existing MediaPackage VOD Asset resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAsset operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAsset service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAsset service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -107,15 +183,34 @@ namespace Amazon.MediaPackageVod
         #region  DeletePackagingConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePackagingConfiguration operation.
+        /// Deletes a MediaPackage VOD PackagingConfiguration resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePackagingConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackagingConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePackagingConfiguration service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingConfiguration">REST API Reference for DeletePackagingConfiguration Operation</seealso>
         Task<DeletePackagingConfigurationResponse> DeletePackagingConfigurationAsync(DeletePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -124,15 +219,34 @@ namespace Amazon.MediaPackageVod
         #region  DeletePackagingGroup
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePackagingGroup operation.
+        /// Deletes a MediaPackage VOD PackagingGroup resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePackagingGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackagingGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingGroup">REST API Reference for DeletePackagingGroup Operation</seealso>
         Task<DeletePackagingGroupResponse> DeletePackagingGroupAsync(DeletePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -141,15 +255,34 @@ namespace Amazon.MediaPackageVod
         #region  DescribeAsset
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAsset operation.
+        /// Returns a description of a MediaPackage VOD Asset resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAsset operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAsset service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAsset service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         Task<DescribeAssetResponse> DescribeAssetAsync(DescribeAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -158,15 +291,34 @@ namespace Amazon.MediaPackageVod
         #region  DescribePackagingConfiguration
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribePackagingConfiguration operation.
+        /// Returns a description of a MediaPackage VOD PackagingConfiguration resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribePackagingConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackagingConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribePackagingConfiguration service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingConfiguration">REST API Reference for DescribePackagingConfiguration Operation</seealso>
         Task<DescribePackagingConfigurationResponse> DescribePackagingConfigurationAsync(DescribePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -175,15 +327,34 @@ namespace Amazon.MediaPackageVod
         #region  DescribePackagingGroup
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribePackagingGroup operation.
+        /// Returns a description of a MediaPackage VOD PackagingGroup resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribePackagingGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackagingGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribePackagingGroup service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingGroup">REST API Reference for DescribePackagingGroup Operation</seealso>
         Task<DescribePackagingGroupResponse> DescribePackagingGroupAsync(DescribePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -192,15 +363,34 @@ namespace Amazon.MediaPackageVod
         #region  ListAssets
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAssets operation.
+        /// Returns a collection of MediaPackage VOD Asset resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAssets operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListAssets">REST API Reference for ListAssets Operation</seealso>
         Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -209,15 +399,34 @@ namespace Amazon.MediaPackageVod
         #region  ListPackagingConfigurations
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPackagingConfigurations operation.
+        /// Returns a collection of MediaPackage VOD PackagingConfiguration resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPackagingConfigurations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagingConfigurations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPackagingConfigurations service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingConfigurations">REST API Reference for ListPackagingConfigurations Operation</seealso>
         Task<ListPackagingConfigurationsResponse> ListPackagingConfigurationsAsync(ListPackagingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -226,15 +435,34 @@ namespace Amazon.MediaPackageVod
         #region  ListPackagingGroups
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPackagingGroups operation.
+        /// Returns a collection of MediaPackage VOD PackagingGroup resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPackagingGroups operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackagingGroups service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPackagingGroups service method, as returned by MediaPackageVod.</returns>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageVod.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingGroups">REST API Reference for ListPackagingGroups Operation</seealso>
         Task<ListPackagingGroupsResponse> ListPackagingGroupsAsync(ListPackagingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

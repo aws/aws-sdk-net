@@ -52,15 +52,29 @@ namespace Amazon.CloudSearch
         #region  BuildSuggesters
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BuildSuggesters operation.
+        /// Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
+        /// Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BuildSuggesters operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BuildSuggesters service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BuildSuggesters service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -68,15 +82,29 @@ namespace Amazon.CloudSearch
         #region  CreateDomain
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDomain operation.
+        /// Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
+        /// target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDomain operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDomain service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
         Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -84,15 +112,38 @@ namespace Amazon.CloudSearch
         #region  DefineAnalysisScheme
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DefineAnalysisScheme operation.
+        /// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code>
+        /// field to define language-specific text processing options. For more information, see
+        /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+        /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DefineAnalysisScheme operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineAnalysisScheme service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DefineAnalysisScheme service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -100,15 +151,38 @@ namespace Amazon.CloudSearch
         #region  DefineExpression
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DefineExpression operation.
+        /// Configures an <code><a>Expression</a></code> for the search domain. Used to create
+        /// new expressions and modify existing ones. If the expression exists, the new configuration
+        /// replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
+        /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DefineExpression operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineExpression service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DefineExpression service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -116,15 +190,42 @@ namespace Amazon.CloudSearch
         #region  DefineIndexField
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DefineIndexField operation.
+        /// Configures an <code><a>IndexField</a></code> for the search domain. Used to create
+        /// new fields and modify existing ones. You must specify the name of the domain you are
+        /// configuring and an index field configuration. The index field configuration specifies
+        /// a unique name, the index field type, and the options you want to configure for the
+        /// field. The options you can specify depend on the <code><a>IndexFieldType</a></code>.
+        /// If the field exists, the new configuration replaces the old one. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
+        /// target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DefineIndexField operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineIndexField service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DefineIndexField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -132,15 +233,39 @@ namespace Amazon.CloudSearch
         #region  DefineSuggester
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DefineSuggester operation.
+        /// Configures a suggester for a domain. A suggester enables you to display possible matches
+        /// before users finish typing their queries. When you configure a suggester, you must
+        /// specify the name of the text field you want to search for possible matches and a unique
+        /// name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+        /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DefineSuggester operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DefineSuggester service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DefineSuggester service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -148,15 +273,33 @@ namespace Amazon.CloudSearch
         #region  DeleteAnalysisScheme
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAnalysisScheme operation.
+        /// Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+        /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisScheme operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnalysisScheme service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAnalysisScheme service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -164,15 +307,27 @@ namespace Amazon.CloudSearch
         #region  DeleteDomain
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDomain operation.
+        /// Permanently deletes a search domain and all of its data. Once a domain has been deleted,
+        /// it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
+        /// target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDomain service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
         Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -180,15 +335,34 @@ namespace Amazon.CloudSearch
         #region  DeleteExpression
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteExpression operation.
+        /// Removes an <code><a>Expression</a></code> from the search domain. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
+        /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteExpression operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpression service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteExpression service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -196,15 +370,34 @@ namespace Amazon.CloudSearch
         #region  DeleteIndexField
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIndexField operation.
+        /// Removes an <code><a>IndexField</a></code> from the search domain. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
+        /// target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteIndexField service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -212,15 +405,33 @@ namespace Amazon.CloudSearch
         #region  DeleteSuggester
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteSuggester operation.
+        /// Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+        /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSuggester operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSuggester service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteSuggester service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -228,15 +439,35 @@ namespace Amazon.CloudSearch
         #region  DescribeAnalysisSchemes
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAnalysisSchemes operation.
+        /// Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific
+        /// text processing options for a <code>text</code> field. Can be limited to specific
+        /// analysis schemes by name. By default, shows all analysis schemes and includes any
+        /// pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code>
+        /// to show the active configuration and exclude pending changes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+        /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAnalysisSchemes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAnalysisSchemes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAnalysisSchemes service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -244,15 +475,42 @@ namespace Amazon.CloudSearch
         #region  DescribeAvailabilityOptions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAvailabilityOptions operation.
+        /// Gets the availability options configured for a domain. By default, shows the configuration
+        /// with any pending changes. Set the <code>Deployed</code> option to <code>true</code>
+        /// to show the active configuration and exclude pending changes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+        /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAvailabilityOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -285,15 +543,30 @@ namespace Amazon.CloudSearch
         Task<DescribeDomainsResponse> DescribeDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDomains operation.
+        /// Gets information about the search domains owned by this account. Can be limited to
+        /// specific domains. Shows all domains by default. To get the number of searchable documents
+        /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
+        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDomains operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDomains service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
         Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -301,15 +574,34 @@ namespace Amazon.CloudSearch
         #region  DescribeExpressions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeExpressions operation.
+        /// Gets the expressions configured for the search domain. Can be limited to specific
+        /// expressions by name. By default, shows all expressions and includes any pending changes
+        /// to the configuration. Set the <code>Deployed</code> option to <code>true</code> to
+        /// show the active configuration and exclude pending changes. For more information, see
+        /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
+        /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeExpressions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -317,15 +609,34 @@ namespace Amazon.CloudSearch
         #region  DescribeIndexFields
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeIndexFields operation.
+        /// Gets information about the index fields configured for the search domain. Can be limited
+        /// to specific fields by name. By default, shows all fields and includes any pending
+        /// changes to the configuration. Set the <code>Deployed</code> option to <code>true</code>
+        /// to show the active configuration and exclude pending changes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeIndexFields service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -333,15 +644,32 @@ namespace Amazon.CloudSearch
         #region  DescribeScalingParameters
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeScalingParameters operation.
+        /// Gets the scaling parameters configured for a domain. A domain's scaling parameters
+        /// specify the desired search instance type and replication count. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
+        /// target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeScalingParameters operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScalingParameters service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeScalingParameters service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -349,15 +677,33 @@ namespace Amazon.CloudSearch
         #region  DescribeServiceAccessPolicies
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeServiceAccessPolicies operation.
+        /// Gets information about the access policies that control access to the domain's document
+        /// and search endpoints. By default, shows the configuration with any pending changes.
+        /// Set the <code>Deployed</code> option to <code>true</code> to show the active configuration
+        /// and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
+        /// target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -365,15 +711,34 @@ namespace Amazon.CloudSearch
         #region  DescribeSuggesters
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeSuggesters operation.
+        /// Gets the suggesters configured for a domain. A suggester enables you to display possible
+        /// matches before users finish typing their queries. Can be limited to specific suggesters
+        /// by name. By default, shows all suggesters and includes any pending changes to the
+        /// configuration. Set the <code>Deployed</code> option to <code>true</code> to show the
+        /// active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+        /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeSuggesters operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSuggesters service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeSuggesters service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -381,15 +746,30 @@ namespace Amazon.CloudSearch
         #region  IndexDocuments
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the IndexDocuments operation.
+        /// Tells the search domain to start indexing its documents using the latest indexing
+        /// options. This operation must be invoked to activate options whose <a>OptionStatus</a>
+        /// is <code>RequiresIndexDocuments</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the IndexDocuments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the IndexDocuments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the IndexDocuments service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -411,15 +791,19 @@ namespace Amazon.CloudSearch
         Task<ListDomainNamesResponse> ListDomainNamesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDomainNames operation.
+        /// Lists all search domains owned by an account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDomainNames operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDomainNames service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
         Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -427,15 +811,43 @@ namespace Amazon.CloudSearch
         #region  UpdateAvailabilityOptions
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAvailabilityOptions operation.
+        /// Configures the availability options for a domain. Enabling the Multi-AZ option expands
+        /// an Amazon CloudSearch domain to an additional Availability Zone in the same Region
+        /// to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ
+        /// option can take about half an hour to become active. For more information, see <a
+        /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+        /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
+        /// Developer Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityOptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityOptions service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.DisabledOperationException">
+        /// The request was rejected because it attempted an operation which is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -443,15 +855,41 @@ namespace Amazon.CloudSearch
         #region  UpdateScalingParameters
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateScalingParameters operation.
+        /// Configures scaling parameters for a domain. A domain's scaling parameters specify
+        /// the desired search instance type and replication count. Amazon CloudSearch will still
+        /// automatically scale your domain based on the volume of data and traffic, but not below
+        /// the desired instance type and replication count. If the Multi-AZ option is enabled,
+        /// these values control the resources used per Availability Zone. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
+        /// target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer
+        /// Guide</i>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateScalingParameters operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScalingParameters service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateScalingParameters service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -459,15 +897,36 @@ namespace Amazon.CloudSearch
         #region  UpdateServiceAccessPolicies
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateServiceAccessPolicies operation.
+        /// Configures the access rules that control access to the domain's document and search
+        /// endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
+        /// target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by CloudSearch.</returns>
+        /// <exception cref="Amazon.CloudSearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InternalException">
+        /// An internal error occurred while processing the request. If this problem persists,
+        /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service
+        /// Health Dashboard</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.InvalidTypeException">
+        /// The request was rejected because it specified an invalid type definition.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.LimitExceededException">
+        /// The request was rejected because a resource limit has already been met.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
+        /// The request was rejected because it attempted to reference a resource that does not
+        /// exist.
+        /// </exception>
         Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

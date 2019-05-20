@@ -278,15 +278,26 @@ namespace Amazon.DLM
             return Invoke<CreateLifecyclePolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateLifecyclePolicy operation.
+        /// Creates a policy to manage the lifecycle of the specified AWS resources. You can create
+        /// up to 100 lifecycle policies.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateLifecyclePolicy service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.LimitExceededException">
+        /// The request failed because a limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual Task<CreateLifecyclePolicyResponse> CreateLifecyclePolicyAsync(CreateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -328,15 +339,26 @@ namespace Amazon.DLM
             return Invoke<DeleteLifecyclePolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// Deletes the specified lifecycle policy and halts the automated operations that the
+        /// policy specified.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.LimitExceededException">
+        /// The request failed because a limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -385,15 +407,33 @@ namespace Amazon.DLM
             return Invoke<GetLifecyclePoliciesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetLifecyclePolicies operation.
-        /// </summary>
+        /// Gets summary information about all or the specified data lifecycle policies.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies operation.</param>
+        ///  
+        /// <para>
+        /// To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicies service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.LimitExceededException">
+        /// The request failed because a limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">REST API Reference for GetLifecyclePolicies Operation</seealso>
         public virtual Task<GetLifecyclePoliciesResponse> GetLifecyclePoliciesAsync(GetLifecyclePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -434,15 +474,25 @@ namespace Amazon.DLM
             return Invoke<GetLifecyclePolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetLifecyclePolicy operation.
+        /// Gets detailed information about the specified lifecycle policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicy service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.LimitExceededException">
+        /// The request failed because a limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -486,15 +536,28 @@ namespace Amazon.DLM
             return Invoke<UpdateLifecyclePolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateLifecyclePolicy operation.
+        /// Updates the specified lifecycle policy.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by DLM.</returns>
+        /// <exception cref="Amazon.DLM.Model.InternalServerException">
+        /// The service failed in an unexpected way.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.InvalidRequestException">
+        /// Bad request. The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.LimitExceededException">
+        /// The request failed because a limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DLM.Model.ResourceNotFoundException">
+        /// A requested resource was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

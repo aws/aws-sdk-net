@@ -283,15 +283,25 @@ namespace Amazon.PI
             return Invoke<DescribeDimensionKeysResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDimensionKeys operation.
+        /// For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDimensionKeys operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDimensionKeys service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDimensionKeys service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DescribeDimensionKeys">REST API Reference for DescribeDimensionKeys Operation</seealso>
         public virtual Task<DescribeDimensionKeysResponse> DescribeDimensionKeysAsync(DescribeDimensionKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -334,15 +344,27 @@ namespace Amazon.PI
             return Invoke<GetResourceMetricsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetResourceMetrics operation.
+        /// Retrieve Performance Insights metrics for a set of data sources, over a time period.
+        /// You can provide specific dimension groups and dimensions, and provide aggregation
+        /// and filtering criteria for each group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetResourceMetrics operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceMetrics service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetResourceMetrics service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics">REST API Reference for GetResourceMetrics Operation</seealso>
         public virtual Task<GetResourceMetricsResponse> GetResourceMetricsAsync(GetResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

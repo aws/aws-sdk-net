@@ -261,15 +261,34 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateDomain operation.
+        /// Specifies a domain to be associated to Amazon WorkLink.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateDomain operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDomain service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
         public virtual Task<AssociateDomainResponse> AssociateDomainAsync(AssociateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -294,15 +313,35 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateWebsiteAuthorizationProvider operation.
+        /// Associates a website authorization provider with a specified fleet. This is used to
+        /// authorize users against associated websites in the company network.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
         public virtual Task<AssociateWebsiteAuthorizationProviderResponse> AssociateWebsiteAuthorizationProviderAsync(AssociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -327,15 +366,35 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateWebsiteCertificateAuthority operation.
+        /// Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates
+        /// used by associated websites within the company network.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteCertificateAuthority operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteCertificateAuthority service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateWebsiteCertificateAuthority service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
         public virtual Task<AssociateWebsiteCertificateAuthorityResponse> AssociateWebsiteCertificateAuthorityAsync(AssociateWebsiteCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -360,15 +419,36 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// Creates a fleet. A fleet consists of resources and the configuration that delivers
+        /// associated websites to authorized users who download and set up the Amazon WorkLink
+        /// app.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -393,15 +473,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteFleet operation.
+        /// Deletes a fleet. Prevents users from accessing previously associated websites.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteFleet service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -426,15 +522,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAuditStreamConfiguration operation.
+        /// Describes the configuration for delivering audit streams to the customer account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditStreamConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditStreamConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAuditStreamConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
         public virtual Task<DescribeAuditStreamConfigurationResponse> DescribeAuditStreamConfigurationAsync(DescribeAuditStreamConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -459,15 +571,32 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeCompanyNetworkConfiguration operation.
+        /// Describes the networking configuration to access the internal websites associated
+        /// with the specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeCompanyNetworkConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCompanyNetworkConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeCompanyNetworkConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
         public virtual Task<DescribeCompanyNetworkConfigurationResponse> DescribeCompanyNetworkConfigurationAsync(DescribeCompanyNetworkConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -492,15 +621,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDevice operation.
+        /// Provides information about a user's device.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDevice operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDevice service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDevice service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -525,15 +670,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDevicePolicyConfiguration operation.
+        /// Describes the device policy configuration for the specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDevicePolicyConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDevicePolicyConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDevicePolicyConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
         public virtual Task<DescribeDevicePolicyConfigurationResponse> DescribeDevicePolicyConfigurationAsync(DescribeDevicePolicyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -558,15 +719,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDomain operation.
+        /// Provides information about the domain.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDomain operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -591,15 +768,32 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeFleetMetadata operation.
+        /// Provides basic information for the specified fleet, excluding identity provider, networking,
+        /// and device configuration details.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetMetadata operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetMetadata service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeFleetMetadata service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
         public virtual Task<DescribeFleetMetadataResponse> DescribeFleetMetadataAsync(DescribeFleetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -624,15 +818,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeIdentityProviderConfiguration operation.
+        /// Describes the identity provider configuration of the specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProviderConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProviderConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeIdentityProviderConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
         public virtual Task<DescribeIdentityProviderConfigurationResponse> DescribeIdentityProviderConfigurationAsync(DescribeIdentityProviderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -657,15 +867,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeWebsiteCertificateAuthority operation.
+        /// Provides information about the certificate authority.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeWebsiteCertificateAuthority operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebsiteCertificateAuthority service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeWebsiteCertificateAuthority service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
         public virtual Task<DescribeWebsiteCertificateAuthorityResponse> DescribeWebsiteCertificateAuthorityAsync(DescribeWebsiteCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -690,15 +916,32 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateDomain operation.
+        /// Disassociates a domain from Amazon WorkLink. End users lose the ability to access
+        /// the domain with Amazon WorkLink.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateDomain operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDomain service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateDomain service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
         public virtual Task<DisassociateDomainResponse> DisassociateDomainAsync(DisassociateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -723,15 +966,35 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateWebsiteAuthorizationProvider operation.
+        /// Disassociates a website authorization provider from a specified fleet. After the disassociation,
+        /// users can't load any associated websites that require this authorization provider.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
         public virtual Task<DisassociateWebsiteAuthorizationProviderResponse> DisassociateWebsiteAuthorizationProviderAsync(DisassociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -756,15 +1019,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateWebsiteCertificateAuthority operation.
+        /// Removes a certificate authority (CA).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteCertificateAuthority operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteCertificateAuthority service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateWebsiteCertificateAuthority service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
         public virtual Task<DisassociateWebsiteCertificateAuthorityResponse> DisassociateWebsiteCertificateAuthorityAsync(DisassociateWebsiteCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -789,15 +1068,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDevices operation.
+        /// Retrieves a list of devices registered with the specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDevices operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDevices service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -822,15 +1117,28 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDomains operation.
+        /// Retrieves a list of domains associated to a specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDomains operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDomains service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -855,15 +1163,28 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListFleets operation.
+        /// Retrieves a list of fleets for the current account and Region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListFleets operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListFleets service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -888,15 +1209,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListWebsiteAuthorizationProviders operation.
+        /// Retrieves a list of website authorization providers associated with a specified fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListWebsiteAuthorizationProviders service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
         public virtual Task<ListWebsiteAuthorizationProvidersResponse> ListWebsiteAuthorizationProvidersAsync(ListWebsiteAuthorizationProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -921,15 +1258,28 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListWebsiteCertificateAuthorities operation.
+        /// Retrieves a list of certificate authorities added for the current account and Region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteCertificateAuthorities operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteCertificateAuthorities service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListWebsiteCertificateAuthorities service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
         public virtual Task<ListWebsiteCertificateAuthoritiesResponse> ListWebsiteCertificateAuthoritiesAsync(ListWebsiteCertificateAuthoritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -954,15 +1304,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RestoreDomainAccess operation.
+        /// Moves a domain to ACTIVE status if it was in the INACTIVE status.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestoreDomainAccess operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDomainAccess service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RestoreDomainAccess service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
         public virtual Task<RestoreDomainAccessResponse> RestoreDomainAccessAsync(RestoreDomainAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -987,15 +1353,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RevokeDomainAccess operation.
+        /// Moves a domain to INACTIVE status if it was in the ACTIVE status.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RevokeDomainAccess operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeDomainAccess service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RevokeDomainAccess service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
         public virtual Task<RevokeDomainAccessResponse> RevokeDomainAccessAsync(RevokeDomainAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1020,15 +1402,32 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SignOutUser operation.
+        /// Signs the user out from all of their devices. The user can sign in again if they have
+        /// valid credentials.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SignOutUser operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SignOutUser service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SignOutUser service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
         public virtual Task<SignOutUserResponse> SignOutUserAsync(SignOutUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1053,15 +1452,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAuditStreamConfiguration operation.
+        /// Updates the audit stream configuration for the fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAuditStreamConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuditStreamConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAuditStreamConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
         public virtual Task<UpdateAuditStreamConfigurationResponse> UpdateAuditStreamConfigurationAsync(UpdateAuditStreamConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1086,15 +1501,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateCompanyNetworkConfiguration operation.
+        /// Updates the company network configuration for the fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateCompanyNetworkConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCompanyNetworkConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateCompanyNetworkConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
         public virtual Task<UpdateCompanyNetworkConfigurationResponse> UpdateCompanyNetworkConfigurationAsync(UpdateCompanyNetworkConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1119,15 +1550,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDevicePolicyConfiguration operation.
+        /// Updates the device policy configuration for the fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePolicyConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevicePolicyConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDevicePolicyConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
         public virtual Task<UpdateDevicePolicyConfigurationResponse> UpdateDevicePolicyConfigurationAsync(UpdateDevicePolicyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1152,15 +1599,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDomainMetadata operation.
+        /// Updates domain metadata, such as DisplayName.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainMetadata operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainMetadata service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDomainMetadata service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
         public virtual Task<UpdateDomainMetadataResponse> UpdateDomainMetadataAsync(UpdateDomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1185,15 +1648,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateFleetMetadata operation.
+        /// Updates fleet metadata, such as DisplayName.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateFleetMetadata operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleetMetadata service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateFleetMetadata service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
         public virtual Task<UpdateFleetMetadataResponse> UpdateFleetMetadataAsync(UpdateFleetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1218,15 +1697,31 @@ namespace Amazon.WorkLink
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIdentityProviderConfiguration operation.
+        /// Updates the identity provider configuration for the fleet.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProviderConfiguration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProviderConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateIdentityProviderConfiguration service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
         public virtual Task<UpdateIdentityProviderConfigurationResponse> UpdateIdentityProviderConfigurationAsync(UpdateIdentityProviderConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

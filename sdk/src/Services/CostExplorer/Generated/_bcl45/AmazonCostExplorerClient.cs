@@ -300,15 +300,38 @@ namespace Amazon.CostExplorer
             return Invoke<GetCostAndUsageResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCostAndUsage operation.
+        /// Retrieves cost and usage metrics for your account. You can specify which cost and
+        /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+        /// that you want the request to return. You can also filter and group your data by various
+        /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
+        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// operation. Master accounts in an organization in AWS Organizations have access to
+        /// all member accounts.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCostAndUsage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual Task<GetCostAndUsageResponse> GetCostAndUsageAsync(GetCostAndUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -347,15 +370,23 @@ namespace Amazon.CostExplorer
             return Invoke<GetCostForecastResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCostForecast operation.
+        /// Retrieves a forecast for how much Amazon Web Services predicts that you will spend
+        /// over the forecast time period that you select, based on your past costs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCostForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
         public virtual Task<GetCostForecastResponse> GetCostForecastAsync(GetCostForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -404,15 +435,33 @@ namespace Amazon.CostExplorer
             return Invoke<GetDimensionValuesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDimensionValues operation.
+        /// Retrieves all available filter values for a specified filter over a period of time.
+        /// You can search the dimension values for an arbitrary string.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDimensionValues operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDimensionValues service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDimensionValues service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual Task<GetDimensionValuesResponse> GetDimensionValuesAsync(GetDimensionValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -511,15 +560,83 @@ namespace Amazon.CostExplorer
             return Invoke<GetReservationCoverageResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetReservationCoverage operation.
-        /// </summary>
+        /// Retrieves the reservation coverage for your account. This enables you to see how much
+        /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
+        /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
+        /// account can see the coverage of the associated member accounts. For any time period,
+        /// you can filter data about reservation usage by the following dimensions:
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage operation.</param>
+        ///  <ul> <li> 
+        /// <para>
+        /// AZ
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CACHE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DATABASE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// LINKED_ACCOUNT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OPERATING_SYSTEM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PLATFORM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SERVICE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TENANCY
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetReservationCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
         public virtual Task<GetReservationCoverageResponse> GetReservationCoverageAsync(GetReservationCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -582,15 +699,47 @@ namespace Amazon.CostExplorer
             return Invoke<GetReservationPurchaseRecommendationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetReservationPurchaseRecommendation operation.
-        /// </summary>
+        /// Gets recommendations for which reservations to purchase. These recommendations could
+        /// help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%)
+        /// compared to On-Demand pricing.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation operation.</param>
+        ///  
+        /// <para>
+        /// AWS generates your recommendations by identifying your On-Demand usage during a specific
+        /// time period and collecting your usage into categories that are eligible for a reservation.
+        /// After AWS has these categories, it simulates every combination of reservations in
+        /// each category of usage to identify the best number of each type of RI to purchase
+        /// to maximize your estimated savings. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and
+        /// c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible
+        /// regional reservations to apply to the c4 family usage. AWS recommends the smallest
+        /// size instance in an instance family. This makes it easier to purchase a size-flexible
+        /// RI. AWS also shows the equal number of normalized units so that you can purchase any
+        /// instance size that you want. For this example, your RI recommendation would be for
+        /// <code>c4.large</code> because that is the smallest size instance in the c4 instance
+        /// family.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetReservationPurchaseRecommendation service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
         public virtual Task<GetReservationPurchaseRecommendationResponse> GetReservationPurchaseRecommendationAsync(GetReservationPurchaseRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -634,15 +783,28 @@ namespace Amazon.CostExplorer
             return Invoke<GetReservationUtilizationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetReservationUtilization operation.
+        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// have access to member accounts. You can filter data by dimensions in a time period.
+        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetReservationUtilization operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationUtilization service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetReservationUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">REST API Reference for GetReservationUtilization Operation</seealso>
         public virtual Task<GetReservationUtilizationResponse> GetReservationUtilizationAsync(GetReservationUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -691,15 +853,33 @@ namespace Amazon.CostExplorer
             return Invoke<GetTagsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTags operation.
+        /// Queries for available tag keys and tag values for a specified period. You can search
+        /// the tag values for an arbitrary string.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTags service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

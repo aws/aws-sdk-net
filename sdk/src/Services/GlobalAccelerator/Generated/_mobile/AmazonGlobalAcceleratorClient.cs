@@ -340,15 +340,28 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAccelerator operation.
+        /// Create an accelerator. An accelerator includes one or more listeners that process
+        /// inbound connections and direct traffic to one or more endpoint groups, each of which
+        /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
+        /// an accelerator, scroll down to <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAccelerator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccelerator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">REST API Reference for CreateAccelerator Operation</seealso>
         public virtual Task<CreateAcceleratorResponse> CreateAcceleratorAsync(CreateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -373,15 +386,36 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateEndpointGroup operation.
+        /// Create an endpoint group for the specified listener. An endpoint group is a collection
+        /// of endpoints in one AWS Region. To see an AWS CLI example of creating an endpoint
+        /// group, scroll down to <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateEndpointGroup service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupAlreadyExistsException">
+        /// The endpoint group that you specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup">REST API Reference for CreateEndpointGroup Operation</seealso>
         public virtual Task<CreateEndpointGroupResponse> CreateEndpointGroupAsync(CreateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -406,15 +440,35 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateListener operation.
+        /// Create a listener to process inbound connections from clients to an accelerator. Connections
+        /// arrive to assigned static IP addresses on a port, port range, or list of port ranges
+        /// that you specify. To see an AWS CLI example of creating a listener, scroll down to
+        /// <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateListener operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateListener service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateListener service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidPortRangeException">
+        /// The port numbers that you specified are not valid numbers or are not unique for this
+        /// accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -439,15 +493,33 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAccelerator operation.
+        /// Delete an accelerator. Note: before you can delete an accelerator, you must disable
+        /// it and remove all dependent resources (listeners and endpoint groups).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAccelerator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccelerator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotDisabledException">
+        /// The accelerator that you specified could not be disabled.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AssociatedListenerFoundException">
+        /// The accelerator that you specified has a listener associated with it. You must remove
+        /// all dependent resources from an accelerator before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">REST API Reference for DeleteAccelerator Operation</seealso>
         public virtual Task<DeleteAcceleratorResponse> DeleteAcceleratorAsync(DeleteAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -472,15 +544,22 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteEndpointGroup operation.
+        /// Delete an endpoint group from a listener.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteEndpointGroup service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteEndpointGroup">REST API Reference for DeleteEndpointGroup Operation</seealso>
         public virtual Task<DeleteEndpointGroupResponse> DeleteEndpointGroupAsync(DeleteEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -505,15 +584,26 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteListener operation.
+        /// Delete a listener from an accelerator.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteListener operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteListener service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteListener service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AssociatedEndpointGroupFoundException">
+        /// The listener that you specified has an endpoint group associated with it. You must
+        /// remove all dependent resources from a listener before you can delete it.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -538,15 +628,26 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAccelerator operation.
+        /// Describe an accelerator. To see an AWS CLI example of describing an accelerator, scroll
+        /// down to <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAccelerator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccelerator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAccelerator">REST API Reference for DescribeAccelerator Operation</seealso>
         public virtual Task<DescribeAcceleratorResponse> DescribeAcceleratorAsync(DescribeAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -571,15 +672,25 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAcceleratorAttributes operation.
+        /// Describe the attributes of an accelerator.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorAttributes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAcceleratorAttributes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAcceleratorAttributes service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeAcceleratorAttributes">REST API Reference for DescribeAcceleratorAttributes Operation</seealso>
         public virtual Task<DescribeAcceleratorAttributesResponse> DescribeAcceleratorAttributesAsync(DescribeAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -604,15 +715,22 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeEndpointGroup operation.
+        /// Describe an endpoint group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeEndpointGroup service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">REST API Reference for DescribeEndpointGroup Operation</seealso>
         public virtual Task<DescribeEndpointGroupResponse> DescribeEndpointGroupAsync(DescribeEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -637,15 +755,25 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeListener operation.
+        /// Describe a listener.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeListener operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListener service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeListener service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeListener">REST API Reference for DescribeListener Operation</seealso>
         public virtual Task<DescribeListenerResponse> DescribeListenerAsync(DescribeListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -670,15 +798,22 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAccelerators operation.
+        /// List the accelerators for an AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAccelerators operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccelerators service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListAccelerators service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
+        /// There isn't another item to return.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListAccelerators">REST API Reference for ListAccelerators Operation</seealso>
         public virtual Task<ListAcceleratorsResponse> ListAcceleratorsAsync(ListAcceleratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -703,15 +838,28 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListEndpointGroups operation.
+        /// List the endpoint groups that are associated with a listener.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListEndpointGroups operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEndpointGroups service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListEndpointGroups service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
+        /// There isn't another item to return.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListEndpointGroups">REST API Reference for ListEndpointGroups Operation</seealso>
         public virtual Task<ListEndpointGroupsResponse> ListEndpointGroupsAsync(ListEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -736,15 +884,25 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListListeners operation.
+        /// List the listeners for an accelerator.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListListeners operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListListeners service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListListeners service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidNextTokenException">
+        /// There isn't another item to return.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual Task<ListListenersResponse> ListListenersAsync(ListListenersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -769,15 +927,25 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAccelerator operation.
+        /// Update an accelerator.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAccelerator operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccelerator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAccelerator service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">REST API Reference for UpdateAccelerator Operation</seealso>
         public virtual Task<UpdateAcceleratorResponse> UpdateAcceleratorAsync(UpdateAcceleratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -802,15 +970,26 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAcceleratorAttributes operation.
+        /// Update the attributes for an accelerator. To see an AWS CLI example of updating an
+        /// accelerator to enable flow logs, scroll down to <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAcceleratorAttributes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAcceleratorAttributes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAcceleratorAttributes service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AcceleratorNotFoundException">
+        /// The accelerator that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes">REST API Reference for UpdateAcceleratorAttributes Operation</seealso>
         public virtual Task<UpdateAcceleratorAttributesResponse> UpdateAcceleratorAttributesAsync(UpdateAcceleratorAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -835,15 +1014,29 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateEndpointGroup operation.
+        /// Update an endpoint group. To see an AWS CLI example of updating an endpoint group,
+        /// scroll down to <b>Example</b>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateEndpointGroup service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup">REST API Reference for UpdateEndpointGroup Operation</seealso>
         public virtual Task<UpdateEndpointGroupResponse> UpdateEndpointGroupAsync(UpdateEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -868,15 +1061,32 @@ namespace Amazon.GlobalAccelerator
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateListener operation.
+        /// Update a listener.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateListener operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateListener service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateListener service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for AWS Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidPortRangeException">
+        /// The port numbers that you specified are not valid numbers or are not unique for this
+        /// accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an AWS Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.ListenerNotFoundException">
+        /// The listener that you specified doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

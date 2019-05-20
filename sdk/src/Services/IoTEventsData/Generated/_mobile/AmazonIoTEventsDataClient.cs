@@ -256,15 +256,32 @@ namespace Amazon.IoTEventsData
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchPutMessage operation.
+        /// Sends a set of messages to the AWS IoT Events system. Each message payload will be
+        /// transformed into the input you specify (<code>inputName</code>) and ingested into
+        /// any detectors that monitor that input. If multiple messages are sent, the order in
+        /// which the messages are processed is not guaranteed--you must send messages one at
+        /// a time and wait for a successful response to guarantee ordering.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchPutMessage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutMessage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchPutMessage service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occured.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchPutMessage">REST API Reference for BatchPutMessage Operation</seealso>
         public virtual Task<BatchPutMessageResponse> BatchPutMessageAsync(BatchPutMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -289,15 +306,29 @@ namespace Amazon.IoTEventsData
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchUpdateDetector operation.
+        /// Updates the state, variable values, and timer settings of one or more detectors (instances)
+        /// of a specified detector model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDetector operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDetector service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchUpdateDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occured.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetector">REST API Reference for BatchUpdateDetector Operation</seealso>
         public virtual Task<BatchUpdateDetectorResponse> BatchUpdateDetectorAsync(BatchUpdateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -322,15 +353,31 @@ namespace Amazon.IoTEventsData
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeDetector operation.
+        /// Returns information about the specified detector (instance).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDetector operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetector service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occured.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeDetector">REST API Reference for DescribeDetector Operation</seealso>
         public virtual Task<DescribeDetectorResponse> DescribeDetectorAsync(DescribeDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -355,15 +402,31 @@ namespace Amazon.IoTEventsData
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDetectors operation.
+        /// Lists detectors (the instances of a detector model).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDetectors operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectors service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDetectors service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occured.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         public virtual Task<ListDetectorsResponse> ListDetectorsAsync(ListDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

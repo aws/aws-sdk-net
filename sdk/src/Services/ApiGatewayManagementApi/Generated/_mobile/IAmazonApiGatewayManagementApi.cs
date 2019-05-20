@@ -43,15 +43,28 @@ namespace Amazon.ApiGatewayManagementApi
         #region  PostToConnection
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PostToConnection operation.
+        /// Sends the provided data to the specified connection.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PostToConnection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PostToConnection service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PostToConnection service method, as returned by ApiGatewayManagementApi.</returns>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.ForbiddenException">
+        /// The caller is not authorized to invoke this operation.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.GoneException">
+        /// The connection with the provided id no longer exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.LimitExceededException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayManagementApi.Model.PayloadTooLargeException">
+        /// The data has exceeded the maximum size allowed.
+        /// </exception>
         Task<PostToConnectionResponse> PostToConnectionAsync(PostToConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

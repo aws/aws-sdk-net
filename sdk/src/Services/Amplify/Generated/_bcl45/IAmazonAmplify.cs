@@ -67,15 +67,32 @@ namespace Amazon.Amplify
         CreateAppResponse CreateApp(CreateAppRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApp operation.
+        /// Creates a new Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApp operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApp service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateApp">REST API Reference for CreateApp Operation</seealso>
         Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -113,15 +130,35 @@ namespace Amazon.Amplify
         CreateBranchResponse CreateBranch(CreateBranchRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateBranch operation.
+        /// Creates a new Branch for an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateBranch operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBranch service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateBranch service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -159,15 +196,35 @@ namespace Amazon.Amplify
         CreateDomainAssociationResponse CreateDomainAssociation(CreateDomainAssociationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDomainAssociation operation.
+        /// Create a new DomainAssociation on an App
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDomainAssociation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainAssociation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDomainAssociation service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociation">REST API Reference for CreateDomainAssociation Operation</seealso>
         Task<CreateDomainAssociationResponse> CreateDomainAssociationAsync(CreateDomainAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -202,15 +259,32 @@ namespace Amazon.Amplify
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApp operation.
+        /// Delete an existing Amplify App by appId.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApp operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApp service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -245,15 +319,32 @@ namespace Amazon.Amplify
         DeleteBranchResponse DeleteBranch(DeleteBranchRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteBranch operation.
+        /// Deletes a branch for an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteBranch operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBranch service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteBranch service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -288,15 +379,32 @@ namespace Amazon.Amplify
         DeleteDomainAssociationResponse DeleteDomainAssociation(DeleteDomainAssociationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDomainAssociation operation.
+        /// Deletes a DomainAssociation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainAssociation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainAssociation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDomainAssociation service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteDomainAssociation">REST API Reference for DeleteDomainAssociation Operation</seealso>
         Task<DeleteDomainAssociationResponse> DeleteDomainAssociationAsync(DeleteDomainAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -331,15 +439,32 @@ namespace Amazon.Amplify
         DeleteJobResponse DeleteJob(DeleteJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// Delete a job, for an Amplify branch, part of Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -371,15 +496,29 @@ namespace Amazon.Amplify
         GetAppResponse GetApp(GetAppRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApp operation.
+        /// Retrieves an existing Amplify App by appId.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApp operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApp service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApp service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">REST API Reference for GetApp Operation</seealso>
         Task<GetAppResponse> GetAppAsync(GetAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -411,15 +550,29 @@ namespace Amazon.Amplify
         GetBranchResponse GetBranch(GetBranchRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetBranch operation.
+        /// Retrieves a branch for an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetBranch operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetBranch service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetBranch service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch">REST API Reference for GetBranch Operation</seealso>
         Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -451,15 +604,29 @@ namespace Amazon.Amplify
         GetDomainAssociationResponse GetDomainAssociation(GetDomainAssociationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDomainAssociation operation.
+        /// Retrieves domain info that corresponds to an appId and domainName.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDomainAssociation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainAssociation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDomainAssociation service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation">REST API Reference for GetDomainAssociation Operation</seealso>
         Task<GetDomainAssociationResponse> GetDomainAssociationAsync(GetDomainAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -494,15 +661,32 @@ namespace Amazon.Amplify
         GetJobResponse GetJob(GetJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetJob operation.
+        /// Get a job for a branch, part of an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetJob service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetJob">REST API Reference for GetJob Operation</seealso>
         Task<GetJobResponse> GetJobAsync(GetJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -531,15 +715,26 @@ namespace Amazon.Amplify
         ListAppsResponse ListApps(ListAppsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApps operation.
+        /// Lists existing Amplify Apps.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApps operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListApps service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps">REST API Reference for ListApps Operation</seealso>
         Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -568,15 +763,26 @@ namespace Amazon.Amplify
         ListBranchesResponse ListBranches(ListBranchesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBranches operation.
+        /// Lists branches for an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBranches operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBranches service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListBranches service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBranches">REST API Reference for ListBranches Operation</seealso>
         Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -605,15 +811,26 @@ namespace Amazon.Amplify
         ListDomainAssociationsResponse ListDomainAssociations(ListDomainAssociationsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDomainAssociations operation.
+        /// List domains with an app
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDomainAssociations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainAssociations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListDomainAssociations service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociations">REST API Reference for ListDomainAssociations Operation</seealso>
         Task<ListDomainAssociationsResponse> ListDomainAssociationsAsync(ListDomainAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -645,15 +862,29 @@ namespace Amazon.Amplify
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// List Jobs for a branch, part of an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -688,15 +919,32 @@ namespace Amazon.Amplify
         StartJobResponse StartJob(StartJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartJob operation.
+        /// Starts a new job for a branch, part of an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartJob service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob">REST API Reference for StartJob Operation</seealso>
         Task<StartJobResponse> StartJobAsync(StartJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -731,15 +979,32 @@ namespace Amazon.Amplify
         StopJobResponse StopJob(StopJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopJob operation.
+        /// Stop a job that is in progress, for an Amplify branch, part of Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopJob service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.LimitExceededException">
+        /// Exception thrown when a resource could not be created because of service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob">REST API Reference for StopJob Operation</seealso>
         Task<StopJobResponse> StopJobAsync(StopJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -771,15 +1036,29 @@ namespace Amazon.Amplify
         UpdateAppResponse UpdateApp(UpdateAppRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApp operation.
+        /// Updates an existing Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApp operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApp service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApp service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -814,15 +1093,32 @@ namespace Amazon.Amplify
         UpdateBranchResponse UpdateBranch(UpdateBranchRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateBranch operation.
+        /// Updates a branch for an Amplify App.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateBranch operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBranch service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateBranch service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranch">REST API Reference for UpdateBranch Operation</seealso>
         Task<UpdateBranchResponse> UpdateBranchAsync(UpdateBranchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -857,15 +1153,32 @@ namespace Amazon.Amplify
         UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDomainAssociation operation.
+        /// Create a new DomainAssociation on an App
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainAssociation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDomainAssociation service method, as returned by Amplify.</returns>
+        /// <exception cref="Amazon.Amplify.Model.BadRequestException">
+        /// Exception thrown when a request contains unexpected data.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.DependentServiceFailureException">
+        /// Exception thrown when an operation fails due to a dependent service throwing an exception.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.InternalFailureException">
+        /// Exception thrown when the service fails to perform an operation due to an internal
+        /// issue.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.NotFoundException">
+        /// Exception thrown when an entity has not been found during an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Amplify.Model.UnauthorizedException">
+        /// Exception thrown when an operation fails due to a lack of access.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

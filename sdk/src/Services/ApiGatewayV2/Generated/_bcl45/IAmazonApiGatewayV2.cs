@@ -65,15 +65,32 @@ namespace Amazon.ApiGatewayV2
         CreateApiResponse CreateApi(CreateApiRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApi operation.
+        /// Creates an Api resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateApiResponse> CreateApiAsync(CreateApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -106,15 +123,32 @@ namespace Amazon.ApiGatewayV2
         CreateApiMappingResponse CreateApiMapping(CreateApiMappingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApiMapping operation.
+        /// Creates an API mapping.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApiMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApiMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApiMapping service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateApiMappingResponse> CreateApiMappingAsync(CreateApiMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -147,15 +181,32 @@ namespace Amazon.ApiGatewayV2
         CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
+        /// Creates an Authorizer for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAuthorizer service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -188,15 +239,32 @@ namespace Amazon.ApiGatewayV2
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDeployment operation.
+        /// Creates a Deployment for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDeployment service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -229,15 +297,32 @@ namespace Amazon.ApiGatewayV2
         CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDomainName operation.
+        /// Creates a domain name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -270,15 +355,32 @@ namespace Amazon.ApiGatewayV2
         CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateIntegration operation.
+        /// Creates an Integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -311,15 +413,32 @@ namespace Amazon.ApiGatewayV2
         CreateIntegrationResponseResponse CreateIntegrationResponse(CreateIntegrationResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateIntegrationResponse operation.
+        /// Creates an IntegrationResponses.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateIntegrationResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateIntegrationResponseResponse> CreateIntegrationResponseAsync(CreateIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -352,15 +471,32 @@ namespace Amazon.ApiGatewayV2
         CreateModelResponse CreateModel(CreateModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateModel operation.
+        /// Creates a Model for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateModel service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -393,15 +529,32 @@ namespace Amazon.ApiGatewayV2
         CreateRouteResponse CreateRoute(CreateRouteRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateRoute operation.
+        /// Creates a Route for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateRoute service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -434,15 +587,32 @@ namespace Amazon.ApiGatewayV2
         CreateRouteResponseResponse CreateRouteResponse(CreateRouteResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateRouteResponse operation.
+        /// Creates a RouteResponse for a Route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateRouteResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateRouteResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateRouteResponseResponse> CreateRouteResponseAsync(CreateRouteResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -475,15 +645,32 @@ namespace Amazon.ApiGatewayV2
         CreateStageResponse CreateStage(CreateStageRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateStage operation.
+        /// Creates a Stage for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateStage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -507,15 +694,23 @@ namespace Amazon.ApiGatewayV2
         DeleteApiResponse DeleteApi(DeleteApiRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApi operation.
+        /// Deletes an Api resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteApiResponse> DeleteApiAsync(DeleteApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -543,15 +738,27 @@ namespace Amazon.ApiGatewayV2
         DeleteApiMappingResponse DeleteApiMapping(DeleteApiMappingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApiMapping operation.
+        /// Deletes an API mapping.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApiMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApiMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApiMapping service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteApiMappingResponse> DeleteApiMappingAsync(DeleteApiMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -575,15 +782,23 @@ namespace Amazon.ApiGatewayV2
         DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
+        /// Deletes an Authorizer.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAuthorizer service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -607,15 +822,23 @@ namespace Amazon.ApiGatewayV2
         DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDeployment operation.
+        /// Deletes a Deployment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -639,15 +862,23 @@ namespace Amazon.ApiGatewayV2
         DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDomainName operation.
+        /// Deletes a domain name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -671,15 +902,23 @@ namespace Amazon.ApiGatewayV2
         DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIntegration operation.
+        /// Deletes an Integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -703,15 +942,23 @@ namespace Amazon.ApiGatewayV2
         DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteIntegrationResponse operation.
+        /// Deletes an IntegrationResponses.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -735,15 +982,23 @@ namespace Amazon.ApiGatewayV2
         DeleteModelResponse DeleteModel(DeleteModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteModel operation.
+        /// Deletes a Model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteModel service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -767,15 +1022,23 @@ namespace Amazon.ApiGatewayV2
         DeleteRouteResponse DeleteRoute(DeleteRouteRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRoute operation.
+        /// Deletes a Route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteRoute service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -799,15 +1062,23 @@ namespace Amazon.ApiGatewayV2
         DeleteRouteResponseResponse DeleteRouteResponse(DeleteRouteResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRouteResponse operation.
+        /// Deletes a RouteResponse.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteRouteResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteRouteResponseResponse> DeleteRouteResponseAsync(DeleteRouteResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -831,15 +1102,23 @@ namespace Amazon.ApiGatewayV2
         DeleteStageResponse DeleteStage(DeleteStageRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteStage operation.
+        /// Deletes a Stage.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteStage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -863,15 +1142,23 @@ namespace Amazon.ApiGatewayV2
         GetApiResponse GetApi(GetApiRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApi operation.
+        /// Gets an Api resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetApiResponse> GetApiAsync(GetApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -899,15 +1186,27 @@ namespace Amazon.ApiGatewayV2
         GetApiMappingResponse GetApiMapping(GetApiMappingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApiMapping operation.
+        /// The API mapping.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApiMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApiMapping service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetApiMappingResponse> GetApiMappingAsync(GetApiMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -935,15 +1234,27 @@ namespace Amazon.ApiGatewayV2
         GetApiMappingsResponse GetApiMappings(GetApiMappingsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApiMappings operation.
+        /// The API mappings.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApiMappings operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiMappings service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApiMappings service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetApiMappingsResponse> GetApiMappingsAsync(GetApiMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -971,15 +1282,27 @@ namespace Amazon.ApiGatewayV2
         GetApisResponse GetApis(GetApisRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApis operation.
+        /// Gets a collection of Api resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApis operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApis service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApis service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetApisResponse> GetApisAsync(GetApisRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1003,15 +1326,23 @@ namespace Amazon.ApiGatewayV2
         GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAuthorizer operation.
+        /// Gets an Authorizer.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAuthorizer service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1039,15 +1370,27 @@ namespace Amazon.ApiGatewayV2
         GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAuthorizers operation.
+        /// Gets the Authorizers for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAuthorizers service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1071,15 +1414,23 @@ namespace Amazon.ApiGatewayV2
         GetDeploymentResponse GetDeployment(GetDeploymentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDeployment operation.
+        /// Gets a Deployment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDeployment service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1107,15 +1458,27 @@ namespace Amazon.ApiGatewayV2
         GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDeployments operation.
+        /// Gets the Deployments for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDeployments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDeployments service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1139,15 +1502,23 @@ namespace Amazon.ApiGatewayV2
         GetDomainNameResponse GetDomainName(GetDomainNameRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDomainName operation.
+        /// Gets a domain name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1175,15 +1546,27 @@ namespace Amazon.ApiGatewayV2
         GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDomainNames operation.
+        /// Gets the domain names for an AWS account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDomainNames operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainNames service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDomainNames service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1207,15 +1590,23 @@ namespace Amazon.ApiGatewayV2
         GetIntegrationResponse GetIntegration(GetIntegrationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegration operation.
+        /// Gets an Integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1239,15 +1630,23 @@ namespace Amazon.ApiGatewayV2
         GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegrationResponse operation.
+        /// Gets an IntegrationResponses.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegrationResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1275,15 +1674,27 @@ namespace Amazon.ApiGatewayV2
         GetIntegrationResponsesResponse GetIntegrationResponses(GetIntegrationResponsesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegrationResponses operation.
+        /// Gets the IntegrationResponses for an Integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponses operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrationResponses service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegrationResponses service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetIntegrationResponsesResponse> GetIntegrationResponsesAsync(GetIntegrationResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1311,15 +1722,27 @@ namespace Amazon.ApiGatewayV2
         GetIntegrationsResponse GetIntegrations(GetIntegrationsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetIntegrations operation.
+        /// Gets the Integrations for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetIntegrations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegrations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetIntegrations service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetIntegrationsResponse> GetIntegrationsAsync(GetIntegrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1343,15 +1766,23 @@ namespace Amazon.ApiGatewayV2
         GetModelResponse GetModel(GetModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModel operation.
+        /// Gets a Model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModel service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetModelResponse> GetModelAsync(GetModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1379,15 +1810,27 @@ namespace Amazon.ApiGatewayV2
         GetModelsResponse GetModels(GetModelsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModels operation.
+        /// Gets the Models for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModels operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModels service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1411,15 +1854,23 @@ namespace Amazon.ApiGatewayV2
         GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetModelTemplate operation.
+        /// Gets a model template.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetModelTemplate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetModelTemplate service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1443,15 +1894,23 @@ namespace Amazon.ApiGatewayV2
         GetRouteResponse GetRoute(GetRouteRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRoute operation.
+        /// Gets a Route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRoute service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetRouteResponse> GetRouteAsync(GetRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1475,15 +1934,23 @@ namespace Amazon.ApiGatewayV2
         GetRouteResponseResponse GetRouteResponse(GetRouteResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRouteResponse operation.
+        /// Gets a RouteResponse.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRouteResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRouteResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetRouteResponseResponse> GetRouteResponseAsync(GetRouteResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1511,15 +1978,27 @@ namespace Amazon.ApiGatewayV2
         GetRouteResponsesResponse GetRouteResponses(GetRouteResponsesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRouteResponses operation.
+        /// Gets the RouteResponses for a Route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRouteResponses operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteResponses service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRouteResponses service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetRouteResponsesResponse> GetRouteResponsesAsync(GetRouteResponsesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1547,15 +2026,27 @@ namespace Amazon.ApiGatewayV2
         GetRoutesResponse GetRoutes(GetRoutesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetRoutes operation.
+        /// Gets the Routes for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetRoutes operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoutes service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetRoutes service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetRoutesResponse> GetRoutesAsync(GetRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1579,15 +2070,23 @@ namespace Amazon.ApiGatewayV2
         GetStageResponse GetStage(GetStageRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStage operation.
+        /// Gets a Stage.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetStage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetStageResponse> GetStageAsync(GetStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1615,15 +2114,27 @@ namespace Amazon.ApiGatewayV2
         GetStagesResponse GetStages(GetStagesRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStages operation.
+        /// Gets the Stages for an API.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStages operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStages service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetStages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1656,15 +2167,32 @@ namespace Amazon.ApiGatewayV2
         UpdateApiResponse UpdateApi(UpdateApiRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApi operation.
+        /// Updates an Api resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApi operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApi service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApi service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateApiResponse> UpdateApiAsync(UpdateApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1697,15 +2225,32 @@ namespace Amazon.ApiGatewayV2
         UpdateApiMappingResponse UpdateApiMapping(UpdateApiMappingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApiMapping operation.
+        /// The API mapping.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApiMapping operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiMapping service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApiMapping service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateApiMappingResponse> UpdateApiMappingAsync(UpdateApiMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1738,15 +2283,32 @@ namespace Amazon.ApiGatewayV2
         UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
+        /// Updates an Authorizer.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAuthorizer service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1779,15 +2341,32 @@ namespace Amazon.ApiGatewayV2
         UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDeployment operation.
+        /// Updates a Deployment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDeployment service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1820,15 +2399,32 @@ namespace Amazon.ApiGatewayV2
         UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDomainName operation.
+        /// Updates a domain name.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateDomainName service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1861,15 +2457,32 @@ namespace Amazon.ApiGatewayV2
         UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIntegration operation.
+        /// Updates an Integration.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateIntegration service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1902,15 +2515,32 @@ namespace Amazon.ApiGatewayV2
         UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateIntegrationResponse operation.
+        /// Updates an IntegrationResponses.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegrationResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateIntegrationResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1943,15 +2573,32 @@ namespace Amazon.ApiGatewayV2
         UpdateModelResponse UpdateModel(UpdateModelRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateModel operation.
+        /// Updates a Model.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateModel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateModel service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1984,15 +2631,32 @@ namespace Amazon.ApiGatewayV2
         UpdateRouteResponse UpdateRoute(UpdateRouteRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRoute operation.
+        /// Updates a Route.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRoute service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2025,15 +2689,32 @@ namespace Amazon.ApiGatewayV2
         UpdateRouteResponseResponse UpdateRouteResponse(UpdateRouteResponseRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateRouteResponse operation.
+        /// Updates a RouteResponse.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateRouteResponse operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouteResponse service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateRouteResponse service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateRouteResponseResponse> UpdateRouteResponseAsync(UpdateRouteResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2066,15 +2747,32 @@ namespace Amazon.ApiGatewayV2
         UpdateStageResponse UpdateStage(UpdateStageRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateStage operation.
+        /// Updates a Stage.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateStage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateStage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
         Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

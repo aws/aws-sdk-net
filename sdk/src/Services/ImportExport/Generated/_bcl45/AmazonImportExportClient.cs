@@ -282,15 +282,37 @@ namespace Amazon.ImportExport
             return Invoke<CancelJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CancelJob operation.
+        /// This operation cancels a specified job. Only the job owner can cancel it. The operation
+        /// fails if the job has already started or is complete.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.UnableToCancelJobIdException">
+        /// AWS Import/Export cannot cancel the job
+        /// </exception>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -380,15 +402,76 @@ namespace Amazon.ImportExport
             return Invoke<CreateJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// This operation initiates the process of scheduling an upload or download of your data.
+        /// You include in the request a manifest that describes the data transfer specifics.
+        /// The response to the request includes a job ID, which you can use in other operations,
+        /// a signature that you use to identify your storage device, and the address where you
+        /// should ship your storage device.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.BucketPermissionException">
+        /// The account specified does not have the appropriate bucket permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.CreateJobQuotaExceededException">
+        /// Each account can create only a certain number of jobs per day. If you need to create
+        /// more than this, please contact awsimportexport@amazon.com to explain your particular
+        /// use case.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidCustomsException">
+        /// One or more customs parameters was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidFileSystemException">
+        /// File system specified in export manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidManifestFieldException">
+        /// One or more manifest fields was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
+        /// Your manifest is not well-formed.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingCustomsException">
+        /// One or more required customs parameters was missing from the manifest.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingManifestFieldException">
+        /// One or more required fields were missing from the manifest file. Please correct and
+        /// resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingParameterException">
+        /// One or more required parameters was missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MultipleRegionsException">
+        /// Your manifest file contained buckets from multiple regions. A job is restricted to
+        /// buckets from one region. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.NoSuchBucketException">
+        /// The specified bucket does not exist. Create the specified bucket or change the manifest's
+        /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
+        /// by the manifest's Access Key ID, has write permissions to.
+        /// </exception>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -442,15 +525,40 @@ namespace Amazon.ImportExport
             return Invoke<GetShippingLabelResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetShippingLabel operation.
+        /// This operation generates a pre-paid UPS shipping label that you will use to ship your
+        /// device to AWS for processing.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetShippingLabel operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetShippingLabel service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetShippingLabel service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         public virtual Task<GetShippingLabelResponse> GetShippingLabelAsync(GetShippingLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -499,15 +607,35 @@ namespace Amazon.ImportExport
             return Invoke<GetStatusResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetStatus operation.
+        /// This operation returns information about a job, including where the job is in the
+        /// processing pipeline, the status of the results, and the signature value associated
+        /// with the job. You can only return information about jobs you own.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetStatus service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         public virtual Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -603,15 +731,30 @@ namespace Amazon.ImportExport
         {
             return ListJobsAsync(new ListJobsRequest(), cancellationToken);
         }
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// This operation returns the jobs associated with the requester. AWS Import/Export lists
+        /// the jobs in reverse chronological order based on the date of creation. For example
+        /// if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation
+        /// would return Test2 followed by Test1.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -704,15 +847,79 @@ namespace Amazon.ImportExport
             return Invoke<UpdateJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJob operation.
+        /// You use this operation to change the parameters specified in the original manifest
+        /// file by supplying a new manifest file. The manifest file attached to this request
+        /// replaces the original manifest file. You can only use the operation after a CreateJob
+        /// request but before the data transfer starts and you can only use it on jobs you own.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJob service method, as returned by ImportExport.</returns>
+        /// <exception cref="Amazon.ImportExport.Model.BucketPermissionException">
+        /// The account specified does not have the appropriate bucket permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.CanceledJobIdException">
+        /// The specified job ID has been canceled and is no longer valid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.ExpiredJobIdException">
+        /// Indicates that the specified job has expired out of the system.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAccessKeyIdException">
+        /// The AWS Access Key ID specified in the request did not match the manifest's accessKeyId
+        /// value. The manifest and the request authentication must use the same AWS Access Key
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidAddressException">
+        /// The address specified in the manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidCustomsException">
+        /// One or more customs parameters was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidFileSystemException">
+        /// File system specified in export manifest is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidJobIdException">
+        /// The JOBID was missing, not found, or not associated with the AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidManifestFieldException">
+        /// One or more manifest fields was invalid. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.InvalidVersionException">
+        /// The client tool version is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MalformedManifestException">
+        /// Your manifest is not well-formed.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingCustomsException">
+        /// One or more required customs parameters was missing from the manifest.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingManifestFieldException">
+        /// One or more required fields were missing from the manifest file. Please correct and
+        /// resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MissingParameterException">
+        /// One or more required parameters was missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.MultipleRegionsException">
+        /// Your manifest file contained buckets from multiple regions. A job is restricted to
+        /// buckets from one region. Please correct and resubmit.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.NoSuchBucketException">
+        /// The specified bucket does not exist. Create the specified bucket or change the manifest's
+        /// bucket, exportBucket, or logBucket field to a bucket that the account, as specified
+        /// by the manifest's Access Key ID, has write permissions to.
+        /// </exception>
+        /// <exception cref="Amazon.ImportExport.Model.UnableToUpdateJobIdException">
+        /// AWS Import/Export cannot update the job
+        /// </exception>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

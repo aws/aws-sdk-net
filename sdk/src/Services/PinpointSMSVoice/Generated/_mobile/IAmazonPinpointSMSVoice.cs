@@ -39,15 +39,34 @@ namespace Amazon.PinpointSMSVoice
         #region  CreateConfigurationSet
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConfigurationSet operation.
+        /// Create a new configuration set. After you create the configuration set, you can add
+        /// one or more event destinations to it.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConfigurationSet service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -55,15 +74,36 @@ namespace Amazon.PinpointSMSVoice
         #region  CreateConfigurationSetEventDestination
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateConfigurationSetEventDestination operation.
+        /// Create a new event destination in a configuration set.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateConfigurationSetEventDestination service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -71,15 +111,30 @@ namespace Amazon.PinpointSMSVoice
         #region  DeleteConfigurationSet
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConfigurationSet operation.
+        /// Deletes an existing configuration set.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConfigurationSet service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -87,15 +142,30 @@ namespace Amazon.PinpointSMSVoice
         #region  DeleteConfigurationSetEventDestination
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteConfigurationSetEventDestination operation.
+        /// Deletes an event destination in a configuration set.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteConfigurationSetEventDestination service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -103,15 +173,31 @@ namespace Amazon.PinpointSMSVoice
         #region  GetConfigurationSetEventDestinations
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetConfigurationSetEventDestinations operation.
+        /// Obtain information about an event destination, including the types of events it reports,
+        /// the Amazon Resource Name (ARN) of the destination, and the name of the event destination.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationSetEventDestinations operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationSetEventDestinations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetConfigurationSetEventDestinations service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -119,15 +205,28 @@ namespace Amazon.PinpointSMSVoice
         #region  ListConfigurationSets
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListConfigurationSets operation.
+        /// List all of the configuration sets associated with your Amazon Pinpoint account in
+        /// the current region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListConfigurationSets service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -135,15 +234,27 @@ namespace Amazon.PinpointSMSVoice
         #region  SendVoiceMessage
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SendVoiceMessage operation.
+        /// Create a new voice message and send it to a recipient's phone number.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SendVoiceMessage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SendVoiceMessage service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SendVoiceMessage service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<SendVoiceMessageResponse> SendVoiceMessageAsync(SendVoiceMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -151,15 +262,32 @@ namespace Amazon.PinpointSMSVoice
         #region  UpdateConfigurationSetEventDestination
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateConfigurationSetEventDestination operation.
+        /// Update an event destination in a configuration set. An event destination is a location
+        /// that you publish information about your voice calls to. For example, you can log an
+        /// event to an Amazon CloudWatch destination when a call fails.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateConfigurationSetEventDestination service method, as returned by PinpointSMSVoice.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.InternalServiceErrorException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoice.Model.TooManyRequestsException">
+        /// You've issued too many requests to the resource. Wait a few minutes, and then try
+        /// again.
+        /// </exception>
         Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

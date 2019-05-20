@@ -269,15 +269,28 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<AssociateDeviceWithPlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the AssociateDeviceWithPlacement operation.
+        /// Associates a physical device with a placement.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithPlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithPlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the AssociateDeviceWithPlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/AssociateDeviceWithPlacement">REST API Reference for AssociateDeviceWithPlacement Operation</seealso>
         public virtual Task<AssociateDeviceWithPlacementResponse> AssociateDeviceWithPlacementAsync(AssociateDeviceWithPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -321,15 +334,28 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<CreatePlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreatePlacement operation.
+        /// Creates an empty placement.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreatePlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/CreatePlacement">REST API Reference for CreatePlacement Operation</seealso>
         public virtual Task<CreatePlacementResponse> CreatePlacementAsync(CreatePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -371,15 +397,26 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<CreateProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateProject operation.
+        /// Creates an empty project with a placement template. A project contains zero or more
+        /// placements that adhere to the placement template defined in the project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceConflictException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -430,15 +467,35 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<DeletePlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePlacement operation.
-        /// </summary>
+        /// Deletes a placement. To delete a placement, it must not have any devices associated
+        /// with it.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePlacement operation.</param>
+        ///  <note> 
+        /// <para>
+        /// When you delete a placement, all associated data becomes irretrievable.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">REST API Reference for DeletePlacement Operation</seealso>
         public virtual Task<DeletePlacementResponse> DeletePlacementAsync(DeletePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -489,15 +546,35 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<DeleteProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteProject operation.
-        /// </summary>
+        /// Deletes a project. To delete a project, it must not have any placements associated
+        /// with it.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation.</param>
+        ///  <note> 
+        /// <para>
+        /// When you delete a project, all associated data becomes irretrievable.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -538,15 +615,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<DescribePlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribePlacement operation.
+        /// Describes a placement in a project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribePlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribePlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DescribePlacement">REST API Reference for DescribePlacement Operation</seealso>
         public virtual Task<DescribePlacementResponse> DescribePlacementAsync(DescribePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -587,15 +674,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<DescribeProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeProject operation.
+        /// Returns an object describing a project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeProject service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -639,15 +736,28 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<DisassociateDeviceFromPlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateDeviceFromPlacement operation.
+        /// Removes a physical device from a placement.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DisassociateDeviceFromPlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDeviceFromPlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DisassociateDeviceFromPlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DisassociateDeviceFromPlacement">REST API Reference for DisassociateDeviceFromPlacement Operation</seealso>
         public virtual Task<DisassociateDeviceFromPlacementResponse> DisassociateDeviceFromPlacementAsync(DisassociateDeviceFromPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -688,15 +798,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<GetDevicesInPlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDevicesInPlacement operation.
+        /// Returns an object enumerating the devices in a placement.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDevicesInPlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDevicesInPlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetDevicesInPlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/GetDevicesInPlacement">REST API Reference for GetDevicesInPlacement Operation</seealso>
         public virtual Task<GetDevicesInPlacementResponse> GetDevicesInPlacementAsync(GetDevicesInPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -737,15 +857,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<ListPlacementsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListPlacements operation.
+        /// Lists the placement(s) of a project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListPlacements operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlacements service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListPlacements service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListPlacements">REST API Reference for ListPlacements Operation</seealso>
         public virtual Task<ListPlacementsResponse> ListPlacementsAsync(ListPlacementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -783,15 +913,22 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<ListProjectsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListProjects operation.
+        /// Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListProjects operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -832,15 +969,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<ListTagsForResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Lists the tags (metadata key/value pairs) which you have assigned to the resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -883,15 +1030,27 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<TagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that
+        /// can be used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// Tagging Strategies</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -932,15 +1091,25 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<UntagResourceResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes one or more tags (metadata key/value pairs) from a resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -985,15 +1154,29 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<UpdatePlacementResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdatePlacement operation.
+        /// Updates a placement with the given attributes. To clear an attribute, pass an empty
+        /// value (i.e., "").
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdatePlacement operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlacement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdatePlacement service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UpdatePlacement">REST API Reference for UpdatePlacement Operation</seealso>
         public virtual Task<UpdatePlacementResponse> UpdatePlacementAsync(UpdatePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1040,15 +1223,31 @@ namespace Amazon.IoT1ClickProjects
             return Invoke<UpdateProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// Updates a project associated with your AWS account and region. With the exception
+        /// of device template names, you can pass just the values that need to be updated because
+        /// the update request will change only the values that are provided. To clear a value,
+        /// pass the empty string (i.e., <code>""</code>).
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by IoT1ClickProjects.</returns>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InternalFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.InvalidRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IoT1ClickProjects.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

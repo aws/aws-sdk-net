@@ -312,15 +312,36 @@ namespace Amazon.Pricing
             return Invoke<DescribeServicesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeServices operation.
+        /// Returns the metadata for one service or a list of the metadata for all services. Use
+        /// this without a service code to get the service codes for all services. Use it with
+        /// a service code, such as <code>AmazonEC2</code>, to get information specific to that
+        /// service, such as the attribute names available for that service. For example, some
+        /// of the attribute names available for EC2 are <code>volumeType</code>, <code>maxIopsVolume</code>,
+        /// <code>operation</code>, <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeServices operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeServices service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -370,15 +391,34 @@ namespace Amazon.Pricing
             return Invoke<GetAttributeValuesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAttributeValues operation.
+        /// Returns a list of attribute values. Attibutes are similar to the details in a Price
+        /// List API offer file. For a list of available attributes, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
+        /// File Definitions</a> in the <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">AWS
+        /// Billing and Cost Management User Guide</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAttributeValues operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttributeValues service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetAttributeValues service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual Task<GetAttributeValuesResponse> GetAttributeValuesAsync(GetAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -425,15 +465,31 @@ namespace Amazon.Pricing
             return Invoke<GetProductsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetProducts operation.
+        /// Returns a list of all products that match the filter criteria.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetProducts operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetProducts service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetProducts service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual Task<GetProductsResponse> GetProductsAsync(GetProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

@@ -287,15 +287,28 @@ namespace Amazon.Batch
             return Invoke<CancelJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CancelJob operation.
+        /// Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>,
+        /// <code>PENDING</code>, or <code>RUNNABLE</code> state are cancelled. Jobs that have
+        /// progressed to <code>STARTING</code> or <code>RUNNING</code> are not cancelled (but
+        /// the API operation still succeeds, even if no job is cancelled); these jobs must be
+        /// terminated with the <a>TerminateJob</a> operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -390,15 +403,79 @@ namespace Amazon.Batch
             return Invoke<CreateComputeEnvironmentResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateComputeEnvironment operation.
-        /// </summary>
+        /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
+        /// compute environments.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateComputeEnvironment operation.</param>
+        ///  
+        /// <para>
+        /// In a managed compute environment, AWS Batch manages the capacity and instance types
+        /// of the compute resources within the environment. This is based on the compute resource
+        /// specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+        /// template</a> that you specify when you create the compute environment. You can choose
+        /// to use Amazon EC2 On-Demand Instances or Spot Instances in your managed compute environment.
+        /// You can optionally set a maximum price so that Spot Instances only launch when the
+        /// Spot Instance price is below a specified percentage of the On-Demand price.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Multi-node parallel jobs are not supported on Spot Instances.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// In an unmanaged compute environment, you can manage your own compute resources. This
+        /// provides more compute resource configuration options, such as using a custom AMI,
+        /// but you must ensure that your AMI meets the Amazon ECS container instance AMI specification.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
+        /// Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
+        /// operation to find the Amazon ECS cluster that is associated with it. Then, manually
+        /// launch your container instances into that Amazon ECS cluster. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
+        /// an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Batch does not upgrade the AMIs in a compute environment after it is created (for
+        /// example, when a newer version of the Amazon ECS-optimized AMI is available). You are
+        /// responsible for the management of the guest operating system (including updates and
+        /// security patches) and any additional application software or utilities that you install
+        /// on the compute resources. To use a new AMI for your AWS Batch jobs:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a new compute environment with the new AMI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add the compute environment to an existing job queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove the old compute environment from your job queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the old compute environment.
+        /// </para>
+        ///  </li> </ol> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputeEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateComputeEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public virtual Task<CreateComputeEnvironmentResponse> CreateComputeEnvironmentAsync(CreateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -448,15 +525,34 @@ namespace Amazon.Batch
             return Invoke<CreateJobQueueResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateJobQueue operation.
-        /// </summary>
+        /// Creates an AWS Batch job queue. When you create a job queue, you associate one or
+        /// more compute environments to the queue and assign an order of preference for the compute
+        /// environments.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJobQueue operation.</param>
+        ///  
+        /// <para>
+        /// You also set a priority to the job queue that determines the order in which the AWS
+        /// Batch scheduler places jobs onto its associated compute environments. For example,
+        /// if a compute environment is associated with more than one job queue, the job queue
+        /// with a higher priority is given preference for scheduling jobs to that compute environment.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobQueue service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateJobQueue service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public virtual Task<CreateJobQueueResponse> CreateJobQueueAsync(CreateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -503,15 +599,31 @@ namespace Amazon.Batch
             return Invoke<DeleteComputeEnvironmentResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteComputeEnvironment operation.
-        /// </summary>
+        /// Deletes an AWS Batch compute environment.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeEnvironment operation.</param>
+        ///  
+        /// <para>
+        /// Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
+        /// with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
+        /// job queues with the <a>UpdateJobQueue</a> API operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteComputeEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public virtual Task<DeleteComputeEnvironmentResponse> DeleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -559,15 +671,32 @@ namespace Amazon.Batch
             return Invoke<DeleteJobQueueResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteJobQueue operation.
-        /// </summary>
+        /// Deletes the specified job queue. You must first disable submissions for a queue with
+        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are terminated when you
+        /// delete a job queue.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteJobQueue operation.</param>
+        ///  
+        /// <para>
+        /// It is not necessary to disassociate compute environments from a queue before submitting
+        /// a <code>DeleteJobQueue</code> request. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobQueue service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteJobQueue service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public virtual Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -607,15 +736,24 @@ namespace Amazon.Batch
             return Invoke<DeregisterJobDefinitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterJobDefinition operation.
+        /// Deregisters an AWS Batch job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeregisterJobDefinition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterJobDefinition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeregisterJobDefinition service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public virtual Task<DeregisterJobDefinitionResponse> DeregisterJobDefinitionAsync(DeregisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -662,15 +800,31 @@ namespace Amazon.Batch
             return Invoke<DescribeComputeEnvironmentsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeComputeEnvironments operation.
-        /// </summary>
+        /// Describes one or more of your compute environments.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeEnvironments operation.</param>
+        ///  
+        /// <para>
+        /// If you are using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
+        /// operation to determine the <code>ecsClusterArn</code> that you should launch your
+        /// Amazon ECS container instances into.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeEnvironments service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeComputeEnvironments service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public virtual Task<DescribeComputeEnvironmentsResponse> DescribeComputeEnvironmentsAsync(DescribeComputeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -711,15 +865,25 @@ namespace Amazon.Batch
             return Invoke<DescribeJobDefinitionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeJobDefinitions operation.
+        /// Describes a list of job definitions. You can specify a <code>status</code> (such as
+        /// <code>ACTIVE</code>) to only return job definitions that match that status.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeJobDefinitions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobDefinitions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeJobDefinitions service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public virtual Task<DescribeJobDefinitionsResponse> DescribeJobDefinitionsAsync(DescribeJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -759,15 +923,24 @@ namespace Amazon.Batch
             return Invoke<DescribeJobQueuesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeJobQueues operation.
+        /// Describes one or more of your job queues.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeJobQueues operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobQueues service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeJobQueues service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public virtual Task<DescribeJobQueuesResponse> DescribeJobQueuesAsync(DescribeJobQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -807,15 +980,24 @@ namespace Amazon.Batch
             return Invoke<DescribeJobsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeJobs operation.
+        /// Describes a list of AWS Batch jobs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -877,15 +1059,46 @@ namespace Amazon.Batch
             return Invoke<ListJobsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListJobs operation.
-        /// </summary>
+        /// Returns a list of AWS Batch jobs.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        ///  
+        /// <para>
+        /// You must specify only one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// a job queue ID to return a list of jobs in that job queue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// a multi-node parallel job ID to return a list of that job's nodes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// an array job ID to return a list of that job's children
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can filter the results by job status with the <code>jobStatus</code> parameter.
+        /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -925,15 +1138,24 @@ namespace Amazon.Batch
             return Invoke<RegisterJobDefinitionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RegisterJobDefinition operation.
+        /// Registers an AWS Batch job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RegisterJobDefinition operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterJobDefinition service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RegisterJobDefinition service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public virtual Task<RegisterJobDefinitionResponse> RegisterJobDefinitionAsync(RegisterJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -974,15 +1196,25 @@ namespace Amazon.Batch
             return Invoke<SubmitJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SubmitJob operation.
+        /// Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a>
+        /// override parameters defined in the job definition.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SubmitJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SubmitJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public virtual Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1024,15 +1256,26 @@ namespace Amazon.Batch
             return Invoke<TerminateJobResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TerminateJob operation.
+        /// Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code>
+        /// state are terminated, which causes them to transition to <code>FAILED</code>. Jobs
+        /// that have not progressed to the <code>STARTING</code> state are cancelled.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TerminateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TerminateJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public virtual Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1072,15 +1315,24 @@ namespace Amazon.Batch
             return Invoke<UpdateComputeEnvironmentResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateComputeEnvironment operation.
+        /// Updates an AWS Batch compute environment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeEnvironment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeEnvironment service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateComputeEnvironment service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public virtual Task<UpdateComputeEnvironmentResponse> UpdateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1120,15 +1372,24 @@ namespace Amazon.Batch
             return Invoke<UpdateJobQueueResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJobQueue operation.
+        /// Updates a job queue.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJobQueue operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobQueue service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJobQueue service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public virtual Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

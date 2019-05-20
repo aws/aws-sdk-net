@@ -314,15 +314,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<CreateApplicationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// Creates an application, optionally including an AWS SAM file to create the first application
+        /// version in the same call.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -369,15 +386,31 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<CreateApplicationVersionResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApplicationVersion operation.
+        /// Creates an application version.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateApplicationVersion service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -421,15 +454,28 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<CreateCloudFormationChangeSetResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateCloudFormationChangeSet operation.
+        /// Creates an AWS CloudFormation change set for the given application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationChangeSet operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationChangeSet service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateCloudFormationChangeSet service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">REST API Reference for CreateCloudFormationChangeSet Operation</seealso>
         public virtual Task<CreateCloudFormationChangeSetResponse> CreateCloudFormationChangeSetAsync(CreateCloudFormationChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -477,15 +523,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<CreateCloudFormationTemplateResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateCloudFormationTemplate operation.
+        /// Creates an AWS CloudFormation template.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationTemplate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateCloudFormationTemplate service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">REST API Reference for CreateCloudFormationTemplate Operation</seealso>
         public virtual Task<CreateCloudFormationTemplateResponse> CreateCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -536,15 +599,35 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<DeleteApplicationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// Deletes the specified application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -592,15 +675,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<GetApplicationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApplication operation.
+        /// Gets the specified application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -648,15 +748,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<GetApplicationPolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetApplicationPolicy operation.
+        /// Retrieves the policy for the application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetApplicationPolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetApplicationPolicy service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">REST API Reference for GetApplicationPolicy Operation</seealso>
         public virtual Task<GetApplicationPolicyResponse> GetApplicationPolicyAsync(GetApplicationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -704,15 +821,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<GetCloudFormationTemplateResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCloudFormationTemplate operation.
+        /// Gets the specified AWS CloudFormation template.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCloudFormationTemplate operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFormationTemplate service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCloudFormationTemplate service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">REST API Reference for GetCloudFormationTemplate Operation</seealso>
         public virtual Task<GetCloudFormationTemplateResponse> GetCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -760,15 +894,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<ListApplicationDependenciesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApplicationDependencies operation.
+        /// Retrieves the list of applications nested in the containing application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDependencies operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDependencies service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListApplicationDependencies service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
         public virtual Task<ListApplicationDependenciesResponse> ListApplicationDependenciesAsync(ListApplicationDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -813,15 +964,29 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<ListApplicationsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApplications operation.
+        /// Lists applications owned by the requester.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApplications operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListApplications service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -869,15 +1034,32 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<ListApplicationVersionsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApplicationVersions operation.
+        /// Lists versions for the specified application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApplicationVersions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationVersions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListApplicationVersions service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual Task<ListApplicationVersionsResponse> ListApplicationVersionsAsync(ListApplicationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -927,15 +1109,34 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<PutApplicationPolicyResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutApplicationPolicy operation.
+        /// Sets the permission policy for an application. For the list of actions supported for
+        /// this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+        ///  Permissions</a> .
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutApplicationPolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutApplicationPolicy service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">REST API Reference for PutApplicationPolicy Operation</seealso>
         public virtual Task<PutApplicationPolicyResponse> PutApplicationPolicyAsync(PutApplicationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -986,15 +1187,35 @@ namespace Amazon.ServerlessApplicationRepository
             return Invoke<UpdateApplicationResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApplication operation.
+        /// Updates the specified application.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

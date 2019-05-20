@@ -61,15 +61,26 @@ namespace Amazon.MediaStore
         CreateContainerResponse CreateContainer(CreateContainerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateContainer operation.
+        /// Creates a storage container to hold objects. A container is similar to a bucket in
+        /// the Amazon S3 service.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateContainer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateContainer service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.LimitExceededException">
+        /// A service limit has been exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         Task<CreateContainerResponse> CreateContainerAsync(CreateContainerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -99,15 +110,27 @@ namespace Amazon.MediaStore
         DeleteContainerResponse DeleteContainer(DeleteContainerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteContainer operation.
+        /// Deletes the specified container. Before you make a <code>DeleteContainer</code> request,
+        /// delete any objects in the container or in any folders in the container. You can delete
+        /// only empty containers.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteContainer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteContainer service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         Task<DeleteContainerResponse> DeleteContainerAsync(DeleteContainerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -138,15 +161,28 @@ namespace Amazon.MediaStore
         DeleteContainerPolicyResponse DeleteContainerPolicy(DeleteContainerPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteContainerPolicy operation.
+        /// Deletes the access policy that is associated with the specified container.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerPolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteContainerPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         Task<DeleteContainerPolicyResponse> DeleteContainerPolicyAsync(DeleteContainerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -185,15 +221,36 @@ namespace Amazon.MediaStore
         DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteCorsPolicy operation.
-        /// </summary>
+        /// Deletes the cross-origin resource sharing (CORS) configuration information that is
+        /// set for the container.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsPolicy operation.</param>
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code>
+        /// action. The container owner has this permission by default and can grant this permission
+        /// to others.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
+        /// The CORS policy that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         Task<DeleteCorsPolicyResponse> DeleteCorsPolicyAsync(DeleteCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -225,15 +282,29 @@ namespace Amazon.MediaStore
         DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// Removes an object lifecycle policy from a container. It takes up to 20 minutes for
+        /// the change to take effect.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -263,15 +334,27 @@ namespace Amazon.MediaStore
         DescribeContainerResponse DescribeContainer(DescribeContainerRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeContainer operation.
+        /// Retrieves the properties of the requested container. This request is commonly used
+        /// to retrieve the endpoint of a container. An endpoint is a value assigned by the service
+        /// when a new container is created. A container's endpoint does not change after it has
+        /// been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code>
+        /// object based on <code>ContainerName</code>. To return all <code>Container</code> objects
+        /// that are associated with a specified AWS account, use <a>ListContainers</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeContainer operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContainer service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeContainer service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         Task<DescribeContainerResponse> DescribeContainerAsync(DescribeContainerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -304,15 +387,30 @@ namespace Amazon.MediaStore
         GetContainerPolicyResponse GetContainerPolicy(GetContainerPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetContainerPolicy operation.
+        /// Retrieves the access policy for the specified container. For information about the
+        /// data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS
+        /// Identity and Access Management User Guide</a>.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetContainerPolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetContainerPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetContainerPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         Task<GetContainerPolicyResponse> GetContainerPolicyAsync(GetContainerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -350,15 +448,35 @@ namespace Amazon.MediaStore
         GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetCorsPolicy operation.
-        /// </summary>
+        /// Returns the cross-origin resource sharing (CORS) configuration information that is
+        /// set for the container.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetCorsPolicy operation.</param>
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code>
+        /// action. By default, the container owner has this permission and can grant it to others.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCorsPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
+        /// The CORS policy that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -389,15 +507,28 @@ namespace Amazon.MediaStore
         GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetLifecyclePolicy operation.
+        /// Retrieves the object lifecycle policy that is assigned to a container.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -433,15 +564,33 @@ namespace Amazon.MediaStore
         ListContainersResponse ListContainers(ListContainersRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListContainers operation.
-        /// </summary>
+        /// Lists the properties of all containers in AWS Elemental MediaStore. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListContainers operation.</param>
+        ///  
+        /// <para>
+        /// You can query to receive all the containers in one response. Or you can include the
+        /// <code>MaxResults</code> parameter to receive a limited number of containers in each
+        /// response. In this case, the response includes a token. To get the next set of containers,
+        /// send the command again, this time with the <code>NextToken</code> parameter (with
+        /// the returned token as its value). The next set of responses appears, with a token
+        /// if there are still more containers to receive. 
+        /// </para>
+        ///  
+        /// <para>
+        /// See also <a>DescribeContainer</a>, which gets the properties of one container. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContainers service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListContainers service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         Task<ListContainersResponse> ListContainersAsync(ListContainersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -479,15 +628,35 @@ namespace Amazon.MediaStore
         PutContainerPolicyResponse PutContainerPolicy(PutContainerPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutContainerPolicy operation.
-        /// </summary>
+        /// Creates an access policy for the specified container to restrict the users and clients
+        /// that can access it. For information about the data that is included in an access policy,
+        /// see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access
+        /// Management User Guide</a>.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutContainerPolicy operation.</param>
+        ///  
+        /// <para>
+        /// For this release of the REST API, you can create only one policy for a container.
+        /// If you enter <code>PutContainerPolicy</code> twice, the second command modifies the
+        /// existing policy. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutContainerPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutContainerPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         Task<PutContainerPolicyResponse> PutContainerPolicyAsync(PutContainerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -532,15 +701,42 @@ namespace Amazon.MediaStore
         PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutCorsPolicy operation.
-        /// </summary>
+        /// Sets the cross-origin resource sharing (CORS) configuration on a container so that
+        /// the container can service cross-origin requests. For example, you might want to enable
+        /// a request whose origin is http://www.example.com to access your AWS Elemental MediaStore
+        /// container at my.example.container.com by using the browser's XMLHttpRequest capability.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy operation.</param>
+        ///  
+        /// <para>
+        /// To enable CORS on a container, you attach a CORS policy to the container. In the CORS
+        /// policy, you configure rules that identify origins and the HTTP methods that can be
+        /// executed on your container. The policy can contain up to 398,000 characters. You can
+        /// add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
+        /// the first applicable rule listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin
+        /// Resource Sharing (CORS) in AWS Elemental MediaStore</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -576,15 +772,33 @@ namespace Amazon.MediaStore
         PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutLifecyclePolicy operation.
-        /// </summary>
+        /// Writes an object lifecycle policy to a container. If the container already has an
+        /// object lifecycle policy, the service replaces the existing policy with the new policy.
+        /// It takes up to 20 minutes for the change to take effect.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy operation.</param>
+        ///  
+        /// <para>
+        /// For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components
+        /// of an Object Lifecycle Policy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -614,15 +828,27 @@ namespace Amazon.MediaStore
         StartAccessLoggingResponse StartAccessLogging(StartAccessLoggingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartAccessLogging operation.
+        /// Starts access logging on the specified container. When you enable access logging on
+        /// a container, MediaStore delivers access logs for objects stored in that container
+        /// to Amazon CloudWatch Logs.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartAccessLogging service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
         Task<StartAccessLoggingResponse> StartAccessLoggingAsync(StartAccessLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -652,15 +878,27 @@ namespace Amazon.MediaStore
         StopAccessLoggingResponse StopAccessLogging(StopAccessLoggingRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopAccessLogging operation.
+        /// Stops access logging on the specified container. When you stop access logging on a
+        /// container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access
+        /// logs are not saved and are not retrievable.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopAccessLogging service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopAccessLogging service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
         Task<StopAccessLoggingResponse> StopAccessLoggingAsync(StopAccessLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

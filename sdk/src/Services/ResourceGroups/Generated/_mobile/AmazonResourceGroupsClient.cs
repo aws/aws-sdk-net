@@ -304,15 +304,32 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// Creates a group with a specified name, description, and resource query.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -337,15 +354,36 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// Deletes a specified resource group. Deleting a resource group does not delete resources
+        /// that are members of the group; it only deletes the group structure.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -370,15 +408,35 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// Returns information about a specified resource group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -403,15 +461,35 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetGroupQuery operation.
+        /// Returns the resource query associated with the specified resource group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetGroupQuery operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroupQuery service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetGroupQuery service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
         public virtual Task<GetGroupQueryResponse> GetGroupQueryAsync(GetGroupQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -436,15 +514,36 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetTags operation.
+        /// Returns a list of tags that are associated with a resource group, specified by an
+        /// ARN.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetTags operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetTags service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -469,15 +568,39 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListGroupResources operation.
+        /// Returns a list of ARNs of resources that are members of a specified resource group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListGroupResources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListGroupResources service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request has not been applied because it lacks valid authentication credentials
+        /// for the target resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual Task<ListGroupResourcesResponse> ListGroupResourcesAsync(ListGroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -502,15 +625,32 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListGroups operation.
+        /// Returns a list of existing resource groups in your account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListGroups operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -535,15 +675,37 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the SearchResources operation.
+        /// Returns a list of AWS resource identifiers that matches a specified query. The query
+        /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the SearchResources operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the SearchResources service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request has not been applied because it lacks valid authentication credentials
+        /// for the target resource.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual Task<SearchResourcesResponse> SearchResourcesAsync(SearchResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -568,15 +730,36 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the Tag operation.
+        /// Adds tags to a resource group with the specified ARN. Existing tags on a resource
+        /// group are not changed if they are not specified in the request parameters.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the Tag operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the Tag service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the Tag service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
         public virtual Task<TagResponse> TagAsync(TagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -601,15 +784,35 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the Untag operation.
+        /// Deletes specified tags from a specified resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the Untag operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the Untag service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the Untag service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
         public virtual Task<UntagResponse> UntagAsync(UntagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -634,15 +837,36 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// Updates an existing group with a new or changed description. You cannot update the
+        /// name of a resource group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -667,15 +891,35 @@ namespace Amazon.ResourceGroups
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateGroupQuery operation.
+        /// Updates the resource query of a group.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateGroupQuery operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroupQuery service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateGroupQuery service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request does not comply with validation rules that are defined for the request
+        /// parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller is not authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method which is not allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more resources specified in the request do not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// The caller has exceeded throttling limits.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
         public virtual Task<UpdateGroupQueryResponse> UpdateGroupQueryAsync(UpdateGroupQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

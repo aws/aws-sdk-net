@@ -40,15 +40,21 @@ namespace Amazon.MobileAnalytics
         #region  PutEvents
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutEvents operation.
+        /// The PutEvents operation records one or more events. You can have up to 1,500 unique
+        /// custom events per app, any combination of up to 40 attributes and metrics per custom
+        /// event, and any number of attribute or metric values.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutEvents operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutEvents service method, as returned by MobileAnalytics.</returns>
+        /// <exception cref="Amazon.MobileAnalytics.Model.BadRequestException">
+        /// An exception object returned when a request fails.
+        /// </exception>
         Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

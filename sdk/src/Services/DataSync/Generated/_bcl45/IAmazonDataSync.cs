@@ -77,15 +77,33 @@ namespace Amazon.DataSync
         CancelTaskExecutionResponse CancelTaskExecution(CancelTaskExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CancelTaskExecution operation.
-        /// </summary>
+        /// Cancels execution of a task. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CancelTaskExecution operation.</param>
+        ///  
+        /// <para>
+        /// When you cancel a task execution, the transfer of some files are abruptly interrupted.
+        /// The contents of files that are transferred to the destination might be incomplete
+        /// or inconsistent with the source files. However, if you start a new task execution
+        /// on the same task and you allow the task execution to complete, file content on the
+        /// destination is complete and consistent. This applies to other unexpected failures
+        /// that interrupt a task execution. In all of these cases, AWS DataSync successfully
+        /// complete the transfer when you start the next task execution.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTaskExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CancelTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">REST API Reference for CancelTaskExecution Operation</seealso>
         Task<CancelTaskExecutionResponse> CancelTaskExecutionAsync(CancelTaskExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -132,15 +150,44 @@ namespace Amazon.DataSync
         CreateAgentResponse CreateAgent(CreateAgentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateAgent operation.
-        /// </summary>
+        /// Activates an AWS DataSync agent that you have deployed on your host. The activation
+        /// process associates your agent with your account. In the activation process, you specify
+        /// information such as the AWS Region that you want to activate the agent in. You activate
+        /// the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS)
+        /// reside. Your tasks are created in this AWS Region. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAgent operation.</param>
+        ///  
+        /// <para>
+        /// You can use an agent for more than one location. If a task uses multiple agents, all
+        /// of them need to have status AVAILABLE for the task to run. If you use multiple agents
+        /// for a source location, the status of all the agents must be AVAILABLE for the task
+        /// to run. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+        /// (Activating an Agent) in the <i>AWS DataSync User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Agents are automatically updated by AWS on a regular basis, using a mechanism that
+        /// ensures minimal interruption to your tasks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateAgent service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">REST API Reference for CreateAgent Operation</seealso>
         Task<CreateAgentResponse> CreateAgentAsync(CreateAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -165,15 +212,22 @@ namespace Amazon.DataSync
         CreateLocationEfsResponse CreateLocationEfs(CreateLocationEfsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateLocationEfs operation.
+        /// Creates an endpoint for an Amazon EFS file system.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateLocationEfs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationEfs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateLocationEfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">REST API Reference for CreateLocationEfs Operation</seealso>
         Task<CreateLocationEfsResponse> CreateLocationEfsAsync(CreateLocationEfsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -198,15 +252,22 @@ namespace Amazon.DataSync
         CreateLocationNfsResponse CreateLocationNfs(CreateLocationNfsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateLocationNfs operation.
+        /// Creates an endpoint for a Network File System (NFS) file system.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationNfs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateLocationNfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">REST API Reference for CreateLocationNfs Operation</seealso>
         Task<CreateLocationNfsResponse> CreateLocationNfsAsync(CreateLocationNfsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -244,15 +305,35 @@ namespace Amazon.DataSync
         CreateLocationS3Response CreateLocationS3(CreateLocationS3Request request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateLocationS3 operation.
-        /// </summary>
+        /// Creates an endpoint for an Amazon S3 bucket.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 operation.</param>
+        ///  
+        /// <para>
+        /// For AWS DataSync to access a destination S3 bucket, it needs an AWS Identity and Access
+        /// Management (IAM) role that has the required permissions. You can set up the required
+        /// permissions by creating an IAM policy that grants the required permissions and attaching
+        /// the policy to the role. An example of such a policy is shown in the examples section.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+        /// (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateLocationS3 service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">REST API Reference for CreateLocationS3 Operation</seealso>
         Task<CreateLocationS3Response> CreateLocationS3Async(CreateLocationS3Request request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -296,15 +377,41 @@ namespace Amazon.DataSync
         CreateTaskResponse CreateTask(CreateTaskRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateTask operation.
-        /// </summary>
+        /// Creates a task. A task is a set of two locations (source and destination) and a set
+        /// of Options that you use to control the behavior of a task. If you don't specify Options
+        /// when you create a task, AWS DataSync populates them with service defaults.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateTask operation.</param>
+        ///  
+        /// <para>
+        /// When you create a task, it first enters the CREATING state. During CREATING AWS DataSync
+        /// attempts to mount the on-premises Network File System (NFS) location. The task transitions
+        /// to the AVAILABLE state without waiting for the AWS location to become mounted. If
+        /// required, AWS DataSync mounts the AWS location before each task execution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an agent that is associated with a source (NFS) location goes offline, the task
+        /// transitions to the UNAVAILABLE status. If the status of the task remains in the CREATING
+        /// status for more than a few minutes, it means that your agent might be having trouble
+        /// mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail. Mount
+        /// issues are often caused by either a misconfigured firewall or a mistyped NFS server
+        /// host name.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateTask service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">REST API Reference for CreateTask Operation</seealso>
         Task<CreateTaskResponse> CreateTaskAsync(CreateTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -332,15 +439,25 @@ namespace Amazon.DataSync
         DeleteAgentResponse DeleteAgent(DeleteAgentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAgent operation.
+        /// Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
+        /// of the agent in your request. The operation disassociates the agent from your AWS
+        /// account. However, it doesn't delete the agent virtual machine (VM) from your on-premises
+        /// environment.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAgent operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgent service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteAgent service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">REST API Reference for DeleteAgent Operation</seealso>
         Task<DeleteAgentResponse> DeleteAgentAsync(DeleteAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -365,15 +482,22 @@ namespace Amazon.DataSync
         DeleteLocationResponse DeleteLocation(DeleteLocationRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLocation operation.
+        /// Deletes the configuration of a location used by AWS DataSync.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteLocation operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocation service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteLocation service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         Task<DeleteLocationResponse> DeleteLocationAsync(DeleteLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -398,15 +522,22 @@ namespace Amazon.DataSync
         DeleteTaskResponse DeleteTask(DeleteTaskRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteTask operation.
+        /// Deletes a task.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteTask operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTask service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteTask service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">REST API Reference for DeleteTask Operation</seealso>
         Task<DeleteTaskResponse> DeleteTaskAsync(DeleteTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -433,15 +564,24 @@ namespace Amazon.DataSync
         DescribeAgentResponse DescribeAgent(DescribeAgentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAgent operation.
+        /// Returns metadata such as the name, the network interfaces, and the status (that is,
+        /// whether the agent is running or not) for an agent. To specify which agent to describe,
+        /// use the Amazon Resource Name (ARN) of the agent in your request.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAgent operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgent service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeAgent service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">REST API Reference for DescribeAgent Operation</seealso>
         Task<DescribeAgentResponse> DescribeAgentAsync(DescribeAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -466,15 +606,22 @@ namespace Amazon.DataSync
         DescribeLocationEfsResponse DescribeLocationEfs(DescribeLocationEfsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLocationEfs operation.
+        /// Returns metadata, such as the path information about an Amazon EFS location.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationEfs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationEfs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeLocationEfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         Task<DescribeLocationEfsResponse> DescribeLocationEfsAsync(DescribeLocationEfsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -499,15 +646,22 @@ namespace Amazon.DataSync
         DescribeLocationNfsResponse DescribeLocationNfs(DescribeLocationNfsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLocationNfs operation.
+        /// Returns metadata, such as the path information, about a NFS location.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationNfs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationNfs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeLocationNfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">REST API Reference for DescribeLocationNfs Operation</seealso>
         Task<DescribeLocationNfsResponse> DescribeLocationNfsAsync(DescribeLocationNfsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -532,15 +686,22 @@ namespace Amazon.DataSync
         DescribeLocationS3Response DescribeLocationS3(DescribeLocationS3Request request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLocationS3 operation.
+        /// Returns metadata, such as bucket name, about an Amazon S3 bucket location.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationS3 operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationS3 service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeLocationS3 service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">REST API Reference for DescribeLocationS3 Operation</seealso>
         Task<DescribeLocationS3Response> DescribeLocationS3Async(DescribeLocationS3Request request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -565,15 +726,22 @@ namespace Amazon.DataSync
         DescribeTaskResponse DescribeTask(DescribeTaskRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeTask operation.
+        /// Returns metadata about a task.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeTask operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTask service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeTask service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         Task<DescribeTaskResponse> DescribeTaskAsync(DescribeTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -598,15 +766,22 @@ namespace Amazon.DataSync
         DescribeTaskExecutionResponse DescribeTaskExecution(DescribeTaskExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeTaskExecution operation.
+        /// Returns detailed metadata about a task that is being executed.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">REST API Reference for DescribeTaskExecution Operation</seealso>
         Task<DescribeTaskExecutionResponse> DescribeTaskExecutionAsync(DescribeTaskExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -645,15 +820,36 @@ namespace Amazon.DataSync
         ListAgentsResponse ListAgents(ListAgentsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAgents operation.
-        /// </summary>
+        /// Returns a list of agents owned by an AWS account in the AWS Region specified in the
+        /// request. The returned list is ordered by agent Amazon Resource Name (ARN).
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAgents operation.</param>
+        ///  
+        /// <para>
+        /// By default, this operation returns a maximum of 100 agents. This operation supports
+        /// pagination that enables you to optionally reduce the number of agents returned in
+        /// a response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have more agents than are returned in a response (that is, the response returns
+        /// only a truncated list of your agents), the response contains a marker that you can
+        /// specify in your next request to fetch the next page of agents.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListAgents service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">REST API Reference for ListAgents Operation</seealso>
         Task<ListAgentsResponse> ListAgentsAsync(ListAgentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -685,15 +881,29 @@ namespace Amazon.DataSync
         ListLocationsResponse ListLocations(ListLocationsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListLocations operation.
-        /// </summary>
+        /// Returns a lists of source and destination locations.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListLocations operation.</param>
+        ///  
+        /// <para>
+        /// If you have more locations than are returned in a response (that is, the response
+        /// returns only a truncated list of your agents), the response contains a token that
+        /// you can specify in your next request to fetch the next page of locations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLocations service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListLocations service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListLocations">REST API Reference for ListLocations Operation</seealso>
         Task<ListLocationsResponse> ListLocationsAsync(ListLocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -718,15 +928,22 @@ namespace Amazon.DataSync
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// Returns all the tags associated with a specified resources.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -751,15 +968,22 @@ namespace Amazon.DataSync
         ListTaskExecutionsResponse ListTaskExecutions(ListTaskExecutionsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTaskExecutions operation.
+        /// Returns a list of executed tasks.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTaskExecutions operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskExecutions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTaskExecutions service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">REST API Reference for ListTaskExecutions Operation</seealso>
         Task<ListTaskExecutionsResponse> ListTaskExecutionsAsync(ListTaskExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -784,15 +1008,22 @@ namespace Amazon.DataSync
         ListTasksResponse ListTasks(ListTasksRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListTasks operation.
+        /// Returns a list of all the tasks.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListTasks operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListTasks service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTasks">REST API Reference for ListTasks Operation</seealso>
         Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -830,15 +1061,35 @@ namespace Amazon.DataSync
         StartTaskExecutionResponse StartTaskExecution(StartTaskExecutionRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartTaskExecution operation.
-        /// </summary>
+        /// Starts a specific invocation of a task. A <code>TaskExecution</code> value represents
+        /// an individual run of a task. Each task can have at most one <code>TaskExecution</code>
+        /// at a time.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution operation.</param>
+        ///  
+        /// <para>
+        ///  <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING
+        /// | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For detailed information, see <i>Task Execution</i> in "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
+        /// (Components and Terminology) in the <i>AWS DataSync User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTaskExecution service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">REST API Reference for StartTaskExecution Operation</seealso>
         Task<StartTaskExecutionResponse> StartTaskExecutionAsync(StartTaskExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -863,15 +1114,22 @@ namespace Amazon.DataSync
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the TagResource operation.
+        /// Applies a key-value pair to an AWS resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -896,15 +1154,22 @@ namespace Amazon.DataSync
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// Removes a tag from an AWS resource.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -929,15 +1194,22 @@ namespace Amazon.DataSync
         UpdateAgentResponse UpdateAgent(UpdateAgentRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAgent operation.
+        /// Updates the name of an agent.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAgent operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgent service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateAgent service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         Task<UpdateAgentResponse> UpdateAgentAsync(UpdateAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -962,15 +1234,22 @@ namespace Amazon.DataSync
         UpdateTaskResponse UpdateTask(UpdateTaskRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateTask operation.
+        /// Updates the metadata associated with a task.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateTask operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateTask service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         Task<UpdateTaskResponse> UpdateTaskAsync(UpdateTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

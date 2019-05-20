@@ -366,15 +366,19 @@ namespace Amazon.CodeBuild
             return Invoke<BatchDeleteBuildsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchDeleteBuilds operation.
+        /// Deletes one or more builds.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBuilds operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteBuilds service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchDeleteBuilds service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
         public virtual Task<BatchDeleteBuildsResponse> BatchDeleteBuildsAsync(BatchDeleteBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -409,15 +413,19 @@ namespace Amazon.CodeBuild
             return Invoke<BatchGetBuildsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetBuilds operation.
+        /// Gets information about builds.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetBuilds operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetBuilds service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetBuilds service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public virtual Task<BatchGetBuildsResponse> BatchGetBuildsAsync(BatchGetBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -452,15 +460,19 @@ namespace Amazon.CodeBuild
             return Invoke<BatchGetProjectsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetProjects operation.
+        /// Gets information about build projects.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchGetProjects operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetProjects service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchGetProjects service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public virtual Task<BatchGetProjectsResponse> BatchGetProjectsAsync(BatchGetProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -502,15 +514,26 @@ namespace Amazon.CodeBuild
             return Invoke<CreateProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateProject operation.
+        /// Creates a build project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -570,15 +593,44 @@ namespace Amazon.CodeBuild
             return Invoke<CreateWebhookResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateWebhook operation.
-        /// </summary>
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code
+        /// every time a code change is pushed to the repository.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook operation.</param>
+        ///  <important> 
+        /// <para>
+        /// If you enable webhooks for an AWS CodeBuild project, and the project is used as a
+        /// build step in AWS CodePipeline, then two identical builds are created for each commit.
+        /// One build is triggered through webhooks, and one through AWS CodePipeline. Because
+        /// billing is on a per-build basis, you are billed for both builds. Therefore, if you
+        /// are using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild.
+        /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
+        /// 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+        /// a Build Project's Settings</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebhook service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified AWS resource cannot be created, because an AWS resource with the same
+        /// settings already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         public virtual Task<CreateWebhookResponse> CreateWebhookAsync(CreateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -613,15 +665,19 @@ namespace Amazon.CodeBuild
             return Invoke<DeleteProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteProject operation.
+        /// Deletes a build project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -659,15 +715,22 @@ namespace Amazon.CodeBuild
             return Invoke<DeleteSourceCredentialsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteSourceCredentials operation.
+        /// Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
         public virtual Task<DeleteSourceCredentialsResponse> DeleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -710,15 +773,27 @@ namespace Amazon.CodeBuild
             return Invoke<DeleteWebhookResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+        /// or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every
+        /// time a code change is pushed to the repository.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -757,15 +832,23 @@ namespace Amazon.CodeBuild
             return Invoke<ImportSourceCredentialsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ImportSourceCredentials operation.
+        /// Imports the source repository credentials for an AWS CodeBuild project that has its
+        /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ImportSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
         public virtual Task<ImportSourceCredentialsResponse> ImportSourceCredentialsAsync(ImportSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -803,15 +886,22 @@ namespace Amazon.CodeBuild
             return Invoke<InvalidateProjectCacheResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the InvalidateProjectCache operation.
+        /// Resets the cache for a project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the InvalidateProjectCache operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the InvalidateProjectCache service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the InvalidateProjectCache service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
         public virtual Task<InvalidateProjectCacheResponse> InvalidateProjectCacheAsync(InvalidateProjectCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -846,15 +936,19 @@ namespace Amazon.CodeBuild
             return Invoke<ListBuildsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBuilds operation.
+        /// Gets a list of build IDs, with each build ID representing a single build.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBuilds operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuilds service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListBuilds service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -893,15 +987,23 @@ namespace Amazon.CodeBuild
             return Invoke<ListBuildsForProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListBuildsForProject operation.
+        /// Gets a list of build IDs for the specified build project, with each build ID representing
+        /// a single build.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListBuildsForProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListBuildsForProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListBuildsForProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public virtual Task<ListBuildsForProjectResponse> ListBuildsForProjectAsync(ListBuildsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -933,15 +1035,16 @@ namespace Amazon.CodeBuild
             return Invoke<ListCuratedEnvironmentImagesResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListCuratedEnvironmentImages operation.
+        /// Gets information about Docker images that are managed by AWS CodeBuild.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListCuratedEnvironmentImages service method, as returned by CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public virtual Task<ListCuratedEnvironmentImagesResponse> ListCuratedEnvironmentImagesAsync(ListCuratedEnvironmentImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -977,15 +1080,20 @@ namespace Amazon.CodeBuild
             return Invoke<ListProjectsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListProjects operation.
+        /// Gets a list of build project names, with each build project name representing a single
+        /// build project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListProjects operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1017,15 +1125,16 @@ namespace Amazon.CodeBuild
             return Invoke<ListSourceCredentialsResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListSourceCredentials operation.
+        /// Returns a list of <code>SourceCredentialsInfo</code> objects.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListSourceCredentials service method, as returned by CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
         public virtual Task<ListSourceCredentialsResponse> ListSourceCredentialsAsync(ListSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1066,15 +1175,25 @@ namespace Amazon.CodeBuild
             return Invoke<StartBuildResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StartBuild operation.
+        /// Starts running a build.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartBuild operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartBuild service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StartBuild service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public virtual Task<StartBuildResponse> StartBuildAsync(StartBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1112,15 +1231,22 @@ namespace Amazon.CodeBuild
             return Invoke<StopBuildResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the StopBuild operation.
+        /// Attempts to stop running a build.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopBuild operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopBuild service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the StopBuild service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public virtual Task<StopBuildResponse> StopBuildAsync(StopBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1158,15 +1284,22 @@ namespace Amazon.CodeBuild
             return Invoke<UpdateProjectResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// Changes the settings of a build project.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1213,15 +1346,31 @@ namespace Amazon.CodeBuild
             return Invoke<UpdateWebhookResponse>(request, options);
         }
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateWebhook operation.
-        /// </summary>
+        /// Updates the webhook associated with an AWS CodeBuild build project. 
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook operation.</param>
+        ///  <note> 
+        /// <para>
+        ///  If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         public virtual Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

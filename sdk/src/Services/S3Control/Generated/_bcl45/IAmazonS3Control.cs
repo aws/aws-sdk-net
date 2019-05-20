@@ -61,15 +61,28 @@ namespace Amazon.S3Control
         CreateJobResponse CreateJob(CreateJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateJob operation.
+        /// Creates an Amazon S3 batch operations job.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.IdempotencyException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -86,15 +99,16 @@ namespace Amazon.S3Control
         DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DeletePublicAccessBlock operation.
+        /// Deletes the block public access configuration for the specified account.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
         Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -123,15 +137,28 @@ namespace Amazon.S3Control
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeJob operation.
+        /// Retrieves the configuration parameters and status for a batch operations job.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeJob operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -151,15 +178,19 @@ namespace Amazon.S3Control
         GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the GetPublicAccessBlock operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
+        /// 
+        /// </exception>
         Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -186,15 +217,26 @@ namespace Amazon.S3Control
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ListJobs operation.
+        /// Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+        /// making the request.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListJobs operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidNextTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InvalidRequestException">
+        /// 
+        /// </exception>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -211,15 +253,16 @@ namespace Amazon.S3Control
         PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the PutPublicAccessBlock operation.
-        /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock operation.</param>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
         Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -248,15 +291,28 @@ namespace Amazon.S3Control
         UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJobPriority operation.
+        /// Updates an existing job's priority.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJobPriority service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         Task<UpdateJobPriorityResponse> UpdateJobPriorityAsync(UpdateJobPriorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -289,15 +345,32 @@ namespace Amazon.S3Control
         UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request);
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateJobStatus operation.
+        /// Updates the status for the specified job. Use this operation to confirm that you want
+        /// to run a job or to cancel an existing job.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the UpdateJobStatus service method, as returned by S3Control.</returns>
+        /// <exception cref="Amazon.S3Control.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.InternalServiceException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.JobStatusException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.S3Control.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
         Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

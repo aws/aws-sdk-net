@@ -266,15 +266,46 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BatchExecuteStatement operation.
-        /// </summary>
+        /// Runs a batch SQL statement over an array of data.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement operation.</param>
+        ///         
+        /// <para>
+        /// You can run bulk update and insert operations for multiple records using a DML   
+        ///          statement with different parameter sets. Bulk operations can provide a significant
+        ///             performance improvement over individual insert and update operations.
+        /// </para>
+        ///         <important>                
+        /// <para>
+        /// If a call isn't part of a transaction because it doesn't include the             
+        ///       <code>transactionID</code> parameter, changes that result from the call are
+        ///                committed automatically.
+        /// </para>
+        ///             </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
+        /// The execution of the SQL statement timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -299,15 +330,51 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the BeginTransaction operation.
-        /// </summary>
+        /// Starts a SQL transaction.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the BeginTransaction operation.</param>
+        ///                 <important>            
+        /// <para>
+        /// A transaction can run for a maximum of 24 hours. A transaction is terminated and 
+        ///                rolled back automatically after 24 hours.
+        /// </para>
+        ///             
+        /// <para>
+        /// A transaction times out if no calls use its transaction ID in three minutes.     
+        ///            If a transaction times out before it's committed, it's rolled back    
+        ///            automatically.
+        /// </para>
+        ///             
+        /// <para>
+        /// DDL statements inside a transaction cause an implicit commit. We recommend       
+        ///          that you run each DDL statement in a separate <code>ExecuteStatement</code>
+        /// call with                 <code>continueAfterTimeout</code> enabled.
+        /// </para>
+        ///         </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BeginTransaction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the BeginTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
+        /// The execution of the SQL statement timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">REST API Reference for BeginTransaction Operation</seealso>
         public virtual Task<BeginTransactionResponse> BeginTransactionAsync(BeginTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -332,15 +399,34 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the CommitTransaction operation.
+        /// Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
+        ///            commits the changes.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CommitTransaction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CommitTransaction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the CommitTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.NotFoundException">
+        /// The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code>
+        /// value can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         public virtual Task<CommitTransactionResponse> CommitTransactionAsync(CommitTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -366,15 +452,36 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteSql operation.
-        /// </summary>
+        /// Runs one or more SQL statements.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ExecuteSql operation.</param>
+        ///         <important>            
+        /// <para>
+        /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or      
+        ///              <code>ExecuteStatement</code> operation.
+        /// </para>
+        ///         </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteSql service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ExecuteSql service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
         [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
         public virtual Task<ExecuteSqlResponse> ExecuteSqlAsync(ExecuteSqlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -400,15 +507,44 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteStatement operation.
-        /// </summary>
+        /// Runs a SQL statement against a database.
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement operation.</param>
+        ///         <important>                
+        /// <para>
+        /// If a call isn't part of a transaction because it doesn't include the             
+        ///       <code>transactionID</code> parameter, changes that result from the call are
+        ///                committed automatically.
+        /// </para>
+        ///             </important>        
+        /// <para>
+        /// The response size limit is 1 MB or 1,000 records. If the call returns more than 1
+        /// MB of response data or over 1,000 records, the call is terminated.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the ExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
+        /// The execution of the SQL statement timed out.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -433,15 +569,33 @@ namespace Amazon.RDSDataService
         }
 
 
+
         /// <summary>
-        /// Initiates the asynchronous execution of the RollbackTransaction operation.
+        /// Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
         /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RollbackTransaction operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackTransaction service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// 
+        /// <returns>The response from the RollbackTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
+        /// There is an error in the call or in a SQL statement.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
+        /// There are insufficient privileges to make the call.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.NotFoundException">
+        /// The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code>
+        /// value can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
+        /// The service specified by the <code>resourceArn</code> parameter is not           
+        /// available.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
         public virtual Task<RollbackTransactionResponse> RollbackTransactionAsync(RollbackTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
