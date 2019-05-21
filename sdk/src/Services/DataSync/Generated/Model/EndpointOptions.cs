@@ -28,49 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// ListTasksResponse
+    /// 
     /// </summary>
-    public partial class ListTasksResponse : AmazonWebServiceResponse
+    public partial class EndpointOptions
     {
-        private string _nextToken;
-        private List<TaskListEntry> _tasks = new List<TaskListEntry>();
+        private bool? _fips;
+        private bool? _privateLink;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// An opaque string that indicates the position at which to begin returning the next
-        /// list of tasks.
-        /// </para>
+        /// Gets and sets the property Fips.
         /// </summary>
-        [AWSProperty(Max=65535)]
-        public string NextToken
+        public bool Fips
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._fips.GetValueOrDefault(); }
+            set { this._fips = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Fips property is set
+        internal bool IsSetFips()
         {
-            return this._nextToken != null;
+            return this._fips.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Tasks. 
-        /// <para>
-        /// A list of all the tasks that are returned.
-        /// </para>
+        /// Gets and sets the property PrivateLink.
         /// </summary>
-        public List<TaskListEntry> Tasks
+        public bool PrivateLink
         {
-            get { return this._tasks; }
-            set { this._tasks = value; }
+            get { return this._privateLink.GetValueOrDefault(); }
+            set { this._privateLink = value; }
         }
 
-        // Check to see if Tasks property is set
-        internal bool IsSetTasks()
+        // Check to see if PrivateLink property is set
+        internal bool IsSetPrivateLink()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._privateLink.HasValue; 
         }
 
     }

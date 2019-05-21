@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model
         /// An opaque string that indicates the position at which to begin the next list of tasks.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=93)]
+        [AWSProperty(Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

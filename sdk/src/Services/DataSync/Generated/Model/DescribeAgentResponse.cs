@@ -34,8 +34,10 @@ namespace Amazon.DataSync.Model
     {
         private string _agentArn;
         private DateTime? _creationTime;
+        private EndpointOptions _endpointOptions;
         private DateTime? _lastConnectionTime;
         private string _name;
+        private PrivateLinkConfig _privateLinkConfig;
         private AgentStatus _status;
 
         /// <summary>
@@ -76,6 +78,21 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointOptions.
+        /// </summary>
+        public EndpointOptions EndpointOptions
+        {
+            get { return this._endpointOptions; }
+            set { this._endpointOptions = value; }
+        }
+
+        // Check to see if EndpointOptions property is set
+        internal bool IsSetEndpointOptions()
+        {
+            return this._endpointOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastConnectionTime. 
         /// <para>
         /// The time that the agent last connected to DataSyc.
@@ -110,6 +127,21 @@ namespace Amazon.DataSync.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateLinkConfig.
+        /// </summary>
+        public PrivateLinkConfig PrivateLinkConfig
+        {
+            get { return this._privateLinkConfig; }
+            set { this._privateLinkConfig = value; }
+        }
+
+        // Check to see if PrivateLinkConfig property is set
+        internal bool IsSetPrivateLinkConfig()
+        {
+            return this._privateLinkConfig != null;
         }
 
         /// <summary>

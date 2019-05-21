@@ -63,6 +63,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointOptions", targetDepth))
+                {
+                    var unmarshaller = EndpointOptionsUnmarshaller.Instance;
+                    response.EndpointOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastConnectionTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateLinkConfig", targetDepth))
+                {
+                    var unmarshaller = PrivateLinkConfigUnmarshaller.Instance;
+                    response.PrivateLinkConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
