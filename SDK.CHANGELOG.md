@@ -1,3 +1,14 @@
+### 3.3.515.0 (2019-05-21 18:30 UTC)
+* AlexaForBusiness (3.3.104.0)
+	* This release contains API changes to allow customers to create and manage Network Profiles for their Shared devices
+* DataSync (3.3.102.0)
+	* Documentation update and refine pagination token on Datasync List API's
+* Core 3.3.101.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.514.0 (2019-05-20 18:14 UTC)
 * AWSMarketplaceMetering (3.3.100.21)
 	* Documentation updates for meteringmarketplace
