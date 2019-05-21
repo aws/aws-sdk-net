@@ -62,7 +62,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The tokens used for pagination.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1100)]
         public string NextToken
         {
             get { return this._nextToken; }

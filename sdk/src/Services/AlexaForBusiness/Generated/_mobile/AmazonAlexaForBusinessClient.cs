@@ -317,6 +317,39 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  AssociateDeviceWithNetworkProfile
+
+        internal virtual AssociateDeviceWithNetworkProfileResponse AssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDeviceWithNetworkProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDeviceWithNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithNetworkProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        public virtual Task<AssociateDeviceWithNetworkProfileResponse> AssociateDeviceWithNetworkProfileAsync(AssociateDeviceWithNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithNetworkProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateDeviceWithNetworkProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
         internal virtual AssociateDeviceWithRoomResponse AssociateDeviceWithRoom(AssociateDeviceWithRoomRequest request)
@@ -610,6 +643,39 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = CreateGatewayGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateGatewayGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateNetworkProfile
+
+        internal virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        public virtual Task<CreateNetworkProfileResponse> CreateNetworkProfileAsync(CreateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNetworkProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -973,6 +1039,39 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = DeleteGatewayGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGatewayGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkProfile
+
+        internal virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        public virtual Task<DeleteNetworkProfileResponse> DeleteNetworkProfileAsync(DeleteNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNetworkProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1633,6 +1732,39 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = GetInvitationConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInvitationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkProfile
+
+        internal virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        public virtual Task<GetNetworkProfileResponse> GetNetworkProfileAsync(GetNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2462,6 +2594,39 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchNetworkProfiles
+
+        internal virtual SearchNetworkProfilesResponse SearchNetworkProfiles(SearchNetworkProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchNetworkProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNetworkProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchNetworkProfilesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchNetworkProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchNetworkProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        public virtual Task<SearchNetworkProfilesResponse> SearchNetworkProfilesAsync(SearchNetworkProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchNetworkProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNetworkProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchNetworkProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchProfiles
 
         internal virtual SearchProfilesResponse SearchProfiles(SearchProfilesRequest request)
@@ -3019,6 +3184,39 @@ namespace Amazon.AlexaForBusiness
             options.ResponseUnmarshaller = UpdateGatewayGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGatewayGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkProfile
+
+        internal virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkProfileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        public virtual Task<UpdateNetworkProfileResponse> UpdateNetworkProfileAsync(UpdateNetworkProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNetworkProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -13,6 +13,14 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AssociateDeviceWithNetworkProfileRequest.DeviceArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AssociateDeviceWithNetworkProfileRequest.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.AssociateDeviceWithRoomRequest.DeviceArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -158,6 +166,50 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.CertificateAuthorityArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.CurrentPassword</property>
+    <min>5</min>
+    <max>128</max>
+    <pattern>[\x00-\x7F]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.NetworkProfileName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.NextPassword</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(^$)|([\x00-\x7F]{5,})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileRequest.Ssid</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateNetworkProfileResponse.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateProfileRequest.Address</property>
     <min>1</min>
     <max>500</max>
@@ -297,6 +349,10 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeleteNetworkProfileRequest.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeleteProfileRequest.ProfileArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -408,6 +464,11 @@
     <property>Amazon.AlexaForBusiness.Model.GetInvitationConfigurationResponse.OrganizationName</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetNetworkProfileRequest.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetProfileRequest.ProfileArn</property>
@@ -442,12 +503,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListBusinessReportSchedulesRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListBusinessReportSchedulesResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListConferenceProvidersRequest.MaxResults</property>
@@ -457,12 +518,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListConferenceProvidersRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListConferenceProvidersResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListDeviceEventsRequest.DeviceArn</property>
@@ -476,12 +537,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListDeviceEventsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListDeviceEventsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsRequest.MaxResults</property>
@@ -491,12 +552,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewayGroupsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewaysRequest.GatewayGroupArn</property>
@@ -510,12 +571,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewaysRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListGatewaysResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsRequest.MaxResults</property>
@@ -525,7 +586,7 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsRequest.SkillGroupArn</property>
@@ -534,7 +595,7 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreCategoriesRequest.MaxResults</property>
@@ -544,12 +605,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreCategoriesRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreCategoriesResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreSkillsByCategoryRequest.CategoryId</property>
@@ -563,12 +624,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreSkillsByCategoryRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSkillsStoreSkillsByCategoryResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSmartHomeAppliancesRequest.MaxResults</property>
@@ -578,7 +639,7 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSmartHomeAppliancesRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSmartHomeAppliancesRequest.RoomArn</property>
@@ -587,7 +648,7 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListSmartHomeAppliancesResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListTagsRequest.Arn</property>
@@ -601,12 +662,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListTagsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListTagsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.ContactEmail</property>
@@ -618,6 +679,7 @@
     <property>Amazon.AlexaForBusiness.Model.PutInvitationConfigurationRequest.OrganizationName</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.PutRoomSkillParameterRequest.RoomArn</property>
@@ -698,12 +760,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchAddressBooksRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchAddressBooksResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchContactsRequest.MaxResults</property>
@@ -713,12 +775,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchContactsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchContactsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchDevicesRequest.MaxResults</property>
@@ -728,12 +790,27 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchDevicesRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchDevicesResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchNetworkProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchNetworkProfilesRequest.NextToken</property>
+    <min>1</min>
+    <max>1100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchNetworkProfilesResponse.NextToken</property>
+    <min>1</min>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchProfilesRequest.MaxResults</property>
@@ -743,12 +820,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchProfilesRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchProfilesResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchRoomsRequest.MaxResults</property>
@@ -758,12 +835,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchRoomsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchRoomsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchSkillGroupsRequest.MaxResults</property>
@@ -773,12 +850,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchSkillGroupsRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchSkillGroupsResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchUsersRequest.MaxResults</property>
@@ -788,12 +865,12 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchUsersRequest.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchUsersResponse.NextToken</property>
     <min>1</min>
-    <max>1000</max>
+    <max>1100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SendAnnouncementRequest.ClientRequestToken</property>
@@ -945,6 +1022,38 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.CertificateAuthorityArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.CurrentPassword</property>
+    <min>5</min>
+    <max>128</max>
+    <pattern>[\x00-\x7F]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.NetworkProfileName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateNetworkProfileRequest.NextPassword</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(^$)|([\x00-\x7F]{5,})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateProfileRequest.Address</property>
@@ -1190,6 +1299,16 @@
     <pattern>[a-zA-Z0-9]{1,200}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeviceData.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeviceData.NetworkProfileName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeviceData.RoomArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -1198,6 +1317,14 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeviceNetworkProfileInfo.CertificateArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeviceNetworkProfileInfo.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Filter.Key</property>
@@ -1288,6 +1415,70 @@
     <property>Amazon.AlexaForBusiness.Model.IPDialIn.Endpoint</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.CertificateAuthorityArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.CurrentPassword</property>
+    <min>5</min>
+    <max>128</max>
+    <pattern>[\x00-\x7F]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.NetworkProfileName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.NextPassword</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>(^$)|([\x00-\x7F]{5,})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfile.Ssid</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfileData.CertificateAuthorityArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfileData.Description</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfileData.NetworkProfileArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfileData.NetworkProfileName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.NetworkProfileData.Ssid</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Profile.Address</property>

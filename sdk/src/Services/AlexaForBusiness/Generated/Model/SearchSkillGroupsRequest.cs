@@ -87,7 +87,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// results beyond the token, up to the value specified by <code>MaxResults</code>. Required.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1100)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -479,6 +479,10 @@ namespace Amazon.AlexaForBusiness
         /// </summary>
         public static readonly DeviceStatus DEREGISTERED = new DeviceStatus("DEREGISTERED");
         /// <summary>
+        /// Constant FAILED for DeviceStatus
+        /// </summary>
+        public static readonly DeviceStatus FAILED = new DeviceStatus("FAILED");
+        /// <summary>
         /// Constant PENDING for DeviceStatus
         /// </summary>
         public static readonly DeviceStatus PENDING = new DeviceStatus("PENDING");
@@ -905,9 +909,17 @@ namespace Amazon.AlexaForBusiness
         /// </summary>
         public static readonly Feature LISTS = new Feature("LISTS");
         /// <summary>
+        /// Constant NETWORK_PROFILE for Feature
+        /// </summary>
+        public static readonly Feature NETWORK_PROFILE = new Feature("NETWORK_PROFILE");
+        /// <summary>
         /// Constant NOTIFICATIONS for Feature
         /// </summary>
         public static readonly Feature NOTIFICATIONS = new Feature("NOTIFICATIONS");
+        /// <summary>
+        /// Constant SETTINGS for Feature
+        /// </summary>
+        public static readonly Feature SETTINGS = new Feature("SETTINGS");
         /// <summary>
         /// Constant SKILLS for Feature
         /// </summary>
@@ -992,6 +1004,114 @@ namespace Amazon.AlexaForBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkEapMethod.
+    /// </summary>
+    public class NetworkEapMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EAP_TLS for NetworkEapMethod
+        /// </summary>
+        public static readonly NetworkEapMethod EAP_TLS = new NetworkEapMethod("EAP_TLS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkEapMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkEapMethod FindValue(string value)
+        {
+            return FindValue<NetworkEapMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkEapMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkSecurityType.
+    /// </summary>
+    public class NetworkSecurityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPEN for NetworkSecurityType
+        /// </summary>
+        public static readonly NetworkSecurityType OPEN = new NetworkSecurityType("OPEN");
+        /// <summary>
+        /// Constant WEP for NetworkSecurityType
+        /// </summary>
+        public static readonly NetworkSecurityType WEP = new NetworkSecurityType("WEP");
+        /// <summary>
+        /// Constant WPA_PSK for NetworkSecurityType
+        /// </summary>
+        public static readonly NetworkSecurityType WPA_PSK = new NetworkSecurityType("WPA_PSK");
+        /// <summary>
+        /// Constant WPA2_ENTERPRISE for NetworkSecurityType
+        /// </summary>
+        public static readonly NetworkSecurityType WPA2_ENTERPRISE = new NetworkSecurityType("WPA2_ENTERPRISE");
+        /// <summary>
+        /// Constant WPA2_PSK for NetworkSecurityType
+        /// </summary>
+        public static readonly NetworkSecurityType WPA2_PSK = new NetworkSecurityType("WPA2_PSK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkSecurityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkSecurityType FindValue(string value)
+        {
+            return FindValue<NetworkSecurityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkSecurityType(string value)
         {
             return FindValue(value);
         }

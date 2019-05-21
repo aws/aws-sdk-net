@@ -42,7 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The token returned to indicate that there is more data available.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1100)]
         public string NextToken
         {
             get { return this._nextToken; }

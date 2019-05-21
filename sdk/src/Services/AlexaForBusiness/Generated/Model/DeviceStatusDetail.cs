@@ -33,6 +33,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class DeviceStatusDetail
     {
         private DeviceStatusDetailCode _code;
+        private Feature _feature;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -50,6 +51,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feature. 
+        /// <para>
+        /// The list of available features on the device.
+        /// </para>
+        /// </summary>
+        public Feature Feature
+        {
+            get { return this._feature; }
+            set { this._feature = value; }
+        }
+
+        // Check to see if Feature property is set
+        internal bool IsSetFeature()
+        {
+            return this._feature != null;
         }
 
     }

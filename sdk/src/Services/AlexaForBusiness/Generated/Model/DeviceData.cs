@@ -39,6 +39,8 @@ namespace Amazon.AlexaForBusiness.Model
         private DeviceStatusInfo _deviceStatusInfo;
         private string _deviceType;
         private string _macAddress;
+        private string _networkProfileArn;
+        private string _networkProfileName;
         private string _roomArn;
         private string _roomName;
         private string _softwareVersion;
@@ -168,6 +170,43 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetMacAddress()
         {
             return this._macAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkProfileArn. 
+        /// <para>
+        /// The ARN of the network profile associated with a device.
+        /// </para>
+        /// </summary>
+        public string NetworkProfileArn
+        {
+            get { return this._networkProfileArn; }
+            set { this._networkProfileArn = value; }
+        }
+
+        // Check to see if NetworkProfileArn property is set
+        internal bool IsSetNetworkProfileArn()
+        {
+            return this._networkProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkProfileName. 
+        /// <para>
+        /// The name of the network profile associated with a device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string NetworkProfileName
+        {
+            get { return this._networkProfileName; }
+            set { this._networkProfileName = value; }
+        }
+
+        // Check to see if NetworkProfileName property is set
+        internal bool IsSetNetworkProfileName()
+        {
+            return this._networkProfileName != null;
         }
 
         /// <summary>

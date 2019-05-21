@@ -365,6 +365,70 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  AssociateDeviceWithNetworkProfile
+
+        /// <summary>
+        /// Associates a device with the specified network profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithNetworkProfile service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDeviceWithNetworkProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        public virtual AssociateDeviceWithNetworkProfileResponse AssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDeviceWithNetworkProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDeviceWithNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithNetworkProfile operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDeviceWithNetworkProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDeviceWithNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDeviceWithNetworkProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDeviceWithNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDeviceWithNetworkProfile.</param>
+        /// 
+        /// <returns>Returns a  AssociateDeviceWithNetworkProfileResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        public virtual AssociateDeviceWithNetworkProfileResponse EndAssociateDeviceWithNetworkProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDeviceWithNetworkProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
         /// <summary>
@@ -903,6 +967,75 @@ namespace Amazon.AlexaForBusiness
         public virtual CreateGatewayGroupResponse EndCreateGatewayGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGatewayGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateNetworkProfile
+
+        /// <summary>
+        /// Creates a network profile with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidCertificateAuthorityException">
+        /// The Certificate Authority can't issue or revoke a certificate.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidServiceLinkedRoleStateException">
+        /// The service linked role is locked for deletion.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        public virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkProfile operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateNetworkProfile(CreateNetworkProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkProfileResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        public virtual CreateNetworkProfileResponse EndCreateNetworkProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNetworkProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -1460,9 +1593,8 @@ namespace Amazon.AlexaForBusiness
 
         /// <summary>
         /// When this action is called for a specified shared device, it allows authorized users
-        /// to delete the device's entire previous history of voice input data and associated
-        /// response data. This action can be called once every 24 hours for a specific shared
-        /// device.
+        /// to delete the device's entire previous history of voice input data. This action can
+        /// be called once every 24 hours for a specific shared device.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceUsageData service method.</param>
         /// 
@@ -1576,6 +1708,69 @@ namespace Amazon.AlexaForBusiness
         public virtual DeleteGatewayGroupResponse EndDeleteGatewayGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGatewayGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkProfile
+
+        /// <summary>
+        /// Deletes a network profile by the network profile ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ResourceInUseException">
+        /// The resource in the request is already in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        public virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkProfile operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNetworkProfile(DeleteNetworkProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkProfileResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        public virtual DeleteNetworkProfileResponse EndDeleteNetworkProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNetworkProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -2742,6 +2937,66 @@ namespace Amazon.AlexaForBusiness
         public virtual GetInvitationConfigurationResponse EndGetInvitationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInvitationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetNetworkProfile
+
+        /// <summary>
+        /// Gets the network profile details by the network profile ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidSecretsManagerResourceException">
+        /// A password in SecretsManager is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        public virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkProfile operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetNetworkProfile(GetNetworkProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkProfile.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkProfileResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        public virtual GetNetworkProfileResponse EndGetNetworkProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetNetworkProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -4170,6 +4425,60 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchNetworkProfiles
+
+        /// <summary>
+        /// Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchNetworkProfiles service method.</param>
+        /// 
+        /// <returns>The response from the SearchNetworkProfiles service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        public virtual SearchNetworkProfilesResponse SearchNetworkProfiles(SearchNetworkProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchNetworkProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNetworkProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchNetworkProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchNetworkProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchNetworkProfiles operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchNetworkProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        public virtual IAsyncResult BeginSearchNetworkProfiles(SearchNetworkProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchNetworkProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNetworkProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchNetworkProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchNetworkProfiles.</param>
+        /// 
+        /// <returns>Returns a  SearchNetworkProfilesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        public virtual SearchNetworkProfilesResponse EndSearchNetworkProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchNetworkProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchProfiles
 
         /// <summary>
@@ -4514,8 +4823,32 @@ namespace Amazon.AlexaForBusiness
         #region  StartDeviceSync
 
         /// <summary>
-        /// Resets a device and its account to the known default settings, by clearing all information
-        /// and settings set by previous users.
+        /// Resets a device and its account to the known default settings. This clears all information
+        /// and settings set by previous users in the following ways:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Volume - This resets the echo device's volume to the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notifications - This clears all notifications from your echo device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lists - This clears all to-do items from your echo device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Settings - This internally syncs the room's profile (if the device is assigned to
+        /// a room), contacts, address books, delegation access for account linking, and communications
+        /// (if enabled on the room profile).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceSync service method.</param>
         /// 
@@ -5164,6 +5497,75 @@ namespace Amazon.AlexaForBusiness
         public virtual UpdateGatewayGroupResponse EndUpdateGatewayGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGatewayGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkProfile
+
+        /// <summary>
+        /// Updates a network profile by the network profile ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// There is a concurrent modification of resources.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidCertificateAuthorityException">
+        /// The Certificate Authority can't issue or revoke a certificate.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidSecretsManagerResourceException">
+        /// A password in SecretsManager is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        public virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkProfile operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNetworkProfile(UpdateNetworkProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNetworkProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNetworkProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateNetworkProfileResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        public virtual UpdateNetworkProfileResponse EndUpdateNetworkProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNetworkProfileResponse>(asyncResult);
         }
 
         #endregion

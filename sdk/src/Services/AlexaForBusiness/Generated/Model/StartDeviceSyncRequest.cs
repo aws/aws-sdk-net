@@ -29,8 +29,32 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDeviceSync operation.
-    /// Resets a device and its account to the known default settings, by clearing all information
-    /// and settings set by previous users.
+    /// Resets a device and its account to the known default settings. This clears all information
+    /// and settings set by previous users in the following ways:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Volume - This resets the echo device's volume to the default value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Notifications - This clears all notifications from your echo device.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Lists - This clears all to-do items from your echo device.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Settings - This internally syncs the room's profile (if the device is assigned to
+    /// a room), contacts, address books, delegation access for account linking, and communications
+    /// (if enabled on the room profile).
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StartDeviceSyncRequest : AmazonAlexaForBusinessRequest
     {

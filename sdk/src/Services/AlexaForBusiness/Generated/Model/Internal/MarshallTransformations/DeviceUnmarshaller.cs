@@ -106,6 +106,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.MacAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkProfileInfo", targetDepth))
+                {
+                    var unmarshaller = DeviceNetworkProfileInfoUnmarshaller.Instance;
+                    unmarshalledObject.NetworkProfileInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoomArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

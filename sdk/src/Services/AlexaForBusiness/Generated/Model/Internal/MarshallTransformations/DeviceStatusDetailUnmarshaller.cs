@@ -70,6 +70,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Feature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Feature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
