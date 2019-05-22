@@ -44,6 +44,7 @@ namespace Amazon.APIGateway.Model
         private int? _minimumCompressionSize;
         private string _name;
         private string _policy;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
         private List<string> _warnings = new List<string>();
 
@@ -214,6 +215,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The collection of tags. Each tag element is associated with a given resource.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

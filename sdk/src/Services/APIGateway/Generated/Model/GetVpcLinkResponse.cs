@@ -54,6 +54,7 @@ namespace Amazon.APIGateway.Model
         private string _name;
         private VpcLinkStatus _status;
         private string _statusMessage;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<string> _targetArns = new List<string>();
 
         /// <summary>
@@ -147,6 +148,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The collection of tags. Each tag element is associated with a given resource.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

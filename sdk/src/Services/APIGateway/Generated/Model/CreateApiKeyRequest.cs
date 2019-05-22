@@ -42,6 +42,7 @@ namespace Amazon.APIGateway.Model
         private bool? _generateDistinctId;
         private string _name;
         private List<StageKey> _stageKeys = new List<StageKey>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _value;
 
         /// <summary>
@@ -151,6 +152,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageKeys()
         {
             return this._stageKeys != null && this._stageKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
+        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
+        /// value can be up to 256 characters.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
