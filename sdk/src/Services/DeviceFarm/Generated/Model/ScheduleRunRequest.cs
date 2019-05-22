@@ -48,7 +48,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the app to schedule a run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -85,7 +85,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the device pool for the run to be scheduled.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string DevicePoolArn
         {
             get { return this._devicePoolArn; }
@@ -166,7 +166,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the project for the run to be scheduled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string ProjectArn
         {
             get { return this._projectArn; }

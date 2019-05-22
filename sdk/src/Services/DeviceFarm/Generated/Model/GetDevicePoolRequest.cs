@@ -41,7 +41,7 @@ namespace Amazon.DeviceFarm.Model
         /// The device pool's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

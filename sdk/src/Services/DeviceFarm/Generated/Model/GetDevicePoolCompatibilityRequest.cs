@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the app that is associated with the specified device pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string AppArn
         {
             get { return this._appArn; }
@@ -82,7 +82,7 @@ namespace Amazon.DeviceFarm.Model
         /// The device pool's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string DevicePoolArn
         {
             get { return this._devicePoolArn; }

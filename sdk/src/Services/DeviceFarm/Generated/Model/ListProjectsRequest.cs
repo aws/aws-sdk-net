@@ -43,7 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// a list of all projects for the AWS account. You can also specify a project ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

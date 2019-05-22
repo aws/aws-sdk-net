@@ -42,7 +42,7 @@ namespace Amazon.DeviceFarm.Model
         /// access.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

@@ -13,6 +13,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateDevicePoolRequest.ProjectArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateInstanceProfileRequest.Description</property>
@@ -42,6 +43,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateNetworkProfileRequest.ProjectArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateNetworkProfileRequest.UplinkLossPercent</property>
@@ -61,10 +63,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.DeviceArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.InstanceArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.InteractionMode</property>
@@ -79,10 +83,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.ProjectArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.RemoteRecordAppArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.SshPublicKey</property>
@@ -102,6 +108,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateUploadRequest.ProjectArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateVPCEConfigurationRequest.ServiceDnsName</property>
@@ -126,66 +133,82 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteDevicePoolRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteInstanceProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteNetworkProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteProjectRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteRunRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteUploadRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteVPCEConfigurationRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDeviceRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDeviceInstanceRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDevicePoolRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityRequest.AppArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityRequest.DevicePoolArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetInstanceProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetJobRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetNetworkProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetOfferingStatusRequest.NextToken</property>
@@ -200,42 +223,52 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetProjectRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetRunRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetSuiteRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetTestRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetUploadRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetVPCEConfigurationRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest.AppArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest.RemoteAccessSessionArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListArtifactsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListArtifactsRequest.NextToken</property>
@@ -260,6 +293,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListDevicePoolsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListDevicePoolsRequest.NextToken</property>
@@ -274,6 +308,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListDevicesRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListDevicesRequest.NextToken</property>
@@ -298,6 +333,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListJobsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListJobsRequest.NextToken</property>
@@ -312,6 +348,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListNetworkProfilesRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListNetworkProfilesRequest.NextToken</property>
@@ -356,6 +393,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListProjectsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListProjectsRequest.NextToken</property>
@@ -370,6 +408,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest.NextToken</property>
@@ -384,6 +423,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListRunsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListRunsRequest.NextToken</property>
@@ -398,6 +438,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListSamplesRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListSamplesRequest.NextToken</property>
@@ -412,6 +453,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListSuitesRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListSuitesRequest.NextToken</property>
@@ -424,8 +466,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListTestsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListTestsRequest.NextToken</property>
@@ -440,6 +488,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListUniqueProblemsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListUniqueProblemsRequest.NextToken</property>
@@ -454,6 +503,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListUploadsRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListUploadsRequest.NextToken</property>
@@ -490,10 +540,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.AppArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.DevicePoolArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.Name</property>
@@ -503,30 +555,47 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.ProjectArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.StopJobRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.StopRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.StopRunRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.TagResourceRequest.ResourceARN</property>
+    <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UntagResourceRequest.ResourceARN</property>
+    <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDeviceInstanceRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDeviceInstanceRequest.ProfileArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Description</property>
@@ -541,6 +610,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateInstanceProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateInstanceProfileRequest.Description</property>
@@ -555,6 +625,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateNetworkProfileRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateNetworkProfileRequest.Description</property>
@@ -579,6 +650,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Name</property>
@@ -588,6 +660,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateUploadRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateUploadRequest.ContentType</property>
@@ -602,6 +675,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateVPCEConfigurationRequest.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateVPCEConfigurationRequest.ServiceDnsName</property>
@@ -636,6 +710,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Artifact.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Artifact.Name</property>
@@ -650,6 +725,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Device.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Device.Name</property>
@@ -659,14 +735,17 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeviceInstance.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeviceInstance.DeviceArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DevicePool.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DevicePool.Description</property>
@@ -691,6 +770,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.InstanceProfile.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.InstanceProfile.Description</property>
@@ -710,10 +790,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.InstanceArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Message</property>
@@ -733,6 +815,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.NetworkProfile.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.NetworkProfile.Description</property>
@@ -798,6 +881,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ProblemDetail.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ProblemDetail.Name</property>
@@ -807,6 +891,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Project.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Project.Name</property>
@@ -816,6 +901,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.ClientId</property>
@@ -829,6 +915,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.InstanceArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.InteractionMode</property>
@@ -848,18 +935,22 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RemoteAccessSession.RemoteRecordAppArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.AppUpload</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.DevicePoolArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.Message</property>
@@ -874,10 +965,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.TestSpecArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Sample.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Sample.Url</property>
@@ -887,10 +980,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunConfiguration.ExtraDataPackageArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunConfiguration.NetworkProfileArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.Filter</property>
@@ -900,10 +995,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.TestPackageArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.TestSpecArn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ServiceAccountException.Message</property>
@@ -913,6 +1010,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Message</property>
@@ -925,8 +1023,29 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.TagOperationException.ResourceName</property>
+    <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.TagPolicyException.ResourceName</property>
+    <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Test.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Test.Message</property>
@@ -939,6 +1058,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.TooManyTagsException.ResourceName</property>
+    <min>32</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UniqueProblem.Message</property>
     <min>0</min>
     <max>16384</max>
@@ -946,6 +1070,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.ContentType</property>
@@ -975,6 +1100,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.VPCEConfiguration.Arn</property>
     <min>32</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.VPCEConfiguration.ServiceDnsName</property>

@@ -43,7 +43,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the project for which you want to list uploads.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

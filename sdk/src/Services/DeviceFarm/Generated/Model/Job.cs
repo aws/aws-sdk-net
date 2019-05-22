@@ -54,7 +54,7 @@ namespace Amazon.DeviceFarm.Model
         /// The job's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }
@@ -145,7 +145,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string InstanceArn
         {
             get { return this._instanceArn; }

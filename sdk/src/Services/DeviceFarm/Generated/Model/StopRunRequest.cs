@@ -46,7 +46,7 @@ namespace Amazon.DeviceFarm.Model
         /// Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }

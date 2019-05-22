@@ -166,7 +166,7 @@ namespace Amazon.DeviceFarm.Model
         /// profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=32)]
+        [AWSProperty(Required=true, Min=32, Max=1011)]
         public string ProjectArn
         {
             get { return this._projectArn; }

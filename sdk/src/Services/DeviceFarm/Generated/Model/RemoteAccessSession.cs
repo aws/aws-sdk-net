@@ -60,7 +60,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the remote access session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }
@@ -231,7 +231,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string InstanceArn
         {
             get { return this._instanceArn; }
@@ -343,7 +343,7 @@ namespace Amazon.DeviceFarm.Model
         /// The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string RemoteRecordAppArn
         {
             get { return this._remoteRecordAppArn; }

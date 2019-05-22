@@ -226,7 +226,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the uploaded test that will be run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string TestPackageArn
         {
             get { return this._testPackageArn; }
@@ -245,7 +245,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the YAML-formatted test specification.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string TestSpecArn
         {
             get { return this._testSpecArn; }

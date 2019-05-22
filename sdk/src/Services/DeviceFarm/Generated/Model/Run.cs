@@ -71,7 +71,7 @@ namespace Amazon.DeviceFarm.Model
         /// An app to upload or that has been uploaded.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string AppUpload
         {
             get { return this._appUpload; }
@@ -90,7 +90,7 @@ namespace Amazon.DeviceFarm.Model
         /// The run's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string Arn
         {
             get { return this._arn; }
@@ -218,7 +218,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the device pool for the run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string DevicePoolArn
         {
             get { return this._devicePoolArn; }
@@ -663,7 +663,7 @@ namespace Amazon.DeviceFarm.Model
         /// The ARN of the YAML-formatted test specification for the run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32)]
+        [AWSProperty(Min=32, Max=1011)]
         public string TestSpecArn
         {
             get { return this._testSpecArn; }
