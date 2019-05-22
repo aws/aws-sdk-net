@@ -36,6 +36,14 @@ namespace Amazon.ServiceCatalog.Model
     /// Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
     /// <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>,
+    /// the new owner will be able to describe all past records for that product. The previous
+    /// owner will no longer be able to describe the records, but will be able to use <a>ListRecordHistory</a>
+    /// to see the product's history from when he was the owner.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeRecordRequest : AmazonServiceCatalogRequest
     {

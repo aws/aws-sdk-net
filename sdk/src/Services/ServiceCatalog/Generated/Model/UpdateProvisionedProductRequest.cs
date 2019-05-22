@@ -149,7 +149,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+        /// The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
         /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
