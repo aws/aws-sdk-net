@@ -126,6 +126,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Describes the type of network interface.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>interface</code> | <code>efa</code> 
+        /// </para>
         /// </summary>
         public string InterfaceType
         {

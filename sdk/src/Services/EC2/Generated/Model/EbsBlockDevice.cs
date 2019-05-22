@@ -61,16 +61,24 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached
-        /// to instances that support Amazon EBS encryption.
+        /// Indicates whether the encryption state of an EBS volume is to be changed while being
+        /// restored from a backing snapshot. The default effect of setting this parameter to
+        /// <code>true</code> or leaving it unset depends on the origin, starting encryption state,
+        /// and ownership of the volume. Each default case can be overridden by specifying a customer
+        /// master key (CMK) as argument to the <code>KmsKeyId</code> parameter in addition to
+        /// setting <code>Encrypted</code> = <code>true</code>. For a complete list of possible
+        /// encryption cases, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a>. 
         /// </para>
         ///  
         /// <para>
-        /// If you are creating a volume from a snapshot, you cannot specify an encryption value.
-        /// This is because only blank volumes can be encrypted on creation. If you are creating
-        /// a snapshot from an existing EBS volume, you cannot specify an encryption value that
-        /// differs from that of the EBS volume. We recommend that you omit the encryption value
-        /// from the block device mappings when creating an image from an instance.
+        /// In no case can you remove encryption from an encrypted volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Encrypted volumes can only be attached to instances that support Amazon EBS encryption.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// Instance Types</a>.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -98,9 +106,11 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS
-        /// for <code>io1</code> volumes, in most Regions. The maximum IOPS for <code>io1</code>
-        /// of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-        /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+        /// for <code>io1</code> volumes in most Regions. Maximum <code>io1</code>IOPS of 64,000
+        /// is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+        /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -175,8 +175,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with
         /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
-        /// tenancy is not supported for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-        /// command.
+        /// tenancy is not supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

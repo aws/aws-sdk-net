@@ -66,6 +66,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AuthorizeAllGroups", StringUtils.FromBool(publicRequest.AuthorizeAllGroups));
                 }
+                if(publicRequest.IsSetClientToken())
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
+                }
                 if(publicRequest.IsSetClientVpnEndpointId())
                 {
                     request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));

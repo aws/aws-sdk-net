@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates RunInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="imageId">The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.</param>
+        /// <param name="imageId">The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an instance and must be specified here or in a launch template.</param>
         /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
         /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</param>
         public RunInstancesRequest(string imageId, int minCount, int maxCount)
@@ -298,8 +298,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If you set this parameter to <code>true</code>, you can't terminate the instance using
         /// the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute
-        /// to <code>false</code> after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
+        /// to <code>false</code> after launch, use <a>ModifyInstanceAttribute</a>. Alternatively,
+        /// if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
         /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         ///  
@@ -426,8 +426,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI. An AMI is required to launch an instance and must be specified
-        /// here or in a launch template.
+        /// The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is
+        /// required to launch an instance and must be specified here or in a launch template.
         /// </para>
         /// </summary>
         public string ImageId

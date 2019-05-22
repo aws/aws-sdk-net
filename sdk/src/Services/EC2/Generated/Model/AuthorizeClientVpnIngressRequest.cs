@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     {
         private string _accessGroupId;
         private bool? _authorizeAllGroups;
+        private string _clientToken;
         private string _clientVpnEndpointId;
         private string _description;
         private string _targetNetworkCidr;
@@ -76,6 +77,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAuthorizeAllGroups()
         {
             return this._authorizeAllGroups.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a>.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

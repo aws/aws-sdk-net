@@ -119,13 +119,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the volume should be encrypted. Encrypted Amazon EBS volumes may
-        /// only be attached to instances that support Amazon EBS encryption. Volumes that are
-        /// created from encrypted snapshots are automatically encrypted. There is no way to create
-        /// an encrypted volume from an unencrypted snapshot or vice versa. If your AMI uses encrypted
-        /// volumes, you can only launch it on supported instance types. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Specifies the encryption state of the volume. The default effect of setting this parameter
+        /// depends on the volume's source and ownership. Each default case can be overridden
+        /// by specifying a customer master key (CMK) with the <code>KeyKeyId</code> parameter.
+        /// For a complete list of possible encryption cases, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Encrypted Amazon EBS volumes may only be attached to instances that support Amazon
+        /// EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// Instance Types</a>.
         /// </para>
         /// </summary>
         public bool Encrypted
