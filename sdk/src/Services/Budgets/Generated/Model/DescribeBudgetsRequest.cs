@@ -30,6 +30,14 @@ namespace Amazon.Budgets.Model
     /// <summary>
     /// Container for the parameters to the DescribeBudgets operation.
     /// Lists the budgets that are associated with an account.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+    /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
+    /// section. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeBudgetsRequest : AmazonBudgetsRequest
     {

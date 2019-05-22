@@ -305,7 +305,17 @@ namespace Amazon.Budgets
         #region  CreateBudget
 
         /// <summary>
-        /// Creates a budget and, if included, notifications and subscribers.
+        /// Creates a budget and, if included, notifications and subscribers. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
+        /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
+        /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
+        /// section. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBudget service method.</param>
         /// 
@@ -703,6 +713,14 @@ namespace Amazon.Budgets
 
         /// <summary>
         /// Describes a budget.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
+        /// section. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBudget service method.</param>
         /// 
@@ -830,6 +848,14 @@ namespace Amazon.Budgets
 
         /// <summary>
         /// Lists the budgets that are associated with an account.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
+        /// section. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBudgets service method.</param>
         /// 
@@ -1030,6 +1056,16 @@ namespace Amazon.Budgets
         /// Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
         /// and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code>
         /// drops to zero until AWS has new usage data to use for forecasting.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
+        /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
+        /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
+        /// section. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBudget service method.</param>
         /// 

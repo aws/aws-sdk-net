@@ -55,6 +55,11 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// The address that AWS sends budget notifications to, either an SNS topic or an email.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code>
+        /// regex.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
         public string Address

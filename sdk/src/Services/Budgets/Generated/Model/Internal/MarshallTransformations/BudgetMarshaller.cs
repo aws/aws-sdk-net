@@ -115,6 +115,25 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LastUpdatedTime);
             }
 
+            if(requestObject.IsSetPlannedBudgetLimits())
+            {
+                context.Writer.WritePropertyName("PlannedBudgetLimits");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPlannedBudgetLimitsKvp in requestObject.PlannedBudgetLimits)
+                {
+                    context.Writer.WritePropertyName(requestObjectPlannedBudgetLimitsKvp.Key);
+                    var requestObjectPlannedBudgetLimitsValue = requestObjectPlannedBudgetLimitsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SpendMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPlannedBudgetLimitsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimePeriod())
             {
                 context.Writer.WritePropertyName("TimePeriod");
