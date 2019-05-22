@@ -42,7 +42,6 @@ namespace Amazon.WorkLink.Model
         /// Gets and sets the property AcmCertificateArn. 
         /// <para>
         /// The ARN of an issued ACM certificate that is valid for the domain being associated.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +82,7 @@ namespace Amazon.WorkLink.Model
         /// The fully qualified domain name (FQDN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeDomain operation
+    /// Response Unmarshaller for AssociateWebsiteAuthorizationProvider operation
     /// </summary>  
-    public class DescribeDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateWebsiteAuthorizationProviderResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,16 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeDomainResponse response = new DescribeDomainResponse();
+            AssociateWebsiteAuthorizationProviderResponse response = new AssociateWebsiteAuthorizationProviderResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AcmCertificateArn", targetDepth))
+                if (context.TestExpression("AuthorizationProviderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AcmCertificateArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainStatus = unmarshaller.Unmarshall(context);
+                    response.AuthorizationProviderId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,6 +80,10 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
+            {
+                return new ResourceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -119,9 +99,9 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             return new AmazonWorkLinkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeDomainResponseUnmarshaller _instance = new DescribeDomainResponseUnmarshaller();        
+        private static AssociateWebsiteAuthorizationProviderResponseUnmarshaller _instance = new AssociateWebsiteAuthorizationProviderResponseUnmarshaller();        
 
-        internal static DescribeDomainResponseUnmarshaller GetInstance()
+        internal static AssociateWebsiteAuthorizationProviderResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -129,7 +109,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDomainResponseUnmarshaller Instance
+        public static AssociateWebsiteAuthorizationProviderResponseUnmarshaller Instance
         {
             get
             {

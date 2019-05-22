@@ -76,6 +76,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkLink")]
+        public void AssociateWebsiteAuthorizationProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateWebsiteAuthorizationProvider");
+
+            var request = InstantiateClassGenerator.Execute<AssociateWebsiteAuthorizationProviderRequest>();
+            var marshaller = new AssociateWebsiteAuthorizationProviderRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssociateWebsiteAuthorizationProvider", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as AssociateWebsiteAuthorizationProviderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkLink")]
         public void AssociateWebsiteCertificateAuthorityMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateWebsiteCertificateAuthority");
@@ -460,6 +492,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkLink")]
+        public void DisassociateWebsiteAuthorizationProviderMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateWebsiteAuthorizationProvider");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateWebsiteAuthorizationProviderRequest>();
+            var marshaller = new DisassociateWebsiteAuthorizationProviderRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DisassociateWebsiteAuthorizationProvider", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DisassociateWebsiteAuthorizationProviderResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkLink")]
         public void DisassociateWebsiteCertificateAuthorityMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateWebsiteCertificateAuthority");
@@ -580,6 +644,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListFleetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListFleetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkLink")]
+        public void ListWebsiteAuthorizationProvidersMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListWebsiteAuthorizationProviders");
+
+            var request = InstantiateClassGenerator.Execute<ListWebsiteAuthorizationProvidersRequest>();
+            var marshaller = new ListWebsiteAuthorizationProvidersRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListWebsiteAuthorizationProviders", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListWebsiteAuthorizationProvidersResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

@@ -28,31 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
-    /// Container for the parameters to the RestoreDomainAccess operation.
-    /// Moves a domain to ACTIVE status if it was in the INACTIVE status.
+    /// Container for the parameters to the DisassociateWebsiteAuthorizationProvider operation.
+    /// Disassociates a website authorization provider from a specified fleet. After the disassociation,
+    /// users can't load any associated websites that require this authorization provider.
     /// </summary>
-    public partial class RestoreDomainAccessRequest : AmazonWorkLinkRequest
+    public partial class DisassociateWebsiteAuthorizationProviderRequest : AmazonWorkLinkRequest
     {
-        private string _domainName;
+        private string _authorizationProviderId;
         private string _fleetArn;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property AuthorizationProviderId. 
         /// <para>
-        /// The name of the domain.
+        /// A unique identifier for the authorization provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=253)]
-        public string DomainName
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string AuthorizationProviderId
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._authorizationProviderId; }
+            set { this._authorizationProviderId = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if AuthorizationProviderId property is set
+        internal bool IsSetAuthorizationProviderId()
         {
-            return this._domainName != null;
+            return this._authorizationProviderId != null;
         }
 
         /// <summary>

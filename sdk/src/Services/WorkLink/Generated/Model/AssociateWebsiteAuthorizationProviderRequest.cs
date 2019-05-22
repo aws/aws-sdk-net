@@ -28,21 +28,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
-    /// Container for the parameters to the RestoreDomainAccess operation.
-    /// Moves a domain to ACTIVE status if it was in the INACTIVE status.
+    /// Container for the parameters to the AssociateWebsiteAuthorizationProvider operation.
+    /// Associates a website authorization provider with a specified fleet. This is used to
+    /// authorize users against associated websites in the company network.
     /// </summary>
-    public partial class RestoreDomainAccessRequest : AmazonWorkLinkRequest
+    public partial class AssociateWebsiteAuthorizationProviderRequest : AmazonWorkLinkRequest
     {
+        private AuthorizationProviderType _authorizationProviderType;
         private string _domainName;
         private string _fleetArn;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property AuthorizationProviderType. 
         /// <para>
-        /// The name of the domain.
+        /// The authorization provider type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=253)]
+        [AWSProperty(Required=true)]
+        public AuthorizationProviderType AuthorizationProviderType
+        {
+            get { return this._authorizationProviderType; }
+            set { this._authorizationProviderType = value; }
+        }
+
+        // Check to see if AuthorizationProviderType property is set
+        internal bool IsSetAuthorizationProviderType()
+        {
+            return this._authorizationProviderType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name of the authorization provider. This applies only to SAML-based authorization
+        /// providers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }

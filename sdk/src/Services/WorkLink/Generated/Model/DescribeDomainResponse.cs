@@ -32,9 +32,29 @@ namespace Amazon.WorkLink.Model
     /// </summary>
     public partial class DescribeDomainResponse : AmazonWebServiceResponse
     {
+        private string _acmCertificateArn;
         private DateTime? _createdTime;
         private string _displayName;
+        private string _domainName;
         private DomainStatus _domainStatus;
+
+        /// <summary>
+        /// Gets and sets the property AcmCertificateArn. 
+        /// <para>
+        /// The ARN of an issued ACM certificate that is valid for the domain being associated.
+        /// </para>
+        /// </summary>
+        public string AcmCertificateArn
+        {
+            get { return this._acmCertificateArn; }
+            set { this._acmCertificateArn = value; }
+        }
+
+        // Check to see if AcmCertificateArn property is set
+        internal bool IsSetAcmCertificateArn()
+        {
+            return this._acmCertificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -71,6 +91,25 @@ namespace Amazon.WorkLink.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=253)]
+        public string DomainName
+        {
+            get { return this._domainName; }
+            set { this._domainName = value; }
+        }
+
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
+        {
+            return this._domainName != null;
         }
 
         /// <summary>

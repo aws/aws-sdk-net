@@ -11,13 +11,29 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.AssociateDomainRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.AssociateDomainRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateWebsiteAuthorizationProviderRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateWebsiteAuthorizationProviderRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.AssociateWebsiteAuthorizationProviderResponse.AuthorizationProviderId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.AssociateWebsiteCertificateAuthorityRequest.Certificate</property>
@@ -127,7 +143,7 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.DescribeDomainRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -136,8 +152,18 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeDomainResponse.AcmCertificateArn</property>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.DescribeDomainResponse.DisplayName</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DescribeDomainResponse.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.DescribeFleetMetadataRequest.FleetArn</property>
@@ -197,11 +223,21 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.DisassociateDomainRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.DisassociateDomainRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DisassociateWebsiteAuthorizationProviderRequest.AuthorizationProviderId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.DisassociateWebsiteAuthorizationProviderRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
   </property-value-rule>
@@ -274,6 +310,27 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListWebsiteAuthorizationProvidersRequest.FleetArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListWebsiteAuthorizationProvidersRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListWebsiteAuthorizationProvidersRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.ListWebsiteAuthorizationProvidersResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkLink.Model.ListWebsiteCertificateAuthoritiesRequest.FleetArn</property>
     <min>20</min>
     <max>2048</max>
@@ -297,7 +354,7 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.RestoreDomainAccessRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -308,7 +365,7 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.RevokeDomainAccessRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -358,7 +415,7 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.UpdateDomainMetadataRequest.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -397,7 +454,7 @@
   <property-value-rule>
     <property>Amazon.WorkLink.Model.DomainSummary.DomainName</property>
     <min>1</min>
-    <max>64</max>
+    <max>253</max>
     <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -419,6 +476,17 @@
     <min>1</min>
     <max>48</max>
     <pattern>^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.WebsiteAuthorizationProviderSummary.AuthorizationProviderId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkLink.Model.WebsiteAuthorizationProviderSummary.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkLink.Model.WebsiteCaSummary.DisplayName</property>

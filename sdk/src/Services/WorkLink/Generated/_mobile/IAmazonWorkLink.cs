@@ -59,6 +59,23 @@ namespace Amazon.WorkLink
 
         #endregion
                 
+        #region  AssociateWebsiteAuthorizationProvider
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        Task<AssociateWebsiteAuthorizationProviderResponse> AssociateWebsiteAuthorizationProviderAsync(AssociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssociateWebsiteCertificateAuthority
 
 
@@ -263,6 +280,23 @@ namespace Amazon.WorkLink
 
         #endregion
                 
+        #region  DisassociateWebsiteAuthorizationProvider
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        Task<DisassociateWebsiteAuthorizationProviderResponse> DisassociateWebsiteAuthorizationProviderAsync(DisassociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateWebsiteCertificateAuthority
 
 
@@ -328,6 +362,23 @@ namespace Amazon.WorkLink
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
         Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebsiteAuthorizationProviders
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebsiteAuthorizationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        Task<ListWebsiteAuthorizationProvidersResponse> ListWebsiteAuthorizationProvidersAsync(ListWebsiteAuthorizationProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

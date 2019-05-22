@@ -314,6 +314,79 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  AssociateWebsiteAuthorizationProvider
+
+        /// <summary>
+        /// Associates a website authorization provider with a specified fleet. This is used to
+        /// authorize users against associated websites in the company network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual AssociateWebsiteAuthorizationProviderResponse AssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWebsiteAuthorizationProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual IAsyncResult BeginAssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateWebsiteAuthorizationProvider.</param>
+        /// 
+        /// <returns>Returns a  AssociateWebsiteAuthorizationProviderResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual AssociateWebsiteAuthorizationProviderResponse EndAssociateWebsiteAuthorizationProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateWebsiteAuthorizationProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateWebsiteCertificateAuthority
 
         /// <summary>
@@ -1154,6 +1227,79 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  DisassociateWebsiteAuthorizationProvider
+
+        /// <summary>
+        /// Disassociates a website authorization provider from a specified fleet. After the disassociation,
+        /// users can't load any associated websites that require this authorization provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual DisassociateWebsiteAuthorizationProviderResponse DisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWebsiteAuthorizationProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateWebsiteAuthorizationProvider.</param>
+        /// 
+        /// <returns>Returns a  DisassociateWebsiteAuthorizationProviderResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual DisassociateWebsiteAuthorizationProviderResponse EndDisassociateWebsiteAuthorizationProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateWebsiteAuthorizationProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateWebsiteCertificateAuthority
 
         /// <summary>
@@ -1420,6 +1566,75 @@ namespace Amazon.WorkLink
         public virtual ListFleetsResponse EndListFleets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFleetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWebsiteAuthorizationProviders
+
+        /// <summary>
+        /// Retrieves a list of website authorization providers associated with a specified fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListWebsiteAuthorizationProviders service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual ListWebsiteAuthorizationProvidersResponse ListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebsiteAuthorizationProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebsiteAuthorizationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders operation on AmazonWorkLinkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebsiteAuthorizationProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual IAsyncResult BeginListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWebsiteAuthorizationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebsiteAuthorizationProviders.</param>
+        /// 
+        /// <returns>Returns a  ListWebsiteAuthorizationProvidersResult from WorkLink.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual ListWebsiteAuthorizationProvidersResponse EndListWebsiteAuthorizationProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWebsiteAuthorizationProvidersResponse>(asyncResult);
         }
 
         #endregion

@@ -63,7 +63,7 @@ namespace Amazon.WorkLink.Model
         /// The security groups associated with access to the provided subnets.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }

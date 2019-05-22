@@ -282,6 +282,39 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  AssociateWebsiteAuthorizationProvider
+
+        internal virtual AssociateWebsiteAuthorizationProviderResponse AssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual Task<AssociateWebsiteAuthorizationProviderResponse> AssociateWebsiteAuthorizationProviderAsync(AssociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateWebsiteAuthorizationProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateWebsiteCertificateAuthority
 
         internal virtual AssociateWebsiteCertificateAuthorityResponse AssociateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request)
@@ -678,6 +711,39 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  DisassociateWebsiteAuthorizationProvider
+
+        internal virtual DisassociateWebsiteAuthorizationProviderResponse DisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual Task<DisassociateWebsiteAuthorizationProviderResponse> DisassociateWebsiteAuthorizationProviderAsync(DisassociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateWebsiteAuthorizationProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateWebsiteCertificateAuthority
 
         internal virtual DisassociateWebsiteCertificateAuthorityResponse DisassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request)
@@ -806,6 +872,39 @@ namespace Amazon.WorkLink
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWebsiteAuthorizationProviders
+
+        internal virtual ListWebsiteAuthorizationProvidersResponse ListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebsiteAuthorizationProvidersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebsiteAuthorizationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual Task<ListWebsiteAuthorizationProvidersResponse> ListWebsiteAuthorizationProvidersAsync(ListWebsiteAuthorizationProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWebsiteAuthorizationProvidersResponse>(request, options, cancellationToken);
         }
 
         #endregion

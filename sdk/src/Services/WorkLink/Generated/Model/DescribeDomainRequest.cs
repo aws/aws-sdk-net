@@ -42,7 +42,7 @@ namespace Amazon.WorkLink.Model
         /// The name of the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=253)]
         public string DomainName
         {
             get { return this._domainName; }

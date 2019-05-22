@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeDomain operation
+    /// Response Unmarshaller for ListWebsiteAuthorizationProviders operation
     /// </summary>  
-    public class DescribeDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListWebsiteAuthorizationProvidersResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeDomainResponse response = new DescribeDomainResponse();
+            ListWebsiteAuthorizationProvidersResponse response = new ListWebsiteAuthorizationProvidersResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AcmCertificateArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AcmCertificateArn = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("WebsiteAuthorizationProviders", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<WebsiteAuthorizationProviderSummary, WebsiteAuthorizationProviderSummaryUnmarshaller>(WebsiteAuthorizationProviderSummaryUnmarshaller.Instance);
+                    response.WebsiteAuthorizationProviders = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,9 +101,9 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             return new AmazonWorkLinkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeDomainResponseUnmarshaller _instance = new DescribeDomainResponseUnmarshaller();        
+        private static ListWebsiteAuthorizationProvidersResponseUnmarshaller _instance = new ListWebsiteAuthorizationProvidersResponseUnmarshaller();        
 
-        internal static DescribeDomainResponseUnmarshaller GetInstance()
+        internal static ListWebsiteAuthorizationProvidersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -129,7 +111,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDomainResponseUnmarshaller Instance
+        public static ListWebsiteAuthorizationProvidersResponseUnmarshaller Instance
         {
             get
             {

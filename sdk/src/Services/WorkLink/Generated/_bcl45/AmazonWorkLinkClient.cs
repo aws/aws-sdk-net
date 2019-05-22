@@ -302,6 +302,65 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  AssociateWebsiteAuthorizationProvider
+
+
+        /// <summary>
+        /// Associates a website authorization provider with a specified fleet. This is used to
+        /// authorize users against associated websites in the company network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual AssociateWebsiteAuthorizationProviderResponse AssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual Task<AssociateWebsiteAuthorizationProviderResponse> AssociateWebsiteAuthorizationProviderAsync(AssociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateWebsiteAuthorizationProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateWebsiteCertificateAuthority
 
 
@@ -974,6 +1033,65 @@ namespace Amazon.WorkLink
 
         #endregion
         
+        #region  DisassociateWebsiteAuthorizationProvider
+
+
+        /// <summary>
+        /// Disassociates a website authorization provider from a specified fleet. After the disassociation,
+        /// users can't load any associated websites that require this authorization provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWebsiteAuthorizationProvider service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual DisassociateWebsiteAuthorizationProviderResponse DisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWebsiteAuthorizationProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWebsiteAuthorizationProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWebsiteAuthorizationProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        public virtual Task<DisassociateWebsiteAuthorizationProviderResponse> DisassociateWebsiteAuthorizationProviderAsync(DisassociateWebsiteAuthorizationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWebsiteAuthorizationProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWebsiteAuthorizationProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateWebsiteAuthorizationProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateWebsiteCertificateAuthority
 
 
@@ -1184,6 +1302,61 @@ namespace Amazon.WorkLink
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWebsiteAuthorizationProviders
+
+
+        /// <summary>
+        /// Retrieves a list of website authorization providers associated with a specified fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListWebsiteAuthorizationProviders service method, as returned by WorkLink.</returns>
+        /// <exception cref="Amazon.WorkLink.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.WorkLink.Model.UnauthorizedException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual ListWebsiteAuthorizationProvidersResponse ListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebsiteAuthorizationProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebsiteAuthorizationProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebsiteAuthorizationProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        public virtual Task<ListWebsiteAuthorizationProvidersResponse> ListWebsiteAuthorizationProvidersAsync(ListWebsiteAuthorizationProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebsiteAuthorizationProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebsiteAuthorizationProvidersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListWebsiteAuthorizationProvidersResponse>(request, options, cancellationToken);
         }
 
         #endregion
